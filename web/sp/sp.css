@@ -1,0 +1,339 @@
+/* Redefinition of basic elements */
+
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+body {
+	background-color: #d9e0e8;
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+	line-height: 18px;
+	color: #202629;
+}
+
+a {
+	color: #a33;
+}
+
+a:visited {
+	color: #a33;
+}
+
+a img {
+	border: none;
+}
+
+h1, h2, h3 {
+	line-height: 1.2em;
+	color: #000;
+}
+
+h1 {
+	font-size: 22px;
+	font-weight: normal;
+	margin: 10px 0;
+	padding: 0;
+}
+
+h2 { 
+	font-size: 20px; 
+	font-weight: normal;
+	margin: 0 0 6px 0;
+	padding: 0;
+}
+
+h3 {
+	font-size: 1em; 
+	font-weight: bold;
+	margin: 0 0 5px 0;
+	padding: 0;
+}
+
+h4 {
+	font-size: 1em; 
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	margin: 0 0 10px 0;
+}
+
+th, td, li, option, select, input {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 14px;
+}
+
+ul {
+	margin: 0 0 1em 0;
+	padding: 0 0 0 1em;
+}
+
+ul li {
+	padding: 0 0 4px 0;
+}
+
+
+/* Major layout blocks */
+
+#container {
+	padding: 5px;
+}
+
+#header {
+	margin: 0;
+	padding: 8px 8px 0 8px;
+	font-size: 20px;
+}
+
+#header a {
+	text-decoration: none;
+	color: #444;
+}
+
+#footer {
+	margin: 6px 0 10px 0;
+	padding: 6px;
+	font-size: 11px;
+	line-height: 13px;
+	color: #666;
+}
+
+
+
+/* Forms */
+
+form {
+	margin: 0 0 12px 0;
+	padding: 0;
+}
+
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.combobutton {
+	background-color: #933;
+	border-color: #933;
+	color: #fff;
+}
+
+.inputcombo .forminput {
+	font-size: 13px;
+	float: left;
+	width: 60%;
+	padding: 3px;
+}
+
+.inputcombo .combobutton {
+	font-size: 13px;
+	padding: 1px 4px;
+}
+
+
+
+/* Navigation and results listings */
+/* Many smartphones don't correctly interpret "display:block" for inline elements like <a> */
+
+.nav {
+	margin: 15px 0 15px 0;
+	padding: 5px;
+	background-color: #fff;
+	font-size: 14px;
+	line-height: 24px;
+}
+
+.secondary {
+	margin: 15px 0 15px 0;
+	padding: 5px;
+	background-color: #edf1f7;
+	font-size: 13px;
+	line-height: 21px;
+}
+
+.paging {
+	margin: 0;
+	padding: 5px;
+	font-size: 13px;
+	line-height: 21px;
+}
+
+.bottomnav {
+	margin: 20px 0 10px 0;
+	padding: 5px;
+	background-color: #909eac;
+	font-size: 13px;
+	line-height: 21px;
+}
+
+.bottomnav a {
+	color: #fff;
+}
+
+.results {
+	font-size: 14px;
+	line-height: 24px;
+	margin-bottom: 1em;
+}
+
+
+/* Specific content formatting */
+
+.focal {
+	background-color: #fff;
+	padding: 5px;
+}
+
+.nonfocal {
+	padding: 5px;
+}
+
+.paging {
+	text-align: left;
+	margin: 1em 0;
+}
+
+.legend {
+	margin-top: 0.5em;
+	font-size: 11px;
+	line-height: 15px;
+	color: #666;
+}
+
+.smallprint {
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 15px;
+	color: #666;
+}
+
+.fineprint {
+	font-size: 10px;
+	line-height: 12px;
+	color: #666;
+}
+
+.clear {
+	clear: both;
+}
+
+.label {
+	float: left;
+	width: 50px;
+	padding: 1px 10px 0 0;
+	font-size: 12px;
+	line-height: 19px;
+	color: #627ba1;
+}
+
+.value {
+	font-size: 14px;
+	min-height: 20px;
+	line-height: 20px;
+}
+
+.divider {
+	height: 0;
+	margin: 0.75em 0;
+	border: none;
+	border-top: 1px dotted #999;
+}
+
+hr {
+	display: none;
+}
+
+.bb {
+	display: none;
+}
+
+.image {
+	text-align: center;
+	padding-bottom: 6px;
+}
+
+.hidden {
+	visibility: hidden;
+}
+
+.maintable {
+	width: 100%;
+	background-color: #fff;
+}
+
+.maintable td, .maintable th {
+	padding: 3px 5px;
+}
+
+.centered {
+	text-align: center
+}
+
+
+/* Iconically coded links - e.g., Shuttle Schedule, 3DOWN, etc. */
+
+a.icon {
+	background-repeat: no-repeat;
+	background-position: 0px 3px;
+}
+
+span.icon {
+	background-repeat: no-repeat;
+	background-position: 0 0;
+	padding-right: 6px;
+}
+
+.icon span {
+	padding: 3px 0 3px 17px;
+	line-height: 16px;
+}
+
+.gps {
+	background-image: url(../sp/images/gps.gif);
+}
+
+.sch {
+	background-image: url(../sp/images/schedule.gif);
+}
+
+.ok {
+	background-image: url(../sp/images/ok.gif);
+}
+
+.alert {
+	background-image: url(../sp/images/alert.gif);
+}
+
+.warning {
+	background-image: url(../sp/images/warning.gif);
+}
+
+.critical {
+	background-image: url(../sp/images/critical.gif);
+}
+
+.running {
+	background-image: url(../sp/images/shuttle.gif);
+}
+
+/* Tabs */
+
+.tabs {
+	color: #999;
+}
+
+.tabs .active {
+	font-weight: bold;
+	color: #000;
+}
+
+.tabs a {
+	font-weight: normal;
+}
+

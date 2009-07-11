@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN" "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="content-type" content="application/xhtml+xml" />
+	<meta name="viewport" id="viewport" content="width=device-width, user-scalable=yes" />	
+	<title>MIT Map: Browse by Building Name</title>
+	<link rel="stylesheet" type="text/css" href="../../styles/ip.css" />
+  	<link rel="apple-touch-icon" href="http://mobi.mit.edu/images/ip/icon.png" />
+</head>
+
+<body onload="scrollTo(0,1);">
+
+<div id="navbar">	
+	<div class="breadcrumbs">
+		<a href="../../home/ip/index.html" class="homelink"><img src="../../images/ip/homelink.png" width="62" height="36" alt="MIT Mobile Web Home" /></a><a href="index.html" class="module"><img src="../../images/ip/title-map.png" width="28" height="28" alt="" /></a><a href="building-name.html"><span>Browse</span></a><div class="pagetitle">R-U</div>
+	</div>
+	<div class="help">
+		<a href="help.html"><img src="../../images/ip/help.png" width="34" height="36" alt="Help" /></a>
+	</div>
+</div>
+
+<div id="container">
+		
+	<div class="nonfocal">
+		<h2>Browse Buildings: R-U</h2>
+	</div>
+	
+	<ul class="nav">
+		<li><a href="detail.html?selection=NW61">Random Hall</a></li>
+		<li><a href="detail.html?selection=32">Ray and Maria Stata Center</a></li>
+		<li><a href="detail.html?selection=W11">Religious Activities Center</a></li>
+		<li><a href="detail.html?selection=E33">Rinaldi Tile</a></li>
+		<li><a href="detail.html?selection=W33">Rockwell Cage</a></li>
+		<li><a href="detail.html?selection=7">Rogers Building</a></li>
+		<li><a href="detail.html?selection=7">Rotch Library</a></li>
+		<li><a href="detail.html?selection=7A">Rotch Library Extension</a></li>
+		<li><a href="detail.html?selection=7">Rotch Visual Collections</a></li>
+		<li><a href="detail.html?selection=51">Sailing Pavilion</a></li>
+		<li><a href="detail.html?selection=14">Science Library</a></li>
+		<li><a href="detail.html?selection=E2">Senior House</a></li>
+		<li><a href="detail.html?selection=NW86">Sidney-Pacific Dorm</a></li>
+		<li><a href="detail.html?selection=SC">Sigma Chi (SC)</a></li>
+		<li><a href="detail.html?selection=SK">Sigma Kappa (SK)</a></li>
+		<li><a href="detail.html?selection=SN">Sigma Nu (SN)</a></li>
+		<li><a href="detail.html?selection=SPE">Sigma Phi Epsilon (SPE)</a></li>
+		<li><a href="detail.html?selection=SPE-A">Sigma Phi Epsilon Annex (SPE)</a></li>
+		<li><a href="detail.html?selection=W79">Simmons Hall</a></li>
+		<li><a href="detail.html?selection=E52">Sloan Building</a></li>
+		<li><a href="detail.html?selection=31">Sloan Laboratories</a></li>
+		<li><a href="detail.html?selection=35">Sloan Laboratory</a></li>
+		<li><a href="detail.html?selection=6B">Solvent Storage</a></li>
+		<li><a href="detail.html?selection=W70">Spanish House</a></li>
+		<li><a href="detail.html?selection=32">Stata Center</a></li>
+		<li><a href="detail.html?selection=32">Stata Center Garage</a></li>
+		<li><a href="detail.html?selection=W20">Stratton Student Center</a></li>
+		<li><a href="detail.html?selection=SH">Student House (SH)</a></li>
+		<li><a href="detail.html?selection=E38">Suffolk Building</a></li>
+		<li><a href="detail.html?selection=N9">Superconducting Test Facility</a></li>
+		<li><a href="detail.html?selection=E51">Tang Center</a></li>
+		<li><a href="detail.html?selection=W84">Tang Hall</a></li>
+		<li><a href="detail.html?selection=TEP">Tau Epsilon Phi (TEP)</a></li>
+		<li><a href="detail.html?selection=W53">Tennis Bubble</a></li>
+		<li><a href="detail.html?selection=NE20">The Coop</a></li>
+		<li><a href="detail.html?selection=TC">Theta Chi (TC)</a></li>
+		<li><a href="detail.html?selection=TDC">Theta Delta Chi (TDC)</a></li>
+		<li><a href="detail.html?selection=TXi">Theta Xi (TXi)</a></li>
+	</ul>
+	
+	<div class="nonfocal">
+		<form action="index.html" method="get">
+			<select onchange="jumpbrowse(this)">
+				<option value="" selected="selected">Browse map by:</option>
+				<option value="number">Building number</option>
+				<option value="name">Building name</option>
+				<option value="residences">Residences</option>
+				<option value="rooms">Selected rooms</option>
+				<option value="streets">Streets &amp; Landmarks</option>
+				<option value="courts">Courts &amp; Greenspace</option>
+				<option value="food">Food Services</option>
+				<option value="parking">Parking Lots</option>
+			</select>
+		</form>
+	</div>
+	
+</div> <!-- id="container" -->
+
+<div id="footer">
+	<a href="http://web.mit.edu/ist/"><img src="../../images/ip/ist-logo.png" width="35" height="21" alt="IST" /></a>Campus map provided by Department of Facilities and Information Services &amp; Technology
+</div>
+
+</body>
+</html>

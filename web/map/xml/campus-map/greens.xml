@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+<!DOCTYPE campusmap SYSTEM "../dtd/map.dtd">
+<campusmap>
+  <object id="object-G1">
+    <name>Saxon Tennis Courts</name>
+    <category>green</category>
+  </object>
+  <object id="object-G10">
+    <name>Henry Steinbrenner Stadium &amp; Track</name>
+    <category>green</category>
+  </object>
+  <object id="object-G11">
+    <name>Barry Astroturf Field</name>
+    <category>green</category>
+  </object>
+  <object id="object-G12">
+    <name>du Pont Tennis Courts</name>
+    <category>green</category>
+  </object>
+  <object id="object-G13">
+    <name>du Pont Squash Court</name>
+    <category>green</category>
+  </object>
+  <object id="object-G14">
+    <name>Indoor Tennis Facility</name>
+    <category>green</category>
+  </object>
+  <object id="object-G15">
+    <name>Brigg's Field</name>
+    <category>green</category>
+  </object>
+  <object id="object-G16">
+    <name>Tennis Courts</name>
+    <category>green</category>
+  </object>
+  <object id="object-G2">
+    <name>McDermott Court</name>
+    <category>green</category>
+  </object>
+  <object id="object-G3">
+    <name>Eastman Court</name>
+    <category>green</category>
+  </object>
+  <object id="object-G4">
+    <name>Compton Court</name>
+    <category>green</category>
+  </object>
+  <object id="object-G5">
+    <name>Lowell Court</name>
+    <category>green</category>
+  </object>
+  <object id="object-G6">
+    <name>Killian Court</name>
+    <category>green</category>
+  </object>
+  <object id="object-G7">
+    <name>du Pont Court</name>
+    <category>green</category>
+  </object>
+  <object id="object-G8">
+    <name>Kresge Oval</name>
+    <category>green</category>
+  </object>
+  <object id="object-G9">
+    <name>Kresge BBQ Pits</name>
+    <category>green</category>
+  </object>
+</campusmap>

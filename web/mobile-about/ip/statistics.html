@@ -1,0 +1,64 @@
+<?php
+$page->title('About the MIT Mobile Web')
+     ->navbar_image('title-about')
+     ->add_stylesheet('styles/stats-ip')
+     ->breadcrumbs('Website Statistics');
+
+$page->content_begin();
+?>
+
+<div class="nonfocal">
+    <h2>Statistics for the Past 7 Days (<?=$days_text?>)</h2>
+</div>
+
+<div class="focal">
+    <strong><?=f($total)?></strong> total page views
+</div>
+
+<div class="focal">
+    <h3>Page Views by Day:</h3>
+
+    <table class="columns week">
+        <tr>
+            <? foreach($views as $day) { ?>
+                <td><div class="datacol"><div class="colbar" style="height:<?=$day['percent']?>%"><div class="collabel"><?=$day['count']?></div></div></div></td>
+            <? } ?>
+        </tr>
+        <tr>
+            <? foreach($views as $day) { ?>
+               <td><?=$day['date']?></td>
+            <? } ?>
+        </tr>
+    </table>
+</div>
+
+<div class="focal">
+    <h3>Traffic by Platform:</h3>
+
+    <table>
+        <? foreach($phone_traffic as $name => $percent) { ?>
+            <tr>        
+                <td><?=$name?>:</td>
+                <td><div class="datarow"><div class="rowbar" style="width:<?=$percent?>%"></div></div></td>
+                <td><?=$percent?>%</td>
+            </tr>
+        <? } ?>
+    </table>
+</div>
+
+
+<div class="focal">
+<h3>Most Popular Content:</h3>
+
+<ol>
+    <? foreach($popular_pages as $content) { ?>
+        <li><a href="../<?=$content['link']?>/"><?=$content['name']?></a> <span class="smallprint">(<?=f($content['count'])?> page views)</span></li>
+    <? } ?>
+</ol>
+
+</div>
+
+<? 
+$page->content_end(); 
+$page->help_off();
+?>

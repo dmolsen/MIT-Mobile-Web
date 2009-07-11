@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+<!DOCTYPE campusmap SYSTEM "../dtd/map.dtd">
+<campusmap>
+  <object id="object-P10">
+    <name>Marriott Parking Garage</name>
+    <category>parking</category>
+    <contents>
+      <name>pay public parking (non-MIT)</name>
+    </contents>
+  </object>
+  <object id="object-P11">
+    <name>Northeast Lot</name>
+    <category>parking</category>
+    <contents>
+      <name>closed for construction into late winter</name>
+    </contents>
+    <contents>
+      <name>spaces are available in the Stata Garage</name>
+    </contents>
+  </object>
+  <object id="object-P13">
+    <name>Albany St. Garage</name>
+    <category>parking</category>
+    <contents>
+      <name>gated parking</name>
+    </contents>
+    <contents>
+      <name>handicapped parking</name>
+    </contents>
+    <contents>
+      <name>Zone 4: North Zone</name>
+    </contents>
+  </object>
+  <object id="object-P14">
+    <name>N10 Annex Lot</name>
+    <category>parking</category>
+    <contents>
+      <name>gated parking</name>
+    </contents>
+    <contents>
+      <name>handicapped parking</name>
+    </contents>
+    <contents>
+      <name>Zone 4: North Zone</name>
+    </contents>
+  </object>
+  <object id="object-P15">
+    <name>N10 Lot</name>
+    <category>parking</category>
+    <contents>
+      <name>handicapped parking</name>
+    </contents>
+    <contents>
+      <name>visitor parking</name>
+    </contents>
+    <contents>
+      <name>Zone 4: North Zone</name>
+    </contents>
+  </object>
+  <object id="object-P16">
+    <name>139 Massachusetts Avenue Visitor Lot</name>
+    <category>parking</category>
+    <contents>
+      <name>pay public parking (non-MIT)</name>
+    </contents>
+  </object>
+  <object id="object-P17">
+    <name>Main Lot</name>
+    <category>parking</category>
+    <contents>
+      <name>gated parking</name>
+    </contents>
+    <contents>
+      <name>handicapped parking</name>
+    </contents>
+    <contents>
+      <name>Zone 8: Main Lot</name>
+    </contents>
+  </object>
+  <object id="object-P19">
+    <name>Windsor St. Lot</name>
+    <category>parking</category>
+    <contents>
+      <name>student parking</name>
+    </contents>
+    <contents>
+      <name>motorcycle parking</name>
+    </contents>
+    <contents>
+      <name>visitor parking</name>
+    </contents>
+    <contents>
+      <name>Zone 4: North Zone</name>
+    </contents>
+  </object>
+  <object id="object-P2">
+    <name>Hermann Garage</name>
+    <category>parking</category>
+    <contents>
+      <name>Zone 6: Sloan and E51 Zone</name>
+    </contents>
+  </object>
+<!-- not a public parking garage
+  <object id="object-P20">
+    <name>Volvo Garage</name>
+    <category>parking</category>
+  </object>
+//-->
+  <object id="object-P21">
+    <name>Landsdowne St. Garage</name>
+    <category>parking</category>
+    <contents>
+      <name>pay public parking (non-MIT)</name>
+    </contents>
+  </object>
+  <object id="object-P22">
+    <name>Plasma Fusion Center Lot</name>
+    <category>parking</category>
+    <contents>
+      <name>handicapped parking</name>
+    </contents>
+    <contents>
+      <name>Zone 2: Northwest Zone</name>
+    </contents>
+  </object>
+  <object id="object-P23">
+    <name>158 Mass. Ave. Lot</name>
+    <category>parking</category>
+    <contents>
+      <name>gated parking</name>
+    </contents>
+    <contents>
+      <name>handicapped parking</name>
+    </contents>
+    <contents>
+      <name>Zone 4: North Zone</name>
+    </contents>
+  </object>
+<!-- Reactor Lot - not listed for security reasons
+  <object id="object-P24">
+    <name>Mass Ave. Lot</name>
+    <category>parking</category>
+  </object>
+//-->
+  <object id="object-P25">
+    <name>West Garage</name>
+    <category>parking</category>
+    <contents>
+      <name>gated parking</name>
+    </contents>
+    <contents>
+      <name>hands-free parking</name>
+    </contents>
+    <contents>
+      <name>motorcycle parking</name>
+    </contents>
+    <contents>
+      <name>Zone 3: West Zone</name>
+    </contents>
+  </object>
+  <object id="object-P26">
+    <name>West Annex Lot</name>
+    <category>parking</category>
+    <contents>
+      <name>gated parking</name>
+    </contents>
+    <contents>
+      <name>handicapped parking</name>
+    </contents>
+    <contents>
+      <name>Zone 3: West Zone</name>
+    </contents>
+  </object>
+   <object id="object-P28">
+    <name>Pacific St. Annex Lot</name>
+    <category>parking</category>
+    <contents>
+      <name>gated parking</name>
+    </contents>
+    <contents>
+      <name>student parking</name>
+    </contents>
+    <contents>
+      <name>handicapped parking</name>
+    </contents>
+    <contents>
+      <name>Zone 2: Northwest Zone</name>
+    </contents>
+  </object>
+  <object id="object-P29">
+    <name>Kresge Lot</name>
+    <category>parking</category>
+    <contents>
+      <name>attended parking</name>
+    </contents>
+    <contents>
+      <name>gated parking (evenings)</name>
+    </contents>
+    <contents>
+      <name>handicapped parking</name>
+    </contents>
+    <contents>
+      <name>visitor parking</name>
+    </contents>
+    <contents>
+      <name>Zone 11: Kresge</name>
+    </contents>
+  </object>
+  <object id="object-P3">
+    <name>Hayward Lot Annex</name>
+    <category>parking</category>
+    <contents>
+      <name>gated parking</name>
+    </contents>
+    <contents>
+      <name>family parking</name>
+    </contents>
+    <contents>
+      <name>Zone 10: Hayward Lot Annex</name>
+    </contents>
+  </object>
+  <object id="object-P30">
+    <name>Westgate Lot</name>
+    <category>parking</category>
+    <contents>
+      <name>gated parking</name>
+    </contents>
+    <contents>
+      <name>student parking</name>
+    </contents>
+    <contents>
+      <name>handicapped parking</name>
+    </contents>
+    <contents>
+      <name>Zone 1: Westgate Zone</name>
+    </contents>
+  </object>
+  <object id="object-P31">
+    <name>West Lot</name>
+    <category>parking</category>
+    <contents>
+      <name>gated parking</name>
+    </contents>
+    <contents>
+      <name>student parking</name>
+    </contents>
+    <contents>
+      <name>Zone 13: West Lot</name>
+    </contents>
+  </object>
+  <object id="object-P32">
+    <name>Westgate Lowrise Lots</name>
+    <category>parking</category>
+    <contents>
+      <name>family parking</name>
+    </contents>
+    <contents>
+      <name>student parking</name>
+    </contents>
+    <contents>
+      <name>Zone 1: Westgate Zone</name>
+    </contents>
+  </object>
+  <object id="object-P33">
+    <name>W92 Garage</name>
+    <category>parking</category>
+    <contents>
+      <name>gated parking</name>
+    </contents>
+    <contents>
+      <name>Zone 4: North Zone</name>
+    </contents>
+  </object>
+  <object id="object-P34">
+    <name>W91 Lots</name>
+    <category>parking</category>
+    <contents>
+      <name>handicapped parking</name>
+    </contents>
+    <contents>
+      <name>visitor parking</name>
+    </contents>
+    <contents>
+      <name>Zone 4: North Zone</name>
+    </contents>
+  </object>
+  <object id="object-P35">
+    <name>WW15 Lot</name>
+    <category>parking</category>
+    <contents>
+      <name>handicapped parking</name>
+    </contents>
+    <contents>
+      <name>Zone 4: North Zone</name>
+    </contents>
+  </object>
+  <object id="object-P36">
+    <name>Tech Square Garage</name>
+    <category>parking</category>
+  </object>
+  <object id="object-P37">
+    <name>University Park Public Parking</name>
+    <category>parking</category>
+    <contents>
+      <name>pay public parking (non-MIT)</name>
+    </contents>
+  </object>
+  <object id="object-P38">
+    <name>Stata Parking Garage</name>
+    <category>parking</category>
+    <contents>
+      <name>gated parking</name>
+    </contents>
+    <contents>
+      <name>hands-free parking</name>
+    </contents>
+    <contents>
+      <name>handicapped parking</name>
+    </contents>
+    <contents>
+      <name>Zone 5: Northeast Zone</name>
+    </contents>
+  </object>
+  <object id="object-P39">
+    <name>Eastgate Resident Lot</name>
+    <category>parking</category>
+  </object>
+  <object id="object-P4">
+    <name>Amherst St. (E51) Lot</name>
+    <category>parking</category>
+    <contents>
+      <name>student parking</name>
+    </contents>
+    <contents>
+      <name>Zone 16: Amherst Street (E51) Lot</name>
+    </contents>
+  </object>
+  <object id="object-P40">
+    <name>65 Waverly St. Lot</name>
+    <category>parking</category>
+  </object>
+  <object id="object-P41">
+    <name>7 Cambridge Center Garage</name>
+    <category>parking</category>
+  </object>
+  <object id="object-P5">
+    <name>Hayward St. Lot</name>
+    <category>parking</category>
+    <contents>
+      <name>attended parking</name>
+    </contents>
+    <contents>
+      <name>handicapped parking</name>
+    </contents>
+    <contents>
+      <name>motorcycle parking</name>
+    </contents>
+    <contents>
+      <name>Zone 14: Hayward Lot</name>
+    </contents>
+  </object>
+  <object id="object-P6">
+    <name>Kendall Square Lot</name>
+    <category>parking</category>
+    <contents>
+      <name>gated parking</name>
+    </contents>
+    <contents>
+      <name>handicapped parking</name>
+    </contents>
+    <contents>
+      <name>Zone 12: Kendall Square Lot</name>
+    </contents>
+  </object>
+  <object id="object-P7">
+    <name>Ford Lot</name>
+    <category>parking</category>
+    <contents>
+      <name>handicapped parking</name>
+    </contents>
+    <contents>
+      <name>Zone 9: Ford Lot</name>
+    </contents>
+  </object>
+<!-- parking lot removed
+  <object id="object-P8">
+    <name>CRA Parking Lot</name>
+    <category>parking</category>
+    <contents>
+      <name>attended parking</name>
+    </contents>
+    <contents>
+      <name>handicapped parking</name>
+    </contents>
+    <contents>
+      <name>visitor parking</name>
+    </contents>
+    <contents>
+      <name>Zone 15: CRA Lot</name>
+    </contents>
+  </object>
+-->
+  <object id="object-P9">
+    <name>East Lot</name>
+    <altname>East Lot</altname>
+    <category>parking</category>
+    <contents>
+      <name>Yona's Pizza (food truck)</name>
+      <url>http://web.mit.edu/dining/locations/foodtrucks.html</url>
+      <category>food</category>
+    </contents>
+    <contents>
+      <name>Jerusalem Cafe (food truck)</name>
+      <url>http://web.mit.edu/dining/locations/foodtrucks.html</url>
+      <category>food</category>
+    </contents>
+    <contents>
+      <name>Goosebeary's (food truck)</name>
+      <url>http://web.mit.edu/dining/locations/foodtrucks.html</url>
+      <category>food</category>
+    </contents>
+    <contents>
+      <name>Jose's Mexican Food (food truck)</name>
+      <url>http://web.mit.edu/dining/locations/foodtrucks.html</url>
+      <category>food</category>
+    </contents>
+    <contents>
+      <name>attended parking</name>
+    </contents>
+    <contents>
+      <name>medical parking</name>
+    </contents>
+    <contents>
+      <name>motorcycle parking</name>
+    </contents>
+    <contents>
+      <name>handicapped parking</name>
+    </contents>
+    <contents>
+      <name>visitor parking</name>
+    </contents>
+    <contents>
+      <name>Zone 5: Northeast Zone</name>
+    </contents>
+  </object>
+</campusmap>

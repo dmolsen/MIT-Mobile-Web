@@ -1,0 +1,14 @@
+<?php
+$page->title("MIT Events Calendar: Browse by Category")
+     ->navbar_image('title-calendar')
+     ->breadcrumbs('Browse By Category');
+
+$page->content_begin();
+?>
+			
+	<ul class="nav">
+            <? foreach($categorys as $category) { ?>
+		<li><a href="<?=subCategorysURL($category)?>"><?=ucname($category->name)?></a></li>
+            <? } ?>
+	</ul>
+<? $page->content_end(); ?>

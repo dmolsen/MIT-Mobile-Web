@@ -1,0 +1,3763 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+<!DOCTYPE campusmap SYSTEM "../dtd/map.dtd">
+
+<campusmap>
+  <object id="object-NE30">
+    <name>Broad Institute</name>
+    <bldgnum>NE30</bldgnum>
+    <category>building</category>
+    <street>7 Cambridge Center</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+  </object>
+  <object id="object-1">
+    <name>Pierce Laboratory</name>
+    <bldgnum>1</bldgnum>
+    <category>building</category>
+    <street>33 Massachusetts Avenue</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>south side</viewangle>
+    <architect>William Welles Bosworth</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>R</floor>
+    </floorplans>
+    <contents>
+      <name>1-190</name>
+      <category>room</category>
+    </contents>
+    <contents>
+      <name>1-390</name>
+      <category>room</category>
+    </contents>
+  </object>
+  <object id="object-10">
+    <name>Maclaurin Buildings (10)</name>
+    <altname>Barker Library</altname>
+    <altname>Engineering Library</altname>
+    <bldgnum>10</bldgnum>
+    <category>building</category>
+    <street>222 Memorial Drive</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>southeast corner</viewangle>
+    <architect>William Welles Bosworth</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>1M</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>4M</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+      <floor>7</floor>
+      <floor>8</floor>
+      <floor>8M</floor>
+    </floorplans>
+    <contents>
+      <name>Bush Room</name>
+      <altname>10-105</altname>
+      <category>room</category>
+    </contents>
+    <contents>
+      <name>10-250</name>
+      <category>room</category>
+    </contents>
+    <contents>
+      <name>Barker Library</name>
+      <altname>Engineering Library</altname>
+      <url>http://libraries.mit.edu/barker/index.html</url>
+      <category>library</category>
+    </contents>
+<!--
+    <contents>
+      <name>Compton Gallery</name>
+      <category>museum_gallery</category>
+    </contents> 
+-->
+  </object>
+  <object id="object-11">
+    <name>Homberg Building</name>
+    <bldgnum>11</bldgnum>
+    <category>building</category>
+    <street>77 Massachusetts Ave (Rear)</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>west side</viewangle>
+    <architect>William Welles Bosworth</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>1M</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+    </floorplans>
+  </object>
+  <object id="object-12">
+    <name>Building 12</name>
+    <bldgnum>12</bldgnum>
+    <category>building</category>
+    <street>Access Via 60 Vassar Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>south</viewangle>
+    <architect>Coolidge &amp; Carlson</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+    </floorplans>
+  </object>
+  <object id="object-12A">
+    <name>Waste Chemical Storage</name>
+    <bldgnum>12A</bldgnum>
+    <category>building</category>
+    <street>Access Via 60 Vassar Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <architect>Stone &amp; Webster</architect>
+    <floorplans>
+      <floor>0</floor>
+    </floorplans>
+  </object>
+  <object id="object-13">
+    <name>Bush Building</name>
+    <bldgnum>13</bldgnum>
+    <category>building</category>
+    <street>105 Massachusetts Avenue (Rear)</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>north side</viewangle>
+    <architect>Skidmore Owings &amp; Merrill</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>R</floor>
+    </floorplans>
+  </object>
+  <object id="object-14">
+    <name>Hayden Memorial Library</name>
+    <altname>Lewis Music Library</altname>
+    <altname>Hayden Reserve Book Room</altname>
+    <altname>Science Library</altname>
+    <altname>Humanities Library</altname>
+    <altname>Killian Hall</altname>
+    <altname>Music Library</altname>
+    <bldgnum>14</bldgnum>
+    <category>building</category>
+    <street>160 Memorial Drive</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>south</viewangle>
+    <architect>Voorhes Walker Foley &amp; Smith</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>1M</floor>
+      <floor>2</floor>
+      <floor>2M</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+    </floorplans>
+    <contents>
+      <name>Killian Hall</name>
+      <category>room</category>
+    </contents>
+    <contents>
+      <name>Lewis Music Library</name>
+      <altname>Music Library</altname>
+      <url>http://libraries.mit.edu/music/index.html</url>
+      <category>library</category>
+    </contents>
+    <contents>
+      <name>Libraries Administrative Offices &amp; Office of the Director</name>
+      <url>http://libraries.mit.edu/about/depts/dir.html</url>
+      <category>library</category>
+    </contents>
+    <contents>
+      <name>Institute Archives and Special Collections</name>
+      <url>http://libraries.mit.edu/archives/index.html</url>
+      <category>library</category>
+    </contents>
+    <contents>
+      <name>Digital Instruction Resource Center (DIRC)</name>
+      <url>http://libraries.mit.edu/ask-us/instruction/dirc.html</url>
+      <category>library</category>
+    </contents>
+    <contents>
+      <name>Document Services</name>
+      <url>http://libraries.mit.edu/docs/index.html</url>
+      <category>library</category>
+    </contents>
+    <contents>
+      <name>Humanities Library</name>
+      <url>http://libraries.mit.edu/humanities/index.html</url>
+      <category>library</category>
+    </contents>
+    <contents>
+      <name>Hayden Reserve Book Room</name>
+      <category>library</category>
+    </contents>
+    <contents>
+      <name>Hayden Memorial Library</name>
+      <url>http://libraries.mit.edu/hayden/index.html</url>
+      <category>library</category>
+    </contents>
+    <contents>
+      <name>Science Library</name>
+      <url>http://libraries.mit.edu/science/index.html</url>
+      <category>library</category>
+    </contents>
+  </object>
+<!--  
+  <object id="object-14E">
+    <name>Hayden Memorial Library (E)</name>
+    <bldgnum>14E</bldgnum>
+    <category>building</category>
+    <street>160 Memorial Drive</street>
+    <architect>Voorhes Walker Foley &amp; Smith</architect>
+  </object>
+  <object id="object-14N">
+    <name>Hayden Memorial Library (N)</name>
+    <bldgnum>14N</bldgnum>
+    <category>building</category>
+    <street>160 Memorial Drive</street>
+    <architect>Voorhes Walker Foley &amp; Smith</architect>
+  </object>
+  <object id="object-14S">
+    <name>Hayden Memorial Library (S)</name>
+    <bldgnum>14S</bldgnum>
+    <category>building</category>
+    <street>160 Memorial Drive</street>
+    <architect>Voorhes Walker Foley &amp; Smith</architect>
+  </object>
+  <object id="object-14W">
+    <name>Hayden Memorial Library (West)</name>
+    <bldgnum>14W</bldgnum>
+    <category>building</category>
+    <street>160 Memorial Drive</street>
+    <architect>Voorhes Walker Foley &amp; Smith</architect>
+  </object>
+//-->
+  <object id="object-16">
+    <name>Dorrance Building</name>
+    <bldgnum>16</bldgnum>
+    <category>building</category>
+    <street>Access Via 21 Ames Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>south</viewangle>
+    <architect>Anderson Beckwith &amp; Haible</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+      <floor>7</floor>
+      <floor>8</floor>
+      <floor>9</floor>
+      <floor>9M</floor>
+      <floor>R</floor>
+    </floorplans>
+  </object>
+  <object id="object-17">
+    <name>Wright Brothers Wind Tunnel</name>
+    <bldgnum>17</bldgnum>
+    <category>building</category>
+    <street>76 Vassar Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>south</viewangle>
+    <architect>Jackson &amp; Moreland</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+    </floorplans>
+  </object>
+  <object id="object-18">
+    <name>Dreyfus Building</name>
+    <bldgnum>18</bldgnum>
+    <category>building</category>
+    <street>Access Via 21 Ames Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>southeast corner</viewangle>
+    <architect>I. M. Pei &amp; Associates</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>00</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+    </floorplans>
+  </object>
+  <object id="object-2">
+    <name>Building 2</name>
+    <bldgnum>2</bldgnum>
+    <category>building</category>
+    <street>182 Memorial Drive</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>southwest corner</viewangle>
+    <architect>William Welles Bosworth</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>R</floor>
+    </floorplans>
+  </object>
+  <object id="object-24">
+    <name>Building 24</name>
+    <bldgnum>24</bldgnum>
+    <category>building</category>
+    <street>Access Via 60 Vassar Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>west</viewangle>
+    <architect>Anderson Beckwith &amp; Haible</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>0M</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+      <floor>7</floor>
+    </floorplans>
+  </object>
+  <object id="object-26">
+    <name>Compton Laboratories</name>
+    <bldgnum>26</bldgnum>
+    <category>building</category>
+    <street>Access Via 60 Vassar Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>east side</viewangle>
+    <architect>Skidmore Owings &amp; Merrill</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>0M</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+      <floor>7</floor>
+    </floorplans>
+    <contents>
+      <name>26-100</name>
+      <category>room</category>
+    </contents>
+  </object>
+  <object id="object-3">
+    <name>Maclaurin Buildings (3)</name>
+    <bldgnum>3</bldgnum>
+    <category>building</category>
+    <street>33 Massachusetts Ave (Rear)</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>east side</viewangle>
+    <architect>William Welles Bosworth</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>1M</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>3M</floor>
+      <floor>4</floor>
+      <floor>4M</floor>
+    </floorplans>
+    <contents>
+      <name>3-133</name>
+      <category>room</category>
+    </contents>
+    <contents>
+      <name>3-270</name>
+      <category>room</category>
+    </contents>
+    <contents>
+      <name>3-370</name>
+      <category>room</category>
+    </contents>
+  </object>
+  <object id="object-31">
+    <name>Sloan Laboratories</name>
+    <bldgnum>31</bldgnum>
+    <category>building</category>
+    <street>70 Vassar Street (Rear)</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>east</viewangle>
+    <architect>Coolidge &amp; Carlson</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>00</floor>
+      <floor>0M</floor>
+      <floor>1</floor>
+      <floor>1M</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+    </floorplans>
+  </object>
+  <object id="object-32">
+    <name>Ray and Maria Stata Center</name>
+    <altname>Stata Center</altname>
+    <altname>Stata Center Garage</altname>
+    <altname>Kirsch Auditorium</altname>
+    <bldgnum>32</bldgnum>
+    <category>building</category>
+    <street>32 Vassar Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>northeast</viewangle>
+    <architect>Frank O. Gehry And Associates</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+      <floor>7</floor>
+      <floor>8</floor>
+      <floor>9</floor>
+      <floor>10</floor>
+    </floorplans>
+    <contents>
+      <name>Kirsch Auditorium</name>
+      <altname>32-123</altname>
+      <category>room</category>
+    </contents>
+    <contents>
+      <name>Forbes family cafe</name>
+      <url>http://web.mit.edu/dining/locations/retailoptions.html#forbes</url>
+      <category>food</category>
+    </contents>
+    <contents>
+      <name>Faculty Lunch</name>
+      <url>http://web.mit.edu/dining/locations/retailoptions.html#faculty</url>
+      <category>food</category>
+    </contents>
+    <contents>
+      <name>R and D (Pub)</name>
+      <url>http://web.mit.edu/dining/locations/retailoptions.html#rd</url>
+      <category>food</category>
+    </contents>
+  </object>
+  <object id="object-33">
+    <name>Guggenheim Laboratory</name>
+    <altname>Aeronautics &amp; Astronautics Library</altname>
+    <bldgnum>33</bldgnum>
+    <category>building</category>
+    <street>125 Massachusetts Avenu</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>west side</viewangle>
+    <architect>Coolidge &amp; Carlson</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+    </floorplans>
+    <contents>
+      <name>Aeronautics &amp; Astronautics Library</name>
+      <url>http://libraries.mit.edu/aero/index.html</url>
+      <category>library</category>
+    </contents>
+  </object>
+  <object id="object-34">
+    <name>EG&amp;G Education Center</name>
+    <bldgnum>34</bldgnum>
+    <category>building</category>
+    <street>50 Vassar Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>north</viewangle>
+    <architect>Skidmore Owings &amp; Merrill</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+    </floorplans>
+    <contents>
+      <name>34-101</name>
+      <category>room</category>
+    </contents>
+  </object>
+  <object id="object-35">
+    <name>Sloan Laboratory</name>
+    <bldgnum>35</bldgnum>
+    <category>building</category>
+    <street>127 Massachusetts Avenue</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <architect>Perry Shaw Hepburn Kehoe &amp; Dean</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>5M</floor>
+    </floorplans>
+    <contents>
+      <name>35-225</name>
+      <category>room</category>
+    </contents>
+  </object>
+  <object id="object-36">
+    <name>Fairchild Building (36)</name>
+    <bldgnum>36</bldgnum>
+    <category>building</category>
+    <street>50 Vassar Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>northwest corner</viewangle>
+    <architect>Skidmore Owings &amp; Merrill</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>0M</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+      <floor>7</floor>
+      <floor>8</floor>
+      <floor>9</floor>
+      <floor>R</floor>
+    </floorplans>
+  </object>
+  <object id="object-37">
+    <name>McNair Building</name>
+    <bldgnum>37</bldgnum>
+    <category>building</category>
+    <street>70 Vassar Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>northeast corner</viewangle>
+    <architect>Skidmore Owings &amp; Merrill</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>0M</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+      <floor>7</floor>
+    </floorplans>
+  </object>
+  <object id="object-38">
+    <name>Fairchild Building (38)</name>
+    <bldgnum>38</bldgnum>
+    <category>building</category>
+    <street>50 Vassar Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>north side</viewangle>
+    <architect>Skidmore Owings &amp; Merrill</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+      <floor>7</floor>
+      <floor>R</floor>
+    </floorplans>
+  </object>
+  <object id="object-39">
+    <name>Brown Building</name>
+    <bldgnum>39</bldgnum>
+    <category>building</category>
+    <street>60 Vassar Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>south side</viewangle>
+    <architect>Skidmore Owings &amp; Merrill</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+      <floor>7</floor>
+    </floorplans>
+  </object>
+  <object id="object-4">
+    <name>Maclaurin Buildings (4)</name>
+    <bldgnum>4</bldgnum>
+    <category>building</category>
+    <street>182 Memorial Drive (Rear)</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>south side</viewangle>
+    <architect>William Welles Bosworth</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>1M</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>4M</floor>
+      <floor>5</floor>
+    </floorplans>
+    <contents>
+      <name>Cafe 4</name>
+      <url>http://web.mit.edu/dining/locations/retailoptions.html</url>
+      <category>food</category>
+    </contents>
+    <contents>
+      <name>4-270</name>
+      <category>room</category>
+    </contents>
+    <contents>
+      <name>4-370</name>
+      <category>room</category>
+    </contents>
+  </object>
+  <object id="object-41">
+    <name>Building 41</name>
+    <bldgnum>41</bldgnum>
+    <category>building</category>
+    <street>77 Vassar Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>southeast corner</viewangle>
+    <architect>William Welles Bosworth</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>0M</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+    </floorplans>
+  </object>
+  <object id="object-42">
+    <name>Power Plant</name>
+    <bldgnum>42</bldgnum>
+    <category>building</category>
+    <street>59 Vassar Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>east side</viewangle>
+    <architect>William Welles Bosworth</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>00</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>2M</floor>
+      <floor>R</floor>
+    </floorplans>
+  </object>
+  <object id="object-43">
+    <name>Power Plant Annex</name>
+    <bldgnum>43</bldgnum>
+    <category>building</category>
+    <street>57 Vassar Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>southeast corner</viewangle>
+    <architect>William Welles Bosworth</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>2M</floor>
+      <floor>R</floor>
+    </floorplans>
+  </object>
+  <object id="object-44">
+    <name>Cyclotron</name>
+    <bldgnum>44</bldgnum>
+    <category>building</category>
+    <street>51 Vassar Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>southeast corner</viewangle>
+    <architect>Mccreery &amp;Theriault</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>R</floor>
+    </floorplans>
+  </object>
+  <object id="object-46">
+    <name>Brain and Cognitive Sciences</name>
+    <bldgnum>46</bldgnum>
+    <category>building</category>
+    <street>43 Vassar Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>north</viewangle>
+    <architect>Goody, Clancy &amp;amp; Associates with Charles Correa Associates Architects</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+      <floor>7</floor>
+      <floor>8</floor>
+      <floor>9</floor>
+    </floorplans>
+    <contents>
+      <name>Hungry Mind Cafe</name>
+      <category>food</category>
+    </contents>
+  </object>
+  <object id="object-48">
+    <name>Parsons Laboratory</name>
+    <bldgnum>48</bldgnum>
+    <category>building</category>
+    <street>15 Vassar Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>east</viewangle>
+    <architect>Perry Shaw &amp; Hepburn</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>00</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+    </floorplans>
+  </object>
+<!--  <object id="object-4A">
+    <name>Building 4A</name>
+    <bldgnum>4A</bldgnum>
+    <category>building</category>
+    <street>Access Via 60 Vassar Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>south</viewangle>
+    <floorplans>
+      <floor>0</floor>
+    </floorplans>
+  </object> -->
+  <object id="object-5">
+    <name>Pratt School</name>
+    <bldgnum>5</bldgnum>
+    <category>building</category>
+    <street>55 Massachusetts Avenue</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>south side</viewangle>
+    <architect>William Welles Bosworth</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>1M</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+    </floorplans>
+<!--
+    <contents>
+      <name>Hart Nautical Gallery</name>
+      <category>museum_gallery</category>
+    </contents>
+-->
+  </object>
+  <object id="object-50">
+    <name>Walker Memorial</name>
+    <bldgnum>50</bldgnum>
+    <category>building</category>
+    <street>142 Memorial Drive</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>south side</viewangle>
+    <architect>William Welles Bosworth</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>3M</floor>
+      <floor>4</floor>
+      <floor>R</floor>
+    </floorplans>
+    <contents>
+      <name>Pritchett Grill</name>
+      <url>http://web.mit.edu/dining/locations/resdining.html#pritchett</url>
+      <category>food</category>
+    </contents>
+    <contents>
+      <name>Pritchett Convenience</name>
+      <url>http://web.mit.edu/dining/locations/resdining.html#pritchett</url>
+      <category>food</category>
+    </contents>
+    <contents>
+      <name>Muddy Charles Pub</name>
+      <url>http://web.mit.edu/muddy/</url>
+      <category>food</category>
+    </contents>
+  </object>
+  <object id="object-51">
+    <name>Wood Sailing Pavilion</name>
+    <altname>Sailing Pavilion</altname>
+    <bldgnum>51</bldgnum>
+    <category>building</category>
+    <street>134 Memorial Drive</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>southwest</viewangle>
+    <architect>Coolidge &amp; Carlson</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+    </floorplans>
+  </object>
+  <object id="object-54">
+    <name>Green Building</name>
+    <altname>Lindgren Library</altname>
+    <altname>EAPS Library</altname>
+    <bldgnum>54</bldgnum>
+    <category>building</category>
+    <street>Access Via 21 Ames Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>south side</viewangle>
+    <architect>I. M. Pei &amp; Associates</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>00</floor>
+      <floor>1</floor>
+      <floor>10</floor>
+      <floor>11</floor>
+      <floor>12</floor>
+      <floor>13</floor>
+      <floor>14</floor>
+      <floor>15</floor>
+      <floor>16</floor>
+      <floor>17</floor>
+      <floor>18</floor>
+      <floor>19</floor>
+      <floor>1M</floor>
+      <floor>2</floor>
+      <floor>20</floor>
+      <floor>21</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+      <floor>7</floor>
+      <floor>8</floor>
+      <floor>9</floor>
+    </floorplans>
+    <contents>
+      <name>54-100</name>
+      <category>room</category>
+    </contents>
+    <contents>
+      <name>Lindgren Library</name>
+      <altname>EAPS Library</altname>
+      <url>http://libraries.mit.edu/lindgren/index.html</url>
+      <category>library</category>
+    </contents>
+  </object>
+  <object id="object-56">
+    <name>Whitaker Building</name>
+    <bldgnum>56</bldgnum>
+    <category>building</category>
+    <street>Access Via 21 Ames Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>northwest corner</viewangle>
+    <architect>Anderson Beckwith &amp; Haible</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>00</floor>
+      <floor>00M</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+      <floor>7</floor>
+      <floor>8</floor>
+      <floor>9</floor>
+      <floor>R</floor>
+    </floorplans>
+  </object>
+  <object id="object-57">
+    <name>MIT Alumni Pool</name>
+    <bldgnum>57</bldgnum>
+    <category>building</category>
+    <street>Access Via 6 Vassar Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>southwest corner</viewangle>
+    <architect>Anderson Beckwith &amp; Haible</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+    </floorplans>
+  </object>
+  <object id="object-6">
+    <name>Eastman Laboratories</name>
+    <bldgnum>6</bldgnum>
+    <category>building</category>
+    <street>182 Memorial Drive (Rear)</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>north side</viewangle>
+    <architect>Coolidge &amp; Carlson</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>1M</floor>
+      <floor>2</floor>
+      <floor>2M</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+    </floorplans>
+    <contents>
+      <name>6-120</name>
+      <category>room</category>
+    </contents>
+  </object>
+  <object id="object-62">
+    <name>Alumni Houses: Munroe Hayden Wood</name>
+    <altname>East Campus: West Parallel</altname>
+    <altname>East Campus: Munroe</altname>
+    <altname>East Campus: Hayden</altname>
+    <altname>East Campus: Wood</altname>
+    <bldgnum>62</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <website>http://ec.mit.edu/index.php</website>
+    <street>3 Ames Street (Rear)</street>
+    <mailing>3 Ames Street (Rear)</mailing>
+    <viewangle>northwest corner</viewangle>
+    <architect>Coolidge &amp; Carlson</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+    </floorplans>
+    <contents>
+      <name>1st West (Stickmen)</name>
+      <url>http://web.mit.edu/stickmen/www/</url>
+    </contents>
+    <contents>
+      <name>2nd West (Pi Tau Zeta)</name>
+      <url>http://web.mit.edu/2ndwest/www/</url>
+    </contents>
+    <contents>
+      <name>3rd West</name>
+      <url>http://web.mit.edu/thirdwest/www/</url>
+    </contents>
+    <contents>
+      <name>41st West</name>
+      <url>http://www.mit.edu/activities/41West/</url>
+    </contents>
+    <contents>
+      <name>5th West</name>
+      <url>http://fifth-west.mit.edu</url>
+    </contents>
+  </object>
+<!--
+  <object id="object-62H">
+    <name>Alumni Houses: Hayden</name>
+    <bldgnum>62H</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>3 Ames Street (Rear)</street>
+    <architect>Coolidge &amp; Carlson</architect>
+  </object>
+  <object id="object-62M">
+    <name>Alumni Houses: Munroe</name>
+    <bldgnum>62M</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>3 Ames Street (Rear)</street>
+    <architect>Coolidge &amp; Carlson</architect>
+  </object>
+  <object id="object-62W">
+    <name>Alumni Houses: Wood</name>
+    <bldgnum>62W</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>3 Ames Street (Rear)</street>
+    <architect>Coolidge &amp; Carlson</architect>
+  </object>
+//-->
+  <object id="object-64">
+    <name>Alumni Houses: Walcott Bemis Goodale</name>
+    <altname>East Campus: East Parallel</altname>
+    <altname>East Campus: Walcott</altname>
+    <altname>East Campus: Bemis</altname>
+    <altname>East Campus: Goodale</altname>
+    <bldgnum>64</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <website>http://ec.mit.edu/index.php</website>
+    <street>3 Ames Street</street>
+    <mailing>3 Ames Street</mailing>
+    <viewangle>north side</viewangle>
+    <architect>William Welles Bosworth</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+    </floorplans>
+    <contents>
+      <name>1st East</name>
+      <url>http://web.mit.edu/first-east/www/</url>
+    </contents>
+    <contents>
+      <name>2nd East</name>
+      <url>http://web.mit.edu/beast/www/</url>
+    </contents>
+    <contents>
+      <name>3rd East (Tetazoo)</name>
+      <url>http://web.mit.edu/tetazoo/www/</url>
+    </contents>
+    <contents>
+      <name>4th East (Slugfest)</name>
+      <url>http://web.mit.edu/slugfest/www/</url>
+    </contents>
+    <contents>
+      <name>5th East</name>
+      <url>http://web.mit.edu/florey/www/</url>
+    </contents>
+  </object>
+<!--
+  <object id="object-64B">
+    <name>Alumni Houses: Bemis</name>
+    <bldgnum>64B</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>3 Ames Street</street>
+    <architect>William Welles Bosworth</architect>
+  </object>
+  <object id="object-64G">
+    <name>Alumni Houses: Goodale</name>
+    <bldgnum>64G</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>3 Ames Street</street>
+    <architect>William Welles Bosworth</architect>
+  </object>
+  <object id="object-64W">
+    <name>Alumni Houses: Walcott</name>
+    <bldgnum>64W</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>3 Ames Street</street>
+    <architect>William Welles Bosworth</architect>
+  </object>
+//-->
+  <object id="object-66">
+    <name>Landau Building</name>
+    <bldgnum>66</bldgnum>
+    <category>building</category>
+    <street>25 Ames Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>east side</viewangle>
+    <architect>I. M. Pei &amp; Partners</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>00</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+      <floor>7</floor>
+    </floorplans>
+  </object>
+  <object id="object-68">
+    <name>Koch Biology Building</name>
+    <bldgnum>68</bldgnum>
+    <category>building</category>
+    <street>31 Ames Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>northwest corner</viewangle>
+    <architect>Goody &amp; Clancy Associates</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>00</floor>
+      <floor>0M</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+      <floor>7</floor>
+      <floor>7M</floor>
+      <floor>R</floor>
+    </floorplans>
+    <contents>
+      <name>Bio Cafe</name>
+      <url>http://web.mit.edu/dining/locations/retailoptions.html#biobagels</url>
+      <category>food</category>
+    </contents>
+  </object>
+<!--  <object id="object-6A">
+    <name>Spectroscopy Laboratory</name>
+    <bldgnum>6A</bldgnum>
+    <category>building</category>
+    <street>Access Via Basement Bldg 6</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <architect>Charles T. Main</architect>
+    <floorplans>
+      <floor>1</floor>
+      <floor>2</floor>
+    </floorplans>
+  </object> -->
+  <object id="object-6B">
+    <name>Solvent Storage</name>
+    <bldgnum>6B</bldgnum>
+    <category>building</category>
+    <street>Access Via Basement Bldg 4</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <architect>C. L. Svenson</architect>
+    <floorplans>
+      <floor>1</floor>
+    </floorplans>
+  </object>
+  <object id="object-6C">
+    <name>PDSI (Physics, DMSE, Spectroscopy, Infrastructure)</name>
+    <bldgnum>6C</bldgnum>
+    <category>building</category>
+    <street>182 Memorial Drive (Rear)</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <architect>Payette Associates</architect>
+  </object>
+  <object id="object-7">
+    <name>Rogers Building</name>
+    <altname>Rotch Library</altname>
+    <altname>Rotch Visual Collections</altname>
+    <altname>Architecture &amp; Planning Library</altname>
+    <bldgnum>7</bldgnum>
+    <category>building</category>
+    <street>77 Massachusetts Avenue</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>west side</viewangle>
+    <architect>Bosworth &amp; Carlson</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>2M</floor>
+      <floor>3</floor>
+      <floor>3M</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+    </floorplans>
+    <contents>
+      <name>Rotch Library</name>
+      <altname>Architecture &amp; Planning Library</altname>
+      <url>http://libraries.mit.edu/rotch/index.html</url>
+      <category>library</category>
+    </contents>
+    <contents>
+      <name>Rotch Visual Collections</name>
+      <url>http://libraries.mit.edu/rvc/index.html</url>
+      <category>library</category>
+    </contents>
+    <contents>
+      <name>Steam Cafe</name>
+      <url>http://steamcafe.mit.edu/</url>
+      <category>food</category>
+    </contents>
+    <contents>
+      <name>Bosworth's Cafe</name>
+      <url>http://web.mit.edu/dining/locations/retailoptions.html</url>
+      <category>food</category>
+    </contents>
+  </object>
+  <object id="object-7A">
+    <name>Rotch Library Extension</name>
+    <bldgnum>7A</bldgnum>
+    <category>building</category>
+    <street>Access Via Bldg 7</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <floorplans>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+    </floorplans>
+    <contents>
+      <name>Rotch Library Extension</name>
+      <category>library</category>
+    </contents>
+  </object>
+  <object id="object-8">
+    <name>Building 8</name>
+    <bldgnum>8</bldgnum>
+    <category>building</category>
+    <street>Access Via 21 Ames Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>east</viewangle>
+    <architect>William Welles Bosworth</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>1M</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>R</floor>
+    </floorplans>
+  </object>
+<!--  <object id="object-8A">
+    <name>Building 8A</name>
+    <bldgnum>8A</bldgnum>
+    <category>building</category>
+    <street>Access Via Basement Bldg 8</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <architect>Cleverdon Varney &amp; Pike</architect>
+    <floorplans>
+      <floor>0</floor>
+    </floorplans>
+  </object> -->
+  <object id="object-9">
+    <name>Center For Advanced Educational Services</name>
+    <bldgnum>9</bldgnum>
+    <category>building</category>
+    <street>105 Massachusetts Avenue</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>northwest corner</viewangle>
+    <architect>Skidmore Owings &amp; Merrill</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>00</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+    </floorplans>
+    <contents>
+      <name>9-150</name>
+      <category>room</category>
+    </contents>
+  </object>
+  <object id="object-E1">
+    <name>Gray House</name>
+    <altname>President's House</altname>
+    <bldgnum>E1</bldgnum>
+    <category>building</category>
+       <street>111 Memorial Drive</street>
+    <mailing>111 Memorial Drive</mailing>
+    <viewangle>south side</viewangle>
+    <architect>William Welles Bosworth</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>3M</floor>
+      <floor>R</floor>
+    </floorplans>
+  </object>
+  <object id="object-E15">
+    <name>Wiesner Building</name>
+    <altname>Media Lab</altname>
+    <altname>List Visual Arts Center</altname>
+    <altname>Bartos Theater</altname>
+    <bldgnum>E15</bldgnum>
+    <category>building</category>
+    <category>museum_gallery</category>
+    <street>20 Ames Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>northwest corner</viewangle>
+    <architect>I. M. Pei &amp; Associates</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>1M</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+    </floorplans>
+    <contents>
+      <name>Bartos Theater</name>
+    </contents>
+  </object>
+  <object id="object-E17">
+    <name>Mudd Building</name>
+    <bldgnum>E17</bldgnum>
+    <category>building</category>
+    <street>40 Ames Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>southwest corner</viewangle>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>5M</floor>
+      <floor>6</floor>
+      <floor>7</floor>
+      <floor>7M</floor>
+    </floorplans>
+  </object>
+  <object id="object-E18">
+    <name>Ford Building (E18)</name>
+    <bldgnum>E18</bldgnum>
+    <category>building</category>
+    <street>50 Ames Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>southwest corner</viewangle>
+    <architect>Mark Linethal</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+      <floor>7</floor>
+    </floorplans>
+  </object>
+  <object id="object-E19">
+    <name>Ford Building (E19)</name>
+    <bldgnum>E19</bldgnum>
+    <category>building</category>
+    <street>400 Main Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>southwest corner</viewangle>
+    <architect>Mark Linethal</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+      <floor>7</floor>
+      <floor>8</floor>
+    </floorplans>
+  </object>
+  <object id="object-E2">
+    <name>Senior House</name>
+    <bldgnum>E2</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <website>http://web.mit.edu/senior-house/www/</website>
+    <street>4 Ames Street</street>
+    <mailing>70 Amherst Street</mailing>
+    <viewangle>west side</viewangle>
+    <architect>William Welles Bosworth</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+    </floorplans>
+  </object>
+  <object id="object-E23">
+    <name>Health Services</name>
+    <altname>MIT Medical</altname>
+    <bldgnum>E23</bldgnum>
+    <category>building</category>
+    <street>25 Carleton Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>west side</viewangle>
+    <architect>Mitchell Giurgola Gruzen Partners</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+    </floorplans>
+  </object>
+  <object id="object-E25">
+    <name>Whitaker College</name>
+    <bldgnum>E25</bldgnum>
+    <category>building</category>
+    <street>45 Carleton Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>west side</viewangle>
+    <architect>Mitchell Giurgola Gruzen Partners</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+      <floor>7</floor>
+    </floorplans>
+  </object>
+  <object id="object-E28">
+    <name>Building E28</name>
+    <bldgnum>E28</bldgnum>
+    <category>building</category>
+    <street>336 Main Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>north side</viewangle>
+    <floorplans>
+      <floor>1</floor>
+    </floorplans>
+  </object>
+   <object id="object-E33">
+    <name>Rinaldi Tile</name>
+    <bldgnum>E33</bldgnum>
+    <category>building</category>
+    <street>34 Carleton Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>west side</viewangle>
+    <floorplans>
+      <floor>1</floor>
+      <floor>2</floor>
+    </floorplans>
+  </object>
+  <object id="object-E34">
+    <name>Building E34</name>
+    <bldgnum>E34</bldgnum>
+    <category>building</category>
+    <street>42-44 Carleton Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>southwest corner</viewangle>
+    <architect>V.J. Galleni</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+    </floorplans>
+  </object>
+  <object id="object-E38">
+    <name>Suffolk Building</name>
+    <altname>MIT Press Bookstore</altname>
+    <bldgnum>E38</bldgnum>
+    <category>building</category>
+    <street>292 Main Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>north</viewangle>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+      <floor>7</floor>
+      <floor>8</floor>
+    </floorplans>
+  </object>
+  <object id="object-E39">
+    <name>MIT Press</name>
+    <bldgnum>E39</bldgnum>
+    <category>building</category>
+    <street>264 Main Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>northeast corner</viewangle>
+    <floorplans>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+    </floorplans>
+  </object>
+  <object id="object-E40">
+    <name>Muckley Building</name>
+    <bldgnum>E40</bldgnum>
+    <category>building</category>
+    <street>1 Amherst Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>southwest corner</viewangle>
+    <architect>Densmore Leclear &amp; Robbins</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+    </floorplans>
+  </object>
+   <object id="object-E48">
+    <name>Building E48</name>
+    <bldgnum>E48</bldgnum>
+    <category>building</category>
+    <street>238 Main Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>west</viewangle>
+    <floorplans>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+    </floorplans>
+  </object>
+  <object id="object-E51">
+    <name>Tang Center</name>
+    <altname>Wong Auditorium</altname>
+    <bldgnum>E51</bldgnum>
+    <category>building</category>
+    <street>70 Memorial Drive</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>north side</viewangle>
+    <architect>Perry Shaw &amp; Hepburn | Ellenzweig</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+    </floorplans>
+    <contents>
+      <name>Wong Auditorium</name>
+      <category>room</category>
+    </contents>
+  </object>
+  <object id="object-E52">
+    <name>Sloan Building</name>
+    <altname>Faculty Club</altname>
+    <bldgnum>E52</bldgnum>
+    <category>building</category>
+    <street>50 Memorial Drive</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>south side</viewangle>
+    <architect>Donald Des Granges</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+      <floor>7</floor>
+      <floor>7M</floor>
+    </floorplans>
+    <contents>
+      <name>Refresher Course</name>
+      <url>http://web.mit.edu/dining/locations/retailoptions.html#refresher</url>
+      <category>food</category>
+    </contents>
+    <contents>
+      <name>Faculty Club</name>
+      <url>http://web.mit.edu/dining/catering/mitfacultyclub/</url>
+      <category>food</category>
+    </contents>
+  </object>
+  <object id="object-E53">
+    <name>Hermann Building</name>
+    <altname>Dewey Library</altname>
+    <altname>Management &amp; Social Sciences Library</altname>
+    <bldgnum>E53</bldgnum>
+    <category>building</category>
+    <street>30 Wadsworth Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>northwest corner</viewangle>
+    <architect>Catalano Brannen &amp; Shimamoto</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>0M</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+    </floorplans>
+    <contents>
+      <name>Dewey Library</name>
+      <altname>Management &amp; Social Sciences Library</altname>
+      <url>http://info-libraries.mit.edu/dewey/</url>
+      <category>library</category>
+    </contents>
+  </object>
+  <object id="object-E55">
+    <name>Eastgate</name>
+    <bldgnum>E55</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>60 Wadsworth Street</street>
+    <mailing>Eastgate</mailing>
+    <viewangle>southeast corner</viewangle>
+    <architect>Catalano Cooper Brannen &amp; Shimamoto</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>10</floor>
+      <floor>11</floor>
+      <floor>12</floor>
+      <floor>13</floor>
+      <floor>14</floor>
+      <floor>15</floor>
+      <floor>16</floor>
+      <floor>17</floor>
+      <floor>18</floor>
+      <floor>19</floor>
+      <floor>2</floor>
+      <floor>20</floor>
+      <floor>21</floor>
+      <floor>22</floor>
+      <floor>23</floor>
+      <floor>24</floor>
+      <floor>25</floor>
+      <floor>26</floor>
+      <floor>27</floor>
+      <floor>28</floor>
+      <floor>29</floor>
+      <floor>3</floor>
+      <floor>30</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+      <floor>7</floor>
+      <floor>8</floor>
+      <floor>9</floor>
+    </floorplans>
+  </object>
+   <object id="object-E60">
+    <name>Arthur D Little Building</name>
+    <bldgnum>E60</bldgnum>
+    <category>building</category>
+    <street>30 Memorial Drive</street>
+    <mailing>30 Memorial Drive</mailing>
+    <viewangle>south side</viewangle>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+    </floorplans>
+  </object>
+  <object id="object-E70">
+    <name>Badger Building</name>
+    <bldgnum>E70</bldgnum>
+    <category>building</category>
+    <street>1 Broadway, (8th FL)</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>west side</viewangle>
+    <floorplans>
+      <floor>8</floor>
+    </floorplans>
+  </object>
+  <object id="object-N10">
+    <name>High Voltage Research Lab</name>
+    <bldgnum>N10</bldgnum>
+    <category>building</category>
+    <street>155 Massachusetts Avenue</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>southwest corner</viewangle>
+    <architect>Carleton Richmond Jr.</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>2M</floor>
+    </floorplans>
+  </object>
+  <object id="object-N16">
+    <name>Cooling Tower &amp; Oil Reserve</name>
+    <bldgnum>N16</bldgnum>
+    <category>building</category>
+    <street>60 Albany Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>east side</viewangle>
+    <architect>Skidmore Owings &amp; Merrill</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>2M</floor>
+      <floor>3</floor>
+    </floorplans>
+  </object>
+  <object id="object-N16A">
+    <name>Building N16A</name>
+    <bldgnum>N16A</bldgnum>
+    <category>building</category>
+    <street>60 Albany Street</street>
+    <viewangle>north</viewangle>
+    <architect>Syska &amp; Hennessy, Inc.</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>R</floor>
+    </floorplans>
+  </object>
+  <object id="object-N4">
+    <name>Albany Garage</name>
+    <bldgnum>N4</bldgnum>
+    <category>building</category>
+    <street>32 Albany Street</street>
+    <architect>Perry Dean Hepburn &amp; Stewart</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+      <floor>7</floor>
+      <floor>8</floor>
+    </floorplans>
+  </object>
+  <object id="object-N42">
+    <name>Information Services &amp; Technology</name>
+    <bldgnum>N42</bldgnum>
+    <category>building</category>
+    <street>211 Massachusetts Avenue</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>north</viewangle>
+    <architect>E.H. McClarr</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+    </floorplans>
+  </object>
+  <object id="object-N51">
+    <name>Building N51</name>
+    <bldgnum>N51</bldgnum>
+    <category>building</category>
+    <street>275 Massachusetts Avenue, enter through &lt;a href="http://whereis.mit.edu/map-jpg?selection=N52"&gt;Bldg. N52&lt;/a&gt;</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>west side</viewangle>
+    <architect>Donald Desgranges</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>3M</floor>
+      <floor>R</floor>
+    </floorplans>
+  </object>
+  <object id="object-N52">
+    <name>MIT Museum</name>
+    <bldgnum>N52</bldgnum>
+    <category>building</category>
+    <category>museum_gallery</category>
+    <street>265 Massachusetts Avenue</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>southeast</viewangle>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+    </floorplans>
+  </object>
+  <object id="object-N57">
+    <name>Building N57</name>
+    <altname>Library Storage Annex (LSA)</altname>
+    <bldgnum>N57</bldgnum>
+    <category>building</category>
+    <street>1 State Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>south side</viewangle>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+    </floorplans>
+    <contents>
+      <name>Library Storage Annex (LSA)</name>
+      <url>http://libraries.mit.edu/lsa/index.html</url>
+      <category>library</category>
+    </contents>
+  </object>
+  <object id="object-N9">
+    <name>Superconducting Test Facility</name>
+    <bldgnum>N9</bldgnum>
+    <category>building</category>
+    <street>68 Albany Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>northwest corner</viewangle>
+    <architect>MIT Physical Plant</architect>
+    <floorplans>
+      <floor>1</floor>
+      <floor>1M</floor>
+    </floorplans>
+  </object>
+  <object id="object-NE18">
+    <name>1 Cambridge Center</name>
+    <bldgnum>NE18</bldgnum>
+    <category>building</category>
+    <street>1 Cambridge Center</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>east</viewangle>
+    <floorplans>
+      <floor>5</floor>
+    </floorplans>
+  </object>
+  <object id="object-NE20">
+    <name>3 Cambridge Center</name>
+    <altname>The Coop</altname>
+    <bldgnum>NE20</bldgnum>
+    <category>building</category>
+    <street>3 Cambridge Center</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>south</viewangle>
+    <floorplans>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+    </floorplans>
+  </object>
+  <object id="object-NE25">
+    <name>5 Cambridge Center</name>
+    <bldgnum>NE25</bldgnum>
+    <category>building</category>
+    <street>5 Cambridge Center</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>southwest corner</viewangle>
+    <floorplans>
+      <floor>2</floor>
+      <floor>4</floor>
+    </floorplans>
+  </object>
+<!-- no longer occupy building
+  <object id="object-NE43">
+    <name>200 Technology Square</name>
+    <bldgnum>NE43</bldgnum>
+    <category>building</category>
+    <street>200 Technology Square</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>southeast corner</viewangle>
+    <architect>Cabot Cabot &amp; Forbes</architect>
+  </object>
+-->
+<!-- no longer occupy building
+  <object id="object-NE46">
+    <name>400 Technology Square</name>
+    <altname>Forrester Building</altname>
+    <bldgnum>NE46</bldgnum>
+    <category>building</category>
+    <street>400 Technology Square</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>south side</viewangle>
+    <floorplans>
+      <floor>6</floor>
+    </floorplans>
+  </object>
+-->
+  <object id="object-NE47">
+    <name>500 Technology Square</name>
+    <bldgnum>NE47</bldgnum>
+    <category>building</category>
+    <street>500 Technology Square</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>southwest corner</viewangle>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+    </floorplans>
+  </object>
+
+  <object id="object-NE48">
+    <name>700 Technology Square</name>
+    <bldgnum>NE48</bldgnum>
+    <category>building</category>
+    <street>700 Technology Square</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>southwest</viewangle>
+    <floorplans>
+      <floor>3</floor>
+    </floorplans>
+  </object>
+
+  <object id="object-NE49">
+    <name>600 Technology Square</name>
+    <bldgnum>NE49</bldgnum>
+    <category>building</category>
+    <street>600 Technology Square</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>southwest corner</viewangle>
+    <floorplans>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+    </floorplans>
+  </object>
+  <object id="object-NE80">
+    <name>Hill Building</name>
+    <bldgnum>NE80</bldgnum>
+    <category>building</category>
+    <street>1 Hampshire Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>northwest corner</viewangle>
+    <floorplans>
+      <floor>6</floor>
+    </floorplans>
+  </object>
+   <object id="object-NE125">
+    <name>Building NE125</name>
+    <bldgnum>NE125</bldgnum>
+    <category>building</category>
+    <street>320 Charles Street</street>
+    <mailing>77 Massachusetts Ave</mailing>
+    <viewangle>northwest corner</viewangle>
+    <floorplans>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+    </floorplans>
+  </object>
+  <object id="object-NW10">
+    <name>Edgerton House</name>
+    <bldgnum>NW10</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <website>http://eh.mit.edu/</website>
+    <street>143 Albany Street</street>
+    <mailing>143 Albany Street</mailing>
+    <viewangle>south</viewangle>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+    </floorplans>
+  </object>
+  <object id="object-NW12">
+    <name>Building NW12</name>
+    <bldgnum>NW12</bldgnum>
+    <category>building</category>
+    <street>138 Albany Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>north side</viewangle>
+    <architect>J. Fruchtbaum</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>1M</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+    </floorplans>
+  </object>
+  <object id="object-NW13">
+    <name>Building NW13</name>
+    <bldgnum>NW13</bldgnum>
+    <category>building</category>
+    <street>144 Albany Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>north side</viewangle>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+    </floorplans>
+  </object>
+  <object id="object-NW14">
+    <name>Francis Bitter Magnet Lab (NW14)</name>
+    <bldgnum>NW14</bldgnum>
+    <category>building</category>
+    <street>150 Albany Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>north side</viewangle>
+    <architect>C.B. Comstock</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+    </floorplans>
+  </object>
+  <object id="object-NW15">
+    <name>Francis Bitter Magnet Lab (NW15)</name>
+    <bldgnum>NW15</bldgnum>
+    <category>building</category>
+    <street>166-170 Albany Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>northwest corner</viewangle>
+    <architect>Perry Shaw Hepburn &amp; Dean</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+    </floorplans>
+  </object>
+  <object id="object-NW16">
+    <name>Plasma Science &amp; Fusion Center (NW16)</name>
+    <bldgnum>NW16</bldgnum>
+    <category>building</category>
+    <street>167 Albany Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>east side</viewangle>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+    </floorplans>
+  </object>
+  <object id="object-NW17">
+    <name>Plasma Science &amp; Fusion Center (NW17)</name>
+    <bldgnum>NW17</bldgnum>
+    <category>building</category>
+    <street>175 Albany Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>south</viewangle>
+    <architect>Architectural Resources</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+    </floorplans>
+  </object>
+  <object id="object-NW20">
+    <name>Albany St Generator Shelter</name>
+    <bldgnum>NW20</bldgnum>
+    <category>building</category>
+    <street>180 Albany Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>north side</viewangle>
+    <floorplans>
+      <floor>1</floor>
+      <floor>1M</floor>
+    </floorplans>
+  </object>
+  <object id="object-NW21">
+    <name>Plasma Science &amp; Fusion Center (NW21)</name>
+    <bldgnum>NW21</bldgnum>
+    <category>building</category>
+    <street>190 Albany Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>northwest corner</viewangle>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>1M</floor>
+      <floor>2</floor>
+      <floor>2M</floor>
+    </floorplans>
+  </object>
+  <object id="object-NW22">
+    <name>Plasma Science &amp; Fusion Center (NW22)</name>
+    <bldgnum>NW22</bldgnum>
+    <category>building</category>
+    <street>185 Albany Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>southeast corner</viewangle>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+    </floorplans>
+  </object>
+  <object id="object-NW30">
+    <name>224 Albany Street</name>
+    <altname>Warehouse Apartments</altname>
+    <bldgnum>NW30</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <website>http://web.mit.edu/warehouse-www/</website>
+    <street>224 Albany Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>north</viewangle>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>R</floor>
+    </floorplans>
+  </object>
+  <object id="object-NW61">
+    <name>Random Hall</name>
+    <bldgnum>NW61</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <website>http://web.mit.edu/random-hall/www/</website>
+    <street>282-290 Massachusetts Avenue</street>
+    <mailing>282-290 Massachusetts Avenue</mailing>
+    <viewangle>northeast</viewangle>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+    </floorplans>
+  </object>
+  <object id="object-NW62">
+    <name>Volvo Garage</name>
+    <bldgnum>NW62</bldgnum>
+    <category>building</category>
+    <street>310-314 Massachusetts Avenue</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>northeast corner</viewangle>
+    <floorplans>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>2M</floor>
+    </floorplans>
+  </object>
+  <object id="object-NW86">
+    <name>70 Pacific Street Dormitory</name>
+    <altname>Sidney-Pacific Dorm</altname>
+    <bldgnum>NW86</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <website>http://s-p.mit.edu</website>
+    <street>70 Pacific Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>northeast</viewangle>
+    <architect>Steffian Bradley Associates</architect>
+    <floorplans>
+      <floor>1</floor>
+      <floor>10</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+      <floor>7</floor>
+      <floor>8</floor>
+      <floor>9</floor>
+    </floorplans>
+    <contents>
+      <name>Pacific St. Cafe</name>
+      <category>food</category>
+    </contents>
+  </object>
+<!-- move to parking? 
+  <object id="object-NW86P">
+    <name>70 Pacific Street Garage</name>
+    <bldgnum>NW86P</bldgnum>
+    <category>building</category>
+    <architect>Steffian Bradley Associates</architect>
+    <floorplans>
+      <floor>0</floor>
+    </floorplans>
+  </object>
+//-->
+  <object id="object-NW95">
+    <name>Building NW95</name>
+    <bldgnum>NW95</bldgnum>
+    <category>building</category>
+    <street>7 Emily Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>south side</viewangle>
+    <floorplans>
+      <floor>1</floor>
+    </floorplans>
+  </object>
+  <object id="object-NW35">
+    <name>Ashdown</name>
+    <bldgnum>NW35</bldgnum>
+    <category>building</category>
+    <category>residence</category>      
+    <website>http://www-ashdown.mit.edu</website>
+    <street>235 Albany Street</street>
+    <mailing>235 Albany Street</mailing>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+      <floor>7</floor>
+    </floorplans>
+    <contents>
+      <name>Thirsty Ear Pub</name>
+      <url>http://web.mit.edu/thirsty-ear/</url>
+      <category>food</category>
+    </contents>
+  </object>
+  <object id="object-W11">
+    <name>Building W11</name>
+    <altname>Religious Activities Center</altname>
+    <bldgnum>W11</bldgnum>
+    <category>building</category>
+    <street>40 Massachusetts Avenue</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>southwest corner</viewangle>
+    <architect>Perry Shaw Hepburn</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>R</floor>
+    </floorplans>
+    <contents>
+      <name>Kosher Shabbat Dinner</name>
+      <url>http://web.mit.edu/hillel/www/hillel-kosher-kitchen.html</url>
+      <category>food</category>
+    </contents>
+  </object>
+  <object id="object-W13">
+    <name>Bexley Hall</name>
+    <bldgnum>W13</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>46-52 Massachusetts Ave</street>
+    <mailing>46-52 Massachusetts Ave</mailing>
+    <viewangle>southeast</viewangle>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+    </floorplans>
+  </object>
+  <object id="object-W15">
+    <name>Chapel</name>
+    <bldgnum>W15</bldgnum>
+    <category>building</category>
+    <street>48 Massachusetts Ave (Rear)</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>west side</viewangle>
+    <architect>Eero Saarinen</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>1M</floor>
+    </floorplans>
+  </object>
+  <object id="object-W16">
+    <name>Kresge Auditorium</name>
+    <bldgnum>W16</bldgnum>
+    <category>building</category>
+    <street>48 Massachusetts Ave (Rear)</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>east side</viewangle>
+    <architect>Eero Saarinen</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>2M</floor>
+    </floorplans>
+    <contents>
+      <name>Little Kresge</name>
+      <category>room</category>
+    </contents>
+  </object>
+  <object id="object-W2">
+    <name>Building W2</name>
+    <bldgnum>W2</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>311 Memorial Drive</street>
+    <mailing>311 Memorial Drive</mailing>
+    <viewangle>southeast corner</viewangle>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+    </floorplans>
+  </object>
+  <object id="object-W20">
+    <name>Stratton Student Center</name>
+    <bldgnum>W20</bldgnum>
+    <category>building</category>
+    <street>84 Massachusetts Avenue</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>south side</viewangle>
+    <architect>Catalano Brannen Shimamoto</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+      <floor>6M</floor>
+    </floorplans>
+    <contents>
+      <name>La Sala de Puerto Rico</name>
+      <category>room</category>
+    </contents>
+    <contents>
+      <name>Cambridge Grill</name>
+      <url>http://web.mit.edu/dining/locations/retailoptions.html#alpine</url>
+      <category>food</category>
+    </contents>
+    <contents>
+      <name>La Verde's Market</name>
+      <url>http://web.mit.edu/dining/locations/retailoptions.html#laverdes</url>
+      <category>food</category>
+    </contents>
+    <contents>
+      <name>Anna's Taqueria</name>
+      <url>http://web.mit.edu/dining/locations/retailoptions.html#annas</url>
+      <category>food</category>
+    </contents>
+    <contents>
+      <name>Cafe Spice (Lobdell Food Court)</name>
+      <url>http://web.mit.edu/dining/locations/retailoptions.html#lobdell</url>
+      <category>food</category>
+    </contents>
+    <contents>
+      <name>Sepal (Lobdell Food Court)</name>
+      <url>http://web.mit.edu/dining/locations/retailoptions.html#lobdell</url>
+      <category>food</category>
+    </contents>
+    <contents>
+      <name>Shinkansen Japan (Lobdell Food Court)</name>
+      <url>http://web.mit.edu/dining/locations/retailoptions.html#lobdell</url>
+      <category>food</category>
+    </contents>
+    <contents>
+      <name>Subway Restaurant (Lobdell Food Court)</name>
+      <url>http://web.mit.edu/dining/locations/retailoptions.html#lobdell</url>
+      <category>food</category>
+    </contents>
+    <contents>
+      <name>Dunkin Donuts</name>
+      <url>http://web.mit.edu/dining/locations/retailoptions.html#dunkin</url>
+      <category>food</category>
+    </contents>
+    <contents>
+      <name>Technicuts</name>
+    </contents>
+    <contents>
+      <name>New Tech Barber</name>
+    </contents>
+  </object>
+  <object id="object-W31">
+    <name>Du Pont Athletic Gymnasium</name>
+    <altname>DuPont Athletic Gymnasium</altname>
+    <bldgnum>W31</bldgnum>
+    <category>building</category>
+    <street>120 Massachusetts Avenue</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>north side</viewangle>
+    <architect>Hartwell Richardson &amp; Driver</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+    </floorplans>
+  </object>
+  <object id="object-W32">
+    <name>Du Pont Athletic Center</name>
+    <altname>DuPont Athletic Center</altname>
+    <bldgnum>W32</bldgnum>
+    <category>building</category>
+    <street>100 Massachusetts Avenue</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>south</viewangle>
+    <architect>Anderson Beckwith &amp; Haible</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>2M</floor>
+    </floorplans>
+  </object>
+  <object id="object-W33">
+    <name>Rockwell Cage</name>
+    <bldgnum>W33</bldgnum>
+    <category>building</category>
+    <street>106 Vassar Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>west side</viewangle>
+    <architect>Anderson &amp; Beckwith</architect>
+    <floorplans>
+      <floor>0</floor>
+    </floorplans>
+  </object>
+  <object id="object-W34">
+    <name>Johnson Athletics Center</name>
+    <bldgnum>W34</bldgnum>
+    <category>building</category>
+    <street>120 Vassar Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>southwest corner</viewangle>
+    <architect>Davis Brody</architect>
+    <floorplans>
+      <floor>1</floor>
+      <floor>1M</floor>
+      <floor>2</floor>
+      <floor>R</floor>
+    </floorplans>
+  </object>
+  <object id="object-W35">
+    <name>Zesiger Sports &amp; Fitness Center</name>
+    <bldgnum>W35</bldgnum>
+    <category>building</category>
+    <street>120 Vassar Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>south</viewangle>
+    <architect>Sasaki Associates</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+    </floorplans>
+    <contents>
+      <name>Au Bon Pain</name>
+      <category>food</category>
+    </contents>
+  </object>
+  <object id="object-W4">
+    <name>McCormick Hall</name>
+    <bldgnum>W4</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <website>http://web.mit.edu/mccormick/www/</website>
+    <street>320 Memorial Drive</street>
+    <mailing>320 Memorial Drive</mailing>
+    <viewangle>north</viewangle>
+    <architect>Anderson Beckwith &amp; Haible</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+      <floor>7</floor>
+      <floor>8</floor>
+    </floorplans>
+      <contents>
+      <name>McCormick Dining</name>
+      <url>http://web.mit.edu/dining/locations/housedining.html#mccormick</url>
+      <category>food</category>
+    </contents>
+</object>
+  <object id="object-W45">
+    <name>West Garage</name>
+    <bldgnum>W45</bldgnum>
+    <category>building</category>
+    <street>125 Vassar Street</street>
+    <architect>Parking Dev Corp</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+    </floorplans>
+  </object>
+  <object id="object-W5">
+    <name>Green Hall</name>
+    <bldgnum>W5</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <website>http://web.mit.edu/greenhall/www/</website>
+    <street>350 Memorial Drive</street>
+    <mailing>350 Memorial Drive</mailing>
+    <viewangle>north</viewangle>
+    <architect>C. H. Bartlett</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+    </floorplans>
+  </object>
+  <object id="object-W51">
+    <name>Burton-Conner House</name>
+    <bldgnum>W51</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <website>http://web.mit.edu/burton-conner/www/</website>
+    <street>410 Memorial Drive</street>
+    <mailing>410 Memorial Drive</mailing>
+    <viewangle>northeast corner</viewangle>
+    <architect>C. Albright</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+    </floorplans>
+    <contents>
+      <name>Burton 1</name>
+      <url>http://web.mit.edu/burton1/www/</url>
+    </contents>
+    <contents>
+      <name>Burton 2</name>
+      <url>http://web.mit.edu/burton2/www/</url>
+    </contents>
+    <contents>
+      <name>Burton Third Bombers</name>
+      <url>http://web.mit.edu/bombers/www/</url>
+    </contents>
+    <contents>
+      <name>Burton 4</name>
+      <url>http://web.mit.edu/burton4/www/</url>
+    </contents>
+    <contents>
+      <name>Burton 5</name>
+      <url>http://web.mit.edu/burton5/www/</url>
+    </contents>
+    <contents>
+      <name>Conner 2</name>
+      <url>http://web.mit.edu/conner2/www/</url>
+    </contents>
+    <contents>
+      <name>Conner 3</name>
+      <url>http://web.mit.edu/conner3/www/</url>
+    </contents>
+    <contents>
+      <name>Conner 4</name>
+      <url>http://web.mit.edu/conner4/www/</url>
+    </contents>
+    <contents>
+      <name>Conner 5</name>
+      <url>http://web.mit.edu/conner5/www/</url>
+    </contents>
+  </object>
+  <object id="object-W53">
+    <name>Carr Indoor Tennis Facility</name>
+    <altname>Tennis Bubble</altname>
+    <altname>JB Carr Tennis Bubble</altname>
+    <bldgnum>W53</bldgnum>
+    <category>building</category>
+    <street>410 Memorial Drive (Rear)</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>northeast corner</viewangle>
+    <architect>MIT Planning Office</architect>
+    <floorplans>
+      <floor>1</floor>
+    </floorplans>
+  </object>
+  <object id="object-W53A">
+    <name>Carr Indoor Tennis Facility (Office)</name>
+    <bldgnum>W53A</bldgnum>
+    <category>building</category>
+    <street>410 Memorial Drive (Rear)</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <architect>William B. Merry &amp; Assoc. Inc.</architect>
+    <floorplans>
+      <floor>1</floor>
+    </floorplans>
+  </object>
+  <object id="object-W59">
+    <name>Heinz Building</name>
+    <bldgnum>W59</bldgnum>
+    <category>building</category>
+    <street>201 Vassar Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>south</viewangle>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+    </floorplans>
+  </object>
+  <object id="object-W61">
+    <name>MacGregor House</name>
+    <bldgnum>W61</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <website>http://web.mit.edu/macgregor/www/</website>
+    <street>450 Memorial Drive</street>
+    <mailing>450 Memorial Drive</mailing>
+    <viewangle>west side</viewangle>
+    <architect>The Architects Collaborative Inc.</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>00</floor>
+      <floor>000</floor>
+      <floor>1</floor>
+      <floor>16</floor>
+      <floor>17</floor>
+      <floor>18</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>R</floor>
+    </floorplans>
+    <contents>
+      <name>MacGregor Convenience</name>
+      <url>http://web.mit.edu/dining/locations/retailoptions.html#macgregor</url>
+      <category>food</category>
+    </contents>
+  </object>
+<!--  <object id="object-W61A">
+    <name>MacGregor House (A)</name>
+    <bldgnum>W61A</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>450 Memorial Drive</street>
+    <mailing>450 Memorial Drive</mailing>
+    <architect>The Architects Collaborative Inc.</architect>
+    <floorplans>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+    </floorplans>
+  </object>
+  <object id="object-W61B">
+    <name>MacGregor House (B)</name>
+    <bldgnum>W61B</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>450 Memorial Drive</street>
+    <mailing>450 Memorial Drive</mailing>
+    <architect>The Architects Collaborative Inc.</architect>
+    <floorplans>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+    </floorplans>
+  </object>
+  <object id="object-W61C">
+    <name>MacGregor House (C)</name>
+    <bldgnum>W61C</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>450 Memorial Drive</street>
+    <mailing>450 Memorial Drive</mailing>
+    <architect>The Architects Collaborative Inc.</architect>
+    <floorplans>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+    </floorplans>
+  </object>
+  <object id="object-W61D">
+    <name>MacGregor House (D)</name>
+    <bldgnum>W61D</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>450 Memorial Drive</street>
+    <mailing>450 Memorial Drive</mailing>
+    <architect>The Architects Collaborative Inc.</architect>
+    <floorplans>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+    </floorplans>
+  </object>
+  <object id="object-W61E">
+    <name>MacGregor House (E)</name>
+    <bldgnum>W61E</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>450 Memorial Drive</street>
+    <mailing>450 Memorial Drive</mailing>
+    <architect>The Architects Collaborative Inc.</architect>
+    <floorplans>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+    </floorplans>
+  </object>
+  <object id="object-W61F">
+    <name>MacGregor House (F)</name>
+    <bldgnum>W61F</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>450 Memorial Drive</street>
+    <mailing>450 Memorial Drive</mailing>
+    <architect>The Architects Collaborative Inc.</architect>
+  </object>
+  <object id="object-W61G">
+    <name>MacGregor House (G)</name>
+    <bldgnum>W61G</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>450 Memorial Drive</street>
+    <mailing>450 Memorial Drive</mailing>
+    <architect>The Architects Collaborative Inc.</architect>
+  </object>
+  <object id="object-W61H">
+    <name>MacGregor House (H)</name>
+    <bldgnum>W61H</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>450 Memorial Drive</street>
+    <mailing>450 Memorial Drive</mailing>
+    <architect>The Architects Collaborative Inc.</architect>
+  </object>
+  <object id="object-W61J">
+    <name>MacGregor House (J)</name>
+    <bldgnum>W61J</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>450 Memorial Drive</street>
+    <mailing>450 Memorial Drive</mailing>
+    <architect>The Architects Collaborative Inc.</architect>
+  </object>
+  <object id="object-W61M">
+    <name>MacGregor House (M)</name>
+    <bldgnum>W61M</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>450 Memorial Drive</street>
+    <mailing>450 Memorial Drive</mailing>
+    <architect>The Architects Collaborative Inc.</architect>
+  </object>
+//-->
+  <object id="object-W7">
+    <name>Baker House</name>
+    <bldgnum>W7</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <website>http://web.mit.edu/baker/www/</website>
+    <street>362 Memorial Drive</street>
+    <mailing>362 Memorial Drive</mailing>
+    <viewangle>north side</viewangle>
+    <architect>Alvar Aalto</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+      <floor>7</floor>
+    </floorplans>
+    <contents>
+      <name>Baker Dining</name>
+      <url>http://web.mit.edu/dining/locations/resdining.html#baker</url>
+      <category>food</category>
+    </contents>
+  </object>
+  <object id="object-W70">
+    <name>New House</name>
+    <altname>French House</altname>
+    <altname>La Maison Fran&amp;ccedil;aise</altname>
+    <altname>iHouse</altname>
+    <altname>German House</altname>
+    <altname>Deutsches Haus</altname>
+    <altname>Spanish House</altname>
+    <altname>La Casa</altname>
+    <altname>Chocolate City</altname>
+    <bldgnum>W70</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <website>http://web.mit.edu/nh/www/</website>
+    <street>471-476 Memorial Drive</street>
+    <mailing>471-476 Memorial Drive</mailing>
+    <viewangle>north side</viewangle>
+    <architect>Sert Jackson &amp; Associates</architect>
+    <floorplans>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+    </floorplans>
+    <contents>
+      <name>New House 4</name>
+      <url>http://web.mit.edu/nh4/www/</url>
+    </contents>
+    <contents>
+      <name>New House 5</name>
+      <url>http://web.mit.edu/desmond/www/</url>
+    </contents>
+    <contents>
+      <name>La Maison Fran&amp;ccedil;aise</name>
+      <altname>French House</altname>
+      <url>http://web.mit.edu/lmf/www/</url>
+    </contents>
+    <contents>
+      <name>iHouse</name>
+      <url>http://web.mit.edu/ihouse/</url>
+    </contents>
+    <contents>
+      <name>Deutsches Haus</name>
+      <altname>German House</altname>
+      <url>http://web.mit.edu/dh/www/</url>
+    </contents>
+    <contents>
+      <name>La Casa</name>
+      <altname>Spanish House</altname>
+      <url>http://web.mit.edu/la_casa/www/</url>
+    </contents>
+    <contents>
+      <name>Chocolate City</name>
+      <url>http://web.mit.edu/chocolate-city/www/</url>
+    </contents>
+  </object>
+<!--
+  <object id="object-W70A">
+    <name>New House (A)</name>
+    <bldgnum>W70A</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>471-476 Memorial Drive</street>
+    <mailing>471-476 Memorial Drive</mailing>
+    <architect>Sert Jackson &amp; Associates</architect>
+  </object>
+  <object id="object-W70B">
+    <name>New House (B)</name>
+    <bldgnum>W70B</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>471-476 Memorial Drive</street>
+    <mailing>471-476 Memorial Drive</mailing>
+    <architect>Sert Jackson &amp; Associates</architect>
+  </object>
+  <object id="object-W70C">
+    <name>New House (C)</name>
+    <bldgnum>W70C</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>471-476 Memorial Drive</street>
+    <mailing>471-476 Memorial Drive</mailing>
+    <architect>Sert Jackson &amp; Associates</architect>
+  </object>
+  <object id="object-W70D">
+    <name>New House (D)</name>
+    <bldgnum>W70D</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>471-476 Memorial Drive</street>
+    <mailing>471-476 Memorial Drive</mailing>
+    <architect>Sert Jackson &amp; Associates</architect>
+  </object>
+  <object id="object-W70E">
+    <name>New House (E)</name>
+    <bldgnum>W70E</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>471-476 Memorial Drive</street>
+    <mailing>471-476 Memorial Drive</mailing>
+    <architect>Sert Jackson &amp; Associates</architect>
+  </object>
+  <object id="object-W70F">
+    <name>New House (F)</name>
+    <bldgnum>W70F</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>471-476 Memorial Drive</street>
+    <mailing>471-476 Memorial Drive</mailing>
+    <architect>Sert Jackson &amp; Associates</architect>
+  </object>
+  <object id="object-W70G">
+    <name>New House (G)</name>
+    <bldgnum>W70G</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>471-476 Memorial Drive</street>
+    <mailing>471-476 Memorial Drive</mailing>
+    <architect>Sert Jackson &amp; Associates</architect>
+  </object>
+//-->
+  <object id="object-W71">
+    <name>Next House</name>
+    <bldgnum>W71</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <website>http://web.mit.edu/next/www/</website>
+    <street>500 Memorial Drive</street>
+    <mailing>500 Memorial Drive</mailing>
+    <viewangle>northeast corner</viewangle>
+    <architect>Sert Jackson &amp; Associates</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+    </floorplans>
+    <contents>
+      <name>Next House Dining</name>
+      <url>http://web.mit.edu/dining/locations/resdining.html#next</url> 
+      <category>food</category>
+    </contents>
+  </object>
+  <object id="object-W79">
+    <name>Simmons Hall</name>
+    <bldgnum>W79</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <website>http://web.mit.edu/simmons-hall/www/</website>
+    <street>229 Vassar Street</street>
+    <mailing>229 Vassar Street</mailing>
+    <viewangle>southwest</viewangle>
+    <architect>Steven Holl/Perry Dean Rogers</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>10</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+      <floor>7</floor>
+      <floor>8</floor>
+      <floor>9</floor>
+    </floorplans>
+    <contents>
+      <name>Simmons Dining</name>
+      <url>http://web.mit.edu/dining/locations/resdining.html#simmons</url>
+      <category>food</category>
+    </contents>
+    <contents>
+      <name>Simmons Late Night Cafe</name>
+      <url>http://web.mit.edu/dining/locations/resdining.html#simmons</url>
+      <category>food</category>
+    </contents>
+  </object>
+  <object id="object-W8">
+    <name>Pierce Boathouse</name>
+    <bldgnum>W8</bldgnum>
+    <category>building</category>
+    <street>409 Memorial Drive</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>northwest corner</viewangle>
+    <architect>Anderson Beckwith &amp; Haible</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>R</floor>
+    </floorplans>
+  </object>
+  <object id="object-W84">
+    <name>Tang Hall</name>
+    <bldgnum>W84</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <website>http://web.mit.edu/thra/www/</website>
+    <street>550 Memorial Drive</street>
+    <mailing>550 Memorial Drive</mailing>
+    <viewangle>northeast corner</viewangle>
+    <architect>Hugh Stubbins Associates</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>00</floor>
+      <floor>1</floor>
+      <floor>10</floor>
+      <floor>11</floor>
+      <floor>12</floor>
+      <floor>13</floor>
+      <floor>14</floor>
+      <floor>15</floor>
+      <floor>16</floor>
+      <floor>17</floor>
+      <floor>18</floor>
+      <floor>19</floor>
+      <floor>2</floor>
+      <floor>20</floor>
+      <floor>21</floor>
+      <floor>22</floor>
+      <floor>23</floor>
+      <floor>24</floor>
+      <floor>25</floor>
+      <floor>26</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+      <floor>7</floor>
+      <floor>8</floor>
+      <floor>9</floor>
+    </floorplans>
+  </object>
+  <object id="object-W85">
+    <name>Westgate</name>
+    <bldgnum>W85</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>540 Memorial Drive (Rear)</street>
+    <mailing>540 Memorial Drive</mailing>
+    <viewangle>southwest corner</viewangle>
+    <architect>Hugh Stubbins Associates</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>00</floor>
+      <floor>0M</floor>
+      <floor>1</floor>
+      <floor>10</floor>
+      <floor>11</floor>
+      <floor>12</floor>
+      <floor>13</floor>
+      <floor>14</floor>
+      <floor>15</floor>
+      <floor>16</floor>
+      <floor>17</floor>
+      <floor>18</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>4</floor>
+      <floor>5</floor>
+      <floor>6</floor>
+      <floor>7</floor>
+      <floor>8</floor>
+      <floor>9</floor>
+    </floorplans>
+  </object>
+<!--
+  <object id="object-W85A">
+    <name>Westgate (A)</name>
+    <bldgnum>W85A</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>11 Audrey Street</street>
+    <mailing>11 Audrey Street</mailing>
+    <architect>Hugh Stubbins Associates</architect>
+  </object>
+//-->
+  <object id="object-W85ABC">
+    <name>Westgate (ABC)</name>
+    <bldgnum>W85ABC</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>11-13-15 Audrey Street</street>
+    <mailing>11-13-15 Audrey Street</mailing>
+    <viewangle>southwest</viewangle>
+    <architect>Hugh Stubbins Associates</architect>
+    <floorplans>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>R</floor>
+    </floorplans>
+  </object>
+<!--
+  <object id="object-W85B">
+    <name>Westgate (B)</name>
+    <bldgnum>W85B</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>13 Audrey Street</street>
+    <mailing>13 Audrey Street</mailing>
+    <architect>Hugh Stubbins Associates</architect>
+  </object>
+  <object id="object-W85C">
+    <name>Westgate (C)</name>
+    <bldgnum>W85C</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>15 Audrey Street</street>
+    <mailing>15 Audrey Street</mailing>
+    <architect>Hugh Stubbins Associates</architect>
+  </object>
+  <object id="object-W85D">
+    <name>Westgate (D)</name>
+    <bldgnum>W85D</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>292 Vassar Street</street>
+    <mailing>292 Vassar Street</mailing>
+    <architect>Hugh Stubbins Associates</architect>
+  </object>
+//-->
+  <object id="object-W85DE">
+    <name>Westgate (DE)</name>
+    <bldgnum>W85DE</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>292-290 Vassar Street</street>
+    <mailing>292-290 Vassar Street</mailing>
+    <viewangle>northwest corner</viewangle>
+    <architect>Hugh Stubbins Associates</architect>
+    <floorplans>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>R</floor>
+    </floorplans>
+  </object>
+<!--
+  <object id="object-W85E">
+    <name>Westgate (E)</name>
+    <bldgnum>W85E</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>290 Vassar Street</street>
+    <mailing>290 Vassar Street</mailing>
+    <architect>Hugh Stubbins Associates</architect>
+  </object>
+  <object id="object-W85F">
+    <name>Westgate (F)</name>
+    <bldgnum>W85F</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>286 Vassar Street</street>
+    <mailing>286 Vassar Street</mailing>
+    <architect>Hugh Stubbins Associates</architect>
+  </object>
+//-->
+  <object id="object-W85FG">
+    <name>Westgate (FG)</name>
+    <bldgnum>W85FG</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>286-284 Vassar Street</street>
+    <mailing>286-284 Vassar Street</mailing>
+    <viewangle>north</viewangle>
+    <architect>Hugh Stubbins Associates</architect>
+    <floorplans>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>R</floor>
+    </floorplans>
+  </object>
+<!--
+  <object id="object-W85G">
+    <name>Westgate (G)</name>
+    <bldgnum>W85G</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>284 Vassar Street</street>
+    <mailing>284 Vassar Street</mailing>
+    <architect>Hugh Stubbins Associates</architect>
+  </object>
+  <object id="object-W85H">
+    <name>Westgate (H)</name>
+    <bldgnum>W85H</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>282 Vassar Street (Rear)</street>
+    <mailing>282 Vassar Street (Rear)</mailing>
+    <architect>Hugh Stubbins Associates</architect>
+  </object>
+//-->
+  <object id="object-W85HJK">
+    <name>Westgate (HJK)</name>
+    <bldgnum>W85HJK</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>282-280-278 Vassar Street</street>
+    <mailing>282-280-278 Vassar Street</mailing>
+    <viewangle>northeast</viewangle>
+    <architect>Hugh Stubbins Associates</architect>
+    <floorplans>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+      <floor>R</floor>
+    </floorplans>
+  </object>
+<!--
+  <object id="object-W85J">
+    <name>Westgate (J)</name>
+    <bldgnum>W85J</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>280 Vassar Street (Rear)</street>
+    <mailing>280 Vassar Street (Rear)</mailing>
+    <architect>Hugh Stubbins Associates</architect>
+  </object>
+  <object id="object-W85K">
+    <name>Westgate (K)</name>
+    <bldgnum>W85K</bldgnum>
+    <category>building</category>
+    <category>residence</category>
+    <street>278 Vassar Street (Rear)</street>
+    <mailing>278 Vassar Street (Rear)</mailing>
+    <architect>Hugh Stubbins Associates</architect>
+  </object>
+//-->
+  <object id="object-W89">
+    <name>Campus Police</name>
+    <bldgnum>W89</bldgnum>
+    <category>building</category>
+    <street>301 Vassar Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>south</viewangle>
+    <floorplans>
+      <floor>1</floor>
+      <floor>2</floor>
+      <floor>3</floor>
+    </floorplans>
+  </object>
+  <object id="object-W91">
+    <name>Information Services &amp; Technology Operations</name>
+    <bldgnum>W91</bldgnum>
+    <category>building</category>
+    <street>565-570 Memorial Drive</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>southeast corner</viewangle>
+    <architect>Jackson &amp; Moreland</architect>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>1M</floor>
+      <floor>2</floor>
+    </floorplans>
+  </object>
+  <object id="object-W92">
+    <name>Building W92</name>
+    <bldgnum>W92</bldgnum>
+    <category>building</category>
+    <street>304 Vassar Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>southwest corner</viewangle>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+      <floor>2</floor>
+    </floorplans>
+  </object>
+  <object id="object-WW15">
+    <name>Building WW15</name>
+    <bldgnum>WW15</bldgnum>
+    <category>building</category>
+    <street>350 Brookline Street</street>
+    <mailing>77 Massachusetts Avenue</mailing>
+    <viewangle>southwest corner</viewangle>
+    <floorplans>
+      <floor>0</floor>
+      <floor>1</floor>
+    </floorplans>
+  </object>
+
+<!-- FSLIG Data begin -->
+
+<object id="object-ACO">
+<name>Alpha Chi Omega (ACO)</name>
+<displayname>Alpha Chi Omega</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://web.mit.edu/axo/www/</website>
+<street>478 Commonwealth Avenue</street>
+<mailname>Alpha Chi Omega</mailname>
+<mailing>478 Commonwealth Avenue</mailing>
+<city>Boston, MA 02215</city>
+<viewangle>north</viewangle>
+</object>
+
+<object id="object-ADP">
+<name>Alpha Delta Phi (ADP)</name>
+<displayname>Alpha Delta Phi</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://adp.mit.edu/</website>
+<street>351 Massachusetts Avenue</street>
+<mailname>Alpha Delta Phi</mailname>
+<mailing>351 Massachusetts Avenue</mailing>
+<viewangle>west</viewangle>
+</object>
+
+<object id="object-AEPhi">
+<name>Alpha Epsilon Phi (AEPhi)</name>
+<displayname>Alpha Epsilon Phi</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://web.mit.edu/activities/aepi/</website>
+<street>165 Bay State Road</street>
+<mailname>Alpha Epsilon Phi</mailname>
+<mailing>165 Bay State Road</mailing>
+<city>Boston, MA 02215</city>
+<viewangle>south</viewangle>
+</object>
+
+<object id="object-AEPi">
+<name>Alpha Epsilon Pi (AEPi)</name>
+<displayname>Alpha Epsilon Pi</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://web.mit.edu/activities/aepi/</website>
+<street>155 Bay State Road </street>
+<mailname>Alpha Epsilon Pi</mailname>
+<mailing>155 Bay State Road </mailing>
+<city>Boston, MA 02215</city>
+<viewangle>south</viewangle>
+</object>
+
+<object id="object-AP">
+<name>Alpha Phi (AP)</name>
+<displayname>Alpha Phi</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://web.mit.edu/activities/alpha-phi/</website>
+<street>477-479 Commonwealth Avenue</street>
+<mailname>Alpha Phi</mailname>
+<mailing>477-479 Commonwealth Avenue</mailing>
+<city>Boston, MA 02215</city>
+<viewangle>south</viewangle>
+</object>
+
+<object id="object-ATO">
+<name>Alpha Tau Omega (ATO)</name>
+<displayname>Alpha Tau Omega</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://web.mit.edu/ato/www/</website>
+<street>405 Memorial Drive</street>
+<mailname>Alpha Tau Omega</mailname>
+<mailing>405 Memorial Drive</mailing>
+<viewangle>south</viewangle>
+</object>
+
+<object id="object-BTP">
+<name>Beta Theta Pi (BTP)</name>
+<displayname>Beta Theta Pi</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://beta.mit.edu/</website>
+<street>119 Bay State Road </street>
+<mailname>Beta Theta Pi</mailname>
+<mailing>119 Bay State Road </mailing>
+<city>Boston, MA 02215</city>
+<viewangle>south</viewangle>
+</object>
+
+<object id="object-BTP-A">
+<name>Beta Theta Pi Annex (BTP)</name>
+<displayname>Beta Theta Pi Annex</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://beta.mit.edu/</website>
+<street>120 Bay State Road</street>
+<mailname>Beta Theta Pi Annex</mailname>
+<mailing>120 Bay State Road</mailing>
+<city>Boston, MA 02215</city>
+<viewangle>south</viewangle>
+</object>
+
+<object id="object-CP">
+<name>Chi Phi (CP)</name>
+<displayname>Chi Phi</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://chiphi.mit.edu/</website>
+<street>32 Hereford Street</street>
+<mailname>Chi Phi</mailname>
+<mailing>32 Hereford Street</mailing>
+<city>Boston, MA 02115</city>
+<viewangle>north</viewangle>
+</object>
+
+<object id="object-DKE">
+<name>Delta Kappa Epsilon (DKE)</name>
+<displayname>Delta Kappa Epsilon</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://web.mit.edu/activities/dke/home.html</website>
+<street>403 Memorial Drive</street>
+<mailname>Delta Kappa Epsilon</mailname>
+<mailing>403 Memorial Drive</mailing>
+<viewangle>west</viewangle>
+</object>
+
+<object id="object-DP">
+<name>Delta Psi (DP), Number Six</name>
+<displayname>Delta Psi</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://web.mit.edu/no6/www/indexold.htm</website>
+<street>428 Memorial Drive</street>
+<mailname>Delta Psi</mailname>
+<mailing>428 Memorial Drive</mailing>
+<viewangle>west</viewangle>
+</object>
+
+<object id="object-DTD">
+<name>Delta Tau Delta (DTD)</name>
+<displayname>Delta Tau Delta</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://web.mit.edu/activities/dtd/</website>
+<street>416 Beacon Street</street>
+<mailname>Delta Tau Delta</mailname>
+<mailing>416 Beacon Street</mailing>
+<city>Boston, MA 02115</city>
+<viewangle>west</viewangle>
+</object>
+
+<object id="object-DU">
+<name>Delta Upsilon (DU)</name>
+<displayname>Delta Upsilon</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://web.mit.edu/du/www/</website>
+<street>526 Beacon Street</street>
+<mailname>Delta Upsilon</mailname>
+<mailing>526 Beacon Street</mailing>
+<city>Boston, MA 02215</city>
+<viewangle>south</viewangle>
+</object>
+
+<object id="object-ET">
+<name>Epsilon Theta (ET)</name>
+<displayname>Epsilon Theta</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://www.mit.edu/~thetans/</website>
+<street>259 St Paul Street</street>
+<mailname>Epsilon Theta</mailname>
+<mailing>259 St Paul Street</mailing>
+<city>Brookline, MA 02446</city>
+<viewangle>south</viewangle>
+</object>
+
+<object id="object-FH">
+<name>Fenway House (FH)</name>
+<displayname>Fenway House</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://web.mit.edu/fenway/www/</website>
+<street>34 The Fenway</street>
+<mailname>Fenway House</mailname>
+<mailing>34 The Fenway</mailing>
+<city>Boston, MA 02215</city>
+<viewangle>west</viewangle>
+</object>
+
+<object id="object-KS">
+<name>Kappa Sigma (KS)</name>
+<displayname>Kappa Sigma</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://kappasigma.mit.edu/</website>
+<street>407 Memorial Drive</street>
+<mailname>Kappa Sigma</mailname>
+<mailing>407 Memorial Drive</mailing>
+<viewangle>south</viewangle>
+</object>
+
+<object id="object-LCA">
+<name>Lambda Chi Alpha (LCA)</name>
+<displayname>Lambda Chi Alpha</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://lambda-chi.mit.edu/</website>
+<street>99 Bay State Road </street>
+<mailname>Lambda Chi Alpha</mailname>
+<mailing>99 Bay State Road </mailing>
+<city>Boston, MA 02215</city>
+<viewangle>south</viewangle>
+</object>
+
+<object id="object-ND">
+<name>Nu Delta (ND)</name>
+<displayname>Nu Delta</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://web.mit.edu/ndelta/www/</website>
+<street>460 Beacon Street</street>
+<mailname>Nu Delta</mailname>
+<mailing>460 Beacon Street</mailing>
+<city>Boston, MA 02115</city>
+<viewangle>south</viewangle>
+</object>
+
+<object id="object-PBE">
+<name>Phi Beta Epsilon (PBE)</name>
+<displayname>Phi Beta Epsilon</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://pbe.mit.edu/</website>
+<street>400 Memorial Drive</street>
+<mailname>Phi Beta Epsilon</mailname>
+<mailing>400 Memorial Drive</mailing>
+<viewangle>west</viewangle>
+</object>
+
+<object id="object-PDT">
+<name>Phi Delta Theta (PDT)</name>
+<displayname>Phi Delta Theta</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://phi-delts.mit.edu/</website>
+<street>97 Bay State Road</street>
+<mailname>Phi Delta Theta</mailname>
+<mailing>97 Bay State Road</mailing>
+<city>Boston, MA 02215</city>
+<viewangle>south</viewangle>
+</object>
+
+<object id="object-PKS">
+<name>Phi Kappa Sigma (PKS)</name>
+<displayname>Phi Kappa Sigma</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://web.mit.edu/PhiKaps/www/</website>
+<street>530 Beacon Street</street>
+<mailname>Phi Kappa Sigma</mailname>
+<mailing>530 Beacon Street</mailing>
+<city>Boston, MA 02215</city>
+<viewangle>south</viewangle>
+</object>
+
+<object id="object-PKT">
+<name>Phi Kappa Theta (PKT)</name>
+<displayname>Phi Kappa Theta</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://web.mit.edu/activities/pkt/index.html</website>
+<street>229 Commonwealth Avenue</street>
+<mailname>Phi Kappa Theta</mailname>
+<mailing>229 Commonwealth Avenue</mailing>
+<city>Boston, MA 02116</city>
+<viewangle>south</viewangle>
+</object>
+
+<object id="object-PSK-A">
+<name>Phi Sigma Kappa Annex (PSK)</name>
+<displayname>Phi Sigma Kappa Annex</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://phisig.mit.edu/</website>
+<street>485 Commonwealth Avenue</street>
+<mailname>Phi Sigma Kappa Annex</mailname>
+<mailing>485 Commonwealth Avenue</mailing>
+<city>Boston, MA 02215</city>
+<viewangle></viewangle>
+</object>
+
+<object id="object-PSK">
+<name>Phi Sigma Kappa (PSK)</name>
+<displayname>Phi Sigma Kappa</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://phisig.mit.edu/</website>
+<street>487 Commonwealth Avenue</street>
+<mailname>Phi Sigma Kappa</mailname>
+<mailing>487 Commonwealth Avenue</mailing>
+<city>Boston, MA 02215</city>
+<viewangle>north</viewangle>
+</object>
+
+<object id="object-PLP">
+<name>Pi Lambda Phi (PLP)</name>
+<displayname>Pi Lambda Phi</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://pilam.mit.edu/</website>
+<street>450 Beacon Street</street>
+<mailname>Pi Lambda Phi</mailname>
+<mailing>450 Beacon Street</mailing>
+<city>Boston, MA 02115</city>
+<viewangle>south</viewangle>
+</object>
+
+<object id="object-pika">
+<name>pika</name>
+<displayname>PIKA</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://pika.mit.edu/</website>
+<street>69 Chestnut Street</street>
+<mailname>PIKA</mailname>
+<mailing>69 Chestnut Street</mailing>
+<viewangle>south</viewangle>
+</object>
+
+<object id="object-SC">
+<name>Sigma Chi (SC)</name>
+<displayname>Sigma Chi</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://sigmachi.mit.edu/</website>
+<street>532 Beacon Street</street>
+<mailname>Sigma Chi</mailname>
+<mailing>532 Beacon Street</mailing>
+<city>Boston, MA 02215</city>
+<viewangle>south</viewangle>
+</object>
+
+<object id="object-SK">
+<name>Sigma Kappa (SK)</name>
+<displayname>Sigma Kappa</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://web.mit.edu/activities/sigmas/</website>
+<street>480 Commonwealth Avenue</street>
+<mailname>Sigma Kappa</mailname>
+<mailing>480 Commonwealth Avenue</mailing>
+<city>Boston, MA 02215</city>
+<viewangle>north</viewangle>
+</object>
+
+<object id="object-SN">
+<name>Sigma Nu (SN)</name>
+<displayname>Sigma Nu</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://sigmanu.mit.edu/</website>
+<street>28 The Fenway</street>
+<mailname>Sigma Nu</mailname>
+<mailing>28 The Fenway</mailing>
+<city>Boston, MA 02215</city>
+<viewangle>west</viewangle>
+</object>
+
+<object id="object-SPE-A">
+<name>Sigma Phi Epsilon Annex (SPE)</name>
+<displayname>Sigma Phi Epsilon Annex</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://sigep.mit.edu/</website>
+<street>515 Beacon Street</street>
+<mailname>Sigma Phi Epsilon Annex</mailname>
+<mailing>515 Beacon Street</mailing>
+<city>Boston, MA 02215</city>
+<viewangle>south</viewangle>
+</object>
+
+<object id="object-SPE">
+<name>Sigma Phi Epsilon (SPE)</name>
+<displayname>Sigma Phi Epsilon</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://sigep.mit.edu/</website>
+<street>518 Beacon Street</street>
+<mailname>Sigma Phi Epsilon</mailname>
+<mailing>518 Beacon Street</mailing>
+<city>Boston, MA 02215</city>
+<viewangle>north</viewangle>
+</object>
+
+<object id="object-SH">
+<name>Student House (SH)</name>
+<displayname>Student House</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://web.mit.edu/studs/www/</website>
+<street>111 Bay State Road</street>
+<mailname>Student House</mailname>
+<mailing>111 Bay State Road</mailing>
+<city>Boston, MA 02215</city>
+<viewangle>south</viewangle>
+</object>
+
+<object id="object-TEP">
+<name>Tau Epsilon Phi (TEP)</name>
+<displayname>Tau Epsilon Phi</displayname>
+<category>building</category>
+<category>residence</category>
+<street>253 Commonwealth Avenue</street>
+<mailname>Tau Epsilon Phi</mailname>
+<mailing>253 Commonwealth Avenue</mailing>
+<city>Boston, MA 02116</city>
+<viewangle>south</viewangle>
+</object>
+
+<object id="object-TC">
+<name>Theta Chi (TC)</name>
+<displayname>Theta Chi</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://ox.mit.edu/</website>
+<street>528 Beacon Street</street>
+<mailname>Theta Chi</mailname>
+<mailing>528 Beacon Street</mailing>
+<city>Boston, MA 02215</city>
+<viewangle>south</viewangle>
+</object>
+
+<object id="object-TDC">
+<name>Theta Delta Chi (TDC)</name>
+<displayname>Theta Delta Chi</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://tdc.mit.edu/</website>
+<street>372 Memorial Drive</street>
+<mailname>Theta Delta Chi</mailname>
+<mailing>372 Memorial Drive</mailing>
+<viewangle>south</viewangle>
+</object>
+
+<object id="object-TXi">
+<name>Theta Xi (TXi)</name>
+<displayname>Theta Xi</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://theta-xi.mit.edu/</website>
+<street>64-66 Bay State Road </street>
+<mailname>Theta Xi</mailname>
+<mailing>64-66 Bay State Road </mailing>
+<city>Boston, MA 02215</city>
+<viewangle>north</viewangle>
+</object>
+
+<object id="object-WILG">
+<name>WILG</name>
+<displayname>WILG</displayname>
+<altname>Women's Independent Living Group</altname>
+<category>building</category>
+<category>residence</category>
+<website>http://web.mit.edu/wilg/www/</website>
+<street>355 Massachusetts Avenue</street>
+<mailname>WILG</mailname>
+<mailing>355 Massachusetts Avenue</mailing>
+<viewangle>north</viewangle>
+</object>
+
+<object id="object-ZBT">
+<name>Zeta Beta Tau (ZBT)</name>
+<displayname>Zeta Beta Tau</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://web.mit.edu/zbt/www/</website>
+<street>58 Manchester Road </street>
+<mailname>Zeta Beta Tau</mailname>
+<mailing>58 Manchester Road </mailing>
+<city>Brookline, MA 02446</city>
+<viewangle>south</viewangle>
+</object>
+
+<object id="object-ZP">
+<name>Zeta Psi (ZP)</name>
+<displayname>Zeta Psi</displayname>
+<category>building</category>
+<category>residence</category>
+<website>http://zetapsi.mit.edu/</website>
+<street>233 Massachusetts Avenue</street>
+<mailname>Zeta Psi</mailname>
+<mailing>233 Massachusetts Avenue</mailing>
+<viewangle>south</viewangle>
+</object>
+
+<!-- End FSILG Data -->
+
+
+</campusmap>

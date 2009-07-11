@@ -1,0 +1,3049 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+<!DOCTYPE collection SYSTEM "../dtd/links.dtd">
+
+<!-- This is the offices/links.xml file -->
+
+<collection> 
+  <link>
+    <name>Office of Educational Innovation and Technology (OEIT)</name>
+    <url>http://web.mit.edu/oeit/</url>
+    <catid>acad-resources</catid>
+    <catid>computing</catid>
+    <altname>Educational Innovation and Technology, Office of</altname>
+    <location>ne48</location>
+  </link>
+  <link>
+    <name>Police, Boston</name>
+    <url>http://www.cityofboston.gov/police/</url>
+    <catid>police</catid>
+  </link>
+  <link>
+    <name>Police, Cambridge</name>
+    <url>http://www.cambridgema.gov/cpd/</url>
+    <catid>police</catid>
+  </link>
+  <link>
+    <name>MITAlert</name>
+    <url>http://web.mit.edu/mitalert/</url>
+    <catid>student-life</catid>
+    <catid>comm-resources</catid>
+    <catid>health</catid>
+    <catid>safety</catid>
+  </link>
+  <link>
+    <name>India</name>
+    <url>http://web.mit.edu/india/</url>
+    <catid>acad-programs</catid>
+  </link>
+  <link> 
+    <name>Sociology@MIT</name>
+    <url>http://web.mit.edu/sociology/</url>
+    <catid>acad-programs</catid> 
+  </link>
+  <link>
+    <name>Program in Polymer Science and Technology (PPST)</name>
+    <url>http://web.mit.edu/ppst/</url>
+    <catid>acad-programs</catid>
+    <altname>Polymer Science and Technology Program</altname>
+    <location>3-435</location>
+  </link>
+  <link>
+    <name>Teaching with technology</name>
+    <url>http://web.mit.edu/teachtech/</url>
+    <catid>acad-resources</catid>
+    <catid>computing</catid>
+    <altname>Educational technology</altname>
+  </link>
+  <link>
+    <name>Consortium on Financing Higher Education (COFHE)</name>
+    <url>http://www.openingdoorschanginglives.org/</url>
+    <catid>acad-resources</catid>
+    <location>E48</location>
+     </link>
+  <link>
+    <name>Tuition and fees (undergraduate)</name>
+    <url>http://web.mit.edu/sfs/afford/undergraduate_costs.html</url>
+    <catid>financial</catid>
+  </link>
+  <link>
+    <name>Tuition and fees (graduate)</name>
+    <url>http://web.mit.edu/sfs/afford/graduate_student_costs.html</url>
+    <catid>financial</catid>
+  </link>
+  <link>
+    <name>Undergraduate Advising and Academic Programming</name>
+    <url>http://web.mit.edu/uaap/</url>
+    <catid>acad-resources</catid>
+    <location>7</location>
+     </link>
+  <link>
+    <name>Faculty Support, Office of</name>
+    <url>http://web.mit.edu/facultysupport/</url>
+    <catid>acad-resources</catid>
+    <location>7-133</location>
+     </link>
+  <link>
+    <name>Mind and Hand book</name>
+    <url>http://web.mit.edu/mindandhandbook/</url>
+    <catid>publications</catid>
+    <catid>student-life</catid>
+  </link>
+  <link>
+    <name>Office of Finance</name>
+    <url>http://web.mit.edu/finance/</url>
+    <catid>admin-resources</catid>
+    <catid>financial</catid>
+    <altname>Finance, Office of</altname>
+    <location>E19-623</location>
+  </link>
+  <link alpha="skip">
+    <name>Brain Scan: McGovern Institute quarterly newsletter (PDF)</name>
+    <url>http://web.mit.edu/mcgovern/html/News_and_Publications/brainscan.shtml</url>
+    <catid>publications</catid>
+  </link>
+  <link>
+    <name>Current students</name>
+    <url>http://web.mit.edu/student/</url>
+    <catid>acad-resources</catid>
+    <catid>student-life</catid>
+  </link>
+  <link>
+    <name>Communications workshops</name>
+    <url>http://web.mit.edu/commworkshops/</url>
+    <catid>comm-resources</catid>
+  </link>
+  <link>
+    <name>Stationery, ordering</name>
+    <url>http://web.mit.edu/ecat/minutemanpress/</url>
+    <catid>comm-resources</catid>
+  </link>
+  <link>
+    <name>Templates, MIT logo</name>
+    <url>http://web.mit.edu/graphicidentity/downloads/</url>
+    <catid>comm-resources</catid>
+  </link>
+  <link>
+    <name>Photo library</name>
+    <url>http://web.mit.edu/psb/resources/photographs.html</url>
+    <catid>comm-resources</catid>
+  </link>
+  <link>
+    <name>MIT logo</name>
+    <url>http://web.mit.edu/graphicidentity/logo/</url>
+    <catid>comm-resources</catid>
+    <catid>insignia</catid>
+    <catid>admin-resources</catid>
+        <catid>outreach</catid>
+    <catid>publications</catid>
+  </link>
+  <link>
+    <name>Visual Arts Program (VAP)</name>
+    <url>http://web.mit.edu/vap/</url>
+    <catid>acad-programs</catid>
+    <catid>arts</catid>
+    <altname>VAP</altname>
+    <location>N51</location>
+  </link>
+  <link>
+    <name>Educational Transformation through Technology</name>
+    <url>http://web.mit.edu/edtech/</url>
+    <catid>acad-resources</catid>
+  </link>
+  <link>
+    <name>Logistics, Master of Engineering in (MLOG)</name>
+    <url>http://web.mit.edu/mlog/</url>
+    <catid>acad-programs</catid>
+    <altname>Master of Engineering in Logistics (MLOG)</altname>
+    <location>E40-367</location>
+  </link>
+  <link>
+    <name>Parking</name>
+    <url>http://web.mit.edu/facilities/transportation/parking/</url>
+    <catid>transportation</catid>
+    <location>W20-022</location>
+  </link>
+  <link>
+    <name>Bates Shuttle</name>
+    <url>http://mitbates.lns.mit.edu/bates/control/direction</url>
+    <catid>transportation</catid>
+  </link>
+  <link>
+    <name>Winter Campus Shuttle</name>
+    <url>http://web.mit.edu/facilities/transportation/shuttles/winter.html</url>
+    <catid>transportation</catid>
+    <altname>Shuttle, Winter Campus</altname>
+  </link>
+  <link>
+    <name>Grocery shuttle</name>
+    <url>http://web.mit.edu/facilities/transportation/shuttles/grocery.html</url>
+    <catid>transportation</catid>
+    <catid>food</catid>
+    <altname>Shuttle, grocery</altname>
+  </link>
+  <link>
+    <name>Bicycle Commuting</name>
+    <url>http://web.mit.edu/facilities/transportation/commuting/bicycling.html</url>
+    <catid>transportation</catid>
+  </link>
+  <link>
+    <name>T-passes</name>
+    <url>http://web.mit.edu/facilities/transportation/tpass/</url>
+    <catid>transportation</catid>
+    <altname>Subway passes</altname>
+  </link>
+  <link>
+    <name>MIT K-12 Educational Outreach Programs</name>
+    <url>http://web.mit.edu/outreach/</url>
+    <catid>outreach</catid>
+    <catid>acad-programs</catid>
+  </link>
+<link>
+<name>Deshpande Center for Technological Innovation</name>
+<url>http://web.mit.edu/deshpandecenter/</url>
+<catid>b3-alliances</catid>
+<catid>b8-resources</catid>
+<catid>acad-resources</catid>
+<location>1-229</location>
+</link>
+<link> 
+<name>SAPweb</name>
+    <url>http://web.mit.edu/sapweb/</url>
+    <catid>admin-resources</catid>
+    <catid>employment</catid>
+    <catid>financial</catid>
+  </link>
+<link> 
+<name>Employee Self-Service (ESS)</name>
+    <url>http://web.mit.edu/sapwebss/</url>
+    <catid>admin-resources</catid>
+    <catid>employment</catid>
+  </link>
+  <link>
+    <name>Academic Calendar</name>
+    <url>http://web.mit.edu/registrar/www/calendar.html</url>
+    <catid>calendars</catid>
+    <catid>acad-resources</catid>
+  </link>
+  <link>
+    <name>Academic Media Production Services (AMPS)</name>
+    <url>http://web.mit.edu/amps/</url>
+    <catid>computing</catid>
+    <catid>comm-resources</catid>
+    <catid>acad-resources</catid>
+    <location>9</location>
+  </link>
+  <link>
+    <name>Academic Opportunities</name>
+    <url>http://web.mit.edu/uinfo/opps/</url>
+    <catid>acad-resources</catid>
+  </link>
+  <link>
+    <name>Adaptive Technology for Information and Computing (ATIC)</name>
+    <url>http://web.mit.edu/atic/www/</url>
+    <catid>computing</catid>
+    <catid>support</catid>
+    <location>7</location>
+  </link>
+  <link alpha="skip">
+    <name>Calendars</name>
+    <url>http://web.mit.edu/hr/empservices/mit_holidays.html</url>
+    <catid>calendars</catid>
+    <catid>admin-resources</catid>
+  </link>
+  <link>
+    <name>Admissions Office</name>
+    <url>http://web.mit.edu/admissions/</url>
+    <catid>admissions</catid>
+    <location>3-108</location>
+  </link>
+  <link>
+    <name>Admissions, Graduate</name>
+    <url>http://web.mit.edu/admissions/graduate/</url>
+    <catid>admissions</catid>
+    <altname>Graduate Admissions</altname>
+    <location>3-103</location>
+  </link>
+  <link>
+    <name>Admissions, International</name>
+    <url>http://web.mit.edu/admissions/graduate/international_students/</url>
+    <catid>admissions</catid>
+    <altname>International Admissions</altname>
+    <location>3</location>
+  </link>
+  <link>
+    <name>Air Force ROTC</name>
+    <url>http://web.mit.edu/afrotc/www/</url>
+    <catid>acad-programs</catid>
+    <altname>Aerospace Studies</altname>
+  </link>
+  <link>
+    <name>ROTC (Reserve Officer Training Corps)</name>
+    <url>http://web.mit.edu/due/rotc/</url>
+    <catid>academic</catid>
+  </link>
+  <link>
+    <name>Admissions, Undergraduate</name>
+    <url>http://admissions.mit.edu/AdmissionsWeb/appmanager/AdmissionsWeb/Main</url>
+    <catid>admissions</catid>
+    <altname>Undergraduate Admissions</altname>
+    <location>3</location>
+  </link>
+  <link>
+    <name>MIT Professional Institute</name>
+    <url>http://web.mit.edu/mitpep/pi/</url>
+    <catid>acad-programs</catid>
+    <location>35-433</location>
+  </link>
+  <link>
+    <name>MIT Advanced Study Program</name>
+    <url>http://web.mit.edu/mitpep/asp/</url>
+    <catid>acad-programs</catid>
+    <location>35-433</location>
+  </link>
+  <link>
+    <name>http://web.mit.edu/mitpep/</name>
+    <url>http://web.mit.edu/mitpep/</url>
+    <catid>acad-programs</catid>
+    <altname>MIT PEP</altname>
+    <location>35-433</location>
+  </link>
+  <link>
+    <name>Advising and Support</name>
+    <url>http://web.mit.edu/uinfo/advising/</url>
+    <catid>acad-resources</catid>
+  </link>
+  <link>
+    <name>Aeronautics and Astronautics, Dept. of</name>
+    <url>http://web.mit.edu/aeroastro/</url>
+    <catid>acad-programs</catid>
+    <location>33-207</location>
+  </link>
+  <link>
+    <name>Air and Water Quality Program</name>
+    <url>http://web.mit.edu/environment/ehs/topic/air_quality.html</url>
+    <catid>environment</catid>
+  </link>
+  <link>
+    <name>Alcohol Policies and Procedures</name>
+    <url>http://web.mit.edu/alcohol/www/</url>
+    <catid>policies</catid>
+    <catid>student-life</catid>
+  <catid>housing</catid>
+    <altname>Policies, Alcohol</altname>
+  </link>
+  <link>
+    <name>Alumni Association Events</name>
+    <url>http://alum.mit.edu/ne/calendar/</url>
+    <catid>calendars</catid>
+    <catid>alumni</catid>
+  </link>
+  <link>
+    <name>Alumni/ae Association</name>
+    <url>http://alum.mit.edu/</url>
+    <catid>alumni</catid>
+    <catid>outreach</catid>
+    <catid>b8-resources</catid>
+    <location>10-110</location>
+  </link>
+  <link alpha="skip">
+    <name>Anime Showings</name>
+    <url>http://web.mit.edu/anime/www/Showings/showing.shtml</url>
+    <catid>calendars</catid>
+  </link>
+  <link alpha="skip">
+    <name>MIT Cheer calendar</name>
+    <url>http://events.mit.edu/scripts/monthly_ext.pl?groupid=6394&amp;amp;location=http://web.mit.edu/cheer/</url>
+    <catid>calendars</catid>
+  </link>
+ <link>
+    <name>Anthropology, Dept. of</name>
+    <url>http://web.mit.edu/anthropology/</url>
+    <catid>acad-programs</catid>
+    <location>16</location>
+  </link>
+  <link>
+    <name>Architecture and Planning, School of</name>
+    <url>http://loohooloo.mit.edu/</url>
+    <catid>acad-programs</catid>
+    <location>7</location>
+  </link>
+  <link>
+    <name>Architecture, Dept. of</name>
+    <url>http://architecture.mit.edu/expo.html</url>
+    <catid>acad-programs</catid>
+    <location>7</location>
+  </link>
+  <link>
+    <name>Art Association, Student</name>
+    <url>http://web.mit.edu/saa/</url>
+    <catid>arts</catid>
+    <catid>student-life</catid>
+    <altname>Student Art Association</altname>
+    <location>W20</location>
+  </link>
+  <link alpha="skip">
+    <name>CSAIL events</name>
+    <url>http://www.ai.mit.edu/events/</url>
+    <catid>calendars</catid>
+  </link>
+  <link>
+    <name>Artists Behind the Desk</name>
+    <url>http://web.mit.edu/abd/</url>
+    <catid>arts</catid>
+    <catid>employment</catid>
+  </link>
+  <link alpha="skip">
+    <name>Arts Calendar</name>
+    <url>http://web.mit.edu/arts/arts_cal.html</url>
+    <catid>arts</catid>
+    <catid>calendars</catid>
+    <altname>Calendar, Arts</altname>
+  </link>
+  <link>
+    <name>Arts, Associate Provost for the</name>
+    <url>http://web.mit.edu/arts/associate_provost/</url>
+    <catid>arts</catid>
+    <catid>admin-resources</catid>
+  </link>
+  <link>
+    <name>Arts, Office of the</name>
+    <url>http://web.mit.edu/arts/</url>
+    <catid>arts</catid>
+    <location>E15</location>
+  </link>
+  <link>
+    <name>Association of Student Activities</name>
+    <url>http://web.mit.edu/asa/www/</url>
+    <catid>student-life</catid>
+    <altname>Student Activities, Association of</altname>
+    <location>W20-401</location>
+  </link>
+  <link>
+    <name>Athena Consulting</name>
+    <url>http://web.mit.edu/consult/www/</url>
+    <catid>computing</catid>
+    <location>W20-021B</location>
+  </link>
+  <link>
+    <name>Athena Rules of Use</name>
+    <url>http://web.mit.edu/olh/Welcome/rules.html#intro</url>
+    <catid>policies</catid>
+    <catid>computing</catid>
+  </link>
+  <link>
+    <name>Athena User Accounts</name>
+    <url>http://web.mit.edu/accounts/www/</url>
+    <catid>computing</catid>
+    <altname>E-mail Accounts</altname>
+    <location>N42-140</location>
+  </link>
+  <link>
+    <name>Athletics, Physical Education and Recreation, Dept. </name>
+    <url>http://web.mit.edu/athletics/</url>
+    <catid>student-life</catid>
+    <altname>Physical Education</altname>
+    <altname>Sports</altname>
+    <location>W35</location>
+  </link>
+  <link>
+    <name>Audio Visual Service</name>
+    <url>http://web.mit.edu/av/www/</url>
+    <catid>facilities</catid>
+    <catid>comm-resources</catid>
+    <location>4</location>
+  </link>
+  <link>
+    <name>Audit Division</name>
+    <url>http://web.mit.edu/audiv/www/</url>
+    <catid>financial</catid>
+    <catid>admin-resources</catid>
+    <location>NE49-3021</location>
+  </link>
+  <link alpha="skip">
+    <name>Boston's 8 research universities provide $7B annual boost to regional economy</name>
+    <url>http://web.mit.edu/newsoffice/nr/2003/econimpact.html</url>
+    <catid>b2-impact</catid>
+  </link>
+  <link alpha="skip">
+    <name>MIT's alliances with industry</name>
+    <url>http://web.mit.edu/newsoffice/nr/2000/alliance.html</url>
+    <catid>b3-alliances</catid>
+  </link>
+  <link alpha="skip">
+    <name>MIT graduates have started 4,000 companies</name>
+    <url>http://web.mit.edu/newsoffice/nr/1997/43371.html</url>
+    <catid>b2-impact</catid>
+  </link>
+  <link alpha="skip">
+    <name>MIT's TLO says government research pays off through $3 billion in taxes</name>
+    <url>http://web.mit.edu/newsoffice/tt/1998/apr15/patents.html</url>
+    <catid>b2-impact</catid>
+  </link>
+  <link alpha="skip">
+    <name>Ballroom Dance Team Events</name>
+    <url>http://mitbdt.mit.edu/events/</url>
+    <catid>calendars</catid>
+  </link>
+  <link>
+    <name>Benefits Office</name>
+    <url>http://hrweb.mit.edu/benefits/</url>
+    <catid>employment</catid>
+    <altname>Employee Benefits</altname>
+    <location>E19</location>
+  </link>
+  <link alpha="skip">
+    <name>BiblioTech: News from the MIT Libraries</name>
+    <url>http://libraries.mit.edu/about/news.html</url>
+    <catid>publications</catid>
+  </link>
+  <link alpha="skip">
+    <name>How to Get Around MIT (HowToGAMIT)</name>
+    <url>http://web.mit.edu/htgamit/www/</url>
+    <catid>publications</catid>
+  </link>
+  <link>
+    <name>Biological Engineering, Dept. of</name>
+    <url>http://web.mit.edu/be/</url>
+    <catid>acad-programs</catid>
+    <location>56-651</location>
+  </link>
+  <link>
+    <name>Biology, Dept. of</name>
+    <url>http://web.mit.edu/biology/www/</url>
+    <catid>acad-programs</catid>
+    <location>68-132</location>
+  </link>
+  <link>
+    <name>Blood Drive</name>
+    <url>http://web.mit.edu/blood-drive/www/</url>
+    <catid>health</catid>
+  </link>
+  <link>
+    <name>Bookstore, MIT Press &amp;amp; MIT Authors</name>
+    <url>http://mitpress.mit.edu/bookstore/</url>
+    <catid>books</catid>
+    <altname>MIT Press Bookstore, The</altname>
+    <location>E38</location>
+  </link>
+  <link>
+    <name>Brain and Cognitive Sciences, Dept. of</name>
+    <url>http://web.mit.edu/bcs/</url>
+    <catid>acad-programs</catid>
+    <altname>Cognitive Sciences</altname>
+    <altname>Psychology, see Brain and Cognitive Sciences</altname>
+    <location>46</location>
+  </link>
+  <link>
+    <name>Office of Budget Operations</name>
+    <url>http://web.mit.edu/budget/</url>
+    <catid>financial</catid>
+    <catid>admin-resources</catid>
+    <altname>Budget Operations, Office of</altname>
+    <location>E19</location>
+  </link>
+<link>
+<name>MIT Warehouse and Equipment Exchange</name>
+<url>http://controllers.mit.edu/site/property/resources</url>
+    <catid>facilities</catid>
+    <catid>financial</catid>
+    <catid>admin-resources</catid>
+<altname>Storage Warehouse</altname>
+<location>WW15-197</location>
+</link>
+<link>
+<name>MIT Student Furniture Exchange</name>
+<url>http://web.mit.edu/womensleague/fx/</url>
+<catid>admin-resources</catid>
+<location>WW15</location>
+</link>
+<link>
+<name>Leadership Giving, Office of</name>
+<url>http://development.mit.edu/offices/individual-giving/leadership-giving/</url>
+<catid>giving</catid>
+<location>E19-370</location>
+</link>
+
+  <link>
+    <name>Building Services</name>
+    <url>http://web.mit.edu/facilities/services/cleaning.html</url>
+    <catid>facilities</catid>
+    <altname>Custodial Services</altname>
+    <altname>Furniture Set-ups</altname>
+    <altname>Pest Control</altname>
+    <location>10-063</location>
+  </link>
+  <link>
+    <name>Cable Television, MIT</name>
+    <url>http://web.mit.edu/mitcable/www/</url>
+    <catid>student-life</catid>
+    <altname>MIT Cable</altname>
+    <location>9</location>
+  </link>
+  <link>
+    <name>Cambridge-MIT Institute (CMI)</name>
+    <url>http://www.cambridge-mit.org/</url>
+    <catid>acad-programs</catid>
+    <catid>b3-alliances</catid>
+    <location>8-403</location>
+  </link>
+  <link>
+    <name>Campus Activities Complex</name>
+    <url>http://web.mit.edu/campus-activities/www/</url>
+    <catid>student-life</catid>
+    <catid>facilities</catid>
+    <altname>Student Center</altname>
+    <location>W20</location>
+  </link>
+  <link>
+    <name>Campus Committee on Race Relations</name>
+    <url>http://web.mit.edu/ccrr/</url>
+    <catid>support</catid>
+    <location>7-211</location>
+  </link>
+  <link>
+    <name>Campus Dining, Office of</name>
+    <url>http://web.mit.edu/dining/</url>
+    <catid>food</catid>
+   <catid>housing</catid>
+ <altname>Catering</altname>
+    <altname>Dining</altname>
+    <location>E19-429</location>
+  </link>
+  <link>
+    <name>Steam Cafe</name>
+    <url>http://steamcafe.mit.edu/</url>
+    <catid>food</catid>
+    <location>7</location>
+  </link>
+  <link>
+    <name>Kosher Dining</name>
+    <url>http://web.mit.edu/hillel/www/kosher-dining.html</url>
+    <catid>food</catid>
+    <altname>Dining, Kosher</altname>
+    <location>W11</location>
+  </link>
+  <link>
+    <name>Campus Map</name>
+    <url>http://whereis.mit.edu/</url>
+    <catid>facilities</catid>
+    <catid>transportation</catid>
+    <altname>Map, MIT Campus</altname>
+  </link>
+  <link>
+    <name>MIT Police</name>
+    <url>http://web.mit.edu/cp/www/</url>
+    <catid>student-life</catid>
+    <catid>health</catid>        
+    <catid>police</catid>
+    <altname>Police, MIT</altname>
+    <altname>Campus Police</altname>
+    <altname>Security, Personal</altname>
+    <location>W89</location>
+  </link>
+  <link>
+    <name>Careers, jobs, and internships</name>
+    <url>http://web.mit.edu/uinfo/careers/</url>
+    <catid>acad-resources</catid>
+    <catid>support</catid>
+    <catid>student-life</catid>
+    <catid>employment</catid>
+    <catid>b4-recruit</catid>
+    <catid>careers</catid>
+  </link>
+  <link>
+    <name>MIT Careers Office</name>
+    <url>http://web.mit.edu/career/www/</url>
+    <catid>support</catid>
+    <catid>alumni</catid>
+    <catid>student-life</catid>
+    <catid>acad-resources</catid>
+    <catid>employment</catid>
+    <catid>jobs</catid>
+    <catid>b4-recruit</catid>
+    <altname>Careers Office</altname>
+    <location>12-170</location>
+  </link>
+  <link alpha="skip">
+    <name>Center for International Studies Events</name>
+    <url>http://events.mit.edu/scripts/monthly_ext.pl?groupid=330,447,1132,482,299,1447,1116,1291,352&amp;location=http://web.mit.edu/cis/calendar/</url>
+    <catid>calendars</catid>
+  </link>
+  <link alpha="skip">
+    <name>Center for Real Estate Events</name>
+    <url>http://web.mit.edu/cre/events/</url>
+    <catid>calendars</catid>
+  </link>
+  <link>
+    <name>Central Machine Shop</name>
+    <url>http://web.mit.edu/cmshop/</url>
+    <catid>facilities</catid>
+    <altname>Machine Shop, Central</altname>
+    <location>38-001</location>
+  </link>
+  <link>
+    <name>Chancellor, Office of the</name>
+    <url>http://web.mit.edu/chancellor/</url>
+    <catid>admin-resources</catid>
+    <location>10-200</location>
+  </link>
+  <link>
+    <name>Chaplains, MIT Board of</name>
+    <url>http://web.mit.edu/dsl/religious_life.html</url>
+    <catid>support</catid>
+    <catid>student-life</catid>
+    <altname>Religious Life</altname>
+    <location>W11</location>
+  </link>
+  <link>
+    <name>Religious Activities Center</name>
+    <url>http://web.mit.edu/campus-activities/www/html/rac.html</url>
+        <catid>support</catid>
+    <catid>student-life</catid>
+ <location>W11</location>
+  </link>
+  <link>
+    <name>Chemical Engineering, Dept. of</name>
+    <url>http://web.mit.edu/cheme/</url>
+    <catid>acad-programs</catid>
+    <location>66-350</location>
+  </link>
+  <link>
+    <name>Chemistry, Dept. of</name>
+    <url>http://web.mit.edu/chemistry/www/</url>
+    <catid>acad-programs</catid>
+    <location>18-390</location>
+  </link>
+  <link>
+    <name>Study Abroad and Distinguished Fellowships</name>
+    <url>http://web.mit.edu/studyabroad/</url>
+    <catid>acad-programs</catid>
+    <location>26-153</location>
+  </link>
+  <link>
+    <name>Knight Science Journalism Fellowships</name>
+    <url>http://web.mit.edu/knight-science/</url>
+    <catid>acad-programs</catid>
+    <location>E19-307</location>
+  </link>
+  <link alpha="skip">
+    <name>On Balance: Civil &amp;amp; Environmental Engineering research news</name>
+    <url>http://cee.mit.edu/index.pl?id=20185&amp;amp;isa=Category&amp;amp;op=show</url>
+    <catid>publications</catid>
+  </link>
+  <link>
+    <name>Civil and Environmental Engineering, Dept. of</name>
+    <url>http://web.mit.edu/civenv/</url>
+    <catid>acad-programs</catid>
+    <altname>Environmental and Civil Engineering</altname>
+    <location>1-290</location>
+  </link>
+  <link>
+    <name>Classroom Management and Scheduling</name>
+    <url>http://web.mit.edu/registrar/www/schedules/</url>
+    <catid>acad-resources</catid>
+    <location>5-111</location>
+</link>
+<link>
+    <name>Cogeneration Facility</name>
+    <url>http://cogen.mit.edu/</url>
+    <catid>environment</catid>
+    <catid>facilities</catid>
+    <location>42</location>
+  </link>
+  <link>
+    <name>Committee on Community</name>
+    <url>http://web.mit.edu/community/</url>
+    <catid>employment</catid>
+    <catid>student-life</catid>
+  </link>
+  <link>
+    <name>Committees of the Institute</name>
+    <url>http://web.mit.edu/committees/</url>
+    <catid>admin-resources</catid>
+  </link>
+  <link>
+    <name>Communications Forum, MIT</name>
+    <url>http://web.mit.edu/comm-forum/</url>
+    <catid>acad-resources</catid>
+    <location>14N-207</location>
+  </link>
+  <link>
+    <name>Community Giving at MIT</name>
+    <url>http://web.mit.edu/community-giving/</url>
+    <catid>outreach</catid>
+    <location>E19-432</location>
+  </link>
+  <link>
+    <name>Community Service Fund</name>
+    <url>http://web.mit.edu/csf/</url>
+    <catid>outreach</catid>
+  </link>
+  <link>
+    <name>Community Players, MIT</name>
+    <url>http://web.mit.edu/mitcp/</url>
+    <catid>arts</catid>
+  </link>
+  <link>
+    <name>Transportation and Parking Task Group</name>
+    <url>http://web.mit.edu/commuting/</url>
+    <catid>environment</catid>
+    <catid>support</catid>
+    <catid>transportation</catid>
+    <altname>Commuting the MITway</altname>
+  </link>
+  <link>
+    <name>Comparative Media Studies (CMS)</name>
+    <url>http://web.mit.edu/cms/</url>
+    <catid>acad-programs</catid>
+    <location>14N-207</location>
+  </link>
+  <link>
+    <name>Comparative Medicine, Division of</name>
+    <url>http://web.mit.edu/comp-med/</url>
+    <catid>acad-programs</catid>
+    <location>16-825</location>
+  </link>
+  <link>
+    <name>Compton Gallery</name>
+    <url>http://web.mit.edu/museum/exhibitions/compton.html</url>
+    <catid>arts</catid>
+    <location>10-150</location>
+  </link>
+  <link>
+    <name>Computation for Design and Optimization</name>
+    <url>http://web.mit.edu/cdo-program/</url>
+    <catid>acad-programs</catid>
+    <location>E40-152</location>
+  </link>
+  <link>
+    <name>Computer Help</name>
+    <url>http://web.mit.edu/ist/help/</url>
+    <catid>computing</catid>
+    <altname>Help and Consulting, Computing</altname>
+    <location>N42</location>
+  </link>
+  <link>
+    <name>Usability Lab</name>
+    <url>http://web.mit.edu/ist/usability/</url>
+    <catid>computing</catid>
+    <location>N42</location>
+  </link>
+  <link>
+    <name>Computer Security</name>
+    <url>http://web.mit.edu/security/</url>
+    <catid>computing</catid>
+    <altname>Security, Computer</altname>
+    <location>N42</location>
+  </link>
+  <link>
+    <name>Computer Training</name>
+    <url>http://web.mit.edu/ist/training/</url>
+    <catid>computing</catid>
+    <altname>Training, Computer</altname>
+    <location>N42-240A</location>
+  </link>
+  <link>
+    <name>Computing Services by Topic</name>
+    <url>http://web.mit.edu/ist/services/</url>
+    <catid>computing</catid>
+  </link>
+  <link alpha="skip">
+    <name>Concert Choir Events</name>
+    <url>http://www.mit.edu/~21m401/concerts.html</url>
+    <catid>calendars</catid>
+  </link>
+  <link>
+    <name>Concourse Program</name>
+    <url>http://web.mit.edu/concourse/www/</url>
+    <catid>acad-programs</catid>
+    <location>16-128</location>
+  </link>
+  <link>
+    <name>Conference Services</name>
+    <url>http://web.mit.edu/conferences/</url>
+    <catid>comm-resources</catid>
+    <catid>outreach</catid>
+    <location>12-156</location>
+  </link>
+  <link>
+    <name>Student Mediation and Community Standards</name>
+    <url>http://web.mit.edu/discipline</url>
+    <catid>student-life</catid>
+    <altname>Conflict Resolution</altname>
+    <location>W20-507</location>
+  </link>
+  <link>
+    <name>Community Development and Substance Abuse</name>
+    <url>http://web.mit.edu/cdsa/</url>
+    <catid>student-life</catid>
+    <location>W20-507</location>
+  </link>
+  
+
+
+  <link>
+    <name>Controller's Accounting Office (CAO)</name>
+    <url>http://controllers.mit.edu/</url>
+    <catid>financial</catid>
+    <catid>admin-resources</catid>
+    <altname>Accounting Office, Controller</altname>
+    <altname>Payroll</altname>
+    <altname>Accounts Payable</altname>
+    <altname>Accounts Receivable</altname>
+    <location>NE49</location>
+  </link>
+  <link>
+    <name>Coop, The (official MIT bookstore)</name>
+    <url>http://mit.edu/thecoop</url>
+    <catid>books</catid>
+    <catid>insignia</catid>
+    <altname>Bookstore (The Coop)</altname>
+    <location>NE20</location>
+    <location>W20</location>
+  </link>
+  <link>
+    <name>Copy Technology Centers</name>
+    <url>http://web.mit.edu/ctc/www/</url>
+    <catid>facilities</catid>
+    <catid>comm-resources</catid>
+    <location>11-004</location>
+    <location>E52-045</location>
+    <location>W20</location>
+  </link>
+  <link>
+    <name>Copyright Information</name>
+    <url>http://web.mit.edu/copyright/</url>
+    <catid>comm-resources</catid>
+    <catid>research</catid>
+  </link>
+  <link>
+    <name>Corporation, The MIT</name>
+    <url>http://web.mit.edu/corporation/</url>
+    <catid>admin-resources</catid>
+    <location>7-203</location>
+  </link>
+  <link>
+    <name>Science and Education Program for Teachers</name>
+    <url>http://web.mit.edu/scienceprogram/</url>
+    <catid>outreach</catid>
+  </link>
+  <link>
+    <name>Student Support Services (S3)</name>
+    <url>http://web.mit.edu/counsel/www/</url>
+    <catid>support</catid>
+    <catid>health</catid>
+    <catid>student-life</catid>
+    <altname>Help, Emotional Support</altname>
+    <location>5-104</location>
+  </link>
+  <link>
+    <name>Data Warehouse</name>
+    <url>http://web.mit.edu/warehouse/</url>
+    <catid>computing</catid>
+  </link>
+  <link>
+    <name>Dealing with Harassment at MIT</name>
+    <url>http://web.mit.edu/communications/hg/</url>
+    <catid>policies</catid>
+    <catid>employment</catid>
+    <catid>student-life</catid>
+  </link>
+  <link>
+    <name>Dean for Undergraduate Education</name>
+    <url>http://web.mit.edu/due/</url>
+    <catid>acad-resources</catid>
+    <altname>Undergraduate Education, Office of the Dean for</altname>
+    <location>4-110</location>
+  </link>
+  <link>
+    <name>DUE Desktop Support</name>
+    <url>http://web.mit.edu/due/administration/services/index.html</url>
+    <catid>acad-resources</catid>
+    <catid>computing</catid>
+    <location>12-172</location>
+  </link>
+  <link>
+    <name>Dean's Gallery</name>
+    <url>http://web.mit.edu/deansgallery/</url>
+    <catid>arts</catid>
+  </link>
+  <link>
+    <name>Degree Programs</name>
+    <url>http://web.mit.edu/uinfo/academics/programs/</url>
+    <catid>acad-resources</catid>
+  </link>
+  <link alpha="skip">
+    <name>Department of Political Science Events</name>
+    <url>http://web.mit.edu/polisci/research/seminars.html</url>
+    <catid>calendars</catid>
+  </link>
+  <link>
+    <name>Disability Services Office</name>
+    <url>http://web.mit.edu/dso/www/</url>
+    <catid>support</catid>
+    <catid>employment</catid>
+    <altname>Accessibility Services</altname>
+    <location>7-145</location>
+  </link>
+  <link>
+    <name>Discipline, Committee on</name>
+    <url>http://web.mit.edu/committees/cod/</url>
+    <catid>policies</catid>
+    <catid>student-life</catid>
+  </link>
+  <link>
+    <name>Document Services</name>
+    <url>http://libraries.mit.edu/docs</url>
+    <catid>libraries</catid>
+    <catid>comm-resources</catid>
+    <location>14-0551</location>
+  </link>
+  <link alpha="skip">
+    <name>Dramashop calendar</name>
+    <url>http://www.mit.edu/activities/dramashop/calendar.html</url>
+    <catid>calendars</catid>
+  </link>
+  <link>
+    <name>Earth, Atmospheric and Planetary Sciences (EAPS), Dept. of</name>
+    <url>http://web.mit.edu/eaps/</url>
+    <catid>acad-programs</catid>
+    <altname>Program in Atmospheres, Oceans and Climate (PAOC)</altname>
+    <location>54-918</location>
+  </link>
+  <link>
+    <name>ECAT - Electronic Catalog</name>
+    <url>http://web.mit.edu/ecat/</url>
+    <catid>financial</catid>
+    <catid>admin-resources</catid>
+    <altname>Catalog, Electronic</altname>
+  </link>
+   <link>
+    <name>Educational Council</name>
+    <url>http://web.mit.edu/admissions/www/educoun/</url>
+    <catid>alumni</catid>
+    <catid>admissions</catid>
+    <altname>Alumni/ae Interviews</altname>
+    <location>N52-419</location>
+  </link>
+  <link>
+    <name>Electrical Engineering and Computer Science (EECS), Dept. of</name>
+    <url>http://www-eecs.mit.edu/</url>
+    <catid>acad-programs</catid>
+    <altname>Computer Science and Electrical Engineering</altname>
+    <altname>Department of Electrical Engineering and Computer Science</altname>
+    <location>38-401</location>
+  </link>
+  <link>
+    <name>Emergency information</name>
+    <url>http://emergency.mit.edu/</url>
+    <catid>emergency</catid>
+    <catid>police</catid>
+  </link>
+  <link>
+    <name>Emergency operations and preparedness</name>
+    <url>http://informit.mit.edu/epr/</url>
+    <catid>emergency</catid>
+    <catid>safety</catid>
+  </link>
+    <link alpha="skip">
+    <name>E.merging: voices on the new diasporas</name>
+    <url>http://web.mit.edu/emerging/</url>
+    <catid>publications</catid>
+  </link>
+  <link>
+    <name>Endicott House</name>
+    <url>http://web.mit.edu/endicott-house/</url>
+    <catid>facilities</catid>
+    <catid>comm-resources</catid>
+    <offcampus>OFF CAMPUS</offcampus>
+  </link>
+  <link>
+    <name>Engineering Systems Division (ESD)</name>
+    <url>http://esd.mit.edu/</url>
+    <catid>acad-programs</catid>
+    <location>E40-349</location>
+  </link>
+  <link alpha="skip">
+    <name>Engineering Our World (e-newsletter)</name>
+    <url>http://web.mit.edu/engineering/enews/</url>
+    <catid>publications</catid>
+  </link>
+  <link>
+    <name>Engineering, School of</name>
+    <url>http://web.mit.edu/engineering/</url>
+    <catid>acad-programs</catid>
+    <location>1-206</location>
+  </link>
+  <link>
+    <name>Enterprise Forum</name>
+    <url>http://enterpriseforum.mit.edu/</url>
+    <catid>alumni</catid>
+    <catid>research</catid>
+    <catid>b8-resources</catid>
+    <location>W59-230</location>
+  </link>
+  <link>
+    <name>enviroClasses</name>
+    <url>http://enviroclasses.mit.edu/</url>
+    <catid>environment</catid>
+   </link>
+  <link>
+    <name>Environment at MIT</name>
+    <url>http://web.mit.edu/environment/</url>
+    <catid>environment</catid>
+  </link>
+  <link>
+    <name>Environment Health and Safety Office</name>
+    <url>http://web.mit.edu/environment/ehs/topic/</url>
+    <catid>environment</catid>
+    <catid>safety</catid>
+    <location>N52-496</location>
+  </link>
+  <link alpha="skip">
+    <name>Environment, Health and Safety Policy</name>
+    <url>http://web.mit.edu/environment/ehs/policy.shtml</url>
+    <catid>environment</catid>
+    <catid>publications</catid>
+  </link>
+  <link>
+    <name>Environment, Health &amp;amp; Safety Management System</name>
+    <url>http://informit.mit.edu/ehs-ms/</url>
+    <catid>environment</catid>
+    <catid>safety</catid>
+  </link>
+  <link>
+    <name>Environmental Health Sciences, Center for</name>
+    <url>http://cehs.mit.edu/</url>
+    <catid>acad-programs</catid>
+    <catid>environment</catid>
+    <location>56-235</location>
+  </link>
+  <link>
+    <name>Environmental Management Program</name>
+    <url>http://web.mit.edu/environment/ehs/contact.shtml</url>
+    <catid>environment</catid>
+    <altname>Hazardous Waste</altname>
+    <location>N52-496</location>
+  </link>
+  <link>
+    <name>Environmental Programs Office (EPO)</name>
+    <url>http://web.mit.edu/officesdir/753753.shtml</url>
+    <catid>environment</catid>
+  </link>
+  <link>
+    <name>Ergonomics Program</name>
+    <url>http://web.mit.edu/environment/ehs/topic/ergonomics.html</url>
+    <catid>health</catid>
+    <catid>environment</catid>
+    <location>N52-496</location>
+  </link>
+  <link alpha="skip">
+    <name>Events Calendar</name>
+    <url>http://events.mit.edu/</url>
+    <catid>calendars</catid>
+  </link>
+  <link>
+    <name>Wellesley Exchange Bus</name>
+    <url>http://www.wellesley.edu/Housing/exchange.html</url>
+    <catid>transportation</catid>
+  </link>
+  <link>
+    <name>Executive Vice President, Office of</name>
+    <url>http://web.mit.edu/evp/</url>
+    <catid>admin-resources</catid>
+    <altname>Vice President, Executive</altname>
+    <location>3-221</location>
+  </link>
+  <link>
+    <name>Experimental Study Group (ESG)</name>
+    <url>http://web.mit.edu/esg/www/</url>
+    <catid>acad-programs</catid>
+    <location>24-612</location>
+  </link>
+  <link>
+    <name>EZRide (Cambridge-North Station Shuttle)</name>
+    <url>http://www.masscommute.com/tmas/crtma/ezride.html</url>
+    <catid>transportation</catid>
+    <altname>Shuttle, EZRide (Cambridge-North Station)</altname>
+  </link>
+  <link>
+    <name>Facilities, Department of</name>
+    <url>http://web.mit.edu/facilities/</url>
+    <catid>facilities</catid>
+    <altname>Construction Info Line</altname>
+    <altname>Physical Plant</altname>
+    <location>NE49</location>
+  </link>
+  <link>
+    <name>Educational Technology Consultants</name>
+    <url>http://web.mit.edu/ist/org/academic/curric-integ.html</url>
+    <catid>computing</catid>
+    <catid>acad-resources</catid>
+    <location>N42-250</location>
+  </link>
+  <link>
+    <name>Faculty Newsletter</name>
+    <url>http://web.mit.edu/fnl/</url>
+    <catid>publications</catid>
+  </link>
+  <link>
+    <name>Faculty Resources</name>
+    <url>http://web.mit.edu/faculty/</url>
+    <catid>acad-resources</catid>
+    <catid>admin-resources</catid>
+  </link>
+  <link>
+    <name>Family Weekend</name>
+    <url>http://alum.mit.edu/ccg/parents/family-weekend/</url>
+    <catid>parents</catid>
+    <altname>Parents' Weekend</altname>
+  </link>
+  <link>
+    <name>MIT Federal Credit Union</name>
+    <url>http://www.mitfcu.org/</url>
+    <catid>financial</catid>
+    <catid>employment</catid>
+    <altname>Credit Union</altname>
+    <altname>Federal Credit Union, MIT</altname>
+    <location>NE48</location>
+  </link>
+  <link>
+    <name>Student &amp;amp; Administrative Information Systems (SAIS)</name>
+    <url>http://web.mit.edu/ist/org/admincomputing/</url>
+    <catid>computing</catid>
+    <catid>admin-resources</catid>
+    <catid>financial</catid>
+    <location>W92-210</location>
+  </link>
+  <link>
+    <name>Financial Systems Update</name>
+    <url>http://web.mit.edu/sapr3/fsupdate/</url>
+    <catid>publications</catid>
+    <location>W92-210</location>
+  </link>
+  <link>
+    <name>Bank of America</name>
+    <url>http://web.mit.edu/officesdir/383383.shtml</url>
+    <catid>financial</catid>
+    <location>W20-104</location>
+  </link>
+  <link>
+    <name>Floor Plans</name>
+    <url>http://floorplans.mit.edu/</url>
+    <catid>facilities</catid>
+  </link>
+  <link>
+    <name>Food trucks</name>
+    <url>http://web.mit.edu/dining/locations/foodtrucks.html</url>
+    <catid>food</catid>
+  </link>
+  <link>
+    <name>Foreign Languages and Literatures</name>
+    <url>http://web.mit.edu/fll/www/</url>
+    <catid>acad-programs</catid>
+    <location>14N-305</location>
+  </link>
+  <link>
+    <name>Foundation Relations &amp; Academic Development Support (FRADS)</name>
+    <url>http://web.mit.edu/frads/</url>
+    <catid>outreach</catid>
+    <location>4-250</location>
+  </link>
+  <link>
+    <name>Fraternities, Sororities, and Living Groups</name>
+    <url>http://web.mit.edu/slp/fsilgs/</url>
+    <catid>student-life</catid>
+    <catid>housing</catid>
+    <altname>Living Groups, FSILGs</altname>
+    <location>W20-549</location>
+  </link>
+  <link alpha="skip">
+    <name>Gamelan Galak Tika calendar</name>
+    <url>http://www.galaktika.org/schedule.shtml</url>
+    <catid>calendars</catid>
+  </link>
+  <link>
+    <name>Directions to MIT</name>
+    <url>http://whereis.mit.edu/map-jpg?section=directions</url>
+    <catid>transportation</catid>
+    <altname>Getting to MIT</altname>
+  </link>
+  <link alpha="skip">
+    <name>Gilbert &amp;amp; Sullivan Players calendar</name>
+    <url>http://web.mit.edu/gsp/www/upcoming.html</url>
+    <catid>calendars</catid>
+  </link>
+  <link>
+    <name>Giving to MIT</name>
+    <url>http://web.mit.edu/giving/</url>
+    <catid>giving</catid>
+    <location>10-110</location>
+  </link>
+  <link>
+    <name>Glass Lab</name>
+    <url>http://web.mit.edu/glasslab/</url>
+    <catid>arts</catid>
+    <location>4-003</location>
+  </link>
+  <link>
+    <name>Government and Community Relations</name>
+    <url>http://web.mit.edu/govt-relations/www/</url>
+    <catid>outreach</catid>
+    <catid>b5-offices</catid>
+    <altname>Community and Government Relations, Office of</altname>
+    <location>11-245</location>
+  </link>
+  <link alpha="skip">
+    <name>Graduate Student Council Events</name>
+    <url>http://web.mit.edu/gsc/www/news-events/</url>
+    <catid>calendars</catid>
+  </link>
+  <link alpha="skip">
+    <name>Graduate Student Group Events</name>
+    <url>http://web.mit.edu/gsc/www/news-events/groupevents/</url>
+    <catid>calendars</catid>
+  </link>
+  <link>
+    <name>Graduate Student News</name>
+    <url>http://gsn.mit.edu</url>
+    <catid>publications</catid>
+    <catid>student-life</catid>
+    <location>3-138</location>
+  </link>
+  <link>
+    <name>Graduate Students Office</name>
+    <url>http://web.mit.edu/gso/</url>
+    <catid>acad-resources</catid>
+    <catid>support</catid>
+    <location>3-138</location>
+  </link>
+  <link alpha="skip">
+    <name>Graduate Student Orientation Calendar</name>
+    <url>http://web.mit.edu/gsc/www/firstyear/orientation/</url>
+    <catid>calendars</catid>
+  </link>
+  <link>
+    <name>Graduation</name>
+    <url>http://mit.edu/acadinfo/#grad</url>
+    <catid>acad-resources</catid>
+    <catid>student-life</catid>
+  </link>
+  <link>
+    <name>Grading &amp;amp; Credit</name>
+    <url>http://web.mit.edu/uinfo/academics/grading/</url>
+    <catid>acad-resources</catid>
+  </link>
+  <link>
+    <name>Guide to the Humanities, Arts, and Social Sciences</name>
+    <url>http://web.mit.edu/hass/www/guide/guide.html</url>
+    <catid>policies</catid>
+    <catid>publications</catid>
+    <altname>HASS guide</altname>
+  </link>
+  <link>
+    <name>Guidebook to Planning Events at MIT (PDF)</name>
+    <url>http://web.mit.edu/campus-activities/www/misc/guidebook2004.pdf</url>
+    <catid>policies</catid>
+    <catid>publications</catid>
+    <catid>comm-resources</catid>
+    <catid>student-life</catid>
+    <altname>Event Planning Guidebook (PDF)</altname>
+  </link>
+  <link>
+    <name>Hart Nautical Gallery</name>
+    <url>http://web.mit.edu/museum/exhibitions/hart.html</url>
+    <catid>arts</catid>
+    <location>5</location>
+  </link>
+  <link>
+    <name>Hazard Assessment and Control Program</name>
+    <url>http://web.mit.edu/environment/ehs/hazard_assessment.html</url>
+    <catid>environment</catid>
+    <catid>safety</catid>
+    <location>N52-496</location>
+  </link>
+  <link>
+    <name>Health Education</name>
+    <url>http://web.mit.edu/medical/c-main.html</url>
+    <catid>health</catid>
+    <location>E23-205</location>
+  </link>
+  <link alpha="skip">
+    <name>health@mit</name>
+    <url>http://web.mit.edu/medical/mithealth/</url>
+    <catid>publications</catid>
+    <catid>health</catid>
+  </link>
+  <link>
+    <name>History, Dept. of</name>
+    <url>http://web.mit.edu/history/www/</url>
+    <catid>acad-programs</catid>
+    <location>E51-285</location>
+  </link>
+  <link>
+    <name>History, Theory and Criticism of Architecture and Art</name>
+    <url>http://architecture.mit.edu/htc/</url>
+    <catid>arts</catid>
+    <catid>acad-programs</catid>
+    <altname>HTC@MIT</altname>
+    <altname>Art and Architecture History</altname>
+    <location>10-303</location>
+    <location>3-303</location>
+  </link>
+   <link>
+    <name>Hobby Shop</name>
+    <url>http://web.mit.edu/campus-activities/hobbyshop/</url>
+    <catid>student-life</catid>
+    <catid>arts</catid>
+    <location>W31-031</location>
+  </link>
+  <link>
+    <name>Housing Office</name>
+    <url>http://web.mit.edu/housing/</url>
+    <catid>student-life</catid>
+    <catid>housing</catid>
+    <location>E19-429</location>
+  </link>
+  <link>
+    <name>HR-Payroll Service Center</name>
+    <url>http://web.mit.edu/hr/hrpayservicecenter/</url>
+    <catid>Personnel</catid>
+    <location>E19-429</location>
+  </link>
+  <link alpha="skip">
+    <name>HST connector</name>
+    <url>http://hst.mit.edu/servlet/ControllerServlet?handler=PublicHandler&amp;action=browse&amp;pageid=166</url>
+    <catid>publications</catid>
+  </link>
+  <link>
+    <name>Human Resources</name>
+    <url>http://hrweb.mit.edu/</url>
+    <catid>employment</catid>
+    <altname>Personnel</altname>
+    <location>E19-215</location>
+  </link>
+  <link>
+    <name>Center for Work, Family, and Personal Life</name>
+    <url>http://hrweb.mit.edu/worklife/</url>
+    <catid>hr</catid>
+    <location>16-151</location>
+    </link>
+  <link>
+    <name>Humanities, Arts, and Social Sciences Program Office</name>
+    <url>http://web.mit.edu/hass/www/</url>
+    <catid>acad-programs</catid>
+    <altname>HASS Program Office</altname>
+    <altname>HASS Office</altname>
+    <altname>HASS Education Office</altname>
+    <location>14N-410</location>
+  </link>
+  <link>
+    <name>Administrative Services Organization (ASO)</name>
+    <url>http://aso.mit.edu/</url>
+    <catid>admin-resources</catid>
+    <location>8-328</location>
+  </link>
+  <link>
+    <name>School of Humanities, Arts, and Social Sciences</name>
+    <url>http://web.mit.edu/shass/</url>
+    <catid>acad-programs</catid>
+    <altname>Humanities, Arts, and Social Sciences, School of</altname>
+    <location>14N-408</location>
+  </link>
+  <link>
+    <name>Dean's office for the School of Humanities, Arts, and Social Sciences</name>
+    <url>http://web.mit.edu/shass/inside/deansoffice.shtml</url>
+    <catid>acad-programs</catid>
+    <location>E51-255</location>
+  </link>
+  <link>
+    <name>Humans as Experimental Subjects (COUHES), Committee on the Use of</name>
+    <url>http://web.mit.edu/committees/couhes/</url>
+    <catid>research</catid>
+    <location>E32-335</location>
+  </link>
+  <link alpha="skip">
+    <name>is&amp;amp;t newsletter</name>
+    <url>http://web.mit.edu/ist/istnews/</url>
+    <catid>publications</catid>
+  </link>
+  <link>
+    <name>i3/Guide to Residences</name>
+    <url>http://web.mit.edu/i3/</url>
+    <catid>housing</catid>
+    <catid>student-life</catid>
+  </link>
+  <link>
+    <name>Independent Activities Period (IAP)</name>
+    <url>http://web.mit.edu/iap/</url>
+    <catid>acad-programs</catid>
+    <catid>calendars</catid>
+  </link>
+  <link>
+    <name>Industrial Hygiene Program</name>
+    <url>http://web.mit.edu/environment/ehs/contact.shtml</url>
+    <catid>environment</catid>
+    <location>N52-496</location>
+  </link>
+  <link>
+    <name>Industrial Liaison Program (ILP)</name>
+    <url>http://ilp-www.mit.edu/</url>
+    <catid>outreach</catid>
+    <catid>research</catid>
+    <catid>b1-partner</catid>
+    <location>E38-400</location>
+  </link>
+  <link>
+    <name>Information Center</name>
+    <url>http://web.mit.edu/infocenter/</url>
+    <catid>outreach</catid>
+    <catid>admissions</catid>
+    <location>7-121</location>
+  </link>
+  <link>
+    <name>Information Services  &amp;amp; Technology (IS&amp;amp;T)</name>
+    <url>http://web.mit.edu/ist/</url>
+    <catid>computing</catid>
+    <location>N42</location>
+    <location>W91</location>
+    <location>W92</location>
+    <location>E19</location>
+  </link>
+  <link alpha="skip">
+    <name>Energy and Environment (LFEE)</name>
+    <url>http://lfee.mit.edu/metadot/index.pl?id=2180&amp;amp;isa=Category&amp;amp;op=show</url>
+    <catid>publications</catid>
+  </link>
+  <link>
+    <name>Innovation in Product Development, Center for</name>
+    <url>http://cipd.mit.edu/</url>
+    <catid>acad-programs</catid>
+    <catid>research</catid>
+    <altname>Center for Innovation in Product Development</altname>
+    <location>E60-275</location>
+  </link>
+  <link alpha="skip">
+    <name>Ed Tech Times</name>
+    <url>http://edtech.mit.edu/times</url>
+    <catid>publications</catid>
+  </link>
+  <link>
+    <name>Institute Archives and Special Collections</name>
+    <url>http://libraries.mit.edu/archives/</url>
+    <catid>libraries</catid>
+    <catid>admin-resources</catid>
+    <altname>History of MIT</altname>
+    <altname>Special Collections</altname>
+    <altname>Archives, Insitute</altname>
+    <location>14N-118</location>
+  </link>
+  <link>
+    <name>Institutional Research</name>
+    <url>http://web.mit.edu/ir/</url>
+    <catid>admin-resources</catid>
+    <location>11-268</location>
+  </link>
+  <link alpha="skip">
+    <name>Institvte</name>
+    <url>http://web.mit.edu/institvte/www/</url>
+    <catid>publications</catid>
+  </link>
+  <link>
+    <name>Insurance</name>
+    <url>http://controllers.mit.edu/insurance/</url>
+    <catid>financial</catid>
+    <catid>admin-resources</catid>
+    <location>12-090</location>
+  </link>
+ <link>
+    <name>Innovation Club</name>
+    <url>http://web.mit.edu/innovation/</url>
+    <catid>b8-resources</catid>
+  </link>
+  <link>
+    <name>Interfraternity Council (IFC)</name>
+    <url>http://ifc.mit.edu/</url>
+    <catid>student-life</catid>
+    <altname>Fraternity Council</altname>
+    <location>W20-450</location>
+  </link>
+  <link alpha="skip">
+    <name>International Film Club</name>
+    <url>http://web.mit.edu/ifilm/www/</url>
+    <catid>calendars</catid>
+    <location>4-237</location>
+  </link>
+  <link>
+    <name>International Scholars Office</name>
+    <url>http://web.mit.edu/scholars/</url>
+    <catid>support</catid>
+    <catid>acad-resources</catid>
+    <catid>research</catid>
+    <location>4-105</location>
+  </link>
+  <link>
+    <name>International Students Office</name>
+    <url>http://web.mit.edu/iso/www/</url>
+    <catid>support</catid>
+    <catid>acad-resources</catid>
+    <location>5-133</location>
+  </link>
+  <link>
+    <name>Intramural Sports</name>
+    <url>http://web.mit.edu/athletics</url>
+    <catid>student-life</catid>
+    <altname>Sports, Intramural</altname>
+    <altname>Athletics, Intramural</altname>
+  </link>
+  <link>
+    <name>Jobs available at MIT (staff and faculty)</name>
+    <url>http://hrweb.mit.edu/staffing/</url>
+    <catid>employment</catid>
+    <catid>jobs</catid>
+    <altname>Positions available at MIT (staff and faculty)</altname>
+    <altname>Staff and faculty job openings</altname>
+    <altname>Careers at MIT</altname>
+    <altname>Employment at MIT</altname>
+    <altname>Open positions at MIT</altname>
+    <location>E19-215</location>
+  </link>
+  <link alpha="skip">
+    <name>Journal Club</name>
+    <url>http://journalclub.mit.edu/</url>
+    <catid>publications</catid>
+  </link>
+  <link>
+    <name>Kendall Station</name>
+    <url>http://www.mbta.com/traveling_t/schedules_subway_stationinfo.asp?staname=Kendall</url>
+    <catid>transportation</catid>
+  </link>
+  <link>
+    <name>Kresge Auditorium</name>
+    <url>http://web.mit.edu/campus-activities/www/html/kresge.html</url>
+    <catid>facilities</catid>
+    <location>W16</location>
+  </link>
+  <link alpha="skip">
+    <name>lbgt@MIT Events</name>
+    <url>http://web.mit.edu/lbgt/events/</url>
+    <catid>calendars</catid>
+  </link>
+  <link>
+    <name>Lecture Series Committee (LSC)</name>
+    <url>http://lsc.mit.edu/</url>
+    <catid>student-life</catid>
+    <altname>Movies</altname>
+    <location>W20-469</location>
+  </link>
+  <link>
+    <name>Lemelson-MIT program</name>
+    <url>http://web.mit.edu/invent/</url>
+    <catid>outreach</catid>
+    <altname>Invention Dimension</altname>
+    <location>E60-215</location>
+  </link>
+  <link>
+    <name>Lesbian, Bisexual, Gay, and  Transgendered at MIT</name>
+    <url>http://web.mit.edu/lbgt/</url>
+    <catid>support</catid>
+    <altname>Gay, Lesbian, Bisexual and Transgendered at MIT</altname>
+    <location>W20-549</location>
+  </link>
+  <link>
+    <name>Libraries</name>
+    <url>http://libraries.mit.edu/</url>
+    <catid>libraries</catid>
+    <location>14S-216</location>
+  </link>
+<link>
+<name>Digital Instruction Resource Center (DIRC)</name>
+<url>http://libraries.mit.edu/ask-us/instruction/dirc.html</url>
+<catid>libraries</catid>
+<location>14N-132</location>
+</link>
+<link>
+<name>Information Intersection</name>
+<url>http://libraries.mit.edu/stata/</url>
+<catid>libraries</catid>
+<location>32</location>
+</link>
+  <link>
+    <name>Lincoln Lab Shuttle</name>
+    <url>http://www.ll.mit.edu/about/shuttle.html</url>
+    <catid>transportation</catid>
+    <altname>Shuttle, Lincoln Lab</altname>
+  </link>
+  <link>
+    <name>Linguistics, Dept. of</name>
+    <url>http://web.mit.edu/linguistics/www/home.html</url>
+    <catid>acad-programs</catid>
+    <altname>Philosophy and Linguistics</altname>
+    <location>E39-245</location>
+  </link>
+  <link>
+    <name>List Visual Arts Center</name>
+    <url>http://listart.mit.edu/</url>
+    <catid>arts</catid>
+    <location>E15-109</location>
+  </link>
+  <link>
+    <name>Literature, Dept. of</name>
+    <url>http://web.mit.edu/lit/www/</url>
+    <catid>acad-programs</catid>
+    <location>14N-407</location>
+  </link>
+  <link>
+    <name>Living Group Council</name>
+    <url>http://web.mit.edu/lgc/www/</url>
+    <catid>student-life</catid>
+    <catid>housing</catid>
+    <altname>ILG council</altname>
+  </link>
+  <link>
+    <name>Lobby 10</name>
+    <url>http://web.mit.edu/campus-activities/www/facilities/lobbies.html#lobby10</url>
+    <catid>facilities</catid>
+    <location>10</location>
+  </link>
+  <link>
+    <name>Lobby 13</name>
+    <url>http://web.mit.edu/campus-activities/www/facilities/lobbies.html#lobby13</url>
+    <catid>facilities</catid>
+    <location>13</location>
+  </link>
+  <link alpha="skip">
+    <name>Logarhythms calendar</name>
+    <url>http://web.mit.edu/logs/www/concerts.html</url>
+    <catid>calendars</catid>
+  </link>
+  <link>
+    <name>Mail Services</name>
+    <url>http://web.mit.edu/facilities/services/mail/mailing.html</url>
+    <catid>facilities</catid>
+    <catid>comm-resources</catid>
+    <altname>Postal Services</altname>
+    <altname>Shipping</altname>
+    <location>WW15</location>
+  </link>
+  <link>
+    <name>Management Science Area at the Sloan School</name>
+    <url>http://web.mit.edu/sloan-msa/</url>
+    <catid>b6-education</catid>
+    <catid>acad-programs</catid>
+    <location>E53-340</location>
+  </link>
+  <link>
+    <name>Materials Processing Center</name>
+    <url>http://web.mit.edu/mpc/www/</url>
+    <catid>research</catid>
+    <location>12-007</location>
+  </link>
+  <link>
+    <name>Materials Science and Engineering, Dept. of</name>
+    <url>http://dmse.mit.edu/</url>
+    <catid>acad-programs</catid>
+    <altname>Department of Materials Science and Engineering</altname>
+    <location>8-309</location>
+  </link>
+  <link>
+    <name>Mathematics, Dept. of</name>
+    <url>http://www-math.mit.edu/</url>
+    <catid>acad-programs</catid>
+    <location>2-236</location>
+  </link>
+  <link alpha="skip">
+    <name>Mechanical Engineering Department Events</name>
+    <url>http://me.mit.edu/NewsandCalendar/Week.htm</url>
+    <catid>calendars</catid>
+  </link>
+  <link>
+    <name>Mechanical Engineering, Dept. of</name>
+    <url>http://www-me.mit.edu/</url>
+    <catid>acad-programs</catid>
+    <location>3-173</location>
+  </link>
+  <link>
+    <name>Media Arts and Sciences, Program in</name>
+    <url>http://www.media.mit.edu/mas/</url>
+    <catid>acad-programs</catid>
+    <location>E15-401</location>
+  </link>
+  <link>
+    <name>Media Arts and Sciences Freshman Program</name>
+    <url>http://www.media.mit.edu/mas/fyo.html</url>
+    <catid>acad-programs</catid>
+    <location>E15</location>
+  </link>
+  <link alpha="skip">
+    <name>Media Laboratory Events</name>
+    <url>http://www.media.mit.edu/Events/</url>
+    <catid>calendars</catid>
+  </link>
+  <link>
+    <name>Medical Department</name>
+    <url>http://web.mit.edu/medical/</url>
+    <catid>health</catid>
+    <altname>Optical, MIT</altname>
+    <altname>Infirmary</altname>
+    <location>E23-189</location>
+  </link>
+  <link>
+    <name>Medlinks</name>
+    <url>http://web.mit.edu/medlinks/www/</url>
+    <catid>health</catid>
+    <catid>support</catid>
+    <altname>Peer Counseling</altname>
+  </link>
+  <link>
+    <name>Mental Health</name>
+    <url>http://web.mit.edu/medical/services/s-mentalhealth.html</url>
+    <catid>support</catid>
+    <catid>health</catid>
+    <location>E23-368</location>
+  </link>
+  <link>
+    <name>Menus for Takeout and Delivery</name>
+    <url>http://web.mit.edu/wchuang/www/menus/menus.html</url>
+    <catid>food</catid>
+    <altname>Takeout Menus</altname>
+  </link>
+  <link>
+    <name>MGH, North Station, Charlestown Navy Yard Shuttle</name>
+    <url>http://www.partners.org/phsnew/ourhosp/shuttleschedule/mgh_cny.html</url>
+    <catid>transportation</catid>
+    <altname>Shuttle, MGH, North Station, Charlestown Navy Yard</altname>
+  </link>
+  <link>
+    <name>Northwest shuttle</name>
+    <url>http://web.mit.edu/facilities/transportation/shuttles/northwest.html</url>
+    <catid>transportation</catid>
+    <altname>Shuttle, Northwest</altname>
+  </link>
+  <link>
+    <name>Minority Education, Office of</name>
+    <url>http://web.mit.edu/ome/</url>
+    <catid>support</catid>
+    <catid>acad-resources</catid>
+    <altname>Office of Minority Education</altname>
+    <location>4-113</location>
+  </link>
+  <link>
+    <name>MIT Activities Committee (MITAC)</name>
+    <url>http://web.mit.edu/mitac/</url>
+    <catid>employment</catid>
+    <catid>student-life</catid>
+    <altname>Activities Committee, MIT (MITAC)</altname>
+    <location>32</location>
+  </link>
+  <link alpha="skip">
+    <name>MIT Bulletin (degree requirements and course listings)</name>
+    <url>http://web.mit.edu/catalogue/overv.welco.shtml</url>
+    <catid>publications</catid>
+  </link>
+  <link>
+    <name>MIT Card</name>
+    <url>http://web.mit.edu/mitcard/</url>
+    <catid>food</catid>
+    <catid>financial</catid>
+    <altname>TechCash</altname>
+    <altname>ID card</altname>
+    <location>W20</location>
+  </link>
+  <link alpha="skip">
+    <name>Supply Chain Frontiers</name>
+    <url>http://ctl.mit.edu/metadot/index.pl?id=2211</url>
+    <catid>publications</catid>
+  </link>
+  <link>
+    <name>MIT E-News</name>
+    <url>http://web.mit.edu/newsoffice/enews.html</url>
+    <catid>publications</catid>
+  </link>
+  <link>
+    <name>MIT Facts</name>
+    <url>http://web.mit.edu/facts/</url>
+    <catid>publications</catid>
+    <catid>admin-resources</catid>
+    <catid>comm-resources</catid>
+  </link>
+  <link alpha="skip">
+    <name>MIT Heritage of the Arts of Southasia</name>
+    <url>http://web.mit.edu/mithas/www/concerts/</url>
+    <catid>calendars</catid>
+  </link>
+  <link>
+    <name>MIT Museum</name>
+    <url>http://web.mit.edu/museum/</url>
+    <catid>arts</catid>
+    <location>N52-2FL</location>
+    <location>N51</location>
+  </link>
+  <link>
+    <name>MIT Press</name>
+    <url>http://mitpress.mit.edu/</url>
+    <catid>books</catid>
+    <location>E39</location>
+  </link>
+  <link alpha="skip">
+    <name>Sloan Management Review</name>
+    <url>http://www.sloanreview.mit.edu/smr/</url>
+    <catid>publications</catid>
+    <catid>b8-resources</catid>
+    <location>E60-100</location>
+  </link>
+  <link alpha="skip">
+    <name>News @ MIT Sloan</name>
+    <url>http://mitsloan.mit.edu/newsatmitsloan/</url>
+    <catid>publications</catid>
+    <location>E52-107</location>
+  </link>
+  <link>
+    <name>MIT World</name>
+    <url>http://mitworld.mit.edu/</url>
+    <catid>publications</catid>
+    <catid>outreach</catid>
+    <location>35-433</location>
+  </link>
+  <link alpha="skip">
+    <name>MITCAN calendar</name>
+    <url>http://web.mit.edu/mitcan/www/concerts.html</url>
+    <catid>calendars</catid>
+  </link>
+  <link>
+    <name>MITnet Rules of Use</name>
+    <url>http://web.mit.edu/olh/Welcome/rules.html#mitnet</url>
+    <catid>policies</catid>
+    <catid>computing</catid>
+    <altname>Rules of Use, MITnet</altname>
+  </link>
+  <link>
+    <name>Muddy Charles Pub</name>
+    <url>http://web.mit.edu/muddy/</url>
+    <catid>food</catid>
+    <location>50-110</location>
+  </link>
+  <link alpha="skip">
+    <name>Muses Performances calendar</name>
+    <url>http://web.mit.edu/muses/www/perform.html</url>
+    <catid>calendars</catid>
+  </link>
+  <link alpha="skip">
+    <name>Music &amp;amp; Theater Arts Events</name>
+    <url>http://web.mit.edu/mta/www/music/events.html</url>
+    <catid>calendars</catid>
+  </link>
+  <link>
+    <name>Music and Theater Arts</name>
+    <url>http://web.mit.edu/mta/www/</url>
+    <catid>arts</catid>
+    <catid>acad-programs</catid>
+    <altname>Theater Arts and Music</altname>
+    <location>4-246</location>
+  </link>
+  <link alpha="skip">
+    <name>Musical Theatre Guild calendar</name>
+    <url>http://www.mit.edu/activities/mtg/Schedule.html</url>
+    <catid>calendars</catid>
+  </link>
+  <link>
+    <name>National Weather Service</name>
+    <url>http://www.srh.noaa.gov/data/forecasts/MAZ014.php?warncounty=MAC017&amp;city=Cambridge</url>
+    <catid>weather</catid>
+  </link>
+  <link>
+    <name>Network Security</name>
+    <url>http://web.mit.edu/net-security/</url>
+    <catid>computing</catid>
+    <altname>Security, Computer Network</altname>
+    <location>N42-250H</location>
+  </link>
+  <link>
+    <name>News Office</name>
+    <url>http://web.mit.edu/newsoffice/</url>
+    <catid>publications</catid>
+    <catid>outreach</catid>
+    <catid>comm-resources</catid>
+    <catid>b5-offices</catid>
+    <altname>Public Relations</altname>
+    <location>11-400</location>
+  </link>
+  <link>
+    <name>Nightline</name>
+    <url>http://web.mit.edu/nightline/</url>
+    <catid>student-life</catid>
+    <catid>support</catid>
+  </link>
+  <link>
+    <name>Nondiscrimination Statement</name>
+    <url>http://web.mit.edu/referencepubs/nondiscrimination/</url>
+    <catid>policies</catid>
+    <catid>employment</catid>
+    <catid>admin-resources</catid>
+  </link>
+  <link>
+    <name>Nuclear Science and Engineering, Dept. of</name>
+    <url>http://web.mit.edu/nse/</url>
+    <catid>acad-programs</catid>
+    <location>24-105</location>
+  </link>
+  <link alpha="skip">
+    <name>Observer, the</name>
+    <url>http://web.mit.edu/observer/www/</url>
+    <catid>publications</catid>
+  </link>
+  <link>
+    <name>Center for Ocean Engineering</name>
+    <url>http://oe.mit.edu/</url>
+    <catid>acad-programs</catid>
+    <location>5-228</location>
+  </link>
+  <link>
+    <name>Offices and Programs Directory</name>
+    <url>http://web.mit.edu/communications/bp/</url>
+    <catid>admin-resources</catid>
+  </link>
+  <link>
+    <name>Ombuds Office</name>
+    <url>http://web.mit.edu/ombud/</url>
+    <catid>admin-resources</catid>
+    <catid>student-life</catid>
+    <catid>employment</catid>
+    <catid>legal</catid>
+    <catid>support</catid>
+    <catid>health</catid>
+    <catid>policies</catid>
+    <catid>acad-resources</catid>
+    <location>10-213</location>
+  </link>
+  <link>
+    <name>Online subject listings and schedule</name>
+    <url>http://student.mit.edu/catalog/index.cgi</url>
+    <catid>acad-resources</catid>
+  </link>
+  <link>
+    <name>OpenCourseWare (OCW)</name>
+    <url>http://ocw.mit.edu/</url>
+    <catid>acad-resources</catid>
+    <location>9-315</location>
+  </link>
+  <link>
+    <name>openDOOR</name>
+    <url>http://alum.mit.edu/opendoor/</url>
+    <catid>publications</catid>
+    <catid>alumni</catid>
+  </link>
+  <link>
+    <name>Organization and Employee Development</name>
+    <url>http://web.mit.edu/hr/oed/</url>
+    <catid>employment</catid>
+    <location>E19-215</location>
+  </link>
+  <link>
+    <name>Organization Charts</name>
+    <url>http://web.mit.edu/communications/orgchart/</url>
+    <catid>admin-resources</catid>
+  </link>
+  <link>
+    <name>Panhellenic Association</name>
+    <url>http://web.mit.edu/panhel/www/</url>
+    <catid>student-life</catid>
+    <altname>Sororities</altname>
+  </link>
+  <link>
+    <name>Parents Association</name>
+    <url>http://alum.mit.edu/ccg/parents/</url>
+    <catid>parents</catid>
+    <location>W59</location>
+  </link>
+  <link>
+    <name>Parents News</name>
+    <url>http://alum.mit.edu/ccg/parents/news/</url>
+    <catid>publications</catid>
+    <catid>parents</catid>
+  </link>
+  <link>
+    <name>Parking and Transportation</name>
+    <url>http://web.mit.edu/facilities/transportation/</url>
+    <catid>facilities</catid>
+    <catid>transportation</catid>
+    <altname>Transportation and parking</altname>
+    <location>W20</location>
+  </link>
+  <link>
+    <name>Academic Performance</name>
+    <url>http://web.mit.edu/uinfo/academics/perform/</url>
+    <catid>acad-resources</catid>
+    <altname>Performance, academic</altname>
+  </link>
+  <link>
+    <name>Personnel Policy Manual</name>
+    <url>http://hrweb.mit.edu/policy/</url>
+    <catid>policies</catid>
+    <catid>employment</catid>
+  </link>
+  <link>
+    <name>Philosophy, Dept. of</name>
+    <url>http://web.mit.edu/philos/www/</url>
+    <catid>acad-programs</catid>
+    <location>E39-245</location>
+  </link>
+  <link>
+    <name>Physics, Dept. of</name>
+    <url>http://web.mit.edu/physics/</url>
+    <catid>acad-programs</catid>
+    <location>6-113</location>
+  </link>
+  <link alpha="skip">
+    <name>physics@mit</name>
+    <url>http://web.mit.edu/physics/alumniandfriends/physicsatmit/</url>
+    <catid>publications</catid>
+  </link>
+  <link alpha="skip">
+    <name>PLAN</name>
+    <url>http://loohooloo.mit.edu/plan/</url>
+    <catid>publications</catid>
+  </link>
+  <link>
+    <name>Policies and Procedures (Faculty &amp;amp; Staff)</name>
+    <url>http://web.mit.edu/policies/</url>
+    <catid>admin-resources</catid>
+    <catid>employment</catid>
+    <catid>policies</catid>
+  </link>
+  <link>
+    <name>Policies and Procedures (Students)</name>
+    <url>http://mit.edu/acadinfo/#policy</url>
+    <catid>acad-resources</catid>
+    <catid>policies</catid>
+  </link>
+  <link>
+    <name>Policy on the Naming of Spaces</name>
+    <url>http://web.mit.edu/policies/14.6.html#14.6.1</url>
+    <catid>policies</catid>
+    <catid>facilities</catid>
+  </link>
+  <link>
+    <name>Political Science, Dept. of</name>
+    <url>http://web.mit.edu/polisci/</url>
+    <catid>acad-programs</catid>
+    <location>E53-470</location>
+  </link>
+  <link>
+    <name>Postdoctoral Scholars</name>
+    <url>http://web.mit.edu/mitpostdocs/</url>
+    <catid>support</catid>
+    <catid>research</catid>
+    <location>11</location>
+  </link>
+  <link>
+    <name>President of MIT</name>
+    <url>http://web.mit.edu/hockfield/</url>
+    <catid>admin-resources</catid>
+    <catid>outreach</catid>
+    <catid>b5-offices</catid>
+    <location>3-208</location>
+  </link>
+  <link>
+    <name>Procurement Office</name>
+    <url>http://controllers.mit.edu/procurement/</url>
+    <catid>financial</catid>
+    <catid>admin-resources</catid>
+    <altname>Purchasing</altname>
+    <location>NE49-4122</location>
+  </link>
+  <link>
+    <name>Program on Human Rights and Justice</name>
+    <url>http://web.mit.edu/phrj/</url>
+    <catid>acad-programs</catid>
+    <catid>outreach</catid>
+    <altname>Human Rights and Justice program</altname>
+  </link>
+  <link>
+    <name>Property Office</name>
+    <url>http://controllers.mit.edu/property</url>
+    <catid>facilities</catid>
+    <catid>financial</catid>
+    <catid>admin-resources</catid>
+    <altname>Asset Management</altname>
+    <location>NE49-4021</location>
+  </link>
+  <link>
+    <name>Provost, Office of the</name>
+    <url>http://web.mit.edu/provost/</url>
+    <catid>acad-resources</catid>
+    <catid>admin-resources</catid>
+    <location>3-208</location>
+  </link>
+  <link>
+    <name>Public Service Center</name>
+    <url>http://web.mit.edu/mitpsc/</url>
+    <catid>student-life</catid>
+    <catid>outreach</catid>
+    <altname>Community Service</altname>
+    <location>4-104</location>
+  </link>
+  <link>
+    <name>Publishing on the Web</name>
+    <url>http://web.mit.edu/ist/topics/webpublishing/</url>
+    <catid>computing</catid>
+    <catid>comm-resources</catid>
+  </link>
+  <link>
+    <name>Publishing Services Bureau (PSB)</name>
+    <url>http://web.mit.edu/psb/</url>
+    <catid>comm-resources</catid>
+    <location>E28-100</location>
+  </link>
+  <link>
+    <name>Quantum Books</name>
+    <url>http://www.quantumbooks.com/</url>
+    <catid>books</catid>
+    <offcampus>Off Campus</offcampus>
+  </link>
+  <link>
+    <name>Quarter Century Club, MIT</name>
+    <url>http://web.mit.edu/communityservices/qcc/</url>
+    <catid>employment</catid>
+    <location>E19-432</location>
+  </link>
+  <link>
+    <name>Safety Program</name>
+    <url>http://web.mit.edu/environment/ehs/contact.shtml</url>
+    <catid>environment</catid>
+    <catid>safety</catid>
+    <catid>facilities</catid>
+    <altname>Biosafety Program</altname>
+    <altname>Radiation Protection Program</altname>
+    <location>N52-496</location>
+  </link>
+  <link>
+    <name>Labs, centers, and programs at MIT</name>
+    <url>http://web.mit.edu/research/</url>
+    <catid>b7-research</catid>
+    <catid>research</catid>
+  </link>
+  <link>
+    <name>Recycling</name>
+    <url>http://web.mit.edu/facilities/environmental/recycling.html</url>
+    <catid>environment</catid>
+    <catid>facilities</catid>
+    <location>NW62</location>
+  </link>
+  <link>
+    <name>Reference Publications Office (RPO)</name>
+    <url>http://web.mit.edu/referencepubs/</url>
+    <catid>admin-resources</catid>
+    <location>E28-100</location>
+  </link>
+  <link>
+    <name>Registrar's Office</name>
+    <url>http://web.mit.edu/registrar/</url>
+    <catid>acad-resources</catid>
+    <catid>facilities</catid>
+    <altname>Schedules Office</altname>
+    <location>5-119</location>
+  </link>
+  <link>
+    <name>Registration</name>
+    <url>http://web.mit.edu/uinfo/academics/register/</url>
+    <catid>acad-resources</catid>
+    <location>3-138</location>
+    <location>4-110</location>
+  </link>
+  <link alpha="skip">
+    <name>Religious Holidays</name>
+    <url>http://web.mit.edu/registrar/www/webrel.html</url>
+    <catid>calendars</catid>
+  </link>
+  <link>
+    <name>Repair and Maintenance</name>
+    <url>http://web.mit.edu/facilities/about/operations/repair-maint.html</url>
+    <catid>facilities</catid>
+    <altname>HVAC (Heating, Ventilation, Air-conditioning)</altname>
+    <altname>Keys</altname>
+    <altname>Lock Services</altname>
+    <location>E18-101</location>
+  </link>
+  <link>
+    <name>Reports to the President (Annual Reports)</name>
+    <url>http://web.mit.edu/annualreports/</url>
+    <catid>admin-resources</catid>
+    <catid>outreach</catid>
+    <catid>publications</catid>
+    <altname>Annual Reports to the President</altname>
+  </link>
+  <link>
+    <name>Research, Undergrad</name>
+    <url>http://web.mit.edu/uinfo/research/</url>
+    <catid>acad-resources</catid>
+  </link>
+  <link>
+    <name>Residential Computing Consulting</name>
+    <url>http://web.mit.edu/rescomp/www/</url>
+    <catid>computing</catid>
+    <catid>housing</catid>
+  </link>
+  <link>
+    <name>Residential Dining</name>
+    <url>http://web.mit.edu/dining/locations/housedining.html</url>
+    <catid>housing</catid>
+    <catid>food</catid>
+  </link>
+  <link>
+    <name>Residential Life Programs</name>
+    <url>http://web.mit.edu/slp/rlp/</url>
+    <catid>student-life</catid>
+    <catid>housing</catid>
+    <location>W20-549</location>
+    <location>W51-040</location>
+  </link>
+  <link>
+    <name>Resource Development</name>
+    <url>http://web.mit.edu/development/</url>
+    <catid>giving</catid>
+      <location>4-204</location>
+  </link>
+  <link>
+    <name>Communications and Donor Relations</name>
+    <url>http://web.mit.edu/development/</url>
+    <catid>giving</catid>
+      <location>E19-411</location>
+  </link>
+  <link>
+    <name>Restaurant / Retail food options</name>
+    <url>http://web.mit.edu/dining/locations/retailoptions.html</url>
+    <catid>food</catid>
+  </link>
+  <link>
+    <name>Retirees, Association of MIT</name>
+    <url>http://web.mit.edu/retireesassoc/</url>
+    <catid>employment</catid>
+    <location>E19-432</location>
+  </link>
+  <link alpha="skip">
+    <name>RLE Currents</name>
+    <url>http://rleweb.mit.edu/publications/currents/curindx.htm</url>
+    <catid>publications</catid>
+  </link>
+  <link alpha="skip">
+    <name>RLE Progress Report</name>
+    <url>http://rleweb.mit.edu/publications/prog.htm</url>
+    <catid>publications</catid>
+  </link>
+  <link alpha="skip">
+    <name>Roadkill Buffet calendar</name>
+    <url>http://www.mit.edu/activities/roadkill/comingEvents.html</url>
+    <catid>calendars</catid>
+  </link>
+  <link>
+    <name>Regulated Waste Management</name>
+    <url>http://web.mit.edu/environment/ehs/waste.html</url>
+    <catid>environment</catid>
+  </link>
+  <link>
+    <name>Rules and Regulations of the Faculty</name>
+    <url>http://web.mit.edu/faculty/governance/rules/</url>
+    <catid>policies</catid>
+    <altname>Faculty Rules and Regulations</altname>
+  </link>
+  <link alpha="skip">
+    <name>Rune</name>
+    <url>http://web.mit.edu/rune/www/</url>
+    <catid>publications</catid>
+  </link>
+  <link>
+    <name>SafeRide</name>
+    <url>http://web.mit.edu/facilities/transportation/shuttles/safe_ride.html</url>
+    <catid>transportation</catid>
+    <catid>safety</catid>
+    <location>W20</location>
+  </link>
+  <link>
+    <name>SAP Online Support</name>
+    <url>http://web.mit.edu/sapr3/</url>
+    <catid>computing</catid>
+    <catid>financial</catid>
+    <catid>admin-resources</catid>
+  </link>
+  <link>
+    <name>Scholarships and Fellowships</name>
+    <url>http://mit.edu/scholarships/</url>
+    <catid>acad-resources</catid>
+    <altname>Fellowships and Scholarships</altname>
+  </link>
+  <link>
+    <name>Science, School of</name>
+    <url>http://web.mit.edu/science/</url>
+    <catid>acad-programs</catid>
+    <location>6-123</location>
+  </link>
+  <link>
+    <name>Science, Technology, and Society (STS), Program in</name>
+    <url>http://web.mit.edu/sts/</url>
+    <catid>acad-programs</catid>
+    <location>E51-185</location>
+  </link>
+  <link>
+    <name>Wellesley Senate Bus (weekends)</name>
+    <url>http://www.wellesley.edu/Housing/senate.html</url>
+    <catid>transportation</catid>
+  </link>
+  <link>
+    <name>Office of the General Counsel</name>
+        <url>http://web.mit.edu/ogc/</url>
+    <catid>legal</catid>
+    <catid>admin-resources</catid>
+    <catid>comm-resources</catid>
+    <catid>research</catid>
+    <catid>b8-resources</catid>
+    <altname>Patent office</altname>
+    <altname>Senior Counsel's Office</altname>
+    <altname>General Counsel, Office of</altname>
+    <altname>Intellectual Property Counsel</altname>
+    <location>7-206</location>
+    <location>12</location>
+  </link>
+  <link>
+    <name>Service Learning</name>
+    <url>http://web.mit.edu/mitpsc/servlearn/</url>
+    <catid>student-life</catid>
+    <catid>acad-resources</catid>
+    <catid>outreach</catid>
+    <location>W20-547</location>
+    <location>4-405</location>
+  </link>
+  <link alpha="skip">
+    <name>Shakespeare Ensemble calendar</name>
+    <url>http://web.mit.edu/ensemble/www/current.html</url>
+    <catid>calendars</catid>
+  </link>
+  <link>
+    <name>Share a Vital Earth (SAVE)</name>
+    <url>http://web.mit.edu/save/</url>
+    <catid>environment</catid>
+    <catid>facilities</catid>
+  </link>
+  <link>
+    <name>ShuttleTrack@MIT</name>
+    <url>http://shuttletrack.mit.edu/</url>
+    <catid>transportation</catid>
+  </link>
+  <link alpha="skip">
+    <name>SIPB Event Listings</name>
+    <url>http://stuff.mit.edu/cgi/listevents</url>
+    <catid>calendars</catid>
+  </link>
+  <link>
+    <name>Sloan Alumni</name>
+    <url>http://mitsloan.mit.edu/alum/</url>
+    <catid>alumni</catid>
+    <catid>b8-resources</catid>
+    <altname>Alumni, Sloan</altname>
+    <location>E60-300</location>
+  </link>
+  <link alpha="skip">
+    <name>Sloan R.O.I.</name>
+    <url>http://mitsloan.mit.edu/alumni/n-roi.php</url>
+    <catid>publications</catid>
+  </link>
+  <link>
+    <name>Sloan School of Management</name>
+    <url>http://mitsloan.mit.edu/</url>
+    <catid>acad-programs</catid>
+    <catid>b6-education</catid>
+    <altname>Management, Sloan School of</altname>
+    <location>E52-473</location>
+  </link>
+    <link>
+    <name>Sloan Office of Communication</name>
+    <url>http://mitsloan.mit.edu/</url>
+    <catid>admin-resources</catid>
+    <location>E60-176</location>
+  </link>
+  <link>
+    <name>Sloan Finance and Administration</name>
+    <url>http://mitsloan.mit.edu/</url>
+    <catid>admin-resources</catid>
+    <location>E52-470</location>
+  </link>
+<link>
+<name>Professional Education Programs (PEP)</name>
+<url>http://web.mit.edu/mitpep/</url>
+<catid>acad-resources</catid>
+<catid>acad-programs</catid>
+<location>35-433</location>
+</link>
+  <link>
+    <name>Professional programs and executive education</name>
+    <url>http://web.mit.edu/education/professional.html</url>
+    <catid>b6-education</catid>
+    <catid>acad-programs</catid>
+    <catid>acad-resources</catid>
+    <catid>admissions</catid>
+    <altname>Executive education and professional programs</altname>
+  </link>
+  <link>
+    <name>Software distribution</name>
+    <url>http://web.mit.edu/software/</url>
+    <catid>computing</catid>
+  </link>
+  <link alpha="skip">
+    <name>Soundings</name>
+    <url>http://web.mit.edu/shass/soundings/</url>
+    <catid>publications</catid>
+    <location>E51-255</location>
+  </link>
+  <link>
+    <name>Space Accounting, Insite</name>
+    <url>http://facilities-db.mit.edu</url>
+    <catid>facilities</catid>
+    <location>NE49-2100</location>
+  </link>
+  <link>
+    <name>Space Administration</name>
+    <url>http://web.mit.edu/facilities/services/spaceadmin/renovations.html</url>
+    <catid>facilities</catid>
+    <location>NE49-2300</location>
+  </link>
+  <link>
+    <name>Space Reservations</name>
+    <url>http://web.mit.edu/campus-activities/www/scheduling.html</url>
+    <catid>student-life</catid>
+    <location>W20-500</location>
+  </link>
+  <link>
+    <name>Community Services Office, MIT</name>
+    <url>http://web.mit.edu/communityservices/</url>
+    <catid>support</catid>
+    <catid>employment</catid>
+    <location>E19-432</location>
+  </link>
+  <link>
+    <name>Specifications for Thesis Preparation</name>
+    <url>http://libraries.mit.edu/archives/thesis-specs/</url>
+    <catid>policies</catid>
+    <catid>libraries</catid>
+    <location>14N-118</location>
+  </link>
+  <link alpha="skip">
+    <name>Spectrum</name>
+    <url>http://spectrum.mit.edu/</url>
+    <catid>publications</catid>
+  </link>
+  <link>
+    <name>Office of Sponsored Programs (OSP)</name>
+    <url>http://web.mit.edu/osp/www/</url>
+    <catid>financial</catid>
+    <catid>research</catid>
+    <catid>legal</catid>
+    <catid>b5-offices</catid>
+    <altname>Sponsored Programs, Office of</altname>
+    <location>E19-750</location>
+  </link>
+  <link>
+    <name>Sports Medicine</name>
+    <url>http://web.mit.edu/athletics/sportsmedicine/</url>
+    <catid>health</catid>
+    <altname>Kasser Sports Medicine Center</altname>
+    <location>W35-115</location>
+  </link>
+  <link>
+    <name>spouses&amp;amp;partners@mit</name>
+    <url>http://web.mit.edu/medical/spousesandpartners/calendar.htm</url>
+    <catid>calendars</catid>
+    <catid>employment</catid>
+  </link>
+  <link>
+    <name>Standards and Procedures for Students</name>
+    <url>http://web.mit.edu/housing/standards/</url>
+    <catid>policies</catid>
+    <catid>student-life</catid>
+    <altname>Student Standards and Procedures</altname>
+  </link>
+  <link>
+    <name>Statistics and Surveys of Students</name>
+    <url>http://mit.edu/acadinfo/#stats</url>
+    <catid>acad-resources</catid>
+    <altname>Surveys and Statistics</altname>
+  </link>
+  <link>
+    <name>Stellar Learning Management System</name>
+    <url>http://stellar.mit.edu/</url>
+    <catid>acad-resources</catid>
+  </link>
+  <link>
+    <name>Stopit</name>
+    <url>http://web.mit.edu/stopit/</url>
+    <catid>computing</catid>
+    <catid>policies</catid>
+    <catid>legal</catid>
+    <altname>Harassment, Electronic</altname>
+  </link>
+  <link>
+    <name>Student Activities Office</name>
+    <url>http://web.mit.edu/slp/sao/</url>
+    <catid>student-life</catid>
+    <location>W20-549</location>
+  </link>
+  <link>
+    <name>Student employment</name>
+    <url>http://web.mit.edu/sfs/jobs/</url>
+    <catid>financial</catid>
+    <catid>student-life</catid>
+    <catid>jobs</catid>
+    <catid>employment</catid>
+    <altname>Employment, student</altname>
+    <altname>Jobs, student</altname>
+    <location>11-120</location>
+  </link>
+  <link>
+    <name>Student Financial Services (SFS)</name>
+    <url>http://web.mit.edu/sfs/</url>
+    <catid>admissions</catid>
+    <catid>financial</catid>
+    <catid>admin-resources</catid>
+    <catid>alumni</catid>
+    <catid>acad-resources</catid>
+    <altname>Accounts, student</altname>
+    <altname>Billing, students</altname>
+    <altname>Financial services, student</altname>
+    <altname>Loans, student</altname>
+        <location>11-120</location>
+  </link>
+  <link>
+    <name>Financial Aid</name>
+    <url>http://web.mit.edu/sfs/financial_aid/</url>
+    <catid>financial</catid>
+    <catid>admissions</catid>
+    <altname>Aid, financial</altname>
+    <altname>Scholarships</altname>
+    <location>11-120</location>
+  </link>
+  <link>
+    <name>Student Health Plan, MIT</name>
+    <url>http://web.mit.edu/medical/p-student.html</url>
+    <catid>health</catid>
+    <altname>Health Plan, Student</altname>
+    <location>E23-308</location>
+  </link>
+  <link>
+    <name>Student Information Policy</name>
+    <url>http://web.mit.edu/policies/sip/</url>
+    <catid>policies</catid>
+    <location>5-119</location>
+  </link>
+  <link>
+    <name>Student Information Processing Board (SIPB)</name>
+    <url>http://www.mit.edu/sipb/sipb.html</url>
+    <catid>computing</catid>
+    <location>W20-557</location>
+  </link>
+  <link>
+    <name>Student Information System (WebSIS)</name>
+    <url>http://student.mit.edu/</url>
+    <catid>acad-resources</catid>
+    <altname>WebSIS</altname>
+  </link>
+  <link>
+    <name>Student Life Programs</name>
+    <url>http://web.mit.edu/slp/</url>
+    <catid>student-life</catid>
+    <location>W20-549</location>
+  </link>
+  <link>
+    <name>Student Life, Division of (DSL)</name>
+    <url>http://web.mit.edu/dsl/</url>
+    <catid>student-life</catid>
+    <catid>acad-resources</catid>
+    <location>W20-549</location>
+  </link>
+  <link>
+    <name>Office of the Dean for Student Life (DSL)</name>
+    <url>http://web.mit.edu/dsl/</url>
+    <catid>student-life</catid>
+    <catid>acad-resources</catid>
+    <altname>Dean for Student Life, Office of</altname>
+    <location>4-110</location>
+  </link>
+  <link>
+    <name>Office of the Dean for Student Life Administration</name>
+    <url>http://web.mit.edu/dsl/</url>
+    <catid>student-life</catid>
+    <catid>acad-resources</catid>
+    <location>W31-135</location>
+  </link>
+  <link>
+    <name>Student Services Information Technology</name>
+    <url>http://web.mit.edu/ssit/</url>
+    <catid>computing</catid>
+    <location>W92-290</location>
+  </link>
+  <link>
+    <name>Subjects</name>
+    <url>http://web.mit.edu/uinfo/academics/subjects/</url>
+    <catid>acad-resources</catid>
+  </link>
+  <link>
+    <name>Subway and Bus Schedules</name>
+    <url>http://www.mbta.com/</url>
+    <catid>transportation</catid>
+    <altname>MBTA schedules</altname>
+  </link>
+  <link>
+    <name>Support Staff Peer Resources Task Group</name>
+    <url>http://web.mit.edu/sspr/</url>
+    <catid>support</catid>
+    <catid>employment</catid>
+    <altname>Access. Contact. Accomplish.</altname>
+  </link>
+  <link>
+    <name>Teaching and Learning Laboratory</name>
+    <url>http://web.mit.edu/tll/</url>
+    <catid>acad-resources</catid>
+    <location>5-122</location>
+  </link>
+  <link alpha="skip">
+    <name>Tech Gallery, The</name>
+    <url>http://the-tech.mit.edu/Gallery/</url>
+    <catid>publications</catid>
+  </link>
+  <link>
+    <name>Tech Shuttle</name>
+    <url>http://web.mit.edu/facilities/transportation/shuttles/tech_shuttle.html</url>
+    <catid>transportation</catid>
+    <altname>Shuttle, Tech</altname>
+      </link>
+  <link>
+    <name>Tech Talk</name>
+    <url>http://web.mit.edu/newsoffice/techtalk-info.html</url>
+    <catid>publications</catid>
+    <catid>outreach</catid>
+    <catid>comm-resources</catid>
+    <altname>Newspaper, Campus</altname>
+    <location>11-400</location>
+  </link>
+  <link>
+    <name>Technique (yearbook)</name>
+    <url>http://web.mit.edu/yearbook/</url>
+    <catid>publications</catid>
+    <altname>Yearbook</altname>
+    <location>W20-451</location>
+  </link>
+  <link>
+    <name>Technology Licensing Office (TLO)</name>
+    <url>http://web.mit.edu/tlo/www/</url>
+    <catid>legal</catid>
+    <catid>outreach</catid>
+    <catid>research</catid>
+    <catid>b8-resources</catid>
+    <altname>Licensing Office, Technology</altname>
+    <location>NE25-230</location>
+  </link>
+  <link>
+    <name>Technology Review</name>
+    <url>http://www.technologyreview.com/</url>
+    <catid>alumni</catid>
+    <catid>outreach</catid>
+    <catid>publications</catid>
+    <catid>b8-resources</catid>
+    <offcampus>1 Main Street, 7FL</offcampus>
+  </link>
+  <link>
+    <name>Telephone Directories</name>
+    <url>http://web.mit.edu/referencepubs/directories/toc.html</url>
+    <catid>admin-resources</catid>
+    <catid>dir</catid>
+    <altname>Directories, Telephone</altname>
+  </link>
+  <link>
+    <name>Telephone Support Services</name>
+    <url>http://web.mit.edu/ist/topics/telecommunications/</url>
+    <catid>facilities</catid>
+    <catid>admin-resources</catid>
+    <location>E19-741</location>
+  </link>
+  <link>
+    <name>Term Regulations</name>
+    <url>http://web.mit.edu/faculty/termregs/</url>
+    <catid>policies</catid>
+  </link>
+  <link>
+    <name>Terrascope</name>
+    <url>http://web.mit.edu/terrascope/www/</url>
+    <catid>acad-programs</catid>
+    <location>16-177</location>
+  </link>
+  <link>
+    <name>Tech, The</name>
+    <url>http://www-tech.mit.edu/</url>
+    <catid>student-life</catid>
+    <catid>publications</catid>
+    <altname>Newspaper, Student</altname>
+    <location>W20-483</location>
+  </link>
+  <link>
+    <name>Thirsty Ear Pub</name>
+    <url>http://web.mit.edu/thirsty-ear/</url>
+    <catid>food</catid>
+    <location>W1</location>
+  </link>
+  <link alpha="skip">
+    <name>Thistle, the</name>
+    <url>http://web.mit.edu/thistle/www/</url>
+    <catid>publications</catid>
+  </link>
+  <link alpha="skip">
+    <name>Thresholds</name>
+    <url>http://architecture.mit.edu/thresholds</url>
+    <catid>publications</catid>
+  </link>
+  <link>
+    <name>Travel</name>
+    <url>http://web.mit.edu/cao/www/travel.htm</url>
+    <catid>employment</catid>
+    <catid>transportation</catid>
+    <location>NE49</location>
+  </link>
+  <link>
+    <name>MIT Investment Management Company</name>
+    <url>http://www.mitimco.org/</url>
+    <catid>admin-resources</catid>
+    <catid>financial</catid>
+    <altname>Investment Management Company, MIT</altname>
+    <location>E48-200</location>
+  </link>
+  <link>
+    <name>Undergraduate Practice Opportunities Program (UPOP)</name>
+    <url>http://web.mit.edu/engineering/upop/</url>
+    <catid>acad-programs</catid>
+  </link>
+  <link>
+    <name>Undergraduate Program, Committee on the</name>
+    <url>http://web.mit.edu/committees/cup/</url>
+    <catid>admin-resources</catid>
+  </link>
+  <link alpha="skip">
+    <name>MIT Undergraduate Research Journal (MURJ)</name>
+    <url>http://web.mit.edu/murj/www/</url>
+    <catid>publications</catid>
+    <altname>Undergraduate research journal</altname>
+    <location>12-188</location>
+  </link>
+  <link>
+    <name>Undergraduate Research Opportunities Program (UROP)</name>
+    <url>http://web.mit.edu/urop/</url>
+    <catid>acad-programs</catid>
+    <catid>research</catid>
+    <catid>jobs</catid>
+    <altname>Research, undergraduate opportunities</altname>
+    <location>7-103</location>
+  </link>
+  <link>
+    <name>Urban Studies and Planning, Dept. of</name>
+    <url>http://dusp.mit.edu/</url>
+    <catid>acad-programs</catid>
+    <location>7-346</location>
+    <location>9</location>
+    <location>10</location>
+    <location>W31</location>
+  </link>
+  <link>
+    <name>Utilities</name>
+    <url>http://web.mit.edu/facilities/about/operations/utilities.html</url>
+    <catid>facilities</catid>
+    <location>NE49-3400</location>
+  </link>
+  <link>
+    <name>Vending machines</name>
+    <url>http://web.mit.edu/dining/locations/vending.html</url>
+    <catid>food</catid>
+  </link>
+  <link>
+    <name>Venture Mentoring Service</name>
+    <url>http://web.mit.edu/vms/</url>
+    <catid>research</catid>
+    <catid>alumni</catid>
+    <catid>b8-resources</catid>
+    <location>10-358</location>
+  </link>
+  <link>
+    <name>Vice President for Research</name>
+    <url>http://web.mit.edu/vpr/www/</url>
+    <catid>admin-resources</catid>
+    <catid>outreach</catid>
+    <catid>research</catid>
+    <catid>b5-offices</catid>
+    <altname>Research, Vice President for</altname>
+    <location>3-240</location>
+  </link>
+  <link>
+    <name>Virus protection</name>
+    <url>http://web.mit.edu/ist/topics/virus/</url>
+    <catid>computing</catid>
+  </link>
+  <link alpha="skip">
+    <name>Voo Doo Magazine</name>
+    <url>http://web.mit.edu/voodoo/www/voodoo.html</url>
+    <catid>publications</catid>
+  </link>
+  <link>
+    <name>W1MX Radio Society</name>
+    <url>http://web.mit.edu/w1mx/</url>
+    <catid>student-life</catid>
+    <altname>Ham Radio Society</altname>
+    <location>50-358</location>
+  </link>
+  <link>
+    <name>Washington, D.C. Office</name>
+    <url>http://web.mit.edu/dc/</url>
+    <catid>admin-resources</catid>
+    <catid>outreach</catid>
+    <catid>b5-offices</catid>
+    <offcampus>OFF CAMPUS</offcampus>
+  </link>
+  <link>
+    <name>Departmental Consulting and Application Development (DCAD)</name>
+    <url>http://web.mit.edu/ist/dcad/</url>
+    <catid>computing</catid>
+    <catid>comm-resources</catid>
+    <location>N42-240</location>
+  </link>
+  <link>
+    <name>Web Page Legal and Policy Guidelines</name>
+    <url>http://web.mit.edu/ist/web/reference/guidelines/legal.html</url>
+    <catid>policies</catid>
+    <catid>computing</catid>
+  </link>
+  <link alpha="skip">
+    <name>What's the Score?</name>
+    <url>http://libraries.mit.edu/music/news/news-index.html</url>
+    <catid>publications</catid>
+  </link>
+  <link>
+    <name>Whitaker College of Health Sciences and Technology (HST)</name>
+    <url>http://hst.mit.edu/</url>
+    <catid>acad-programs</catid>
+    <altname>Health Sciences and Technology Program (HST)</altname>
+    <location>E25-519</location>
+  </link>
+  <link alpha="skip">
+    <name>Women's League calendar</name>
+    <url>http://web.mit.edu/womensleague/calendar.html</url>
+    <catid>calendars</catid>
+  </link>
+  <link>
+    <name>Women's League, MIT</name>
+    <url>http://web.mit.edu/womensleague/</url>
+    <catid>support</catid>
+    <location>10-342</location>
+  </link>
+  <link alpha="skip">
+    <name>Out and About (formerly Women's Studies Around Boston)</name>
+    <url>http://web.mit.edu/wgs/events/out.html</url>
+    <catid>publications</catid>
+  </link>
+  <link>
+    <name>Work, Family, and Personal Life, The Center for</name>
+    <url>http://hrweb.mit.edu/worklife/</url>
+    <catid>support</catid>
+    <catid>employment</catid>
+    <altname>Family Resource Center</altname>
+    <location>16-151</location>
+  </link>
+  <link>
+    <name>Working Group on Support Staff Issues</name>
+    <url>http://web.mit.edu/committees/wgssi/</url>
+    <catid>support</catid>
+    <catid>employment</catid>
+    <catid>admin-resources</catid>
+    <location>56-731</location>
+  </link>
+  <link>
+    <name>Working Group Recycling Committee</name>
+    <url>http://web.mit.edu/wgrecycling/</url>
+    <catid>environment</catid>
+  </link>
+  <link>
+    <name>Writing and Humanistic Studies, Program in</name>
+    <url>http://web.mit.edu/humanistic/www/</url>
+    <catid>acad-programs</catid>
+    <location>14E-302</location>
+  </link>
+  <link>
+    <name>Writing and Communication Center</name>
+    <url>http://web.mit.edu/writing/</url>
+    <catid>acad-resources</catid>
+    <location>32-081</location>
+  </link>
+  <link>
+    <name>Writing Across the Curriculum at MIT</name>
+    <url>http://web.mit.edu/wac/</url>
+    <catid>acad-resources</catid>
+    <location>32-083</location>
+  </link>
+  <link>
+    <name>Zesiger Sports and Fitness Center</name>
+    <url>http://web.mit.edu/zcenter/</url>
+    <catid>health</catid>
+    <catid>facilities</catid>
+    <location>W35</location>
+  </link>
+  <link>
+    <name>Zipcar</name>
+    <url>http://web.mit.edu/facilities/transportation/commuting/zipcar.html</url>
+    <catid>transportation</catid>
+    <altname>Car Sharing</altname>
+  </link>
+  <link>
+    <name>Daytime Boston Shuttle</name>
+    <url>http://web.mit.edu/facilities/transportation/shuttles/daytime_boston.html</url>
+    <catid>transportation</catid>
+    <altname>Shuttle, Daytime Boston</altname>
+  </link>
+  <link alpha="skip">
+    <name>50K competition</name>
+    <url>http://50k.mit.edu/</url>
+    <catid>b8-resources</catid>
+  </link>
+  <link>
+    <name>Deshpande Center for Technological Innovation</name>
+    <url>http://web.mit.edu/deshpandecenter/</url>
+    <catid>b8-resources</catid>
+    <catid>outreach</catid>
+    <catid>research</catid>
+  </link>
+  <link alpha="skip">
+    <name>Entrepreneurs Club</name>
+    <url>http://web.mit.edu/e-club/www/</url>
+    <catid>b8-resources</catid>
+  </link>
+  <link>
+    <name>Entrepreneurship Center</name>
+    <url>http://entrepreneurship.mit.edu/</url>
+    <catid>b8-resources</catid>
+    <catid>outreach</catid>
+    <catid>research</catid>
+    <location>E40-196</location>
+  </link>
+  <link alpha="skip">
+    <name>Science and Engineering Business Club</name>
+    <url>http://web.mit.edu/sebc/</url>
+    <catid>b8-resources</catid>
+  </link>
+  <link alpha="skip">
+    <name>TechLink</name>
+    <url>http://web.mit.edu/techlink/</url>
+    <catid>b8-resources</catid>
+  </link>
+  <link alpha="skip">
+    <name>Venture Capital &amp; Private Equity Club</name>
+    <url>http://www.mitvcpi.org/</url>
+    <catid>b8-resources</catid>
+  </link>
+  <link>
+    <name>City Design and Development</name>
+    <url>http://web.mit.edu/dusp/cdd/</url>
+    <catid>acad-programs</catid>
+    <location>10-485</location>
+  </link>
+</collection>

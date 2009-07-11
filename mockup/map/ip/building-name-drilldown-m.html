@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN" "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="content-type" content="application/xhtml+xml" />
+	<meta name="viewport" id="viewport" content="width=device-width, user-scalable=yes" />	
+	<title>MIT Map: Browse by Building Name</title>
+	<link rel="stylesheet" type="text/css" href="../../styles/ip.css" />
+  	<link rel="apple-touch-icon" href="http://mobi.mit.edu/images/ip/icon.png" />
+</head>
+
+<body onload="scrollTo(0,1);">
+
+<div id="navbar">	
+	<div class="breadcrumbs">
+		<a href="../../home/ip/index.html" class="homelink"><img src="../../images/ip/homelink.png" width="62" height="36" alt="MIT Mobile Web Home" /></a><a href="index.html" class="module"><img src="../../images/ip/title-map.png" width="28" height="28" alt="" /></a><a href="building-name.html"><span>Browse</span></a><div class="pagetitle">M-Q</div>
+	</div>
+	<div class="help">
+		<a href="help.html"><img src="../../images/ip/help.png" width="34" height="36" alt="Help" /></a>
+	</div>
+</div>
+
+<div id="container">
+		
+	<div class="nonfocal">
+		<h2>Browse Buildings: M-Q</h2>
+	</div>
+	
+	<ul class="nav">
+		<li><a href="detail.html?selection=W61">MacGregor House</a></li>
+		<li><a href="detail.html?selection=10">Maclaurin Buildings (10)</a></li>
+		<li><a href="detail.html?selection=3">Maclaurin Buildings (3)</a></li>
+		<li><a href="detail.html?selection=4">Maclaurin Buildings (4)</a></li>
+		<li><a href="detail.html?selection=E53">Management & Social Sciences Library</a></li>
+		<li><a href="detail.html?selection=W4">McCormick Hall</a></li>
+		<li><a href="detail.html?selection=37">McNair Building</a></li>
+		<li><a href="detail.html?selection=E15">Media Lab</a></li>
+		<li><a href="detail.html?selection=57">MIT Alumni Pool</a></li>
+		<li><a href="detail.html?selection=E23">MIT Medical</a></li>
+		<li><a href="detail.html?selection=N52">MIT Museum</a></li>
+		<li><a href="detail.html?selection=E39">MIT Press</a></li>
+		<li><a href="detail.html?selection=E38">MIT Press Bookstore</a></li>
+		<li><a href="detail.html?selection=E40">Muckley Building</a></li>
+		<li><a href="detail.html?selection=E17">Mudd Building</a></li>
+		<li><a href="detail.html?selection=14">Music Library</a></li>
+		<li><a href="detail.html?selection=W70">New House</a></li>
+		<li><a href="detail.html?selection=W71">Next House</a></li>
+		<li><a href="detail.html?selection=ND">Nu Delta (ND)</a></li>
+		<li><a href="detail.html?selection=48">Parsons Laboratory</a></li>
+		<li><a href="detail.html?selection=6C">PDSI (Physics, DMSE, Spectroscopy, Infrastructure)</a></li>
+		<li><a href="detail.html?selection=PBE">Phi Beta Epsilon (PBE)</a></li>
+		<li><a href="detail.html?selection=PDT">Phi Delta Theta (PDT)</a></li>
+		<li><a href="detail.html?selection=PKS">Phi Kappa Sigma (PKS)</a></li>
+		<li><a href="detail.html?selection=PKT">Phi Kappa Theta (PKT)</a></li>
+		<li><a href="detail.html?selection=PSK">Phi Sigma Kappa (PSK)</a></li>
+		<li><a href="detail.html?selection=PSK-A">Phi Sigma Kappa Annex (PSK)</a></li>
+		<li><a href="detail.html?selection=PLP">Pi Lambda Phi (PLP)</a></li>
+		<li><a href="detail.html?selection=W8">Pierce Boathouse</a></li>
+		<li><a href="detail.html?selection=1">Pierce Laboratory</a></li>
+		<li><a href="detail.html?selection=pika">pika</a></li>
+		<li><a href="detail.html?selection=NW16">Plasma Science & Fusion Center (NW16)</a></li>
+		<li><a href="detail.html?selection=NW17">Plasma Science & Fusion Center (NW17)</a></li>
+		<li><a href="detail.html?selection=NW21">Plasma Science & Fusion Center (NW21)</a></li>
+		<li><a href="detail.html?selection=NW22">Plasma Science & Fusion Center (NW22)</a></li>
+		<li><a href="detail.html?selection=42">Power Plant</a></li>
+		<li><a href="detail.html?selection=43">Power Plant Annex</a></li>
+		<li><a href="detail.html?selection=5">Pratt School</a></li>
+		<li><a href="detail.html?selection=E1">President's House</a></li>
+	</ul>
+	
+	<div class="nonfocal">
+		<form action="index.html" method="get">
+			<select onchange="jumpbrowse(this)">
+				<option value="" selected="selected">Browse map by:</option>
+				<option value="number">Building number</option>
+				<option value="name">Building name</option>
+				<option value="residences">Residences</option>
+				<option value="rooms">Selected rooms</option>
+				<option value="streets">Streets &amp; Landmarks</option>
+				<option value="courts">Courts &amp; Greenspace</option>
+				<option value="food">Food Services</option>
+				<option value="parking">Parking Lots</option>
+			</select>
+		</form>
+	</div>
+	
+</div> <!-- id="container" -->
+
+<div id="footer">
+	<a href="http://web.mit.edu/ist/"><img src="../../images/ip/ist-logo.png" width="35" height="21" alt="IST" /></a>Campus map provided by Department of Facilities and Information Services &amp; Technology
+</div>
+
+</body>
+</html>

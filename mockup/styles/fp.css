@@ -1,0 +1,282 @@
+/* Redefinition of basic elements */
+
+html, body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+}
+
+body {
+	background-color: #d9e0e8;
+	font-family: Arial, sans-serif;
+	font-size: small;
+	color: #202629;
+}
+
+a {
+	color: #a33;
+}
+
+a:visited {
+	color: #a33;
+}
+
+a img {
+	border: none;
+}
+
+h1 {
+	font-size: x-large;
+	font-weight: normal;
+	margin: 10px 0;
+	padding: 0;
+}
+
+h2 { 
+	font-size: large;
+	font-weight: normal;
+	margin: 0 0 5px 0;
+	padding: 0;
+}
+
+h3 {
+	font-size: small; 
+	font-weight: bold;
+	margin: 0 0 5px 0;
+	padding: 0;
+}
+
+h4 {
+	font-size: small; 
+	font-weight: bold;
+	margin: 0;
+	padding: 0;
+}
+
+p {
+	margin: 0 0 8px 0;
+	padding: 0;
+}
+
+table, th, td {
+	font-size: small;
+}
+
+
+/* Major layout blocks */
+
+#container {
+	padding: 3px;
+	margin: 6px 0;
+}
+
+#header {
+	margin: 0;
+	padding: 4px 4px 4px 4px;
+	font-size: large;
+}
+
+#header a {
+	text-decoration: none;
+	color: #444;
+}
+
+#footer {
+	margin: 3px 0 3px 0;
+	padding: 3px;
+	font-size: xx-small;
+	color: #666;
+}
+
+
+/* Forms */
+
+form {
+	margin: 4px 0 10px 0;
+	padding: 0;
+}
+
+fieldset {
+	border: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.combobutton {
+	background-color: #933;
+	border-color: #933;
+	color: #fff;
+}
+
+.inputcombo .forminput {
+	font-size: small;
+}
+
+.inputcombo .combobutton {
+	font-size: small;
+}
+
+
+
+/* Navigation and results listings */
+/* Use of "display:block" allows for vertical padding without line-height and elimination of <br/> tags in lists (compared with sp.css) */
+
+.nav {
+	margin: 1em 0;
+	padding: 3px;
+	background-color: #fff;
+	font-size: small;
+}
+
+.secondary {
+	margin: 1em 0;
+	padding: 3px;
+	background-color: #f0f6f9;
+	font-size: small;
+}
+
+.paging {
+	margin: 0;
+	padding: 3px;
+	font-size: small;
+}
+
+.bottomnav {
+	margin: 1em 0;
+	padding: 3px;
+	background-color: #778593;
+	color: #fff;
+	font-size: small;
+}
+
+.bottomnav a {
+	color: #fff;
+}
+
+.results {
+	margin: 0.75em 0;
+	padding: 3px;
+	background-color: #fff;
+	font-size: small;
+}
+
+
+/* Specific content formatting */
+
+.focal {
+	background-color: #fff;
+	padding: 3px;
+}
+
+.nonfocal {
+	padding: 3px;
+}
+
+.paging {
+	text-align: left;
+	margin: 0.75em 0;
+}
+
+.legend {
+	margin: 0.5em 0 0.75em 0;
+	font-size: x-small;
+	color: #606669;
+}
+
+.row {
+	padding: 4px 0;
+}
+
+.smallprint {
+	font-size: x-small;
+	font-weight: normal;
+	color: #555;
+	text-decoration: none;
+}
+
+.fineprint {
+	font-size: xx-small;
+	color: #666;
+	text-decoration: none;
+}
+
+.clear {
+	clear: both;
+}
+
+.label {
+	display: inline;
+	padding-right: 2px;
+	font-size: x-small;
+	color: #888888;
+}
+
+.value {
+	font-size: small;
+}
+
+hr {
+	display: none;
+}
+
+.divider {
+	height: 0;
+	margin: 0.75em 0;
+	border: none;
+	border-top: 1px dotted #999;
+}
+
+.bb {
+	display: none;
+}
+
+.image {
+	text-align: center;
+	padding: 4px 0;
+}
+
+.hidden {
+	display:none;
+}
+
+
+
+/* Iconically coded links - e.g., Shuttle Schedule, 3DOWN, etc. */
+
+a.icon {
+	background-repeat: no-repeat;
+	background-position: 1px 5px;
+	padding-left: 16px;
+}
+
+span.icon {
+	display: block;
+	background-repeat: no-repeat;
+	background-position: 1px 2px;
+	padding: 2px 0 2px 16px;
+}
+
+.gps {
+	background-image: url(../images/fp/gps.gif);
+}
+
+.sch {
+	background-image: url(../images/fp/schedule.gif);
+}
+
+.ok {
+	background-image: url(../images/fp/ok.gif);
+}
+
+.alert {
+	background-image: url(../images/fp/alert.gif);
+}
+
+.warning {
+	background-image: url(../images/fp/warning.gif);
+}
+
+.critical {
+	background-image: url(../images/fp/critical.gif);
+}
+

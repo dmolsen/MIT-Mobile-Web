@@ -1,0 +1,40 @@
+<?php
+$page->title("MIT Shuttle Schedule")
+     ->header("Shuttle Schedule");
+
+$page->content_begin();
+?>
+	<p class="nav">
+		<strong>Daytime Shuttles:</strong><br/>
+                <? foreach($day_routes as $route) { ?>
+                     <? if($route->isRunning($day, $hour, $minute)) { ?>
+                           <img src="../sp/images/shuttle.gif" width="15" height="12" alt="Running" align="absmiddle" />
+                     <? } else { ?>
+                           <img src="../sp/images/shuttle-off.gif" width="15" height="12" alt="Not running" align="absmiddle" />
+                     <? } ?>
+		     <a href="<?=routeURL($route)?>"><?=$route->getName()?></a><br/>
+                <? } ?>
+	</p>
+
+	<p class="nav">
+		<strong>Nighttime Saferide Shuttles:</strong><br/>
+                <? foreach($night_routes as $route) { ?>
+                     <? if($route->isRunning($day, $hour, $minute)) { ?>
+                           <img src="../sp/images/shuttle.gif" width="15" height="12" alt="Running" align="absmiddle" />
+                     <? } else { ?>
+                           <img src="../sp/images/shuttle-off.gif" width="15" height="12" alt="Not Running" align="absmiddle" />
+                     <? } ?>
+		     <a href="<?=routeURL($route)?>"><?=$route->getName()?></a><br/>
+                <? } ?>
+	</p>
+
+	<p class="legend">
+ 	        <img src="../sp/images/shuttle.gif" width="15" height="12" alt="Running" align="absmiddle" />Running
+ 	        <img src="../sp/images/shuttle-off.gif" width="15" height="12" alt="Not running" align="absmiddle" />Not currently running
+	</p>
+
+<? 
+$page->content_end();
+$page->help_link("tel:16172586510", "Parking office: 617.258.6510")
+     ->help_link("tel:16172532997", "Saferide: 617.253.2997");
+?>

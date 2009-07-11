@@ -1,0 +1,42 @@
+<?='<?xml version="1.0" encoding="UTF-8"?>'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN" "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="content-type" content="application/xhtml+xml" />
+	<title>MIT Mobile Web</title>
+	<link rel="stylesheet" type="text/css" href="../<?=$phone?>/<?=$phone?>.css" />
+</head>
+
+<body>
+
+<h2 id="header">
+<img src="../<?=$phone?>/images/mit-logo.gif" width="<?=$width?>" height="<?=$height?>" />Mobile Web
+</h2>
+
+<p class="bb"> </p>
+
+<p class="nav">
+	<a href="../people/" accesskey="1">1: People Directory</a><br/>
+	<a href="../map/" accesskey="2">2: Campus Map</a><br/>
+	<a href="../shuttleschedule/" accesskey="3">3: Shuttle Schedule</a><br/>
+	<a href="../calendar/" accesskey="4">4: Events Calendar</a><br/>
+	<a href="../stellar/" accesskey="5">5: Stellar</a> <span class="smallprint">(class info)</span><br/>
+	<a href="../careers/" accesskey="6">6: Student Career Services</a><br/>
+	<a href="../emergency/" accesskey="7">7: Emergency Info</a><br/>
+	<a href="../3down/" accesskey="8">8: 3DOWN</a> <span class="smallprint">(services status)</span><br/>
+	<a href="../links/" accesskey="9">9: Useful Links</a>
+</p>
+
+<p class="nav secondary">
+	<a href="../mobile-about/">About the MIT Mobile Web</a><br/>
+	<? if($phone == 'sp') { ?>
+		<a href="http://web.mit.edu">Go to web.mit.edu</a><br/>
+	<? } ?>
+</p>
+
+<p id="footer">
+	<img src="../<?=$phone?>/images/ist-logo.gif" width="26" height="18" alt="IST" />Information Services &amp; Technology
+</p>
+
+</body>
+</html>

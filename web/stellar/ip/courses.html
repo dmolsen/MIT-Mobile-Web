@@ -1,0 +1,16 @@
+<?php
+$page->title("MIT Stellar: $title")
+     ->navbar_image('title-stellar')
+     ->breadcrumbs($title);
+
+$page->content_begin();
+?>
+		
+	<ul class="nav">
+            <? foreach($courses as $id => $course) { ?>
+		<li><a href="<?=courseURL($id, $which)?>"><?=name($course)?> (<?=idName($id, $course)?>)</a></li>
+            <? } ?>
+
+	</ul>
+
+<? $page->content_end(); ?>

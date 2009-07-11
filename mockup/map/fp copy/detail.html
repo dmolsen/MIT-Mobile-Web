@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN" "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="content-type" content="application/xhtml+xml" />
+	<title>MIT Campus Map: Details</title>
+	<link rel="stylesheet" type="text/css" href="../../styles/fp.css" />
+</head>
+
+<body>
+
+<h2 id="header">
+<img src="../../images/fp/mit-logo.gif" width="36" height="16" />Campus Map
+</h2>
+
+<p class="bb"> </p>
+
+<div id="container">
+
+	<div class="focal">
+		<h2>Building N42 (Information Services &amp; Technology)</h2>
+		
+		<p>
+			211 Massachusetts Avenue
+		</p>
+
+		<p class="tabs"> <!-- No extra whitespace in code below; non-breaking spaces required -->
+			<span class="active">Map</span>&nbsp;|&nbsp;<a href="detail-photo.html">Photo</a>&nbsp;|&nbsp;<a href="detail-here.html">What's Here</a>
+		</p>
+			
+		<p class="image">
+			<a name="map"> </a>
+			<img src="http://ims.mit.edu/WMS_MS/WMS.asp?request=getmap&version=1.1.1&width=160&height=160&selectvalues=N42&bbox=708500,496100,709300,496700&layers=Towns,Hydro,Greenspace,Sport,Courtyards,Roads,Rail,Landmarks,Parking,Other+Buildings,Buildings,bldg-iden-12,road-iden-10,landmarks-iden-10&selectfield=facility&selectlayer=Buildings" width="160" height="160" alt="Map" />
+		</p>
+		<p>
+			<!-- Note to devs: These links, like the image URL above, will need to be calculated on the server at page compile time and hard-coded into the HTML delivered to the browser -->
+			Scroll: <a href="detail.html?selectvalues=N42&bbox=708500,496100,709300,496700#map">N</a>&nbsp;|&nbsp;<a href="detail.html?selectvalues=N42&bbox=708500,496100,709300,496700#map">S</a>&nbsp;|&nbsp;<a href="detail.html?selectvalues=N42&bbox=708500,496100,709300,496700#map">E</a>&nbsp;|&nbsp;<a href="detail.html?selectvalues=N42&bbox=708500,496100,709300,496700#map">W</a><br/>
+			Zoom: <a href="detail.html?selectvalues=N42&bbox=708500,496100,709300,496700#map">In</a>&nbsp;|&nbsp;<a href="detail.html?selectvalues=N42&bbox=708500,496100,709300,496700#map">Out</a>
+		</p>
+	</div>
+		
+	<p class="secondary">
+		<a href="help.html">Campus Map Help</a>
+	</p>
+	
+	<p class="bottomnav">
+		<a href="../../home/fp/index.html" accesskey="0">0: MIT Mobile Web Home</a><br/>
+		<a href="index.html" accesskey="1">1: Campus Map Home</a><br/>
+	</p>
+
+</div>
+
+<p id="footer">
+	<img src="../../images/fp/ist-logo.gif" width="26" height="18" alt="IST" />Campus map provided by Department of Facilities and Information Services &amp; Technology
+</p>
+
+</body>
+</html>

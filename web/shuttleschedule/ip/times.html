@@ -1,0 +1,72 @@
+<?php
+$page->title('MIT Shuttle Schedule: ' . $routeName)
+     ->navbar_image('title-shuttleschedule')
+     ->not_scalable()
+     ->fixed()
+     ->add_stylesheet('styles/shuttletrack-ip')
+     ->add_javascript('../ip/uiscripts-ip')
+     ->breadcrumbs('Route Info')
+     ->extra_onload("rotateScreen()")
+     ->onorientationchange("rotateScreen()");
+
+$page->content_begin();
+?>
+	<a name="scrolldown"></a>
+	
+	<div class="focal shaded">
+	
+		<h2><?=$routeName?><div id="refresh"><a href="<?=selfURL()?>"><img src="../ip/images/refresh.png" width="82" height="32" alt="Update" /></a></div></h2>
+ 
+                <p class="smallprint">
+                    <? if($route->isRunning($day, $hour, $minute)) { ?>
+                       Page refreshed at <?=mark_up(standardTimeSTR($hour, $minute))?>.<br/>
+	  	    <? } else { ?>
+                       This shuttle is not currently running.<br/>
+                    <? } ?>
+
+                   This shuttle <?=lower_first(mark_up($route->getSummary()))?><? if(!$route->getHolidays()) { ?>, except holidays<? } ?>.
+                </p>
+
+                <p class="legend">Route loop repeats every <?=$loop_time?> minutes.</p>
+
+		<ul id="tabs">
+			<li class="active"><a href="#scrolldown" onclick="showTab('scheduletab',this)">Schedule</a></li>
+			<li><a href="#scrolldown" onclick="showTab('maptab',this)">Route Map</a></li>
+		</ul>
+		
+		<div id="tabbodies">	
+			<div class="tabbody" id="scheduletab">
+				<table cellpadding="0" cellspacing="0" border="0" id="schedule">
+					<tr>
+						<th>Stop</th>
+						<th>Time</th>
+					</tr>
+                                        <? foreach($stops as $index => $stop) { ?>
+ 					      <tr <? if($stop['next']) { ?> class="current" <? } ?> >
+						  <td><span class="sid"><?=Letter($index)?>.</span> <?=$stop["place"]?></td>
+						  <td><?=timeSTR($stop)?></td>
+					      </tr>
+                                        <? } ?>
+				</table>
+
+		
+			</div> <!-- id="scheduletab" -->
+		
+			<div class="tabbody" id="maptab" style="display:none">
+				<div id="map"><img src="<?=$imageURL?>" width="270" height="270" alt="Map" id="mapimage" /></div>
+			</div> <!-- id="maptab" -->
+			
+			<div class="clear"></div>
+		</div> <!-- id="tabbodies" -->
+		
+	</div> <!-- class="focal shaded" -->
+	<div class="nonfocal legend"><span id="rotatemsg1">Rotate your device to view map &amp; schedule side by side.</span><span id="rotatemsg2">Rotate your device to view schedule and map separately.</span></div>
+
+	
+	<div class="clear"></div>
+<? $page->content_end();
+
+$page->extra_footer('Map service provided by Facilities Department and');
+$page->footer_script('showTab("scheduletab");');
+
+?>

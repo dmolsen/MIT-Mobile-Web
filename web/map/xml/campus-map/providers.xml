@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+<!DOCTYPE wireless SYSTEM "../dtd/map.dtd">
+<wireless>
+  <provider>
+    <name>MIT (IS&amp;T registered)</name>
+    <path>/afs/athena.mit.edu/org/c/campus-map/wireless/is.xml</path>
+  </provider>
+  <provider>
+    <name>MIT Media Lab</name>
+    <path>/afs/athena.mit.edu/org/c/campus-map/wireless/media.xml</path>
+  </provider>
+</wireless>

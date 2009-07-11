@@ -1,0 +1,39 @@
+<?php
+$page->title('MIT People Directory')
+     ->navbar_image('title-people')
+     ->breadcrumbs('People Directory')
+     ->breadcrumb_home();
+
+$page->content_begin();
+?>
+	<div class="nonfocal">
+		<form method="get" action="">
+			<fieldset class="inputcombo emphasized">
+				<input class="forminput" type="text" id="filter" name="filter" placeholder="Search" value="<?=$search_terms?>" />
+				<input class="combobutton" id="sch_btn" src="../ip/images/search-button.png" type="image" />
+			</fieldset>	
+
+                <? if($failed_search) { ?>
+                      <p>No matches found</p>
+                <? } ?>
+
+		</form>
+	</div>
+	
+	<div class="legend nonfocal">
+	<strong>Sample searches:</strong><br/> 
+	    Name: 'william barton rogers', 'rogers'<br/>
+	    Email: 'wbrogers', 'wbrogers@mit.edu'<br/>
+	    Phone: '6172531000', '31000'
+	</div>
+	
+	<ul class="secondary">
+		<li>
+			<a href="tel:16172531000" class="phone">Phone Directory <span class="smallprint">(617.253.1000)</span></a>
+		</li>
+		<li>
+			<a href="../emergency/" >Emergency Contacts</a>
+		</li>
+	</ul>
+	
+<? $page->content_end(); ?>

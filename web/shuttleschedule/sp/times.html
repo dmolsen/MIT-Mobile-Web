@@ -1,0 +1,50 @@
+<?php
+$page->title("MIT Shuttle Schedule: $routeName Shuttle")
+     ->header("Shuttle Schedule")
+     ->add_stylesheet("styles/shuttletrack-$phone");
+
+$page->content_begin();
+?>
+	<div class="focal">
+		<h2><?=$routeName?></h2>
+              
+                <p class="smallprint">
+                    <? if($route->isRunning($day, $hour, $minute)) { ?>
+                       Page refreshed at <?=standardTimeStr($hour, $minute)?> (<a href="<?=selfURL()?>">refresh</a>)<br />
+                    <? } else { ?>
+                       This shuttle is not currently running<br />
+                    <? } ?>
+
+                    <?=$route->getSummary()?>
+                </p>
+
+                <p class="legend">Route loop repeats every <?=$loop_time?> minutes.</p>
+
+		<table cellpadding="0" cellspacing="0" border="0" class="schedule">
+			<tr>
+				<th>Stop <span class="fineprint">(<a href="#map">Map</a>)</span></th>
+				<th>Time</th>
+			</tr>
+                        <? foreach($stops as $index => $stop) { ?>
+                            <? if(!$stop['next']) { ?>
+  			       <tr>
+				   <td><?=Letter($index)?>. <?=$stop['place']?></td>
+				   <td><?=timeSTR($stop)?></td>
+			       </tr>
+                            <? } else { ?>
+  			       <tr class="current">
+				   <td><img src="../<?=$phone?>/images/bus.gif" width="13" height="13" alt="bus" />&nbsp;<strong><?=$stop['place']?></strong></td>
+				   <td><strong><?=timeSTR($stop)?></strong></td>
+			       </tr>
+                            <? } ?>
+                        <? } ?>
+		</table>
+
+		<a name="map"> </a>
+		<div class="image"><img src="<?=$imageURL?>" width="<?=$size?>" height="<?=$size?>" alt="Map" /></div>
+
+	</div>
+<?
+$page->content_end();
+$page->nav_link("./", "Shuttle Schedule Home");
+?>

@@ -1,0 +1,2504 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+<!DOCTYPE collection SYSTEM "../dtd/links.dtd">
+
+<!-- This is the research/links.xml file -->
+
+<collection>
+  <link>
+    <name>Legatum Center for Development and Entrepreneurship at MIT</name>
+    <url>http://www.lcde.org/</url>
+    <catid>ei-program</catid>
+    <location>NE20-382</location> 
+  </link> 
+  <link>
+    <name>David H. Koch Institute for Integrative Cancer Research</name>
+    <url>http://web.mit.edu/ki/</url>
+    <catid>bio-program</catid>
+    <catid>nano-program</catid>
+    <catid>cancer-program</catid>
+    <catid>med-program</catid>
+    <altname>Koch Institute for Integrative Cancer Research</altname>
+    <altname>Cancer Research, Koch Institute for</altname>
+  </link>
+  <link>
+    <name>MIT-Portugal Program</name>
+    <url>http://www.mitportugal.org/</url>
+    <catid>bio-program</catid>
+    <catid>me-program</catid>
+    <catid>en-program</catid>
+    <catid>aa-program</catid>
+    <altname>Portugal Program, MIT</altname>
+  </link>
+  <link>
+    <name>Program in Polymer Science and Technology (PPST)</name>
+    <url>http://web.mit.edu/ppst/</url>
+    <catid>mate-program</catid>
+    <catid>ch-program</catid>
+    <catid>me-program</catid>
+    <altname>Polymer Science and Technology Program</altname>
+  </link>
+  <link>
+    <name>Systems Engineering Advancement Research Initiative</name>
+    <url>http://seari.mit.edu/</url>
+    <catid>aa-program</catid>
+    <catid>bus-program</catid>
+    <catid>me-program</catid>
+    <location>NE20-388</location>
+  </link>
+  <link>
+    <name>Astrophysics Division</name>
+    <url>http://web.mit.edu/astrophysics/</url>
+    <catid>as-program</catid>
+    <catid>ph-program</catid>
+    <location>37</location>
+  </link>
+  <link>
+    <name>Planetary Astronomy Laboratory</name>
+    <url>http://occult.mit.edu/</url>
+    <catid>as-program</catid>
+    <catid>eaps-program</catid>
+  </link>
+  <link>
+    <name>George R. Wallace, Jr. Astrophysical Observatory</name>
+    <url>http://web.mit.edu/wallace/</url>
+    <catid>as-program</catid>
+    <altname>Wallace Astrophysical Observatory</altname>
+    <altname>Astrophysical Observatory, George R. Wallace, Jr.</altname>
+    <offcampus>OFF CAMPUS</offcampus>
+ </link>
+  <link>
+    <name>Astronomy at MIT</name>
+    <url>http://web.mit.edu/astronomy/</url>
+    <catid>as-program</catid>
+  </link>
+  <link>
+    <name>Reacting Gas Dynamics Laboratory</name>
+    <url>http://web.mit.edu/rgd/www/</url>
+    <catid>me-program</catid>
+    <catid>en-program</catid>
+    <location>3-339</location>
+  </link>
+  <link>
+    <name>Center for 21st-Century Energy</name>
+    <url>http://web.mit.edu/c21ce/</url>
+    <catid>me-program</catid>
+    <catid>en-program</catid>
+    <location>31</location>
+  </link>
+  <link>
+    <name>Electrochemical Energy Laboratory</name>
+    <url>http://web.mit.edu/eel/</url>
+    <catid>en-program</catid>
+    <location>31-056</location>
+  </link>
+  <link>
+    <name>Human Cost of War in Iraq</name>
+    <url>http://web.mit.edu/humancostiraq</url>
+    <catid>ss-program</catid>
+  </link>
+  <link>
+    <name>Fuel Cell Laboratory</name>
+    <url>http://web.mit.edu/mecheng/fcp/</url>
+    <catid>en-program</catid>
+    <catid>me-program</catid>
+    <location>41-202</location>
+  </link>
+  <link>
+    <name>MIT Energy Initiative (MITEI)</name>
+    <url>http://web.mit.edu/mitei/</url>
+    <catid>en</catid>
+  </link>
+  <link>
+    <name>Communications and Networking Research Group</name>
+    <url>http://web.mit.edu/aeroastro/labs/cnrg/</url>
+    <catid>aa-program</catid>
+    <catid>cs-program</catid>
+    <catid>ee-program</catid>
+    <location>33-412</location>
+  </link>
+  <link>
+    <name>Aeronautical &amp;amp; astronautical engineering: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/aeronautics.html</url>
+    <catid>aa-news</catid>
+  </link>
+  <link>
+    <name>Abdul Latif Jameel Poverty Action Lab</name>
+    <url>http://www.povertyactionlab.com/</url>
+    <catid>ec-program</catid>
+    <location>E60-275</location>
+  </link>
+  <link>
+    <name>Environmental Microfluidics Laboratory</name>
+    <url>http://web.mit.edu/romanstocker/</url>
+    <catid>bio-program</catid>
+    <catid>oc-program</catid>
+  </link>
+  <link>
+    <name>Autonomous Marine Sensing Systems, Laboratory for</name>
+    <url>http://acoustics.mit.edu/faculty/henrik/LAMSS/laboratory_for_autonomous_marine_sensing_systems.html</url>
+      <catid>me-program</catid>
+    <catid>oc-program</catid>
+    <location>5-223</location>
+  </link>
+  <link>
+    <name>Undersea Remote Sensing, MIT Laboratory for</name>
+    <url>http://acoustics.mit.edu/faculty/makris/Laboratory_for_Undersea_Remote_Sensing.html</url>
+    <catid>me-program</catid>
+    <catid>oc-program</catid>
+    <location>5-229</location>
+  </link>
+  <link>
+    <name>Materials @ MIT</name>
+    <url>http://materials.mit.edu/</url>
+    <catid>mate-program</catid>
+  </link>
+  <link>
+    <name>Visual Arts Program (VAP)</name>
+    <url>http://web.mit.edu/vap/</url>
+    <catid>ar-program</catid>
+    <altname>VAP</altname>
+    <location>N51</location>
+    <location>N52</location>
+  </link>
+  <link>
+    <name>Auditory Physics Group</name>
+    <url>http://web.mit.edu/apg/</url>
+    <catid>neuro-program</catid>
+    <catid>ph-program</catid>
+    <catid>med-program</catid>
+      <offcampus>243 Charles St. Boston, MA (Mass Eye and Ear Infirmary)</offcampus>
+</link>
+  <link>
+    <name>Gabrieli Lab</name>
+    <url>http://web.mit.edu/gabrieli-lab/</url>
+    <catid>neuro-program</catid>
+  </link>
+  <link>
+    <name>Martinos Imaging Center at the McGovern Institute for Brain Research</name>
+    <url>http://web.mit.edu/mitmri/</url>
+    <catid>neuro-program</catid>
+    <catid>med-program</catid>
+    <location>46-1171</location>
+  </link>
+  <link>
+    <name>Partnership for AiR Transportation Noise and Emissions Reduction</name>
+    <url>http://web.mit.edu/aeroastro/www/partner/</url>
+    <catid>aa-program</catid>
+    <location>31</location>
+  </link>
+  <link>
+    <name>Dynamic Load Sensors and Space Flight Experiment</name>
+    <url>http://web.mit.edu/aeroastro/www/labs/DLS/HTML-Files/</url>
+    <catid>aa-program</catid>
+  </link>
+  <link>
+    <name>Complex Systems Research Lab</name>
+    <url>http://sunnyday.mit.edu/csrl.html</url>
+    <catid>aa-program</catid>
+  </link>
+  <link>
+    <name>Aerospace Controls Lab</name>
+    <url>http://acl.mit.edu/</url>
+    <catid>aa-program</catid>
+  </link>
+  <link>
+    <name>NanoEngineering Group</name>
+    <url>http://web.mit.edu/nanoengineering/</url>
+    <catid>me-program</catid>
+    <catid>nano-program</catid>
+  </link>
+  <link>
+    <name>Biomedical Innovation, Center for</name>
+    <url>http://web.mit.edu/cbi/</url>
+    <catid>bio-program</catid>
+    <catid>bus-program</catid>
+    <catid>ei-program</catid>
+    <catid>med-program</catid>
+    <altname>Center for Biomedical Innovation</altname>
+    <location>NE20-382</location>
+  </link>
+  <link>
+    <name>Local Innovation Systems</name>
+    <url>http://web.mit.edu/lis/</url>
+    <catid>bus-program</catid>
+    <catid>ec-program</catid>
+    <catid>ei-program</catid>
+  </link>
+  <link>
+    <name>Space Propulsion Laboratory</name>
+    <url>http://web.mit.edu/dept/aeroastro/www/labs/SPL/home.htm</url>
+    <catid>aa-program</catid>
+  </link>
+  <link>
+    <name>Program on Emerging Technologies (PoET)</name>
+    <url>http://poet.mit.edu/</url>
+    <catid>ss-program</catid>
+    <catid>ts-program</catid>
+    <location>E38-600</location>
+  </link>
+  <link>
+    <name>Center for Nanofluids Technology</name>
+    <url>http://web.mit.edu/nse/nanofluids/</url>
+    <catid>nano-program</catid>
+    <catid>nuclear-program</catid>
+    <catid>me-program</catid>
+    <catid>aa-program</catid>
+    <catid>ch-program</catid>
+    <catid>ee-program</catid>
+    <location>24-206</location>
+  </link>
+  <link>
+    <name>Park Center for Complex Systems</name>
+    <url>http://web.mit.edu/pccs/</url>
+    <catid>me-program</catid>
+    <catid>aa-program</catid>
+    <catid>nano-program</catid>
+    <catid>bio-program</catid>
+    <location>35-237</location>
+  </link>
+  <link>
+    <name>Wurtman Lab of Neuroendocrine Regulation</name>
+    <url>http://web.mit.edu/wurtmanlab/</url>
+    <catid>neuro-program</catid>
+    <catid>bio-program</catid>
+  </link>
+  <link>
+    <name>Newman Laboratory for Biomechanics and Human Rehabilitation</name>
+    <url>http://web.mit.edu/hogan/www/</url>
+    <catid>me-program</catid>
+    <catid>med-program</catid>
+    <catid>robo-program</catid>
+  </link>
+  <link>
+    <name>Fab Lab (Center for Bits and Atoms)</name>
+    <url>http://fab.cba.mit.edu/</url>
+    <catid>mas-program</catid>
+  <catid>me-program</catid>
+</link>
+  <link>
+    <name>Center for Bits and Atoms</name>
+    <url>http://cba.mit.edu/</url>
+      <catid>en-program</catid>
+<catid>mas-program</catid>
+    <catid>cs-program</catid>
+    <catid>me-program</catid>
+  </link>
+  <link>
+    <name>Research in Learning, Assessing, and Tutoring Effectively (RELATE)</name>
+    <url>http://relate.mit.edu/</url>
+    <catid>ed-program</catid>
+  </link>
+  <link>
+    <name>Energy Science and Engineering</name>
+    <url>http://web.mit.edu/ese/</url>
+    <catid>me-program</catid>
+<catid>en-program</catid>
+  </link>
+  <link>
+    <name>Computation for Design and Optimization</name>
+    <url>http://web.mit.edu/cdo-program/</url>
+    <catid>cs-program</catid>
+    <catid>aa-program</catid>
+    <catid>bus-program</catid>
+    <catid>math-program</catid>
+  </link>
+  <link>
+    <name>Laboratory for Multiscale Regenerative Technologies</name>
+    <url>http://lmrt.mit.edu</url>
+    <catid>bio-program</catid>
+    <catid>ee-program</catid>
+      <catid>med-program</catid>
+ <catid>nano-program</catid>
+ <catid>ch-program</catid>
+</link>
+  <link>
+    <name>Data Center, The</name>
+    <url>http://datacenter.mit.edu/</url>
+    <catid>cs-program</catid>
+      <catid>bus-program</catid>
+    <catid>me-program</catid>
+    <catid>math-program</catid>
+</link> 
+  <link>
+    <name>MIT@Lawrence</name> 
+    <url>http://www.MITatLawrence.net/</url>
+    <catid>usp-program</catid>
+  </link>
+  <link>
+    <name>Center for Reflective Community Practice</name>
+    <url>http://crcp.mit.edu</url>
+    <catid>usp-program</catid>
+    <catid>ss-program</catid>
+  </link>
+  <link>
+    <name>Arts, Office of the</name>
+    <url>http://web.mit.edu/arts/</url>
+    <catid>ar</catid>
+    <location>E15</location>
+  </link>
+ <link>
+    <name>Health sciences and technology: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/health.html</url>
+    <catid>med-news</catid>
+  </link>
+ <link>
+    <name>Cancer research: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/cancer-research.html</url>
+    <catid>cancer-news</catid>
+  </link>
+ <link>
+    <name>Latest MIT research news</name>
+    <url>http://web.mit.edu/newsoffice/research.html</url>
+    <catid>resources-news</catid>
+  </link>
+ <link>
+    <name>Innovation and inventions: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/innovation.html</url>
+    <catid>ei-news</catid>
+  </link>
+ <link>
+    <name>Genetics: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/genetics.html</url>
+    <catid>med-news</catid>
+  </link>
+  <link>
+    <name>Biology: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/biology.html</url>
+    <catid>bio-news</catid>
+  </link>
+  <link>
+    <name>Bioengineering and biotechnology: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/biotech.html</url>
+    <catid>bio-news</catid>
+  </link>
+  <link>
+    <name>Education/teaching: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/education.html</url>
+    <catid>ed-news</catid>
+  </link>
+  <link>
+    <name>Media lab/media arts and sciences: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/media-lab.html</url>
+    <catid>mas-news</catid>
+    <catid>ss-news</catid>
+  </link>
+  <link>
+    <name>Political science: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/political-science.html</url>
+    <catid>ss-news</catid>
+    <catid>ts-news</catid>
+  </link>
+  <link>
+    <name>Security studies and military: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/security-studies.html</url>
+    <catid>ss-news</catid>
+    <catid>ts-news</catid>
+  </link>
+  <link>
+    <name>Voting technology: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/voting.html</url>
+    <catid>ss-news</catid>
+    <catid>ts-news</catid>
+  </link>
+  <link>
+    <name>Materials science: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/materials-science.html</url>
+    <catid>mate-news</catid>
+  </link>
+  <link>
+    <name>Mathematics: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/mathematics.html</url>
+    <catid>math-news</catid>
+  </link>
+  <link>
+    <name>Mechanical engineering: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/mechanical-engineering.html</url>
+    <catid>me-news</catid>
+  </link>
+  <link>
+    <name>Music technology: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/music.html</url>
+    <catid>music-news</catid>
+  </link>
+  <link>
+    <name>Nanoscience and nanotechnology: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/nanotech.html</url>
+    <catid>nano-news</catid>
+  </link>
+  <link>
+    <name>Neuroscience: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/neuroscience.html</url>
+    <catid>neuro-news</catid>
+    <catid>cog-news</catid>
+  </link>
+  <link>
+    <name>Languages and literature: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/literature-languages.html</url>
+    <catid>lang-lit-news</catid>
+  </link>
+  <link>
+    <name>Nuclear engineering: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/nuclear-engineering.html</url>
+    <catid>nuclear-news</catid>
+  </link>
+  <link>
+    <name>Oceanography and ocean engineering: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/oceans.html</url>
+    <catid>oc-news</catid>
+  </link>
+  <link>
+    <name>Physics: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/physics.html</url>
+    <catid>ph-news</catid>
+  </link>
+  <link>
+    <name>Robotics and artificial intelligence: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/robotics.html</url>
+    <catid>robo-news</catid>
+  </link>
+  <link>
+    <name>Technology and society: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/technology-society.html</url>
+    <catid>ts-news</catid>
+    <catid>ss-news</catid>
+  </link>
+  <link>
+    <name>Urban studies and planning: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/urban-studies.html</url>
+    <catid>usp-news</catid>
+    <catid>ss-news</catid>
+  </link>
+  <link>
+    <name>Business and management: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/business.html</url>
+    <catid>bus-news</catid>
+  </link>  
+<link>
+    <name>Chemistry and chemical engineering: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/chemistry.html</url>
+    <catid>ch-news</catid>
+  </link>
+  <link>
+    <name>Civil engineering: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/civil-engineering.html</url>
+    <catid>civ-news</catid>
+  </link>
+  <link>
+    <name>Computer science: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/computers.html</url>
+    <catid>cs-news</catid>
+  </link>
+  <link>
+    <name>Earth and atmospheric science: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/earth-atmosphere.html</url>
+    <catid>eaps-news</catid>
+  </link>
+  <link>
+    <name>Economics: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/economics.html</url>
+    <catid>ec-news</catid>
+    <catid>ss-news</catid>
+  </link>
+  <link>
+    <name>Linguistics: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/linguistics.html</url>
+    <catid>lang-lit-news</catid>
+    <catid>ss-news</catid>
+  </link>
+  <link>
+    <name>Electrical engineering: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/electrical-engineering.html</url>
+    <catid>ee-news</catid>
+  </link>  
+<link>
+    <name>Entrepreneurship: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/entrepreneurship.html</url>
+    <catid>ei-news</catid>
+  </link>  
+<link>
+    <name>Environment: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/environment.html</url>
+    <catid>civ-news</catid>
+  </link>  
+<link>
+    <name>Energy: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/energy.html</url>
+    <catid>en-news</catid>
+  </link>
+<link>
+    <name>History: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/history.html</url>
+    <catid>hist-news</catid>
+    <catid>ss-news</catid>
+  </link>
+  <link>
+    <name>Humanities: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/humanities.html</url>
+    <catid>hu-news</catid>
+  </link>
+  <link>
+    <name>Architecture: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/architecture.html</url>
+    <catid>ah-news</catid>
+  </link>
+  <link>
+    <name>Arts: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/arts.html</url>
+    <catid>ar-news</catid>
+  </link>
+  <link>
+    <name>Space, astronomy and planetary science: news in depth</name>
+    <url>http://web.mit.edu/newsoffice/topic/space.html</url>
+    <catid>as-news</catid>
+  </link>
+  <link>
+    <name>Advanced Nuclear Energy Systems (CANES), Center for</name>
+    <url>http://web.mit.edu/canes/</url>
+    <catid>ph-program</catid>
+    <catid>en-program</catid>
+    <catid>nuclear-program</catid>
+    <location>24</location>
+  </link>
+  <link>
+    <name>Aeronautical Systems Laboratory</name>
+    <url>http://web.mit.edu/aeroastro/www/labs/ASL/ASL.html</url>
+    <catid>aa-program</catid>
+  </link>
+  <link>
+    <name>Aeronautics and Astronautics, Dept. of</name>
+    <url>http://web.mit.edu/aeroastro/</url>
+    <catid>aa-program</catid>
+    <location>33-207</location>
+  </link>
+  <link>
+    <name>Aerospace Computational Design Lab (ACDL)</name>
+    <url>http://raphael.mit.edu/</url>
+    <catid>aa-program</catid>
+    <catid>cs-program</catid>
+    <catid>ma</catid>
+    <altname>Fluid Dynamics Research Laboratory</altname>
+    <location>37-461</location>
+  </link>
+  <link>
+    <name>Embedded Systems Laboratory</name>
+    <url>http://esl.mit.edu/</url>
+    <catid>aa-program</catid>
+  </link>
+  <link>
+    <name>Aga Khan Program for Islamic Architecture</name>
+    <url>http://web.mit.edu/akpia/www/AKPsite/index.htm</url>
+    <catid>ah-program</catid>
+    <catid>ss-program</catid>
+        <location>10</location>
+  </link>
+  <link>
+    <name>Age Lab</name>
+    <url>http://web.mit.edu/agelab/</url>
+    <catid>med-program</catid>
+    <catid>ts-program</catid>
+    <location>E40</location>
+  </link>
+  <link>
+    <name>Airborne Organics, Center on</name>
+    <url>http://web.mit.edu/airquality/www/</url>
+    <catid>en-program</catid>
+    <catid>civ-program</catid>
+    <location>66-454</location>
+  </link>
+  <link>
+    <name>Alewife Project</name>
+    <url>http://www.cag.lcs.mit.edu/alewife/</url>
+    <catid>cs-program</catid>
+    <location>32</location>
+  </link>
+  <link>
+    <name>Alliance for Global Sustainability</name>
+    <url>http://lfee.mit.edu/metadot/index.pl?id=2203&amp;amp;isa=Category&amp;amp;op=show</url>
+    <catid>ts-program</catid>
+        <catid>ec-program</catid>
+    <catid>poli-program</catid>
+    <catid>civ-program</catid>
+    <catid>en-program</catid>
+    <location>E40</location>
+  </link>
+  <link>
+    <name>Anthropology, Dept. of</name>
+    <url>http://web.mit.edu/anthropology/</url>
+      <catid>hu-program</catid>
+    <catid>ss-program</catid>
+    <location>16</location>
+  </link>
+  <link>
+    <name>Architecture, Dept. of</name>
+    <url>http://architecture.mit.edu/</url>
+    <catid>ah-program</catid>
+    <location>7</location>
+  </link>
+  <link>
+    <name>Computer Science and Artificial Intelligence Laboratory (CSAIL)</name>
+    <url>http://www.csail.mit.edu/</url>
+    <catid>aa-program</catid>
+  <catid>en-program</catid>
+    <catid>bus-program</catid>
+    <catid>ee-program</catid>
+    <catid>cs-program</catid>
+    <catid>robo-program</catid>
+    <catid>nano-program</catid>
+    <catid>cog-program</catid>
+    <altname>Computer Science</altname>
+    <altname>Artificial Intelligence Laboratory</altname>
+    <location>32</location>
+  </link>
+  <link>
+    <name>Artificial Muscle Project (CSAIL)</name>
+    <url>http://www.ai.mit.edu/projects/muscle/muscle.html</url>
+    <catid>cs-program</catid>
+    <catid>me-program</catid>
+    <catid>robo-program</catid>
+    <location>32</location>
+  </link>
+  <link>
+    <name>Auto-ID Center</name>
+    <url>http://autoidlabs.mit.edu/</url>
+    <catid>cs-program</catid>
+    <catid>ee-program</catid>
+    <location>NE46</location>
+  </link>
+  <link>
+    <name>Bates Linear Accelerator</name>
+    <url>http://mitbates.lns.mit.edu/bates/control/main</url>
+    <catid>ph-program</catid>
+    <offcampus>OFF CAMPUS</offcampus>
+  </link>
+  <link>
+    <name>Bioinstrumentation Engineering And Microanalysis (BEAM group)</name>
+    <url>http://web.mit.edu/solab/www/</url>
+    <catid>bio-program</catid>
+    <location>3</location>
+  </link>
+  <link>
+    <name>BioInstrumentation Laboratory</name>
+    <url>http://bioinstrumentation.mit.edu/</url>
+    <catid>bio-program</catid>
+    <catid>ch-program</catid>
+    <catid>me-program</catid>
+    <catid>ee-program</catid>
+    <location>3</location>
+  </link>
+  <link>
+    <name>Biological and Computational Learning, Center for</name>
+    <url>http://cbcl.mit.edu/</url>
+    <catid>bio-program</catid>
+    <catid>cs-program</catid>
+    <altname>Center for Biological and Computational Learning</altname>
+    <location>46</location>
+  </link>
+  <link>
+    <name>Department of Biological Engineering</name>
+    <url>http://web.mit.edu/be/</url>
+    <catid>bio-program</catid>
+    <catid>cancer-program</catid>
+    <location>56-651</location>
+  </link>
+  <link>
+    <name>Department of Biology</name>
+    <url>http://web.mit.edu/biology/www/</url>
+    <catid>bio-program</catid>
+    <catid>nano-program</catid>
+    <catid>cancer-program</catid>
+    <altname>Biology, Department of</altname>
+    <location>68-132</location>
+  </link>
+  <link>
+    <name>Biomedical Engineering, Center for</name>
+    <url>http://web.mit.edu/cbe/www/</url>
+    <catid>bio-program</catid>
+    <catid>med-program</catid>
+    <altname>Center for Biomedical Engineering</altname>
+    <location>NE47-377</location>
+  </link>
+  <link>
+    <name>BioMicro Center</name>
+    <url>http://web.mit.edu/biomicro/</url>
+    <catid>bio-program</catid>
+    <location>68-371</location>
+  </link>
+  <link>
+    <name>Biopolymers Laboratory</name>
+    <url>http://web.mit.edu/biopolymers/www/</url>
+    <catid>bio-program</catid>
+    <location>E17</location>
+  </link>
+  <link>
+    <name>Biotechnology Process Engineering Center (BPEC)</name>
+    <url>http://web.mit.edu/bpec/</url>
+    <catid>bio-program</catid>
+    <location>16</location>
+  </link>
+  <link>
+    <name>Brain and Cognitive Sciences, Dept. of</name>
+    <url>http://web.mit.edu/bcs/</url>
+    <catid>bio-program</catid>
+    <catid>cs-program</catid>
+    <catid>med-program</catid>
+    <catid>ss-program</catid>
+    <catid>neuro-program</catid>
+    <catid>cog-program</catid>
+    <location>46-2005</location>
+  </link>
+  <link>
+    <name>Broad Institute</name>
+    <url>http://www.broad.mit.edu/</url>
+    <catid>bio-program</catid>
+    <catid>cs-program</catid>
+    <catid>med-program</catid>
+    <catid>cancer-program</catid>
+    <altname>Center for Genome Research</altname>
+    <location>NE30</location>
+    <location>NE125</location>
+  </link>
+  <link>
+    <name>Building Technology Program</name>
+    <url>http://web.mit.edu/bt/www/</url>
+    <catid>civ-program</catid>
+     <catid>en-program</catid>
+ <catid>ah-program</catid>
+    <location>5</location>
+  </link>
+  <link>
+    <name>Earth Systems Estimation and Inference Group (ESEI)</name>
+    <url>http://esei.mit.edu/</url>
+    <catid>civ-program</catid>
+    <catid>eaps-program</catid>
+  </link>
+  <link>
+    <name>Water and Sanitation</name>
+    <url>http://web.mit.edu/watsan</url>
+    <catid>civ-program</catid>
+  </link>
+  <link>
+    <name>Boron Neutron Capture Therapy (BNCT)</name>
+    <url>http://web.mit.edu/nrl/www/bnct/bnct_home.html</url>
+    <catid>nuclear-program</catid>
+    <catid>med-program</catid>
+  </link>
+  <link>
+    <name>Bionuclear Science &amp;amp; Engineering</name>
+    <url>http://web.mit.edu/nse/research/science_eng/bionuclear.html</url>
+    <catid>nuclear-program</catid>
+    <catid>med-program</catid>
+  </link>
+  <link>
+    <name>Cadlab, MIT</name>
+    <url>http://cadlab.mit.edu/</url>
+    <catid>me-program</catid>
+    <catid>cs-program</catid>
+    <location>3-458</location>
+  </link>
+  <link>
+    <name>Cambridge-MIT Institute (CMI)</name>
+    <url>http://www.cambridge-mit.org/</url>
+    <catid>resources-program</catid>
+  <catid>en-program</catid>
+       <location>8-403</location>
+  </link>
+  <link>
+    <name>Chemical Beam Epitaxy Group</name>
+    <url>http://web.mit.edu/cbegroup/</url>
+    <catid>ee-program</catid>
+    <catid>ph-program</catid>
+    <catid>mate-program</catid>
+    <location>13-3065</location>
+  </link>
+  <link>
+    <name>Chemical Engineering, Dept. of</name>
+    <url>http://web.mit.edu/cheme/research/</url>
+    <catid>bio-program</catid>
+    <catid>ch-program</catid>
+    <catid>en-program</catid>
+    <catid>mate-program</catid>
+    <catid>nano-program</catid>
+    <catid>cancer-program</catid>
+    <location>66-350</location>
+  </link>
+  <link>
+    <name>Chemistry, Dept. of</name>
+    <url>http://web.mit.edu/chemistry/www/</url>
+    <catid>ch-program</catid>
+    <catid>me-program</catid>
+    <catid>med-program</catid>
+    <catid>bio-program</catid>
+    <catid>nano-program</catid>
+    <catid>cancer-program</catid>
+    <location>18-390</location>
+  </link>
+  <link>
+    <name>China Program, MIT</name>
+    <url>http://web.mit.edu/mit-china/www/</url>
+    <catid>resources-program</catid>
+       <location>E38-652</location>
+  </link>
+  <link>
+    <name>Parsons Laboratory for Environmental Science and Engineering</name>
+    <url>http://cee.mit.edu/index.pl?id=21384&amp;ampisa=Category&amp;amp;op=show</url>
+    <catid>civ-program</catid>
+    <catid>eaps-program</catid>
+    <catid>en-program</catid>
+    <catid>bio-program</catid>
+    <altname>Environmental Science and Engineering, Parsons Laboratory for</altname>
+    <location>1-290</location>
+  </link>
+  <link>
+    <name>Civil and Environmental Engineering, Dept. of</name>
+    <url>http://cee.mit.edu/</url>
+    <catid>civ-program</catid>
+    <catid>ch-program</catid>
+    <catid>eaps-program</catid>
+    <catid>en-program</catid>
+        <location>1-290</location>
+  </link>
+  <link>
+    <name>Clinical Decision-Making Group (MEDG)</name>
+    <url>http://medg.lcs.mit.edu/</url>
+    <catid>cs-program</catid>
+    <catid>med-program</catid>
+    <location>32</location>
+  </link>
+  <link>
+    <name>Clinical Research Center (CRC)</name>
+    <url>http://web.mit.edu/crc/www</url>
+    <catid>bio-program</catid>
+    <catid>med-program</catid>
+    <catid>resources</catid>
+    <location>E18-445</location>
+  </link>
+  <link>
+    <name>Combustion and Fuels Research Group</name>
+    <url>http://web.mit.edu/anish/www/MITcomb.html</url>
+    <catid>ch-program</catid>
+    <location>66-350</location>
+  </link>
+  <link>
+    <name>Communications Forum, MIT</name>
+    <url>http://web.mit.edu/comm-forum/</url>
+    <catid>hu-program</catid>
+    <catid>ar-program</catid>
+    <catid>ts-program</catid>
+    <location>14N-207</location>
+  </link>
+  <link>
+    <name>Comparative Media Studies</name>
+    <url>http://web.mit.edu/cms/</url>
+    <catid>hu-program</catid>
+    <catid>ar-program</catid>
+    <catid>mas-program</catid>
+    <location>14N-207</location>
+  </link>
+  <link>
+    <name>Comparative Medicine, Division of</name>
+    <url>http://web.mit.edu/comp-med/</url>
+    <catid>bio-program</catid>
+    <catid>med-program</catid>
+    <location>16-825</location>
+  </link>
+  <link>
+    <name>Computation Structures Group</name>
+    <url>http://www.csg.lcs.mit.edu/</url>
+    <catid>cs-program</catid>
+    <location>32</location>
+  </link>
+  <link>
+    <name>Computational and Systems Biology (CSBi)</name>
+    <url>http://csbi.mit.edu/</url>
+    <catid>bio-program</catid>
+    <catid>cancer-program</catid>
+    <catid>comp-program</catid>
+  </link>
+  <link>
+    <name>Computational Research in Economics and Management, Center for</name>
+    <url>http://web.mit.edu/catalogue/overv.chap6-crems.shtml</url>
+    <catid>bus-program</catid>
+    <catid>ec-program</catid>
+    <catid>cs-program</catid>
+    <location>E53-383</location>
+  </link>
+  <link>
+    <name>Computer Architecture Group</name>
+    <url>http://www.cag.lcs.mit.edu/</url>
+    <catid>cs-program</catid>
+    <location>32</location>
+  </link>
+  <link>
+    <name>Computer Graphics Group</name>
+    <url>http://graphics.lcs.mit.edu/</url>
+    <catid>cs-program</catid>
+    <catid>ar-program</catid>
+    <location>32</location>
+  </link>
+  <link>
+    <name>Computer Resource Laboratory (CRL)</name>
+    <url>http://gis.mit.edu/</url>
+    <catid>cs-program</catid>
+    <catid>civ-program</catid>
+    <location>9-530</location>
+  </link>
+  <link>
+    <name>Condensed Matter Theory Group</name>
+    <url>http://web.mit.edu/physics/cmt/</url>
+    <catid>ph-program</catid>
+    <location>12-113</location>
+  </link>
+  <link>
+    <name>Collective Intelligence (CCI), Center for</name>
+    <url>http://cci.mit.edu/</url>
+    <catid>bus-program</catid>
+    <location>E53-333</location>
+  </link>
+  <link>
+    <name>Copyright Information</name>
+    <url>http://web.mit.edu/copyright/</url>
+    <catid>resources-program</catid>
+  </link>
+  <link>
+    <name>Corporate Relations, Office of</name>
+    <url>http://ilp.mit.edu/ocr/</url>
+    <catid>resources-program</catid>
+    <location>E38-500</location>
+  </link>
+  <link>
+    <name>Council on Educational Technology</name>
+    <url>http://web.mit.edu/cet/</url>
+    <catid>ed-program</catid>
+    <location>9-334</location>
+  </link>
+  <link>
+    <name>Council on Primary and Secondary Education</name>
+    <url>http://web.mit.edu/cpse/</url>
+    <catid>ed-program</catid>
+    <location>8-202</location>
+  </link>
+  <link>
+    <name>d'Arbeloff Fund for Excellence in Education</name>
+    <url>http://web.mit.edu/cet/init/darbeloff.html</url>
+    <catid>ed-program</catid>
+  </link>
+  <link>
+    <name>d'Arbeloff Laboratory for Information Systems and Technology</name>
+    <url>http://darbelofflab.mit.edu/</url>
+    <catid>me-program</catid>
+    <catid>cs-program</catid>
+    <location>3-350</location>
+  </link>
+  <link>
+    <name>Deshpande Center for Technological Innovation</name>
+    <url>http://web.mit.edu/deshpandecenter/</url>
+      <catid>en-program</catid>
+<catid>resources-program</catid>
+    <catid>ei-program</catid>
+    <location>1-206</location>
+  </link>
+  <link>
+    <name>Design and Computation</name>
+    <url>http://destech.mit.edu/</url>
+    <catid>ah-program</catid>
+    <catid>cs-program</catid>
+    <location>7-331</location>
+  </link>
+  <link>
+    <name>Digital Design and Fabrication Group</name>
+    <url>http://web.mit.edu/ddfg/</url>
+    <catid>cs-program</catid>
+    <catid>ah-program</catid>
+    <location>N51-336</location>
+  </link>
+  <link>
+    <name>Draper Laboratory</name>
+    <url>http://www.draper.com/</url>
+    <catid>aa-program</catid>
+    <catid>me-program</catid>
+    <offcampus>555 Technology Square</offcampus>
+  </link>
+  <link>
+    <name>DSpace</name>
+    <url>https://dspace.mit.edu/</url>
+    <catid>ed-program</catid>
+    <catid>resources-program</catid>
+    <location>14S-M24</location>
+  </link>
+  <link>
+    <name>Earth Resources Laboratory</name>
+    <url>http://eaps.mit.edu/erl/</url>
+    <catid>eaps-program</catid>
+    <catid>en-program</catid>
+    <catid>civ-program</catid>
+    <location>E34</location>
+  </link>
+  <link>
+    <name>Earth System Initiative</name>
+    <url>http://web.mit.edu/esi/</url>
+    <catid>eaps-program</catid>
+    <catid>en-program</catid>
+    <catid>civ-program</catid>
+    <location>16-177</location>
+  </link>
+  <link>
+    <name>Earth, Atmospheric, and Planetary Sciences (EAPS), Dept. of</name>
+    <url>http://eapsweb.mit.edu/</url>
+    <catid>as-program</catid>
+    <catid>oc-program</catid>
+    <catid>eaps-program</catid>
+    <catid>civ-program</catid>
+    <location>54-918</location>
+  </link>
+  <link>
+    <name>Eaton-Peabody Laboratory of Auditory Physiology</name>
+    <url>http://web.mit.edu/epl/</url>
+    <catid>med-program</catid>
+    <offcampus>243 Charles St. Boston, MA (Mass Eye and Ear Infirmary)</offcampus>
+  </link>
+  <link>
+    <name>Digital Business, MIT Center for</name>
+    <url>http://digital.mit.edu/</url>
+    <catid>bus-program</catid>
+  </link>
+  <link>
+    <name>Economics, Dept. of</name>
+    <url>http://econ-www.mit.edu/</url>
+    <catid>ec-program</catid>
+    <catid>ss-program</catid>
+    <location>E52-391</location>
+  </link>
+  <link>
+    <name>Edgerton Center</name>
+    <url>http://web.mit.edu/edgerton/</url>
+    <catid>ee-program</catid>
+    <catid>cs-program</catid>
+    <location>4-405</location>
+  </link>
+  <link>
+    <name>Center for Educational Computing Initiatives (CECI)</name>
+    <url>http://ceci.mit.edu/</url>
+    <catid>ed-program</catid>
+    <catid>bio-program</catid>
+    <catid>cs-program</catid>
+    <catid>ar-program</catid>
+    <altname>Educational Computing Initiatives, Center for</altname>
+    <location>9-325</location>
+  </link>
+  <link>
+    <name>Electrical Engineering and Computer Science, Dept. of</name>
+    <url>http://www-eecs.mit.edu/</url>
+    <catid>ee-program</catid>
+    <catid>cs-program</catid>
+    <location>38-401</location>
+  </link>
+  <link>
+    <name>Electroceramics Group</name>
+    <url>http://electroceramics.mit.edu/</url>
+    <catid>ee-program</catid>
+    <catid>ph-program</catid>
+    <catid>mate-program</catid>
+    <location>13-3126</location>
+  </link>
+  <link>
+    <name>Electromagnetic Theory and Applications, Center for</name>
+    <url>http://ceta.mit.edu/</url>
+    <catid>ee-program</catid>
+    <catid>ph-program</catid>
+    <location>26-305</location>
+  </link>
+  <link>
+    <name>Electron Microprobe Laboratory</name>
+    <url>http://web.mit.edu/e-probe/www/</url>
+    <catid>eaps-program</catid>
+    <location>54-1221</location>
+  </link>
+  <link>
+    <name>Energy and Environmental Policy Research (CEEPR), Center for</name>
+    <url>http://web.mit.edu/ceepr/www/</url>
+    <catid>ec-program</catid>
+    <catid>en-program</catid>
+    <catid>poli-program</catid>
+    <catid>civ-program</catid>
+    <location>E40-279</location>
+  </link>
+  <link>
+    <name>Engineering Systems Division (ESD)</name>
+    <url>http://esd.mit.edu/</url>
+    <catid>ei-program</catid>
+    <location>E40-349</location>
+  </link>
+  <link>
+    <name>Enterprise Forum, MIT</name>
+    <url>http://web.mit.edu/entforum/</url>
+    <catid>bus-program</catid>
+    <catid>ei-program</catid>
+    <location>W59-230</location>
+  </link>
+  <link>
+    <name>Entrepreneurship Center</name>
+    <url>http://entrepreneurship.mit.edu/</url>
+    <catid>bus-program</catid>
+    <catid>ei-program</catid>
+  </link>
+  <link>
+    <name>Forum for Supply Chain Innovation</name>
+    <url>http://supplychain.mit.edu/</url>
+    <catid>bus-program</catid>
+    <catid>ei-program</catid>
+    <location>1-179</location>
+  </link>
+  <link>
+    <name>Environment at MIT</name>
+    <url>http://web.mit.edu/environment/</url>
+    <catid>civ-program</catid>
+  </link>
+  <link>
+    <name>Environment Health and Safety Office</name>
+    <url>http://web.mit.edu/environment/ehs/topic/</url>
+    <catid>civ-program</catid>
+    <catid>resources-program</catid>
+  </link>
+  <link>
+    <name>Center for Environmental Health Sciences</name>
+    <url>http://cehs.mit.edu/</url>
+    <catid>bio-program</catid>
+    <catid>med-program</catid>
+    <catid>civ-program</catid>
+    <altname>Environmental Health Sciences, Center for</altname>
+    <location>56-235</location>
+  </link>
+  <link>
+    <name>Environmental Technology &amp;amp; Public Policy Program</name>
+    <url>http://web.mit.edu/dusp/etpp/</url>
+    <catid>civ-program</catid>
+    <catid>poli-program</catid>
+    <catid>usp-program</catid>
+    <location>9-324</location>
+  </link>
+  <link>
+    <name>Experimental Petrology Laboratory</name>
+    <url>http://web.mit.edu/petrolab/www/</url>
+    <catid>eaps-program</catid>
+    <location>54-1220</location>
+  </link>
+  <link>
+    <name>Flight Transportation Laboratory</name>
+    <url>http://web.mit.edu/aeroastro/www/labs/FTL/ftl.html</url>
+    <catid>aa-program</catid>
+    <location>33-111</location>
+  </link>
+  <link>
+    <name>Fluid Dynamics Laboratory (math)</name>
+    <url>http://www-math.mit.edu/~bush/fdlab.html</url>
+    <catid>ph-program</catid>
+    <catid>ma-program</catid>
+    <location>2-031</location>
+  </link>
+  <link>
+    <name>Foreign Languages and Literatures, Dept. of</name>
+    <url>http://web.mit.edu/fll/www/</url>
+    <catid>hu-program</catid>
+       <catid>ling-program</catid>
+    <catid>lang-lit-program</catid>
+    <location>14N-305</location>
+  </link>
+  <link>
+    <name>Francis Bitter Magnet Laboratory</name>
+    <url>http://web.mit.edu/fbml/cmr/</url>
+    <catid>bio-program</catid>
+    <catid>ch-program</catid>
+    <catid>me-program</catid>
+    <catid>ph-program</catid>
+    <catid>med-program</catid>
+    <catid>nuclear-program</catid>
+    <altname>Magnetic Resonance, Center for</altname>
+    <location>NW14-3218</location>
+  </link>
+  <link>
+    <name>Garrity Lab</name>
+    <url>http://web.mit.edu/biology/garrity/</url>
+    <catid>bio-program</catid>
+    <location>68-230</location>
+  </link>
+  <link>
+    <name>Gas Turbine Laboratory</name>
+    <url>http://web.mit.edu/aeroastro/www/labs/GTL/</url>
+    <catid>aa-program</catid>
+    <catid>en-program</catid>
+        <location>31-264</location>
+  </link>
+  <link>
+    <name>Germany Program, MIT</name>
+    <url>http://web.mit.edu/mit-germany/</url>
+       <catid>hu-program</catid>
+    <catid>ling-program</catid>
+    <location>E38-716</location>
+  </link>
+  <link>
+    <name>Global Airline Industry Program</name>
+    <url>http://web.mit.edu/airlines/</url>
+       <catid>aa-program</catid>
+    <catid>ts-program</catid>
+    <catid>ss-program</catid>
+    <location>33-215</location>
+  </link>
+  <link>
+    <name>Global Change Science, Center for</name>
+    <url>http://web.mit.edu/cgcs/www/</url>
+       <catid>ch-program</catid>
+    <catid>oc-program</catid>
+    <catid>civ-program</catid>
+      <catid>en-program</catid>
+<catid>eaps-program</catid>
+      <location>54-1312</location>
+  </link>
+  <link>
+    <name>Global System for Sustainable Development</name>
+    <url>http://gssd.mit.edu/</url>
+    <catid>ts-program</catid>
+    <catid>ss-program</catid>
+       <location>E53-490</location>
+  </link>
+  <link>
+    <name>Guarente Lab</name>
+    <url>http://web.mit.edu/biology/guarente/</url>
+    <catid>bio-program</catid>
+    <location>14-0551</location>
+  </link>
+  <link>
+    <name>H.H. Uhlig Corrosion Laboratory</name>
+    <url>http://dmse.mit.edu/UhligLab/</url>
+    <catid>mate-program</catid>
+    <location>8-202</location>
+  </link>
+  <link>
+    <name>Hatsopoulos Microfluids Laboratory (Fluid Mechanics Laboratory)</name>
+    <url>http://web.mit.edu/fluids/www/</url>
+    <catid>me-program</catid>
+    <location>3-258</location>
+  </link>
+  <link>
+    <name>Haystack Observatory</name>
+    <url>http://www.haystack.mit.edu/</url>
+    <catid>aa-programs</catid>
+    <catid>eaps-program</catid>
+    <catid>ee-program</catid>
+    <catid>as-program</catid>
+    <offcampus>OFF CAMPUS</offcampus>
+  </link>
+  <link>
+    <name>Histology Facility</name>
+    <url>http://web.mit.edu/histology</url>
+    <catid>bio-program</catid>
+    <catid>resources-program</catid>
+    <catid>med-program</catid>
+    <location>E17-110</location>
+  </link>
+  <link>
+    <name>History, Dept. of</name>
+    <url>http://web.mit.edu/history/www/</url>
+    <catid>hu-program</catid>
+    <catid>hist-program</catid>
+    <location>E51-285</location>
+  </link>
+  <link>
+    <name>History, Theory and Criticism of Architecture and Art</name>
+    <url>http://architecture.mit.edu/htc/research/</url>
+    <catid>ar-program</catid>
+    <catid>ah-program</catid>
+    <catid>hist-program</catid>
+    <catid>hu-program</catid>
+    <altname>HTC@MIT</altname>
+    <location>10-303</location>
+    <location>3-303</location>
+  </link>
+  <link>
+    <name>House_n: The MIT Home of the Future Project</name>
+    <url>http://architecture.mit.edu/house_n/</url>
+    <catid>ah-program</catid>
+    <catid>ss-program</catid>
+    <catid>cs-program</catid>
+    <location>NE18-4FL</location>
+  </link>
+  <link>
+    <name>Human Genomics Laboratory</name>
+    <url>http://web.mit.edu/hman-genomics/www/</url>
+    <catid>bio-program</catid>
+    <location>E17-543</location>
+  </link>
+  <link>
+    <name>Humanoid Robotics Project (The Cog Shop)</name>
+    <url>http://www.ai.mit.edu/projects/humanoid-robotics-group/</url>
+    <catid>cs-program</catid>
+    <catid>me-program</catid>
+    <catid>ee-program</catid>
+    <catid>robo-program</catid>
+    <location>32</location>
+  </link>
+  <link>
+    <name>Humans as Experimental Subjects (COUHES), Committee on the Use of</name>
+    <url>http://web.mit.edu/committees/couhes/</url>
+    <catid>resources-program</catid>
+    <location>E32-335</location>
+  </link>
+  <link>
+    <name>Hurricane Lab</name>
+    <url>http://web.mit.edu/hurricanelab/</url>
+    <catid>eaps-program</catid>
+    <catid>oc-program</catid>
+    <location>54-1620</location>
+  </link>
+  <link>
+    <name>Hynes Lab, The</name>
+    <url>http://web.mit.edu/ccrhq/hyneslab/</url>
+    <catid>bio-program</catid>
+    <catid>med-program</catid>
+    <location>E17-227</location>
+  </link>
+  <link>
+    <name>iCampus</name>
+    <url>http://icampus.mit.edu/</url>
+    <catid>ed-program</catid>
+    <location>32</location>
+  </link>
+  <link>
+    <name>Image and Meaning Initiative</name>
+    <url>http://web.mit.edu/i-m/</url>
+    <catid>hu-program</catid>
+    <catid>ar-program</catid>
+  </link>
+  <link>
+    <name>Impact and Crashworthiness Laboratory</name>
+    <url>http://web.mit.edu/icl/</url>
+    <catid>oc-program</catid>
+    <catid>me-program</catid>
+    <location>5-007</location>
+  </link>
+  <link>
+    <name>Industrial Liaison Program (ILP)</name>
+    <url>http://ilp-www.mit.edu/</url>
+    <catid>resources-program</catid>
+    <location>E38-400</location>
+  </link>
+  <link>
+    <name>Industrial Performance Center</name>
+    <url>http://web.mit.edu/ipc/www/</url>
+    <catid>en-program</catid>
+    <catid>bus-program</catid>
+    <catid>ts-program</catid>
+    <catid>ec-program</catid>
+    <location>E38-104</location>
+  </link>
+  <link>
+    <name>Information Systems Research, Center for</name>
+    <url>http://mitsloan.mit.edu/cisr/</url>
+    <catid>bus-program</catid>
+    <location>NE20-336</location>
+  </link>
+  <link>
+    <name>Infrastructure Systems Development</name>
+    <url>http://web.mit.edu/civenv/idr/</url>
+    <catid>civ-program</catid>
+    <catid>usp-program</catid>
+    <location>1-170</location>
+  </link>
+  <link>
+    <name>Innovation in Product Development, Center for</name>
+    <url>http://cipd.mit.edu/</url>
+    <catid>bus-program</catid>
+    <catid>me-program</catid>
+    <location>E60-275</location>
+  </link>
+  <link>
+    <name>Institute for Soldier Nanotechnologies</name>
+    <url>http://web.mit.edu/isn/</url>
+    <catid>mate-program</catid>
+    <catid>nano-program</catid>
+    <location>NE47-4FL</location>
+  </link>
+  <link>
+    <name>Institute for Work and Employment Research</name>
+    <url>http://mitsloan.mit.edu/iwer/</url>
+    <catid>bus-program</catid>
+    <catid>poli-program</catid>
+    <location>E52-583</location>
+  </link>
+  <link>
+    <name>Intellectual Property Counsel</name>
+    <url>http://web.mit.edu/ipcounsel/</url>
+    <catid>resources-program</catid>
+    <altname>Patent office</altname>
+    <location>NE25-230</location>
+  </link>
+  <link>
+    <name>Intelligent Transportation Systems Program</name>
+    <url>http://web.mit.edu/its/</url>
+    <catid>civ-program</catid>
+    <catid>ts-program</catid>
+    <location>NE20</location>
+  </link>
+  <link>
+    <name>International Center for Air Transportation (ICAT)</name>
+    <url>http://web.mit.edu/aeroastro/www/labs/ICAT/</url>
+       <catid>aa-program</catid>
+    <location>33-303</location>
+  </link>
+  <link>
+    <name>International Consortium for Medical Imaging Technology</name>
+    <url>http://icmit.mit.edu/</url>
+    <catid>med-program</catid>
+       <catid>bio-program</catid>
+    <location>3-254</location>
+  </link>
+  <link>
+    <name>International Migration, Inter-University Committee on</name>
+    <url>http://web.mit.edu/cis/www/migration/</url>
+    <catid>poli-program</catid>
+       <catid>ss-program</catid>
+  </link>
+  <link>
+    <name>International Motor Vehicle Program</name>
+    <url>http://web.mit.edu/ctpid/www/imvp/</url>
+    <catid>bus-program</catid>
+      <catid>ts-program</catid>
+    <location>E40-202</location>
+  </link>
+  <link>
+    <name>International Scholars Office</name>
+    <url>http://web.mit.edu/scholars/</url>
+    <catid>resources-program</catid>
+       <location>4-105</location>
+  </link>
+  <link>
+    <name>International Studies, Center for</name>
+    <url>http://web.mit.edu/cis/</url>
+    <catid>poli-program</catid>
+       <catid>ss-program</catid>
+    <catid>hu-program</catid>
+    <location>E38-648</location>
+  </link>
+  <link>
+    <name>Japan Program, MIT</name>
+    <url>http://web.mit.edu/mit-japan/www/</url>
+    <catid>bus-program</catid>
+      <location>E38-648</location>
+  </link>
+  <link>
+    <name>Jonathan King Lab</name>
+    <url>http://web.mit.edu/king-lab/www/</url>
+    <catid>bio-program</catid>
+    <location>68-330</location>
+  </link>
+  <link>
+    <name>JP NET Project</name>
+    <url>http://web.mit.edu/jpnet/</url>
+       <catid>hu-program</catid>
+  </link>
+  <link>
+    <name>Keating Lab</name>
+    <url>http://web.mit.edu/biology/keating/</url>
+    <catid>bio-program</catid>
+    <location>68-622</location>
+  </link>
+  <link>
+    <name>Laboratory for Electromagnetic and Electronic Systems (LEES)</name>
+    <url>http://lees.mit.edu/lees/</url>
+    <catid>bio-program</catid>
+   <catid>en-program</catid>
+    <catid>ee-program</catid>
+    <location>10-172</location>
+  </link>
+  <link>
+    <name>Laboratory For Energy and the Environment (LFEE)</name>
+    <url>http://lfee.mit.edu/</url>
+    <catid>ch-program</catid>
+    <catid>nuclear-program</catid>
+    <catid>civ-program</catid>
+       <catid>eaps-program</catid>
+    <catid>ec-program</catid>
+       <catid>me-program</catid>
+    <catid>mate-program</catid>
+    <catid>ss-program</catid>
+    <catid>poli-program</catid>
+    <catid>en-program</catid>
+    <location>E40-455</location>
+  </link>
+  <link>
+    <name>Laboratory for Financial Engineering</name>
+    <url>http://lfe.mit.edu/</url>
+    <catid>bus-program</catid>
+    <location>E70-800</location>
+  </link>
+  <link>
+    <name>Laboratory for Human and Machine Haptics</name>
+    <url>http://touchlab.mit.edu/</url>
+    <catid>mate-program</catid>
+    <catid>me-program</catid>
+    <catid>robo-program</catid>
+    <altname>Touch Lab</altname>
+    <location>36-796</location>
+  </link>
+  <link>
+    <name>Laboratory for Information and Decision Systems (LIDS)</name>
+    <url>http://lids.mit.edu/</url>
+    <catid>ee-program</catid>
+    <catid>mate-program</catid>
+    <catid>cog-program</catid>
+    <location>32</location>
+  </link>
+  <link>
+    <name>Laboratory for Manufacturing and Productivity</name>
+    <url>http://web.mit.edu/lmp/</url>
+    <catid>me-program</catid>
+    <location>35-234</location>
+  </link>
+  <link>
+    <name>Laboratory for Nuclear Science</name>
+    <url>http://www2.lns.mit.edu/</url>
+    <catid>ph-program</catid>
+    <catid>nuclear-program</catid>
+    <location>26-505</location>
+  </link>
+  <link>
+    <name>Larch</name>
+    <url>http://www.sds.lcs.mit.edu/spd/larch/</url>
+    <catid>cs-program</catid>
+    <location>38-401</location>
+  </link>
+  <link>
+    <name>Leaders for Manufacturing Program</name>
+    <url>http://lfmsdm.mit.edu/</url>
+    <catid>bus-program</catid>
+    <location>E40-422</location>
+  </link>
+  <link>
+    <name>Lean Aerospace Initiative</name>
+    <url>http://web.mit.edu/lean/</url>
+    <catid>aa-program</catid>
+    <location>41-205</location>
+  </link>
+  <link>
+    <name>Leg Lab (CSAIL)</name>
+    <url>http://www.ai.mit.edu/projects/leglab/</url>
+    <catid>cs-program</catid>
+    <catid>ee-program</catid>
+    <catid>me-program</catid>
+    <catid>robo-program</catid>
+    <location>32</location>
+  </link>
+   <link>
+    <name>Libraries</name>
+    <url>http://libraries.mit.edu/</url>
+    <catid>resources-program</catid>
+    <location>14S-216</location>
+  </link>
+  <link>
+    <name>Lincoln Laboratory</name>
+    <url>http://www.ll.mit.edu/</url>
+    <catid>ph-program</catid>
+    <catid>ee-program</catid>
+    <catid>cs-program</catid>
+    <offcampus>OFF CAMPUS</offcampus>
+  </link>
+  <link>
+    <name>Linguistics, Dept. of</name>
+    <url>http://web.mit.edu/linguistics/www/home.html</url>
+    <catid>hu-program</catid>
+      <catid>ss-program</catid>
+    <catid>cog-program</catid>
+    <catid>ling-program</catid>
+    <location>32</location>
+  </link>
+  <link>
+    <name>Literature, Dept. of</name>
+    <url>http://web.mit.edu/lit/www/</url>
+    <catid>hu-program</catid>
+    <catid>lang-lit-program</catid>
+    <catid>ar-program</catid>
+    <location>14N-407</location>
+  </link>
+  <link>
+    <name>Magnetic Materials and Devices Group</name>
+    <url>http://web.mit.edu/dmse/ross/</url>
+    <catid>mate-program</catid>
+  </link>
+  <link>
+    <name>Man Vehicle Laboratory</name>
+    <url>http://mvl.mit.edu/</url>
+    <catid>aa-program</catid>
+    <catid>ee-program</catid>
+    <location>37-219</location>
+  </link>
+  <link>
+    <name>Management of Technology Program</name>
+    <url>http://mitsloan.mit.edu/fellows/</url>
+    <catid>bus-program</catid>
+    <catid>ts-program</catid>
+    <location>E52-126</location>
+  </link>
+  <link>
+    <name>Marine Hydrodynamics Lab</name>
+    <url>http://web.mit.edu/mhl/www/</url>
+    <catid>oc-program</catid>
+    <location>3-269</location>
+  </link>
+  <link>
+    <name>Martinos Center for Biomedical Imaging</name>
+    <url>http://www.nmr.mgh.harvard.edu/</url>
+    <catid>med-program</catid>
+    <offcampus>OFF CAMPUS</offcampus>
+  </link>
+   <link>
+    <name>Materials Processing Center</name>
+    <url>http://web.mit.edu/mpc/www/</url>
+    <catid>bio-program</catid>
+    <catid>ch-program</catid>
+    <catid>ee-program</catid>
+    <catid>mate-program</catid>
+    <catid>ph-program</catid>
+    <catid>neuro-program</catid>
+    <location>12-007</location>
+  </link>
+  <link>
+    <name>Materials Research in Archaeology and Ethnology, Center for</name>
+    <url>http://web.mit.edu/cmrae/cmrae_home.htm</url>
+    <catid>mate-program</catid>
+    <catid>hist-program</catid>
+    <location>8-138</location>
+  </link>
+  <link>
+    <name>Materials Science and Engineering (CMSE), Center for</name>
+    <url>http://web.mit.edu/cmse/www/</url>
+    <catid>mate-program</catid>
+  <catid>en-program</catid>
+    <catid>ph-program</catid>
+    <catid>nano-program</catid>
+    <altname>Center for Materials Science and Engineering</altname>
+    <location>13-2106</location>
+  </link>
+  <link>
+    <name>Materials Science and Engineering, Dept. of</name>
+    <url>http://dmse.mit.edu/</url>
+    <catid>mate-program</catid>
+    <catid>ph-program</catid>
+    <catid>nano-program</catid>
+    <location>8-309</location>
+  </link>
+  <link>
+    <name>Mathematics, Dept. of</name>
+    <url>http://www-math.mit.edu/</url>
+    <catid>math-program</catid>
+    <location>2-236</location>
+  </link>
+  <link>
+    <name>McGovern Institute for Brain Research</name>
+    <url>http://web.mit.edu/mcgovern/</url>
+    <catid>bio-program</catid>
+    <catid>neuro-program</catid>
+    <catid>cog-program</catid>
+    <catid>med-program</catid>
+        <location>46-3160</location>
+  </link>
+  <link>
+    <name>Mechanical Engineering, Dept. of</name>
+    <url>http://www-me.mit.edu/</url>
+    <catid>me-program</catid>
+    <catid>oc-program</catid>
+    <catid>ch-program</catid>
+    <catid>mate-program</catid>
+    <catid>nano-program</catid>
+    <location>3-173</location>
+  </link>
+  <link>
+    <name>Mechatronics Research Laboratory</name>
+    <url>http://mechatronics.mit.edu</url>
+    <catid>me-program</catid>
+    <location>3-350</location>
+  </link>
+  <link>
+    <name>Media Arts and Sciences, Program in</name>
+    <url>http://www.media.mit.edu/mas/</url>
+    <catid>cs-program</catid>
+    <catid>ar-program</catid>
+    <catid>hu-program</catid>
+    <catid>mas</catid>
+    <location>E15-401</location>
+  </link>
+  <link>
+    <name>Media In Transition</name>
+    <url>http://web.mit.edu/m-i-t/</url>
+    <catid>cs-program</catid>
+    <catid>ar-program</catid>
+    <catid>hu-program</catid>
+    <catid>mas-program</catid>
+    <location>E15-401</location>
+  </link>
+  <link>
+    <name>Media Laboratory</name>
+    <url>http://www.media.mit.edu/</url>
+    <catid>cs-program</catid>
+    <catid>ar-program</catid>
+      <catid>en-program</catid>
+ <catid>hu-program</catid>
+    <catid>mas-program</catid>
+    <location>E15-212</location>
+    <location>NE20</location>
+    <location>NE18</location>
+  </link>
+  <link>
+    <name>Media Laboratory, Research Groups</name>
+    <url>http://www.media.mit.edu/research/</url>
+    <catid>cs-program</catid>
+    <catid>ar-program</catid>
+    <catid>hu-program</catid>
+    <catid>mas-program</catid>
+  </link>
+  <link>
+    <name>Mellon-MIT Inter-University Program on NGOs and Forced Migration</name>
+    <url>http://web.mit.edu/cis/www/migration/mellon_announcement.html</url>
+    <catid>poli-program</catid>
+       <catid>ss-program</catid>
+    <location>E38-600</location>
+  </link>
+  <link>
+    <name>Microphotonics Center</name>
+    <url>http://web.mit.edu/mphotonics/www/</url>
+    <catid>ch-program</catid>
+    <catid>mate-program</catid>
+    <catid>neuro-program</catid>
+    <location>12-007</location>
+  </link>
+  <link>
+    <name>Microsystems Technology Laboratories (MTL)</name>
+    <url>http://mtlweb.mit.edu/</url>
+    <catid>bio-program</catid>
+   <catid>en-program</catid>
+    <catid>ch-program</catid>
+    <catid>ee-program</catid>
+    <catid>mate-program</catid>
+    <catid>nano-program</catid>
+    <location>39-321</location>
+  </link>
+  <link>
+    <name>MIT/AGS Consortium for Environmental Challenges</name>
+    <url>http://lfee.mit.edu/metadot/index.pl?id=2204&amp;amp;isa=Category&amp;amp;op=show</url>
+    <catid>en-program</catid>
+    <catid>civ-program</catid>
+  </link>
+  <link>
+    <name>Humans and Automation Lab (HAL)</name>
+    <url>http://web.mit.edu/aeroastro/www/labs/halab/</url>
+    <catid>aa-program</catid>
+  </link>
+  <link>
+    <name>Mobile Robotics Group (CSAIL)</name>
+    <url>http://www.ai.mit.edu/projects/mobile-robots/</url>
+    <catid>cs-program</catid>
+    <catid>me-program</catid>
+    <catid>ee-program</catid>
+    <catid>robo-program</catid>
+    <location>32</location>
+  </link>
+  <link>
+    <name>Moore Lab</name>
+    <url>http://web.mit.edu/moore/</url>
+    <catid>neuro-program</catid>
+    <catid>bio-program</catid>
+    <location>46</location>
+  </link>
+  <link>
+    <name>Multiscale Computing Project</name>
+    <url>http://www.cag.lcs.mit.edu/multiscale/</url>
+    <catid>cs-program</catid>
+    <location>32</location>
+  </link>
+  <link>
+    <name>Music and Theater Arts</name>
+    <url>http://web.mit.edu/mta/www/</url>
+    <catid>hu-program</catid>
+    <catid>ar-program</catid>
+    <altname>Theater Arts and Music</altname>
+    <location>4-246</location>
+  </link>
+  <link>
+    <name>Music, Mind and Machine</name>
+    <url>http://sound.media.mit.edu/</url>
+    <catid>music-program</catid>
+    <catid>ar-program</catid>
+    <catid>mas-program</catid>
+    <location>E15-212</location>
+  </link>
+  <link>
+    <name>NanoMechanical Technology Laboratory</name>
+    <url>http://web.mit.edu/nanolab/</url>
+    <catid>mate-program</catid>
+    <catid>me-program</catid>
+    <catid>nano-program</catid>
+    <location>8-309</location>
+  </link>
+  <link>
+    <name>NanoStructures Laboratory</name>
+    <url>http://nanoweb.mit.edu/</url>
+    <catid>mate-program</catid>
+    <catid>nano-program</catid>
+    <location>39-427</location>
+  </link>
+  <link>
+    <name>Networks and Mobile Systems</name>
+    <url>http://nms.csail.mit.edu</url>
+    <catid>cs-program</catid>
+    <location>32</location>
+  </link>
+  <link>
+    <name>Nonlinear Systems Laboratory</name>
+    <url>http://web.mit.edu/nsl/www/</url>
+    <catid>me-program</catid>
+    <catid>cog-program</catid>
+    <catid>bio-program</catid>
+    <catid>robo-program</catid>
+    <catid>neuro-program</catid>
+    <location>3-338</location>
+  </link>
+  <link>
+    <name>Nuclear Science and Engineering, Dept. of</name>
+    <url>http://web.mit.edu/nse/</url>
+        <catid>ph-program</catid>
+    <catid>en-program</catid>
+    <catid>nuclear-program</catid> 
+    <catid>nano-program</catid>
+   <location>24-105</location>
+  </link>
+  <link>
+    <name>Nuclear Reactor Laboratory</name>
+    <url>http://web.mit.edu/nrl/www/</url>
+    <catid>ph-program</catid>
+   <catid>en-program</catid>
+    <catid>nuclear-program</catid>
+    <location>NW12-208</location>
+  </link>
+  <link>
+    <name>NuMesh Group</name>
+    <url>http://www.cag.lcs.mit.edu/numesh/</url>
+    <catid>cs-program</catid>
+    <location>32</location>
+  </link>
+  <link>
+    <name>Ocean Engineering Design Laboratory</name>
+    <url>http://deslab.mit.edu/</url>
+    <catid>oc-program</catid>
+    <location>5-428</location>
+  </link>
+  <link>
+    <name>Ocean Engineering Fabrication Laboratory</name>
+    <url>http://fablab.mit.edu/</url>
+    <catid>oc-program</catid>
+    <location>5-034</location>
+  </link>
+  <link>
+    <name>Ocean Engineering, Center for</name>
+    <url>http://oe.mit.edu/</url>
+    <catid>math-program</catid>
+     <catid>en-program</catid>
+ <catid>eaps-program</catid>
+    <catid>oc-program</catid>
+    <location>5-228</location>
+  </link>
+  <link>
+    <name>MIT OpenCourseWare (OCW)</name>
+    <url>http://ocw.mit.edu/</url>
+    <catid>ed-program</catid>
+       <altname>OpenCourseWare (OCW)</altname>
+    <location>9</location>
+  </link>
+  <link>
+    <name>Open Knowledge Initiative (OKI)</name>
+    <url>http://web.mit.edu/oki/</url>
+    <catid>ed-program</catid>
+  </link>
+  <link>
+    <name>Operations Research Center</name>
+    <url>http://web.mit.edu/orc/www/</url>
+    <catid>math-program</catid>
+    <catid>bus-program</catid>
+    <catid>cs-program</catid>
+    <location>E40-149</location>
+  </link>
+  <link>
+    <name>Parallel and Distributed Operating Systems Group</name>
+    <url>http://www.pdos.lcs.mit.edu/</url>
+    <catid>cs-program</catid>
+    <location>32</location>
+  </link>
+  <link>
+    <name>Philosophy, Dept. of</name>
+    <url>http://web.mit.edu/philos/www/</url>
+    <catid>hu-program</catid>
+    <catid>ss-program</catid>
+    <catid>philo-program</catid>
+    <location>32</location>
+  </link>
+  <link>
+    <name>Physics, Dept. of</name>
+    <url>http://web.mit.edu/physics/</url>
+    <catid>ph-program</catid>
+    <catid>as-program</catid>
+    <catid>math-program</catid>
+    <location>6-113</location>
+  </link>
+  <link>
+    <name>Picower Institute for Learning and Memory</name>
+    <url>http://web.mit.edu/picower/</url>
+    <catid>bio-program</catid>
+        <catid>med-program</catid>
+        <catid>cog-program</catid>
+ <catid>neuro-program</catid>
+    <location>E17-353</location>
+        <location>46-1303</location>
+  </link>
+  <link>
+    <name>Plasma Science and Fusion Center</name>
+    <url>http://www.psfc.mit.edu/</url>
+    <catid>en-program</catid>
+    <catid>me-program</catid>
+    <catid>ph-program</catid>
+    <catid>nuclear-program</catid>
+    <location>NW16-204</location>
+  </link>
+  <link>
+    <name>Political Science, Dept. of</name>
+    <url>http://web.mit.edu/polisci/</url>
+       <catid>poli-program</catid>
+    <catid>ss-program</catid>
+  </link>
+  <link>
+    <name>Postdoctoral Scholars</name>
+    <url>http://web.mit.edu/mitpostdocs/</url>
+    <catid>resources-program</catid>
+    <location>11</location>
+  </link>
+  <link>
+    <name>Precision Engineering Research Group</name>
+    <url>http://pergatory.mit.edu</url>
+    <catid>me-program</catid>
+    <location>3-445</location>
+  </link>
+  <link>
+    <name>Productivity from Information Technology</name>
+    <url>http://mitsloan.mit.edu/research/profit/</url>
+    <catid>bus-program</catid>
+    <catid>ts-program</catid>
+    <location>E53-311</location>
+  </link>
+  <link>
+    <name>Program in Atmospheres, Oceans, and Climate</name>
+    <url>http://paoc.mit.edu/paoc</url>
+    <catid>eaps-program</catid>
+    <catid>oc-program</catid>
+    <catid>civ-program</catid>
+    <altname>Atmospheres, Oceans, and Climate, Program in</altname>
+    <location>54-1522</location>
+  </link>
+  <link>
+    <name>Program on Human Rights &amp;amp; Justice</name>
+    <url>http://web.mit.edu/phrj/</url>
+    <catid>poli-program</catid>
+      <catid>hu-program</catid>
+    <location>E38-278</location>
+  </link>
+  <link>
+    <name>Program on the Pharmaceutical Industry</name>
+    <url>http://web.mit.edu/popi/</url>
+    <catid>bio-program</catid>
+    <catid>bus-program</catid>
+    <catid>med-program</catid>
+  </link>
+  <link>
+    <name>Programming Methodology Group (PMG)</name>
+    <url>http://www.pmg.lcs.mit.edu/</url>
+    <catid>cs-program</catid>
+    <location>32</location>
+  </link>
+  <link>
+    <name>Programming Systems Research Group</name>
+    <url>http://www.psrg.lcs.mit.edu/</url>
+    <catid>cs-program</catid>
+    <catid>bio-program</catid>
+    <location>32</location>
+  </link>
+  <link>
+    <name>Project Oxygen</name>
+    <url>http://oxygen.lcs.mit.edu/</url>
+    <catid>cs-program</catid>
+    <location>32</location>
+  </link>
+  <link>
+    <name>Public Disputes Program (MIT/Harvard)</name>
+    <url>http://web.mit.edu/publicdisputes/</url>
+    <catid>bus-program</catid>
+    <catid>usp-program</catid>
+    <location>7-337</location>
+  </link>
+  <link>
+    <name>Advanced Visual Studies, Center for (CAVS)</name>
+    <url>http://cavs.mit.edu/</url>
+     <catid>ah-program</catid>
+    <altname>Center for Advanced Visual Studies</altname>
+    <location>N52-390</location>
+  </link>
+  <link>
+    <name>Real Estate, Center for</name>
+    <url>http://web.mit.edu/cre/</url>
+    <catid>bus-program</catid>
+    <catid>usp-program</catid>
+    <altname>Center for Real Estate</altname>
+    <location>W31-310</location>
+  </link>
+  <link>
+    <name>Reflective Community Practice, Center for</name>
+    <url>http://web.mit.edu/crcp/</url>
+    <catid>hu-program</catid>
+    <location>7-307</location>
+  </link>
+  <link>
+    <name>Research Digest (News Office)</name>
+    <url>http://web.mit.edu/newsoffice/rd/</url>
+    <catid>resources-program</catid>
+  </link>
+  <link>
+    <name>Research Laboratory of Electronics (RLE)</name>
+    <url>http://rleweb.mit.edu/</url>
+    <catid>bio-program</catid>
+   <catid>en-program</catid>
+    <catid>ee-program</catid>
+    <catid>math-program</catid>
+    <catid>med-program</catid>
+    <catid>mate-program</catid>
+    <catid>ph-program</catid>
+    <location>36-413</location>
+  </link>
+  <link>
+    <name>Scanning Electron Beam Lithography (SEBL)</name>
+    <url>http://rleweb.mit.edu/sebl/</url>
+    <catid>resources-program</catid>
+    <location>38-177</location>
+  </link>
+  <link>
+    <name>Research Program on Communications Policy</name>
+    <url>http://rpcp.mit.edu/</url>
+    <catid>ss-program</catid>
+    <catid>poli-program</catid>
+    <catid>ec-program</catid>
+    <location>E40-234</location>
+  </link>
+  <link>
+    <name>Rohsenow Heat and Mass Transfer Laboratory</name>
+    <url>http://web.mit.edu/hmtl/www/</url>
+       <catid>en-program</catid>
+<catid>me-program</catid>
+    <location>7-038</location>
+  </link>
+  <link>
+    <name>Sauer Lab</name>
+    <url>http://web.mit.edu/biology/sauerlab/</url>
+    <catid>bio-program</catid>
+    <location>68-571</location>
+  </link>
+  <link>
+    <name>Science and Policy of Global Change, Joint Program on the</name>
+    <url>http://web.mit.edu/globalchange/www/</url>
+    <catid>civ-program</catid>
+       <catid>ec-program</catid>
+    <catid>en-program</catid>
+    <catid>ts-program</catid>
+    <catid>eaps-program</catid>
+    <location>E40-279</location>
+  </link>
+  <link>
+    <name>Laboratory for Computational and Fundamental Materials Research</name>
+    <url>http://burgaz.mit.edu/</url>
+    <catid>mate-program</catid>
+    <altname>SCRAM group</altname>
+  </link>
+  <link>
+    <name>Science, Technology, and Society (STS), Program in</name>
+    <url>http://web.mit.edu/sts/</url>
+    <catid>ss-program</catid>
+    <catid>hu-program</catid>
+    <catid>ts-program</catid>
+    <location>E51-185</location>
+  </link>
+  <link>
+    <name>Sea Grant College Program</name>
+    <url>http://web.mit.edu/seagrant/</url>
+    <catid>bio-program</catid>
+    <catid>civ-program</catid>
+    <catid>oc-program</catid>
+    <location>E38-300</location>
+    <location>NE20</location>
+  </link>
+  <link>
+    <name>Security Studies Program</name>
+    <url>http://web.mit.edu/ssp/</url>
+     <catid>poli-program</catid>
+    <location>E38-602</location>
+  </link>
+  <link>
+    <name>Seung Lab</name>
+    <url>http://hebb.mit.edu/</url>
+    <catid>neuro-program</catid>
+    <location>46</location>
+  </link>
+  <link>
+    <name>Ship and Platform Flows, Laboratory for</name>
+    <url>http://oe.mit.edu/flowlab/</url>
+    <catid>oc-program</catid>
+   <catid>en-program</catid>
+    <location>5-329</location>
+  </link>
+  <link>
+    <name>Singapore-MIT Alliance (SMA)</name>
+    <url>http://web.mit.edu/sma/</url>
+        <catid>ed-program</catid>
+      <location>8-407</location>
+  </link>
+  <link>
+    <name>Sloan Automotive Laboratory</name>
+    <url>http://web.mit.edu/sloan-auto-lab/</url>
+       <catid>en-program</catid>
+<catid>me-program</catid>
+    <location>31-153</location>
+  </link>
+  <link>
+    <name>Sloan School of Management</name>
+    <url>http://mitsloan.mit.edu/</url>
+    <catid>bus-program</catid>
+        <altname>Management, Sloan School of</altname>
+    <location>E52-473</location>
+  </link>
+  <link>
+    <name>Center for Information Systems Research (CISR)</name>
+    <url>http://mitsloan.mit.edu/cisr/</url>
+    <catid>bus-program</catid>
+    <altname>MIT Sloan Center for Information Systems</altname>
+    <location>NE20-336</location>
+  </link>
+  <link>
+    <name>Sloan School of Management Management Science Area</name>
+    <url>http://web.mit.edu/sloan-msa/</url>
+    <catid>bus-program</catid>
+    <location>E53-340</location>
+  </link>
+  <link>
+    <name>Social and Economic Explorations of Information Technology</name>
+    <url>http://seeit.mit.edu/</url>
+    <catid>bus-program</catid>
+    <catid>ts-program</catid>
+    <altname>SeeIT</altname>
+    <location>NE20-336</location>
+  </link>
+  <link>
+    <name>Solid Mechanics &amp;amp; Materials Laboratory</name>
+    <url>http://web.mit.edu/solidmech/www/</url>
+    <catid>mate-program</catid>
+    <catid>me-program</catid>
+    <location>5-029</location>
+  </link>
+  <link>
+    <name>Space Nanotechnology Laboratory</name>
+    <url>http://snl.mit.edu/</url>
+    <catid>me-program</catid>
+    <catid>aa-program</catid>
+    <catid>mate-program</catid>
+    <catid>nano-program</catid>
+    <location>37-287</location>
+  </link>
+  <link>
+    <name>Kavli Institute for Astrophysics and Space Research</name>
+    <url>http://space.mit.edu/</url>
+    <catid>as-program</catid>
+    <catid>aa-program</catid>
+    <catid>ph-program</catid>
+    <location>37-287</location>
+  </link>
+  <link>
+    <name>Space Systems Laboratory</name>
+    <url>http://web.mit.edu/ssl/</url>
+    <catid>aa-program</catid>
+    <location>37-315</location>
+  </link>
+  <link>
+    <name>Special Interest Group in Urban Settlements (SIGUS)</name>
+    <url>http://web.mit.edu/sigus/www/NEW/index.html</url>
+    <catid>ss-program</catid>
+    <catid>usp-program</catid>
+    <location>9-369</location>
+  </link>
+  <link>
+    <name>Special Program for Urban and Regional Studies of Developing Areas (SPURS)</name>
+    <url>http://web.mit.edu/spurs/www/</url>
+    <catid>usp-program</catid>
+    <location>10-400</location>
+  </link>
+  <link>
+    <name>Spectrometry Laboratory</name>
+    <url>http://web.mit.edu/speclab/www/</url>
+    <catid>ch-program</catid>
+    <location>18</location>
+  </link>
+  <link>
+    <name>Spectroscopy Laboratory</name>
+    <url>http://web.mit.edu/spectroscopy/</url>
+    <catid>bio-program</catid>
+    <catid>ph-program</catid>
+    <location>6-014</location>
+    <location>6A</location>
+  </link>
+  <link>
+    <name>Spoken Language Systems Group</name>
+    <url>http://www.sls.lcs.mit.edu/</url>
+    <catid>cs-program</catid>
+    <location>32</location>
+  </link>
+  <link>
+    <name>Sponsored Programs, Office of (OSP)</name>
+    <url>http://web.mit.edu/osp/www/</url>
+    <catid>resources-program</catid>
+    <altname>Office of Sponsored Programs</altname>
+    <location>E19-750</location>
+  </link>
+  <link>
+    <name>Sur Laboratory</name>
+    <url>http://www.mit.edu/~msur/</url>
+    <catid>neuro-program</catid>
+    <location>46</location>
+  </link>
+  <link>
+    <name>Suresh Group</name>
+    <url>http://sureshgroup.mit.edu/</url>
+    <catid>mate-program</catid>
+    <catid>nano-program</catid>
+    <location>8-139</location>
+  </link>
+  <link>
+    <name>Switzerland (Project MAC)</name>
+    <url>http://www-swiss.ai.mit.edu/</url>
+    <catid>cs-program</catid>
+    <catid>math-program</catid>
+    <altname>Project on Mathematics and Computation (CSAIL)</altname>
+    <location>32</location>
+  </link>
+  <link>
+    <name>System Design and Management Program (SDM)</name>
+    <url>http://sdm.mit.edu/</url>
+    <catid>civ-program</catid>
+    <location>E40-422</location>
+  </link>
+  <link>
+    <name>System Dynamics Group</name>
+    <url>http://web.mit.edu/sdg/www/</url>
+    <catid>bus-program</catid>
+   <catid>en-program</catid>
+    <catid>cs-program</catid>
+    <location>E60-375</location>
+  </link>
+ <link>
+    <name>Teaching and Learning Laboratory</name>
+    <url>http://web.mit.edu/tll/</url>
+    <catid>ed-program</catid>
+    <location>5-122</location>
+  </link>
+  <link>
+    <name>Technology Enabled Active Learning (TEAL)</name>
+    <url>http://icampus.mit.edu/projects/TEAL.shtml</url>
+    <catid>ed-program</catid>
+    <catid>ph-program</catid>
+  </link>
+  <link>
+    <name>Technology and Development Program</name>
+    <url>http://web.mit.edu/mit-tdp/www/</url>
+    <catid>civ-program</catid>
+    <catid>mate-program</catid>
+    <catid>ch-program</catid>
+       <location>1-175</location>
+  </link>
+  <link>
+    <name>Technology Laboratory for Advanced Materials and Structures (TELAMS)</name>
+    <url>http://web.mit.edu/telams/</url>
+    <catid>aa-program</catid>
+    <location>33-322</location>
+  </link>
+  <link>
+    <name>Technology Licensing Office (TLO)</name>
+    <url>http://web.mit.edu/tlo/www/</url>
+    <catid>resources-program</catid>
+    <altname>Licensing Office, Technology</altname>
+    <location>NE25-230</location>
+  </link>
+  <link>
+    <name>Technology, Management and Policy Program (TPP)</name>
+    <url>http://tppserver.mit.edu/index.php?idnum=1</url>
+    <catid>ts-program</catid>
+    <location>E40-251</location>
+  </link>
+  <link>
+    <name>Technology, Policy and Industrial Development, Center for</name>
+    <url>http://web.mit.edu/ctpid/www/</url>
+    <catid>mate-program</catid>
+  <catid>en-program</catid>
+    <catid>aa-program</catid>
+    <location>E40-227</location>
+  </link>
+  <link>
+    <name>Telemedia, Networks, and Systems Group</name>
+    <url>http://tns-www.lcs.mit.edu/</url>
+    <catid>cs-program</catid>
+    <offcampus>545 Technology Square</offcampus>
+  </link>
+  <link>
+    <name>Testing Tank (Tow Tank)</name>
+    <url>http://web.mit.edu/towtank/www/</url>
+    <catid>oc-program</catid>
+    <location>48</location>
+  </link>
+  <link>
+    <name>The Study of Diversity in Science, Technology and Medicine (CSD), Center for</name>
+    <url>http://web.mit.edu/csd/</url>
+    <catid>ts-program</catid>
+    <catid>hu-program</catid>
+    <location>E51-185</location>
+  </link>
+  <link>
+    <name>Theoretical Physics, Center for</name>
+    <url>http://www-ctp.mit.edu/</url>
+    <catid>ph-program</catid>
+  </link>
+  <link>
+    <name>Theory of Computation Group</name>
+    <url>http://theory.lcs.mit.edu/</url>
+    <catid>cs-program</catid>
+    <location>32</location>
+  </link>
+  <link>
+    <name>Three Dimensional Printing Project</name>
+    <url>http://web.mit.edu/tdp/www/</url>
+    <catid>ah-program</catid>
+    <catid>bus-program</catid>
+    <location>35-234</location>
+  </link>
+  <link>
+    <name>Tiny Technologies</name>
+    <url>http://web.mit.edu/engineering/tt/</url>
+    <catid>nano-program</catid>
+  </link>
+  <link>
+    <name>Transgenic Facility</name>
+    <url>http://web.mit.edu/transgenic/</url>
+    <catid>bio-program</catid>
+    <catid>med-program</catid>
+    <location>68-216</location>
+  </link>
+  <link>
+    <name>Center for Transportation &amp;amp; Logistics (CTL)</name>
+    <url>http://ctl.mit.edu/</url>
+    <catid>aa-program</catid>
+  <catid>en-program</catid>
+    <catid>bus-program</catid>
+    <catid>civ-program</catid>
+    <catid>math-program</catid>
+    <catid>me-program</catid>
+    <catid>ss-program</catid>
+    <catid>poli-program</catid>
+    <altname>Transportation &amp;amp; Logistics, Center for</altname>
+    <location>E40</location>
+  </link>
+  <link>
+    <name>MIT World</name>
+    <url>http://mitworld.mit.edu</url>
+    <catid>ed-program</catid>
+    <location>9-467</location>
+  </link>
+  <link>
+    <name>Ultracold Atoms, MIT-Harvard Center for</name>
+    <url>http://cua.mit.edu/CUA_web/home.htm</url>
+    <catid>ph-program</catid>
+    <altname>MIT-Harvard Center for Ultracold Atoms</altname>
+    <location>26-237</location>
+  </link>
+  <link>
+    <name>Undergraduate Research Opportunities Program (UROP)</name>
+    <url>http://web.mit.edu/urop/</url>
+    <catid>resources-program</catid>
+    <altname>Research, Undergraduate</altname>
+    <location>7-103</location>
+  </link>
+  <link>
+    <name>Urban Studies and Planning, Dept. of</name>
+    <url>http://dusp.mit.edu/</url>
+    <catid>ec-program</catid>
+    <catid>ss-program</catid>
+    <catid>usp-program</catid>
+    <catid>ah-program</catid>
+    <catid>poli-program</catid>
+    <catid>civ-program</catid>
+    <location>7-346</location>
+  </link>
+  <link>
+    <name>Harvard-MIT Division of Health Sciences and Technology (HST)</name>
+    <url>http://hst.mit.edu/</url>
+    <catid>bio-program</catid>
+    <catid>med-program</catid>
+    <altname>Health Sciences and Technology Program (HST)</altname>
+    <location>E25-519</location>
+  </link>
+  <link>
+    <name>Whitehead Institute for Biomedical Research</name>
+    <url>http://www.wi.mit.edu/</url>
+    <catid>bio-program</catid>
+    <catid>cog-program</catid>
+    <catid>cancer-program</catid>
+    <location>NE25</location>
+  </link>
+  <link>
+    <name>WHOI Joint Program in Oceanography, MIT</name>
+    <url>http://web.mit.edu/mit-whoi/www/</url>
+    <catid>eaps-program</catid>
+    <catid>oc-program</catid>
+    <location>54-911</location>
+  </link>
+  <link>
+    <name>Women's and Gender Studies</name>
+    <url>http://web.mit.edu/wgs/</url>
+    <catid>hu-program</catid>
+    <catid>ss-program</catid>
+    <location>14E-316</location>
+  </link>
+  <link>
+    <name>Workplace Center, MIT</name>
+    <url>http://web.mit.edu/workplacecenter/</url>
+    <catid>ts-program</catid>
+    <altname>MIT Workplace Center</altname>
+    <location>E70</location>
+  </link>
+  <link>
+    <name>World Wide Web Consortium (W3C)</name>
+    <url>http://www.w3.org/</url>
+    <catid>cs-program</catid>
+    <location>32</location>
+  </link>
+  <link>
+    <name>Wright Brothers Wind Tunnel (WBWT)</name>
+    <url>http://web.mit.edu/aeroastro/www/labs/WBWT/</url>
+    <catid>aa-program</catid>
+    <catid>hist-program</catid>
+    <catid>en-program</catid>
+    <location>17</location>
+  </link>
+  <link>
+    <name>Writing and Humanistic Studies, Program in</name>
+    <url>http://web.mit.edu/humanistic/www/</url>
+    <catid>lang-lit-program</catid>
+    <catid>hu-program</catid>
+    <location>14E-302</location>
+  </link>
+</collection>

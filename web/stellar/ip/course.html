@@ -1,0 +1,24 @@
+<?php
+$page->title("MIT Stellar: " . idName($id, $course))
+     ->navbar_image('title-stellar')
+     ->breadcrumbs($Back, idName($id, $course));
+
+$page->content_begin();
+?>
+	
+	<div class="nonfocal">
+		<h2><?=name($course)?> (<?=idName($id, $course)?>)</h2>
+	</div>
+	
+	<ul class="results">
+            <? if($has_classes) { ?>
+                <? foreach($classes as $class) { ?>
+                    <li><a href="<?=detailURL($class, selfURL())?>"><strong><?=longID($class)?></strong>: <?=className($class)?></a></li>
+                <? } ?>
+            <? } else { ?>
+                <li>No Stellar sites available for this department</li>
+            <? } ?>
+	</ul>
+
+<? $page->content_end(); ?>
+

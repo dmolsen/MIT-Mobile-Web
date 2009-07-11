@@ -1,0 +1,11 @@
+<?php
+$page->title("MIT Events Calendar: Search Results")
+     ->navbar_image('title-calendar')
+     ->breadcrumbs("Search Results");
+
+$page->content_begin();
+	
+$content->output($events);
+
+$page->content_end() 
+?>

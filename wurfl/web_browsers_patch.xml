@@ -1,0 +1,714 @@
+<wurfl_patch>
+  <devices>
+    <!-- Updates by Luca Passani -->
+    <!-- last update February 2008  -->
+    <!-- Version 1.1.1 -->
+
+    <!-- Web browsers -->
+    <device user_agent="Mozilla/4.0" fall_back="generic" id="generic_web_browser">
+      <group id="display">
+        <capability name="columns" value="77"/>
+        <capability name="rows" value="30"/>
+      </group>
+      <group id="markup">
+        <capability name="xhtml_support_level" value="4"/>
+        <capability name="preferred_markup" value="html_web_4_0"/>
+        <capability name="html_web_4_0" value="true"/>
+      </group>
+      <group id="sound_format">
+        <capability name="wav" value="true"/>
+        <capability name="au" value="true"/>
+        <capability name="mp3" value="true"/>
+        <capability name="midi_monophonic" value="true"/>
+
+        <capability name="midi_polyphonic" value="true"/>
+      </group>
+      <group id="xhtml_ui">
+        <capability name="xhtmlmp_preferred_mime_type" value="text/html"/>
+        <capability name="xhtml_supports_table_for_layout" value="true"/>
+        <capability name="xhtml_supports_css_cell_table_coloring" value="true"/>
+      </group>
+      <group id="object_download">
+        <capability name="directdownload_support" value="true"/><!-- Darren's test suite -->
+        <capability name="inline_support" value="true"/><!-- Darren's test suite -->
+        <capability name="ringtone" value="true"/><!-- Darren's test suite -->
+        <capability name="video" value="true"/><!-- Darren's test suite -->
+        <capability name="video_df_size_limit" value="10000"/><!-- Darren's test suite -->
+        <capability name="video_real_media_8" value="true"/><!-- Darren's test suite -->
+        <capability name="video_real_media_9" value="true"/><!-- Darren's test suite -->
+        <capability name="wallpaper" value="true"/><!-- Darren's test suite -->
+        <capability name="wallpaper_colors" value="1024"/><!-- Darren's test suite -->
+      </group>
+      <group id="sound_format">
+        <capability name="voices" value="16"/><!-- Darren's test suite -->
+      </group>
+      <group id="wml_ui">
+        <capability name="table_support" value="false"/><!-- Darren's test suite -->
+      </group>      
+      <group id="flash_lite">
+        <capability name="flash_lite_version" value="2_1"/>
+        <capability name="fl_wallpaper" value="false"/>
+        <capability name="fl_screensaver" value="false"/>
+        <capability name="fl_standalone" value="true"/>
+        <capability name="fl_browser" value="true"/>
+        <capability name="fl_sub_lcd" value="false"/>
+      </group>   
+    </device>
+
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 5.0)" fall_back="generic_web_browser" id="msie5_nt"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)" fall_back="generic_web_browser" id="msie6_nt"/>
+    <device user_agent="Mozilla/4.78 [en] (Windows NT 5.0; U)" fall_back="generic_web_browser" id="netscape4"/>
+    <device user_agent="Mozilla/5.0" fall_back="generic_web_browser" id="mozilla_ver5"/>
+
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 4.0" fall_back="generic_web_browser" id="msie_40"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 4.0; MSN" fall_back="generic_web_browser" id="msie_40_msn"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 4.01; Windows 95)" fall_back="generic_web_browser" id="msie401_95"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 4.01; Windows 98)" fall_back="generic_web_browser" id="msie401_98"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 4.01; Windows NT)" fall_back="generic_web_browser" id="msie401_nt"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 4.01; Win32" fall_back="generic_web_browser" id="msie401_genericwin32"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 4.01; AOL" fall_back="generic_web_browser" id="msie401_aol"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 4.01; CS" fall_back="generic_web_browser" id="msie401_compuserve"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 5.00; Windows 98)" fall_back="generic_web_browser" id="msie50_98"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 5.00; " fall_back="generic_web_browser" id="msie500_anomaly_desktop_browser"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 5.0; " fall_back="generic_web_browser" id="msie50_generic"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 5.0; AOL" fall_back="generic_web_browser" id="msie50_aol"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 5.0; CS" fall_back="generic_web_browser" id="msie50_compuserve"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 5.0CS" fall_back="generic_web_browser" id="msie50_compuserveB"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 5.0; Linux" fall_back="generic_web_browser" id="msie50_linux_desktop_browser"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 5.0; MSN" fall_back="generic_web_browser" id="msie50_msn_desktop_browser"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 5.0; SunOS" fall_back="generic_web_browser" id="msie50_sun_desktop_browser"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 5.0; Win3.1" fall_back="generic_web_browser" id="msie50_win31_desktop_browser"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 5.0b;" fall_back="generic_web_browser" id="msie50b_desktop_browser"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 5.01; Windows 98)" fall_back="generic_web_browser" id="msie501_98"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 4.0)" fall_back="generic_web_browser" id="msie501_nt4"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 5.01; Windows NT 5.0)" fall_back="generic_web_browser" id="msie501_nt5"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 5.01; AOL" fall_back="generic_web_browser" id="msie501_aol_desktop_browser"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 5.12; Mac" fall_back="generic_web_browser" id="msie512_mac_desktop_browser"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 5.1" fall_back="generic_web_browser" id="msie51_desktop_browser"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 5.5; Windows 95)" fall_back="generic_web_browser" id="msie55_95"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 5.5; Windows 98)" fall_back="generic_web_browser" id="msie55_98"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 5.5; Windows 98; Win 9x 4.90)" fall_back="generic_web_browser" id="msie55_989x"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 5.5; Windows NT 4.0)" fall_back="generic_web_browser" id="msie55_nt4"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 6.0; AOL" fall_back="generic_web_browser" id="msie60_aol"/>
+    <!-- from Martin Kindler -->
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 6.0; AOL 9.0; Windows NT 5.1; SV1)" fall_back="generic_web_browser" id="msie60_nt_aol"  />
+
+
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows 98)" fall_back="generic_web_browser" id="msie6_98"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Win 9x 4.90)" fall_back="generic_web_browser" id="msie6_9x"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1)" fall_back="generic_web_browser" id="msie6_nt51"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; .NET CLR 1.1.4322)" fall_back="msie6_nt51" id="msie6_nt51_net_114"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.0.3705)" fall_back="msie6_nt51" id="msie6_nt51_sv1_net_103705"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322)" fall_back="msie6_nt51" id="msie6_nt51_sv1_net_114"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; E-nrgyPlus; dial; snprtz|S28134900030155|2600#Service Pack 1#2#5#1; .NET CLR 1.1.4322)" fall_back="msie6_nt51" id="msie6_nt51_sp1251"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; OptusNetDSL6; MSN 6.1; MSNbMSFT; MSNmen-au; MSNc00; MSNc00)" fall_back="generic_web_browser" id="msie60_nt51_msn61"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; BT Openworld BB)" fall_back="generic_web_browser" id="msie60_nt51_bt"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; YPC 3.2.0; yplus 5.3.00b)" id="msie60_nt51_ypc320" fall_back="generic_web_browser" />
+    <!-- from Steve Kamerman -->
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows XP)" id="msie60_xp" fall_back="generic_web_browser"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 6.1; Windows XP)" id="msie61_xp" fall_back="generic_web_browser"/>
+
+    <!-- MSIE 7 -->
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 7.0" fall_back="generic_web_browser" id="msie7"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 7.0b; Windows NT 5.1)" fall_back="msie7" id="msie7_beta_nt51"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; SV1; .NET CLR 1.1.4322)" fall_back="msie7" id="msie7_beta_nt51dotnet"/>
+    
+    <!-- Netscape 4.8 on Windows 2000 -->
+    <device user_agent="Mozilla/4.8 [en] (Windows NT 5.0; U)" fall_back="generic_web_browser" id="netscape48_nt50_enus" />
+    <!-- Netscape 4.8 on Windows XP -->
+    <device user_agent="Mozilla/4.8 [en] (Windows NT 5.1; U)" fall_back="generic_web_browser" id="netscape48_nt51_enus" />
+  
+    <!-- Mozilla 4 -->
+    <device user_agent="Mozilla/4.01 " fall_back="generic_web_browser" id="mozilla401_desktop_browser"/>
+    <device user_agent="Mozilla/4.02 " fall_back="generic_web_browser" id="mozilla402_desktop_browser"/>
+    <device user_agent="Mozilla/4.03 " fall_back="generic_web_browser" id="mozilla403_desktop_browser"/>
+    <device user_agent="Mozilla/4.04 " fall_back="generic_web_browser" id="mozilla404_desktop_browser"/>
+    <device user_agent="Mozilla/4.05 " fall_back="generic_web_browser" id="mozilla405_desktop_browser"/>
+    <device user_agent="Mozilla/4.06 " fall_back="generic_web_browser" id="mozilla406_desktop_browser"/>
+    <device user_agent="Mozilla/4.07 " fall_back="generic_web_browser" id="mozilla407_desktop_browser"/>
+    <device user_agent="Mozilla/4.08 " fall_back="generic_web_browser" id="mozilla408_desktop_browser"/>
+    <device user_agent="Mozilla/4.08 (Mac" fall_back="generic_web_browser" id="mozilla408_mac_desktop_browser"/>
+    <device user_agent="Mozilla/4.08 [" fall_back="generic_web_browser" id="mozilla408_pc_desktop_browser"/>
+    <device user_agent="Mozilla/4.09 " fall_back="generic_web_browser" id="mozilla409_desktop_browser"/>
+
+    <!-- Mozilla 5 -->
+    <device user_agent="Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.4) Gecko/20030624 Netscape/7.1 (ax)" fall_back="mozilla_ver5" id="netscape7_1_nt_us">
+      <group id="product_info">
+        <capability name="brand_name" value="Netscape"/>
+      </group>
+    </device>
+    <device user_agent="Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.7.2) Gecko/20040804 Netscape/7.2 (ax)" fall_back="mozilla_ver5" id="netscape7_1_98_us">
+      <group id="product_info">
+        <capability name="brand_name" value="Mozilla Firefox"/>
+        <capability name="model_name" value="1.0"/>
+      </group>
+      <group id="xhtml_ui">
+        <capability name="xhtml_nowrap_mode" value="true"/>
+      </group>
+    </device>
+    
+    <!-- Firefox 1.0 -->
+    <device user_agent="Firefox/" fall_back="mozilla_ver5" id="generic_firefox">
+      <group id="product_info">
+        <capability name="brand_name" value="Mozilla Firefox"/>
+        <capability name="model_name" value="1.0"/>
+      </group>
+      <group id="xhtml_ui">
+        <capability name="xhtml_nowrap_mode" value="true"/><!-- Darren's test suite -->
+      </group>
+      <group id="wml_ui">
+        <capability name="wml_make_phone_call_string" value="none"/><!-- Darren's test suite -->
+      </group>
+    </device>
+
+    <!-- Firefox 1.0.1 -->
+    <device user_agent="Firefox/1.0.1" fall_back="generic_firefox" id="generic_firefox_101">
+      <group id="product_info">
+        <capability name="model_name" value="1.0.1"/>
+      </group>
+    </device>
+    <device user_agent="Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.7.6) Gecko/20050223 Firefox/1.0.1" fall_back="generic_firefox_101" id="firefox101_98_enus"/>
+    <device user_agent="Mozilla/5.0 (Windows; U; Windows XP; en-US; rv:1.7.6) Gecko/20050223 Firefox/1.0.1" fall_back="generic_firefox_101" id="firefox101_xp_enus"/>
+    <device user_agent="Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.7.6) Gecko/20050223 Firefox/1.0.1" fall_back="generic_firefox_101" id="firefox101_nt5_enus"/>
+    <device user_agent="Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.6) Gecko/20050223 Firefox/1.0.1" fall_back="generic_firefox_101" id="firefox101_nt51_enus"/>
+    <device user_agent="Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.7.6) Gecko/20050223 Firefox/1.0.1" fall_back="generic_firefox_101" id="firefox101_nt51_engb"/>
+    <device user_agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.6) Gecko/20050223 Firefox/1.0.1" fall_back="generic_firefox_101" id="firefox101_x11_enus"/>
+    <device user_agent="Mozilla/5.0 (Macintosh; U; PPC Mac OS X Mach-O; en-US; rv:1.7.6) Gecko/20050223 Firefox/1.0.1" fall_back="generic_firefox_101" id="firefox101_osx_enus"/>
+
+    <!-- Firefox 1.0.2 -->
+    <device user_agent="Firefox/1.0.2" fall_back="generic_firefox_101" id="generic_firefox_102">
+      <group id="product_info">
+        <capability name="model_name" value="1.0.2"/>
+      </group>
+    </device>
+    <device user_agent="Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.7.6) Gecko/20050321 Firefox/1.0.2" fall_back="generic_firefox_102" id="firefox102_nt51_engb"/>
+    <!-- Firefox 1.0.3 -->
+    <device user_agent="Firefox/1.0.3" fall_back="generic_firefox_102" id="generic_firefox_103">
+      <group id="product_info">
+        <capability name="model_name" value="1.0.3"/>
+      </group>
+    </device>
+    <device user_agent="Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.7.7) Gecko/20050414 Firefox/1.0.3" fall_back="generic_firefox_103" id="firefox103_nt5_enus"/>
+    <device user_agent="Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.7.7) Gecko/20050414 Firefox/1.0.3" fall_back="generic_firefox_103" id="firefox103_nt51_engb"/>
+
+    <!-- Firefox 1.0.4 -->
+    <device user_agent="Firefox/1.0.4" fall_back="generic_firefox_103" id="generic_firefox_104">
+      <group id="product_info">
+        <capability name="model_name" value="1.0.4"/>
+      </group>
+    </device>
+    <device user_agent="Mozilla/5.0 (Macintosh; U; PPC Mac OS X Mach-O; en-US; rv:1.7.8) Gecko/20050511 Firefox/1.0.4" fall_back="generic_firefox_104" id="firefox104_osx_enus"/>
+
+    <!-- Firefox 1.0.7 -->
+    <device user_agent="Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.12) Gecko/20050915 Firefox/1.0.7" fall_back="generic_firefox_104" id="generic_firefox_107">
+      <group id="product_info">
+        <capability name="model_name" value="1.0.7"/>
+      </group>
+    </device>
+    <device user_agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.12) Gecko/20050922 Firefox/1.0.7 (Debian package 1.0.7-1)" fall_back="generic_firefox_107" id="firefox_107_debian"/>
+    <!-- BETA -->
+    <device user_agent="Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.7) Gecko/20040803 Firefox/0.9.3" fall_back="generic_firefox" id="firefox093_98_enus"/>
+    <device user_agent="Mozilla/5.0 (Windows; U; Windows XP; rv:1.7.3) Gecko/20041001 Firefox/0.10.1" fall_back="generic_firefox" id="firefox0101_xp"/>
+    
+    <!-- V1 -->
+    <device user_agent="Mozilla/5.0 (Macintosh; U; PPC Mac OS X Mach-O; en-US; rv:1.7.5) Gecko/20041107 Firefox/1.0" fall_back="generic_firefox" id="firefox1_osx_enus"/>
+    <device user_agent="Mozilla/5.0 (Windows; U; Win98; en-US; rv:1.7.5) Gecko/20041107 Firefox/1.0" fall_back="generic_firefox" id="firefox1_98_enus"/>
+    <device user_agent="Mozilla/5.0 (Windows; U; Windows XP; en-US; rv:1.7.5) Gecko/20041107 Firefox/1.0" fall_back="generic_firefox" id="firefox1_xp_enus"/>
+
+    <device user_agent="Mozilla/5.0 (Windows; U; Windows NT 5.0; en-US; rv:1.7.5) Gecko/20041107 Firefox/1.0" fall_back="generic_firefox" id="firefox1_nt5_enus"/>
+    <device user_agent="Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.7.5) Gecko/20041107 Firefox/1.0" fall_back="generic_firefox" id="firefox1_nt51_enus"/>
+    <device user_agent="Mozilla/5.0 (Windows; U; Windows NT 5.1; en-GB; rv:1.7.5) Gecko/20041110 Firefox/1.0" fall_back="generic_firefox" id="firefox1_nt51_engb"/>
+    <device user_agent="Mozilla/5.0 (X11; U; Linux i686; en-US; rv:1.7.5) Gecko/20041210 Firefox/1.0" fall_back="generic_firefox" id="firefox1_x11_enus"/>
+
+    <!-- Firefox 1.5 -->
+    <device user_agent="Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8b4) Gecko/20050908 Firefox/1.4" fall_back="firefox1_nt51_enus" id="firefox1_5beta_nt51_enus">
+      <group id="product_info">
+        <capability name="model_name" value="1.5 Beta 1"/>
+      </group>
+    </device>
+    <device user_agent="Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv:1.8) Gecko/20051111 Firefox/1.5" fall_back="firefox1_nt51_enus" id="firefox1_5_nt51_enus" >
+      <group id="product_info">
+        <capability name="model_name" value="1.5"/>
+      </group>
+    </device>
+    <device user_agent="Mozilla/5.0 (Windows; U; Windows NT 5.1; en-US; rv: 1.8.0.1) Gecko/20060111 Firefox/1.5.0.1" fall_back="firefox1_5_nt51_enus" id="firefox1_5_1_nt51_us">
+      <group id="product_info">
+        <capability name="model_name" value="1.5.1"/>
+      </group>
+    </device>
+    <device user_agent="Firefox/2.0" fall_back="firefox1_5_1_nt51_us" id="firefox2_0">
+      <group id="product_info">
+        <capability name="model_name" value="2.0"/>
+      </group>
+    </device>
+    <device user_agent="Firefox/2.0.0.1" fall_back="firefox2_0" id="firefox2_0_0_1">
+      <group id="product_info">
+        <capability name="model_name" value="2.0.0.1"/>
+      </group>
+    </device>
+    <device user_agent="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-US; rv:1.8.1.1) Gecko/20061204 Firefox/2.0.0.1" fall_back="firefox2_0_0_1" id="firefox2_0_0_1_submactel"/>
+
+    <!-- Firefox 2.0 -->
+    <device user_agent="Mozilla/5.0 (0000" fall_back="generic_web_browser" id="mozilla50_0000_desktop_browser"/>
+    <device user_agent="Mozilla/5.0 (1UP " fall_back="generic_web_browser" id="mozilla50_1UP _desktop_browser"/>
+    <device user_agent="Mozilla/5.0 (BeOS" fall_back="generic_web_browser" id="mozilla50_BeOS_desktop_browser"/>
+    <device user_agent="Mozilla/5.0 (CCK " fall_back="generic_web_browser" id="mozilla50_CCK _desktop_browser"/>
+    <device user_agent="Mozilla/5.0 (comp" fall_back="generic_web_browser" id="mozilla50_comp_desktop_browser"/>
+    <device user_agent="Mozilla/5.0 (CP/M" fall_back="generic_web_browser" id="mozilla50_CPM_desktop_browser"/>
+    <device user_agent="Mozilla/5.0 (IBM " fall_back="generic_web_browser" id="mozilla50_IBM _desktop_browser"/>
+    <device user_agent="Mozilla/5.0 (Linu" fall_back="generic_web_browser" id="mozilla50_Linu_desktop_browser"/>
+    <device user_agent="Mozilla/5.0 (Maci" fall_back="generic_web_browser" id="mozilla50_Maci_desktop_browser"/>
+    <device user_agent="Mozilla/5.0 (mook" fall_back="generic_web_browser" id="mozilla50_mook_desktop_browser"/>
+    <device user_agent="Mozilla/5.0 (Open" fall_back="generic_web_browser" id="mozilla50_Open_desktop_browser"/>
+    <device user_agent="Mozilla/5.0 (OS/2" fall_back="generic_web_browser" id="mozilla50_OS2_desktop_browser"/>
+    <device user_agent="Mozilla/5.0 (Plat" fall_back="generic_web_browser" id="mozilla50_Plat_desktop_browser"/>
+    <device user_agent="Mozilla/5.0 (Powe" fall_back="generic_web_browser" id="mozilla50_Powe_desktop_browser"/>
+    <device user_agent="Mozilla/5.0 (Sage" fall_back="generic_web_browser" id="mozilla50_Sage_desktop_browser"/>
+    <device user_agent="Mozilla/5.0 (Slur" fall_back="generic_web_browser" id="mozilla50_Slur_desktop_browser"/>
+    <device user_agent="Mozilla/5.0 (Symb" fall_back="generic_web_browser" id="mozilla50_Symb_desktop_browser"/>
+    <device user_agent="Mozilla/5.0 (Unix" fall_back="generic_web_browser" id="mozilla50_Unix_desktop_browser"/>
+    <device user_agent="Mozilla/5.0 (Vers" fall_back="generic_web_browser" id="mozilla50_Vers_desktop_browser"/>
+    <device user_agent="Mozilla/5.0 (Wind" fall_back="generic_web_browser" id="mozilla50_Wind_desktop_browser"/>
+    <device user_agent="Mozilla/5.0 (X11" fall_back="generic_web_browser" id="mozilla50_X11_desktop_browser"/>
+    <device user_agent="Mozilla/5.0 [" fall_back="generic_web_browser" id="mozilla50_basic_desktop_browser"/>
+    <device user_agent="Mozilla/5.0 Galeo " fall_back="generic_web_browser" id="mozilla50_galeo_desktop_browser"/>
+    <device user_agent="Mozilla/5.0 Geco" fall_back="generic_web_browser" id="mozilla50_gecko_desktop_browser"/>
+    <device user_agent="Mozilla/5.0 Netscape " fall_back="generic_web_browser" id="mozilla50_netscape_desktop_browser"/>
+
+    <!-- Camino -->
+    <device user_agent="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; en-US; rv:1.8.0.4) Gecko/20060613 Camino/1.0.2" fall_back="mozilla_ver5" id="camino_102_intel_102">
+      <group id="product_info">
+        <capability name="brand_name" value="Camino"/>
+        <capability name="model_name" value="1.0.2"/>
+      </group>
+    </device>
+
+    <!-- Konqueror -->
+    <device user_agent="Mozilla/5.0 (compatible; Konqueror" fall_back="generic_web_browser" id="konqueror_desktop_browser"/>
+    <device user_agent="Mozilla/5.0 (compatible; Konqueror/2.2.2" fall_back="konqueror_desktop_browser" id="konqueror_desktop_browser_2_2_2"/>
+    <device user_agent="Mozilla/5.0 (compatible; Konqueror/3.1" fall_back="konqueror_desktop_browser" id="konqueror_desktop_browser_3_1"/>
+    <device user_agent="Mozilla/5.0 (compatible; Konqueror/3.2" fall_back="konqueror_desktop_browser" id="konqueror_desktop_browser_3_2"/>
+    <device user_agent="Mozilla/5.0 (compatible; Konqueror/3.3" fall_back="konqueror_desktop_browser" id="konqueror_desktop_browser_3_3"/>
+    <device user_agent="Mozilla/5.0 (compatible; Konqueror/3.4; Linux 2.6.11-gentoo-r11) KHTML/3.4.1 (like Gecko) " fall_back="konqueror_desktop_browser" id="konqueror_desktop_browser_3_4_pioppo"/>
+
+    <!-- Opera 7 -->
+    <device user_agent="Opera 7" fall_back="mozilla_ver5" id="generic_opera_7">
+      <group id="product_info">
+        <capability name="brand_name" value="Opera"/>
+        <capability name="model_name" value="7"/>
+      </group>
+      <group id="image_format">
+        <capability name="wbmp" value="true"/>
+      </group>
+    </device>
+    <device user_agent="Mozilla/5.0 (Windows 98; U) Opera 7.23 [en-GB]" fall_back="generic_opera_7" id="opera_723_98">
+      <group id="product_info">
+        <capability name="model_name" value="7.23"/>
+      </group>
+    </device>
+    
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1) Opera 7.50 [en]" id="generic_opera_75" fall_back="generic_opera_7" >
+      <group id="product_info">
+        <capability name="model_name" value="7.50"/>
+      </group>
+    </device>
+
+    <!-- begin Opera 7.54 -->
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0) Opera 7.54 [en]" fall_back="generic_opera_75" id="opera_754_nt5_enus_asIE"/>
+    <device user_agent="Mozilla/5.0 (Windows NT 5.0; U) Opera 7.54 [en]" fall_back="generic_opera_7" id="opera_754_nt5_enus_asM5"/>
+    <device user_agent="Mozilla/4.78 (Windows NT 5.0; U) Opera 7.54 [en]" fall_back="generic_opera_7" id="opera_754_nt5_enus_asM478"/>
+    <device user_agent="Mozilla/3.0 (Windows NT 5.0; U) Opera 7.54 [en]" fall_back="generic_opera_7" id="opera_754_nt5_enus_asM3"/>
+    <device user_agent="Opera/7.54 (Windows NT 5.0; U) [en]" fall_back="generic_opera_7" id="opera_754_nt5_enus"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1) Opera 7.54 [en]" fall_back="generic_opera_7" id="opera_754_nt51_enus_asIE"/>
+    <device user_agent="Mozilla/5.0 (Windows NT 5.1; U) Opera 7.54 [en]" fall_back="generic_opera_7" id="opera_754_nt51_enus_asM5"/>
+    <device user_agent="Mozilla/4.78 (Windows NT 5.1; U) Opera 7.54 [en]" fall_back="generic_opera_7" id="opera_754_nt51_enus_asM478"/>
+    <device user_agent="Mozilla/3.0 (Windows NT 5.1; U) Opera 7.54 [en]" fall_back="generic_opera_7" id="opera_754_nt51_enus_asM3"/>
+    <device user_agent="Opera/7.54 (Windows NT 5.1; U) [en]" fall_back="generic_opera_7" id="opera_754_nt51_enus"/>
+    <!-- end Opera 7.54 -->
+
+    <!-- Opera 8 -->
+    <device user_agent="Opera/8" fall_back="generic_opera_7" id="generic_opera_8">
+      <group id="product_info">
+        <capability name="model_name" value="8.0"/>
+      </group>
+    </device>
+    <device user_agent="Opera/8.01 (Macintosh; PPC Mac OS X; U; it)" fall_back="generic_opera_8" id="opera_801_osx"/>
+    <device user_agent="Mozilla/5.0 (Macintosh; PPC Mac OS X; U; it) Opera 8.01" fall_back="generic_opera_8" id="opera_801_mozilla_osx"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 6.0; Mac_PowerPC Mac OS X; it) Opera 8.01" fall_back="generic_opera_8" id="opera_801_msie6_osx"/>
+
+    <device user_agent="Opera/8.50 (Windows NT 5.1; U; en)" fall_back="generic_opera_8" id="generic_opera_850">
+      <group id="product_info">
+        <capability name="model_name" value="8.50"/>
+      </group>
+    </device>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; en) Opera 8.50" id="generic_opera_850_subnt51" fall_back="generic_opera_850"/>
+    <device user_agent="Mozilla/4.0 (compatible; MSIE 6.0; X11; Linux i686; en) Opera 8.51" id="generic_opera_851_submsielinux" fall_back="generic_opera_850"/>
+    <device user_agent="Opera/8.51 (X11; Linux i686; U; en)" id="generic_opera_851_sublinux" fall_back="generic_opera_850"/>
+
+    <!-- Opera 9 -->
+
+    <device user_agent="Opera/9" fall_back="generic_opera_850" id="generic_opera_9">
+      <group id="product_info">
+        <capability name="model_name" value="9"/>
+      </group>
+    </device>
+    <device user_agent="Opera/9.23 (Windows NT 5.1; U; en)" fall_back="generic_opera_9" id="generic_opera_923_winnt"/>
+    <device user_agent="Opera/9.24 (Windows NT 5.1; U; en)" fall_back="generic_opera_9" id="generic_opera_924_winnt"/>
+    <device user_agent="Opera/9.25 (Windows NT 5.1; U; en)" fall_back="generic_opera_9" id="generic_opera_925_winnt"/>
+
+
+    <!-- Safari -->
+    <device user_agent="Mozilla/5.0 (Macintosh" fall_back="generic_web_browser" id="safari_desktop_browser"/>
+    <device user_agent="Mozilla/5.0 (Macintosh; U; PPC Mac OS X; en) AppleWebKit/125.5.5 (KHTML, like Gecko) Safari/125.12" fall_back="mozilla_ver5" id="safari_125_osx_en">
+      <group id="product_info">
+        <capability name="brand_name" value="Apple Safari"/>
+        <capability name="model_name" value="125.12"/>
+      </group>
+    </device>
+    <device user_agent="Mozilla/5.0 (Macintosh; U; Intel Mac OS X; it-it) AppleWebKit/418.9 (KHTML, like Gecko) Safari/419.3" fall_back="safari_125_osx_en" id="safari_4189_intel_osx_en">
+      <group id="product_info">
+        <capability name="model_name" value="418.9"/>
+      </group>
+    </device>
+
+    <!-- Lynx -->
+    <device user_agent="Lynx/1" fall_back="generic_web_browser" id="lynx1_desktop_browser"/>
+    <device user_agent="Lynx/2" fall_back="generic_web_browser" id="lynx2_desktop_browser"/>
+    <!-- for some reason user_agent="Lynx/" doesn't work, but including another character makes it work -->
+    <device user_agent="Lynx/3" fall_back="generic_web_browser" id="lynx3_desktop_browser"/>
+    <device user_agent="Lynx/4" fall_back="generic_web_browser" id="lynx4_desktop_browser"/>
+
+
+    <!-- Bots and crawlers -->
+    <device user_agent="Mozilla/5.0 (compatible; Googlebot" fall_back="generic_web_browser" id="generic_web_crawler">
+       <group id="product_info">
+        <capability name="brand_name" value="Robot" /> 
+        <capability name="model_name" value="Bot or Crawler" /> 
+       </group>
+       <group id="image_format">
+             <capability name="wbmp" value="false" /> 
+             <capability name="bmp" value="false" /> 
+             <capability name="epoc_bmp" value="false" /> 
+             <capability name="gif" value="false" /> 
+             <capability name="gif_animated" value="false" /> 
+             <capability name="jpg" value="false" /> 
+             <capability name="png" value="false" /> 
+             <capability name="tiff" value="false" /> 
+             <capability name="svgt_1_1" value="false" /> 
+             <capability name="svgt_1_1_plus" value="false" /> 
+             <capability name="greyscale" value="false" /> 
+             <capability name="colors" value="2" /> 
+       </group>
+       <group id="object_download">
+             <capability name="picture" value="false" /> 
+             <capability name="video" value="false" /> 
+       </group>
+    </device>
+
+    <device user_agent="Mozilla/2.0 (compatible; Ask Jeeves/Teoma" fall_back="generic_web_crawler" id="AskJeeves_Teoma"/>
+
+    <device user_agent="Mozilla/5.0 (compatible; Googlebot/" fall_back="generic_web_crawler" id="Googlebot"/>
+    <device user_agent="Mozilla/5.0 (compatible; Yahoo! Slurp" fall_back="generic_web_crawler" id="Yahoo_Slurp"/>
+    <device user_agent="Mozilla/4.0 (compatible; Netcraft Web Server Survey" fall_back="generic_web_crawler" id="Netcraft"/>
+    <device user_agent="Mozilla/4.0 (compatible; Google Desktop" fall_back="generic_web_crawler" id="Google_Desktop"/>
+
+    <device id ="curl_generic" fall_back="generic_web_crawler" user_agent="curl/" />
+    <device id ="curl_ver7_sub7123" fall_back="curl_generic" user_agent="curl/7.12.3 (i686-pc-linux-gnu) libcurl/7.12.3 OpenSSL/0.9.6c zlib/1.2.2" />
+
+    <device id="funwebproducts" fall_back="generic_web_crawler" user_agent="Fun Web Products" />
+    <device id="funwebproducts_ver1" fall_back="funwebproducts" user_agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; FunWebProducts)" />
+    <device id="funwebproducts_ver2" fall_back="funwebproducts" user_agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; SV1; FunWebProducts; .NET CLR 1.1.4322)" />
+    <device id="funwebproducts_ver3" fall_back="funwebproducts" user_agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; FunWebProducts; SV1)" />
+    <device id="funwebproducts_ver4" fall_back="funwebproducts" user_agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Win 9x 4.90; FunWebProducts; .NET CLR 1.1.4322)" />
+    
+    <device id="google" fall_back="generic_web_crawler" user_agent="Mediapartners-Google/2.1" />
+
+    <device id="spamblockerutility_ver1" fall_back="generic_web_crawler" user_agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.1; MaxiFilesTB; MaxiFiles; iebar; acc=wssshared; acc=none; (none); SpamBlockerUtility 4.7.1)" />
+    
+    <device id="nsplayer_ver1" fall_back="generic_web_crawler" user_agent="NSPlayer/9.0.0.3250" />
+    <device id="nsplayer_ver2" fall_back="generic_web_crawler" user_agent="NSPlayer/9.0.0.3250 WMFSDK/9.0" />
+
+    <device id="mimanet" fall_back="generic_web_crawler" user_agent="MIMAnet! Webtools (http://www.mimanet.com/scripts/webtools.html)" />
+
+    <!-- GetRight -->
+    <device user_agent="GetRight" fall_back="generic" id="getright_ver1">
+      <group id="product_info">
+        <capability name="is_wireless_device" value="false"/>
+        <capability name="device_claims_web_support" value="true"/>
+      </group>
+    </device>
+
+    <!-- http://lucene.apache.org/nutch/bot.html -->
+    <device user_agent="NutchCVS" fall_back="generic" id="nutchbot_ver1">
+      <group id="product_info">
+        <capability name="brand_name" value="Apache"/>
+        <capability name="model_name" value="Nutch bot"/>
+        <capability name="is_wireless_device" value="false"/>
+        <capability name="device_claims_web_support" value="true"/>
+      </group>
+    </device>
+
+    <!-- vobsub -->
+    <device user_agent="vobsub" fall_back="generic" id="vobsubcrawler_ver1">
+      <group id="product_info">
+        <capability name="is_wireless_device" value="false"/>
+        <capability name="device_claims_web_support" value="true"/>
+      </group>
+    </device>
+
+    <!-- enteos customer care customerca -->
+    <device user_agent="enteos customer care" fall_back="generic" id="enteos_ver1">
+      <group id="product_info">
+        <capability name="is_wireless_device" value="false"/>
+        <capability name="device_claims_web_support" value="true"/>
+      </group>
+    </device>
+
+    <!-- Windows Media Player -->
+    <device user_agent="Windows-Media-Player/9" fall_back="generic_web_crawler" id="windows_mediaplayer_ver9">
+      <group id="product_info">
+        <capability name="brand_name" value="Microsoft"/>
+        <capability name="model_name" value="Windows Media Player 9"/>
+      </group>
+    </device>
+    <device user_agent="Windows-Media-Player/9.00.00.3250" fall_back="windows_mediaplayer_ver9" id="windows_mediaplayer_ver9_sub900003250"/>
+    <device user_agent="Windows-Media-Player/9.00.00.2980" fall_back="windows_mediaplayer_ver9" id="windows_mediaplayer_ver9_sub900002980"/>
+    <device user_agent="Windows-Media-Player/9.00.00.3344" fall_back="windows_mediaplayer_ver9" id="windows_mediaplayer_ver9_sub900003344"/>
+    <device user_agent="Windows-Media-Player/10" fall_back="windows_mediaplayer_ver9" id="windows_mediaplayer_ver10">
+      <group id="product_info">
+        <capability name="model_name" value="Windows Media Player 10"/>
+      </group>
+    </device>
+    <device user_agent="Windows-Media-Player/10.00.00.3990" fall_back="windows_mediaplayer_ver10" id="windows_mediaplayer_ver10_sub10000003990"/>
+
+    <!-- WebTrends -->
+    <device user_agent="WebTrends" fall_back="generic" id="webtrends">
+      <group id="product_info">
+        <capability name="is_wireless_device" value="false"/>
+        <capability name="device_claims_web_support" value="true"/>
+      </group>
+    </device>
+    <device user_agent="WebTrends/3.0 (WinNT)" fall_back="webtrends" id="webtrends_ver3"/>
+
+    <!-- Bots from Anders Magnus Andersen -->
+
+       <!--  Mobiletech Bot   --> 
+       <device user_agent="Mobiletech.HTTPChecker.pl/2.1.0 - May 2007" fall_back="generic_web_crawler" id="mobiletechbot_v2_1_0">
+       <group id="product_info">
+       <capability name="brand_name" value="Robot" /> 
+       <capability name="model_name" value="Mobiletch HttpChecker" /> 
+       </group>
+       </device>
+       <!--  alpha.headedout  --> 
+       <device user_agent="alpha.headedout" fall_back="generic_web_crawler" id="alpha_headedout">
+       <group id="product_info">
+       <capability name="brand_name" value="Robot" /> 
+       <capability name="model_name" value="Alpha Headedout/Anonymouse" /> 
+       </group>
+       </device>
+       <device user_agent="http://alpha.headedout.com/docz/index.htm" fall_back="alpha_headedout" id="alpha.headedout_1" /> 
+       <device user_agent="http://Anonymouse.org/ (Unix)" fall_back="alpha_headedout" id="anonymouse_1" /> 
+       <!--  FAST  --> 
+       <device user_agent="fast_crawler" fall_back="generic_web_crawler" id="fast_robot">
+       <group id="product_info">
+       <capability name="brand_name" value="Robot" /> 
+       <capability name="model_name" value="Fast" /> 
+       </group>
+       </device>
+       <device user_agent="Nokia6230/2.0 FAST Crawler" fall_back="fast_robot" id="fast_robot_Nokia6230" /> 
+       <device user_agent="Nokia6230i/subindex.jsp?id=1505. FAST Crawler" fall_back="fast_robot" id="fast_robot_Nokia6230subindex" /> 
+       <device user_agent="FAST EnterpriseCrawler 6" fall_back="fast_robot" id="fast_crawler_1" /> 
+       <device user_agent="FAST Enterprise Crawler 6 used by FAST (admin@fast.no)" fall_back="fast_robot" id="fast_crawler_2" /> 
+       <device user_agent="schibstedsokbot (compatible; Mozilla/5.0; MSIE 5.0; FAST FreshCrawler 6; +http://www.schibstedsok.no/bot/)" fall_back="fast_robot" id="schibstedsokbot_crawler_1" /> 
+       <device user_agent="schibstedsokbot (compatible; Mozilla/5.0; MSIE 5.0; FAST Crawler 6; +http://www.schibstedsok.no/bot/)" fall_back="fast_robot" id="schibstedsokbot_crawler_2" /> 
+       <device user_agent="FAST Enterprise Crawler 6 used by a (a@b)" fall_back="fast_robot" id="fastbot3" /> 
+       <device user_agent="nokia6610I/1.0 (4.10) Profile/MIDP-1.0 Configuration/CLDC-1.0 (FAST WAP Proxy/1.0)" fall_back="fast_robot" id="fastbot4" /> 
+       <!--   FINDEXA   --> 
+       <device user_agent="findexa_crawler" fall_back="generic_web_crawler" id="findexa_robot">
+       <group id="product_info">
+       <capability name="brand_name" value="Robot" /> 
+       <capability name="model_name" value="Findexa" /> 
+       </group>
+       </device>
+       <device user_agent="Findexa Crawler (http://www.findexa.no/gulesider/article26548.ece)" fall_back="findexa_robot" id="findexa_gulesider" /> 
+       <!--  GOOGLE  --> 
+       <device user_agent="Googlebot" fall_back="generic_web_crawler" id="google_robot">
+       <group id="product_info">
+       <capability name="brand_name" value="Robot" /> 
+       <capability name="model_name" value="Google" /> 
+       </group>
+       </device>
+       <device user_agent="Generic Mobile Phone (compatible; Googlebot-Mobile/2.1; +http://www.google.com/bot.html)" fall_back="google_robot" id="google_generic" /> 
+       <device user_agent="Mozilla/5.0 (Macintosh; U; PPC Mac OS X Mach-O; en-US; rv:1.8) Gecko/20051204 Googlebot 2.1" fall_back="google_robot" id="google_generic2" /> 
+       <device user_agent="Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)" fall_back="google_robot" id="google_generic3" /> 
+       <device user_agent="GoogleBot/." fall_back="google_robot" id="googlebot2" /> 
+       <device user_agent="Googlebot-Image/1.0" fall_back="google_robot" id="googlebot3" /> 
+       <!--  Look.su  --> 
+       <device user_agent="Look.su" fall_back="generic_web_crawler" id="look_su">
+       <group id="product_info">
+       <capability name="brand_name" value="Robot" /> 
+       <capability name="model_name" value="Look.su" /> 
+       </group>
+       </device>
+       <device user_agent="DoCoMo/1.0/N505i/c20/TB/W20H10 (compatible; Look.su bot/2.0)" fall_back="look_su" id="look_su1" /> 
+       <!--  GIRFABOT --> 
+       <device user_agent="girfabot" fall_back="generic_web_crawler" id="girfabot">
+       <group id="product_info">
+       <capability name="brand_name" value="Robot" /> 
+       <capability name="model_name" value="Girfa" /> 
+       </group>
+       </device>
+       <device user_agent="Mozilla/4.0 (compatible; MSIE 5.0; Windows NT; Girafabot; girafabot at girafa dot com; http://www.girafa.com)" fall_back="girfabot" id="girfabot_msie50" /> 
+       <device user_agent="Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 4.0; Girafabot; girafabot at girafa dot com; http://www.girafa.com)" fall_back="girfabot" id="girfabot_msie60" /> 
+       <!--  GOOGLE PROXY  --> 
+       <device user_agent="GoogleProxy" fall_back="generic" actual_device_root="true" id="google_proxy">
+       <group id="product_info">
+       <capability name="brand_name" value="Google" /> 
+       <capability name="model_name" value="Proxy" /> 
+       </group>
+       </device>
+       <!--  JAVA  --> 
+       <device user_agent="Java" fall_back="generic_web_browser" id="javabot">
+       <group id="product_info">
+       <capability name="brand_name" value="Java" /> 
+       </group>
+       </device>
+       <device user_agent="Java/1.5.0_03" fall_back="javabot" id="java15_03">
+       <group id="product_info">
+       <capability name="model_name" value="1.5_03" /> 
+       </group>
+       </device>
+       <device user_agent="Java/1.5.0_05" fall_back="javabot" id="java15_05">
+       <group id="product_info">
+       <capability name="model_name" value="1.5_05" /> 
+       </group>
+       </device>
+       <device user_agent="Java/1.4" fall_back="javabot" id="java14">
+       <group id="product_info">
+       <capability name="model_name" value="1.4" /> 
+       </group>
+       </device>
+       <device user_agent="Java/1.4.1-rc" fall_back="java14" id="java141rc" /> 
+       <device user_agent="Java/1.4.1_04" fall_back="java14" id="java14104" /> 
+       <!--  JAVA  --> 
+       <device user_agent="Jakarta Commons-HttpClient/" fall_back="generic_web_browser" id="jakarta_commons">
+       <group id="product_info">
+       <capability name="brand_name" value="Jakarta Commons" /> 
+       <capability name="model_name" value="HttpClient/3.0" /> 
+       </group>
+       </device>
+       <device user_agent="Jakarta Commons-HttpClient/3.0" fall_back="jakarta_commons" id="jakarta_commons_3_0" /> 
+       <!--  GIGABOT  --> 
+       <device user_agent="Gigabot" fall_back="generic_web_crawler" id="gigabot_robot">
+       <group id="product_info">
+       <capability name="brand_name" value="Robot" /> 
+       <capability name="model_name" value="Gigabot" /> 
+       </group>
+       </device>
+       <device user_agent="Gigabot/2.0/gigablast.com/spider.html" fall_back="gigabot_robot" id="gigablast" /> 
+       <!--  VAGABONDO  --> 
+       <device user_agent="Vagabondo" fall_back="generic_web_crawler" id="vagabondo_robot">
+       <group id="product_info">
+       <capability name="brand_name" value="Robot" /> 
+       <capability name="model_name" value="Vagabondo" /> 
+       </group>
+       </device>
+       <device user_agent="Vagabondo-WAP/2.0 (webcrawler at wise-guys dot nl; http://webagent.wise-guys.nl/)/1.0 Profile" fall_back="vagabondo_robot" id="vagabondo_2" /> 
+       <device user_agent="Vagabondo/3.0 (webagent at wise-guys dot nl)" fall_back="vagabondo_robot" id="vagabondo_3" /> 
+       <device user_agent="webcrawler" fall_back="generic_web_crawler" id="webcrawler">
+       <group id="product_info">
+       <capability name="brand_name" value="Robot" /> 
+       <capability name="model_name" value="webcrawler" /> 
+       </group>
+       </device>
+       <!--  Theca  --> 
+       <device user_agent="Theca" fall_back="generic_web_crawler" id="theca_robot">
+       <group id="product_info">
+       <capability name="brand_name" value="Robot" /> 
+       <capability name="model_name" value="Theca" /> 
+       </group>
+       </device>
+       <device user_agent="ThecaCrawlerEngine" fall_back="theca_robot" id="theca_crawler" /> 
+       <!--  YAHOO   --> 
+       <device user_agent="Yahoo" fall_back="generic_web_crawler" id="yahoo_robot">
+       <group id="product_info">
+       <capability name="brand_name" value="Robot" /> 
+       <capability name="model_name" value="Yahoo" /> 
+       </group>
+       </device>
+       <device user_agent="Mozilla/5.0 (compatible; Yahoo! Slurp; http://help.yahoo.com/help/us/ysearch/slurp)" fall_back="yahoo_robot" id="yahoo_crawler" /> 
+       <!--  MSN   --> 
+       <device user_agent="MSN" fall_back="generic_web_crawler" id="msn_robot">
+       <group id="product_info">
+       <capability name="brand_name" value="Robot" /> 
+       <capability name="model_name" value="MSN" /> 
+       </group>
+       </device>
+       <device user_agent="msnbot/1.0 (+http://search.msn.com/msnbot.htm)" fall_back="msn_robot" id="msnbot_1" /> 
+       <device user_agent="msnbot/0.9 (+http://search.msn.com/msnbot.htm)" fall_back="msn_robot" id="msnbot_2" /> 
+       <device user_agent="msnbot-media/1.0 (+http://search.msn.com/msnbot.htm)" fall_back="msn_robot" id="msnbot_3" /> 
+       <!--  Startsiden   --> 
+       <device user_agent="Startsiden" fall_back="generic_web_crawler" id="startsiden_robot">
+       <group id="product_info">
+       <capability name="brand_name" value="Robot" /> 
+       <capability name="model_name" value="Startsiden" /> 
+       </group>
+       </device>
+       <device user_agent="startsidenbot (http://www.startsiden.no/bot/)" fall_back="startsiden_robot" id="startsiden/bot" /> 
+       <device user_agent="startsidenbot (http://www.startsiden.no/bot/subindex.jsp?id=1505)" fall_back="startsiden_robot" id="startsiden/bot1505" /> 
+       <!--  WISENut   --> 
+       <device user_agent="WISENut" fall_back="generic_web_crawler" id="WISENut_robot">
+       <group id="product_info">
+       <capability name="brand_name" value="Robot" /> 
+       <capability name="model_name" value="WISENut" /> 
+       </group>
+       </device>
+       <device user_agent="Mozilla/4.0 compatible ZyBorg/1.0 (wn-14.zyborg@looksmart.net; http://www.WISEnutbot.com)" fall_back="WISENut_robot" id="WISENut/bot14" /> 
+       <device user_agent="Mozilla/4.0 compatible ZyBorg/1.0 (wn-16.zyborg@looksmart.net; http://www.WISEnutbot.com)" fall_back="WISENut_robot" id="WISENut/bot16" /> 
+       <device user_agent="Mozilla/4.0 compatible ZyBorg/1.0 Dead Link Checker (wn.dlc@looksmart.net; http://www.WISEnutbot.com)" fall_back="WISENut_robot" id="WISENut/linkchecker" /> 
+       <!--  Ask Jeeves   --> 
+       <device user_agent="AskJeeves" fall_back="generic_web_crawler" id="AskJeeves_robot">
+       <group id="product_info">
+       <capability name="brand_name" value="Robot" /> 
+       <capability name="model_name" value="AskJeeves" /> 
+       </group>
+       </device>
+       <device user_agent="Mozilla/2.0 (compatible; Ask Jeeves/Teoma; +http://sp.ask.com/docs/about/tech_crawling.html)" fall_back="AskJeeves_robot" id="AskJeeves/bot" /> 
+       <!--  Motionbot   --> 
+       <device user_agent="Motionbot" fall_back="generic_web_crawler" id="Motionbot_robot">
+       <group id="product_info">
+       <capability name="brand_name" value="Robot" /> 
+       <capability name="model_name" value="Motionbot" /> 
+       </group>
+       </device>
+       <!--  www.MyFamily.inc   --> 
+       <device user_agent="Mozilla/4.0 (compatible; MyFamilyBot" fall_back="generic_web_crawler" id="myfamily_robot">
+       <group id="product_info">
+       <capability name="brand_name" value="Robot" /> 
+       <capability name="model_name" value="MyFamily" /> 
+       </group>
+       </device>
+       <device user_agent="Mozilla/4.0 (compatible; MyFamilyBot/1.0; http://www.myfamilyinc.com)" fall_back="myfamily_robot" id="myfamily10" /> 
+       <!--  www.peterz.info   --> 
+       <device user_agent="www.peterz.info" fall_back="generic_web_crawler" id="peterz">
+       <group id="product_info">
+       <capability name="brand_name" value="Robot" /> 
+       <capability name="model_name" value="Peterz" /> 
+       </group>
+       </device>
+       <!--  VALIDATOR  --> 
+       <device user_agent="Validator6630" fall_back="nokia_6630_ver1" id="validator_Nokia6630">
+       <group id="product_info">
+       <capability name="brand_name" value="Validator" /> 
+       </group>
+       </device>
+       <device user_agent="ValidatorT610" fall_back="sonyericsson_t610_ver1" id="validator_SonyEricssonT610">
+       <group id="product_info">
+       <capability name="brand_name" value="Validator" /> 
+       </group>
+       </device>
+
+    <!-- End of Bots and crawlers -->
+
+  </devices>
+</wurfl_patch>

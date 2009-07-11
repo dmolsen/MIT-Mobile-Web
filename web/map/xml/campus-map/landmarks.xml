@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="iso-8859-1" standalone="no"?>
+<!DOCTYPE campusmap SYSTEM "../dtd/map.dtd">
+<campusmap>
+  <object id="object-L1">
+    <name>B.U. Bridge</name>
+    <category>landmark</category>
+  </object>
+  <object id="object-L10">
+    <name>Marriott/Residence Inn</name>
+    <category>landmark</category>
+    <website>http://residenceinn.com/BOSCM/</website>
+    <street>6 Cambridge Center</street>
+  </object>
+  <object id="object-L11">
+    <name>Hyatt Regency Hotel</name>
+    <category>landmark</category>
+    <website>http://www.hyatt.com/pages/b/bosrca.html</website>
+    <street>575 Memorial Drive</street>
+  </object>
+  <object id="object-L12">
+    <name>The Kendall Hotel</name>
+    <category>landmark</category>
+    <street>350 Main Street</street>
+  </object>
+  <object id="object-L13">
+    <name>Whitehead Institute</name>
+    <category>landmark</category>
+    <website>http://www.wi.mit.edu/</website>
+    <street>9 Cambridge Center</street>
+  </object>
+  <object id="object-L14">
+    <name>Draper Laboratory</name>
+    <category>landmark</category>
+    <website>http://www.draper.com/</website>
+    <street>555 Technology Square</street>
+  </object>
+  <object id="object-L2">
+    <name>Harvard Bridge</name>
+    <category>landmark</category>
+  </object>
+  <object id="object-L3">
+    <name>Longfellow Bridge</name>
+    <category>landmark</category>
+  </object>
+  <object id="object-L4">
+    <name>Marriott Hotel</name>
+    <category>landmark</category>
+    <website>http://marriotthotels.com/BOSCB/</website>
+    <street>2 Cambridge Center</street>
+  </object>
+  <object id="object-L5">
+    <name>Kendall Square T</name>
+    <category>landmark</category>
+    <website>http://www.mbta.com/traveling_t/schedules_subway_stationinfo.asp?staname=Kendall</website>
+  </object>
+  <object id="object-L7">
+    <name>Hotel @ MIT</name>
+    <category>landmark</category>
+    <website>http://www.hotelatmit.com/</website>
+    <street>20 Sidney Street</street>
+  </object>
+  <object id="object-L8">
+    <name>77 Massachusetts Ave.</name>
+    <category>landmark</category>
+    <street>77 Massachusetts Avenue</street>
+  </object>
+  <object id="object-L9">
+    <name>84 Massachusetts Ave.</name>
+    <category>landmark</category>
+    <street>84 Massachusetts Avenue</street>
+  </object>
+</campusmap>

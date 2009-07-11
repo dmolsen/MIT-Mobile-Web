@@ -1,0 +1,68 @@
+<?php
+$page->title('MIT Shuttle Schedule')
+     ->navbar_image('title-shuttleschedule')
+     ->add_stylesheet('styles/shuttletrack-ip')
+     ->breadcrumbs('Shuttle Schedule')
+     ->breadcrumb_home();
+
+
+$page->content_begin();
+?>	
+
+        <div class="nonfocal">
+                <p id="statusmessage"></p>
+                <h3>Daytime Shuttles:</h3>
+        </div>
+
+	<a name="top"></a>
+	<ul class="nav">
+            <? foreach($day_routes as $route) { ?>
+                <? if($route->isRunning($day, $hour, $minute)) { ?>
+                   <li class="icon running">
+                <? } else { ?>
+ 		   <li class="icon nonrunning">
+                <? } ?>
+			<a href="<?=routeURL($route)?>"><?=$route->getName()?></a>
+		</li>
+           <? } ?>
+	</ul>
+
+        <div class="nonfocal">
+                <p id="statusmessage"></p>
+                <h3>Nighttime Saferide Shuttles:</h3>
+        </div>
+
+	<a name="top"></a>
+	<ul class="nav">
+            <? foreach($night_routes as $route) { ?>
+                <? if($route->isRunning($day, $hour, $minute)) { ?>
+                   <li class="icon running">
+                <? } else { ?>
+ 		   <li class="icon nonrunning">
+                <? } ?>
+			<a href="<?=routeURL($route)?>"><?=$route->getName()?></a>
+		</li>
+           <? } ?>
+	</ul>
+	
+	<div class="nonfocal legend">
+	       <div class="icon running">Running</div>
+               <div class="icon nonrunning">Not currently running</div>
+	</div>
+
+	<ul class="secondary">
+		<li>
+			<a href="tel:16172586510" class="phone">Parking office <span class="smallprint">(617.258.6510)</span></a>
+		</li>
+		<li>
+			<a href="tel:16172587725" class="phone">xTRACK <span class="smallprint">(617.258.7725)</span></a>
+		</li>
+		<li>
+			<a href="tel:16172532997" class="phone">Saferide <span class="smallprint">(617.253.2997)</span></a>
+		</li>
+	</ul>
+
+<? 
+$page->content_end();
+$page->extra_footer("Map service provided by Facilities Department and");
+?>

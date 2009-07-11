@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN" "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="content-type" content="application/xhtml+xml" />
+	<meta name="viewport" id="viewport" content="width=device-width, user-scalable=yes" />	
+	<title>MIT Map: Browse Food Services</title>
+	<link rel="stylesheet" type="text/css" href="../../styles/ip.css" />
+  	<link rel="apple-touch-icon" href="http://mobi.mit.edu/images/ip/icon.png" />
+	<script src="javascripts/map-ip.js" type="text/javascript"> </script>
+</head>
+
+<body onload="scrollTo(0,1);">
+
+<div id="navbar">	
+	<div class="breadcrumbs">
+		<a href="../../home/ip/index.html" class="homelink"><img src="../../images/ip/homelink.png" width="62" height="36" alt="MIT Mobile Web Home" /></a><a href="index.html" class="module"><img src="../../images/ip/title-map.png" width="28" height="28" alt="" /></a><div class="pagetitle">Browse Map</div>
+	</div>
+	<div class="help">
+		<a href="help.html"><img src="../../images/ip/help.png" width="34" height="36" alt="Help" /></a>
+	</div>
+</div>
+
+<div id="container">
+		
+	<div class="nonfocal">
+		<h2>Browse Food Services</h2>
+	</div>
+	
+	<ul class="results">
+		<li><a href="detail.html?selection=W20">Anna's Taqueria</a></li>
+		<li><a href="detail.html?selection=W35">Au Bon Pain</a></li>
+		<li><a href="detail.html?selection=W7">Baker Dining</a></li>
+		<li><a href="detail.html?selection=68">Bio Cafe</a></li>
+		<li><a href="detail.html?selection=7">Bosworth's Cafe</a></li>
+		<li><a href="detail.html?selection=4">Cafe 4</a></li>
+		<li><a href="detail.html?selection=W20">Cafe Spice (Lobdell Food Court)</a></li>
+		<li><a href="detail.html?selection=W20">Cambridge Grill</a></li>
+		<li><a href="detail.html?selection=W20">Dunkin Donuts</a></li>
+		<li><a href="detail.html?selection=E52">Faculty Club</a></li>
+		<li><a href="detail.html?selection=32">Faculty Lunch</a></li>
+		<li><a href="detail.html?selection=32">Forbes family cafe</a></li>
+		<li><a href="detail.html?selection=P9">Goosebeary's (food truck)</a></li>
+		<li><a href="detail.html?selection=46">Hungry Mind Cafe</a></li>
+		<li><a href="detail.html?selection=P9">Jerusalem Cafe (food truck)</a></li>
+		<li><a href="detail.html?selection=P9">Jose's Mexican Food (food truck)</a></li>
+		<li><a href="detail.html?selection=W11">Kosher Shabbat Dinner</a></li>
+		<li><a href="detail.html?selection=W20">La Verde's Market</a></li>
+		<li><a href="detail.html?selection=W61">MacGregor Convenience</a></li>
+		<li><a href="detail.html?selection=W4">McCormick Dining</a></li>
+		<li><a href="detail.html?selection=50">Muddy Charles Pub</a></li>
+		<li><a href="detail.html?selection=W71">Next House Dining</a></li>
+		<li><a href="detail.html?selection=NW86">Pacific St. Cafe</a></li>
+		<li><a href="detail.html?selection=50">Pritchett Convenience</a></li>
+		<li><a href="detail.html?selection=50">Pritchett Grill</a></li>
+		<li><a href="detail.html?selection=32">R and D (Pub)</a></li>
+		<li><a href="detail.html?selection=E52">Refresher Course</a></li>
+		<li><a href="detail.html?selection=W20">Sepal (Lobdell Food Court)</a></li>
+		<li><a href="detail.html?selection=W20">Shinkansen Japan (Lobdell Food Court)</a></li>
+		<li><a href="detail.html?selection=W79">Simmons Dining</a></li>
+		<li><a href="detail.html?selection=W79">Simmons Late Night Cafe</a></li>
+		<li><a href="detail.html?selection=7">Steam Cafe</a></li>
+		<li><a href="detail.html?selection=W20">Subway Restaurant (Lobdell Food Court)</a></li>
+		<li><a href="detail.html?selection=W1">Thirsty Ear Pub</a></li>
+		<li><a href="detail.html?selection=P9">Yona's Pizza (food truck)</a></li>
+	</ul>
+	
+	<div class="nonfocal">
+		<form action="index.html" method="get">
+			<select onchange="jumpbrowse(this)">
+				<option value="" selected="selected">Browse map by:</option>
+				<option value="number">Building number</option>
+				<option value="name">Building name</option>
+				<option value="residences">Residences</option>
+				<option value="rooms">Selected rooms</option>
+				<option value="streets">Streets &amp; Landmarks</option>
+				<option value="courts">Courts &amp; Greenspace</option>
+				<option value="food">Food Services</option>
+				<option value="parking">Parking Lots</option>
+			</select>
+		</form>
+	</div>
+	
+</div> <!-- id="container" -->
+
+<div id="footer">
+	<a href="http://web.mit.edu/ist/"><img src="../../images/ip/ist-logo.png" width="35" height="21" alt="IST" /></a>Campus map provided by Department of Facilities and Information Services &amp; Technology
+</div>
+
+</body>
+</html>
