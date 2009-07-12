@@ -63,11 +63,7 @@ class PageViews {
 
   private static function getDay($day) {
     $db = db::$connection;
-    $result = $db->query("SELECT * FROM PageViews", SQLITE_ASSOC, $query_error);
-    if ($query_error) {
-	echo("error: ".$query_error);
-        exit;
-    }
+    $result = $db->query("SELECT * FROM PageViews WHERE day='$day'");
     if($row = $result->fetch()) {
       return $row;
     }
