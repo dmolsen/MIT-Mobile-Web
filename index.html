@@ -52,53 +52,61 @@
       A slightly cleaned-up version of the MIT Mobile Web Open Source Project source code (version 0.9). The original source was used to create the MIT Mobile Web (version 1.0).
     </div>
 
-    <p>The MIT Mobile Web is a modular framework for creating and hosting web services optimized for mobile devices. The project hosted on GitHub aims to clean up & provide documentation for the 0.9 version released by MIT.
+    <p>The MIT Mobile Web is a modular framework for creating and hosting web services optimized for mobile devices. The project hosted on GitHub aims to clean up &amp; provide documentation for the 0.9 version released by MIT.</p>
 
-The MIT Mobile Web  includes specialized modules for searching and browsing LDAP and ArchGIS, as well as more MIT specific services like Stellar and the Events Calendar. It also includes generic modules like 3Down and Emergency Info, which could be modified to present any RSS feed in a mobile-friendly manner.
+<p>The MIT Mobile Web  includes specialized modules for searching and browsing LDAP and ArchGIS, as well as more MIT specific services like Stellar and the Events Calendar. It also includes generic modules like 3Down and Emergency Info, which could be modified to present any RSS feed in a mobile-friendly manner.</p>
 
-MIT Mobile Web is written with PHP, Python, Javascript, HTML, and CSS. It uses Python with the open source Wireless Universal Resource File (WURFL) to categorize devices, allowing for an experience tailored to each device's capabilities. It uses PHP to dynamically generate pages and also handles the parsing and quering of external services, such as LDAP and ArchGIS. Javascript is used for more modern devices to provide a more dynamic experience, such as the special behavior of the Shuttle Schedule when an iPhone's orientation changes. 
+<p>MIT Mobile Web is written with PHP, Python, Javascript, HTML, and CSS. It uses Python with the open source Wireless Universal Resource File (WURFL) to categorize devices, allowing for an experience tailored to each device's capabilities. It uses PHP to dynamically generate pages and also handles the parsing and quering of external services, such as LDAP and ArchGIS. Javascript is used for more modern devices to provide a more dynamic experience, such as the special behavior of the Shuttle Schedule when an iPhone's orientation changes. </p>
 
-There is currently a lot of duplicated effort among schools looking to implement their own mobile web, and most schools don't even have the resources to start from scratch. Many educational institutions have similar infrastructure to MIT, so adapting the MIT Mobile Web to work with their services would be relatively simple. Opening up the source to the MIT Mobile Web will garner goodwill and prestige among educational institutions.</p><h2>Dependencies</h2>
-<p>Apache 2.2.3
-PHP 5.1.6 or greater
-Python 2.4.3 or greater
-PyWURFL (see http://celljam.net/)
-ElementTree (see http://effbot.org/downloads/#elementtree)
-Python Levenshtein (see http://code.michael-noll.com/?p=third-party;a=tree;f=python-Levenshtein-0.10.1)
+<p>There is currently a lot of duplicated effort among schools looking to implement their own mobile web, and most schools don't even have the resources to start from scratch. Many educational institutions have similar infrastructure to MIT, so adapting the MIT Mobile Web to work with their services would be relatively simple. Opening up the source to the MIT Mobile Web will garner goodwill and prestige among educational institutions.</p>
 
-For database support you can use MySQL or SQLite. The current version of tweaked code uses PDO w/ SQLite driver. To test if you have the correct drivers run 'extra/pdo_drivers.php'.</p>
+<h2>Dependencies</h2>
+<ul>
+	<li> Apache 2.2.3</li>
+	<li> PHP 5.1.6 or greater</li>
+	<li> Python 2.4.3 or greater</li>
+	<li> <a href="http://celljam.net/">PyWURFLsee</a></li>
+	<li> <a href="http://effbot.org/downloads/#elementtree">ElementTree</a></li>
+	<li> <a href="http://code.michael-noll.com/?p=third-party;a=tree;f=python-Levenshtein-0.10.1">Python Levenshtein</a></li>
+</ul>
+<p>For database support you can use MySQL or SQLite. The current version of tweaked code uses PDO w/ SQLite driver. To test if you have the correct drivers run 'extra/pdo_drivers.php'.</p>
+
 <h2>Install</h2>
-<p>To use Git for the install you can type the following at the command prompt in the directory you want this installed:
+<p>To use Git for the install you can type the following at the command prompt in the directory you want this installed:</p>
 
-git clone git://github.com/dmolsen/MIT-Mobile-Web.git
+<code>git clone git://github.com/dmolsen/MIT-Mobile-Web.git</code>
 
-Alternatively you can also download it by clicking the green download link on:
+<p>Alternatively you can also download it using the "Download" section below.</p>
 
-http://github.com/dmolsen/MIT-Mobile-Web/
+<h2>Configuring the Code</h2>
 
-Configuring Code
+<p>You will need to make the following changes to the code to get it working:</p>
 
-You will need to make the following changes to the code to get it working:
+<ol> 
+	<li> If using SQLite copy development.copy.sqlite3 to development.sqlite3</li>
+	<li> Open 'lib/db.php'. If using SQLite edit line #20 w/ the correct path to your project. If using MySQL comment out line #20 and uncomment line #21. Also edit the connection properties on lines #13-#16.</li>
+	<li> Open 'web/page_builder/Page.php'. Edit line #134 w/ the correct hostname for your project.</li>
+	<li> Open 'wurfl/mobile_detect.py'. Edit line #11 w/ the correct path for your project. </li>
+</ol>
 
-1. If using SQLite copy development.copy.sqlite3 to development.sqlite3
-2. Open 'lib/db.php'. If using SQLite edit line #20 w/ the correct path to your project. If using MySQL comment out line #20 and uncomment line #21. Also edit the connection properties on lines #13-#16.
-3. Open 'web/page_builder/Page.php'. Edit line #134 w/ the correct hostname for your project.
-4. Open 'wurfl/mobile_detect.py'. Edit line #11 w/ the correct path for your project. 
+<h2>Configuring Apache</h2>
 
-Configuring Apache
-A simple example configuration for Apache is included in the folder 'extra'.</p>
+<p>A simple example configuration for Apache is included in the folder 'extra'.</p>
+
 <h2>License</h2>
-<p>Copyright (c) 2008 Massachusetts Institute of Technology
+<p>Copyright (c) 2008 Massachusetts Institute of Technology</p>
 
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
 
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+
 <h2>Authors</h2>
-<p>MIT Information Systems & Technology (IS&T)<br/>Dave Olsen</p>
+<p>MIT Information Systems &amp; Technology (IS&amp;T)<br/>Dave Olsen</p>
+
 <h2>Contact</h2>
-<p>Dave Olsen (dmolsen@gmail.com)<br/>      </p>
+<p>Dave Olsen (dmolsen@gmail.com)</p>
 
 
     <h2>Download</h2>
