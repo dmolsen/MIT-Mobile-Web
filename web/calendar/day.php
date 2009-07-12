@@ -9,7 +9,7 @@
 
 
 require "../page_builder/page_header.php";
-require "../../../lib/trunk/mit_calendar.php";
+require "../../lib/mit_calendar.php";
 
 //defines all the variables related to being today
 require "calendar_lib.php";
