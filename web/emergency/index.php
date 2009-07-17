@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright (c) 2008 Massachusetts Institute of Technology
  * 
@@ -7,53 +8,50 @@
  * 
  */
 
-
 $main = array(
-  i("6172531212", "Campus Police"),
-  i("6172531311", "MIT Medical"),
-  i("6172537669", "Emergency Status")
+  i("3042932677", "Campus Police"),
+  i("3042936924", "Health Sciences Safety Office"),
+  i("8009880096", "WVU Emergency Line"),
+  i("3042930111", "WVU General Information")
 );
 
 $others = array(
-  i("6172531311", "MIT Medical", "24-hour urgent care"),
-  i("617253SNOW", "Emergency Closings", "recorded updates"),
-  i("6173245031", "International SOS", "emergency medical and security evacuation services for those traveling abroad on MIT business"),
-  i("6172534948", "Facilities", "24-hour emergency repairs"),
-  i("6172538800", "Nightline", "MIT student hotline 7pm-7am"),
-  i("6172532997", "Safe Ride", "campus transportation 6pm-3am"),
-  i("6172532700", "MIT News Office"),
-  i("6172534795", "Information Center"),
-  i("6172531212", "MIT Police"),
-  i("6172537276", "MIT Police - Guest Parking"),
-  i("6172539753", "MIT Police - Lost and Found"),
-  i("617253DOWN", "Computer and Communications Outages"),
-  i("6174523477", "Environment, Health & Safety"),
-  i("6172587366", "Security and Emergency Management Office"),
-  i("6172538000", "Message Center - Fax Service"),
-  i("6172533692", "Message Center - Emergency Number"),
-  i("6172531000", "Telephone Service - MIT Directory Assistance"),
-  i("6172534357", "Telephone Service - Service Problems"),  
-  i("6172536311", "Travel directions to MIT"),
-  i("6172539200", "Bates Linear Accelerator Center"),
-  i("7819815555", "Haystack Observatory"),
-  i("7819813333", "Lincoln Laboratory Emergencies", "security desk"),
+  i("3042933136", "Campus Police"),
+  i("3042936997", "Carruth Center for Counseling and Psychological Services"),
+  i("3042936700", "Disability Services"),
+  i("3042933792", "Environment, Health & Safety"),
+  i("3042935590", "Faculty-Staff Assistance Program"),
+  i("3042936924", "Health Sciences Safety Office"),
+  i("8009880096", "Parents Club Hotline"),
+  i("3042934357", "Physical Plant"),
+  i("3042932311", "Student Health Service"),
+  i("3042934444", "Telephone Service Problems"),  
+  i("8009880096", "WVU Emergency Line"),
+  i("3042930111", "WVU General Information")
 );
 
-require_once "../../../lib/trunk/rss_services.php";
+require_once "../../lib/rss_services.php";
 
 $emergency_message = "Coming Soon: Emergency Updates"; 
 $Emergency = new Emergency();
-$emergency = $Emergency->get_feed();
+$emergencies = $Emergency->get_feed();
 
-if($emergency === False) {
+if($emergencies === False) {
   $paragraphs = array('Emergency information is currently not available');
 } else {
-  $text = explode("\n", $emergency['Emergency Information']['text']);
-  $paragraphs = array();
-  foreach($text as $paragraph) {
-    if($paragraph) {
-      $paragraphs[] = htmlentities($paragraph);
-    }
+  foreach ($emergencies as $title => $emergency) {
+	$text = explode("\n", $emergency[$title]['text']);
+	$paragraphs = array();
+	foreach($text as $paragraph) {
+	  if($paragraph) {
+	    $paragraphs[] = htmlentities($paragraph);
+	  }
+	}
+  }
+
+  // handle the case that an emergency RSS feed doesn't return data until emergency (like e2campus)
+  if ($paragraphs == False) {
+	$paragraphs = array("There is currently no emergency on campus.");
   }
 }
 

@@ -8,7 +8,8 @@
  */
 
 class Emergency extends RSS {
-  protected $rss_url = "http://emergency.mit.edu/emergency/rss.php";
+  // e2campus feed for WVU
+  protected $rss_url = "http://feeds.omnilert.net/rss/d014a0436fd6c76e17d4931495231bea/b8d5ae4de409bcc5b5977f77e4222413/10/3178a/2/";
 }
  
 class ThreeDown extends RSS {
@@ -38,9 +39,9 @@ class RSS {
     foreach($rss_root->getElementsByTagName('item') as $item) {    
       $title = trim(self::getTag($item, 'title')->nodeValue);
       $items[$title] = array(
-	  "date"     => date_parse(self::getTag($item, 'pubDate')->nodeValue),
-          "unixtime" => strtotime(self::getTag($item, 'pubDate')->nodeValue),
-	  "text"     => self::cleanText(self::getTag($item, 'description')->nodeValue)
+	    "date"     => getdate(strtotime(self::getTag($item, 'pubDate')->nodeValue)),
+        "unixtime" => strtotime(self::getTag($item, 'pubDate')->nodeValue),
+	    "text"     => self::cleanText(self::getTag($item, 'description')->nodeValue)
       );
     }
 
