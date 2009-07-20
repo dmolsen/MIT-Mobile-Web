@@ -26,11 +26,13 @@
 </p>
 
 <p class="nav secondary">
-	<a href="../mobile-about/">About the WVU Mobile Web</a><br/>
+	<a href="../mobile-about/">About the <?=$inst_name?> Mobile Web</a><br/>
 	<a href="../whats-new/">What's New</a><br/>
-	<a href="../sms/">WVU SMS (BETA)</a><br/>
-	<? if($phone == 'sp') { ?>
-		<a href="http://web.mit.edu">Go to web.mit.edu</a><br/>
+	<? if ($has_sms) { ?>
+		<a href="../sms/"><?=$inst_name?> SMS (BETA)</a><br/>
+	<? } ?>
+	<? if ($phone == 'sp') { ?>
+		<a href="http://<?=$main_site_addy?>">Go to <?=$main_site_addy?></a><br/>
 	<? } ?>
 </p>
 
