@@ -1,0 +1,31 @@
+<?php
+$page->title('WVU News')
+     ->navbar_image('title-3down')
+     ->breadcrumbs('News')
+     ->breadcrumb_home();
+
+$page->content_begin();
+?>
+
+	<div class="nonfocal">
+		News items from WVU Today regarding events affecting the WVU community.
+	</div>
+	
+	<ul class="nav">
+             <? foreach($items as $title => $item) { ?>
+		<li>
+                        <? if(is_long_text($item)) { ?>
+			<a href="<?=detailURL($title)?>"><h3><?=$title?></h3><span class="smallprint"><?=summary($item)?> <span class="more">more</span> (<?=short_date($item['date'])?>)</span></a>
+                        <? } else { ?>
+                           <div><h3><?=$title?></h3><span class="smallprint"><?=full($item)?> (<?=short_date($item['date'])?>)</span></div>
+                        <? } ?>
+		</li>
+             <? } ?>
+	
+	</ul>
+	
+	<ul class="secondary">
+			<li><a href="../emergency">Campus emergency information</a></li>	
+	</ul>
+	
+<? $page->content_end(); ?>

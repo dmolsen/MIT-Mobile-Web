@@ -16,6 +16,10 @@ class ThreeDown extends RSS {
   protected $rss_url = "http://3down.mit.edu/3down/index.php?rss=1";
 }
 
+class News extends RSS {
+  protected $rss_url = "http://wvutoday.wvu.edu/xml/news.xml";
+}
+
 class RSS {
   public function get_feed() {
     //get the feed
