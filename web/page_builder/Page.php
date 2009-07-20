@@ -9,6 +9,7 @@
 
 
 class Page {
+
   protected $title;
   protected $header;
   protected $stylesheets = array();
@@ -94,6 +95,9 @@ class Page {
   }
 
   public function output() {
+
+    require "../../config.inc.php";
+
     foreach($this->varnames as $varname) {
       ${$varname} = $this->$varname;
     }
@@ -131,7 +135,7 @@ class Page {
 
   public static function classify_phone() {
     if($_SERVER['HTTP_USER_AGENT']) {      
-      $type = file_get_contents("http://m.yourhostname.edu/wurfl/api?UserAgent=" . urlencode($_SERVER['HTTP_USER_AGENT']));
+      $type = file_get_contents("http://m.asdb-cluster.wvu.edu/wurfl/api?UserAgent=" . urlencode($_SERVER['HTTP_USER_AGENT']));
     } else {
       $type = "feature_phone";
     }
