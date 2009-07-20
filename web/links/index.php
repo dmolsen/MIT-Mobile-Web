@@ -9,13 +9,15 @@
 
 
 require_once "../page_builder/page_header.php";
+require_once "../../config.inc.php";
 
 class Links {
   public static $links = array(
-    'MBTA ("The T": Bus & Subway)' => 'www.mbta.com',
-    'Zipcar' => 'www.zipcar.com',
-    'MIT Technology Review' => 'mobile.technologyreview.com',
-    'Fidelity NetBenefits - Staff & Faculty 401(k)' => 'www.fi-w.com/fiw/NBLogin',
+    'GroupWise' => 'wvugw.wvu.edu',
+    'eCampus' => 'ecampus.wvu.edu',
+    'MIX' => 'www.mix.wvu.edu',
+    'SOLE' => 'sole.hsc.wvu.edu',
+    'Daily Athenaeum' => 'www.da.wvu.edu'
   );
 }
 

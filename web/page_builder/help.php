@@ -7,13 +7,12 @@
  * 
  */
 
-
 require "../page_builder/Page.php";
 $phone = Page::classify_phone();
 $page = Page::factory($phone);
 $prefix = $page->requirePrefix();
 
-
+require_once "../../config.inc.php";
 
 require "../$prefix/help.html";
 

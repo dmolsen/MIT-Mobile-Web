@@ -16,7 +16,7 @@
 <body>
 
 <h2 id="header">
-<img src="../<?=$phone?>/images/mit-logo.gif" width="<?=$width1?>" height="<?=$height1?>" /><?=$header?>
+<img src="../<?=$phone?>/images/<?=$non_ip_icon?>" width="<?=$width1?>" height="<?=$height1?>" /><?=$header?>
 </h2>
 
 <div id="container">
@@ -44,7 +44,7 @@
      <? } ?>
 
     <p class="bottomnav">
-       <a href="../home/" accesskey="0">0: MIT Mobile Web Home</a><br/>
+       <a href="../home/" accesskey="0">0: <?=$inst_name?> Mobile Web Home</a><br/>
        <? foreach($bottom_nav_links as $index => $link) {
             $number = $index + 1; ?>
             <a href="<?=$link['url']?>" accesskey="<?=$number?>"><?=$number?>: <?=$link['text']?></a><br/>
@@ -54,7 +54,7 @@
 
 <p class="bb"> </p>
 <p id="footer">
-	<img src="../<?=$phone?>/images/ist-logo.gif" width="26" height="18" alt="IST" />Information Services &amp; Technology
+	Managed by <?=$org_name?>
 </p>
 
 </body>

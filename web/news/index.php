@@ -10,6 +10,7 @@
 
 require_once "../page_builder/page_header.php";
 require_once "../../lib/rss_services.php";
+require_once "../../config.inc.php";
 
 $News = new News();
 $items = $News->get_feed();

@@ -1,5 +1,5 @@
 <?php
-$page->title('MIT People Directory: Detail')
+$page->title($inst_name.' People Directory: Details')
      ->header('People Directory');
 
 class Item {
@@ -45,7 +45,7 @@ $page->content_begin();
               $item->normal('phone', 'telephone', 'phoneHREF', 'phone');              
               $item->normal('fax', 'fax', 'phoneHREF', 'phone');              
               $item->normal('address', 'address');              
-              #$item->normal('email', 'email', 'mailHREF', 'email');              
+              $item->normal('email', 'email', 'mailHREF', 'email');              
               $item->normal('office', 'room', 'mapHREF', 'map');
             ?>
 	</p>

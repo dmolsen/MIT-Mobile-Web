@@ -1,5 +1,5 @@
 <?php
-$page->title('MIT Shuttle Schedule: ' . $routeName)
+$page->title($inst_name.' Shuttle Schedule: ' . $routeName)
      ->navbar_image('title-shuttleschedule')
      ->not_scalable()
      ->fixed()
@@ -66,7 +66,6 @@ $page->content_begin();
 	<div class="clear"></div>
 <? $page->content_end();
 
-$page->extra_footer('Map service provided by Facilities Department and');
 $page->footer_script('showTab("scheduletab");');
 
 ?>

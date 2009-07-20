@@ -8,14 +8,15 @@
  */
 
 
-require "../../../lib/trunk/ShuttleSchedule.php";
+require "../../lib/ShuttleSchedule.php";
 require "../page_builder/page_header.php";
 require "schedule_lib.php";
+require "../../config.inc.php";
 
 $schedule = new ShuttleSchedule();
 
 //include all the shuttle schedule data
-require "../../../lib/trunk/shuttle_schedule.php";
+require "../../lib/shuttle_schedule.php";
 $schedule->initRoutesCache();
 
 $now = time();

@@ -57,7 +57,7 @@ if($emergencies === False) {
 
 // the logic to implement the page begins here
 require "../page_builder/page_header.php";
-
+require_once "../../config.inc.php";
 
 if(isset($_REQUEST['contacts'])) {
   require "$prefix/contacts.html";

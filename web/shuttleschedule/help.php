@@ -14,7 +14,7 @@ $module = "shuttleschedule";
 $help = array(
   'Note: GPS tracking functionality is currently not available.',
 
-  'Find the expected time when an MIT shuttle bus should arrive at each stop, based on the official schedule published by the MIT Parking Office. For each currently running route, the next scheduled stop is indicated by a red highlight and a red shuttle-bus icon.', 
+  'Find the expected time when an '.$inst_name.' shuttle bus should arrive at each stop, based on the official schedule published by the '.$inst_name.' Parking Office. For each currently running route, the next scheduled stop is indicated by a red highlight and a red shuttle-bus icon.', 
 
   'The estimated times shown on the route detail page are estimates based on the current time (the moment the page is loaded on your device); and the published schedule; actual times may be affected by weather, road and traffic conditions. To update the estimated times and the route map, click the &lsquo;Refresh&rsquo; link near the top of the page or use your web browser&apos;s &lsquo;Refresh&rsquo; command.',
 

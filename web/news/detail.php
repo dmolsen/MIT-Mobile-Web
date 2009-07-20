@@ -9,12 +9,13 @@
 
 
 require_once "../page_builder/page_header.php";
-require_once "../../../lib/trunk/rss_services.php";
+require_once "../../lib/rss_services.php";
+require_once "../../config.inc.php";
 
-$ThreeDown = new ThreeDown();
-$states = $ThreeDown->get_feed();
+$News = new News();
+$items = $News->get_feed();
 $title = $_REQUEST['title'];
-$text = explode("\n", $states[$title]['text']);
+$text = explode("\n", $items[$title]['text']);
 $paragraphs = array();
 foreach($text as $paragraph) {
   if($paragraph) {
@@ -23,7 +24,7 @@ foreach($text as $paragraph) {
 }
 
 
-$long_date = date("l, F j, Y G:i:s", $states[$title]['unixtime']);
+$long_date = date("l, F j, Y G:i:s", $items[$title]['unixtime']);
 
 require "$prefix/detail.html";
 $page->output();

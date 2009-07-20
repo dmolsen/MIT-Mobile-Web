@@ -4,9 +4,9 @@
 <head>
 	<meta http-equiv="content-type" content="application/xhtml+xml" />
 	<meta name="viewport" id="viewport" content="width=device-width, user-scalable=yes">		
-	<title>MIT Mobile Web</title>
+	<title><?= $inst_name ?> Mobile Web</title>
 	<link rel="stylesheet" type="text/css" href="../ip/ip.css" />
- 	<link rel="apple-touch-icon" href="../ip/images/icon.png" />
+ 	<link rel="apple-touch-icon" href="../ip/images/<?=$ip_bookmark_icon?>" />
 	<style type="text/css">
 		#homegrid {
 			width: 300px;
@@ -65,38 +65,40 @@
 
 <body onload="scrollTo(0,1);">
 
-<h1><img src="ip/images/mit-logo-home.gif" width="56" height="28" alt="" id="logo" />Mobile Web</h1>
+<h1><img src="ip/images/<?=$ip_home_logo?>" width="56" height="28" alt="" id="<?=$inst_name?> logo" />Mobile Web</h1>
 
 
 <div id="container">
 
 	<table cellpadding="0" cellspacing="0" border="0" id="homegrid">
 		<tr>
+			<td><a href="../emergency/"><img src="ip/images/emergency.png" width="50" height="50" alt="Emergency Info" /><br/>Emergency Info</a></td>
 			<td><a href="../people/"><img src="ip/images/people.png" width="50" height="50" alt="People Directory" /><br/>People Directory</a></td>
-			<td><a href="../map/"><img src="ip/images/map.png" width="50" height="50" alt="Map" /><br/>Campus Map</a></td>
 			<td><a href="../shuttleschedule/"><img src="ip/images/shuttletrack.png" width="50" height="50" alt="Shuttle Schedule" /><br/>Shuttle Schedule</a></td>
 			<td><a href="../calendar/"><img src="ip/images/calendar.png" width="50" height="50" alt="Events Calendar" /><br/>Events Calendar</a></td>
 		</tr>
 		<tr>
-			<td><a href="../stellar/"><img src="ip/images/stellar.png" width="50" height="50" alt="Stellar" /><br/>Stellar<br/><span class="fineprint">class info</span></a></td>
-			<td><a href="../careers/"><img src="ip/images/careers.png" width="50" height="50" alt="Career Services" /><br/>Student Career Services</a></td>
-			<td><a href="../emergency/"><img src="ip/images/emergency.png" width="50" height="50" alt="Emergency Info" /><br/>Emergency Info</a></td>
-			<td><a href="../3down/"><img src="ip/images/3down.png" width="50" height="50" alt="3DOWN" /><br/>3DOWN<br/><span class="fineprint">service status</span></a></td>
-
+			<td><a href="../hours/"><img src="ip/images/hours.png" width="50" height="50" alt="Hours" /><br/>Hours</a></td>
+			<td><a href="../news/"><img src="ip/images/news.png" width="50" height="50" alt="News" /><br/>News</a></td>
+			<td><a href="../sms/"><img src="ip/images/sms.png" width="50" height="50" alt="Shuttle Schedule" /><br/>WVU SMS<br />(BETA)</a></td>
+			<td><a href="../links/"><img src="ip/images/links.png" width="50" height="50" alt="Links" /><br/>Useful<br/>Links</a></td>
 		</tr>
 		<tr>
-			<td><a href="../links/"><img src="ip/images/links.png" width="50" height="50" alt="Links" /><br/>Useful<br/>Links</a></td>
-			<td><a href="../mobile-about/"><img src="ip/images/about.png" width="50" height="50" alt="About" /><br/>About this Site</a></td>
-			<td><a href="http://web.mit.edu"><img src="ip/images/webmitedu.png" width="50" height="50" alt="web.mit.edu" /><br/>Full MIT Website</a></td>
-			<td><a href="http://ca.mit.edu"><img src="ip/images/certificates.png" width="50" height="50" alt="MIT Certificates" /><br/>MIT Certificates</a></td>
+			<td><a href="http://wvugw.wvu.edu/"><img src="ip/images/groupwise.png" width="50" height="50" alt="GroupWise" /><br/>GroupWise</a></td>
+			<td><a href="http://ecampus.wvu.edu/"><img src="ip/images/ecampus.png" width="50" height="50" alt="eCampus" /><br/>eCampus</a></td>
+			<td><a href="http://mix.wvu.edu/"><img src="ip/images/mix.png" width="50" height="50" alt="Shuttle Schedule" /><br/>MIX</a></td>
+			<td><a href="http://sole.hsc.wvu.edu/"><img src="ip/images/sole.png" width="50" height="50" alt="SOLE" /><br/>SOLE</a></td>
 		</tr>
-
+		<tr>
+			<td><a href="../mobile-about/"><img src="ip/images/about.png" width="50" height="50" alt="About" /><br/>About this Site</a></td>
+			<td><a href="http://www.wvu.edu"><img src="ip/images/webmitedu.png" width="50" height="50" alt="www.wvu.edu" /><br/>Full WVU Website</a></td>
+		</tr>
 	</table>
 			
 </div>
 
 <div id="footer">
-	<a href="http://web.mit.edu/ist/"><img src="../ip/images/ist-logo.png" width="35" height="21" alt="IST" /></a>Information Services &amp; Technology
+	Managed by <?= $org_name ?>
 </div>
 </body>
 </html>
