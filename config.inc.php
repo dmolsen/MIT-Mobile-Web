@@ -37,4 +37,5 @@ $non_ip_icon      = "wvu-logo.gif";      # header icon for non-iPhone phones. se
 /* Special Features */
 $has_sms          = true;                # if you have a page showing SMS commands set to true
 
+
 ?>
