@@ -9,7 +9,7 @@
 
 require_once "ShuttleSchedule.php";
 $schedule = new ShuttleSchedule();
-require "shuttle_schedule.php";
+require "mountain_line_schedule.php";
 
 foreach($schedule->getRoutes() as $route) {
   $route->populate_db();
