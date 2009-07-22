@@ -41,7 +41,7 @@ class ShuttleSchedule {
     foreach($this->routes as $route) {
       $last_stop_tags[$route->encodeName()] = $route->lastStopTags();
     }
-    $next_bus_data = Route::queryNextBus($last_stop_tags);
+    #$next_bus_data = Route::queryNextBus($last_stop_tags);
     
     foreach($this->routes as $route) {
       $key = $route->encodeName();

@@ -25,16 +25,11 @@ $hour = date('H', $now);
 $minute = date('i', $now);
 
 $day_keys = array(
-  "tech_shuttle",
-  "northwest_shuttle",
-  "boston_daytime"
+  "blueline"
 );
 
 $night_keys = array(
-  "boston_east",
-  "boston_west",
-  "cambridge_east",
-  "cambridge_west"
+  "bluegoldconnector"
 );
   
 $day_routes = array();
