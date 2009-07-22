@@ -196,8 +196,8 @@ class Route implements Iterator{
     foreach(day::$days as $day) {
       $this->day = new day($day);
       foreach($this as $stop) {
-        $stmt->bindParam('ssssii', $day, $stop->getDay(), $this->encodeName(), $stop->getName(), $stop->getHour(), $stop->getMinute());
-        $stmt->execute();
+        #$stmt->bindParam('ssssii', );
+        $stmt->execute(array($day, $stop->getDay(), $this->encodeName(), $stop->getName(), $stop->getHour(), $stop->getMinute()));
       }
     }
   }
