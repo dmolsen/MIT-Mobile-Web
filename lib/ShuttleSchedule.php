@@ -41,7 +41,7 @@ class ShuttleSchedule {
     foreach($this->routes as $route) {
       $last_stop_tags[$route->encodeName()] = $route->lastStopTags();
     }
-    $next_bus_data = Route::queryNextBus($last_stop_tags);
+    #$next_bus_data = Route::queryNextBus($last_stop_tags);
     
     foreach($this->routes as $route) {
       $key = $route->encodeName();
@@ -196,8 +196,13 @@ class Route implements Iterator{
     foreach(day::$days as $day) {
       $this->day = new day($day);
       foreach($this as $stop) {
-        #$stmt->bindParam('ssssii', );
-        $stmt->execute(array($day, $stop->getDay(), $this->encodeName(), $stop->getName(), $stop->getHour(), $stop->getMinute()));
+	    if ($use_sqlite) {
+			$stmt->execute(array($day, $stop->getDay(), $this->encodeName(), $stop->getName(), $stop->getHour(), $stop->getMinute()));
+		}
+		else {
+			$stmt->bind_param('ssssii', $day, $stop->getDay(), $this->encodeName(), $stop->getName(), $stop->getHour(), $stop->getMinute());
+		    $stmt->execute();
+		}
       }
     }
   }
@@ -404,7 +409,6 @@ class Route implements Iterator{
 
     $first_stop = $this->isRunning($day, $hour, $minute) ? $next_stop["next_stop"] : -1;
 
-
     $day_scheduled = $next_stop["scheduled_day"];
     $day = $next_stop["real_day"];
     $total_minutes = $next_stop["total_minutes"];
@@ -418,29 +422,27 @@ class Route implements Iterator{
 
     // find the next time for each stop of the route
     foreach(array_keys($this->stops) as $place) {
-      $stmt_2->bind_param('ssssi', 
-        $day_scheduled, 
-	$day->abbrev(),
-	$place,
-	$this->encodeName(),
-        $total_minutes
-      );
-      $stmt_2->execute();
-
+	  if ($use_sqlite) {
+		$stmt_2->execute(array($day_scheduled, $day->abbrev(), $place, $this->encodeName(), $total_minutes));
+	  }
+	  else {
+		$stmt_2->bind_param('ssssi', $day_scheduled, $day->abbrev(), $place, $this->encodeName(), $total_minutes);
+		$stmt_2->execute();
+	  }
+      
       if(!$stmt_2->fetch()) {
         // no remaining times were found today
         // so check if the stop has a time after midnight
         // on the next day
         
-        $stmt_2->bind_param('ssssi', 
-          $day_scheduled, 
-	  $day->next()->abbrev(),
-	  $place,
-	  $this->encodeName(),
-	  $zero
-        );
-
-        $stmt_2->execute();
+		if ($use_sqlite3) {
+			$stmt_2->execute(array($day_scheduled, $day->next()->abbrev(),$place,$this->encodeName(),$zero));
+		}
+		else {
+			$stmt_2->bind_param('ssssi', $day_scheduled, $day->next()->abbrev(),$place,$this->encodeName(),$zero);
+	        $stmt_2->execute();
+		}
+        
         $stmt_2->fetch();
       }
 

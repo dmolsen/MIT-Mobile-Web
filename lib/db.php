@@ -8,17 +8,17 @@
  */
 
 class db {
-  public static $connection = NULL;
-
-  private static $host = 'localhost';
-  private static $username = 'username';
-  private static $passwd = 'passwd';
-  private static $db = 'db';
+  
+  require '../config.db.inc.php';
 
   public static function init() {
     if(!self::$connection) {
-      self::$connection = new PDO('sqlite:/path/to/MIT-Mobile-Web/db/development.sqlite3');
-      #self::$connection = new mysqli(self::$host, self::$username, self::$passwd, self::$db);
+      if ($use_sqlite) {
+        self::$connection = new PDO('sqlite:'.$sqlite_path);
+      }
+	  else {
+		self::$connection = new mysqli(self::$host, self::$username, self::$passwd, self::$db);
+	  }
     }
   }
 }

@@ -11,12 +11,12 @@
 require "../../lib/ShuttleSchedule.php";
 require "../page_builder/page_header.php";
 require "schedule_lib.php";
-require "../../config.inc.php";
+require "../../config.gen.inc.php";
 
 $schedule = new ShuttleSchedule();
 
 //include all the shuttle schedule data
-require "../../lib/shuttle_schedule.php";
+require "../../lib/mountaineer_line_schedule.php";
 $schedule->initRoutesCache();
 
 $now = time();
@@ -25,11 +25,11 @@ $hour = date('H', $now);
 $minute = date('i', $now);
 
 $day_keys = array(
-  "blueline"
+  "blue_line"
 );
 
 $night_keys = array(
-  "bluegoldconnector"
+  "blue_&_gold_connector"
 );
   
 $day_routes = array();
