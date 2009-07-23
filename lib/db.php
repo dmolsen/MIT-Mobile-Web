@@ -24,8 +24,8 @@ class db {
 
   public static function init() {
     if(!self::$connection) {
-      if ($use_sqlite) {
-        self::$connection = new PDO('sqlite:'.$sqlite_path);
+      if (self::$use_sqlite) {
+        self::$connection = new PDO('sqlite:'.self::$sqlite_path);
       }
 	  else {
 		self::$connection = new mysqli(self::$host, self::$username, self::$passwd, self::$db);
