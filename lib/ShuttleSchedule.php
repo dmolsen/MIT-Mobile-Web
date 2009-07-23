@@ -189,9 +189,7 @@ class Route implements Iterator{
  
   public function populate_db() {
     $db = db::$connection;
-    $stmt = $db->prepare(
-      "INSERT INTO Schedule (day_scheduled, day_real, route, place, hour, minute) values (?, ?, ?, ?, ?, ?)"
-    );
+    $stmt = $db->prepare("INSERT INTO Schedule (day_scheduled, day_real, route, place, hour, minute) values (?, ?, ?, ?, ?, ?)");
 
     foreach(day::$days as $day) {
       $this->day = new day($day);
