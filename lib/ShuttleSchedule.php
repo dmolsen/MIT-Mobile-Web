@@ -228,9 +228,18 @@ class Route implements Iterator{
     // loop through successive days until we find the first stop
     while(!$first_stop){
       if($this->holidays || !Holidays::is_holiday($day_offset)) {
-        $stmt_1->bind_param('ssi', $day->abbrev(), $this->encodeName(), $total_minutes);
-        $stmt_1->bind_result($day_scheduled, $first_stop, $hour, $minute);
-        $stmt_1->execute();
+	    if (db::$use_sqlite) {
+			$stmt->execute(array($day, $stop->getDay(), $this->encodeName(), $stop->getName(), $stop->getHour(), $stop->getMinute()));
+			$stmt->bindColumn(1,$day_scheduled);
+			$stmt->bindColumn(2,$first_stop);
+			$stmt->bindColumn(3,$hour);
+			$stmt->bindColumn(4,$minute);
+		}
+		else {
+			$stmt_1->bind_param('ssi', $day->abbrev(), $this->encodeName(), $total_minutes);
+	        $stmt_1->bind_result($day_scheduled, $first_stop, $hour, $minute);
+	        $stmt_1->execute();
+		}  
       }
 
       if(!$stmt_1->fetch()) {

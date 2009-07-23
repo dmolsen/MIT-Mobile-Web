@@ -10,7 +10,7 @@
 
 require "../../lib/mit_ldap.php";
 require "../page_builder/page_header.php";
-require "../../config.inc.php";
+require "../../config.gen.inc.php";
 
 
 if($search_terms = $_REQUEST["filter"]) {
