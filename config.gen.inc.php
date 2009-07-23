@@ -40,4 +40,5 @@ $has_sms          = true;                # if you have a page showing SMS comman
 /* Duped DB Config (need to clean this up) */
 $use_sqlite       = true;                # if using mysql change this to false, addresses naming issue between PDO & MySQL functions
 
+
 ?>

@@ -22,4 +22,5 @@ $username    = 'username';
 $passwd      = 'passwd';
 $db          = 'db';
 
+
 ?>
