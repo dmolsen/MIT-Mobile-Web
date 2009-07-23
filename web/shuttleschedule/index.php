@@ -16,7 +16,7 @@ require "../../config.gen.inc.php";
 $schedule = new ShuttleSchedule();
 
 //include all the shuttle schedule data
-require "../../lib/mountaineer_line_schedule.php";
+require "../../lib/mountain_line_schedule.php";
 $schedule->initRoutesCache();
 
 $now = time();

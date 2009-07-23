@@ -45,6 +45,8 @@ def is_device(wurfl_obj, devs):
         fall_back = devices.select_id(wurfl_obj.fall_back)
         return is_device(fall_back, devs)
 
+import sys
+sys.path.append('apache/htdocs/mobile/lstein/build/lib.linux-x86_64-2.4/')
 import Levenshtein
 class GenericBrowserPreferred(Algorithm):
     """

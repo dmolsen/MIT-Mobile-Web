@@ -8,7 +8,7 @@
 
 # these paths need to set correctly
 wurfl_url = 'wurfl'
-wurfl_path = '/path/to/MIT-Mobile-Web/mobile/wurfl'
+wurfl_path = '/apache/htdocs/MIT-Mobile-Web/wurfl'
 
 from mod_python import apache
 import bsddb
