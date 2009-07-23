@@ -196,7 +196,7 @@ class Route implements Iterator{
     foreach(day::$days as $day) {
       $this->day = new day($day);
       foreach($this as $stop) {
-	    if ($use_sqlite) {
+	    if (db::$use_sqlite) {
 			$stmt->execute(array($day, $stop->getDay(), $this->encodeName(), $stop->getName(), $stop->getHour(), $stop->getMinute()));
 		}
 		else {
@@ -422,7 +422,7 @@ class Route implements Iterator{
 
     // find the next time for each stop of the route
     foreach(array_keys($this->stops) as $place) {
-	  if ($use_sqlite) {
+	  if (db::$use_sqlite) {
 		$stmt_2->execute(array($day_scheduled, $day->abbrev(), $place, $this->encodeName(), $total_minutes));
 	  }
 	  else {
@@ -435,7 +435,7 @@ class Route implements Iterator{
         // so check if the stop has a time after midnight
         // on the next day
         
-		if ($use_sqlite3) {
+		if (db::$use_sqlite) {
 			$stmt_2->execute(array($day_scheduled, $day->next()->abbrev(),$place,$this->encodeName(),$zero));
 		}
 		else {
