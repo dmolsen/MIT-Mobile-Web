@@ -9,7 +9,7 @@
 
 
 require "../page_builder/page_header.php";
-require "../../config.inc.php";
+require "../../config.gen.inc.php";
 
 $static_pages = array(
   'about', 

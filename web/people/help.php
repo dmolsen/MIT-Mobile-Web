@@ -11,7 +11,7 @@
 $header = "People Directory";
 $module = "people";
 
-# check to see if there is an on-campus prefix (set in config.inc.php)
+# check to see if there is an on-campus prefix (set in config.gen.inc.php)
 if ($has_oc_prefix) {
 	$prefix = ', &quot;'.$oncampus_prefix.'1000&quot;';
 }
@@ -19,7 +19,7 @@ else {
 	$prefix = '';
 }
 
-# check to see if there is an voice assisted directory search (set in config.inc.php)
+# check to see if there is an voice assisted directory search (set in config.gen.inc.php)
 if ($has_dir_search_va) {
 	$va_dir_search = 'If you run into difficulty, please try calling '.$dir_search_va_num.' for voice-assisted directory search.';
 }

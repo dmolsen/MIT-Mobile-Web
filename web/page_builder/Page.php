@@ -96,7 +96,7 @@ class Page {
 
   public function output() {
 
-    require "../../config.inc.php";
+    require "../../config.gen.inc.php";
 
     foreach($this->varnames as $varname) {
       ${$varname} = $this->$varname;

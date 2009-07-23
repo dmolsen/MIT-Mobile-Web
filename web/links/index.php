@@ -9,7 +9,7 @@
 
 
 require_once "../page_builder/page_header.php";
-require_once "../../config.inc.php";
+require_once "../../config.gen.inc.php";
 
 class Links {
   public static $links = array(

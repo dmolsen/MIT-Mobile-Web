@@ -11,7 +11,7 @@
 require "../../lib/ShuttleSchedule.php";
 require "../page_builder/page_header.php";
 require "schedule_lib.php";
-require "../../config.inc.php";
+require "../../config.gen.inc.php";
 
 $schedule = new ShuttleSchedule();
 
