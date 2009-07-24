@@ -16,7 +16,7 @@ require "../../config.gen.inc.php";
 $schedule = new ShuttleSchedule();
 
 //include all the shuttle schedule data
-require "../../lib/shuttle_schedule.php";
+require "../../lib/mountain_line_schedule.php";
 
 $route = $schedule->getRoute($_REQUEST['route']);
 
