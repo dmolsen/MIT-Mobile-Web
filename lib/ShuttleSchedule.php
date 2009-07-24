@@ -227,11 +227,11 @@ class Route implements Iterator{
     while(!$first_stop){
       if($this->holidays || !Holidays::is_holiday($day_offset)) {
 	    if (db::$use_sqlite) {
-                        $stmt_1->bindParam(1, $day->abbrev(), PDO::PARAM_STR, 12);
-                        $stmt_1->bindParam(2, $this->encodeName(), PDO::PARAM_STR, 12);
-                        $stmt_1->bindParam(3, $total_minutes, PDO::PARAM_INT);
+            $stmt_1->bindParam(1, $day->abbrev(), PDO::PARAM_STR, 12);
+            $stmt_1->bindParam(2, $this->encodeName(), PDO::PARAM_STR, 12);
+            $stmt_1->bindParam(3, $total_minutes, PDO::PARAM_INT);
 			$stmt_1->execute();
-                        $stmt_1->bindColumn(1,$day_scheduled);
+            $stmt_1->bindColumn(1,$day_scheduled);
 			$stmt_1->bindColumn(2,$first_stop);
 			$stmt_1->bindColumn(3,$hour);
 			$stmt_1->bindColumn(4,$minute);
@@ -425,19 +425,28 @@ class Route implements Iterator{
     $day = $next_stop["real_day"];
     $total_minutes = $next_stop["total_minutes"];
 
-    $stmt_2 = $db->prepare(
-      "SELECT day_real, hour, minute FROM Schedule WHERE day_scheduled = ? AND day_real = ? AND place = ? AND route = ? AND (60 * hour + minute) >= ? ORDER BY (60 * hour + minute) LIMIT 1" );
+    $db->prepare(
+      "SELECT day_real, hour, minute FROM Schedule WHERE day_scheduled = ? AND day_real = ? AND place = ? AND route = ? AND (60 * hour + minute) >= CAST(? AS INT) ORDER BY (60 * hour + minute) LIMIT 1" );
 
     $stops = array();   
     $zero = 0;
-    $stmt_2->bind_result($day_real, $hour_res, $minute_res);
+    
 
     // find the next time for each stop of the route
     foreach(array_keys($this->stops) as $place) {
 	  if (db::$use_sqlite) {
-		$stmt_2->execute(array($day_scheduled, $day->abbrev(), $place, $this->encodeName(), $total_minutes));
+		$stmt_2->bindParam(1, $day_scheduled, PDO::PARAM_STR);
+        $stmt_2->bindParam(2, $day->abbrev(), PDO::PARAM_STR);
+        $stmt_2->bindParam(3, $place, PDO::PARAM_STR);
+        $stmt_2->bindParam(4, $this->encodeName(), PDO::PARAM_STR);
+        $stmt_2->bindParam(5, $total_minutes, PDO::PARAM_INT);
+        $stmt_2->execute();
+        $stmt_2->bindColumn(1,$day_real);
+        $stmt_2->bindColumn(2,$hour_res);
+        $stmt_2->bindColumn(3,$minute_res);
 	  }
 	  else {
+		$stmt_2->bind_result($day_real, $hour_res, $minute_res);
 		$stmt_2->bind_param('ssssi', $day_scheduled, $day->abbrev(), $place, $this->encodeName(), $total_minutes);
 		$stmt_2->execute();
 	  }
@@ -448,9 +457,18 @@ class Route implements Iterator{
         // on the next day
         
 		if (db::$use_sqlite) {
-			$stmt_2->execute(array($day_scheduled, $day->next()->abbrev(),$place,$this->encodeName(),$zero));
+			$stmt_2->bindParam(1, $day_scheduled, PDO::PARAM_STR);
+	        $stmt_2->bindParam(2, $day->next()->abbrev(), PDO::PARAM_STR);
+	        $stmt_2->bindParam(3, $place, PDO::PARAM_STR);
+	        $stmt_2->bindParam(4, $this->encodeName(), PDO::PARAM_STR);
+	        $stmt_2->bindParam(5, $zero, PDO::PARAM_INT);
+	        $stmt_2->execute();
+	        $stmt_2->bindColumn(1,$day_real);
+	        $stmt_2->bindColumn(2,$hour_res);
+	        $stmt_2->bindColumn(3,$minute_res);
 		}
 		else {
+            $stmt_2->bind_result($day_real, $hour_res, $minute_res);
 			$stmt_2->bind_param('ssssi', $day_scheduled, $day->next()->abbrev(),$place,$this->encodeName(),$zero);
 	        $stmt_2->execute();
 		}
@@ -458,14 +476,16 @@ class Route implements Iterator{
         $stmt_2->fetch();
       }
 
-      $stmt_2->free_result();
+      if (!db::$use_sqlite) {
+        $stmt_2->free_result();
+      }  
 
       $never = !(bool) $day_real;
 
       //store the result
       $stops[] = array(
-	"next"   => ($place == $first_stop),
-	"place"  => $place,
+	    "next"   => ($place == $first_stop),
+	    "place"  => $place,
         "day"    => $never ? NULL : $day_real,
         "hour"   => $never ? NULL : Stop::makeDD($hour_res),
         "minute" => $never ? NULL : Stop::makeDD($minute_res),
@@ -473,7 +493,10 @@ class Route implements Iterator{
       );
      
     }
-    $stmt_2->close();
+
+    if (!db::$use_sqlite) {
+      $stmt_2->close();
+    }
 
     return $stops; 
   }
