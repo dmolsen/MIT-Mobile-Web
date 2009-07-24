@@ -216,7 +216,7 @@ class Route implements Iterator{
 
     // find the first stop after the given time
     $stmt_1 = $db->prepare(
-      "SELECT day_scheduled, place, hour, minute FROM Schedule WHERE day_real = ? AND route = ? AND (60 * hour + minute) >= ? ORDER BY (60 * hour + minute) LIMIT 1" );
+      "SELECT day_scheduled, place, hour, minute FROM Schedule WHERE day_real = ? AND route = ? AND (60 * hour + minute) >= CAST(? AS INT) ORDER BY (60 * hour + minute) LIMIT 1" );
  
     $day_offset = 0;
     $day_scheduled = NULL;
@@ -227,16 +227,19 @@ class Route implements Iterator{
     while(!$first_stop){
       if($this->holidays || !Holidays::is_holiday($day_offset)) {
 	    if (db::$use_sqlite) {
-			$stmt_1->execute(array($day->abbrev(), $this->encodeName(), $total_minutes));
-			$stmt_1->bindColumn(1,$day_scheduled);
+                        $stmt_1->bindParam(1, $day->abbrev(), PDO::PARAM_STR, 12);
+                        $stmt_1->bindParam(2, $this->encodeName(), PDO::PARAM_STR, 12);
+                        $stmt_1->bindParam(3, $total_minutes, PDO::PARAM_INT);
+			$stmt_1->execute();
+                        $stmt_1->bindColumn(1,$day_scheduled);
 			$stmt_1->bindColumn(2,$first_stop);
 			$stmt_1->bindColumn(3,$hour);
 			$stmt_1->bindColumn(4,$minute);
 		}
 		else {
 			$stmt_1->bind_param('ssi', $day->abbrev(), $this->encodeName(), $total_minutes);
-	        $stmt_1->bind_result($day_scheduled, $first_stop, $hour, $minute);
-	        $stmt_1->execute();
+	                $stmt_1->bind_result($day_scheduled, $first_stop, $hour, $minute);
+	                $stmt_1->execute();
 		}  
       }
 
@@ -245,9 +248,11 @@ class Route implements Iterator{
         $day = $day->next();
         $total_minutes = 0;
       }         
-    } 
-    $stmt_1->free_result();
-    $stmt_1->close();
+    }
+    if (!db::$use_sqlite) {
+        $stmt_1->free_result();
+	$stmt_1->close();
+    }
 
     return array(
       "real_day"      => $day, 
