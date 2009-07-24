@@ -265,11 +265,11 @@ class Route implements Iterator{
   }
 
   public function isRunning($day, $hour, $minute) {
-    if($this->GPSisActive()) {         
-      return True;
-    } else {
+    #if($this->GPSisActive()) {
+    #  return True;
+    #} else {
       return $this->isRunningFromDB($day, $hour, $minute);
-    }
+    #}
   }
   
   public function isRunningFromDB($day, $hour, $minute) {
@@ -306,7 +306,7 @@ class Route implements Iterator{
 
   public function getCurrentStops($day, $hour, $minute) {
 
-    if($this->isRunning($day, $hour, $minute) && $this->GPSisActive()) {
+    /*if($this->isRunning($day, $hour, $minute) && $this->GPSisActive()) {
       // query next bus to get the upcoming times
       $times = $this->getNextBusTimes();      
       $places = array_keys($times);
@@ -339,10 +339,10 @@ class Route implements Iterator{
         }
       }
       return $stops;
-    } else {
+    } else {*/
       // fall back to schedule stored in the database
       return $this->getCurrentStopsFromDB($day, $hour, $minute);
-    }
+    #}
   }
 
   public function GPSisActive() {
