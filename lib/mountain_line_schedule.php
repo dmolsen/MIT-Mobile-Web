@@ -19,7 +19,7 @@ $schedule
 	    st("Depot Leave"             ,"depotl"     , "frdpot", '00'),
         st("Unity Manor"             ,"unitymanor" , "frdpot", '02'),
         st("Richwood & Charles"      ,"randc"      , "frdpot", '05'),
-        st("DMV"                     ,"dmv"        , "frdpot", '10'),
+        st("DMV (Outbound)"          ,"dmvo"       , "frdpot", '10'),
         st("Airport & Mileground"    ,"aandm"      , "frdpot", '15'),
         st("Easton Hill (Outbound)"  ,"eastonhillo", "frdpot", '20'),
         st("University High School"  ,"uhs"        , "frdpot", '30'),
@@ -27,7 +27,7 @@ $schedule
         st("Lakeside Canyon"         ,"lakecanyon" , "todpot", '35'),
         st("Crest Point"             ,"crestpoint" , "todpot", '37'),
         st("Easton Hill (Inbound)"   ,"eastonhilli", "todpot", '38'),
-        st("DMV"                     ,"dmv"        , "todpot", '47'),
+        st("DMV (Inbound)"           ,"dmvi"       , "todpot", '47'),
         st("Depot Return"            ,"depotr"     , "todpot", '55'))    
      ->addHours("Mon-Sat",hours("6-17")) ;
 
