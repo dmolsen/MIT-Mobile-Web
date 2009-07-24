@@ -16,18 +16,19 @@ $schedule
      ->summary("Runs Monday through Saturday, all year round")
      ->perHour(1)
      ->stops(
-	    st("Depot"                   ,"depot"      , "frcamp", '00'),
-        st("Unity Manor"             ,"unitymanor" , "frcamp", '02'),
-        st("Richwood & Charles"      ,"randc"      , "frcamp", '05'),
-        st("DMV"                     ,"dmv"        , "frcamp", '10'),
-        st("Airport & Mileground"    ,"aandm"      , "frcamp", '15'),
-        st("Easton Hill"             ,"eastonhill" , "frcamp", '20'),
-        st("University High School"  ,"uhs"        , "frcamp", '30'),
-        st("Canyon Dairy Mart"       ,"cdmart"     , "frcamp", '32'),
-        st("Lakeside Canyon"         ,"lakecanyon" , "frcamp", '35'),
-        st("Crest Point"             ,"crestpoint" , "tocamp", '37'),
-        st("Easton Hill"             ,"eastonhill" , "tocamp", '38'),
-        st("DMV"                     ,"dmv"        , "tocamp", '47'))    
+	    st("Depot Leave"             ,"depotl"     , "frdpot", '00'),
+        st("Unity Manor"             ,"unitymanor" , "frdpot", '02'),
+        st("Richwood & Charles"      ,"randc"      , "frdpot", '05'),
+        st("DMV"                     ,"dmv"        , "frdpot", '10'),
+        st("Airport & Mileground"    ,"aandm"      , "frdpot", '15'),
+        st("Easton Hill (Outbound)"  ,"eastonhillo", "frdpot", '20'),
+        st("University High School"  ,"uhs"        , "frdpot", '30'),
+        st("Canyon Dairy Mart"       ,"cdmart"     , "todpot", '32'),
+        st("Lakeside Canyon"         ,"lakecanyon" , "todpot", '35'),
+        st("Crest Point"             ,"crestpoint" , "todpot", '37'),
+        st("Easton Hill (Inbound)"   ,"eastonhilli", "todpot", '38'),
+        st("DMV"                     ,"dmv"        , "todpot", '47'),
+        st("Depot Return"            ,"depotr"     , "todpot", '55'))    
      ->addHours("Mon-Sat",hours("6-17")) ;
 
 
@@ -36,13 +37,14 @@ $schedule
      ->summary("Runs every day, all year round")
      ->perHour(3)
      ->stops(
-	    st("Brooke Towers"       ,"btowers"  , "frcamp", '00'),
-        st("Law School"          ,"law"      , "frcamp", '01'),
-        st("Grant Avenue"        ,"grant"    , "frcamp", '02'),
-        st("Summit Hall"         ,"summit"   , "frcamp", '04'),
-        st("Life Sciences"       ,"lifes"    , "frcamp", '05'),
-        st("Beechurst & 6th"     ,"beech6th" , "frcamp", '08'),
-        st("CAC & Engineering"   ,"caccemr"  , "frcamp", '10'))    
+	    st("Brooke Towers Leave" ,"btowersl" , "frbrke", '00'),
+        st("Law School"          ,"law"      , "frbrke", '01'),
+        st("Grant Avenue"        ,"grant"    , "frbrke", '02'),
+        st("Summit Hall"         ,"summit"   , "frbrke", '04'),
+        st("Life Sciences"       ,"lifes"    , "frbrke", '05'),
+        st("Beechurst & 6th"     ,"beech6th" , "tobrke", '08'),
+        st("CAC & Engineering"   ,"caccemr"  , "tobrke", '10'),
+        st("Brooke Towers Return","btowersr" , "tobrke", '19'))    
      ->addHours("Mon-Sat",hours("6-23"));
 
 ?>
