@@ -38,7 +38,14 @@ $service = Zend_Gdata_Calendar::AUTH_SERVICE_NAME; // predefined service name fo
 
 $client = Zend_Gdata_ClientLogin::getHttpClient($user,$pass,$service);
 $gdataCal = new Zend_Gdata_Calendar($client);
-$calFeed = $gdataCal->getCalendarListFeed();
+$query = $gdataCal->newEventQuery();
+$query->setUser('e5c02e64sdtcq4vqtt8441ib50fovr3f%40import.calendar.google.com');
+$query->setVisibility('public');
+$query->setProjection('basic');
+#$query->setQuery('yom');
+#$query->setOrderby('starttime');
+#$query->setFutureevents('true');
+$eventFeed = $gdataCal->getCalendarEventFeed($query);
 
 require "$prefix/day.html";
 $page->output();
