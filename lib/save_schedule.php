@@ -8,8 +8,9 @@
  */
 
 require_once "ShuttleSchedule.php";
+require_once "../config.gen.inc.php";
 $schedule = new ShuttleSchedule();
-require "mountain_line_schedule.php";
+require $bus_schedule;
 
 foreach($schedule->getRoutes() as $route) {
   $route->populate_db();

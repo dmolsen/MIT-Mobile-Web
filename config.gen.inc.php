@@ -35,10 +35,7 @@ $homelink_icon    = "homelink_wvu.png";  # homelink breadcrumb graphic for iPhon
 $non_ip_icon      = "wvu-logo.gif";      # header icon for non-iPhone phones. separate files should be in web/fp/images & web/sp/images
 
 /* Special Features */
-$has_sms          = true;                # if you have a page showing SMS commands set to true
-
-/* Duped DB Config (need to clean this up) */
-#$use_sqlite       = true;                # if using mysql change this to false, addresses naming issue between PDO & MySQL functions
-
+$has_sms          = true;                         # if you have a page showing SMS commands set to true
+$bus_schedule     = "mountain_line_schedule.php"; # file name of your bus schedule. should be in lib.
 
 ?>

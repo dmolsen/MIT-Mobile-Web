@@ -16,7 +16,7 @@ require "../../config.gen.inc.php";
 $schedule = new ShuttleSchedule();
 
 //include all the shuttle schedule data
-require "../../lib/mountain_line_schedule.php";
+require "../../lib/".$bus_schedule;
 $schedule->initRoutesCache();
 
 $now = time();
@@ -29,7 +29,7 @@ $day_keys = array(
 );
 
 $night_keys = array(
-  "blue_&_gold_connector"
+  "blue_and_gold_connector"
 );
   
 $day_routes = array();
