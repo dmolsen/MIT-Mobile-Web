@@ -12,9 +12,12 @@ $page->content_begin();
 	</div>
 	
 	<div class="focal">
-            <? foreach($events as $event) { ?>
-		<p><a href="<?=detailURL($event)?>"><?=$event->title?></a><br/><span class="smallprint"><?=timeText($event)?><? if(briefLocation($event)) { ?>&nbsp;|&nbsp;<?=briefLocation($event)?><? } ?></span></a></p>
-            <? } ?>
+          
+						  <ul>
+						  <? foreach ($calFeed as $calendar) { ?>
+						    <li><?=$calendar->title->text?></li>
+						  <? } ?>
+						  </ul>
 	</div>
 	
 	<p class="nonfocal">
