@@ -39,6 +39,10 @@ $bus_schedule     = "mountain_line_schedule.php";          # file name of your b
 $day_keys = array("blue_line", "blue_and_gold_connector"); # key must much the bus schedule lib line keys
 $night_keys = array();                                     # leave empty if you don't have any night-specific routes
 
+/* Calendar Info (uses Google Calendar) */
+$username = "wvucalendar";
+$password = "Mountaineers#10";
+
 /* Special Features */
 $has_sms          = true;               # if you have a page showing SMS commands set to true
 
