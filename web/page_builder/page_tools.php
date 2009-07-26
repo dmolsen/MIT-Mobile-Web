@@ -212,11 +212,60 @@ class Tabs {
 }
 
 function short_date($date) {
-  $minute = $date['minute'];
+  $minute = $date['minutes'];
   $minute = $minute < 10 ? '0' . $minute : (string) $minute;
-  return "{$date['month']}/{$date['day']} {$date['hour']}:$minute";
+  $ordinal = ordinalSuffix($date['mday']);
+  if ($date['hours'] == '12') {
+	$hour = '12';
+        $ampm = 'pm';
+  }
+  else if ($date['hours'] == '24') {
+        $hour = '12';
+        $ampm = 'am';
+  }
+  else if ($date['hours'] > 12) {
+        $hour = (int)$date['hours'] - 12;
+        $ampm = 'pm';
+  }
+  else {
+        $hour = $date['hours'];
+        $ampm = 'am';
+  }
+  return "{$date['month']} {$date['mday']}$ordinal @ $hour:$minute$ampm";
 }
 
+function ordinalSuffix($number) {
+
+    /*** check for 11, 12, 13 ***/
+    if ($number % 100 > 10 && $number %100 < 14) {
+        $os = 'th';
+    }
+    /*** check if number is zero ***/
+    elseif($number == 0) {
+        $os = '';
+    }
+    else {
+        $last = substr($number, -1, 1);
+
+        switch($last) {
+            case "1":
+            $os = 'st';
+            break;
+
+            case "2":
+            $os = 'nd';
+            break;
+
+            case "3":
+            $os = 'rd';
+            break;
+
+            default:
+            $os = 'th';
+        }
+    }
+    return $os;
+}
 
 class ResultsContent {
   private $form;

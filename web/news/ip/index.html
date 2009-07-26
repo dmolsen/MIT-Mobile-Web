@@ -15,7 +15,7 @@ $page->content_begin();
              <? foreach($items as $title => $item) { ?>
 		<li>
                         <? if(is_long_text($item)) { ?>
-			<a href="<?=detailURL($title)?>"><h3><?=$title?></h3><span class="smallprint"><?=summary($item)?> <span class="more">more</span> <? if $item['date'] { ?>(<?=short_date($item['date'])?>)<? } ?></span></a>
+			<a href="<?=detailURL($title)?>"><h3><?=$title?></h3><span class="smallprint"><?=summary($item)?> <span class="more">more</span> <? if ($item['date']) { ?>(<?=short_date($item['date'])?>)<? } ?></span></a>
                         <? } else { ?>
                            <div><h3><?=$title?></h3><span class="smallprint"><?=full($item)?> <? if ($item['date']) { ?>(<?=short_date($item['date'])?>)<? } ?></span></div>
                         <? } ?>

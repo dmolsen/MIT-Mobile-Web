@@ -13,7 +13,7 @@ $page->content_begin();
                 <? if(is_long_text($item)) { ?>
 		    <span class="smallprint"><?=summary($item)?> <a href="<?=detailURL($title)?>">more</a> <? if ($item['date']) { ?>(<?=short_date($item['date'])?>)<? } ?></span>
                 <? } else { ?>
-		    <span class="smallprint"><?=full($item)?> <? if $item['date'] { ?>(<?=short_date($item['date'])?>)<? } ?></span>
+		    <span class="smallprint"><?=full($item)?> <? if ($item['date']) { ?>(<?=short_date($item['date'])?>)<? } ?></span>
                 <? } ?>
 	   </p>
         <? } ?>
