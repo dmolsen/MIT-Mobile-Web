@@ -24,7 +24,7 @@ $page->content_begin();
 	<strong>Sample searches:</strong><br/> 
 	    Name: 'alexander martin', 'martin'<br/>
 	    Email: 'almartin', 'almartin@<?=$email_ending?>'<br/>
-	    Phone: '<?=$dir_search_samp_l?>', '<?=$dir_search_samp_s?>'
+	    Phone: '<?=$dir_search_samp_l?>'<? if ($dir_search_samp_s != '') { ?>, '<?=$dir_search_samp_s?>'<? } ?>
 	</div>
 	
 	<ul class="secondary">

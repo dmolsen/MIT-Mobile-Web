@@ -21,7 +21,7 @@ $page->content_begin();
 
 	<p class="legend">
   	        <strong>Search tips:</strong> You can search by part or all of a person's name, email address or phone number.
-	        (e.g.: 'alexander martin', 'alex', 'almartin', '<?=$dir_search_samp_l?>', '<?$dir_search_samp_s?>')
+	        (e.g.: 'alexander martin', 'alex', 'almartin', '<?=$dir_search_samp_l?>'<? if ($dir_search_samp_s != '') { ?>, '<?=$dir_search_samp_s?>'<? } ?>)
 	</p>		
 
 	</form>

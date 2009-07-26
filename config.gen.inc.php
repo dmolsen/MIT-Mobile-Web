@@ -26,7 +26,7 @@ $oncampus_prefix   = "3";						  # number for on-campus prefix
 $has_dir_search_va = false;                       # does your school have voice-assisted directory search?
 $dir_search_va_num = "304.293.0000";              # number for voice-assisted directory search
 $dir_search_samp_l = "3042930000";                # long phone number example for directory search
-$dir_search_samp_s = "30000";                     # short phone number example for directory search
+$dir_search_samp_s = "30000";                     # short phone number example for directory search, leave empty if you don't want to use it
 
 /* Shared Graphics Info */
 $ip_bookmark_icon = "icon_wvu.png";      # bookmark graphic for iPhone. should be in web/ip/images
