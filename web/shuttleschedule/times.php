@@ -51,6 +51,9 @@ function standardTimeStr($hour, $minute, $second = NULL) {
   if($hour == 0) {
     $hour = 12;
   }
+  if (preg_match("/00([0-9]{1})/",$minute,$matches)) {
+    $minute = "0".$matches[1];
+  }
   $second_str = ($second !== NULL) ? ":$second" : "";
   return mark_up($hour . ':' . $minute . $second_str . $suffix);
 }
