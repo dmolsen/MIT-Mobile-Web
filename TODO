@@ -14,18 +14,20 @@ TODO list as of 7/25
  - remove "today's exhibits" from main calendar view
 
 ## SHUTTLESCHEDULE ##
- - get the times to show up correctly when 00s (e.g. 12:005)
- - move blue and gold connector to day lines
- - remove map tab from iphone look and map link from sp look
+x - get the times to show up correctly when 00s (e.g. 12:005)
+x - move blue and gold connector to day lines
+x - make sure if no night busses that night schedule doesn't show up
+x - remove map tab from iphone look and map link from sp look
  - need to figure out all of the options for managing how times show up for schedule
+ - is there a phone number to show on the bottom of the schedule? bus ride help number maybe?
 
 ## DIRECTORY ##
- - check why last option isn't showing on sp main page
+x - check why last option isn't showing on sp main page
 
 ## NEWS ##
- - check why date/time isn't showing up correctly
+x - check why date/time isn't showing up correctly
  - ask steve to create a full article rss feed just for this app
- - fix the help since it refers to 3DOWN
+ - ask steve to add a pub date as well
 
 ## WHAT'S NEW ##
  - create section
