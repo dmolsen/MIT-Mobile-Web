@@ -1,0 +1,42 @@
+TODO list as of 7/25
+
+## OVERALL ##
+ - remove wvu logo and replace with $inst_name in base look and feel for sp
+ - check all of the small graphics for iphone headers
+ - check help for entire system to make sure wording is correct
+
+## CALENDAR ##
+ - edit WVU ICS to push out a lot more events per category
+ - create ICS links for various categories
+ - add indiv ICS links to google calendar
+ - create a hard page that lists categories that can be shown
+ - muck up MIT calendar code to pull from google calendar (proved possible)
+ - remove "today's exhibits" from main calendar view
+
+## SHUTTLESCHEDULE ##
+ - get the times to show up correctly when 00s (e.g. 12:005)
+ - move blue and gold connector to day lines
+ - remove map tab from iphone look and map link from sp look
+ - need to figure out all of the options for managing how times show up for schedule
+
+## DIRECTORY ##
+ - check why last option isn't showing on sp main page
+
+## NEWS ##
+ - check why date/time isn't showing up correctly
+ - ask steve to create a full article rss feed just for this app
+ - fix the help since it refers to 3DOWN
+
+## WHAT'S NEW ##
+ - create section
+ - check content on MIT site
+
+## WVU SMS ##
+ - create section
+ - check content on MIT site
+ - see what can be hooked into libraries already being used by system
+
+## HOURS ##
+ - create section
+ - hard code content for now
+
