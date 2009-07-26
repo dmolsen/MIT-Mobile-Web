@@ -34,8 +34,13 @@ $ip_home_icon     = "wvu-logo-home.gif"; # home icon when user first pulls up yo
 $homelink_icon    = "homelink_wvu.png";  # homelink breadcrumb graphic for iPhone. should be in web/ip/images
 $non_ip_icon      = "wvu-logo.gif";      # header icon for non-iPhone phones. separate files should be in web/fp/images & web/sp/images
 
+/* Bus Schedule Info */
+$bus_schedule     = "mountain_line_schedule.php";          # file name of your bus schedule. should be in lib.
+$day_keys = array("blue_line", "blue_and_gold_connector"); # key must much the bus schedule lib line keys
+$night_keys = array();                                     # leave empty if you don't have any night-specific routes
+
 /* Special Features */
-$has_sms          = true;                         # if you have a page showing SMS commands set to true
-$bus_schedule     = "mountain_line_schedule.php"; # file name of your bus schedule. should be in lib.
+$has_sms          = true;               # if you have a page showing SMS commands set to true
+
 
 ?>
