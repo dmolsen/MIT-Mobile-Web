@@ -16,6 +16,7 @@ $page->content_begin();
                 <? } ?>
 	</p>
 
+  <? if (count($night_routes) != 0) { ?>
 	<p class="nav">
 		<strong>Nighttime Saferide Shuttles:</strong><br/>
                 <? foreach($night_routes as $route) { ?>
@@ -27,6 +28,7 @@ $page->content_begin();
 		     <a href="<?=routeURL($route)?>"><?=$route->getName()?></a><br/>
                 <? } ?>
 	</p>
+  <? } ?>
 
 	<p class="legend">
  	        <img src="../sp/images/shuttle.gif" width="15" height="12" alt="Running" align="absmiddle" />Running

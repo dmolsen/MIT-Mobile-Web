@@ -27,6 +27,7 @@ $page->content_begin();
            <? } ?>
 	</ul>
 
+   <? if (count($night_routes) != 0) { ?>
         <div class="nonfocal">
                 <p id="statusmessage"></p>
                 <h3>Nighttime Saferide Shuttles:</h3>
@@ -44,6 +45,7 @@ $page->content_begin();
 		</li>
            <? } ?>
 	</ul>
+	<? } ?>
 	
 	<div class="nonfocal legend">
 	       <div class="icon running">Running</div>
