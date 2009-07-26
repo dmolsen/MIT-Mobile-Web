@@ -43,6 +43,12 @@ $night_keys = array();                                     # leave empty if you 
 $username = "wvucalendar";
 $password = "Mountaineers#10";
 
+$calendars = array();
+$calendars['all'] = array('title' => 'All Events', 'user' => 'slgdnjkequb3a0re3ag3773n3a5tlbq7@import.calendar.google.com');
+$calendars['academic'] = array('title' => 'Academics', 'user' => 's9klo87qpdk0c0uqkhv8scje76mjtinu@import.calendar.google.com');
+$calendars['athletics'] = array('title' => 'Athletics', 'user' => 'rnle9udl9r9kl00qb1r1o7pb6oj57f34@import.calendar.google.com');
+$calendars['lectures'] = array('title' => 'Lectures &amp; Speakers', 'user' => 'nkl93kssu9e2evgc9o5vfkssgq0v1rqs@import.calendar.google.com');
+
 /* Special Features */
 $has_sms          = true;               # if you have a page showing SMS commands set to true
 

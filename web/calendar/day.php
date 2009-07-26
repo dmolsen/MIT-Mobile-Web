@@ -34,8 +34,8 @@ $service = Zend_Gdata_Calendar::AUTH_SERVICE_NAME; // predefined service name fo
 $client = Zend_Gdata_ClientLogin::getHttpClient($username.'@gmail.com',$password,$service);
 $gdataCal = new Zend_Gdata_Calendar($client);
 $query = $gdataCal->newEventQuery();
-$query->setUser('e5c02e64sdtcq4vqtt8441ib50fovr3f%40import.calendar.google.com');
-$query->setVisibility('public');
+$query->setUser($calendars['all']['user']);
+$query->setVisibility('private');
 $query->setProjection('basic');
 $query->setOrderby('starttime');
 $query->setFutureevents('true');
