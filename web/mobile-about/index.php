@@ -15,6 +15,7 @@ $static_pages = array(
   'about', 
   'requirements', 
   'credits',
+  'new',
 );
 
 
@@ -28,6 +29,7 @@ switch($_REQUEST['page']) {
 
   // static cases
   case "requirements":
+  case "new":
   case "credits":
     require "$prefix/{$_REQUEST['page']}.html";
     $page->cache();
@@ -45,6 +47,11 @@ switch($_REQUEST['page']) {
 function requirementsURL() {
   return "./?page=requirements";
 }
+
+function whatsnewURL() {
+  return "./?page=new";
+}
+
 
 function statisticsURL() {
   return "./?page=statistics";
