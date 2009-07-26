@@ -7,8 +7,9 @@
  * 
  */
 
+require_once "../../config.gen.inc.php";
 
-$header = "Useful Links";
+$header = $inst_name." Useful Links";
 $module = "links";
 
 $help = array(

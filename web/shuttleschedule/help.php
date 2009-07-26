@@ -7,8 +7,9 @@
  * 
  */
 
+require_once "../../config.gen.inc.php";
 
-$header = "Shuttle Schedule";
+$header = $inst_name." Shuttle Schedule";
 $module = "shuttleschedule";
 
 $help = array(

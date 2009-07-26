@@ -9,18 +9,18 @@
 
 class db {
   
-  	/* MySQL or SQLite */
-	public static $use_sqlite   = true;  # if using mysql change this to false, addresses naming issue between PDO & MySQL functions
-	public static $connection   = NULL;
+  /* MySQL or SQLite */
+  public static $use_sqlite   = true;  # if using mysql change this to false, addresses naming issue between PDO & MySQL functions
+  public static $connection   = NULL;
 
-	/* SQLite Config */
-	private static $sqlite_path = "/apache/htdocs/MIT-Mobile-Web/db/development.sqlite3"; # file system path to your SQLite database
+  /* SQLite Config */
+  private static $sqlite_path = "/apache/htdocs/MIT-Mobile-Web/db/development.sqlite3"; # file system path to your SQLite database
 
-	/* MySQL Config Info */
-	private static $host        = 'localhost';
-	private static $username    = 'username';
-	private static $passwd      = 'passwd';
-	private static $db          = 'db';
+  /* MySQL Config Info */
+  private static $host        = 'localhost';
+  private static $username    = 'username';
+  private static $passwd      = 'passwd';
+  private static $db          = 'db';
 
   public static function init() {
     if(!self::$connection) {

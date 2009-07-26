@@ -7,12 +7,13 @@
  * 
  */
 
+require_once "../../config.gen.inc.php";
 
-$header = "3DOWN";
-$module = "3down";
+$header = $inst_name." News";
+$module = "News";
 
 $help = array(
-    'Get the latest status updates on many of MIT&apos;s essential tech services, including phone, email, web, network services, and more.',
+    'Get the latest news items regarding events affecting the '.$inst_name.' community.',
 );
 
 require "../page_builder/help.php";

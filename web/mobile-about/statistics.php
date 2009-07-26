@@ -7,7 +7,6 @@
  * 
  */
 
-
 $all_data = PageViews::past_days(7);
 
 

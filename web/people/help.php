@@ -7,8 +7,9 @@
  * 
  */
 
+require_once "../../config.gen.inc.php";
 
-$header = "People Directory";
+$header = $inst_name." People Directory";
 $module = "people";
 
 # check to see if there is an on-campus prefix (set in config.gen.inc.php)

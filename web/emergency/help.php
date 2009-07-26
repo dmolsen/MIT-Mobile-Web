@@ -7,8 +7,9 @@
  * 
  */
 
+require_once "../../config.gen.inc.php";
 
-$header = "Emergency Info";
+$header = $inst_name." Emergency Info";
 $module = "emergency";
 
 $help = array(
