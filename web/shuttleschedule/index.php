@@ -23,14 +23,6 @@ $now = time();
 $day = date('D', $now);
 $hour = date('H', $now);
 $minute = date('i', $now);
-
-$day_keys = array(
-  "blue_line"
-);
-
-$night_keys = array(
-  "blue_and_gold_connector"
-);
   
 $day_routes = array();
 foreach($day_keys as $key) {

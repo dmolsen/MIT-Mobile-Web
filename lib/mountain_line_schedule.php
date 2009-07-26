@@ -33,7 +33,7 @@ $schedule
 
 
 $schedule
-     ->route("Blue & Gold Connector", "blue_&_gold_connector")
+     ->route("Blue and Gold Connector", "blue_and_gold_connector")
      ->summary("Runs every day, all year round")
      ->perHour(3)
      ->stops(
