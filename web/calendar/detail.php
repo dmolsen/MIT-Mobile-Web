@@ -10,8 +10,10 @@
 
 require "../page_builder/page_header.php";
 
-require_once "../../../lib/trunk/mit_calendar.php";
 require "calendar_lib.php";
+
+//various copy includes
+require_once "../../config.gen.inc.php";
 
 $event = MIT_Calendar::getEvent($_REQUEST['id']);
 $time_of_day = MIT_Calendar::timeText($event);

@@ -1,7 +1,7 @@
 <?php
 $title_end = !$is_search ? " for Today" : "";
 
-$page->title("MIT Events Calendar: " . ucname($category->name) . $title_end)
+$page->title($inst_name." Events Calendar: " . ucname($category->name) . $title_end)
      ->navbar_image('title-calendar')
      ->breadcrumbs("Browse", "Listing")
      ->breadcrumb_links(categorysURL());

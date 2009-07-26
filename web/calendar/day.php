@@ -9,7 +9,9 @@
 
 
 require "../page_builder/page_header.php";
-#require "../../lib/mit_calendar.php";
+
+//various copy includes
+require_once "../../config.gen.inc.php";
 
 // set-up Zend gData
 $path = '/apache/htdocs/MIT-Mobile-Web/lib/ZendGdata-1.8.4PL1/library';

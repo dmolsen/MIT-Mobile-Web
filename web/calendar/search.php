@@ -9,9 +9,11 @@
 
 
 require "../page_builder/page_header.php";
-require "../../../lib/trunk/mit_calendar.php";
 
 require "calendar_lib.php";
+
+//various copy includes
+require_once "../../config.gen.inc.php";
 
 $search_terms = $_REQUEST['filter'];
 

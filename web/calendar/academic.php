@@ -9,7 +9,11 @@
 
 
 require "../page_builder/page_header.php";
-require "../../../lib/trunk/academic.php";
+
+require "../../lib/academic.php";
+
+//various copy includes
+require_once "../../config.gen.inc.php";
 
 $month = $_REQUEST['month'];
 $year = $_REQUEST['year'];

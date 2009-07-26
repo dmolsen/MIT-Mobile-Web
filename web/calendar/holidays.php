@@ -13,7 +13,7 @@ require "calendar_lib.php";
 
 // this defines the text that will appear in the academica
 // calendar
-require "../../../lib/trunk/holiday_data.php";
+require "../../lib/holiday_data.php";
 
 $year = (int) $_REQUEST['year'];
 $next = $year + 1;
