@@ -6,14 +6,19 @@ $page->content_begin();
 
 ?>
 
-<? if (count($eventFeed) < 30) { ?>
-  <p><?=count($eventFeed)?> matches were found:</p>
+<? $i = 0; ?>
+<? foreach ($eventFeed as $event) { $i++; } ?>
+<? if ($i == 1) { ?>
+  <p><?=$i?> matche found:</p>
+<? } else if ($i < 30) { ?>
+  <p><?=$i?> matches were found:</p>
 <? } else { ?>
 	<p>The first 30 matches found:</p>
 <? } ?>
+
 <div class="focal">
 					  <? foreach ($eventFeed as $event) { ?>
-	<p><a href="<?=detailURL($event)?>"><?=$event->title->text?></a><br/><span class="smallprint"><?=timeText($event)?><? if(briefLocation($event)) { ?>&nbsp;|&nbsp;<?=briefLocation($event)?><? } ?></span></a></p>
+	<p><a href="<?=detailURL($event)?>"><?=html_entity_decode($event->title->text)?></a><br/><span class="smallprint"><?=timeText($event)?><? if(briefLocation($event)) { ?>&nbsp;|&nbsp;<?=briefLocation($event)?><? } ?></span></a></p>
           <? } ?>
 </div>
 

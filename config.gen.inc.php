@@ -45,7 +45,7 @@ $password = "Mountaineers#10";
 
 $calendars = array();
 $calendars['all'] = array('title' => 'All Events', 'user' => 'd95aensfsagjlvpsrp29d35pg5bi4kr8@import.calendar.google.com');
-$calendars['academic'] = array('title' => 'Academics', 'user' => 's9klo87qpdk0c0uqkhv8scje76mjtinu@import.calendar.google.com');
+$calendars['academic'] = array('title' => 'Academics', 'user' => 'd259da0o994a5o42jr1vad2u3fa7g4ae@import.calendar.google.com');
 $calendars['athletics'] = array('title' => 'Athletics', 'user' => 'rnle9udl9r9kl00qb1r1o7pb6oj57f34@import.calendar.google.com');
 $calendars['lectures'] = array('title' => 'Lectures &amp; Speakers', 'user' => 'nkl93kssu9e2evgc9o5vfkssgq0v1rqs@import.calendar.google.com');
 

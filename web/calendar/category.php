@@ -19,16 +19,17 @@ require "gcalendar_setup.php";
 // defines all the variables related to being today
 require "calendar_lib.php";
 
+$id = $_REQUEST['id'];
+
+$service = Zend_Gdata_Calendar::AUTH_SERVICE_NAME; // predefined service name for calendar
 $client = Zend_Gdata_ClientLogin::getHttpClient($username.'@gmail.com',$password,$service);
 $gdataCal = new Zend_Gdata_Calendar($client);
 $query = $gdataCal->newEventQuery();
-$query->setUser($calendars[$_REQUEST['id']]['user']);
+$query->setUser($calendars[$id]['user']);
 $query->setVisibility('private');
 $query->setProjection('full');
 $query->setOrderby('starttime');
 $query->setSortorder('a');
-$query->setStartMin($current['gdate']);
-$query->setStartMax($next['gdate']);
 $query->setmaxresults('30');
 $eventFeed = $gdataCal->getCalendarEventFeed($query);
 
