@@ -12,7 +12,7 @@ $page->content_begin();
 			<li><?=$date_str?><br/><?=$time_of_day?></li>
 
                         <? if(briefLocation($event)) { ?>
- 			   <li><a href="<?=mapURL($event)?>" class="map"><?=briefLocation($event)?></a></li>
+ 			   <li><a href="<?#=mapURL($event)?>" class="map"><?=briefLocation($event)?></a></li>
                         <? } ?>
 
 			<li class="description"><?=$event->getContent()?></li>

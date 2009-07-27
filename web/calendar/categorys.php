@@ -15,8 +15,6 @@ require "calendar_lib.php";
 //various copy includes
 require_once "../../config.gen.inc.php";
 
-$categorys = MIT_Calendar::Categorys();
-
 require "$prefix/categorys.html";
 $page->output();
 

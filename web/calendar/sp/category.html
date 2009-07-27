@@ -1,10 +1,23 @@
 <?php
-$page->title($inst_name." Events Calendar: " . ucname($category->name) . " Search Results")
-     ->header("Events Calendar: " . ucname($category->name) );
+$page->title($inst_name." Events Calendar: " . $calendars[$_REQUEST['id']]['title'] . " Search Results")
+     ->header("Events Calendar: " . $calendars[$_REQUEST['id']]['title'] );
 
 $page->content_begin();
 
-$content->output($events);
+?>
+
+<? if (count($eventFeed) < 30) { ?>
+  <p><?=count($eventFeed)?> matches were found:</p>
+<? } else { ?>
+	<p>The first 30 matches found:</p>
+<? } ?>
+<div class="focal">
+					  <? foreach ($eventFeed as $event) { ?>
+	<p><a href="<?=detailURL($event)?>"><?=$event->title->text?></a><br/><span class="smallprint"><?=timeText($event)?><? if(briefLocation($event)) { ?>&nbsp;|&nbsp;<?=briefLocation($event)?><? } ?></span></a></p>
+          <? } ?>
+</div>
+
+<?
 
 $page->content_end();
 $page->nav_link("./", "Events Calendar Home");
