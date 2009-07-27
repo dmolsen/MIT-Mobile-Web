@@ -10,6 +10,8 @@
 
 require "../page_builder/page_header.php";
 
+require "../../lib/academic.php";
+
 // various copy includes
 require_once "../../config.gen.inc.php";
 
@@ -50,8 +52,8 @@ $query->setVisibility('private');
 $query->setProjection('full');
 $query->setOrderby('starttime');
 $query->setSortorder('a');
-$query->setStartMin(date("Y-m-d"),mktime(0,0,0,array_search($month, month_data::$months)+1,1,$year));
-$query->setStartMax(date("Y-m-d"),mktime(0,0,0,array_search($month, month_data::$months)+2,-1,$year));
+$query->setStartMin(date("Y-m-d",mktime(0,0,0,array_search($month, month_data::$months)+1,1,$year)));
+$query->setStartMax(date("Y-m-d",mktime(0,0,0,array_search($month, month_data::$months)+2,-1,$year)));
 $query->setmaxresults('30');
 $eventFeed = $gdataCal->getCalendarEventFeed($query);
 
