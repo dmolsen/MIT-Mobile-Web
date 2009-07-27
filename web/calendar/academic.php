@@ -39,8 +39,6 @@ $Month = Month($month);
 $prev_url = "academic.php?year={$prev_yr}&month={$prev['month']}";
 $next_url = "academic.php?year={$next_yr}&month={$next['month']}";
 $days = $academic->years[$year][$month];
-$has_prev = isset($academic->years[$prev_yr][ $prev['month'] ]);
-$has_next = isset($academic->years[$next_yr][ $next['month'] ]);
 
 $service = Zend_Gdata_Calendar::AUTH_SERVICE_NAME; // predefined service name for calendar
 
@@ -52,8 +50,8 @@ $query->setVisibility('private');
 $query->setProjection('full');
 $query->setOrderby('starttime');
 $query->setSortorder('a');
-$query->setStartMin(date("Y-m-d"),mktime(0,0,0,date('m'),1,date('Y')));
-$query->setStartMax(date("Y-m-d"),mktime(0,0,0,date('m')+1,-1,date('Y')));
+$query->setStartMin(date("Y-m-d"),mktime(0,0,0,array_search($month, month_data::$months)+1,1,$year));
+$query->setStartMax(date("Y-m-d"),mktime(0,0,0,array_search($month, month_data::$months)+2,-1,$year));
 $query->setmaxresults('30');
 $eventFeed = $gdataCal->getCalendarEventFeed($query);
 
