@@ -39,7 +39,8 @@ $query->setVisibility('private');
 $query->setProjection('full');
 $query->setOrderby('starttime');
 $query->setSortorder('a');
-$query->setFutureevents('true');
+$query->setStartMin($current['gdate']);
+$query->setStartMax($current['gdate']);
 $query->setmaxresults('30');
 $eventFeed = $gdataCal->getCalendarEventFeed($query);
 
