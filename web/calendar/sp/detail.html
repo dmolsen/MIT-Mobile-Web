@@ -6,7 +6,7 @@ $page->content_begin();
 ?>
 
 	<div class="focal">
-		<h2><?=$event->title?></h2>
+		<h2><?=html_entity_decode($event->title->text)?></h2>
 		<p>
 			<?=$date_str?>
 			<? if ($time_of_day) { ?><br/>
