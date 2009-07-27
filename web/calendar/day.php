@@ -36,9 +36,11 @@ $gdataCal = new Zend_Gdata_Calendar($client);
 $query = $gdataCal->newEventQuery();
 $query->setUser($calendars['all']['user']);
 $query->setVisibility('private');
-$query->setProjection('basic');
+$query->setProjection('full');
 $query->setOrderby('starttime');
+$query->setSortorder('a');
 $query->setFutureevents('true');
+$query->setmaxresults('30');
 $eventFeed = $gdataCal->getCalendarEventFeed($query);
 
 require "$prefix/day.html";

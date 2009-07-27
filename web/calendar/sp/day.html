@@ -15,7 +15,9 @@ $page->content_begin();
           
 						  <ul>
 						  <? foreach ($eventFeed as $event) { ?>
-						    <li><?=$event->title->text?></li>
+ <? $start = $event->getWhen(); ?>
+<? $stime = $start[0]->getStartTime(); ?>
+						    <li><?=$event->title->text?><?=$stime?></li>
 						  <? } ?>
 						  </ul>
 	</div>
