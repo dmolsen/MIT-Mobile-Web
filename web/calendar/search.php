@@ -40,7 +40,8 @@ $query->setmaxresults('50');
 $query->setQuery($search_terms);
 $eventFeed = $gdataCal->getCalendarEventFeed($query);
 
-$form = new CalendarForm($prefix, SearchOptions::get_options($timeframe));
+#$content = new ResultsContent("items", "calendar", $prefix, $phone, array("timeframe" => $timeframe));
+#$form = new CalendarForm($prefix, SearchOptions::get_options($timeframe));
 #$content->set_form($form);
 
 require "$prefix/search.html";
