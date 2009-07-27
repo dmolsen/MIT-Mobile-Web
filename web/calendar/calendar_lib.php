@@ -20,6 +20,7 @@ function day_info($time, $offset=0) {
     "day_3Let"      => date('D', $time),
     "day_num_2dig"  => date('d', $time),
     "date"          => date('Y/m/d', $time),
+    "gdate"         => date('Y-m-d', $time),
     "time"          => strtotime(date("Y-m-d 12:00:00", $time))
   );
 }
