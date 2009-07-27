@@ -15,11 +15,11 @@ $page->content_begin();
 		</p>
 		<p>
                     <? if (briefLocation($event)) { ?>
-											 Location: <a href="<?=mapURL($event)?>" class="map"><?=briefLocation($event)?></a>
+											 Location: <a href="<?#=mapURL($event)?>" class="map"><?=briefLocation($event)?></a>
                     <? } ?>
 		</p>
 		<p>
-                        <?=$event->getContent?>
+                        <?=$event->getContent()?>
 		</p>
 
                 <?# if ($event->infophone) { ?>
