@@ -10,10 +10,14 @@
 
 require "../page_builder/page_header.php";
 
-require "calendar_lib.php";
-
-//various copy includes
+// various copy includes
 require_once "../../config.gen.inc.php";
+
+// sets up google calendar classes
+require "gcalendar_setup.php";
+
+// defines all the variables related to being today
+require "calendar_lib.php";
 
 $search_terms = $_REQUEST['filter'];
 
@@ -33,10 +37,11 @@ $query->setSortorder('a');
 $query->setStartMin($dates['start']);
 $query->setStartMax($dates['end']);
 $query->setmaxresults('50');
+$query->setQuery($search_terms);
 $eventFeed = $gdataCal->getCalendarEventFeed($query);
 
 $form = new CalendarForm($prefix, SearchOptions::get_options($timeframe));
-$content->set_form($form);
+#$content->set_form($form);
 
 require "$prefix/search.html";
 $page->output();
