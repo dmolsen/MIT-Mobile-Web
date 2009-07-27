@@ -425,12 +425,11 @@ class Route implements Iterator{
     $day = $next_stop["real_day"];
     $total_minutes = $next_stop["total_minutes"];
 
-    $db->prepare(
+    $stmt_2 = $db->prepare(
       "SELECT day_real, hour, minute FROM Schedule WHERE day_scheduled = ? AND day_real = ? AND place = ? AND route = ? AND (60 * hour + minute) >= CAST(? AS INT) ORDER BY (60 * hour + minute) LIMIT 1" );
 
     $stops = array();   
     $zero = 0;
-    
 
     // find the next time for each stop of the route
     foreach(array_keys($this->stops) as $place) {
