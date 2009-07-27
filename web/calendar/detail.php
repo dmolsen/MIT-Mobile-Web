@@ -10,18 +10,34 @@
 
 require "../page_builder/page_header.php";
 
-require "calendar_lib.php";
-
-//various copy includes
+// various copy includes
 require_once "../../config.gen.inc.php";
 
-$event = MIT_Calendar::getEvent($_REQUEST['id']);
-$time_of_day = MIT_Calendar::timeText($event);
+// sets up google calendar classes
+require "gcalendar_setup.php";
+
+// defines all the variables related to being today
+require "calendar_lib.php";
+
+$service = Zend_Gdata_Calendar::AUTH_SERVICE_NAME; // predefined service name for calendar
+
+$client = Zend_Gdata_ClientLogin::getHttpClient($username.'@gmail.com',$password,$service);
+$eventInfo = $gdataCal->getEvent($client,$_REQUEST['id']);
 
 $day_num = (string)(int)$event->start->day;
-$date_str = "{$event->start->weekday}, {$event->start->monthname} {$day_num}, {$event->start->year}"; 
 
-$event->urlize = URLize($event->infourl);
+$when = $event->getWhen();
+$startTime = $when[0]->startTime;
+$endTime = $when[0]->endTime;
+$date_str = strftime('%A, %B %e, %Y',strtotime($startTime));
+if (!(strlen($startTime) == 10)) {
+  $time_of_day = strftime('%l:%M%P',strtotime($startTime));
+  if ($endTime != '') {
+    $time_of_day .= "-".strftime('%l:%M%P',strtotime($endTime));
+  }
+}
+
+#$event->urlize = URLize($event->infourl);
 
 function phoneURL($number) {
   if($number) {
