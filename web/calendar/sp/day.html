@@ -12,15 +12,9 @@ $page->content_begin();
 	</div>
 	
 	<div class="focal">
-          
-						  <ul>
 						  <? foreach ($eventFeed as $event) { ?>
-                <? $start = $event->getWhen(); ?>
-                <? $id = $event->getId(); ?>
-                <? $stime = $start[0]->getStartTime(); ?>
-						    <li><?=$event->title->text?> <?=$stime?> <?=$id ?></li>
-						  <? } ?>
-						  </ul>
+		<p><a href="<?=detailURL($event)?>"><?=$event->title->text?></a><br/><span class="smallprint"><?=timeText($event)?><? if(briefLocation($event)) { ?>&nbsp;|&nbsp;<?=briefLocation($event)?><? } ?></span></a></p>
+            <? } ?>
 	</div>
 	
 	<p class="nonfocal">

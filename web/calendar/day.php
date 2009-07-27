@@ -40,7 +40,7 @@ $query->setProjection('full');
 $query->setOrderby('starttime');
 $query->setSortorder('a');
 $query->setStartMin($current['gdate']);
-$query->setStartMax($current['gdate']);
+$query->setStartMax($next['gdate']);
 $query->setmaxresults('30');
 $eventFeed = $gdataCal->getCalendarEventFeed($query);
 

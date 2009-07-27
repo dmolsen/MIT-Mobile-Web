@@ -114,23 +114,34 @@ function subCategorysURL($category) {
 }
 
 function detailURL($event) {
-  return "detail.php?id={$event->id}";
+  preg_match("/_(.*)$/i",$event->id->text,$matches);
+  $id = $matches[1];
+  return "detail.php?id={$id}";
 }
 
 function timeText($event) {
-  $out = substr($event->start->weekday, 0, 3) . ' ';
-  $out .= substr($event->start->monthname, 0, 3) . ' ';
-  $out .= (int)$event->start->day . ' ';
 
-  $out .= MIT_Calendar::timeText($event);
+  $when = $event->getWhen();
+  $startTime = $when[0]->startTime;
+  $endTime = $when[0]->endTime;
+  if (strlen($startTime) == 10) {
+    $out = strftime('%a %b %e',strtotime($startTime));
+  }
+  else {
+    $out = strftime('%a %b %e',strtotime($startTime))." ".strftime('%l:%M%P',strtotime($startTime));
+    if ($endTime != '') {
+      $out .= "-".strftime('%l:%M%P',strtotime($endTime));
+    }
+  }
   return $out;
 }
   
 function briefLocation($event) {
-  if($loc = $event->shortloc) {
-    return $loc;
+  $where = $event->getWhere();
+  if ($where[0]) {
+    return $where[0];
   } else {
-    return $event->location;
+    return false;
   }
 }
 
