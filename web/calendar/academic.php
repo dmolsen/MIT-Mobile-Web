@@ -10,10 +10,14 @@
 
 require "../page_builder/page_header.php";
 
-require "../../lib/academic.php";
-
-//various copy includes
+// various copy includes
 require_once "../../config.gen.inc.php";
+
+// sets up google calendar classes
+require "gcalendar_setup.php";
+
+// defines all the variables related to being today
+require "calendar_lib.php";
 
 $month = $_REQUEST['month'];
 $year = $_REQUEST['year'];
@@ -37,6 +41,21 @@ $next_url = "academic.php?year={$next_yr}&month={$next['month']}";
 $days = $academic->years[$year][$month];
 $has_prev = isset($academic->years[$prev_yr][ $prev['month'] ]);
 $has_next = isset($academic->years[$next_yr][ $next['month'] ]);
+
+$service = Zend_Gdata_Calendar::AUTH_SERVICE_NAME; // predefined service name for calendar
+
+$client = Zend_Gdata_ClientLogin::getHttpClient($username.'@gmail.com',$password,$service);
+$gdataCal = new Zend_Gdata_Calendar($client);
+$query = $gdataCal->newEventQuery();
+$query->setUser($calendars['academic']['user']);
+$query->setVisibility('private');
+$query->setProjection('full');
+$query->setOrderby('starttime');
+$query->setSortorder('a');
+$query->setStartMin(date("Y-m-d"),mktime(0,0,0,date('m'),1,date('Y')));
+$query->setStartMax(date("Y-m-d"),mktime(0,0,0,date('m')+1,-1,date('Y')));
+$query->setmaxresults('30');
+$eventFeed = $gdataCal->getCalendarEventFeed($query);
 
 require "$prefix/academic.html";
 $page->output();

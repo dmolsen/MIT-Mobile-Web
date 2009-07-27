@@ -10,17 +10,9 @@ $page->content_begin();
    <p class="nonfocal"><? if($has_prev) { ?><a href="<?=$prev_url?>">&lt; <?=$prev_month?> <?=$prev_yr?></a><? } if($has_prev && $has_next) { ?>&nbsp;|&nbsp;<? } if($has_next) { ?><a href="<?=$next_url?>"><?=$next_month?> <?=$next_yr?> &gt;</a><? } ?></p>
 
 <div class="focal">
-   <? foreach($days as $index => $day) { ?>
-      <h4><?=$day->day_text($year, $month)?></h4>
-      <ul>
-          <? foreach($day->items as $item) { ?>
-             <li><?=$item->html()?></li>
+   				  <? foreach ($eventFeed as $event) { ?>
+	<p><a href="<?=detailURL($event)?>"><?=$event->title->text?></a><br/><span class="smallprint"><?=timeText($event)?><? if(briefLocation($event)) { ?>&nbsp;|&nbsp;<?=briefLocation($event)?><? } ?></span></a></p>
           <? } ?>
-      </ul>
-      <? if($index != sizeof($days)-1 && $phone == 'sp') {?>
-          <p class="bb">&nbsp;</p>
-      <? } ?>
-   <? } ?>
 </div>
 <?
 
