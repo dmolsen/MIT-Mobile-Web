@@ -48,30 +48,30 @@ class SearchOptions {
     if(is_int($offset)) {
       $day2 = day_info($time, $offset);
       if($offset > 0) {
-        return array("start" => $day1['date'], "end" => $day2['date']);
+        return array("start" => $day1['gdate'], "end" => $day2['date']);
       } else {
-        return array("start" => $day2['date'], "end" => $day1['date']); 
+        return array("start" => $day2['gdate'], "end" => $day1['date']); 
       }
     } else {
       switch($offset) {
         case "term":
           if($day1['month_num'] < 7) {
-            $end_date = "{$day1['year']}/07/01";
+            $end_date = "{$day1['year']}-07-01";
 	  } else {
-            $end_date = "{$day1['year']}/12/31";
+            $end_date = "{$day1['year']}-12-31";
           }
           break;
 
         case "year": 
           if($day1['month_num'] < 7) {
-            $end_date = "{$day1['year']}/07/01";
+            $end_date = "{$day1['year']}-07-01";
 	  } else {
             $year = $day1['year'] + 1;
-            $end_date = "$year/07/01";
+            $end_date = "$year-07-01";
           }
           break;
       }    
-      return array("start" => $day1['date'], "end" => $end_date); 
+      return array("start" => $day1['gdate'], "end" => $end_date); 
     }
   }
 }

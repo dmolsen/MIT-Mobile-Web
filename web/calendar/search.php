@@ -19,9 +19,21 @@ $search_terms = $_REQUEST['filter'];
 
 $timeframe = isset($_REQUEST['timeframe']) ? $_REQUEST['timeframe'] : 0;
 $dates = SearchOptions::search_dates($timeframe);
-$events = MIT_Calendar::fullTextSearch($search_terms, $dates['start'], $dates['end']);
 
-$content = new ResultsContent("items", "calendar", $prefix, $phone, array("timeframe" => $timeframe));
+$service = Zend_Gdata_Calendar::AUTH_SERVICE_NAME; // predefined service name for calendar
+
+$client = Zend_Gdata_ClientLogin::getHttpClient($username.'@gmail.com',$password,$service);
+$gdataCal = new Zend_Gdata_Calendar($client);
+$query = $gdataCal->newEventQuery();
+$query->setUser($calendars['all']['user']);
+$query->setVisibility('private');
+$query->setProjection('full');
+$query->setOrderby('starttime');
+$query->setSortorder('a');
+$query->setStartMin($dates['start']);
+$query->setStartMax($dates['end']);
+$query->setmaxresults('50');
+$eventFeed = $gdataCal->getCalendarEventFeed($query);
 
 $form = new CalendarForm($prefix, SearchOptions::get_options($timeframe));
 $content->set_form($form);
