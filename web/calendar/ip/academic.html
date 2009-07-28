@@ -8,28 +8,13 @@ $page->content_begin();
 
 <div class="nonfocal">
    <h2>Academic Calendar for<br/><strong><?=$Month?> <?=$year?></strong></h2>
-   <p>
-      <? if($has_prev) { ?> 
-        <a href="<?=$prev_url?>">&lt; <?=$prev_month?> <?=$prev_yr?></a> 
-      <? } if($has_prev && $has_next) { ?>
-        | 
-      <? } if($has_next) { ?>
-        <a href="<?=$next_url?>"><?=$next_month?> <?=$next_yr?> &gt;</a>
-      <? } ?>
-   </p>
+   <p><a href="<?=$prev_url?>">&lt; <?=$prev_month?> <?=$prev_yr?></a>&nbsp;|&nbsp;<a href="<?=$next_url?>"><?=$next_month?> <?=$next_yr?> &gt;</a></p>
 </div>
 
 <ul class="results">
-   <? foreach($days as $day) { ?>
-      <li>
-          <h4><?=$day->day_text($year, $month)?></h4>
-          <ul>
-             <? foreach($day->items as $item) { ?>
-                 <li><?=$item->html()?></li>
-             <? } ?>
-          </ul>
-      </li>
-   <? } ?>
+   	<? foreach ($eventFeed as $event) { ?>
+<p><a href="<?=detailURL($event)?>"><?=$event->title->text?></a><br/><span class="smallprint"><?=timeText($event)?><? if(briefLocation($event)) { ?>&nbsp;|&nbsp;<?=briefLocation($event)?><? } ?></span></a></p>
+ <? } ?>
 </ul>
 
 <? $page->content_end(); ?>
