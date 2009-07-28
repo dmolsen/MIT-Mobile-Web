@@ -1,6 +1,4 @@
 <?php
-$page->title($inst_name.' People Directory: Details')
-     ->header('People Directory');
 
 class Item {
     private $person;
@@ -17,42 +15,22 @@ class Item {
           } else {
             echo '<br />';
           }
-          ?>
-            <span class="label"><?=$label?></span>
-	    <span class="value"><?
-                   if($href != NULL) {
-                       echo '<a href="' . $href($value) . '" class="' . $class . '">';
-                   }
-                   echo $value;
-                   if($href != NULL) {
-                       echo "</a>";
-                   }
-                 ?></span>
-          <?
+          echo $value;
         }
     }
 }
 $item = new Item($person);
 
-$page->content_begin();
-?>
-	<p class="nav">
-            <?
+           
               $item->normal('name', 'fullname');
               $item->normal('title', 'title');
-              $item->normal('dept', 'dept');              
-              $item->normal('home', 'homephone', 'phoneHREF', 'phone');              
-              $item->normal('phone', 'telephone', 'phoneHREF', 'phone');              
-              $item->normal('fax', 'fax', 'phoneHREF', 'phone');              
+              $item->normal('dept', 'dept');                            
+              $item->normal('phone', 'telephone');                          
               $item->normal('address', 'address');              
-              $item->normal('email', 'email', 'mailHREF', 'email');              
-              $item->normal('office', 'room', 'mapHREF', 'map');
+              $item->normal('email', 'email');              
+              $item->normal('office', 'room');
             ?>
-	</p>
-
-<? 
-
-$page->content_end(); 
-$page->nav_link("index.php", "People Directory Home");
-
-?>
+just addeding text to get really long content
+to see if textmarts returns across to sms message or not
+cause that would be really cool and you know it. just some more to make sure
+that i got a really good test in here.
