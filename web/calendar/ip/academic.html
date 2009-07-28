@@ -12,9 +12,13 @@ $page->content_begin();
 </div>
 
 <ul class="results">
-   	<? foreach ($eventFeed as $event) { ?>
-<p><a href="<?=detailURL($event)?>"><?=$event->title->text?></a><br/><span class="smallprint"><?=timeText($event)?><? if(briefLocation($event)) { ?>&nbsp;|&nbsp;<?=briefLocation($event)?><? } ?></span></a></p>
- <? } ?>
+	                     <? $i = 0; ?>
+									     <? foreach ($eventFeed as $event) { ?>
+									          <li><a href="<?=detailURL($event)?>"><?=html_entity_decode($event->title->text)?><br/><span class="smallprint"><?=timeText($event)?><? if(briefLocation($event)) { ?>&nbsp;|&nbsp;<?=briefLocation($event)?><? } ?></span></a></li>
+									     <? } ?>
+									     <? if ($i == 0) { ?>
+									        <li> No academic calendar items for this month. Try <a href="<?=$next_url?>">next month</a>.</li>
+										   <? } ?>
 </ul>
 
 <? $page->content_end(); ?>
