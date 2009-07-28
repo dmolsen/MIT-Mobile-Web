@@ -21,6 +21,8 @@ require "calendar_lib.php";
 
 $search_terms = $_REQUEST['filter'];
 
+$search_options = SearchOptions::get_options();
+
 $timeframe = isset($_REQUEST['timeframe']) ? $_REQUEST['timeframe'] : 0;
 $dates = SearchOptions::search_dates($timeframe);
 
