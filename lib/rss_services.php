@@ -17,7 +17,7 @@ class ThreeDown extends RSS {
 }
 
 class News extends RSS {
-  protected $rss_url = "http://wvutoday.wvu.edu/xml/news.xml";
+  protected $rss_url = "http://wvutoday.wvu.edu/xml/news_full.xml";
 }
 
 class RSS {
