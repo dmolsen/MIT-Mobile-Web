@@ -19,7 +19,7 @@ $text = explode("\n", $items[$title]['text']);
 $paragraphs = array();
 foreach($text as $paragraph) {
   if($paragraph) {
-    $paragraphs[] = htmlentities($paragraph);
+    $paragraphs[] = $paragraph;
   }
 }
 

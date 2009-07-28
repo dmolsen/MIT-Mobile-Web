@@ -7,11 +7,11 @@ $page->content_begin();
 
 	<p>News items regarding events affecting the <?=$inst_name?> community.</p>
 
-        <? foreach($items as $title => $item) { ?>	
+        <? foreach($items as $title => $item) { ?>
 	   <p class="focal">
 		<strong><?=$title?></strong><br/>
                 <? if(is_long_text($item)) { ?>
-		    <span class="smallprint"><?=summary($item)?> <a href="<?=detailURL($title)?>">more</a> <? if ($item['date']) { ?>(<?=short_date($item['date'])?>)<? } ?></span>
+		    <span class="smallprint"><?=html_entity_decode(summary($item))?> <a href="<?=detailURL($title)?>">more</a> <? if ($item['date']) { ?>(<?=short_date($item['date'])?>)<? } ?></span>
                 <? } else { ?>
 		    <span class="smallprint"><?=full($item)?> <? if ($item['date']) { ?>(<?=short_date($item['date'])?>)<? } ?></span>
                 <? } ?>
