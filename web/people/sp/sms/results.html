@@ -1,10 +1,7 @@
-<? if ($total > 5) { ?>Your search returned <?=$total?> results. Narrow it down by txting 'WVUDIR firstname lastname' to 41411.
-<? } else { ?>
-Rply w/ # to see full entry:
-<? $i = 0; ?>
-<? while ($i < 6) { ?>
-<?=$i?>. <?=$person['surname'][0]?>, <?=$person['givenname'][0]?>
-<? $i++; ?>
+<? if ($total > 5) { ?>Your search returned <?=$total?> results. Please refine your search by txting 'WVUDIR firstname lastname' to 41411.<? } else { ?>
+Rply with # of proper result:
+<?$i = 1?>
+<? foreach($people as $person) { ?>
+<?=$i?>. <?=$person['surname'][0]?>, <?=$person['givenname'][0])?>
+<?$i++;?>
 <? } ?>
-<? } ?>
-StdMsgChrgsAply

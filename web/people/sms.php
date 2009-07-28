@@ -50,7 +50,7 @@ if (isset($_REQUEST["username"])) {
    $people = html_escape_people($people);
 
    $total = count($people);
-
+   
    if($total==0) {
      $failed_search = True;
      require "$prefix/sms/index.html";
@@ -82,7 +82,7 @@ if (isset($_REQUEST["username"])) {
    require "$prefix/sms/index.html";
 }
 
-$page->output();
+#$page->output();
 
 function detail_url($person) {
     return $_SERVER['SCRIPT_NAME'] . '?username=' . urlencode($person["id"]) . '&filter=' . urlencode($_REQUEST['filter']);
