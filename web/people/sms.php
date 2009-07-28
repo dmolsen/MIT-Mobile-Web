@@ -18,6 +18,9 @@ if($search_terms = $_REQUEST["a"]) {
   $search_terms = "";
 }
 
+$uid = $_REQUEST["uid"]; # UID provided by TextMarks to uniquely identify phone
+$rightNow = date("YmdHis");
+$selected = false;
 
 if (isset($_REQUEST["username"])) {
    $person = lookup_username($_REQUEST["username"]);
@@ -26,6 +29,23 @@ if (isset($_REQUEST["username"])) {
 } elseif ($search_terms) {
 
    //search mit ldap directory
+   if (preg_match("/([1-5]{1})/",$search_terms)) {
+	$selected = true;
+	$select = $search_terms;
+    $db = db::$connection;
+	$stmt = $db->prepare("SELECT searchterm FROM SMSDirectoryState WHERE uid = ? AND (350 + CAST(timestamp AS INT)) >= CAST(? AS INT) ORDER BY CAST(timestamp AS INT)");
+
+    if (db::$use_sqlite) {
+        $stmt->bindParam(1, $uid, PDO::PARAM_STR, 12);
+        $stmt->bindParam(2, $rightNow, PDO::PARAM_STR, 12);
+		$stmt->execute();
+        $stmt->bindColumn(1,$search_terms);
+	}
+	else {
+		$stmt->bind_param('ss', $uid, $rightNow);
+	    $stmt->bind_result($search_terms);
+	    $stmt->execute();
+   }
    $people = mit_search($search_terms);
    $people = html_escape_people($people);
 
@@ -38,8 +58,24 @@ if (isset($_REQUEST["username"])) {
        $person = $people[0];
        require "$prefix/sms/detail.html";
    } else {
-       $content = new ResultsContent("items", "people", $prefix, $phone); 
-       require "$prefix/sms/results.html";
+	
+	   if ($selected == true) {
+		 $person = $people[(int)$select];
+	     require "$prefix/sms/detail.html";
+	   }
+	   else {
+		$db = db::$connection;
+		$stmt = $db->prepare("INSERT INTO SMSDirectoryState (searchterm, timestamp, uid) values (?, ?, ?, ?, ?, ?)");
+	    if (db::$use_sqlite) {
+	       $stmt->execute(array($search_terms, $rightNow, $uid));
+	    }
+	    else {
+           $stmt->bind_param('sss', $search_terms, $rightNow, $uid);
+	       $stmt->execute();
+	    }
+
+	    require "$prefix/sms/results.html";
+	   } 
    }
 } else {
    $page->cache();
