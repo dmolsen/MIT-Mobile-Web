@@ -22,9 +22,9 @@ $page->content_begin();
 	<? } ?>
 </div>
 
-<div class="focal">
+<ul class="results">
 					  <? foreach ($eventFeed as $event) { ?>
-	<p><a href="<?=detailURL($event)?>"><?=html_entity_decode($event->title->text)?></a><br/><span class="smallprint"><?=timeText($event)?><? if(briefLocation($event)) { ?>&nbsp;|&nbsp;<?=briefLocation($event)?><? } ?></span></a></p>
+	<li><a href="<?=detailURL($event)?>"><?=html_entity_decode($event->title->text)?><br/><span class="smallprint"><?=timeText($event)?><? if(briefLocation($event)) { ?>&nbsp;|&nbsp;<?=briefLocation($event)?><? } ?></span></a></li>
           <? } ?>
 </div>
 

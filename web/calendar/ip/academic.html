@@ -14,10 +14,11 @@ $page->content_begin();
 <ul class="results">
 	                     <? $i = 0; ?>
 									     <? foreach ($eventFeed as $event) { ?>
+<? $i++; ?>
 									          <li><a href="<?=detailURL($event)?>"><?=html_entity_decode($event->title->text)?><br/><span class="smallprint"><?=timeText($event)?><? if(briefLocation($event)) { ?>&nbsp;|&nbsp;<?=briefLocation($event)?><? } ?></span></a></li>
 									     <? } ?>
 									     <? if ($i == 0) { ?>
-									        <li> No academic calendar items for this month. Try <a href="<?=$next_url?>">next month</a>.</li>
+									        <li> <a href="<?=$next_url?>">No academic calendar items for this month. Try next month.</a></li>
 										   <? } ?>
 </ul>
 
