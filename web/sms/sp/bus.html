@@ -1,0 +1,28 @@
+<?php
+$page->title($inst_name.' SMS (BETA): Shuttle Schedule')
+     ->header($inst_name.' SMS (BETA)');
+
+$page->content_begin();
+?>
+
+<div class="focal">
+	
+	  <h2>Shuttle Schedule</h2> 
+	
+   	<p>Get the next stop and time for your bus line of choice. To use this service, text-message "wvubus" to 41411.</p>
+
+    <p><strong>Keyword:</strong><br />wvubus</p>
+
+    <p><strong>Examples:</strong><br />wvubus blue<br />wvubus bgc</p>
+
+    <p><strong>Route codes:</strong><br />Blue Line: blue<br />Blue &amp; Gold Connector: bgc</p>
+</div>
+
+<p class="nonfocal legend">
+    <strong>* Important note:</strong> The <?=$inst_name?> Mobile Web is a free service. Extra data charges may apply when using any website on your mobile device depending on your service plan.
+</p>
+
+<? 
+$page->content_end(); 
+$page->help_off();
+?>
