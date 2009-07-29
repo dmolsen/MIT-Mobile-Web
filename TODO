@@ -17,8 +17,8 @@ x - muck up MIT calendar code to pull from google calendar (proved possible)
  - make sure that if an event doesn't have a location the little bar doesn't show up
  - see if we can add URL + phone number to google event for viewing
 x - remove "today's exhibits" from main calendar view
- - remove "holidays" from main calendar view for demo period
- - add the search form back to the search results page
+x - remove "holidays" from main calendar view for demo period
+x - add the search form back to the search results page
 
 ## SHUTTLESCHEDULE ##
 x - get the times to show up correctly when 00s (e.g. 12:005)
@@ -44,14 +44,14 @@ x - create section
 x - check content on MIT site
 
 ## WVU SMS ##
- - create section
- - check content on MIT site
+x - create section
+x - check content on MIT site
  --- they support:
  ------ cal (todays events)
- ------ dir
- ------ sos (or status for us)
- ------ bus
- - see what can be hooked into libraries already being used by system
+x ------ dir
+x ------ sos (or status for us)
+x ------ bus
+x - see what can be hooked into libraries already being used by system
 
 ## HOURS ##
  - create section
