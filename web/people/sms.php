@@ -29,22 +29,28 @@ if (isset($_REQUEST["username"])) {
 } elseif ($search_terms) {
 
    //search mit ldap directory
-   if (preg_match("/([1-5]{1})/",$search_terms)) {
-	$selected = true;
-	$select = $search_terms;
+   if (preg_match("/(1|2|3|4|5)/",$search_terms)) {
+        $selected = true;
+	$select = $search_terms - 1;
     $db = db::$connection;
-	$stmt = $db->prepare("SELECT searchterm FROM SMSDirectoryState WHERE uid = ? AND (350 + CAST(timestamp AS INT)) >= CAST(? AS INT) ORDER BY CAST(timestamp AS INT)");
+	$stmt = $db->prepare("SELECT searchterm, timestamp FROM SMSDirectoryState WHERE uid = ? AND (350 + CAST(timestamp AS INT)) >= CAST(? AS INT) ORDER BY CAST(timestamp AS INT) LIMIT 1");
 
     if (db::$use_sqlite) {
         $stmt->bindParam(1, $uid, PDO::PARAM_STR, 12);
         $stmt->bindParam(2, $rightNow, PDO::PARAM_STR, 12);
 		$stmt->execute();
         $stmt->bindColumn(1,$search_terms);
+        $stmt->bindColumn(2,$timestamp);
 	}
 	else {
 		$stmt->bind_param('ss', $uid, $rightNow);
 	    $stmt->bind_result($search_terms);
 	    $stmt->execute();
+   }
+   if (!$stmt->fetch()) {
+      echo("no results returned.");
+      exit;
+   }
    }
    $people = mit_search($search_terms);
    $people = html_escape_people($people);
@@ -65,13 +71,16 @@ if (isset($_REQUEST["username"])) {
 	   }
 	   else {
 		$db = db::$connection;
-		$stmt = $db->prepare("INSERT INTO SMSDirectoryState (searchterm, timestamp, uid) values (?, ?, ?, ?, ?, ?)");
+		$stmt_1 = $db->prepare("INSERT INTO SMSDirectoryState (searchterm, timestamp, uid) values ( ?, ?, ?)");
 	    if (db::$use_sqlite) {
-	       $stmt->execute(array($search_terms, $rightNow, $uid));
+               $stmt_1->bindParam(1,$search_terms);
+               $stmt_1->bindParam(2,$rightNow);
+               $stmt_1->bindParam(3,$uid);
+	       $stmt_1->execute();
 	    }
 	    else {
-           $stmt->bind_param('sss', $search_terms, $rightNow, $uid);
-	       $stmt->execute();
+           $stmt_1->bind_param('sss', $search_terms, $rightNow, $uid);
+	       $stmt_1->execute();
 	    }
 
 	    require "$prefix/sms/results.html";
