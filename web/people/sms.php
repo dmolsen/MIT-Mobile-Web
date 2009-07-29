@@ -33,7 +33,7 @@ if (isset($_REQUEST["username"])) {
         $selected = true;
 	$select = $search_terms - 1;
     $db = db::$connection;
-	$stmt = $db->prepare("SELECT searchterm, timestamp FROM SMSDirectoryState WHERE uid = ? AND (350 + CAST(timestamp AS INT)) >= CAST(? AS INT) ORDER BY CAST(timestamp AS INT) LIMIT 1");
+	$stmt = $db->prepare("SELECT searchterm, timestamp FROM SMSDirectoryState WHERE uid = ? AND (350 + CAST(timestamp AS INT)) >= CAST(? AS INT) ORDER BY CAST(timestamp AS INT) DESC LIMIT 1");
 
     if (db::$use_sqlite) {
         $stmt->bindParam(1, $uid, PDO::PARAM_STR, 12);

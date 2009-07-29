@@ -35,7 +35,9 @@ class RSS {
     if($rss === FALSE) {
       return FALSE;
     }
-
+    if (strlen($rss) == 0) {
+      return FALSE;
+    }
     $rss_obj->loadXML($rss);
     $rss_root = $rss_obj->documentElement;
     $items = array();

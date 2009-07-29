@@ -9,10 +9,11 @@
 
 require_once "../../lib/rss_services.php";
 
+$Emergency = new Emergency();
 $emergencies = $Emergency->get_feed();
 
 if($emergencies === False) {
-  $paragraphs = array('Emergency information is currently not available');
+  echo('Emergency information is currently not available');
 } else {
   foreach ($emergencies as $title => $emergency) {
 	$text = explode("\n", $emergency[$title]['text']);
