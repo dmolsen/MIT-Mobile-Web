@@ -9,14 +9,14 @@ $page->content_begin();
 	
 	  <h2><?=$hours_locations[$_REQUEST['page']][1];?></h2> 
 	
-   	<p><?=$hours_locations[$_REQUEST['page']][2];?></p>
+   	<p><?=$hours_locations[$_REQUEST['page']][3];?></p>
 
-    <p><strong>Campus:</strong><br /><?=$hours_locations[$_REQUEST['page']][3];?></p>
+    <p><strong>Campus:</strong><br /><?=$hours_locations[$_REQUEST['page']][2];?></p>
 
     <p>
 	    <strong>Hours:</strong><br />
 			<? while ($i < 7) { ?>
-				<?=$days[$i]?>: <?=$hours_locations[$_REQUEST['page']][$i+4];?><?$i++;?>
+			<?=$days[$i]?>: <?=$hours_locations[$_REQUEST['page']][$i+4];?><br /><?$i++;?>
 			<? } ?>
 	  </p>
 </div>
@@ -24,7 +24,7 @@ $page->content_begin();
 <? 
 $page->content_end(); 
 $page->help_off();
-$page->nav_link('./?page=cl', 'Hours &amp; Locations: Computer Labs');
 $page->nav_link('./', 'Hours &amp; Locations');
+$page->nav_link('./?page=cl', 'Hours &amp; Locations: Computer Labs');
 ?>
 
