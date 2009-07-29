@@ -1,0 +1,24 @@
+<?php
+$page->title($inst_name.' Hours &amp; Locations: Computer Labs')
+     ->navbar_image('title-hours')
+     ->breadcrumbs($inst_name.' Hours &amp; Locations')
+     ->breadcrumb_home();
+
+$page->content_begin();
+?>
+
+<div class="focal">
+    <p>The following are the OIT-managed computer labs around campus:</p>
+</div>
+
+<ul class="secondary">	  
+        <li><a href="<?=cldcwhitehallURL()?>">White Hall Computing Lab</a></li>
+		    <li><a href="<?=clecevansdaleURL()?>">Evansdale Computing Lab</a></li>
+		    <li><a href="<?=clecercURL()?>">ERC Computing Lab</a></li>
+</ul>
+
+<? 
+$page->content_end(); 
+$page->help_off();
+$page->nav_link('./', 'Hours &amp; Locations');
+?>

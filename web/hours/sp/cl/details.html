@@ -1,0 +1,30 @@
+<?php
+$page->title($inst_name.' Hours &amp; Locations: Computer Labs')
+     ->header('Hours &amp; Locations');
+
+$page->content_begin();
+?>
+
+<div class="focal">
+	
+	  <h2><?=$hours_locations[$_REQUEST['page']][1];?></h2> 
+	
+   	<p><?=$hours_locations[$_REQUEST['page']][2];?></p>
+
+    <p><strong>Campus:</strong><br /><?=$hours_locations[$_REQUEST['page']][3];?></p>
+
+    <p>
+	    <strong>Hours:</strong><br />
+			<? while ($i < 7) { ?>
+				<?=$days[$i]?>: <?=$hours_locations[$_REQUEST['page']][$i+4];?><?$i++;?>
+			<? } ?>
+	  </p>
+</div>
+
+<? 
+$page->content_end(); 
+$page->help_off();
+$page->nav_link('./?page=cl', 'Hours &amp; Locations: Computer Labs');
+$page->nav_link('./', 'Hours &amp; Locations');
+?>
+
