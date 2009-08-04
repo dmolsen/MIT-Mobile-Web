@@ -1,11 +1,9 @@
 <?php
 $page->title('WVU News')
-     ->header('News');
+     ->header($news_srcs[$_REQUEST['news']]['title'].' News');
 
 $page->content_begin();
 ?>
-
-  <h2>News from <? if ($news_srcs[$_REQUEST['news']]['need_the'] == true) { ?>the<? } ?> <?=$section?></h2>
 
 	<p>The latest news items from <? if ($news_srcs[$_REQUEST['news']]['need_the'] == true) { ?>the<? } ?> <?=$section?>.</p>
 
