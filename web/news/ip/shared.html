@@ -1,20 +1,17 @@
 <?php
 $page->title($inst_name.' News')
      ->navbar_image('title-news')
-     ->breadcrumbs('News')
-     ->breadcrumb_home();
+     ->breadcrumbs('News',$section);
 
 $page->content_begin();
 ?>
 
 	<div class="nonfocal">
-		News items regarding events affecting the <?=$inst_name?> community from WVU Today.
+		The latest news items from <? if $_REQUEST['news'] == 'da' { ?>the<? } ?> <?=$section?>.
 	</div>
 	
 	<ul class="nav">
-		         <? $i = 0; ?>
              <? foreach($items as $title => $item) { ?>
-							<? if ($i < 5) { ?>
 		<li>
                         <? if(is_long_text($item)) { ?>
 			<a href="<?=detailURL($title)?>"><h3><?=$title?></h3><span class="smallprint"><?=html_entity_decode(summary($item))?> <span class="more">more</span> <? if ($item['date']) { ?>(<?=short_date($item['date'])?>)<? } ?></span></a>
@@ -22,21 +19,8 @@ $page->content_begin();
                            <div><h3><?=$title?></h3><span class="smallprint"><?=full($item)?> <? if ($item['date']) { ?>(<?=short_date($item['date'])?>)<? } ?></span></div>
                         <? } ?>
 		</li>
-		         <? } ?>
-		         <? $i++; ?>
              <? } ?>
 	
-	</ul>
-	
-	<ul class="nav">
-		<li><a href="<?=wvutodayURL()?>">More from WVU Today</a></li>
-		<li><a href="<?=daURL()?>">News Items from the Daily Athenaeum</a></li>
-		<li><a href="<?=hscURL()?>">News Items from HSC</a></li>
-		<li><a href="<?=oitURL()?>">News Items from OIT</a></li>
-	</ul>
-	
-	<ul class="secondary">
-			<li><a href="../emergency">Campus emergency information</a></li>	
 	</ul>
 	
 <? $page->content_end(); ?>

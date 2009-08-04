@@ -11,8 +11,59 @@ require_once "../page_builder/page_header.php";
 require_once "../../lib/rss_services.php";
 require_once "../../config.gen.inc.php";
 
-$News = new News();
+
+
+
+// dynamic pages need to include dynamics scripts
+switch($_REQUEST['news']) {
+
+  case "wvutoday":
+    $News = new WVUTodayNews();
+    $section = "WVU Today";
+    require "$prefix/shared.html";
+    break;
+
+  case "hsc":
+	$News = new HSCNews();
+    $section = "HSC";
+    require "$prefix/shared.html";
+    break;
+
+  case "da":
+	$News = new DANews();
+	$section = "Daily Athenaeum";
+    require "$prefix/shared.html";
+    break;
+
+  case "oit":
+    $News = new OITNews();
+    $section = "OIT";
+    require "$prefix/shared.html";
+    break;
+
+  default:
+    $News = new WVUTodayNews();
+    require "$prefix/index.html";
+    
+}
+
 $items = $News->get_feed();
+
+function wvutodayURL() {
+  return "./?news=wvutoday";
+}
+
+function hscURL() {
+  return "./?news=hsc";
+}
+
+function daURL() {
+  return "./?news=da";
+}
+
+function oitURL() {
+  return "./?news=oit";
+}
 
 function detailURL($title) {
   return "detail.php?title=$title";
@@ -29,8 +80,6 @@ function summary($item) {
 function full($item) {
   return $item['text'];
 }
-
-require "$prefix/index.html";
 
 $page->output();
     
