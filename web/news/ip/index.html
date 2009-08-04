@@ -32,7 +32,7 @@ $page->content_begin();
 		<? $i = 0;?>
 		<? foreach ($news_srcs as $key => $news_src) { ?>
 			<? if ($i == 0) { ?>
-		    <li><a href="./?news=<?=$key?>">More from <?=$news_src['title']?></a></li>
+		    <li><a href="./?news=<?=$key?>">More from <? if ($news_src['need_the'] == true) { ?>the<? } ?><?=$news_src['title']?></a></li>
 		    <? $i = 1; ?>
 		  <? } else { ?>
 		    <li><a href="./?news=<?=$key?>">News from <? if ($news_src['need_the'] == true) { ?>the<? } ?> <?=$news_src['title']?></a></li>

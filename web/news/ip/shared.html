@@ -7,14 +7,14 @@ $page->content_begin();
 ?>
 
 	<div class="nonfocal">
-		The latest news items from <? if ($_REQUEST['news'] == 'da') { ?>the<? } ?> <?=$section?>.
+		The latest news items from <? if ($news_src['need_the'] == true) { ?>the<? } ?> <?=$section?>.
 	</div>
 	
 	<ul class="nav">
              <? foreach($items as $title => $item) { ?>
 		<li>
                         <? if(is_long_text($item)) { ?>
-			<a href="<?=detailURL($title)?>"><h3><?=$title?></h3><span class="smallprint"><?=html_entity_decode(summary($item))?> <span class="more">more</span> <? if ($item['date']) { ?>(<?=short_date($item['date'])?>)<? } ?></span></a>
+			<a href="<?=detailURL($title,$key)?>"><h3><?=$title?></h3><span class="smallprint"><?=html_entity_decode(summary($item))?> <span class="more">more</span> <? if ($item['date']) { ?>(<?=short_date($item['date'])?>)<? } ?></span></a>
                         <? } else { ?>
                            <div><h3><?=$title?></h3><span class="smallprint"><?=full($item)?> <? if ($item['date']) { ?>(<?=short_date($item['date'])?>)<? } ?></span></div>
                         <? } ?>
