@@ -12,12 +12,20 @@ class Emergency extends RSS {
   protected $rss_url = "http://feeds.omnilert.net/rss/d014a0436fd6c76e17d4931495231bea/b8d5ae4de409bcc5b5977f77e4222413/10/3178a/2/";
 }
  
-class ThreeDown extends RSS {
-  protected $rss_url = "http://3down.mit.edu/3down/index.php?rss=1";
+class WVUTodayNews extends RSS {
+  protected $rss_url = "http://wvutoday.wvu.edu/xml/news_full.xml";
 }
 
-class News extends RSS {
-  protected $rss_url = "http://wvutoday.wvu.edu/xml/news_full.xml";
+class OITNews extends RSS {
+  protected $rss_url = "http://feeds.feedburner.com/WVUOITNews";
+}
+
+class HSCNews extends RSS {
+  protected $rss_url = "http://health.wvu.edu/newsreleases/news-feed.aspx";
+}
+
+class DANews extends RSS {
+  protected $rss_url = "http://www.da.wvu.edu/rss.php";
 }
 
 class RSS {
