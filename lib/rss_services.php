@@ -9,34 +9,34 @@
 
 class Emergency extends RSS {
   // e2campus feed for WVU
-  protected $rss_url = "http://feeds.omnilert.net/rss/d014a0436fd6c76e17d4931495231bea/b8d5ae4de409bcc5b5977f77e4222413/10/3178a/2/";
+  protected $rss_url = "";
 }
  
 class WVUTodayNews extends RSS {
-  protected $rss_url = "http://wvutoday.wvu.edu/xml/news_full.xml";
+  protected $rss_url = "";
 }
 
 class OITNews extends RSS {
-  protected $rss_url = "http://feeds.feedburner.com/WVUOITNews";
+  protected $rss_url = "";
 }
 
 class HSCNews extends RSS {
-  protected $rss_url = "http://health.wvu.edu/newsreleases/news-feed.aspx";
+  protected $rss_url = "";
 }
 
 class DANews extends RSS {
-  protected $rss_url = "http://www.da.wvu.edu/rss.php";
+  protected $rss_url = "";
 }
 
 class RSS {
-  public function get_feed() {
+  public function get_feed($rss_url) {
     //get the feed
     $rss_obj = new DOMDocument();
 
     //turn off warnings
     $error_reporting = ini_get('error_reporting');
     error_reporting($error_reporting & ~E_WARNING);
-    $rss = file_get_contents($this->rss_url);
+    $rss = file_get_contents($rss_url);
     error_reporting($error_reporting);
 
     //if the rss feed fails to open return false

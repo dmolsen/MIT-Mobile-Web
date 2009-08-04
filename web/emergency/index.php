@@ -33,8 +33,8 @@ $others = array(
 require_once "../../lib/rss_services.php";
 
 $emergency_message = "Coming Soon: Emergency Updates"; 
-$Emergency = new Emergency();
-$emergencies = $Emergency->get_feed();
+$Emergency = new RSS();
+$emergencies = $Emergency->get_feed($emergency_rss_feed);
 
 if($emergencies === False) {
   $paragraphs = array('Emergency information is currently not available');
