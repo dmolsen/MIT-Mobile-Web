@@ -1,0 +1,24 @@
+<?php
+$page->title('WVU News')
+     ->header('News');
+
+$page->content_begin();
+?>
+
+  <h2>News from <? if ($news_srcs[$_REQUEST['news']]['need_the'] == true) { ?>the<? } ?> <?=$section?></h2>
+
+	<p>The latest news items from <? if ($news_srcs[$_REQUEST['news']]['need_the'] == true) { ?>the<? } ?> <?=$section?>.</p>
+
+        <? foreach($items as $title => $item) { ?>
+	   <p class="focal">
+		<strong><?=$title?></strong><br/>
+                <? if(is_long_text($item)) { ?>
+		    <span class="smallprint"><?=html_entity_decode(summary($item))?> <a href="<?=detailURL($title,$key)?>">more</a> <? if ($item['date']) { ?>(<?=short_date($item['date'])?>)<? } ?></span>
+                <? } else { ?>
+		    <span class="smallprint"><?=full($item)?> <? if ($item['date']) { ?>(<?=short_date($item['date'])?>)<? } ?></span>
+                <? } ?>
+	   </p>
+        <? } ?>
+<?
+$page->content_end();
+?>
