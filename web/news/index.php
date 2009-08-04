@@ -19,35 +19,38 @@ switch($_REQUEST['news']) {
 
   case "wvutoday":
     $News = new WVUTodayNews();
+    $items = $News->get_feed();
     $section = "WVU Today";
     require "$prefix/shared.html";
     break;
 
   case "hsc":
-	$News = new HSCNews();
+    $News = new HSCNews();
     $section = "HSC";
+    $items = $News->get_feed();
     require "$prefix/shared.html";
     break;
 
   case "da":
-	$News = new DANews();
-	$section = "Daily Athenaeum";
+    $News = new DANews();
+    $items = $News->get_feed();
+    $section = "Daily Athenaeum";
     require "$prefix/shared.html";
     break;
 
   case "oit":
     $News = new OITNews();
+    $items = $News->get_feed();
     $section = "OIT";
     require "$prefix/shared.html";
     break;
 
   default:
     $News = new WVUTodayNews();
+    $items = $News->get_feed();
     require "$prefix/index.html";
     
 }
-
-$items = $News->get_feed();
 
 function wvutodayURL() {
   return "./?news=wvutoday";
