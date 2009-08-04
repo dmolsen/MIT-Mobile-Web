@@ -11,65 +11,40 @@ require_once "../page_builder/page_header.php";
 require_once "../../lib/rss_services.php";
 require_once "../../config.gen.inc.php";
 
-
-
-
 // dynamic pages need to include dynamics scripts
 switch($_REQUEST['news']) {
 
+  // hard coding the cases. i probably should not be using a switch
   case "wvutoday":
-    $News = new WVUTodayNews();
-    $items = $News->get_feed();
-    $section = "WVU Today";
-    require "$prefix/shared.html";
-    break;
-
   case "hsc":
-    $News = new HSCNews();
-    $section = "HSC";
-    $items = $News->get_feed();
-    require "$prefix/shared.html";
-    break;
-
   case "da":
-    $News = new DANews();
-    $items = $News->get_feed();
-    $section = "Daily Athenaeum";
-    require "$prefix/shared.html";
-    break;
-
   case "oit":
-    $News = new OITNews();
-    $items = $News->get_feed();
-    $section = "OIT";
-    require "$prefix/shared.html";
+    $rss_url = $news_srcs[$_REQUEST['news']]['url'];
+    $section = $news_srcs[$_REQUEST['news']]['title'];
+    $key = $_REQUEST['news'];
+    $shared = true;
     break;
 
   default:
-    $News = new WVUTodayNews();
-    $items = $News->get_feed();
-    require "$prefix/index.html";
-    
+    $rss_url = $news_srcs['wvutoday']['url'];
+    $section = $news_srcs['wvutoday']['title'];
+    $key = 'wvutoday';
+    $shared = false;
+ 
 }
 
-function wvutodayURL() {
-  return "./?news=wvutoday";
+$News = new RSS();
+$items = $News->get_feed($rss_url);
+
+if ($shared == true) {
+  require "$prefix/shared.html";
+}
+else {
+  require "$prefix/index.html";
 }
 
-function hscURL() {
-  return "./?news=hsc";
-}
-
-function daURL() {
-  return "./?news=da";
-}
-
-function oitURL() {
-  return "./?news=oit";
-}
-
-function detailURL($title) {
-  return "detail.php?title=$title";
+function detailURL($title,$src) {
+  return "detail.php?title=$title&src=$src";
 }
 
 function is_long_text($item) {

@@ -17,7 +17,7 @@ $page->content_begin();
 							<? if ($i < 5) { ?>
 		<li>
                         <? if(is_long_text($item)) { ?>
-			<a href="<?=detailURL($title)?>"><h3><?=$title?></h3><span class="smallprint"><?=html_entity_decode(summary($item))?> <span class="more">more</span> <? if ($item['date']) { ?>(<?=short_date($item['date'])?>)<? } ?></span></a>
+			<a href="<?=detailURL($title,$key)?>"><h3><?=$title?></h3><span class="smallprint"><?=html_entity_decode(summary($item))?> <span class="more">more</span> <? if ($item['date']) { ?>(<?=short_date($item['date'])?>)<? } ?></span></a>
                         <? } else { ?>
                            <div><h3><?=$title?></h3><span class="smallprint"><?=full($item)?> <? if ($item['date']) { ?>(<?=short_date($item['date'])?>)<? } ?></span></div>
                         <? } ?>
@@ -29,10 +29,14 @@ $page->content_begin();
 	</ul>
 	
 	<ul class="nav">
-		<li><a href="<?=wvutodayURL()?>">More from WVU Today</a></li>
-		<li><a href="<?=daURL()?>">News Items from the Daily Athenaeum</a></li>
-		<li><a href="<?=hscURL()?>">News Items from HSC</a></li>
-		<li><a href="<?=oitURL()?>">News Items from OIT</a></li>
+		<? $i = 0;?>
+		<? foreach ($news_srcs as $key => $news_src) { ?>
+			<? if ($i == 0) { ?>
+		    <li><a href="./?news=<?=$key?>">More from <?=$news_src['title']?></a></li>
+		    <? $i = 1; ?>
+		  <? } else { ?>
+		    <li><a href="./?news=<?=$key?>">News from <? if ($news_src['need_the'] == true) { ?>the<? } ?> <?=$news_src['title']?></a></li>
+		  <? } ?>
 	</ul>
 	
 	<ul class="secondary">

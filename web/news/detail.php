@@ -12,8 +12,8 @@ require_once "../page_builder/page_header.php";
 require_once "../../lib/rss_services.php";
 require_once "../../config.gen.inc.php";
 
-$News = new News();
-$items = $News->get_feed();
+$News = new RSS();
+$items = $News->get_feed($news_srcs[$_REQUEST['src']]['url']);
 $title = $_REQUEST['title'];
 $text = explode("\n", $items[$title]['text']);
 $paragraphs = array();
