@@ -7,7 +7,7 @@ $page->content_begin();
 ?>
 
 	<div class="nonfocal">
-		The latest news items from <? if ($news_src['need_the'] == true) { ?>the<? } ?> <?=$section?>.
+		The latest news items from <? if ($news_srcs[$_REQUEST['news']]['need_the'] == true) { ?>the<? } ?> <?=$section?>.
 	</div>
 	
 	<ul class="nav">
