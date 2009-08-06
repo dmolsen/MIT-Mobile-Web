@@ -29,7 +29,7 @@ $schedule
         st("Easton Hill (Inbound)"   ,"eastonhilli", "todpot", '38'),
         st("DMV (Inbound)"           ,"dmvi"       , "todpot", '47'),
         st("Depot Return"            ,"depotr"     , "todpot", '55'))    
-     ->addHours("Mon-Sat",hours("6-17")) ;
+     ->addHours("Mon-Sat",hours("6:3-5:55"));
 
 
 $schedule
