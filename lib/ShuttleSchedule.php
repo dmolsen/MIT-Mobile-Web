@@ -193,14 +193,30 @@ class Route implements Iterator{
 
     foreach(day::$days as $day) {
       $this->day = new day($day);
+      $stop_hour_plussed = false;
       foreach($this as $stop) {
+	    $stop_hour = $stop->getHour();
+	    $stop_minute = $stop->getMinute();
+	    if ((int)$stop_minute < (int)$prev_stop_minute) {
+			if ($stop_hour == $prev_stop_hour) {
+				$stop_hour = $stop_hour + 1;
+				$stop_hour_plussed = true;
+			}
+	    }
 	    if (db::$use_sqlite) {
-			$stmt->execute(array($day, $stop->getDay(), $this->encodeName(), $stop->getName(), $stop->getHour(), $stop->getMinute()));
+			$stmt->execute(array($day, $stop->getDay(), $this->encodeName(), $stop->getName(), $stop_hour, $stop_minute));
 		}
 		else {
-			$stmt->bind_param('ssssii', $day, $stop->getDay(), $this->encodeName(), $stop->getName(), $stop->getHour(), $stop->getMinute());
+			$stmt->bind_param('ssssii', $day, $stop->getDay(), $this->encodeName(), $stop->getName(), $stop_hour, $stop_minute);
 		    $stmt->execute();
 		}
+		if ($stop_hour_plussed) {
+			$prev_stop_hour = $stop_hour - 1;
+		}
+		else {
+			$prev_stop_hour = $stop_hour;
+		}
+		$prev_stop_minute = $stop_minute;
       }
     }
   }
