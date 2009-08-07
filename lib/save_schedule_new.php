@@ -1,34 +1,7 @@
 <?
 
-# - days it runs on
-# - base sched w/ stops
-# - between what and what delays (add/remove)
 require_once "db.php";
-
-$routes = array();
-$routes['blue_line'] = array(
-                       "runs" => array(
-                         array(
-                           "days"         => array("Mon","Tue","Wed","Thu","Fri","Sat"),
-                           "hour_per"     => 1, 
-                           "hour_start"   => 6, 
-                           "hour_end"     => 15, 
-                           "delays"       => array("6:00"=>30,"7:00"=>60,"13:00"=>60),
-                           "stops"        => array(
-							  "Depot Leave"            => "00",
-							  "Unity Manor"            => "02",
-							  "Richwood & Charles"     => "05",
-							  "DMV (Outbound)"         => "10",
-							  "Airport & Mileground"   => "15",
-							  "Easton Hill (Outbound)" => "20",
-							  "University High School" => "30",
-							  "Canyon Dairy Mart"      => "32",
-							  "Lakeside Canyon"        => "35",
-							  "Crest Point"            => "37",
-							  "Easton Hill (Inbound)"  => "38",
-							  "DMV (Inbound)"          => "47",
-							  "Depot Return"           => "55"
-						    ))));
+require_once "mountain_line_schedule_new.php";
 											
 function makeDD($minute,$hour_per,$hour_per_i) {
 	$addition = array(0,30,20,15); #only supporting up to 4 runs per hour here
@@ -40,9 +13,7 @@ function makeDD($minute,$hour_per,$hour_per_i) {
 
 $db = db::$connection;
 $stmt = $db->prepare("INSERT INTO TestSchedule (day_scheduled, day_real, route, place, hour, minute) values (?, ?, ?, ?, ?, ?)");	
-
-	
-										
+								
 foreach($routes as $route_name => $route) {
   $runs = $route['runs'];
   $i = 0;
@@ -76,7 +47,7 @@ foreach($routes as $route_name => $route) {
 					#	break; # get out of the foreach loop because we want to get to the next set of stops
 					#}
 					#else 
-                                        if ($delay < (60/(int)$run['hour_per'])) {
+					if ($delay < (60/(int)$run['hour_per'])) {
 						$stop_minute = $stop_minute + $delay;
 						if ($stop_minute > 59) {
 							$stop_minute = $stop_minute - 60;
@@ -96,9 +67,9 @@ foreach($routes as $route_name => $route) {
 					   $stop_hour = $prev_stop_hour;
 					}
 					
-                                        if ($stop_minute < 10) {
-                                           $stop_minute = "0".$stop_minute;
-                                        }
+					if ($stop_minute < 10) {
+						$stop_minute = "0".$stop_minute;
+					}
 
 					if (db::$use_sqlite) {
 						$stmt->execute(array($day_name, $day_name, $route_name, $stop_name, $stop_hour, $stop_minute));
