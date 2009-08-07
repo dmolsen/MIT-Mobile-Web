@@ -3,6 +3,7 @@
 # - days it runs on
 # - base sched w/ stops
 # - between what and what delays (add/remove)
+require_once "db.php";
 
 $routes = array();
 $routes['blue_line'] = array(
@@ -12,7 +13,7 @@ $routes['blue_line'] = array(
                            "hour_per"     => 1, 
                            "hour_start"   => 6, 
                            "hour_end"     => 15, 
-                           "delays"       => array("6:00"=>30,"7:30"=>30,"1:00"=>60),
+                           "delays"       => array("6:00"=>30,"7:00"=>60,"13:00"=>60),
                            "stops"        => array(
 							  "Depot Leave"            => "00",
 							  "Unity Manor"            => "02",
@@ -42,44 +43,43 @@ $stmt = $db->prepare("INSERT INTO TestSchedule (day_scheduled, day_real, route, 
 
 	
 										
-foreach($routes as $route_name -> $route) {
-  $runs = $line[0];
+foreach($routes as $route_name => $route) {
+  $runs = $route['runs'];
   $i = 0;
   foreach($runs as $run) {
-    $days = $run[$i]['days'];
+    $days = $run['days'];
     
-    foreach($days as $day_name -> $day) {
-		$hour = $run[$i]['hour_start'];
-		$hour_end = $run[$i]['hour_end'];
+    foreach($days as $day_name) {
+		$hour = $run['hour_start'];
+		$hour_end = $run['hour_end'];
 		$delay = 0;
 
 	    while ($hour < $hour_end) {
 			$stop_hour = $hour;
 			$k = 0;
 			
-			while ($k < $run[$i]['hour_per']) {
+			while ($k < $run['hour_per']) {
 				$prev_stop_hour = 0;
 				$prev_stop_minute = 0;
 				$delayed = false;
 				$delay = 0;
-				foreach($run[$i]['stops'] as $stop_name -> $stop) {
-					$stop_minute = makeDD($stop[$stop_name],$run[$i]['hour_per'],$k);
-					$stop_delay_check = $hour.":".$stop_minute;
-					if (array_key_exists($stop_delay_check, $run[$i]['delays'])) {
+				foreach($run['stops'] as $stop_name => $stop) {
+					$stop_minute = makeDD($stop,$run['hour_per'],$k);
+					#echo($stop_minute); exit;
+                                        $stop_delay_check = $hour.":".$stop_minute;
+					if (array_key_exists($stop_delay_check, $run['delays'])) {
 						$delayed = true;
-					    $delay = $run[$i]['delays'][$stop_delay_check];
+					    $delay = $run['delays'][$stop_delay_check];
 					}
-					if ($delayed && (($prev_stop_minute + $delay) > ((60/(int)$run[$i]['hour_per'])))) {
-						$delayed = false;
-						break; # get out of the foreach loop because we want to get to the next set of stops
-					}
-					else if ($delay < (60/(int)$run[$i]['hour_per'])) {
+					#if ($delayed && (($prev_stop_minute + $delay) > ((60/(int)$run['hour_per'])))) {
+					#	$delayed = false;
+					#	break; # get out of the foreach loop because we want to get to the next set of stops
+					#}
+					#else 
+                                        if ($delay < (60/(int)$run['hour_per'])) {
 						$stop_minute = $stop_minute + $delay;
 						if ($stop_minute > 59) {
 							$stop_minute = $stop_minute - 60;
-							if ($stop_minute < 10) {
-								$stop_minute = "0".$stop_minute;
-							}
 							$delayed = true;
 						}
 					}
@@ -96,6 +96,10 @@ foreach($routes as $route_name -> $route) {
 					   $stop_hour = $prev_stop_hour;
 					}
 					
+                                        if ($stop_minute < 10) {
+                                           $stop_minute = "0".$stop_minute;
+                                        }
+
 					if (db::$use_sqlite) {
 						$stmt->execute(array($day_name, $day_name, $route_name, $stop_name, $stop_hour, $stop_minute));
 					}
