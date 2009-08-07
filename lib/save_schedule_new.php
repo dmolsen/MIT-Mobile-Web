@@ -4,9 +4,9 @@ require_once "db.php";
 require_once "mountain_line_schedule_new.php";
 											
 function makeDD($minute,$hour_per,$hour_per_i) {
-	$addition = array(0,30,20,15); #only supporting up to 4 runs per hour here
-	if ($hour_per_i > 0) {
-		$minute = $minute + ($addition[$hour_per_i] * $hour_per_i);
+	$addition = array(0,30,20,15); #only supporting up to 4 loops per hour here
+        if ($hour_per_i > 0) {
+		$minute = $minute + ($addition[$hour_per-1] * $hour_per_i);
 	}
 	return $minute;
 }

@@ -27,6 +27,9 @@
 #  ** - delays are tricky. if the delay is less than a full loop the stops will start with their base time + delay.
 #       this can cause issues because the hour doesn't get properly incremented for a loop so make sure to take that into account
 #       when restarting from a delay.
+#
+# to skip loops, especially in the morning or evening, requires that you skip each loop individually using a delay equal to the
+# time it takes to do a full loop.
 
 $routes = array();
 $routes['blue_line'] = array(
@@ -60,7 +63,7 @@ $routes['blue_and_gold_connector'] = array(
                            "hour_per"     => 3, 
                            "hour_start"   => 6, 
                            "hour_end"     => 21, 
-                           "delays"       => array("6:00" => 40),
+                           "delays"       => array("6:00"=>20, "6:20"=>20),
                            "stops"        => array(
 							  	"Brooke Towers (Rawley St.)"  => "00",
 								 "Law School"                 => "01",
@@ -75,7 +78,7 @@ $routes['blue_and_gold_connector'] = array(
 	                           "hour_per"     => 3, 
 	                           "hour_start"   => 9, 
 	                           "hour_end"     => 19, 
-	                           "delays"       => array("6:00" => 40),
+	                           "delays"       => array("9:00"=>20,"9:20"=>20,"6:40"=>20),
 	                           "stops"        => array(
 								  "Brooke Towers (Rawley St.)" => "00",
 								  "Law School"                 => "01",
