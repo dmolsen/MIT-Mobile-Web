@@ -21,6 +21,9 @@ $page->content_begin();
 		<p>
                         <?=$event->getContent()?>
 		</p>
+		<p>
+			<? print_r($event->getExtendedProperty()) ?>
+		</p>
 
                 <?# if ($event->infophone) { ?>
 		    <!--<p>
