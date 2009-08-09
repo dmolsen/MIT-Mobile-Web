@@ -1,6 +1,6 @@
 <?php
 $page->title($inst_name.' News: Detail')
-     ->header('News Detail');
+     ->header($section.' News Detail');
 
 $page->content_begin();
 ?>
@@ -10,8 +10,12 @@ $page->content_begin();
 		<h2><?=$title?></h2>
 
                 <? foreach($paragraphs as $paragraph) { ?>	
-		   <p><?=$paragraph?></p>
+		               <p><?=$paragraph?></p>
                 <? } ?>
+    <? if ($read_more) { ?>
+    <p><a href="<?=$link?>">Read more on the <?=$section?> site...
+	  <? } ?>
+	 
 		<p class="smallprint"><?=$long_date?></p>
 
 	</div>

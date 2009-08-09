@@ -16,6 +16,9 @@ $News = new RSS();
 $items = $News->get_feed($news_srcs[$_REQUEST['src']]['url']);
 $title = $_REQUEST['title'];
 $text = explode("\n", $items[$title]['text']);
+$link = $items[$title]['link'];
+$read_more = $news_srcs[$_REQUEST['src']]['read_more'];
+$section = $news_srcs[$_REQUEST['src']]['title'];
 $paragraphs = array();
 foreach($text as $paragraph) {
   if($paragraph) {
@@ -24,7 +27,7 @@ foreach($text as $paragraph) {
 }
 
 
-$long_date = date("l, F j, Y G:i:s", $items[$title]['unixtime']);
+$long_date = str_replace(' 0:00:00','',date("l, F j, Y G:i:s", $items[$title]['unixtime']));
 
 require "$prefix/detail.html";
 $page->output();
