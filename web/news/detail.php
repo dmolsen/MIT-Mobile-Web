@@ -22,7 +22,7 @@ $section = $news_srcs[$_REQUEST['src']]['title'];
 $paragraphs = array();
 foreach($text as $paragraph) {
   if($paragraph) {
-    $paragraphs[] = $paragraph;
+    $paragraphs[] = str_replace('Read more ...','',$paragraph);
   }
 }
 

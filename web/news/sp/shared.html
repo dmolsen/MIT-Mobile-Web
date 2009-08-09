@@ -1,6 +1,6 @@
 <?php
 $page->title('WVU News')
-     ->header('News');
+     ->header($section.' News');
 
 $page->content_begin();
 ?>
@@ -14,13 +14,13 @@ $page->content_begin();
         <? foreach($items as $title => $item) { ?>
 	   <p class="focal">
 		<strong><?=$title?></strong><br/>
-                <? if(is_long_text($item)) { ?>
-		    <span class="smallprint"><?=html_entity_decode(summary($item))?> <a href="<?=detailURL($title,$key)?>">more</a> <? if ($item['date']) { ?>(<?=$short_date?>)<? } ?></span>
-                <? } else { ?>
-		              <span class="smallprint"><?=full($item)?> <? if ($item['date']) { ?>(<?=$short_date?>)<? } ?></span>
-                <? } ?>
+                <? $short_date = short_date($item['date']); ?>
+                <? if ($short_date == '00:00am') { $short_date = '12:00am'; } ?>
+		<span class="smallprint"><?=html_entity_decode(summary($item))?> <a href="<?=detailURL($title,$key)?>">more</a> <? if ($item['date']) { ?>(<?=$short_date?>)<? } ?></span>
 	   </p>
         <? } ?>
 <?
 $page->content_end();
+$page->nav_link("./", "Campus News");
+
 ?>
