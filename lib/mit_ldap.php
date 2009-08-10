@@ -339,7 +339,7 @@ class RawQuery extends LdapQuery {
 }  
 
 function ldap_die($message) {
-  throw new DataServerException($message);
+  return $message;
 }
 
 ?>

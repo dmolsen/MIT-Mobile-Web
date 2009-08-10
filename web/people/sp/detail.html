@@ -3,7 +3,7 @@ $page->title($inst_name.' People Directory: Details')
      ->header($inst_name.' People Directory');
 
 class Item {
-    private $person;
+    public $person;
     private $first = True;
 
     public function __construct($person) {
@@ -41,10 +41,9 @@ $page->content_begin();
               $item->normal('name', 'fullname');
               $item->normal('title', 'title');
               $item->normal('dept', 'dept');              
-              $item->normal('home', 'homephone', 'phoneHREF', 'phone');              
-              $item->normal('phone', 'telephone', 'phoneHREF', 'phone');              
+              if ($item->person['telephone'][0] != '000-000-0000') { $item->normal('phone', 'telephone', 'phoneHREF', 'phone'); }              
               $item->normal('fax', 'fax', 'phoneHREF', 'phone');              
-              $item->normal('address', 'address');              
+              if ($item->person['affiliation'][0] == 'facstaff') { $item->normal('address', 'address'); }              
               $item->normal('email', 'email', 'mailHREF', 'email');              
               $item->normal('office', 'room', 'mapHREF', 'map');
             ?>
