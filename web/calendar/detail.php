@@ -39,7 +39,7 @@ if (!(strlen($startTime) == 10)) {
   }
 }
 
-$description = $event->getContent();
+$description = $event->getContent()->text;
 
 list($description,$event_link) = getExtraData($description,'link',true);
 list($description,$contact_phone) = getExtraData($description,'contact_phone',false);
@@ -48,9 +48,9 @@ list($description,$contact_name) = getExtraData($description,'contact_name',fals
 
 function getExtraData($description,$extra_data_pattern,$urlize) {
 	$extra_data = '';
-	$pattern = '/[['.$extra_data_pattern.']](.*?)[[/'.$extra_data_pattern.']]/i';
-	if (preg_match($pattern,$description,$matches)) {
-		if (trim($matches[1] != '')) {
+        $pattern = '/\[\['.$extra_data_pattern.'\]\](.*)\[\[\/'.$extra_data_pattern.'\]\]/';
+        if (preg_match($pattern,$description,$matches)) {
+	  if (trim($matches[1] != '')) {
 			if ($urlize) {
 				$extra_data = URLize($matches[1]);
 			}

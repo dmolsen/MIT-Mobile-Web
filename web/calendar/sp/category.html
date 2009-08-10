@@ -18,8 +18,9 @@ $page->content_begin();
 
 <div class="focal">
 					  <? foreach ($eventFeed as $event) { ?>
-	<p><a href="<?=detailURL($event,$_REQUEST['id'])?>"><?=html_entity_decode($event->title->text)?></a><br/><span class="smallprint"><?=timeText($event)?><? if(briefLocation($event)) { ?>&nbsp;|&nbsp;<?=briefLocation($event)?><? } ?></span></a></p>
-          <? } ?>
+        <? $loc = briefLocation($event); ?>
+	<p><a href="<?=detailURL($event,$_REQUEST['id'])?>"><?=html_entity_decode($event->title->text)?></a><br/><span class="smallprint"><?=timeText($event)?><? if(trim($loc->valueString) != '') { ?>&nbsp;|&nbsp;<?=$loc->valueString?><? } ?></span></a></p>
+      <? } ?>
 </div>
 
 <?

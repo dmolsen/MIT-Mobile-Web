@@ -24,25 +24,25 @@ $page->content_begin();
 		   </p>
 	  <? } ?>
 
-    <? if ($contact_name != '') { ?>
+    <? if (trim($contact_name) != '') { ?>
 	      <p>
-		       Contact name: <?=$event_name?>
+		       Contact name: <?=$contact_name?>
 		    </p>
 		<? } ?>
 		
-		<? if ($contact_phone != '') { ?>
+		<? if (trim($contact_phone) != '') { ?>
 	      <p>
 		       For info call: <a href="<?=phoneURL($contact_phone)?>" class="phone"><?=$contact_phone?></a>
 		    </p>
 		<? } ?>
 		
-		<? if ($contact_email != '') { ?>
+		<? if (trim($contact_email) != '') { ?>
 	      <p>
 		       For info email:  <a href="mailto:$contact_email?>" class="email"><?=$contact_email?></a>
 		    </p>
 		<? } ?>
 
-      <? if ($event_link != '') { ?>
+      <? if (trim($event_link) != '') { ?>
 		     <p>
 			      Website: <a href="<?=$event_link?>" class="external" target="_new"><?=$event_link?></a>
 		     </p>
