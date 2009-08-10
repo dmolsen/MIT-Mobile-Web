@@ -39,7 +39,30 @@ if (!(strlen($startTime) == 10)) {
   }
 }
 
-#$event->urlize = URLize($event->infourl);
+$description = $event->getContent();
+
+list($description,$event_link) = getExtraData($description,'link',true);
+list($description,$contact_phone) = getExtraData($description,'contact_phone',false);
+list($description,$contact_email) = getExtraData($description,'contact_email',false);
+list($description,$contact_name) = getExtraData($description,'contact_name',false);
+
+function getExtraData($description,$extra_data_pattern,$urlize) {
+	$extra_data = '';
+	$pattern = '/[['.$extra_data_pattern.']](.*?)[[/'.$extra_data_pattern.']]/i';
+	if (preg_match($pattern,$description,$matches)) {
+		if (trim($matches[1] != '')) {
+			if ($urlize) {
+				$extra_data = URLize($matches[1]);
+			}
+			else {
+				$extra_data = $matches[1];
+			}
+		}
+		$description = preg_replace($pattern,'',$description);
+	}
+	return array($description,$extra_data);
+}
+
 
 function phoneURL($number) {
   if($number) {

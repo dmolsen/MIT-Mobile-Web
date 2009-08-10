@@ -10,32 +10,43 @@ $page->content_begin();
 		<p>
 			<?=$date_str?>
 			<? if ($time_of_day) { ?><br/>
-			<?=$time_of_day?>
+			  <?=$time_of_day?>
 			<? } ?>
 		</p>
 		<p>
-                    <? if (briefLocation($event)) { ?>
-											 Location: <a href="<?#=mapURL($event)?>" class="map"><?=briefLocation($event)?></a>
-                    <? } ?>
+       <? if (briefLocation($event) != '') { ?>
+						Location: <!--<a href="<?#=mapURL($event)?>" class="map">--><?=briefLocation($event)?><!--</a>-->
+       <? } ?>
 		</p>
-		<p>
-                        <?=$event->getContent()?>
-		</p>
-		<p>
-			<? print_r($event->getExtendedProperty()) ?>
-		</p>
+		<? if (trim($description) != '') { ?>
+		   <p>
+          <?=$description?>
+		   </p>
+	  <? } ?>
 
-                <?# if ($event->infophone) { ?>
-		    <!--<p>
-  			For info call: <a href="<?#phoneURL($event->infophone)?>" class="phone"><?#$event->infophone?></a>
-		    </p>-->
-                <?# } ?>
+    <? if ($contact_name != '') { ?>
+	      <p>
+		       Contact name: <?=$event_name?>
+		    </p>
+		<? } ?>
+		
+		<? if ($contact_phone != '') { ?>
+	      <p>
+		       For info call: <a href="<?=phoneURL($contact_phone)?>" class="phone"><?=$contact_phone?></a>
+		    </p>
+		<? } ?>
+		
+		<? if ($contact_email != '') { ?>
+	      <p>
+		       For info email:  <a href="mailto:$contact_email?>" class="email"><?=$contact_email?></a>
+		    </p>
+		<? } ?>
 
-                <?# if($event->infourl) { ?>
-		     <!--<p>
-			Website: <a href="<?#$event->urlize?>" class="external" target="_new"><?#$event->infourl?></a>
-		     </p>-->
-                <?# } ?>
+      <? if ($event_link != '') { ?>
+		     <p>
+			      Website: <a href="<?=$event_link?>" class="external" target="_new"><?=$event_link?></a>
+		     </p>
+      <? } ?>
 
 	</div>
 <?
