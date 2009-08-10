@@ -99,9 +99,9 @@ function standard_query($search) {
       $phone_word = '*' . preg_replace('/\D/', '', $word) . '*';
       if(strlen($phone_word) >= 5) {
         $token_query
-          ->_OR('homephone', $phone_word)
-          ->_OR('telephonenumber', $phone_word)
-          ->_OR('facsimiletelephonenumber', $phone_word);
+          ->_OR('homePhone', $phone_word)
+          ->_OR('telephoneNumber', $phone_word)
+          ->_OR('facsimileTelePhonenumber', $phone_word);
       } 
       $query->_AND($token_query);
     }
@@ -202,9 +202,9 @@ function make_person($info) {
      "givenname"   => lkey($info, "givenname"),
      "fullname"    => lkey($info, "cn"),
      "title"       => lkey($info, "title"),
-     "dept"        => lkey($info, "ou"),
-     "affiliation" => lkey($info, "edupersonaffiliation"),
-     "address"     => lkey($info, "street"),
+     "dept"        => lkey($info, "department"),
+     "affiliation" => lkey($info, "wvuptype"),
+     "address"     => lkey($info, "postaladdress"),
      "homephone"   => lkey($info, "homephone"),
      "email"       => lkey($info, "mail"),
      "room"        => lkey($info, "roomnumber"),
