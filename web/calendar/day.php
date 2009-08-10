@@ -23,11 +23,6 @@ $time = $_REQUEST['time'];
 $current = day_info($time);
 $next = day_info($time, 1);
 $prev = day_info($time, -1);
-$type = $_REQUEST['type'];
-$Type = ucwords($type);
-
-#$methodName = "Todays{$Type}Headers";
-#$events = MIT_Calendar::$methodName($current['date']);
 
 $service = Zend_Gdata_Calendar::AUTH_SERVICE_NAME; // predefined service name for calendar
 

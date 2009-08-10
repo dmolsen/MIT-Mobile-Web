@@ -24,7 +24,7 @@ $service = Zend_Gdata_Calendar::AUTH_SERVICE_NAME; // predefined service name fo
 // the method of building a query based on newEventQuery() just didn't seem to want to work. this did though.
 $client = Zend_Gdata_ClientLogin::getHttpClient($username.'@gmail.com',$password,$service);
 $gdataCal = new Zend_Gdata_Calendar($client);
-$event = $gdataCal->getCalendarEventEntry('http://www.google.com/calendar/feeds/'.$calendars['all']['user'].'/private/full/_'.$_REQUEST['id']);
+$event = $gdataCal->getCalendarEventEntry('http://www.google.com/calendar/feeds/'.$calendars[$_REQUEST['cal']]['user'].'/private/full/_'.$_REQUEST['id']);
 
 #$day_num = (string)(int)$event->start->day;
 
