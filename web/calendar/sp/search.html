@@ -5,7 +5,7 @@ $page->title($inst_name." Events Calendar: Search Results")
 $page->content_begin();
 
 ?>
-
+<form method="get" action="search.php">
 <div class="nonfocal">
 	<p>
 		<strong>Search for events:</strong><br/>
@@ -34,10 +34,10 @@ $page->content_begin();
 <div class="focal">
 					  <? foreach ($eventFeed as $event) { ?>
 						<? $loc = briefLocation($event); ?>
-	<p><a href="<?=detailURL($event)?>"><?=html_entity_decode($event->title->text)?></a><br/><span class="smallprint"><?=timeText($event)?><? if(trim($loc->valueString) != '') { ?>&nbsp;|&nbsp;<?=$loc->valueString?><? } ?></span></a></p>
+	<p><a href="<?=detailURL($event,'all')?>"><?=html_entity_decode($event->title->text)?></a><br/><span class="smallprint"><?=timeText($event)?><? if(trim($loc->valueString) != '') { ?>&nbsp;|&nbsp;<?=$loc->valueString?><? } ?></span></a></p>
           <? } ?>
 </div>
-
+</form>
 <?
 
 $page->content_end();

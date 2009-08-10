@@ -113,7 +113,7 @@ function subCategorysURL($category) {
   return "sub-categorys.php?id=$id";
 }
 
-function detailURL($event,$calid) {
+function detailURL($event,$calid='all') {
   preg_match("/_(.*)$/i",$event->id->text,$matches);
   $id = $matches[1];
   return "detail.php?cal={$calid}&id={$id}";
