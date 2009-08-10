@@ -47,8 +47,11 @@ $page->content_begin();
            </ul>
         <? } ?>
 
-        <?
-           if ($item->person['affiliation'][0] == 'facstaff') { $item->normal('address', 'address'); }             
+        <ul class="nav">
+           <? if ($item->person['affiliation'][0] == 'facstaff') { $item->display('address', 'address',NULL, NULL,True); } ?>
+        </ul>
+
+         <?
            $item->display('email', 'email', "mailHREF", 'email');             
            $item->display('office', 'room', "mapHREF", 'map');
         ?>
