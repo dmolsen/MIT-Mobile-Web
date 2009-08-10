@@ -9,11 +9,18 @@ $page->content_begin();
 	<div class="focal">
 	
 		<h2 class="icon"><?=$title?></h2>
-                <? foreach($paragraphs as $paragraph) { ?>
-                   <p><?=$paragraph?></p>
-                <? } ?>
+    
+    <? foreach($paragraphs as $paragraph) { ?>
+       <p><?=$paragraph?></p>
+    <? } ?>
+
+    <? if ($read_more) { ?>
+	     <p><a href="<?=$link?>">Read more on the <?=$section?> site...</a></p>
+		<? } ?>
+		
 		<p class="smallprint"><?=$long_date?></p>
 
 	</div>
+
 <? $page->content_end(); ?>
 
