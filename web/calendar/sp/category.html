@@ -17,10 +17,10 @@ $page->content_begin();
 <? } ?>
 
 <div class="focal">
-					  <? foreach ($eventFeed as $event) { ?>
-        <? $loc = briefLocation($event); ?>
-	<p><a href="<?=detailURL($event,$_REQUEST['id'])?>"><?=html_entity_decode($event->title->text)?></a><br/><span class="smallprint"><?=timeText($event)?><? if(trim($loc->valueString) != '') { ?>&nbsp;|&nbsp;<?=$loc->valueString?><? } ?></span></a></p>
-      <? } ?>
+	 <? foreach ($eventFeed as $event) { ?>
+      <? $loc = briefLocation($event); ?>
+	    <p><a href="<?=detailURL($event,$_REQUEST['id'])?>"><?=html_entity_decode($event->title->text)?></a><br/><span class="smallprint"><?=timeText($event)?><? if(trim($loc->valueString) != '') { ?>&nbsp;|&nbsp;<?=$loc->valueString?><? } ?></span></a></p>
+   <? } ?>
 </div>
 
 <?

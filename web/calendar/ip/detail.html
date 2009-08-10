@@ -11,19 +11,29 @@ $page->content_begin();
 		<ul class="nav">
 			<li><?=$date_str?><br/><?=$time_of_day?></li>
 
-                        <? if(briefLocation($event)) { ?>
- 			   <li><!--<a href="<?#=mapURL($event)?>" class="map">--><?=briefLocation($event)?><!--</a>--></li>
-                        <? } ?>
+      <? if(briefLocation($event)->valueString != '') { ?>
+ 			   <li><!--<a href="<?#=mapURL($event)?>" class="map">--><?=briefLocation($event)->valueString?><!--</a>--></li>
+      <? } ?>
 
-			<li class="description"><?=$event->getContent()?></li>
- 
-                        <!--<?# if($event->infophone) { ?>
- 			   <li><a href="<?#phoneURL($event->infophone)?>" class="phone"><?#$event->infophone?></a></li>
-                        <?# } ?>-->
-                       
-                        <!--<?# if($event->infourl) { ?>
-                           <li><a href="<?#$event->urlize?>" class="external" target="_new"><?#$event->infourl?></a></li>
-                        <?# } ?>--> 
+			<? if (trim($description) != '') ?>
+			   <li class="description"><?=$description?></li>
+      <? } ?>
+
+      <? if (trim($contact_name) != '') { ?>
+	       <li>Contact name: <?=$contact_name?></li>
+	    <? } ?>
+
+      <? if (trim($contact_phone) != '') { ?>
+ 			   <li>For info call: <a href="<?=phoneURL($contact_phone)?>" class="phone"><?=$contact_phone?></a></li>
+      <? } ?>
+      
+      <? if (trim($event_link) != '') { ?>
+	       <li>For info email: <a href="mailto:$contact_email?>" class="email"><?=$contact_email?></a></li>
+	    <? } ?>
+	                
+      <? if (trim($event_link) != '') { ?>
+         <li>Website: <a href="<?=$event_link?>" class="external" target="_new"><?=$event_link?></a></li>
+      <? } ?>
 		</ul>
 	
 	</div>

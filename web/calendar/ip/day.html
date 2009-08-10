@@ -13,8 +13,9 @@ $page->content_begin();
 	<ul class="results">
             <? $i = 0; ?>
             <? foreach($eventFeed as $event) { ?>
+	              <? $loc = briefLocation($event); ?>
                 <? $i++; ?>
-		<li><a href="<?=detailURL($event)?>"><?=$event->title->text?><br/><span class="smallprint"><?=timeText($event)?><? if(briefLocation($event)) { ?> | <?=briefLocation($event)?><? } ?></span></a></li>
+		<li><a href="<?=detailURL($event)?>"><?=$event->title->text?><br/><span class="smallprint"><?=timeText($event)?><? if(trim($loc->valueString) != '') { ?>&nbsp;|&nbsp;<?=$loc->valueString?><? } ?></span></a></li>
             <? } ?>
             <? if ($i == 0) { ?>
                 <li><a href="<?=dayURL($next,$type)?>">No events for today. Try tomorrow.</a></li>
