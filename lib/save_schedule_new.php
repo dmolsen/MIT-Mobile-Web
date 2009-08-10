@@ -12,7 +12,7 @@ function makeDD($minute,$hour_per,$hour_per_i) {
 }
 
 $db = db::$connection;
-$stmt = $db->prepare("INSERT INTO TestSchedule (day_scheduled, day_real, route, place, hour, minute) values (?, ?, ?, ?, ?, ?)");	
+$stmt = $db->prepare("INSERT INTO Schedule (day_scheduled, day_real, route, place, hour, minute) values (?, ?, ?, ?, ?, ?)");	
 								
 foreach($routes as $route_name => $route) {
   $runs = $route['runs'];
