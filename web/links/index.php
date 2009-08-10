@@ -17,7 +17,8 @@ class Links {
     'eCampus' => 'ecampus.wvu.edu',
     'MIX' => 'www.mix.wvu.edu',
     'SOLE' => 'sole.hsc.wvu.edu',
-    'Daily Athenaeum' => 'www.da.wvu.edu'
+    'Daily Athenaeum' => 'www.da.wvu.edu',
+    'MSNsportsNET.com' => 'mobile.msnsportsnet.com'
   );
 }
 
