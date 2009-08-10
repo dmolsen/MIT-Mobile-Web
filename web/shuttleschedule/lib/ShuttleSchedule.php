@@ -7,7 +7,7 @@
  * 
  */
 
-require_once "db.php";
+require_once "../../lib/db.php";
 
 class ShuttleSchedule {
    

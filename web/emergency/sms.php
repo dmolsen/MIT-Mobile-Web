@@ -1,6 +1,7 @@
 <?
+
 /**
- * Copyright (c) 2008 Massachusetts Institute of Technology
+ * Copyright (c) 2009 West Virginia University
  * 
  * Licensed under the MIT License
  * Redistributions of files must retain the above copyright notice.
@@ -8,9 +9,10 @@
  */
 
 require_once "../../lib/rss_services.php";
+require_once "data/data.inc.php";
 
-$Emergency = new Emergency();
-$emergencies = $Emergency->get_feed();
+$Emergency = new RSS();
+$emergencies = $Emergency->get_feed($emergency_rss_feed);
 
 if($emergencies === False) {
   echo('Emergency information is currently not available');

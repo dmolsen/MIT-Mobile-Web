@@ -32,6 +32,11 @@ $others = array(
 
 require_once "../../lib/rss_services.php";
 
+// the logic to implement the page begins here
+require "../page_builder/page_header.php";
+require_once "../../config.gen.inc.php";
+require_once "data/data.inc.php";
+
 $emergency_message = "Coming Soon: Emergency Updates"; 
 $Emergency = new RSS();
 $emergencies = $Emergency->get_feed($emergency_rss_feed);
@@ -54,10 +59,6 @@ if($emergencies === False) {
 	$paragraphs = array("There is currently no emergency on campus.");
   }
 }
-
-// the logic to implement the page begins here
-require "../page_builder/page_header.php";
-require_once "../../config.gen.inc.php";
 
 if(isset($_REQUEST['contacts'])) {
   require "$prefix/contacts.html";

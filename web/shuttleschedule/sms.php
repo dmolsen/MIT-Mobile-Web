@@ -1,6 +1,7 @@
 <?php
+
 /**
- * Copyright (c) 2008 Massachusetts Institute of Technology
+ * Copyright (c) 2009 West Virginia University
  * 
  * Licensed under the MIT License
  * Redistributions of files must retain the above copyright notice.
@@ -8,15 +9,16 @@
  */
 
 
-require "../../lib/ShuttleSchedule.php";
+require "lib/ShuttleSchedule.php";
 require "../page_builder/page_header.php";
-require "schedule_lib.php";
+require "lib/schedule_lib.php";
 require "../../config.gen.inc.php";
+require "data/data.inc.php";
 
 $schedule = new ShuttleSchedule();
 
 //include all the shuttle schedule data
-require "../../lib/".$bus_schedule;
+require "data/".$bus_schedule;
 
 if($search_terms = $_REQUEST["a"]) {
 } else {

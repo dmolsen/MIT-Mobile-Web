@@ -12,12 +12,13 @@ require "../page_builder/page_header.php";
 
 // various copy includes
 require_once "../../config.gen.inc.php";
+require_once "data/data.inc.php";
 
 // sets up google calendar classes
-require "gcalendar_setup.php";
+require "lib/gcalendar_setup.php";
 
 // defines all the variables related to being today
-require "calendar_lib.php";
+require "lib/calendar_lib.php";
 
 $service = Zend_Gdata_Calendar::AUTH_SERVICE_NAME; // predefined service name for calendar
 

@@ -8,7 +8,7 @@
  */
 
 
-require "../../lib/mit_ldap.php";
+require "../../lib/ldap_services.php";
 require "../page_builder/page_header.php";
 require "../../config.gen.inc.php";
 

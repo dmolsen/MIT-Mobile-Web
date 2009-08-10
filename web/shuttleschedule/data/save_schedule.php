@@ -1,7 +1,7 @@
 <?
 
-require_once "db.php";
-require_once "mountain_line_schedule_new.php";
+require_once "../../lib/db.php";
+require_once "shuttle_schedule_import.inc.php";
 											
 function makeDD($minute,$hour_per,$hour_per_i) {
 	$addition = array(0,30,20,15); #only supporting up to 4 loops per hour here

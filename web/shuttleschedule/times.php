@@ -8,15 +8,16 @@
  */
 
 
-require "../../lib/ShuttleSchedule.php";
+require "lib/ShuttleSchedule.php";
 require "../page_builder/page_header.php";
-require "schedule_lib.php";
+require "lib/schedule_lib.php";
 require "../../config.gen.inc.php";
+require "data/data.inc.php";
 
 $schedule = new ShuttleSchedule();
 
 //include all the shuttle schedule data
-require "../../lib/".$bus_schedule;
+require "lib/".$bus_schedule;
 
 $route = $schedule->getRoute($_REQUEST['route']);
 

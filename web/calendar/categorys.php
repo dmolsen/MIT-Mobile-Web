@@ -10,10 +10,11 @@
 
 require "../page_builder/page_header.php";
 
-require "calendar_lib.php";
+require "lib/calendar_lib.php";
 
 //various copy includes
 require_once "../../config.gen.inc.php";
+require_once "data/data.inc.php";
 
 require "$prefix/categorys.html";
 $page->output();

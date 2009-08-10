@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright (c) 2008 Massachusetts Institute of Technology
  * 
@@ -6,27 +7,6 @@
  * Redistributions of files must retain the above copyright notice.
  * 
  */
-
-class Emergency extends RSS {
-  // e2campus feed for WVU
-  protected $rss_url = "";
-}
- 
-class WVUTodayNews extends RSS {
-  protected $rss_url = "";
-}
-
-class OITNews extends RSS {
-  protected $rss_url = "";
-}
-
-class HSCNews extends RSS {
-  protected $rss_url = "";
-}
-
-class DANews extends RSS {
-  protected $rss_url = "";
-}
 
 class RSS {
   public function get_feed($rss_url) {

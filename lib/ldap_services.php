@@ -7,7 +7,11 @@
  * 
  */
 
+## CONFIGURE BASIC LDAP CONNECTION INFO ##
 define("SERVER", "ldap.wvu.edu");
+define("DN","ou=people,dc=wvu,dc=edu");
+
+## look at line 205 to edit how your LDAP fields match display keys
 
 function mit_search($search) {
   $results = do_query(standard_query($search));
@@ -116,7 +120,7 @@ function do_query($query, $search_results=array()) {
     //since it complains about search that go over the limit of 100
     $error_reporting = ini_get('error_reporting');
     error_reporting($error_reporting & ~E_WARNING);
-    $sr = ldap_search($ds, "ou=people,dc=wvu,dc=edu", $query->out())
+    $sr = ldap_search($ds, DN, $query->out())
          or ldap_die("could not search");
     error_reporting($error_reporting);
 
