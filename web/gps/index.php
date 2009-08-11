@@ -26,6 +26,7 @@ if ($_REQUEST['static']) {
 		$width = '275';
 		$height = '275';
 	}
+        $zoom = 16;
 	require "$prefix/static.html";
 }
 else {

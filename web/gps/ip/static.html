@@ -7,6 +7,6 @@ $page->title($inst_name.' Mobile Web: Static Test')
 $page->content_begin();
 ?>
 
-<img src="http://maps.google.com/staticmap?center=39.634419,-79.954054&zoom=14&size=<?=$width?>x<?=$height?>&key=<?=$key?>&sensor=false">
+<img src="http://maps.google.com/staticmap?maptype=hybrid&center=39.634419,-79.954054&zoom=<?=$zoom?>&size=<?=$width?>x<?=$height?>&key=<?=$key?>&sensor=false">
 
 <? $page->content_end(); ?>
