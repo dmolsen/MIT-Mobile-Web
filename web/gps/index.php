@@ -12,7 +12,26 @@
 
 require "../page_builder/page_header.php";
 
-require "$prefix/index.html";
+if ($_REQUEST['static']) {
+	$key = "ABQIAAAAgl5MtLeiQwCMBX7FdoPP_BTfAZWzJoh_gYMfdqhKwTyraOPtpRSIZm3YBA6TbcecvlyiMX_gNejDzg";
+	if ($phone == 'sp') {
+		$width = '220';
+		$height = '160';
+	}
+	else if ($phone == 'fp') {
+		$width = '160';
+		$height = '160';
+	}
+	else {
+		$width = '275';
+		$height = '275';
+	}
+	require "$prefix/static.html";
+}
+else {
+	require "$prefix/index.html";
+}
+
 
 $page->help_off();
 $page->output();

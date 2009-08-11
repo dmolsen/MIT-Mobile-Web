@@ -1,0 +1,14 @@
+<?php
+$page->title($inst_name.' Mobile Web: Static Map')
+     ->header('Static Map');
+
+$page->content_begin();
+?>
+         
+   <div class="focal">
+			<img src="http://maps.google.com/staticmap?center=39.634419,-79.954054&zoom=14&size=<?=$width?>x<?=$height?>&key=<?=$key?>&sensor=false">
+   </div>
+<? 
+
+$page->content_end(); 
+?>
