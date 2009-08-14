@@ -145,19 +145,10 @@ class vcard {
     $this->card .= "END:VCARD\r\n";
   }
   
-  /*
-  download() method streams the vcard to the browser client.
-  */
-  function download() {
-    $this->log .= "vcard download() called<br />";
+  # attach() method streams the vcard to be read for the email
+  function attach() {
     if (!$this->card) { $this->build(); }
-    if (!$this->filename) { $this->filename = trim($this->data['display_name']); }
-    $this->filename = str_replace(" ", "_", $this->filename);
-  	#header("Content-type: text/directory");
-  	#header("Content-Disposition: attachment; filename=".$this->filename.".vcf");
-  	#header("Pragma: public");
-  	echo $this->card;
-    return true;
+  	return $this->card;
   }
 }
 
