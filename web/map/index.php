@@ -12,13 +12,8 @@ require_once "../page_builder/page_header.php";
 
 class Categorys {
   public static $info = array(
-    "buildings"    => array("Building number", "Building &#35;s", "Buildings by Number"),
     "names"        => array("Building name", "Building Names", "Buildings by Name"),
     "residences"   => array("Residences", "Residences", "Residences"),
-    "rooms"        => array("Selected rooms", "Selected Rooms", "Selected Rooms"),
-    "landmarks"    => array("Streets and Landmarks", "Streets &amp; Landmarks", "Streets &amp; Landmarks"),
-    "courts_green" => array("Courts and Green Spaces", "Courts &amp; Green Spaces", "Courts and Green Spaces"),
-    "food"         => array("Food services", "Food Services", "Food Services"),
     "parking"      => array("Parking lots", "Parking Lots", "Parking Lots")
   );
 }

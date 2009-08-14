@@ -39,28 +39,6 @@ function determine_type() {
   }
 }
 
-function layers() {
-  $layers = array(
-    'Towns', 'Hydro', 'Greenspace', 'Sport', 'Roads', 
-    'Rail', 'Parking' ,'Other Buildings', 'Landmarks', 
-    'Buildings', 'Courtyards'
-  ); 
-
-
-  $type = determine_type();
-  $layer = $type['type'];  
-  $layer_index = array_search($layer, $layers);
-
-  $new_layers = array_merge( 
-    array_slice($layers, 0, $layer_index), 
-    array_slice($layers, $layer_index + 1),
-    array($layer),
-    array( 'bldg-iden-12', 'road-iden-10', 'landmarks-iden-10')
-  );
-
-  return implode(",", $new_layers); 
-}
-
 function isID($id) {
   preg_match("/^([A-Z]*)/", $id, $match);
   return $match[0];
@@ -78,133 +56,6 @@ function pix($label, $phone) {
 
 function mapURL() {
   return "http://ims.mit.edu/WMS_MS/WMS.asp";
-}
-
-function getServerBBox() {
-  return CacheIMS::$server_BBox;
-}
-
-class CacheIMS {
-  public static $server_BBox;
-
-  public function init() {
-
-    $type = determine_type();
-
-    $query1 = array(
-      "request" => "getselection",
-      "type"    => "query",
-      "layer"   => $type["type"],
-      "idfield" => $type["field"],
-      "query"   => $type["field"] ." in ('" . select_value() . "')"
-    );
-
-    $xml = file_get_contents(mapURL() . '?' . http_build_query($query1));
-
-    $xml_obj = new DOMDocument();
-    $xml_obj->loadXML($xml);
-    $extent = $xml_obj->firstChild->firstChild;
-
-    if(!$extent) {
-      //IMS server does not seem to be able to find anything
-      return;
-    }
-
-    $bbox = array();
-    foreach(array('minx','miny','maxx','maxy') as $key) {
-      $bbox[$key] = (int) $extent->getAttribute($key);
-    }
-
-    self::$server_BBox = $bbox;
-  }
-}
-CacheIMS::init();
-
-function iPhoneBBox() {
-  if(isset($_REQUEST['bbox'])) {
-    $values = explode(",", $_REQUEST['bbox']);
-    return array(
-      "minx" => $values[0],
-      "miny" => $values[1],
-      "maxx" => $values[2],
-      "maxy" => $values[3]
-    );
-  } else {
-    return iPhoneSelectBBox();
-  }
-}
- 
-function iPhoneSelectBBox() {
-  return zoom_box(getServerBBox(), 2.6);
-}
-
-function zoom_box(array $box, $zoom) {
-  $width = $zoom * ($box["maxx"] - $box["minx"]);
-  $height = $zoom * ($box["maxy"] - $box["miny"]);
-  $x_center = ($box["maxx"] + $box["minx"])/2;
-  $y_center = ($box["maxy"] + $box["miny"])/2;
-  return array(
-    "minx" => (int) ($x_center - $width/2),
-    "miny" => (int) ($y_center - $height/2),
-    "maxx" => (int) ($x_center + $width/2),
-    "maxy" => (int) ($y_center + $height/2)
-  );
-}
-
-function photoURL() {
-  $url = "http://web.mit.edu/campus-map/objimgs/object-" . select_value() . ".jpg";
-
-  //need to turn off warnings temporialy  (want to suppress url not found warning)
-  $error_reporting = ini_get('error_reporting');
-  error_reporting($error_reporting & ~E_WARNING);
-     $result = file_get_contents($url, FILE_BINARY, NULL, 0, 100);
-  error_reporting($error_reporting);
-
-  if($result) {
-    return $url;
-  } else {
-    return "";
-  }
-}
-   
-function bbox($phone) {
-  $bbox = getServerBBox();
-  
-  //shortcuts
-  $x_pix = pix("x", $phone);
-  $y_pix = pix("y", $phone);
-
-  
-  //calculate center, width and height
-  $x_center = ($bbox["maxx"]+$bbox["minx"])/2;
-  $y_center = ($bbox["maxy"]+$bbox["miny"])/2;
-  $width    = ($bbox["maxx"]-$bbox["minx"]);
-  $height   = ($bbox["maxy"]-$bbox["miny"]);
-
-  //need to determine if we need to add 
-  //vertically or horizontally to the bounding box
-  $image_ratio = $y_pix/$x_pix;
-  $bbox_ratio  = $height/$width;
-  if($bbox_ratio >= $image_ratio) {
-    $width = $height/$image_ratio;
-  } else {
-    $height = $width*$image_ratio;
-  } 
-
-  //calculate width, height and the bounding box to use
-  $width = $width * INIT_FACTOR * pow(ZOOM_FACTOR, zoom());
-  $height = $height * INIT_FACTOR * pow(ZOOM_FACTOR, zoom());
-  
-  //move center by offsets
-  $x_center += x_off() * MOVE_FACTOR * $width;
-  $y_center += y_off() * MOVE_FACTOR * $height;
-
-  return array(
-    "minx" => (int) ($x_center - $width/2),
-    "maxx" => (int) ($x_center + $width/2),
-    "miny" => (int) ($y_center - $height/2),
-    "maxy" => (int) ($y_center + $height/2)
-  );
 }
 
 function imageURL($phone) {
@@ -229,7 +80,6 @@ function imageURL($phone) {
 function zoom() {
   return isset($_REQUEST['zoom']) ? $_REQUEST['zoom'] : 0;
 }
-
 
 function x_off() {
   return isset($_REQUEST['xoff']) ? $_REQUEST['xoff'] : 0;
@@ -284,23 +134,7 @@ function zoomOutURL() {
   return moveURL(x_off()/ZOOM_FACTOR, y_off()/ZOOM_FACTOR, zoom()+1);
 }
 
-Data::init();
-$data = Data::$values;
-function anything_here() {
-  $data = Data::$values;
-  return (count($data['whats_here']) > 0);
-}
-
-
-$tabs = new Tabs(selfURL(), "tab", array("Map", "Photo", "What's Here"));
-
-if(!photoURL()) {
-    $tabs->hide("Photo");
-}
-
-if(!anything_here()) {
-    $tabs->hide("What's Here");
-}
+$tabs = new Tabs(selfURL(), "tab", array("Map"));
 
 $tabs_html = $tabs->html();
 $tab = $tabs->active(); 
@@ -329,25 +163,8 @@ $snippets = snippets();
 $types = determine_type();
 $layers = layers();
 
-class Data {
-  public static $values;
-
-  public static function init() {
-    require "buildings.php";
-    self::$values = $building_data[select_value()];
-  }
-}
-
-if(isset($data['whats_here'])) {
-  $whats_here = array_keys($data['whats_here']);
-} else {
-  $whats_here = array();
-}
-
+$whats_here = array();
 $anything_here = anything_here();
-if($anything_here) {
-  sort($whats_here);
-}
 
 if($num = $data['bldgnum']) {
   $building_title = "Building $num";
