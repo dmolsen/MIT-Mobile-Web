@@ -10,7 +10,9 @@
 require_once "../page_builder/page_header.php";
 
 //set zoom scale
-define('ZOOM_FACTOR', 16);
+define('ZOOM_FACTOR', 2);
+
+define('ZOOM',16);
 
 //set the offset parameter
 define('MOVE_FACTOR', 0.04);
@@ -66,7 +68,7 @@ function mapURL() {
 function imageURL($phone) {
 
   $query = array(
-    "key"          => key, 
+    "key"          => "ABQIAAAAgl5MtLeiQwCMBX7FdoPP_BTfAZWzJoh_gYMfdqhKwTyraOPtpRSIZm3YBA6TbcecvlyiMX_gNejDzg", 
     "size"         => pix("x", $phone).'x'.pix("y", $phone),
     "center"       => lat().",".long(),
     "zoom"         => zoom(),
@@ -77,7 +79,7 @@ function imageURL($phone) {
 }
 
 function zoom() {
-  return isset($_REQUEST['zoom']) ? $_REQUEST['zoom'] : ZOOM_FACTOR;
+  return isset($_REQUEST['zoom']) ? $_REQUEST['zoom'] : ZOOM;
 }
 
 function long() {
@@ -97,19 +99,29 @@ function select_value() {
 }
 
 function scrollURL($dir) {
-  $dir_arr = array(
-    "E" => array(0,0.04),
-    "W" => array(0,-0.04),
-    "N" => array(0.04,0),
-    "S" => array(-0.04,0)
+  $move = array(
+    "12" => 0.02500,
+    "13" => 0.01250,
+    "14" => 0.00625,
+    "15" => 0.00300,
+    "16" => 0.00150,
+    "17" => 0.00075
   );
-  $dir_vector = $dir_arr[$dir];
-  return moveURL(long()+$dir_vector[0], lat()+$dir_vector[1], zoom());
+  
+  if ($dir == "E") {
+    return moveURL(long()+$move[zoom()], lat(), zoom());
+  } else if ($dir == "W") {
+    return moveURL(long()-$move[zoom()], lat(), zoom());
+  } else if ($dir == "N") {
+    return moveURL(long(),lat()+$move[zoom()], zoom());
+  } else {
+    return moveURL(long(),lat()-$move[zoom()], zoom());
+  }
 }
 
 function zoomInURL() {
   $zoom = zoom()+1;
-  if ($zoom > 20) {
+  if ($zoom > 17) {
 	$zoom = zoom();
   }
   return moveURL(long(), lat(), $zoom);
@@ -129,7 +141,7 @@ $tabs_html = $tabs->html();
 $tab = $tabs->active(); 
 
 function selfURL() {
-  return moveURL(x_off(), y_off(), zoom());
+  return moveURL(long(), lat(), zoom());
 }
 
 function moveURL($long, $lat, $zoom) {
