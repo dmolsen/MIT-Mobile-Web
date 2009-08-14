@@ -14,12 +14,12 @@ $page->content_begin();
 	<span class="inputcombo emphasized">
 		<input type="hidden" name="username" value="<?=$_REQUEST['username']?>">
 		<input class="forminput" type="search" id="filter" name="email" />
-		<input class="combobutton" name="search" id="sch_btn" type="submit" value="Search" />
+		<input class="combobutton" name="search" id="sch_btn" type="submit" value="Send" />
 	</span>	
 <? } else { ?>
 	<? if ($result == "success") { ?>
 	  <strong>Success</strong><br />
-	  The vCard for <?=$person['first_name'][0]?> <?=$person['last_name'][0]?> has been sent to <?=$_REQUEST['email']?>.
+	  The vCard for <?=$person["givenname"][0]?> <?=$person["surname"][0]?> has been sent to <?=$_REQUEST['email']?>.
 	<? } else { ?>
 	  <strong>Failure</strong><br />
 	  For some reason the vCard for <?=$person['first_name'][0]?> <?=$person['last_name'][0]?> was unable to be sent to <?=$_REQUEST['email']?>.

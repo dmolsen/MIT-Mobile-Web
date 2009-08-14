@@ -26,13 +26,12 @@ $send = false;
 
 if (isset($_REQUEST["email"]) && isset($_REQUEST["username"])) {
 	
-	if (preg_match('/([A-z]{3})([0-9]{3})/i',$_REQUEST["username"])) {
+	if (preg_match('/([A-z]{3})([0-9]{3})/i',$_REQUEST["username"]) && (preg_match('/^(([A-Za-z0-9]+_+)|([A-Za-z0-9]+\-+)|([A-Za-z0-9]+\.+)|([A-Za-z0-9]+\++))*[A-Za-z0-9]+@((\w+\-+)|(\w+\.))*\w{1,63}\.[a-zA-Z]{2,6}$/',$_REQUEST['email']))) {
 		
    	    $person = lookup_username($_REQUEST["username"]);
 	    $person = html_escape_person($person);
 
-	    if ($person["givenname"][0] == false) {
-			$vc = new vcard();
+	    $vc = new vcard();
 
 			$vc->data['first_name'] = $person["givenname"][0];
 			$vc->data['last_name'] = $person["surname"][0];
@@ -73,15 +72,11 @@ if (isset($_REQUEST["email"]) && isset($_REQUEST["username"])) {
 			$vc->data['email1'] = $person["email"][0];
 
 			$result = send_email($_REQUEST['email'],"vCard from m.wvu.edu",$vc->attach());
-	    }
-	    else {
-			$error = true;
-			$message = "No data was related to the username supplied.";
-	    }
-	}
+	                $send = true;
+        }
 	else {
 		$error = true;
-		$message = "The username supplied was not in a valid format.";
+		$message = "The username or email address you supplied was not in a valid format.";
     }
     
 	require "$prefix/vcard.html";
@@ -113,34 +108,28 @@ function ldap_decode($ldap_str) {
 }
 
 function send_email($to,$subject,$attachment) {
-	$subject = 'vCard for '; 
-	$random_hash = md5(date('r', time())); 
+	$subject = "vCard for ";
+        $attachment = chunk_split(base64_encode($attachment));
+	$random_hash = md5(date("r", time())); 
 	$headers = "From: web_services@mail.wvu.edu\r\nReply-To: web_services@mail.wvu.edu"; 
-	$headers .= "\r\nContent-Type: multipart/mixed; boundary=\"PHP-mixed-".$random_hash."\""; 
-	$message = "--PHP-mixed-".$random_hash."  
-	Content-Type: multipart/alternative; boundary=\"PHP-alt-".$random_hash." 
+	$headers .= "\nMIME-Version: 1.0";
+        $headers .= "\nContent-Type: multipart/mixed; boundary=\"PHP-mixed-".$random_hash."\""; 
+        $message = "This is a multi-part message in MIME format.
 
-	--PHP-alt-".$random_hash."
-	Content-Type: text/plain; charset=\"iso-8859-1\" 
-	Content-Transfer-Encoding: 7bit
+--PHP-mixed-".$random_hash." 
 
-	Find attached the vCard you requested. 
+Find attached the vCard you wanted.
 
-	--PHP-alt-".$random_hash."  
-	Content-Type: text/html; charset=\"iso-8859-1\" 
-	Content-Transfer-Encoding: 7bit
+--PHP-mixed-".$random_hash."  
+Content-type: text/directory; name=\"wvu_vcard.vcf\"  
+Content-Transfer-Encoding: base64 
+Content-Disposition: attachment  
 
-	<p>Find attached the vCard you requested.</p>
+".$attachment."
+ 
+--PHP-mixed-".$random_hash."-- 
 
-	--PHP-alt-".$random_hash."-- 
-
-	--PHP-mixed-".$random_hash."  
-	Content-type: text/directory  
-	Content-Disposition: attachment  
-
-	".$attachment." 
-	--PHP-mixed-".$random_hash."-- 
-    ";
+";
 	//send the email 
 	$mail_sent = @mail($to,$subject,$message,$headers); 
 	return $mail_sent ? "success" : "failure"; 
