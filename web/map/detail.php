@@ -10,7 +10,14 @@
 require_once "../page_builder/page_header.php";
 
 //set zoom scale
-define('ZOOM_FACTOR', 2);
+define('ZOOM_FACTOR', 16);
+
+//set the offset parameter
+define('MOVE_FACTOR', 0.04);
+
+define('LAT', 39.634419);
+
+define('LONG', -79.954054);
 
 switch($phone) {
  case "sp":
@@ -22,8 +29,6 @@ switch($phone) {
   break;
 }
 
-//set the offset parameter
-define('MOVE_FACTOR', 0.40);
 
 function determine_type() {
   $types = array(
@@ -55,38 +60,32 @@ function pix($label, $phone) {
 } 
 
 function mapURL() {
-  return "http://ims.mit.edu/WMS_MS/WMS.asp";
+  return "http://maps.google.com/staticmap";
 }
 
 function imageURL($phone) {
-  $bbox = bbox($phone);
-  $type = determine_type();
 
-  $query2 = array(
-    "request"      => "getmap",
-    "version"      => "1.1.1", 
-    "width"        => pix("x", $phone),
-    "height"       => pix("y", $phone),
-    "selectvalues" => select_value(),
-    "bbox"         => $bbox["minx"].','.$bbox["miny"].','.$bbox["maxx"].','.$bbox["maxy"],
-    "layers"       => layers(),
-    "selectfield"  => $type['field'],
-    "selectlayer"  => $type['type']
+  $query = array(
+    "key"          => key, 
+    "size"         => pix("x", $phone).'x'.pix("y", $phone),
+    "center"       => lat().",".long(),
+    "zoom"         => zoom(),
+    "sensor"       => "false"
   );
 
-  return mapURL() . '?' . http_build_query($query2);
+  return mapURL() . '?' . http_build_query($query);
 }
 
 function zoom() {
-  return isset($_REQUEST['zoom']) ? $_REQUEST['zoom'] : 0;
+  return isset($_REQUEST['zoom']) ? $_REQUEST['zoom'] : ZOOM_FACTOR;
 }
 
-function x_off() {
-  return isset($_REQUEST['xoff']) ? $_REQUEST['xoff'] : 0;
+function long() {
+  return isset($_REQUEST['long']) ? $_REQUEST['long'] : LONG;
 }
 
-function y_off() {
-  return isset($_REQUEST['yoff']) ? $_REQUEST['yoff'] : 0;
+function lat() {
+  return isset($_REQUEST['lat']) ? $_REQUEST['lat'] : LAT;
 }
 
 function tab() {
@@ -97,41 +96,31 @@ function select_value() {
   return $_REQUEST['selectvalues'];
 }
 
-function snippets() {
-  $data = Data::$values;
-  $snippets = $_REQUEST['snippets'];
-
-  // we do not want to display snippets
-  // if snippets just repeats the building number
-  // or building name
-  if($snippets == $data['bldgnum']) {
-    return NULL;
-  } 
-
-  if($snippets == $data['name']) {
-    return NULL;
-  } 
-
-  return $snippets;
-}
-
 function scrollURL($dir) {
   $dir_arr = array(
-    "E" => array(1,0),
-    "W" => array(-1,0),
-    "N" => array(0,1),
-    "S" => array(0,-1)
+    "E" => array(0,0.04),
+    "W" => array(0,-0.04),
+    "N" => array(0.04,0),
+    "S" => array(-0.04,0)
   );
   $dir_vector = $dir_arr[$dir];
-  return moveURL(x_off()+$dir_vector[0], y_off()+$dir_vector[1], zoom());
+  return moveURL(long()+$dir_vector[0], lat()+$dir_vector[1], zoom());
 }
 
 function zoomInURL() {
-  return moveURL(x_off()*ZOOM_FACTOR, y_off()*ZOOM_FACTOR, zoom()-1);
+  $zoom = zoom()+1;
+  if ($zoom > 20) {
+	$zoom = zoom();
+  }
+  return moveURL(long(), lat(), $zoom);
 }
 
 function zoomOutURL() {
-  return moveURL(x_off()/ZOOM_FACTOR, y_off()/ZOOM_FACTOR, zoom()+1);
+  $zoom = zoom()-1;
+  if ($zoom < 12) {
+    $zoom = zoom();
+  }
+  return moveURL(long(), lat(), $zoom);
 }
 
 $tabs = new Tabs(selfURL(), "tab", array("Map"));
@@ -143,28 +132,18 @@ function selfURL() {
   return moveURL(x_off(), y_off(), zoom());
 }
 
-function moveURL($xoff, $yoff, $zoom) {
+function moveURL($long, $lat, $zoom) {
   $params = array(
-    "selectvalues" => select_value(),
     "zoom" => $zoom,
-    "xoff" => $xoff,
-    "yoff" => $yoff,
-    "snippets" => snippets()
+    "long" => $long,
+    "lat" => $lat
   );
   return "detail.php?" . http_build_query($params);
 }
 
-$selectvalue = select_value();
-$photoURL = photoURL();
 $tab = tab();
 $width = pix("x", $phone);
 $height = pix("y", $phone);
-$snippets = snippets();
-$types = determine_type();
-$layers = layers();
-
-$whats_here = array();
-$anything_here = anything_here();
 
 if($num = $data['bldgnum']) {
   $building_title = "Building $num";
@@ -187,13 +166,7 @@ function cleanStreet($data) {
   return preg_replace('/^access\s+via\s+/i', '', $street);
 } 
 
-if(getServerBBox()) {
-  require "$prefix/detail.html";
-} else {
-  require "$prefix/not_found.html";
-}
-
-
+require "$prefix/detail.html";
 
 $page->output();
 

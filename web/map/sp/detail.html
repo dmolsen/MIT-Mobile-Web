@@ -1,10 +1,10 @@
 <?
-$page->title("MIT Campus Map: Details")
+$page->title($inst_name."Campus Map: Details")
      ->header("Campus Map");
 
 function tabs() {
   $html = array();
-  foreach(array("Map", "Photo", "What's Here") as $aTab) {
+  foreach(array("Map") as $aTab) {
     if($url = selfURL($aTab)) {
       if(tab() == $aTab) {
         $html[] = '<span class="active">' . $aTab . '</span>';
@@ -20,48 +20,25 @@ $page->content_begin();
 ?>
 
 	<div class="focal">
-                <? if($snippets) { ?>
-                   <p><?=$snippets?> found at:</p>
-                <? } ?>
 
 		<h2><?=$building_title?></h2>
 		
-                <? if($tab == "Map") { ?>
-  		   <p>
-			<?=$data['street']?>
-		   </p>
-                <? } ?>
+    <? if($tab == "Map") { ?>
+  		<p><?=$data['street']?></p>
+    <? } ?>
 
-		<p class="tabs"> <!-- No extra whitespace in code below; non-breaking spaces required -->
-                        <?=$tabs_html?>
-                </p>
+		<p class="tabs"><?=$tabs_html?></p>	
 
-                <? switch ($tab) { 
-                     case "Map": ?>			
-
-    		       <p class="image">
+    <p class="image">
 			  <a name="map"> </a>
 			  <img src="<?=imageURL($phone)?>" width="<?=$width?>" height="<?=$height?>" alt="Map" />
-		       </p>
-		       <p>
+		</p>
+		<p>
 			  <!-- Note to devs: These links, like the image URL above, will need to be calculated on the server at page compile time and hard-coded into the HTML delivered to the browser -->
 			  Scroll: <a href="<?=scrollURL('N')?>">N</a>&nbsp;|&nbsp;<a href="<?=scrollURL('S')?>">S</a>&nbsp;|&nbsp;<a href="<?=scrollURL('E')?>">E</a>&nbsp;|&nbsp;<a href="<?=scrollURL('W')?>">W</a><br/>
 			  Zoom: <a href="<?=zoomInURL()?>">In</a>&nbsp;|&nbsp;<a href="<?=zoomOutURL()?>">Out</a>
-		      </p>
+		</p>
                    
-                   <? break; case "Photo": ?>
-
-		      <p class="image"><img src="<?=$photoURL?>" alt="Photo" /></p>
-		      <p class="legend">View from <?=$data['viewangle']?><? if($data['architect']) { ?><br/>Architect: <?=$data['architect']?><? } ?></p>
-                 
-                   <? break; case "What's Here": ?>
-		      <p>
-                         <? foreach($whats_here as $item) { ?>
-		              <?=$item?><br/>
-                         <? } ?>
-		      </p>
-
-                  <? } ?>
 	</div>
 <?
 $page->content_end();
