@@ -1,0 +1,17 @@
+<?
+$page->title($inst_name.' People Directory: vCard')
+     ->header($inst_name.' People Directory');
+$page->content_begin();
+?>
+
+hi there. submit this form.
+<form action="vcard.php">
+	<input type="hidden" name="username" value="<?=$_REQUEST['username']?>">
+	<input type="text" name="email" length="10" /><br />
+	<input type="submit" value="submit" />
+</form>
+
+<? 
+$page->content_end(); 
+$page->nav_link("index.php", "People Directory Home");
+?>
