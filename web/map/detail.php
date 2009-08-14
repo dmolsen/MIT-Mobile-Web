@@ -8,17 +8,10 @@
  */
 
 require_once "../page_builder/page_header.php";
-
-//set zoom scale
-define('ZOOM_FACTOR', 2);
+require_once "../../config.gen.inc.php";
 
 define('ZOOM',16);
-
-//set the offset parameter
-define('MOVE_FACTOR', 0.04);
-
 define('LAT', 39.634419);
-
 define('LONG', -79.954054);
 
 switch($phone) {
@@ -135,11 +128,6 @@ function zoomOutURL() {
   return moveURL(long(), lat(), $zoom);
 }
 
-$tabs = new Tabs(selfURL(), "tab", array("Map"));
-
-$tabs_html = $tabs->html();
-$tab = $tabs->active(); 
-
 function selfURL() {
   return moveURL(long(), lat(), zoom());
 }
@@ -153,17 +141,18 @@ function moveURL($long, $lat, $zoom) {
   return "detail.php?" . http_build_query($params);
 }
 
+$tabs = new Tabs(selfURL(), "tab", array("Map"));
+$tabs_html = $tabs->html();
+$tab = $tabs->active();
+
 $tab = tab();
 $width = pix("x", $phone);
 $height = pix("y", $phone);
 
-if($num = $data['bldgnum']) {
-  $building_title = "Building $num";
-  if( ($name = $data['name']) && ($name !== $building_title) ) {
-    $building_title .= " ($name)";
-  }
-} else {
-  $building_title = $data['name'];
+if ($_REQUEST['loc']) {
+	$stmt = $db->prepare("SELECT * FROM Buildings WHERE id = ".$_REQUEST['loc']);
+	$stmt->execute();
+	$data = $stmt->fetchAll();
 }
 
 /**

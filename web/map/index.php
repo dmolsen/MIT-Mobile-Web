@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Copyright (c) 2008 Massachusetts Institute of Technology
  * 
@@ -7,13 +8,13 @@
  * 
  */
 
-
 require_once "../page_builder/page_header.php";
+require_once "../../config.gen.inc.php";
 
 class Categorys {
   public static $info = array(
     "names"        => array("Building name", "Building Names", "Buildings by Name"),
-    "residences"   => array("Residences", "Residences", "Residences"),
+    "campus"       => array("Building name", "Building Names", "Buildings by Campus"),
     "parking"      => array("Parking lots", "Parking Lots", "Parking Lots")
   );
 }
@@ -35,8 +36,8 @@ if(!isset($_REQUEST['category'])) {
 
 
   if(!isset($_REQUEST['drilldown'])) {
-    $places = places();
-    if($category=="buildings" || $category=="names") {
+    $places = getData();
+    if($category=="names" || $category=="campus") {
       require "$prefix/$category.html";
     } else {
       require "$prefix/places.html";
@@ -92,12 +93,24 @@ function categoryURL($category=NULL) {
   return "?category=$category";
 }
 
-function detailURL($number, $snippet) {
-  return "detail.php?selectvalues=$number&snippets=" . urlencode($snippet);
+function detailURL($id) {
+  return "detail.php?loc=$id";
 }
 
 function searchURL() {
   return "search.php";
+}
+
+function getData($where=false) {
+	if ($where) {
+		$stmt = $db->prepare("SELECT * FROM Buildings WHERE ".$where." GROUP BY name ORDER BY name ASC" );
+	}
+	else {
+		$stmt = $db->prepare("SELECT * FROM Buildings GROUP BY name ORDER BY name ASC" );
+	}
+	$stmt->execute();
+	$result = $stmt->fetchAll();
+	return $result;
 }
 
     

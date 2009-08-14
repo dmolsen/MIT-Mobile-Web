@@ -1,6 +1,6 @@
 <?php
-$page->title('MIT Campus Map')
-     ->header('Campus Map');
+$page->title($inst_name.' Campus Map')
+     ->header($inst_name.' Campus Map');
 
 $page->content_begin();
 ?>
@@ -26,5 +26,5 @@ $page->content_begin();
 	</p>
 <?
 $page->content_end();
-$page->extra_link("directions.php", "Directions to MIT");
+$page->extra_link("directions.php", "Directions to ".$inst_name);
 ?>

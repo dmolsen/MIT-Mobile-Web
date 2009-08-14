@@ -1,15 +1,15 @@
 <?
-$page->title("MIT Map: Browse $title")
-     ->header("Campus Map");
+$page->title($inst_name." Map: Browse $title")
+     ->header($inst_name."Campus Map");
 
 $page->content_begin();
 ?>
 	<h2><?=$title?></h2>
 	
 	<p class="nav">
-             <? foreach($places as $name => $number) { ?>
-		<a href="<?=detailURL($number, $name)?>"><?=$name?></a><br/>
-             <? } ?>
+     <? foreach($places as $place) { ?>
+         <a href="<?=detailURL($place['id'])?>"><?=$place['id']?></a><br/>
+     <? } ?>
 	</p>
 <?
 $page->content_end();
