@@ -6,6 +6,8 @@
 * Description....: An example of using Troy Wolf's class_vcard.
 */
 
+require "../page_builder/page_header.php";
+require "../../config.gen.inc.php";
 require_once('lib/vcard.lib.php');
 require_once('../../lib/ldap_services.php');
 
@@ -18,8 +20,8 @@ if (isset($_REQUEST["email"]) && isset($_REQUEST["username"])) {
 
     $vc = new vcard();
 
-	$vc->data['first_name'] = $person["sn"][0];
-	$vc->data['last_name'] = $person["givenname"][0];
+	$vc->data['first_name'] = $person["givenname"][0];
+	$vc->data['last_name'] = $person["surname"][0];
 
     # Contact's company, department, title, profession
 	$vc->data['company'] = "West Virginia University";
@@ -27,6 +29,7 @@ if (isset($_REQUEST["email"]) && isset($_REQUEST["username"])) {
 	$vc->data['title'] = $person["title"][0];
 
     # Contact's work address
+    if ($person['affiliation'][0] == 'facstaff') {
 	$vc->data['work_address'] = $person["address"][0];
 	if (preg_match('/PO Box/i',$person["address"][1])) {
 		$vc->data['work_po_box'] = $person["address"][1];
@@ -43,9 +46,12 @@ if (isset($_REQUEST["email"]) && isset($_REQUEST["username"])) {
 	}
 	
 	$vc->data['work_country'] = "United States of America";
+    }
 
     # Contact's telephone numbers.
-	$vc->data['office_tel'] = $person["telephone"][0];
+	if ($person["telephone"] != "000-000-0000") {
+          $vc->data['office_tel'] = $person["telephone"][0];
+        }
 	$vc->data['home_tel'] = $person["homephone"][0];
 	$vc->data['fax_tel'] = $person["fax"][0];
 
@@ -66,7 +72,21 @@ else {
    require "$prefix/vcard.html";
 }
 
+$page->output();
 
+function html_escape_person($person) {
+    foreach($person as $att => $values) {
+       if($att != "id") {         
+         foreach($values as $index => $value) {
+           $person[$att][$index] = ldap_decode(htmlentities($value));
+         }
+       }
+    }
+    return $person;
+}
 
+function ldap_decode($ldap_str) {
+  return preg_replace_callback("/0x(\d|[A-F]){4}/", "unicode2utf8", $ldap_str);
+}
 
 ?>
