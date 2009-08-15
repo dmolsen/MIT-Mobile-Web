@@ -226,7 +226,13 @@ function cleanStreet($data) {
   return preg_replace('/^access\s+via\s+/i', '', $street);
 } 
 
-require "$prefix/detail-gmap.html";
+if ($prefix == 'ip') {
+	require "$prefix/detail-gmap.html";
+}
+else {
+	require "$prefix/detail.html";
+}
+
 
 $page->output();
 

@@ -49,7 +49,15 @@ if(!isset($_REQUEST['category'])) {
     $drilldown = str_replace('%20',' ',$_REQUEST['drilldown']);
     $drilldown_title = $_REQUEST['desc'];
     if ($category=="names") {
-		$places = getData("type=\"".$category_info[$category][3]."\" and name LIKE \"".$drilldown."%\"");
+	    if (stristr($drilldown,"-")) {
+		    $sql_substr = '(';
+			$sql_substr .= subSQLStrBuilder($drilldown);
+			$sql_substr .= ')';
+	    }
+	    else {
+			$sql_str = "name LIKE \"".$drilldown."%\"";
+	    }
+		$places = getData("type=\"".$category_info[$category][3]."\" and ".$sql_substr);
     }
     else if ($category=="campus") {
 		$places = getData("type = '".$category_info[$category][3]."' and campus = '".$drilldown."'");
@@ -106,6 +114,18 @@ function searchURL() {
   return "search.php";
 }
 
+function subSQLStrBuilder($drilldown) {	
+	$drilldown_a = explode('-',$drilldown);
+	$alpha_a = array("1","2","3","4","5","6","7","8","9","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
+	$i = array_search($drilldown_a[0], $alpha_a);
+	$max = array_search($drilldown_a[1], $alpha_a);
+	while ($i =< $max) {
+		$sql_str .= "name LIKE \"".$alpha[$i]."%\"";
+		if ($i < ($max-1)) { $sql_str .= " OR "; }
+		$i++;
+	}
+	return $sql_str;
+}
 function getData($where=false) {
 	$db = db::$connection;
 	if ($where) {

@@ -10,10 +10,17 @@ $page->title($inst_name.' Campus Map: Details')
 $page->content_begin();
 ?>
 
+<?
+# dirty but iphone specific markers
+$marker_types = array();
+$marker_types['Building'] = 'apartment';
+$marker_types['Parking Lot'] = 'parking';
+?>
+
 	<a name="scrolldown"></a>		
 	<div class="focal shaded">
 
-		<h2><?=$data[0]['name']?> <img src="images/marker-<?=marker_type($data[0]['type'])?>.png" height="24" width="14" alt="Marker" /></h2>
+		<h2><?=$data[0]['name']?> <img src="images/ip-markers/<?=$marker_types[$data[0]['type']]?>.png" height="24" width="21" alt="Marker" /></h2>
 		<p class="address"><?=$data[0]['physical_address']?></p>
 		<ul id="tabs">
 			<li class="active"><a href="#scrolldown" onclick="showTab('maptab',this); hide('loadingimage')">Map</a></li>
@@ -22,29 +29,25 @@ $page->content_begin();
 		<div id="tabbodies">	
 			<div class="tabbody" id="maptab">
 			      <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=ABQIAAAAgl5MtLeiQwCMBX7FdoPP_BTfAZWzJoh_gYMfdqhKwTyraOPtpRSIZm3YBA6TbcecvlyiMX_gNejDzg" type="text/javascript"></script>	
-                              <script type="text/javascript">
-				var types = new Array();
-				types['Building'] = 'apartment';
-				types['Parking Lot'] = 'parking';
+        <script type="text/javascript">
+				function initialize() {
+					var map = new GMap2(document.getElementById("map_canvas"));
+					map.setUIToDefault();
+					map.setCenter(new GLatLng(<?=$data[0]['latitude']?>, <?=$data[0]['longitude']?>), 15);
 				
-                                function initialize() {
-				var map = new GMap2(document.getElementById("map_canvas"));
-				map.setUIToDefault();
-				map.setCenter(new GLatLng(<?=$data[0]['latitude']?>, <?=$data[0]['longitude']?>), 15);
-				
-				var point = new GLatLng(<?=$data[0]['latitude']?>, <?=$data[0]['longitude']?>);
+					var point = new GLatLng(<?=$data[0]['latitude']?>, <?=$data[0]['longitude']?>);
 					
-				var baseIcon = new GIcon(G_DEFAULT_ICON);
-                                baseIcon.image = "http://m.asdb-cluster.wvu.edu/map/images/ip-markers/"+types['<?=$data[0]['type']?>']+'.png';
-				baseIcon.shadow = "http://m.asdb-cluster.wvu.edu/map/images/ip-markers/shadow.png";
-				baseIcon.iconSize = new GSize(32, 37);
-				baseIcon.shadowSize = new GSize(51, 37);
+					var baseIcon = new GIcon(G_DEFAULT_ICON);
+					baseIcon.image = "images/ip-markers/<?=$marker_types[$data[0]['type']]?>.png";
+					baseIcon.shadow = "images/ip-markers/shadow.png";
+					baseIcon.iconSize = new GSize(32, 37);
+					baseIcon.shadowSize = new GSize(51, 37);
 					
-				markerOptions = { icon:baseIcon };
-          			var marker = new GMarker(point, markerOptions);
-          			map.addOverlay(marker);
+					markerOptions = { icon:baseIcon };
+					var marker = new GMarker(point, markerOptions);
+					map.addOverlay(marker);
 				}
-                                </script>
+				</script>
 				<div id="map_canvas" style="width: 290px; height: 190px"></div>
 				<div id="mapzoom">
 					<a href="#" onclick="recenter(); return false;" id="recenter" class="disabled"><img src="../ip/images/blank.png" width="40" height="34" alt="Recenter" /></a>
