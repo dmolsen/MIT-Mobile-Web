@@ -106,7 +106,7 @@ function marker_type($type) {
 	    "Library" => "midgrayl",
 	    "Residence" => "midbrownr"
 	  );
-	return $markers['type'];	
+	return $markers[$type];	
 }
 
 function marker() {	

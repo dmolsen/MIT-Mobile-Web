@@ -8,8 +8,8 @@ $page->content_begin();
 	
 	<p class="nav">
 		        <? $i = 0; ?>
-            <? foreach($places as $name => $number) { ?>            
-		          <a href="<?=detailURL($number, $name)?>"><?=$name?></a><br/>
+            <? foreach($places as $place) { ?>            
+		          <a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>"><?=$place['name']?></a><br/>
               <?$i++;?>
             <? } ?>
             <? if ($i == 0) { ?>There are no items associated with this option.<? } ?>
