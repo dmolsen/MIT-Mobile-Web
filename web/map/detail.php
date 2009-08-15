@@ -226,7 +226,7 @@ function cleanStreet($data) {
   return preg_replace('/^access\s+via\s+/i', '', $street);
 } 
 
-require "$prefix/detail.html";
+require "$prefix/detail-gmap.html";
 
 $page->output();
 
