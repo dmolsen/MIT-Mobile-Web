@@ -1,8 +1,9 @@
 // Set initial values for drawing the map image
 var mapW, mapH;	// integers: width and height of map image
 var zoom = 15; // integer: zoom level -- should always default to 0
-var latitude = 39.634419;	// integer: western bound of map image (per IMS map API) 
-var longitude = -79.954054;	// integer: northern bound of map image (per IMS map API)
+var latitude = initLatitude;	// integer: western bound of map image (per IMS map API) 
+var longitude = initLongitude;	// integer: northern bound of map image (per IMS map API)
+var marker = initMarker; // marker stringer for the URL
 var hasMoved = false;	// boolean: has the map been scrolled or zoomed?
 var mapType = "roadmap"; // base map type to use in displaying the google static map
 var maxZoom = 17;	// integer: max zoom-in level
@@ -70,8 +71,8 @@ function loadImage(imageURL,imageID) {
 
 function getMapURL(strBaseURL, includeSelect) {
 	// Returns a full URL for a map page or map image, using strBaseURL as the base
-	var newURL = strBaseURL+"&"+"maptype="+mapType+"&"+"key="+"ABQIAAAAgl5MtLeiQwCMBX7FdoPP_BTfAZWzJoh_gYMfdqhKwTyraOPtpRSIZm3YBA6TbcecvlyiMX_gNejDzg"+"&"+"size="+mapW+"x"+mapH+"&"+"center="+latitude+","+longitude+"&"+"zoom="+zoom+"&"+"sensor="+"false",
-	return(newURL);
+	var newURL = strBaseURL+"?"+"maptype="+mapType+"&"+"key="+"ABQIAAAAgl5MtLeiQwCMBX7FdoPP_BTfAZWzJoh_gYMfdqhKwTyraOPtpRSIZm3YBA6TbcecvlyiMX_gNejDzg"+"&"+"size="+mapW+"x"+mapH+"&"+"center="+latitude+","+longitude+"&"+"zoom="+zoom+"&"+"sensor="+"false"+"&"+"markers="+marker;
+        return(newURL);
 }
 
 

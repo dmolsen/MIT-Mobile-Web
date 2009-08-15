@@ -1,8 +1,17 @@
 <?
+
+$marker = marker($data[0]['type']);
+$init_vars =<<<JS
+     var initMarker = '{$marker}';
+     var initLatitude = {$data[0]['latitude']};
+     var initLongitude = {$data[0]['longitude']};
+JS;
+
 $page->title($inst_name.' Campus Map: Details')
      ->navbar_image('title-map')
      ->not_scalable()
      ->add_stylesheet('styles/map-ip')
+     ->add_inline_script($init_vars)
      ->add_javascript('../ip/uiscripts-ip')
      ->add_javascript('javascripts/map-ip')
      ->breadcrumbs('Map Details')
