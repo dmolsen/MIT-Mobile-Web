@@ -8,6 +8,7 @@
  * 
  */
 
+require_once "../../lib/db.php";
 require_once "../page_builder/page_header.php";
 require_once "../../config.gen.inc.php";
 
@@ -93,8 +94,8 @@ function categoryURL($category=NULL) {
   return "?category=$category";
 }
 
-function detailURL($id) {
-  return "detail.php?loc=$id";
+function detailURL($id,$latitude,$longitude) {
+  return "detail.php?loc=".$id."&lat=".$latitude."&long=".$longitude;
 }
 
 function searchURL() {
@@ -102,7 +103,8 @@ function searchURL() {
 }
 
 function getData($where=false) {
-	if ($where) {
+	$db = db::$connection;
+        if ($where) {
 		$stmt = $db->prepare("SELECT * FROM Buildings WHERE ".$where." GROUP BY name ORDER BY name ASC" );
 	}
 	else {

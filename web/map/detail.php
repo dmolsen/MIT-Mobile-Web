@@ -7,6 +7,7 @@
  * 
  */
 
+require_once "../../lib/db.php";
 require_once "../page_builder/page_header.php";
 require_once "../../config.gen.inc.php";
 
@@ -61,6 +62,7 @@ function mapURL() {
 function imageURL($phone) {
 
   $query = array(
+    "maptype" => "hybrid",
     "key"          => "ABQIAAAAgl5MtLeiQwCMBX7FdoPP_BTfAZWzJoh_gYMfdqhKwTyraOPtpRSIZm3YBA6TbcecvlyiMX_gNejDzg", 
     "size"         => pix("x", $phone).'x'.pix("y", $phone),
     "center"       => lat().",".long(),
@@ -150,6 +152,7 @@ $width = pix("x", $phone);
 $height = pix("y", $phone);
 
 if ($_REQUEST['loc']) {
+        $db = db::$connection;
 	$stmt = $db->prepare("SELECT * FROM Buildings WHERE id = ".$_REQUEST['loc']);
 	$stmt->execute();
 	$data = $stmt->fetchAll();
