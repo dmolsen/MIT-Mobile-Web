@@ -12,6 +12,14 @@ var mapBaseURL = "http://maps.google.com/staticmap";	// base URL for an image se
 var detailBaseURL = "detail.php?";	// base URL for the normal map detail screen
 var fullscreenBaseURL = "detail-fullscreen.php?";	// base URL for the fullscreen map detail screen
 
+// set up how much to move lat/long based on zoom level
+var move = new Array();
+move['12'] = 0.02500;
+move['13'] = 0.01250;
+move['14'] = 0.00625;
+move['15'] = 0.00300;
+move['16'] = 0.00150;
+move['17'] = 0.00075;
 
 function jumpbrowse(objSelect) {
 // Use the value of the 'browse by' select control to jump to a different browse page
@@ -77,64 +85,45 @@ function getMapURL(strBaseURL, includeSelect) {
 
 
 function scroll(dir) {
-// Scrolls the map image in the cardinal direction given by dir; amount of scrolling is scaled to zoom level and the pixel dimensions of the map image
+	
+    // Scrolls the map image in the cardinal direction given by dir; amount of scrolling is scaled to zoom level and the pixel dimensions of the map image
 	var objMap = document.getElementById("mapimage");
 	if(objMap) {
-		var mapDX, mapDY;
-		if(zoom<maxZoom) {
-			mapDX = mapW*(1-(zoom/2));
-			mapDY = mapH*(1-(zoom/2));
-		} else {
-			mapDX = mapW/2.3;
-			mapDY = mapH/2.3;
-		}
 		switch(dir) {
 			case "n":
-				mapBoxN = mapBoxN + mapDY;
-				mapBoxS = mapBoxS + mapDY;
+				latitude = latitude + move[zoom];
 				loadImage(getMapURL(mapBaseURL),'mapimage');
 				break;
 			case "s":
-				mapBoxN = mapBoxN - mapDY;
-				mapBoxS = mapBoxS - mapDY;
+				latitude = latitude - move[zoom];
 				loadImage(getMapURL(mapBaseURL),'mapimage');
 				break;
 			case "e":
-				mapBoxE = mapBoxE + mapDX;
-				mapBoxW = mapBoxW + mapDX;
+				longitude = longitude + move[zoom];
 				loadImage(getMapURL(mapBaseURL),'mapimage');
 				break;
 			case "w":
-				mapBoxE = mapBoxE - mapDX;
-				mapBoxW = mapBoxW - mapDX;
+				longitude = longitude - move[zoom];
 				loadImage(getMapURL(mapBaseURL),'mapimage');
 				break;
 			case "ne":
-				mapBoxN = mapBoxN + mapDY;
-				mapBoxS = mapBoxS + mapDY;
-				mapBoxE = mapBoxE + mapDX;
-				mapBoxW = mapBoxW + mapDX;
+				latitude = latitude + move[zoom];
+				longitude = longitude + move[zoom];
 				loadImage(getMapURL(mapBaseURL),'mapimage');
 				break;
 			case "nw":
-				mapBoxN = mapBoxN + mapDY;
-				mapBoxS = mapBoxS + mapDY;
-				mapBoxE = mapBoxE - mapDX;
-				mapBoxW = mapBoxW - mapDX;
+				latitude = latitude + move[zoom];
+				longitude = longitude - move[zoom];
 				loadImage(getMapURL(mapBaseURL),'mapimage');
 				break;
 			case "se":
-				mapBoxN = mapBoxN - mapDY;
-				mapBoxS = mapBoxS - mapDY;
-				mapBoxE = mapBoxE + mapDX;
-				mapBoxW = mapBoxW + mapDX;
+				latitude = latitude - move[zoom];
+				longitude = longitude + move[zoom];
 				loadImage(getMapURL(mapBaseURL),'mapimage');
 				break;
 			case "sw":
-				mapBoxN = mapBoxN - mapDY;
-				mapBoxS = mapBoxS - mapDY;
-				mapBoxE = mapBoxE - mapDX;
-				mapBoxW = mapBoxW - mapDX;
+				latitude = latitude - move[zoom];
+				longitude = longitude - move[zoom];
 				loadImage(getMapURL(mapBaseURL),'mapimage');
 				break;
 		}
@@ -147,11 +136,9 @@ function recenter() {
 // Reset the map image to its initially selected coordinates -- only if it's not already there
 	if(hasMoved) {
 		hasMoved = false;
-		mapBoxW = selectMapBoxW;
-		mapBoxN = selectMapBoxN;
-		mapBoxS = selectMapBoxS;
-		mapBoxE = selectMapBoxE;
-		zoom = 0;	// reset zoom level
+		latitude = initLatitude;
+		longitude = initLongitude;
+		zoom = 15;	// reset zoom level
 		loadImage(getMapURL(mapBaseURL),'mapimage');
 		enable('zoomin');
 		enable('zoomout');
@@ -161,15 +148,11 @@ function recenter() {
 
 
 function zoomout() {
-// Zoom the map out by an amount scaled to the pixel dimensions of the map image
+    // Zoom the map out by an amount scaled to the pixel dimensions of the map image
 	enable('zoomin');
 	if(zoom > minZoom) {
-		mapBoxN = mapBoxN + (mapH/2);
-		mapBoxS = mapBoxS - (mapH/2);
-		mapBoxE = mapBoxE + (mapW/2);
-		mapBoxW = mapBoxW - (mapW/2);
-		loadImage(getMapURL(mapBaseURL),'mapimage');
 		zoom--;
+		loadImage(getMapURL(mapBaseURL),'mapimage');
 	}
 	if(zoom <= minZoom) {	// If we've reached the min zoom level
 		disable('zoomout');
@@ -182,12 +165,8 @@ function zoomin() {
 // Zoom the map in by an amount scaled to the pixel dimensions of the map image
 	enable('zoomout');
 	if(zoom < maxZoom) {
-		mapBoxN = mapBoxN - (mapH/2);
-		mapBoxS = mapBoxS + (mapH/2);
-		mapBoxE = mapBoxE - (mapW/2);
-		mapBoxW = mapBoxW + (mapW/2);
-		loadImage(getMapURL(mapBaseURL),'mapimage');
 		zoom++;
+		loadImage(getMapURL(mapBaseURL),'mapimage');	
 	}
 	if(zoom >= maxZoom) {	// If we've reached the max zoom level
 		disable('zoomin');
@@ -197,7 +176,7 @@ function zoomin() {
 
 
 function rotateMap() {
-// Load a rotated map image
+    // Load a rotated map image
 	var objMap = document.getElementById("mapimage");
 	
 	// insert some code here to calculate the full URL w/ arguments for the map graphic in both tall (tallMapURL) and wide (wideMapURL) versions
