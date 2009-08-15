@@ -7,13 +7,15 @@
  * 
  */
 
-
+require_once "../../lib/db.php";
 require_once "../page_builder/page_header.php";
+require_once "../../config.gen.inc.php";
+
 if($search_terms = $_REQUEST['filter']) {
   $results = map_search($search_terms);
   $total = count($results);
   if(count($results) == 1) {
-    header("Location: " . detailURL($results[0]));
+    header("Location: " . detailURL($results[0]['id'],$results[0]['latitude'],$results[0]['longitude']));
   } else {
     $content = new ResultsContent("items", "map", $prefix, $phone);
     require "$prefix/search.html";
@@ -23,45 +25,16 @@ if($search_terms = $_REQUEST['filter']) {
   header("Location: ./");
 }
 
-function detailURL($place) {
-  $id = substr($place->id, 7);
-  return "detail.php?selectvalues=$id&snippets=" . urlencode(implode(", ", $place->snippets));
+function detailURL($id,$latitude,$longitude) {
+  return "detail.php?loc=".$id."&lat=".$latitude."&long=".$longitude."&maptype=roadmap";
 }
 
 function map_search($terms) {
-  
-  $query = array(
-    "type"   => "query",
-    "q"      => $terms, 
-    "output" => "json" 
-  );
-
-  $json = file_get_contents("http://map-dev.mit.edu/search?" . http_build_query($query));
-
-  $data = json_decode($json);
-
-  //sort data by priority
-  $high = array();
-  $low = array();
-  foreach($data as $place) {
-    if(exact_match($terms, $place->snippets)) {
-      $high[] = $place;
-    } else {
-      $low[] = $place;
-    }
-  }
-   
-  return array_merge($high, $low);
-}
-
-function exact_match($terms, $snippets) {
-  $terms = strtolower(trim($terms));
-  foreach($snippets as $snippet) {
-    if(strtolower($snippet) == $terms) {
-      return True;
-    }
-  }
-  return False;
+  $db = db::$connection;
+  $stmt = $db->prepare("SELECT * FROM Buildings WHERE name LIKE '%".$terms."%' OR physical_address LIKE '%".$terms."%' GROUP BY name ORDER BY name ASC" );
+  $stmt->execute();
+  $result = $stmt->fetchAll();
+  return $result;
 }
     
 ?>

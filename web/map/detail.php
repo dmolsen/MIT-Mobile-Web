@@ -95,17 +95,22 @@ function tab() {
   return isset($_REQUEST['tab']) ? $_REQUEST['tab'] : "Map";
 }
 
+function marker_type($type) {
+	$markers = array(
+	    "Building" => "midredb",
+	    "Parking Lot" => "midbluep",
+	    "WiFi" => "midorangew",
+	    "PRT" => "midblackp",
+	    "Bus Stop" => "midgreens",
+	    "Athletic" => "midyellowa",
+	    "Library" => "midgrayl",
+	    "Residence" => "midbrownr"
+	  );
+	return $markers['type'];	
+}
+
 function marker() {	
-  $markers = array(
-    "Building" => "midredb",
-    "Parking Lot" => "midbluep",
-    "WiFi" => "midorangew",
-    "PRT" => "midblackp",
-    "Bus Stop" => "midgreens",
-    "Athletic" => "midyellowa",
-    "Library" => "midgrayl",
-    "Residence" => "midbrownr"
-  );
+  
   if ((int)$_REQUEST['loc'] != 0) {
     $db = db::$connection;
 	$stmt = $db->prepare("SELECT * FROM Buildings WHERE id = ".$_REQUEST['loc']);
@@ -114,7 +119,7 @@ function marker() {
 	
 	$lat = $data[0]['latitude'];
 	$long = $data[0]['longitude'];
-	$marker = $markers[$data[0]['type']];
+	$marker = marker_type($data[0]['type']);
 	return $lat.",".$long.",".$marker;
   }
   else if ($_REQUEST['all']) {
@@ -126,7 +131,7 @@ function marker() {
     foreach ($results as $result) {
 	 	$lat = $data[0]['latitude'];
 		$long = $data[0]['longitude'];
-		$marker = $markers[$data[0]['type']];
+		$marker = marker_type($data[0]['type']);
 		$markers .= $lat.",".$long.",".$marker."|";
     }
 	return $markers;

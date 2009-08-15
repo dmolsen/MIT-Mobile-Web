@@ -1,15 +1,18 @@
 <?
-$page->title("MIT Campus Map: Browse by $titlebar")
-     ->header("Campus Map");
+$page->title($inst_name." Campus Map: Browse by $titlebar")
+     ->header($inst_name." Campus Map");
 $page->content_begin();
 ?>
 
 	<h2><?=$title?>: <?=$drilldown?></h2>
 	
 	<p class="nav">
+		        <? $i = 0; ?>
             <? foreach($places as $name => $number) { ?>            
-		<a href="<?=detailURL($number, $name)?>"><?=$name?></a><br/>
+		          <a href="<?=detailURL($number, $name)?>"><?=$name?></a><br/>
+              <?$i++;?>
             <? } ?>
+            <? if ($i == 0) { ?>There are no items associated with this option.<? } ?>
 	</p>
 	
 	<p class="paging">

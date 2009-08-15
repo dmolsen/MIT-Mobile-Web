@@ -1,5 +1,5 @@
 	<p class="focal results"> 
           <? foreach($results as $place) { ?>
-              <a href="<?=detailURL($place)?>"><?=$place->name?></a><br/>
+              <a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>"><?=$place['name']?></a><br/>
           <? } ?> 
 	</p>
