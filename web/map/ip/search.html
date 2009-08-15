@@ -14,12 +14,12 @@ $page->content_begin();
 		</fieldset>	
 	</form>
 	
-	<p><?=count($places)?> matches found:</p>
+	<p><?=count($results)?> matches found:</p>
 
 </div>
 
 <ul class="results">
-	<? foreach($places as $place) { ?>
+	<? foreach($results as $place) { ?>
        <? $insert = ''; ?>
        <? if ($place['type'] == 'Parking Lot') { ?>
           <? $insert = 'Parking Lot: '; ?>

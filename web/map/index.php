@@ -55,9 +55,9 @@ if(!isset($_REQUEST['category'])) {
 			$sql_substr .= ')';
 	    }
 	    else {
-			$sql_str = "name LIKE \"".$drilldown."%\"";
+			$sql_substr = "name LIKE \"".$drilldown."%\"";
 	    }
-		$places = getData("type=\"".$category_info[$category][3]."\" and ".$sql_substr);
+	    $places = getData("type=\"".$category_info[$category][3]."\" and ".$sql_substr);
     }
     else if ($category=="campus") {
 		$places = getData("type = '".$category_info[$category][3]."' and campus = '".$drilldown."'");
@@ -119,16 +119,16 @@ function subSQLStrBuilder($drilldown) {
 	$alpha_a = array("1","2","3","4","5","6","7","8","9","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
 	$i = array_search($drilldown_a[0], $alpha_a);
 	$max = array_search($drilldown_a[1], $alpha_a);
-	while ($i =< $max) {
-		$sql_str .= "name LIKE \"".$alpha[$i]."%\"";
-		if ($i < ($max-1)) { $sql_str .= " OR "; }
+	while ($i <= $max) {
+		$sql_str .= "name LIKE \"".$alpha_a[$i]."%\"";
+		if ($i < ($max)) { $sql_str .= " OR "; }
 		$i++;
 	}
 	return $sql_str;
 }
 function getData($where=false) {
 	$db = db::$connection;
-	if ($where) {
+        if ($where) {
 		$stmt = $db->prepare("SELECT * FROM Buildings WHERE ".$where." GROUP BY name ORDER BY name ASC");
 	}
 	else {

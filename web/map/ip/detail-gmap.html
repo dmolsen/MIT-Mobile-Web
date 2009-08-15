@@ -20,7 +20,7 @@ $marker_types['Parking Lot'] = 'parking';
 	<a name="scrolldown"></a>		
 	<div class="focal shaded">
 
-		<h2><?=$data[0]['name']?> <img src="images/ip-markers/<?=$marker_types[$data[0]['type']]?>.png" height="24" width="21" alt="Marker" /></h2>
+		<h2><?=$data[0]['name']?> <img src="images/ip-markers/<?=$marker_types[$data[0]['type']]?>.png" height="20" width="17" alt="Marker" /></h2>
 		<p class="address"><?=$data[0]['physical_address']?></p>
 		<ul id="tabs">
 			<li class="active"><a href="#scrolldown" onclick="showTab('maptab',this); hide('loadingimage')">Map</a></li>
@@ -48,11 +48,7 @@ $marker_types['Parking Lot'] = 'parking';
 					map.addOverlay(marker);
 				}
 				</script>
-				<div id="map_canvas" style="width: 290px; height: 190px"></div>
-				<div id="mapzoom">
-					<a href="#" onclick="recenter(); return false;" id="recenter" class="disabled"><img src="../ip/images/blank.png" width="40" height="34" alt="Recenter" /></a>
-					<a href="detail-fullscreen.php" id="fullscreen"><img src="../ip/images/blank.png" width="40" height="34" alt="Full Screen" /></a>
-				</div>
+				<div id="map_canvas" style="width: 285px; height: 220px"></div>
 			</div> <!-- id="maptab" -->
 
 			<div class="clear"></div>

@@ -19,7 +19,7 @@ switch ($category) {
     $class = "nav";
 }
 
-$page->title("MIT Map: Browse by $titlebar")
+$page->title($inst_name." Map: Browse by $titlebar")
      ->navbar_image('title-map')
      ->breadcrumbs('Browse', $last_crumb)
      ->breadcrumb_links(categoryURL());
@@ -30,9 +30,13 @@ $page->content_begin();
 		<h2>Browse Buildings: <?=$heading?></h2>
 	</div>
 	
-	<ul class="<?=$class?>">
-             <? foreach($places as $name => $number) { ?>
-		<li><a href="<?=detailURL($number, $name)?>"><?=$name?></a></li>
+	<ul class="results">
+             <? foreach($places as $place) { ?>
+                <? $insert = ''; ?>
+                <? if ($place['type'] == 'Parking Lot') { ?>
+                  <? $insert = 'Parking Lot: '; ?>
+                <? } ?>
+                <li><a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>"><?=$insert?><?=$place['name']?></a></li>
              <? } ?>
 	</ul>
 	
