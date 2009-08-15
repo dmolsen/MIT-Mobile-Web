@@ -18,7 +18,6 @@ if($search_terms = $_REQUEST['filter']) {
   if(count($results) == 1) {
     header("Location: " . detailURL($results[0]['id'],$results[0]['latitude'],$results[0]['longitude']));
   } else {
-    $content = new ResultsContent("items", "map", $prefix, $phone);
     require "$prefix/search.html";
     $page->output();
   }
@@ -28,7 +27,8 @@ if($search_terms = $_REQUEST['filter']) {
 
 function map_search($terms) {
   $db = db::$connection;
-  $stmt = $db->prepare("SELECT * FROM Buildings WHERE name LIKE '%".$terms."%' OR physical_address LIKE '%".$terms."%' GROUP BY name ORDER BY name ASC" );
+  $sql = "SELECT * FROM Buildings WHERE name LIKE '%".$terms."%' OR physical_address LIKE '%".$terms."%' and type != 'Parking Lot' GROUP BY name ORDER BY name DESC";
+  $stmt = $db->prepare($sql);
   $stmt->execute();
   $result = $stmt->fetchAll();
   return $result;

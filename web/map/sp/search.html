@@ -3,7 +3,6 @@ $page->title($inst_name.' Campus Map: Search Results')
      ->header($inst_name.' Campus Map');
 
 $page->content_begin();
-#$content->output($results);
 ?>
 
 <form method="get" action="">
@@ -18,7 +17,11 @@ $page->content_begin();
 <p><?=count($results)?> matches found</p>
 <p class="focal results"> 
         <? foreach($results as $place) { ?>
-            <a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>"><?=$place['name']?></a><br/>
+            <? $insert = ''; ?>
+            <? if ($place['type'] == 'Parking Lot') { ?>
+               <? $insert = "Parking Lot: "; ?>
+            <? } ?>
+            <a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>"><?=$insert?><?=$place['name']?></a> <span class="legend"><?=str_replace(', Morgantown, WV','',$place['physical_address'])?></span><br/>
         <? } ?> 
 </p>
 

@@ -41,12 +41,12 @@ if(!isset($_REQUEST['category'])) {
     if($category=="names" || $category=="campus") {
       require "$prefix/$category.html";
     } else {
-	  $places = getData("type = ".$category_info[$category][3]);
+      $places = getData("type = '".$category_info[$category][3]."'");
       require "$prefix/places.html";
     }
   } else {
     $titlebar = ucwords($category_info[$category][0]);
-    $drilldown = $_REQUEST['drilldown'];
+    $drilldown = str_replace('%20',' ',$_REQUEST['drilldown']);
     $drilldown_title = $_REQUEST['desc'];
     if ($category=="names") {
 		$places = getData("type=\"".$category_info[$category][3]."\" and name LIKE \"".$drilldown."%\"");
@@ -109,10 +109,10 @@ function searchURL() {
 function getData($where=false) {
 	$db = db::$connection;
 	if ($where) {
-		$stmt = $db->prepare("SELECT * FROM Buildings WHERE ".$where." GROUP BY name ORDER BY name DESC");
+		$stmt = $db->prepare("SELECT * FROM Buildings WHERE ".$where." GROUP BY name ORDER BY name ASC");
 	}
 	else {
-		$stmt = $db->prepare("SELECT id,campus,latitude,longitude,name,physical_address,type FROM Buildings GROUP BY name ORDER BY name ASC" );
+		$stmt = $db->prepare("SELECT * FROM Buildings GROUP BY name ORDER BY name ASC");
 	}
         $stmt->execute();
 	$result = $stmt->fetchAll();

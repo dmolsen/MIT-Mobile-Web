@@ -1,6 +1,6 @@
 <?
 $page->title($inst_name." Map: Browse $title")
-     ->header($inst_name."Campus Map");
+     ->header($inst_name." Campus Map");
 
 $page->content_begin();
 ?>
@@ -8,7 +8,11 @@ $page->content_begin();
 	
 	<p class="nav">
      <? foreach($places as $place) { ?>
-         <a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>"><?=$place['name']?></a><br/>
+         <? $insert = ''; ?>
+         <? if ($place['type'] == 'Parking Lot') { ?>
+            <? $insert = 'Parking Lot: '; ?>
+         <? } ?>
+         <a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>"><?=$insert?><?=$place['name']?></a><br/>
      <? } ?>
 	</p>
 <?

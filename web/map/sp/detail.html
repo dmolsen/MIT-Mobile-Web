@@ -21,13 +21,13 @@ $page->content_begin();
 
 	<div class="focal">
 
-		<h2><?=$data[0]['name']?> <img src="images/marker-<?=marker_type($data[0]['type'])?>.png" height="26" width="16" alt="Marker" /> <? if (($data[0]['latitude'] != $_REQUEST['lat']) || ($data[0]['longitude'] != $_REQUEST['long'])) { ?><span class="legend">(<a href="detailURL($data['id'],$data['lat'],$data['long'])">reset map</a>)</span></h2>
+		<h2><?=$data[0]['name']?> <img src="images/marker-<?=marker_type($data[0]['type'])?>.png" height="24" width="14" alt="Marker" /></h2>
 		
     <? if($tab == "Map") { ?>
   		<p><?=$data[0]['physical_address']?></p>
     <? } ?>
 
-		<p class="tabs"><?=$tabs_html?></p>	
+		<p class="tabs"><?=$tabs_html?> <? if (($data[0]['latitude'] != $_REQUEST['lat']) || ($data[0]['longitude'] != $_REQUEST['long'])) { ?><span class="legend">(<a href="<?=detailURL($data[0]['id'],$data[0]['latitude'],$data[0]['longitude'])?>">reset</a>)</span><? } ?></p>	
 
     <p class="image">
 			  <a name="map"> </a>
