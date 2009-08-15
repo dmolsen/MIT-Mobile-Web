@@ -6,11 +6,11 @@ $page->title($inst_name.' Map: Browse by Building Name')
 $page->content_begin();
 ?>
 	<div class="nonfocal">
-		<h2>Browse Buildings by Name</h2>
+		<h2>Browse Buildings by Campus</h2>
 	</div>
 	
 	<ul class="nav">
-            <? foreach(array("1-999","A-C","D-F","G-L","M-Q","R-U","V-Z") as $drilldown) { ?>
+            <? foreach(array("Downtown","Evansdale","Health Sciences") as $drilldown) { ?>
 		<li><a href="<?=drillURL($drilldown)?>"><?=$drilldown?></a></li>
             <? } ?>
 	</ul>

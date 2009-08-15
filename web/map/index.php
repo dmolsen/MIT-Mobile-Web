@@ -16,8 +16,8 @@ require_once "lib/map.lib.inc.php";
 class Categorys {
   public static $info = array(
     "names"        => array("Building name", "Building Names", "Buildings by Name", "Building"),
-    "campus"       => array("Building name", "Building Names", "Buildings by Campus", "Building"),
-    "parking"      => array("Parking lots", "Parking Lots", "Parking Lots", "Parking Lot")
+    "campus"       => array("Campus", "Building Names", "Buildings by Campus", "Building"),
+    "parking"      => array("Parking lot", "Parking Lots", "Parking Lots", "Parking Lot")
   );
 }
 $category_info = Categorys::$info;

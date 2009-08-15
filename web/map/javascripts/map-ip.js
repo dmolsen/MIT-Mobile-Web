@@ -1,14 +1,13 @@
 // Set initial values for drawing the map image
 var mapW, mapH;	// integers: width and height of map image
-var zoom = 0; // integer: zoom level -- should always default to 0
-var mapBoxW = initMapBoxW;	// integer: western bound of map image (per IMS map API) 
-var mapBoxN = initMapBoxN;	// integer: northern bound of map image (per IMS map API)
-var mapBoxS = initMapBoxS;	// integer: southern bound of map image (per IMS map API)
-var mapBoxE = initMapBoxE;	// integer: eastern bound of map image (per IMS map API)
+var zoom = 15; // integer: zoom level -- should always default to 0
+var latitude = 39.634419;	// integer: western bound of map image (per IMS map API) 
+var longitude = -79.954054;	// integer: northern bound of map image (per IMS map API)
 var hasMoved = false;	// boolean: has the map been scrolled or zoomed?
-var maxZoom = 2;	// integer: max zoom-in level
-var minZoom = -8;	// integer: max zoom-out level
-var mapBaseURL = "http://ims.mit.edu/WMS_MS/WMS.asp?request=getmap&version=1.1.1";	// base URL for an image served by the mapping engine
+var mapType = "roadmap"; // base map type to use in displaying the google static map
+var maxZoom = 17;	// integer: max zoom-in level
+var minZoom = 12;	// integer: max zoom-out level
+var mapBaseURL = "http://maps.google.com/staticmap";	// base URL for an image served by the mapping engine
 var detailBaseURL = "detail.php?";	// base URL for the normal map detail screen
 var fullscreenBaseURL = "detail-fullscreen.php?";	// base URL for the fullscreen map detail screen
 
@@ -47,7 +46,7 @@ function jumpbrowse(objSelect) {
 
 
 function loadImage(imageURL,imageID) {
-// Loads an image from the given URL into the image with the specified ID
+    // Loads an image from the given URL into the image with the specified ID
 	var objMap = document.getElementById(imageID);
 	show("loadingimage");
 	if(objMap) {
@@ -71,12 +70,7 @@ function loadImage(imageURL,imageID) {
 
 function getMapURL(strBaseURL, includeSelect) {
 	// Returns a full URL for a map page or map image, using strBaseURL as the base
-	var newURL = strBaseURL + "&width=" + mapW + "&height=" + mapH + "&selectvalues=" + mapSelect + "&bbox=" + mapBoxW + "," + mapBoxS + "," + mapBoxE + "," + mapBoxN + "&layers=" + mapLayers + mapOptions;
-
-        // Add parameters for the original bounding box, so Image can be recentered
-        if(includeSelect) {
-        	newURL += "&bboxSelect=" + selectMapBoxW + "," + selectMapBoxS + "," + selectMapBoxE + "," + selectMapBoxN;
-        } 
+	var newURL = strBaseURL+"&"+"maptype="+mapType+"&"+"key="+"ABQIAAAAgl5MtLeiQwCMBX7FdoPP_BTfAZWzJoh_gYMfdqhKwTyraOPtpRSIZm3YBA6TbcecvlyiMX_gNejDzg"+"&"+"size="+mapW+"x"+mapH+"&"+"center="+latitude+","+longitude+"&"+"zoom="+zoom+"&"+"sensor="+"false",
 	return(newURL);
 }
 

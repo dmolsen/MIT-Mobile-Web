@@ -1,28 +1,8 @@
 <?
-$bbox = iPhoneBBox();
-$select_bbox = iPhoneSelectBBox();
-$mapLayers = layers();
-
-$bbox_script =<<<JS
-     var mapSelect = '$selectvalue';
-     var initMapBoxW = {$bbox["minx"]};
-     var initMapBoxN = {$bbox["maxy"]};
-     var initMapBoxS = {$bbox["miny"]};
-     var initMapBoxE = {$bbox["maxx"]};
-     var selectMapBoxW = {$select_bbox["minx"]};
-     var selectMapBoxN = {$select_bbox["maxy"]};
-     var selectMapBoxS = {$select_bbox["miny"]};
-     var selectMapBoxE = {$select_bbox["maxx"]};
-     var photoURL = '$photoURL';	// If there's no photo, set to ""
-     var mapOptions = "&selectfield={$types['field']}&selectlayer={$types['type']}";
-     var mapLayers = "$layers";
-JS;
-
-$page->title('MIT Campus Map: Details')
+$page->title($inst_name.' Campus Map: Details')
      ->navbar_image('title-map')
      ->not_scalable()
      ->add_stylesheet('styles/map-ip')
-     ->add_inline_script($bbox_script)
      ->add_javascript('../ip/uiscripts-ip')
      ->add_javascript('javascripts/map-ip')
      ->breadcrumbs('Map Details')
@@ -33,21 +13,11 @@ $page->content_begin();
 
 	<a name="scrolldown"></a>		
 	<div class="focal shaded">
-                <? if($snippets) { ?>
-                   <p class="foundat"><?=$snippets?> found in:</p>
-                <? } ?>
 
-		<h2><?=$building_title?></h2>
-		<p class="address"><?=$data['street']?></p>
+		<h2><?=$data[0]['name']?> <img src="images/marker-<?=marker_type($data[0]['type'])?>.png" height="24" width="14" alt="Marker" /></h2>
+		<p class="address"><?=$data[0]['physical_address']?></p>
 		<ul id="tabs">
 			<li class="active"><a href="#scrolldown" onclick="showTab('maptab',this); hide('loadingimage')">Map</a></li>
-			<? if($photoURL) { ?>
-                           <li><a href="#scrolldown" onclick="showTab('phototab',this),loadImage(photoURL,'photo')">Photo</a></li>
-                        <? } ?>
-                        
-                        <? if($anything_here) { ?>
-			   <li><a href="#scrolldown" onclick="showTab('heretab',this)">What's Here</a></li>
-                        <? } ?>
 		</ul>
 		
 		<div id="tabbodies">	
@@ -71,25 +41,6 @@ $page->content_begin();
 					<a href="detail-fullscreen.php" id="fullscreen"><img src="../ip/images/blank.png" width="40" height="34" alt="Full Screen" /></a>
 				</div>
 			</div> <!-- id="maptab" -->
-		
-
-			<div class="tabbody" id="phototab" style="display:none">
-				<img id="loadingimage2" src="../ip/images/loading2.gif" width="40" height="40" alt="Loading" />
-				<img id="photo" src="" width="" height="" alt="Photo" onload="hide('loadingimage2')" />
-				<p class="legend">View from <?=$data['viewangle']?><? if($data['architect']) {?><br/>Architect: <?=$data['architect']?><? } ?></p>	 
-			</div> <!-- id="phototab" -->
-
-
-
-			<div class="tabbody" id="heretab" style="display:none">
-				<ul>
-                                     <? foreach($whats_here as $item) { ?>
-					  <li><?=$item?></li>
-                                     <? } ?>
-				</ul>
-			</div> <!-- id="heretab" -->
-
-
 
 			<div class="clear"></div>
 		</div>

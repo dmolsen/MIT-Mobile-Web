@@ -1,5 +1,5 @@
 <?php
-$page->title("MIT Map: Browse $title")
+$page->title($inst_name." Map: Browse $title")
      ->navbar_image('title-map')
      ->breadcrumbs('Browse Map');
 
@@ -11,9 +11,13 @@ $page->content_begin();
 	</div>
 	
 	<ul class="results">
-            <? foreach($places as $name => $number) { ?>
-		<li><a href="<?=detailURL($number, $name)?>"><?=$name?></a></li>
-            <? } ?>
+		<? foreach($places as $place) { ?>
+         <? $insert = ''; ?>
+         <? if ($place['type'] == 'Parking Lot') { ?>
+            <? $insert = 'Parking Lot: '; ?>
+         <? } ?>
+         <li><a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>"><?=$insert?><?=$place['name']?></a></li>
+     <? } ?>
 	</ul>
 	
 	<div class="nonfocal">
