@@ -1,6 +1,6 @@
 <?
-$page->title($inst_name."Campus Map: Details")
-     ->header("Campus Map");
+$page->title($inst_name." Campus Map: Details")
+     ->header($inst_name." Campus Map");
 
 function tabs() {
   $html = array();
@@ -21,7 +21,7 @@ $page->content_begin();
 
 	<div class="focal">
 
-		<h2><?=$data[0]['name']?> <img src="images/marker-<?=marker_type($data[0]['type'])?>.png"></h2>
+		<h2><?=$data[0]['name']?> <img src="images/marker-<?=marker_type($data[0]['type'])?>.png" height="26" width="16" alt="Marker" /> <? if (($data[0]['latitude'] != $_REQUEST['lat']) || ($data[0]['longitude'] != $_REQUEST['long'])) { ?><span class="legend">(<a href="detailURL($data['id'],$data['lat'],$data['long'])">reset map</a>)</span></h2>
 		
     <? if($tab == "Map") { ?>
   		<p><?=$data[0]['physical_address']?></p>
@@ -38,9 +38,9 @@ $page->content_begin();
 			  Scroll: <a href="<?=scrollURL('W')?>">W</a>&nbsp;|&nbsp;<a href="<?=scrollURL('N')?>">N</a>&nbsp;|&nbsp;<a href="<?=scrollURL('S')?>">S</a>&nbsp;|&nbsp;<a href="<?=scrollURL('E')?>">E</a><br />
 			  Zoom: <a href="<?=zoomInURL()?>">In</a>&nbsp;|&nbsp;<a href="<?=zoomOutURL()?>">Out</a><br />
 			  Map Type: <? if ($_REQUEST['maptype'] == 'satellite') { ?>Satellite<? } else { ?><a href="<?=mapTypeURL('satellite')?>">Satellite</a><? } ?>
-			            &nbsp;|&nbsp;
+			            |
 			            <? if ($_REQUEST['maptype'] == 'hybrid') { ?>Hybrid<? } else { ?><a href="<?=mapTypeURL('hybrid')?>">Hybrid</a><? } ?>
-			            &nbsp;|&nbsp;
+			            |
 			            <? if ($_REQUEST['maptype'] == 'roadmap') { ?>Map<? } else { ?><a href="<?=mapTypeURL('roadmap')?>">Map</a><? } ?>
 		</p>
                    

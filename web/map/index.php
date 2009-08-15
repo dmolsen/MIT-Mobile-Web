@@ -11,6 +11,7 @@
 require_once "../../lib/db.php";
 require_once "../page_builder/page_header.php";
 require_once "../../config.gen.inc.php";
+require_once "lib/map.lib.inc.php";
 
 class Categorys {
   public static $info = array(
@@ -99,10 +100,6 @@ function drillURL($drilldown, $name=NULL) {
 function categoryURL($category=NULL) {
   $category = $category ? $category : $_REQUEST['category'];
   return "?category=$category";
-}
-
-function detailURL($id,$latitude,$longitude) {
-  return "detail.php?loc=".$id."&lat=".$latitude."&long=".$longitude."&maptype=roadmap";
 }
 
 function searchURL() {

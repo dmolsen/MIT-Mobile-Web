@@ -3,9 +3,26 @@ $page->title($inst_name.' Campus Map: Search Results')
      ->header($inst_name.' Campus Map');
 
 $page->content_begin();
+#$content->output($results);
+?>
 
-$content->output($results);
+<form method="get" action="">
+<p>
+<span class="inputcombo emphasized">
+<input class="forminput" type="search" id="filter" name="filter" value="<?=$_REQUEST['filter']?>" />
+<input class="combobutton" name="search" id="sch_btn" type="submit" value="Search" />
+</span>
+</p>
+</form>
 
+<p><?=count($results)?> matches found</p>
+<p class="focal results"> 
+        <? foreach($results as $place) { ?>
+            <a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>"><?=$place['name']?></a><br/>
+        <? } ?> 
+</p>
+
+<?
 $page->content_end();
 $page->nav_link('./', "Campus Map Home");
 ?>

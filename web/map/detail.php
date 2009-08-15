@@ -10,6 +10,7 @@
 require_once "../../lib/db.php";
 require_once "../page_builder/page_header.php";
 require_once "../../config.gen.inc.php";
+require_once "lib/map.lib.inc.php";
 
 define('ZOOM', 16);
 define('LAT',  39.634419);

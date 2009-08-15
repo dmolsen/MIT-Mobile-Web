@@ -10,6 +10,7 @@
 require_once "../../lib/db.php";
 require_once "../page_builder/page_header.php";
 require_once "../../config.gen.inc.php";
+require_once "lib/map.lib.inc.php";
 
 if($search_terms = $_REQUEST['filter']) {
   $results = map_search($search_terms);
@@ -23,10 +24,6 @@ if($search_terms = $_REQUEST['filter']) {
   }
 } else {
   header("Location: ./");
-}
-
-function detailURL($id,$latitude,$longitude) {
-  return "detail.php?loc=".$id."&lat=".$latitude."&long=".$longitude."&maptype=roadmap";
 }
 
 function map_search($terms) {
