@@ -85,8 +85,8 @@ function getMapURL(strBaseURL, includeSelect) {
 
 
 function scroll(dir) {
-	
-    // Scrolls the map image in the cardinal direction given by dir; amount of scrolling is scaled to zoom level and the pixel dimensions of the map image
+
+        // Scrolls the map image in the cardinal direction given by dir; amount of scrolling is scaled to zoom level and the pixel dimensions of the map image
 	var objMap = document.getElementById("mapimage");
 	if(objMap) {
 		switch(dir) {
@@ -220,7 +220,9 @@ function rotateMapAlternate() {
 
 function checkIfMoved() {
 // Check to see if the map has been moved (zoomed or scrolled) away from its initial position, and disable/enable the 'recenter' button accordingly
-	hasMoved = !((mapBoxW == selectMapBoxW) && (mapBoxN == selectMapBoxN) && (mapBoxS == selectMapBoxS) && (mapBoxE == selectMapBoxE));
+	if ((latitude != initLatitude) || (longitude != initLongitude) || (zoom != 15)) {
+           hasMoved = true;
+        }
 	if(hasMoved) {
 		enable('recenter');
 	} else {
