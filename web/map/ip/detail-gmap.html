@@ -4,7 +4,8 @@ $page->title($inst_name.' Campus Map: Details')
      ->not_scalable()
      ->add_stylesheet('styles/map-ip')
      ->breadcrumbs('Map Details')
-     ->extra_onload("loadImage(getMapURL(mapBaseURL),'mapimage');");
+     ->extra_onload("initialize()");
+     #->extra_onload("loadImage(getMapURL(mapBaseURL),'mapimage');");
 
 $page->content_begin();
 ?>
@@ -20,29 +21,31 @@ $page->content_begin();
 		
 		<div id="tabbodies">	
 			<div class="tabbody" id="maptab">
-				<script type="text/javascript">
-				  var types = new Array();
-				  types['Building'] = 'apartment';
-				  types['Parking Lot'] = 'parking';
+			      <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=ABQIAAAAgl5MtLeiQwCMBX7FdoPP_BTfAZWzJoh_gYMfdqhKwTyraOPtpRSIZm3YBA6TbcecvlyiMX_gNejDzg" type="text/javascript"></script>	
+                              <script type="text/javascript">
+				var types = new Array();
+				types['Building'] = 'apartment';
+				types['Parking Lot'] = 'parking';
 				
-					var map = new GMap2(document.getElementById("map_canvas"));
-					map.addControl(new GSmallMapControl());
-					map.addControl(new GMapTypeControl());
-					map.setCenter(new GLatLng(<?=$data[0]['latitude']?>, <?=$data[0]['longitude']?>), 15);
+                                function initialize() {
+				var map = new GMap2(document.getElementById("map_canvas"));
+				map.setUIToDefault();
+				map.setCenter(new GLatLng(<?=$data[0]['latitude']?>, <?=$data[0]['longitude']?>), 15);
+				
+				var point = new GLatLng(<?=$data[0]['latitude']?>, <?=$data[0]['longitude']?>);
 					
-					point = new GLatLng(<?=$data[0]['latitude']?>, <?=$data[0]['longitude']?>);
+				var baseIcon = new GIcon(G_DEFAULT_ICON);
+                                baseIcon.image = "http://m.asdb-cluster.wvu.edu/map/images/ip-markers/"+types['<?=$data[0]['type']?>']+'.png';
+				baseIcon.shadow = "http://m.asdb-cluster.wvu.edu/map/images/ip-markers/shadow.png";
+				baseIcon.iconSize = new GSize(32, 37);
+				baseIcon.shadowSize = new GSize(51, 37);
 					
-					var baseIcon = new GIcon(G_DEFAULT_ICON);
-					baseIcon.image = "images/ip-markers/"+types[$data[0]['type']]+'.png';
-					baseIcon.shadow = "images/ip-markers/shadow.png";
-					baseIcon.iconSize = new GSize(32, 37);
-					baseIcon.shadowSize = new GSize(51, 37);
-					
-					markerOptions = { icon:baseIcon };
-          var marker = new GMarker(point, markerOptions);
-          map.addOverlay(createMarker(point, i));
-				</script>
-				<div id="map_canvas" style="width: 290px; height: 190px"><img id="mapimage" width="290" height="190" alt="" onload="hide('loadingimage')" /></div>
+				markerOptions = { icon:baseIcon };
+          			var marker = new GMarker(point, markerOptions);
+          			map.addOverlay(marker);
+				}
+                                </script>
+				<div id="map_canvas" style="width: 290px; height: 190px"></div>
 				<div id="mapzoom">
 					<a href="#" onclick="recenter(); return false;" id="recenter" class="disabled"><img src="../ip/images/blank.png" width="40" height="34" alt="Recenter" /></a>
 					<a href="detail-fullscreen.php" id="fullscreen"><img src="../ip/images/blank.png" width="40" height="34" alt="Full Screen" /></a>
