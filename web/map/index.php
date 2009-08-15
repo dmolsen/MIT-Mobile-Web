@@ -14,9 +14,9 @@ require_once "../../config.gen.inc.php";
 
 class Categorys {
   public static $info = array(
-    "names"        => array("Building name", "Building Names", "Buildings by Name"),
-    "campus"       => array("Building name", "Building Names", "Buildings by Campus"),
-    "parking"      => array("Parking lots", "Parking Lots", "Parking Lots")
+    "names"        => array("Building name", "Building Names", "Buildings by Name", "Building"),
+    "campus"       => array("Building name", "Building Names", "Buildings by Campus", "Building"),
+    "parking"      => array("Parking lots", "Parking Lots", "Parking Lots", "Parking Lot")
   );
 }
 $category_info = Categorys::$info;
@@ -37,24 +37,31 @@ if(!isset($_REQUEST['category'])) {
 
 
   if(!isset($_REQUEST['drilldown'])) {
-    $places = getData();
     if($category=="names" || $category=="campus") {
       require "$prefix/$category.html";
     } else {
+	  $places = getData("type = ".$category_info[$category][3]);
       require "$prefix/places.html";
     }
   } else {
     $titlebar = ucwords($category_info[$category][0]);
     $drilldown = $_REQUEST['drilldown'];
     $drilldown_title = $_REQUEST['desc'];
-    $places = places_sublist($drilldown);
+    if ($category=="names") {
+		$places = getData("type = ".$category_info[$category][3]." and name LIKE '".$drilldown."%'");
+    }
+    else if ($category=="campus") {
+		$places = getData("type = ".$category_info[$category][3]." and campus = '".$drilldown."'");
+	}
     require "$prefix/drilldown.html";
   }
 } 
 
-
-
 $page->output();
+
+############################################################
+### Extra functions
+############################################################
 
 function places() {
   require "buildings.php";
@@ -95,7 +102,7 @@ function categoryURL($category=NULL) {
 }
 
 function detailURL($id,$latitude,$longitude) {
-  return "detail.php?loc=".$id."&lat=".$latitude."&long=".$longitude;
+  return "detail.php?loc=".$id."&lat=".$latitude."&long=".$longitude."&maptype=roadmap";
 }
 
 function searchURL() {
@@ -104,7 +111,7 @@ function searchURL() {
 
 function getData($where=false) {
 	$db = db::$connection;
-        if ($where) {
+	if ($where) {
 		$stmt = $db->prepare("SELECT * FROM Buildings WHERE ".$where." GROUP BY name ORDER BY name ASC" );
 	}
 	else {

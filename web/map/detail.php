@@ -11,9 +11,10 @@ require_once "../../lib/db.php";
 require_once "../page_builder/page_header.php";
 require_once "../../config.gen.inc.php";
 
-define('ZOOM',16);
-define('LAT', 39.634419);
+define('ZOOM', 16);
+define('LAT',  39.634419);
 define('LONG', -79.954054);
+define('MAPTYPE', "roadmap");
 
 switch($phone) {
  case "sp":
@@ -62,15 +63,20 @@ function mapURL() {
 function imageURL($phone) {
 
   $query = array(
-    "maptype" => "hybrid",
+    "maptype"      => mapType(),
     "key"          => "ABQIAAAAgl5MtLeiQwCMBX7FdoPP_BTfAZWzJoh_gYMfdqhKwTyraOPtpRSIZm3YBA6TbcecvlyiMX_gNejDzg", 
     "size"         => pix("x", $phone).'x'.pix("y", $phone),
     "center"       => lat().",".long(),
     "zoom"         => zoom(),
-    "sensor"       => "false"
+    "sensor"       => "false",
+    "markers"      => marker()
   );
 
   return mapURL() . '?' . http_build_query($query);
+}
+
+function maptype() {
+  return isset($_REQUEST['maptype']) ? $_REQUEST['maptype'] : MAPTYPE;
 }
 
 function zoom() {
@@ -89,6 +95,44 @@ function tab() {
   return isset($_REQUEST['tab']) ? $_REQUEST['tab'] : "Map";
 }
 
+function marker() {	
+  $markers = array(
+    "Building" => "midredb",
+    "Parking Lot" => "midbluep",
+    "WiFi" => "midorangew",
+    "PRT" => "midblackp",
+    "Bus Stop" => "midgreens",
+    "Athletic" => "midyellowa",
+    "Library" => "midgrayl",
+    "Residence" => "midbrownr"
+  );
+  if ((int)$_REQUEST['loc'] != 0) {
+    $db = db::$connection;
+	$stmt = $db->prepare("SELECT * FROM Buildings WHERE id = ".$_REQUEST['loc']);
+	$stmt->execute();
+	$data = $stmt->fetchAll();
+	
+	$lat = $data[0]['latitude'];
+	$long = $data[0]['longitude'];
+	$marker = $markers[$data[0]['type']];
+	return $lat.",".$long.",".$marker;
+  }
+  else if ($_REQUEST['all']) {
+	$db = db::$connection;
+	$stmt = $db->prepare("SELECT * FROM Buildings WHERE type = ".$_REQUEST['all']);
+	$stmt->execute();
+	$results = $stmt->fetchAll();
+    $markers = "";
+    foreach ($results as $result) {
+	 	$lat = $data[0]['latitude'];
+		$long = $data[0]['longitude'];
+		$marker = $markers[$data[0]['type']];
+		$markers .= $lat.",".$long.",".$marker."|";
+    }
+	return $markers;
+  }
+}
+
 function select_value() {
   return $_REQUEST['selectvalues'];
 }
@@ -104,13 +148,13 @@ function scrollURL($dir) {
   );
   
   if ($dir == "E") {
-    return moveURL(long()+$move[zoom()], lat(), zoom());
+    return moveURL(long()+$move[zoom()], lat(), zoom(),maptype());
   } else if ($dir == "W") {
-    return moveURL(long()-$move[zoom()], lat(), zoom());
+    return moveURL(long()-$move[zoom()], lat(), zoom(),maptype());
   } else if ($dir == "N") {
-    return moveURL(long(),lat()+$move[zoom()], zoom());
+    return moveURL(long(),lat()+$move[zoom()], zoom(),maptype());
   } else {
-    return moveURL(long(),lat()-$move[zoom()], zoom());
+    return moveURL(long(),lat()-$move[zoom()], zoom(),maptype());
   }
 }
 
@@ -119,7 +163,7 @@ function zoomInURL() {
   if ($zoom > 17) {
 	$zoom = zoom();
   }
-  return moveURL(long(), lat(), $zoom);
+  return moveURL(long(), lat(), $zoom, maptype());
 }
 
 function zoomOutURL() {
@@ -127,18 +171,24 @@ function zoomOutURL() {
   if ($zoom < 12) {
     $zoom = zoom();
   }
-  return moveURL(long(), lat(), $zoom);
+  return moveURL(long(), lat(), $zoom, maptype());
+}
+
+function mapTypeURL($type) {
+  return moveURL(long(), lat(), zoom(), $type);
 }
 
 function selfURL() {
-  return moveURL(long(), lat(), zoom());
+  return moveURL(long(), lat(), zoom(), maptype());
 }
 
-function moveURL($long, $lat, $zoom) {
+function moveURL($long, $lat, $zoom, $maptype) {
   $params = array(
     "zoom" => $zoom,
     "long" => $long,
-    "lat" => $lat
+    "lat" => $lat,
+    "maptype" => $maptype,
+    "loc" => (int)$_REQUEST['loc']
   );
   return "detail.php?" . http_build_query($params);
 }
@@ -152,7 +202,7 @@ $width = pix("x", $phone);
 $height = pix("y", $phone);
 
 if ($_REQUEST['loc']) {
-        $db = db::$connection;
+    $db = db::$connection;
 	$stmt = $db->prepare("SELECT * FROM Buildings WHERE id = ".$_REQUEST['loc']);
 	$stmt->execute();
 	$data = $stmt->fetchAll();

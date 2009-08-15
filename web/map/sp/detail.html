@@ -35,8 +35,13 @@ $page->content_begin();
 		</p>
 		<p>
 			  <!-- Note to devs: These links, like the image URL above, will need to be calculated on the server at page compile time and hard-coded into the HTML delivered to the browser -->
-			  Scroll: <a href="<?=scrollURL('N')?>">N</a>&nbsp;|&nbsp;<a href="<?=scrollURL('S')?>">S</a>&nbsp;|&nbsp;<a href="<?=scrollURL('E')?>">E</a>&nbsp;|&nbsp;<a href="<?=scrollURL('W')?>">W</a><br/>
-			  Zoom: <a href="<?=zoomInURL()?>">In</a>&nbsp;|&nbsp;<a href="<?=zoomOutURL()?>">Out</a>
+			  Scroll: <a href="<?=scrollURL('W')?>">W</a>&nbsp;|&nbsp;<a href="<?=scrollURL('N')?>">N</a>&nbsp;|&nbsp;<a href="<?=scrollURL('S')?>">S</a>&nbsp;|&nbsp;<a href="<?=scrollURL('E')?>">E</a><br />
+			  Zoom: <a href="<?=zoomInURL()?>">In</a>&nbsp;|&nbsp;<a href="<?=zoomOutURL()?>">Out</a><br />
+			  Map Type: <? if ($_REQUEST['maptype'] == 'satellite') { ?>Satellite<? } else { ?><a href="<?=mapTypeURL('satellite')?>">Satellite</a><? } ?>
+			            &nbsp;|&nbsp;
+			            <? if ($_REQUEST['maptype'] == 'hybrid') { ?>Hybrid<? } else { ?><a href="<?=mapTypeURL('hybrid')?>">Hybrid</a><? } ?>
+			            &nbsp;|&nbsp;
+			            <? if ($_REQUEST['maptype'] == 'roadmap') { ?>Map<? } else { ?><a href="<?=mapTypeURL('roadmap')?>">Map</a><? } ?>
 		</p>
                    
 	</div>

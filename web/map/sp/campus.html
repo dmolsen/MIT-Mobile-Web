@@ -12,9 +12,9 @@ $page->content_begin();
 	<h2>Buildings by Campus</h2>
 	
 	<p class="nav">
-             <? foreach($drilldowns as $drilldown) { ?>
-                 <a href="<?=drillURL($drilldown)?>"><?=$drilldown?></a> &nbsp;
-             <? } ?>
+       <? foreach($drilldowns as $drilldown) { ?>
+             <a href="<?=drillURL($drilldown)?>"><?=$drilldown?></a> &nbsp;
+       <? } ?>
 	</p>
 <?
 $page->content_end();
