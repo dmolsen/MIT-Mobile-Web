@@ -34,8 +34,8 @@ class RSS {
       $title = trim(self::getTag($item, 'title')->nodeValue);
       $items[$title] = array(
 	    "date"     => getdate(strtotime(self::getTag($item, 'pubDate')->nodeValue)),
-        "unixtime" => strtotime(self::getTag($item, 'pubDate')->nodeValue),
-	    "text"     => self::getTag($item, 'description')->nodeValue),
+            "unixtime" => strtotime(self::getTag($item, 'pubDate')->nodeValue),
+	    "text"     => self::getTag($item, 'description')->nodeValue,
 	    "link"     => self::getTag($item, 'link')->nodeValue
       );
     }
