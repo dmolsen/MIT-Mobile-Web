@@ -9,7 +9,7 @@ $page->content_begin();
     <p>
 	    <strong>Available streams:</strong><br />
 	    <? foreach($streams as $name => $url) { ?>
-				<a href="$url">$name</a><br />
+				<a href="<?=$url?>"><?=$name?></a><br />
 			<? } ?>
 	  </p>
 </div>

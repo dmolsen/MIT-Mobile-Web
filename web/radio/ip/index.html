@@ -1,7 +1,7 @@
 <?php
 $page->title('U92FM: College Radio at WVU')
      ->navbar_image('title-u92')
-     ->breadcrumbs('U92: College Radio at WVU')
+     ->breadcrumbs('College Radio')
      ->breadcrumb_home();
 
 $page->content_begin();
@@ -15,17 +15,18 @@ $page->content_begin();
 	</div>
 
 	<ul class="nav">
+             <li><strong>U92 news:</strong></li>
              <? foreach($items as $title => $item) { ?>
-		            <li> <?=$title?> <span class="smallprint"><a href="<?=detailURL($title)?>">more</a></span></li>
+		            <li> <a href="<?=detailURL($title)?>"><?=$title?></a></li>
              <? } ?>
 	
 	</ul>
 	
-	<ul class="nav">
+	<ul class="secondary">
 		<? foreach($links as $item) { ?>
 			   <? $external = ''; ?>
 			   <? if ($item[3] == true) { $external = "class='external'"; } ?>
-         <li><a href <?=$external?> href="<?=$item[1]?>"> <?=$item[0]?></a></li>
+         <li><a <?=$external?> href="<?=$item[1]?>"> <?=$item[0]?></a></li>
     <? } ?>
 	</ul>
 	

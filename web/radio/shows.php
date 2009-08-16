@@ -41,7 +41,7 @@ if ((int)$_REQUEST['id'] != 0) {
 }
 else {
 	$db = db::$connection;
-	$stmt_1 = $db->prepare("SELECT * FROM RadioShows WHERE id = CAST(? AS INT)");
+	$stmt_1 = $db->prepare("SELECT * FROM RadioShows ORDER BY name");
 	$stmt_1->execute();
 	$shows = $stmt_1->fetchAll();
     	
@@ -55,10 +55,11 @@ function showURL($id) {
   return "show.php?id=$id";
 }
 
-function timestamp((int)$time) {
+function timestamp($time) {
+        $time = (int)$time;
 	if ($time == 24) {
 		$hour = 12;
-		$ampm = 'am'
+		$ampm = 'am';
 	}
 	else if ($time == 12) {
 		$hour = 12;

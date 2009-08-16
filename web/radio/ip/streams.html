@@ -7,12 +7,12 @@ $page->content_begin();
 ?>
 
 <div class="nonfocal">
-	Choose a mobile stream to listen to.
+	Choose a mobile stream to listen to:
 </div>
 
 <ul class="nav">
 	    <? foreach($streams as $name => $url) { ?>
-				<li><a class="external" href="$url">$name</a></li>
+				<li><a class="external" href="<?=$url?>"><?=$name?></a></li>
 			<? } ?>
 </ul>
 

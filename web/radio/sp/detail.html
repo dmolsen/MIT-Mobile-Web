@@ -11,7 +11,7 @@ $page->content_begin();
 
     <p>
 	    <strong>Showtimes:</strong><br />
-	    <? foreach($shows as $show) { ?>
+	    <? foreach($showtimes as $show) { ?>
 				<?=$show['day']?>. from <?=timestamp($show['start'])?>-<?=timestamp($show['end'])?><br />
 			<? } ?>
 	  </p>
