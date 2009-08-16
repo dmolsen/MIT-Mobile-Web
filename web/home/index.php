@@ -32,6 +32,12 @@ switch($phone) {
 
 $page->cache();
 
-require "$prefix/index.html";
+if ($_REQUEST['more'] != true) {
+	require "$prefix/index.html";
+}
+else {
+	require "$prefix/more.html";
+}
+
 
 ?>
