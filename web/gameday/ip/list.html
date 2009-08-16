@@ -1,0 +1,15 @@
+<?php
+$page->title($inst_name.' Game Day: List of teams')
+     ->navbar_image('title-gameday')
+     ->breadcrumbs('List of teams');
+
+$page->content_begin();
+?>
+
+<ul class="nav">
+<? foreach($teams as $name => $team) { ?>
+     <li><a href="<?=teamURL($name)?>"><?=$team[0]?></a></li>
+ <? } ?>
+</ul>
+
+<? $page->content_end(); ?>

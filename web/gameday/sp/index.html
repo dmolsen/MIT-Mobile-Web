@@ -1,0 +1,24 @@
+<?php
+$page->title($inst_name." Game Day")
+     ->header($inst_name." Game Day");
+
+$page->content_begin();
+?>
+			<div class="focal">
+			   	<a href="tel:13042933267" class="phone">Football Game Day FANLINE</a> <span class="smallprint"> (304.293.3267)</span><br/>
+			</div>
+      
+			<div class="focal">
+				 <? foreach ($eventFeed as $event) { ?>
+			      <? $loc = briefLocation($event); ?>
+				    <p><a href="<?=detailURL($event,'athletics')?>"><?=html_entity_decode($event->title->text)?></a><br/><span class="smallprint"><?=timeText($event)?><? if(trim($loc->valueString) != '') { ?>&nbsp;|&nbsp;<?=$loc->valueString?><? } ?></span></a></p>
+			   <? } ?>
+			</div>
+			
+      <p class="nav">
+           <? foreach($links as $item) { ?>
+              <a href="<?=$item[0]?>"> <?=$item[1]?></a><br/>
+           <? } ?>
+      </p>
+
+<? $page->content_end(); ?>
