@@ -1,0 +1,21 @@
+<?php
+$page->title('U92FM: College Radio at WVU: Show details')
+     ->navbar_image('title-u92')
+     ->breadcrumbs('Show details');
+
+$page->content_begin();
+?>
+
+<div class="focal">
+	
+	  <h2><?=$showname?></h2> 
+
+    <p>
+	    <strong>Showtimes:</strong><br />
+	    <? foreach($shows as $show) { ?>
+				<?=$show['day']?>. from <?=timestamp($show['start'])?>-<?=timestamp($show['end'])?><br />
+			<? } ?>
+	  </p>
+</div>
+
+<? $page->content_end(); ?>
