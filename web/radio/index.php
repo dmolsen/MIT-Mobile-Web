@@ -58,12 +58,12 @@ else {
 $page->cache();
 $page->output();
 
-function detailURL($title,$src) {
-  return "detail.php?title=$title&src=$src";
+function showURL($id) {
+  return "show.php?id=$id";
 }
 
-function summary($item) {
-  return summary_string(str_replace('Read more ...','',$item['text']));
+function detailURL($title) {
+  return "detail.php?title=$title";
 }
-    
+  
 ?>

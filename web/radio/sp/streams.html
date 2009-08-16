@@ -1,0 +1,21 @@
+<?php
+$page->title('U92FM: College Radio at WVU: Mobile streams')
+     ->header('U92FM: Mobile streams');
+
+$page->content_begin();
+?>
+
+<div class="focal">
+    <p>
+	    <strong>Available streams:</strong><br />
+	    <? foreach($streams as $name => $url) { ?>
+				<a href="$url">$name</a><br />
+			<? } ?>
+	  </p>
+</div>
+
+<p class="nonfocal legend">
+    <strong>* Important note:</strong> The U92 mobile streams are provided as a free service. Extra data charges may apply when using these streams on your mobile device depending on your service plan.
+</p>
+
+<? $page->content_end(); ?>
