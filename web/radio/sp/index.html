@@ -1,0 +1,32 @@
+<?php
+$page->title('U92FM: College Radio at WVU')
+     ->header('U92FM: College Radio at WVU');
+
+$page->content_begin();
+?>
+
+			<div class="focal">
+			   	<p>
+				     <strong>Now Playing: </strong> <a href="shows.php?id=<?=$showid?>"><?=$showname?></a><br />
+				     <span class="legend"><a href="index.php?streams=true">Listen Live!</a></span>
+				  </p>
+			</div>
+			
+			<? foreach($items as $title => $item) { ?>
+			  <p class="focal">
+				  <strong><?=$title?></strong><br/>
+		      <? $short_date = short_date($item['date']); ?>
+		      <? if ($short_date == '00:00am') { $short_date = '12:00am'; } ?>
+				  <span class="smallprint"><?=html_entity_decode(summary($item))?> <a href="<?=detailURL($title,$key)?>">more</a> <? if ($item['date']) { ?>(<?=$short_date?>)<? } ?></span>
+			  </p>
+		  <? } ?>
+			
+      <p class="nav">
+           <? foreach($links as $item) { ?>
+									<? if ($item[2] == true) { ?>
+                  	<a href="<?=$item[1]?>"> <?=$item[0]?></a><br/>
+                  <? } ?>
+           <? } ?>
+      </p>
+
+<? $page->content_end(); ?>
