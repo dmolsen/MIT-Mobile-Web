@@ -4,23 +4,21 @@ $page->title('U92FM: College Radio at WVU')
 
 $page->content_begin();
 ?>
-
 			<div class="focal">
 			   	<p>
-				     <strong>Now Playing: </strong> <a href="shows.php?id=<?=$showid?>"><?=$showname?></a><br />
-				     <span class="legend"><a href="index.php?streams=true">Listen Live!</a></span>
+				     <strong>Now playing on U92:</strong> <br />
+                                     <a href="shows.php?id=<?=$showid?>"><?=$showname?></a> <span class="legend">(<a href="index.php?streams=true">Listen live!</a>)</span>
 				  </p>
 			</div>
-			
+		<br />
+                        <div class="focal">
+                        <p><strong>U92 news:</strong></p>
 			<? foreach($items as $title => $item) { ?>
-			  <p class="focal">
-				  <strong><?=$title?></strong><br/>
-		      <? $short_date = short_date($item['date']); ?>
-		      <? if ($short_date == '00:00am') { $short_date = '12:00am'; } ?>
-				  <span class="smallprint"><?=html_entity_decode(summary($item))?> <a href="<?=detailURL($title,$key)?>">more</a> <? if ($item['date']) { ?>(<?=$short_date?>)<? } ?></span>
+			  <p>
+				  <?=$title?> <span class="smallprint"><a href="<?=detailURL($title,$key)?>">more</a></span>
 			  </p>
 		  <? } ?>
-			
+			</div>
       <p class="nav">
            <? foreach($links as $item) { ?>
 									<? if ($item[2] == true) { ?>

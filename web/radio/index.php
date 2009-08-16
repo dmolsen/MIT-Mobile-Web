@@ -9,6 +9,7 @@
  */
 
 require_once "../../lib/db.php";
+require_once "../../lib/rss_services.php";
 require_once "../page_builder/page_header.php";
 require_once "../../config.gen.inc.php";
 
@@ -34,13 +35,14 @@ else {
 
 	$stmt_2 = $db->prepare("SELECT * FROM RadioShows WHERE id = CAST(? AS INT)");
 	if (db::$use_sqlite) {
-		$stmt_2->execute(array($showtime[0]['id']));
+		$stmt_2->execute(array($showtime[0]['show']));
 	}
 	else {
-		$stmt_2->bind_param('i',$showtime[0]['id']);
+		$stmt_2->bind_param('i',$showtime[0]['show']);
 		$stmt_2->execute();
 	}
 	$show = $stmt_2->fetchAll();
+        
 	$showname = $show[0]['name'];
 	$showid = $show[0]['id'];
 
@@ -48,12 +50,20 @@ else {
 	$items = $News->get_feed('http://157.182.32.8/u92/u92.xml');
 	
 	# name, link, show for sp & ip?, use external class?
-	$links = array(array("List of Show","shows.php",true,false),array("U92 on iTunes U","http://deimos.apple.com/WebObjects/Core.woa/Browse/wvu.edu.1353247216",false,true),array("U92's full web site","http://u92.wvu.edu/",true,true)
+	$links = array(array("List of shows","shows.php",true,false),array("U92 on iTunes U","http://deimos.apple.com/WebObjects/Core.woa/Browse/wvu.edu.1353247216",false,true),array("U92's full web site","http://u92.wvu.edu/",true,true));
 	
 	require "$prefix/index.html";
 }
 
 $page->cache();
 $page->output();
+
+function detailURL($title,$src) {
+  return "detail.php?title=$title&src=$src";
+}
+
+function summary($item) {
+  return summary_string(str_replace('Read more ...','',$item['text']));
+}
     
 ?>
