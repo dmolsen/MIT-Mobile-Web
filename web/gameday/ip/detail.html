@@ -6,20 +6,18 @@ $page->title($inst_name.' Game Day: Team Details')
 $page->content_begin();
 ?>
 
-<div class="focal">
-	
-	   <? if (array_key_exists($_REQUEST['team'],$teams)) { ?>
-	  <h2><?=$teams[$_REQUEST['team']][0]?></h2> 
+<? if (array_key_exists($_REQUEST['team'],$teams)) { ?>
+	  <div class="focal"><strong><?=$teams[$_REQUEST['team']][0]?></strong></div>
 
-    <p>
-	    <a href="http://mobile.msnsportsnet.com/index.cfm?func=viewSportSection&sport=<?=$_REQUEST['team']?>&show=<?=$teams[$_REQUEST['team']][1]?>">Statistics</a><br />
-	<a href="http://mobile.msnsportsnet.com/index.cfm?func=viewSportSection&sport=<?=$_REQUEST['team']?>&show=<?=$teams[$_REQUEST['team']][2]?>">Schedule</a><br />
-	<a href="http://mobile.msnsportsnet.com/index.cfm?func=viewSportSection&sport=<?=$_REQUEST['team']?>&show=roster">Team Roster</a><br />
-	<a href="http://mobile.msnsportsnet.com/index.cfm?func=viewSportSection&sport=<?=$_REQUEST['team']?>&show=<?=$teams[$_REQUEST['team']][3]?>">Game notes</a><br />
-	  </p>
-	  <? } else { }?>
-			<p>That team was not found. Sorry.</p>
+<ul class="nav">
+    <li><a class="external" href="http://mobile.msnsportsnet.com/index.cfm?func=viewSport&sport=<?=$_REQUEST['team']?>">News</a></li>
+    <li><a class="external" href="http://mobile.msnsportsnet.com/index.cfm?func=viewSportSection&sport=<?=$_REQUEST['team']?>&show=<?=$teams[$_REQUEST['team']][1]?>">Statistics</a></li>
+	<li><a class="external" href="http://mobile.msnsportsnet.com/index.cfm?func=viewSportSection&sport=<?=$_REQUEST['team']?>&show=<?=$teams[$_REQUEST['team']][2]?>">Schedule</a></li>
+	<li><a class="external" href="http://mobile.msnsportsnet.com/index.cfm?func=viewSportSection&sport=<?=$_REQUEST['team']?>&show=roster">Team Roster</a></li>
+	<li><a class="external" href="http://mobile.msnsportsnet.com/index.cfm?func=viewSportSection&sport=<?=$_REQUEST['team']?>&show=<?=$teams[$_REQUEST['team']][3]?>">Game notes</a></li>
+</ul>
+	  <? } else { ?>
+			<div class="focal"><p>That team was not found. Sorry.</p></div>
 	  <? } ?>
-</div>
 
 <? $page->content_end(); ?>

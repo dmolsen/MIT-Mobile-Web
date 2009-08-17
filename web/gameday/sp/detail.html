@@ -16,7 +16,7 @@ $page->content_begin();
 	<a href="http://mobile.msnsportsnet.com/index.cfm?func=viewSportSection&sport=<?=$_REQUEST['team']?>&show=roster">Team Roster</a><br />
 	<a href="http://mobile.msnsportsnet.com/index.cfm?func=viewSportSection&sport=<?=$_REQUEST['team']?>&show=<?=$teams[$_REQUEST['team']][3]?>">Game notes</a><br />
 	  </p>
-	  <? } else { }?>
+	  <? } else { ?>
 			<p>That team was not found. Sorry.</p>
 	  <? } ?>
 </div>

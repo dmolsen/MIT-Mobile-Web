@@ -20,8 +20,8 @@ $links = array(
 	array("teams.php","List of teams",false),
 	array("../map/?category=athletics","List of athletic facilities",false),
 	array("http://mobile.msnsportsnet.com/","MSNsportsNet.com mobile news",true),
-	array("http://m.twitter.com/wvusportsbuzz/","WVUSportsBuzz on Twitter",true),
-	array("http://m.twitter.com/coachstewart","Coach Stewart on Twitter",true),
+	#array("http://m.twitter.com/wvusportsbuzz/","WVUSportsBuzz on Twitter",true),
+	#array("http://m.twitter.com/coachstewart","Coach Stewart on Twitter",true),
 	array("https://www.ticketreturn.com/wvu/","Student Tickets",true),
 	array("http://mobile.msnsportsnet.com/page.cfm?section=6581", "Football Gameday FAQ (long)", true),
 	array("http://mobile.msnsportsnet.com/page.cfm?section=6582", "Basketball Gameday FAQ (long)", true)
