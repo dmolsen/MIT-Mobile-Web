@@ -8,13 +8,13 @@ $page->content_begin();
 ?>
 
   <ul class="nav">
-	   	<li><a href="tel:13042933267" class="phone">Football Game Day FANLINE <span class="smallprint"> (304.293.3267)</span></a></li>
+	   	<li><a href="tel:13042933267" class="phone">Football Game Day FANLINE <span class="smallprint">(304.293.3267)</span></a></li>
 	</ul>
 
 	<ul class="nav">
 						  <? foreach ($eventFeed as $event) { ?>
 							<? $loc = briefLocation($event); ?>
-		<li><a href="../calendar/<?=detailURL($event)?>"><?=html_entity_decode($event->title->text)?><br/><span class="smallprint"><?=timeText($event)?><? if(trim($loc->valueString) != '') { ?>&nbsp;|&nbsp;<?=$loc->valueString?><? } ?></span></a></li>
+		<li><a href="../calendar/<?=detailURL($event)?>"><?=html_entity_decode($event->title->text)?><br/><span class="smallprint"><?=timeText($event)?><? if(trim($loc->valueString) != '') { ?><br /><?=$loc->valueString?><? } ?></span></a></li>
 	          <? } ?>
 	</div>
 	
