@@ -19,6 +19,7 @@ require "lib/gcalendar_setup.php";
 
 // defines all the variables related to being today
 require "lib/calendar_lib.php";
+require "lib/academic.php";
 
 $month = $_REQUEST['month'];
 $year = $_REQUEST['year'];
