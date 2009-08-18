@@ -17,7 +17,7 @@ $main = array(
 
 $others = array(
   i("3042933136", "Campus Police"),
-  i("3042930111", "Campus Operator/Information")
+  i("3042930111", "Campus Operator/Information"),
   i("3042936997", "Carruth Center for Counseling and Psychological Services"),
   i("3042936700", "Disability Services"),
   i("3042933792", "Environment, Health & Safety"),
@@ -90,7 +90,7 @@ $schools = array(
   i("3042935101", "School of Pharmacy"),
   i("3042933295", "College of Physical Activity & Sports Sciences"),
   i("3047886800", "Potomac State College of WVU"),
-  i("2034423071", "WVU Institute of Technology"),
+  i("2034423071", "WVU Institute of Technology")
 );
 
 
@@ -126,11 +126,11 @@ if($emergencies === False) {
 
 if(isset($_REQUEST['contacts'])) {
   require "$prefix/contacts.html";
-} else if (issset($_REQUEST['extra'])) {
+} else if (isset($_REQUEST['extra'])) {
   require "$prefix/extra.html";
-} else if (issset($_REQUEST['residence'])) {
+} else if (isset($_REQUEST['residence'])) {
   require "$prefix/residence.html";
-} else if (issset($_REQUEST['schools'])) {
+} else if (isset($_REQUEST['schools'])) {
   require "$prefix/schools.html";
 } else {
   require "$prefix/index.html";
@@ -143,7 +143,7 @@ function contactsURL() {
 }
 
 function extraURL() {
-  return "./?contacts=extra";
+  return "./?extra=true";
 }
 
 function schoolsURL() {
