@@ -31,8 +31,8 @@ $page->content_begin();
 	       <li>For info email: <a href="mailto:$contact_email?>" class="email"><?=$contact_email?></a></li>
 	    <? } ?>
 	                
-      <? if (trim($event_link) != '') { ?>
-         <li>Website: <a href="<?=$event_link?>" class="external" target="_new"><?=$event_link?></a></li>
+      <? if ((trim($event_link) != '') && (trim($event_link != 'http://'))) { ?>
+		     <li>Website: <a href="<?=$event_link?>" class="external" target="_new"><?=$event_link?></li>
       <? } ?>
 		</ul>
 	
