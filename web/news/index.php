@@ -54,7 +54,7 @@ function is_long_text($item) {
 }
 
 function summary($item) {
-  return summary_string(str_replace('Read more ...','',$item['text']));
+  return summary_string(str_replace(' [...]','...',(str_replace('Read more ...','',$item['text']))));
 }
 
 function full($item) {

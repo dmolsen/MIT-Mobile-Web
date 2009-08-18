@@ -1,7 +1,7 @@
 <?php
-$page->title($inst_name.' News')
+$page->title($inst_name.' Campus News')
      ->navbar_image('title-news')
-     ->breadcrumbs('News')
+     ->breadcrumbs('Campus News')
      ->breadcrumb_home();
 
 $page->content_begin();
@@ -38,7 +38,7 @@ $page->content_begin();
 		    <li><a href="./?news=<?=$key?>">News from <? if ($news_src['need_the'] == true) { ?>the<? } ?> <?=$news_src['title']?></a></li>
 		  <? } ?>
 	<? } ?>
-	      <li><a href="http://mobile.msnsportsnet.com/">News from MSNsportsNET.com</a></li>
+	      <li><a class="external" href="http://mobile.msnsportsnet.com/">News from MSNsportsNET.com</a></li>
         </ul>
 	
 	<ul class="secondary">
