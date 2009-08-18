@@ -56,8 +56,14 @@ $page->content_begin();
            $item->display('office', 'room', "mapHREF", 'map');
         ?>
 
-  <ul class="nav">
-		<li> <a href="vcard.php?username=<?=$_REQUEST['username']?>">Receive this vCard via Email</a></li>
-	</ul>
+  			<div class="nonfocal">
+					<form method="get" action="vcard.php">
+						<fieldset class="inputcombo emphasized">
+							<input type="hidden" name="username" value="<?=$_REQUEST['username']?>">
+							<input class="forminput" type="text" id="filter" name="email" placeholder="Type in Email Address" />
+							<input class="combobutton" id="sch_btn" src="../ip/images/email-button.png" type="image" />
+						</fieldset>	
+					</form>
+				</div>
 <? $page->content_end(); ?>
 
