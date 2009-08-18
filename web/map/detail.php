@@ -99,13 +99,15 @@ function tab() {
 function marker_type($type) {
 	$markers = array(
 	    "Building" => "midredb",
+	    "Health Sciences Center" => "midredb",
+	    "Dining" => "midpurpled",
 	    "Parking Lot" => "midbluep",
-	    "WiFi" => "midorangew",
-	    "PRT" => "midblackp",
+	    "PRT Station" => "midblackp",
 	    "Bus Stop" => "midgreens",
-	    "Athletic" => "midyellowa",
+	    "Athletic Facility" => "midyellowa",
 	    "Library" => "midgrayl",
-	    "Residence" => "midbrownr"
+	    "Housing" => "midbrownr",
+	    "Computer Lab" => "midbluec"
 	  );
 	return $markers[$type];	
 }
