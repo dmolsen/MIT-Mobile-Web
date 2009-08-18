@@ -1,0 +1,14 @@
+<?php
+$page->title($inst_name." Emergency Info: Schools & Colleges")
+     ->navbar_image("title-emergency")
+     ->breadcrumbs("General","Schools & Colleges");
+
+$page->content_begin();
+?>
+	<ul class="results">
+            <? foreach($schools as $item) { ?>
+                <li><a href="tel:<?=$item->call_number()?>" class="phone"><?=$item->label()?> <span class="smallprint">(<?=$item->message_text()?><?=$item->number_text()?>)</span></a></li>
+            <? } ?>
+	</ul>
+
+<? $page->content_end(); ?>
