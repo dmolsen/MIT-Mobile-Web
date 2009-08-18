@@ -33,10 +33,12 @@ $page->content_end();
 if ($has_dir_search_va) {
 	$cleaned_num = preg_replace('/(\(|\)|\.|\-)/','',$dir_search_va_num);
 	$page->extra_link("tel:1".$cleaned_num, $inst_name." operator: ".$dir_search_va_num, "phone")
-	     ->extra_link("../emergency/", "Emergency Contact Numbers");
+	     ->extra_link("../emergency/", "Emergency Contact Numbers")
+	     ->extra_link("../emergency/?extra=true", "General Contact Numbers");
 }
 else {
-	$page->extra_link("../emergency/", "Emergency Contact Numbers");
+	$page->extra_link("../emergency/", "Emergency Contact Numbers")
+	     ->extra_link("../emergency/?extra=true", "General Contact Numbers");
 }
 
 
