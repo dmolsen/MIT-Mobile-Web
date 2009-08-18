@@ -7,12 +7,16 @@ $page->title('U92FM: College Radio at WVU')
 $page->content_begin();
 ?>
 
-  <div class="focal">
+  <!--<div class="focal">
 	   	<p>
 		    <strong>Now playing on U92:</strong> <br />
-        <a href="<?=showURL($showid)?>"><?=$showname?></a> <span class="legend">(<a href="index.php?streams=true">Listen live!</a>)</span>
+        <a href="<?#showURL($showid)?>"><?#$showname?></a> <span class="legend">(<a href="index.php?streams=true">Listen live!</a>)</span>
 		  </p>
-	</div>
+	</div>-->
+	
+	<ul class="nav">
+	     <li><a href="index.php?streams=true">Listen live!</a></li>
+	</ul>
 
 	<ul class="nav">
              <li><strong>U92 news:</strong></li>
@@ -31,3 +35,4 @@ $page->content_begin();
 	</ul>
 	
 <? $page->content_end(); ?>
+<? $page->help_off(); ?>

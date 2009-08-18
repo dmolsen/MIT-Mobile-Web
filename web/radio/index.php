@@ -22,7 +22,7 @@ if ($_REQUEST['streams'] == "true") {
 	require "$prefix/streams.html";
 }
 else {
-	$db = db::$connection;
+	/*$db = db::$connection;
 	$stmt_1 = $db->prepare("SELECT * FROM RadioShowTimes WHERE day = ? and start <= CAST(? AS INT) and end >= CAST(? AS INT)");
 	if (db::$use_sqlite) {
 		$stmt_1->execute(array(date('D'),date('G'),date('G')));
@@ -44,13 +44,16 @@ else {
 	$show = $stmt_2->fetchAll();
         
 	$showname = $show[0]['name'];
-	$showid = $show[0]['id'];
+	$showid = $show[0]['id'];*/
 
 	$News = new RSS();
 	$items = $News->get_feed('http://157.182.32.8/u92/u92.xml');
 	
 	# name, link, show for sp & ip?, use external class?
-	$links = array(array("List of shows","shows.php",true,false),array("U92 on iTunes U","http://deimos.apple.com/WebObjects/Core.woa/Browse/wvu.edu.1353247216",false,true),array("U92's full web site","http://u92.wvu.edu/",true,true));
+	$links = array(
+		#array("List of shows","shows.php",true,false),
+		array("U92 on iTunes U","http://deimos.apple.com/WebObjects/Core.woa/Browse/wvu.edu.1353247216",false,true),
+		array("U92's full web site","http://u92.wvu.edu/",true,true));
 	
 	require "$prefix/index.html";
 }
