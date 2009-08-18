@@ -11,9 +11,11 @@ $page->content_begin();
 	<p class="nav">
 		1. Events Calendar Home<br/>
 		<a href="<?=dayURL($today, 'events')?>" accesskey="2">2. Today's events</a><br/>
-		<a href="<?=academicURL($today['year'], $today['month_num'])?>" accesskey="3">3. Academic calendar</a><br/>
-		<!--<a href="<?=holidaysURL($today['year'])?>" accesskey="4">4. <?=$inst_name?> holidays</a><br/>-->
-		<a href="<?=categorysURL()?>" accesskey="4">4. Browse events by category</a>
+		<a href="category.php?id=academic">3. Academic calendar</a><br />
+		<a href="category.php?id=ae">4. Arts &amp; Entertainment calendar</a><br />
+		<a href="category.php?id=athletics">5. Athletics calendar</a><br />
+		<a href="category.php?id=holidays">6. University holidays</a><br />
+		<a href="<?=categorysURL()?>" accesskey="4">7. Browse events by more categories</a>
 	</p>
 	
 	
