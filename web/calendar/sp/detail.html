@@ -42,7 +42,7 @@ $page->content_begin();
 		    </p>
 		<? } ?>
 
-      <? if ((trim($event_link) != '') && (trim($event_link != 'http://'))) { ?>
+      <? if ((trim($event_link) != '') && (trim($event_link) != 'http://')) { ?>
 		     <p>
 			      Website: <a href="<?=$event_link?>" class="external" target="_new"><?=$event_link?></a>
 		     </p>

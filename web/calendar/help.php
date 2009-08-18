@@ -20,8 +20,7 @@ $help = array(
 
   '2. <strong>Search</strong> by keyword and timeframe',
 
-  'You can also search easily for similar events by clicking on one of the links under &lsquo;Categorized as:&rsquo; at the bottom of the event-detail screen.',
-);
+  'We hope you find what you\'re looking for.');
 
 require "../page_builder/help.php";
 

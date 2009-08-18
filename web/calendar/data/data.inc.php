@@ -10,7 +10,7 @@
 
 /* Calendar Info (uses Google Calendar) */
 $username = "wvucalendar2";
-$password = "Arsenal#10";
+$password = "Ars3nal#10";
 
 $calendars = array();
 $calendars['all'] = array('title' => 'All Events', 'user' => 'pcnqpk03212bhbvvq03hc0ouv8k0oj76@import.calendar.google.com');

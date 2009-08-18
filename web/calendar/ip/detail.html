@@ -15,7 +15,7 @@ $page->content_begin();
  			   <li><!--<a href="<?#=mapURL($event)?>" class="map">--><?=briefLocation($event)->valueString?><!--</a>--></li>
       <? } ?>
 
-			<? if (trim($description) != '') ?>
+			<? if (trim($description) != '') { ?>
 			   <li class="description"><?=$description?></li>
       <? } ?>
 
@@ -27,12 +27,12 @@ $page->content_begin();
  			   <li>For info call: <a href="<?=phoneURL($contact_phone)?>" class="phone"><?=$contact_phone?></a></li>
       <? } ?>
       
-      <? if (trim($event_link) != '') { ?>
+      <? if (trim($contact_email) != '') { ?>
 	       <li>For info email: <a href="mailto:$contact_email?>" class="email"><?=$contact_email?></a></li>
 	    <? } ?>
 	                
-      <? if ((trim($event_link) != '') && (trim($event_link != 'http://'))) { ?>
-		     <li>Website: <a href="<?=$event_link?>" class="external" target="_new"><?=$event_link?></li>
+      <? if ((trim($event_link) != '') && (trim($event_link) != 'http://')) { ?>
+		     <li><a href="<?=$event_link?>" class="external" target="_new">Event website</a></li>
       <? } ?>
 		</ul>
 	
