@@ -30,8 +30,14 @@ function printVideoEntry($videoEntry) {
 
   $videoThumbnails = $videoEntry->getVideoThumbnails();
 
-  echo("<p class='focal'>");
-  echo("<img src='".$videoThumbnails[1]['url']."' height=60 width=80 align=left alt='YouTube Video Thumbnail'><a href='http://www.youtube.com/watch?v=".$videoEntry->getVideoId()."'>".$videoEntry->getVideoTitle()."</a><span class='smallprint'><br />Duration: ".print_r($videoEntry->getVideoDuration())."<br />Updated: ".print_r($videoEntry->getUpdated()));
+  $seconds = $videoEntry->getVideoDuration();
+  $mins = floor ($seconds / 60);
+  $secs = $seconds % 60;
+  
+  $updated = getdate(strtotime($videoEntry->getUpdated()->text)); 
+  
+  echo("<p class='focal' style='height: 62px'>");
+  echo("<img src='".$videoThumbnails[1]['url']."' hspace=6 height=60 width=80 align=left alt='YouTube Video Thumbnail'><a href='".$videoEntry->getVideoWatchPageUrl()."'>".$videoEntry->getVideoTitle()."</a><span class='smallprint'><br />Duration: ".$mins.":".$secs."<br />Updated: ".$updated['month']." ".$updated['mday'].", ".$updated['year']);
   echo("</p>");
   
 }

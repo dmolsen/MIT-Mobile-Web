@@ -7,4 +7,29 @@ $page->content_begin();
 
 <? printVideoFeed($uploads); ?>
 
+<p class="secondary">
+<span class="smalltext">
+<? 
+$previous = false;
+try {
+  $previousFeed = $uploads->getPreviousFeed();
+  echo("<a href=./?page=$prev>Previous Page</a>");
+  $previous = true;
+} catch (Zend_Gdata_App_Exception $e) {
+  #echo $e->getMessage() . "\n";
+}
+
+// See if the feed specifies a next page of results.
+try {
+  $nextFeed = $uploads->getNextFeed();
+  if ($previous == true) {
+    echo("&nbsp;&bul;&nbsp;");
+  }
+  echo("<a href=./?page=$next>Next Page</a>");
+} catch (Zend_Gdata_App_Exception $e) {
+  #echo $e->getMessage() . "\n";
+} ?>
+</span>
+</p>
+
 <? $page->content_end(); ?>
