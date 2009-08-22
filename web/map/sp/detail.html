@@ -24,7 +24,13 @@ $page->content_begin();
 		<h2><?=$data[0]['name']?> <img src="images/marker-<?=marker_type($data[0]['type'])?>.png" height="24" width="14" alt="Marker" /></h2>
 		
     <? if($tab == "Map") { ?>
-  		<p><?=$data[0]['physical_address']?></p>
+  		<p>
+                   <?=$data[0]['physical_address']?>
+                   <? if ($data[0]['hours'] != '') { ?><br />Hours: <?=$data[0]['data']?><? } ?>
+                   <? if ($data[0]['phone'] != '') { ?><br /><a href="tel:1<?=$data[0]['phone']?>"><?=$data[0]['phone']?></a><? $break = false; ?><? } ?>
+                   <? if ($data[0]['website'] != '') { ?><? if ($break == true) { ?><br /><? } else { ?> | <? } ?><a href="http://<?=$data[0]['website']?>">website</a><? } ?>
+                   <? if ($data[0]['wifi'] != '') { ?><br />Has WiFi<? } ?>
+                </p>
     <? } ?>
 
 		<p class="tabs"><?=$tabs_html?> <? if (($data[0]['latitude'] != $_REQUEST['lat']) || ($data[0]['longitude'] != $_REQUEST['long'])) { ?><span class="legend">(<a href="<?=detailURL($data[0]['id'],$data[0]['latitude'],$data[0]['longitude'])?>">reset</a>)</span><? } ?></p>	

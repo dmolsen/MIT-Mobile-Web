@@ -9,7 +9,11 @@ $page->title($inst_name.' Campus Map: Details')
 
 $page->content_begin();
 ?>
-
+<script type="text/javascript">
+window.addEventListener('load', function(){
+setTimeout(scrollTo, 0, 0, 1);
+}, false);
+</script>
 <?
 # dirty but iphone specific markers
 $marker_types = array();
@@ -39,19 +43,25 @@ $marker_types['Art'] = 'theater';
 $marker_types['Green'] = 'flowers';
 $marker_types['Hospital'] = 'hospital';
 $marker_types['Admissions'] = 'university';
+
+$break = true;
+
 ?>
 
 	<a name="scrolldown"></a>		
 	<div class="focal shaded">
-    <? if ($data[0]['subtype'] != "") { $marker_type = $marker_types[$data[0]['subtype']]; } ?>
-    <? else { $marker_type = $marker_types[$data[0]['type']]; }?>
-		<h2><?=$data[0]['name']?> <img src="images/ip-markers/<?=$marker_types[$data[0]['type']]?>.png" height="20" width="17" alt="Marker" />  
+    <? if ($data[0]['subtype'] != "") { 
+          $marker_type = $marker_types[$data[0]['subtype']]; 
+       } else { 
+          $marker_type = $marker_types[$data[0]['type']]; 
+       } ?>
+		<h2><?=$data[0]['name']?> <img src="images/ip-markers/<?=$marker_type?>.png" height="20" width="17" alt="Marker" />  
 			  <? if ($data[0]['wifi'] == 'Y') { ?><img src="images/ip-markers/wifi.png" height="20" width="17" alt="WiFi" /><? } ?></h2>
 		<p class="address">
 		   <?=$data[0]['physical_address']?>
-		   <? if ($data[0]['phone'] != '') { ?><br /><?=$data[0]['phone']?><? } ?>
-		   <? if ($data[0]['hours'] != '') { ?><br /><?=$data[0]['hours']?><? } ?>
-		   <? if ($data[0]['website'] != '') { ?><br /><a href="http://<?=$data[0]['website']?>">website</a><? } ?>
+		   <? if ($data[0]['hours'] != '') { ?><br />Hours: <?=$data[0]['hours']?><? } ?>
+                   <? if ($data[0]['phone'] != '') { ?><br /><a href="tel:1<?=$data[0]['phone']?>"><?=$data[0]['phone']?></a><? $break = false; ?><? } ?>
+		   <? if ($data[0]['website'] != '') { ?><? if ($break == true) { ?><br /><? } else { ?> | <? } ?><a href="http://<?=$data[0]['website']?>">website</a><? } ?>
 		</p>
 		<ul id="tabs">
 			<li class="active"><a href="#scrolldown" onclick="showTab('maptab',this); hide('loadingimage')">Map</a></li>
@@ -79,7 +89,7 @@ $marker_types['Admissions'] = 'university';
 					map.addOverlay(marker);
 				}
 				</script>
-				<div id="map_canvas" style="width: 285px; height: 220px"></div>
+				<div id="map_canvas" style="width: 285px; height: 235px"></div>
 			</div> <!-- id="maptab" -->
 
 			<div class="clear"></div>
@@ -89,7 +99,7 @@ $marker_types['Admissions'] = 'university';
 	
 	  <ul class="secondary">
 		<li>
-			<a href="http://maps.google.com/maps?sll=<?=$data[0]['latitude']?>,<?=$data[0]['longitude']?>" class="external">Launch Google Maps</a>
+		   <a href="http://maps.google.com/maps?sll=<?=$data[0]['latitude']?>,<?=$data[0]['longitude']?>" class="external">Launch Google Maps</a>
 		</li>
 	  </ul>
 <?

@@ -3,11 +3,11 @@
 require_once "../../../lib/db.php";
 											
 $db = db::$connection;
-$stmt = $db->prepare("INSERT INTO Buildings (campus,latitude,longitude,name,physical_address,type,subtype,phone,wifi,website,hours) values (?, ?, ?, ?, ?, ?)");	
-						
-foreach($buildings as $building_name => $building) {
+$stmt = $db->prepare("INSERT INTO Buildings (campus,latitude,longitude,name,physical_address,type,subtype,phone,wifi,website,hours) values (?, ?, ?, ?, ?, ?,?,?,?,?,?)");	
+print_r($db->errorInfo());						
+#foreach($buildings as $building_name => $building) {
 
-}
+#}
 
 $filename = "buildings2.txt";
 $fd = fopen ($filename, "r");
