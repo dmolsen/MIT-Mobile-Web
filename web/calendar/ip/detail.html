@@ -11,8 +11,8 @@ $page->content_begin();
 		<ul class="nav">
 			<li><?=$date_str?><br/><?=$time_of_day?></li>
 
-      <? if ((briefLocation($event)->valueString != '') || ((briefLocation($event)->valueString != ' ')) { ?>
- 			   <li><!--<a href="<?#=mapURL($event)?>" class="map">--><?=briefLocation($event)->valueString?><!--</a>--></li>
+      <? if (trim(briefLocation($event)->valueString) != '') { ?>
+ 			   <li><!--<a href="<?#=mapURL($event)?>" class="map">--><?=trim(briefLocation($event)->valueString)?><!--</a>--></li>
       <? } ?>
 
 			<? if (trim($description) != '') { ?>

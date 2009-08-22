@@ -14,8 +14,8 @@ $page->content_begin();
 			<? } ?>
 		</p>
 		<p>
-       <? if ((briefLocation($event)->valueString != '') || ((briefLocation($event)->valueString != ' ')) { ?>
-						Location: <!--<a href="<?#=mapURL($event)?>" class="map">--><?=briefLocation($event)?><!--</a>-->
+       <? if (trim(briefLocation($event)->valueString) != '') { ?>
+						Location: <!--<a href="<?#=mapURL($event)?>" class="map">--><?=trim(briefLocation($event)->valueString)?><!--</a>-->
        <? } ?>
 		</p>
 		<? if (trim($description) != '') { ?>
