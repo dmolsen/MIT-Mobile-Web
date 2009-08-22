@@ -33,7 +33,7 @@ $help = array(
 
   'Example: To find Alexander Martin, you could search by:<br />' .
   '- <strong>Name</strong> (full or partial): e.g., &quot;Alexander Martin,&quot; &quot;alex mar&quot;, &quot;a martin&quot;, &quot;alex&quot;, etc.<br />' .
-  '- <strong>Email address</strong>: &quot;almartins&quot;, &quotalmartins@'.$email_ending.'&quot;<br />' .
+  '- <strong>Email address</strong>: &quot;almartins&quot;, &quot;almartins@'.$email_ending.'&quot;<br />' .
   '- <strong>Phone number</strong> (full or partial):  e.g., &quot;'.$area_code.$exchange.'1000&quot;'.$prefix,
 
   'Depending on the person that you looked up and the capabilities of your mobile device, you can call or email the person directly, or find their office on the campus map.',
