@@ -15,12 +15,8 @@ require_once 'Zend/Loader.php';
 Zend_Loader::loadClass('Zend_Gdata_YouTube');
 
 function printVideoFeed($videoFeed) {
-  $count = 1;
   foreach ($videoFeed as $videoEntry) {
-    echo "Entry # " . $count . "\n";
     printVideoEntry($videoEntry);
-    echo "\n";
-    $count++;
   }
 }
 
@@ -34,13 +30,8 @@ function printVideoEntry($videoEntry) {
 
   $videoThumbnails = $videoEntry->getVideoThumbnails();
 
-  foreach($videoThumbnails as $videoThumbnail) {
-    echo $videoThumbnail['time'] . ' - ' . $videoThumbnail['url'];
-    echo ' height=' . $videoThumbnail['height'];
-    echo ' width=' . $videoThumbnail['width'] . "\n";
-  }
   echo("<p class='focal'>");
-  echo("<img src='".$videoThumbnails[1]['url']."' height=70 width=70 align=left alt='YouTube Video Thumbnail'><a href='http://www.youtube.com/watch=".$videoEntry->getVideoId()."'>".$videoEntry->getVideoTitle()."</a><span class='smallprint'><br />Duration: ".$videoEntry->getVideoDuration()."<br />Updated: ".$videoEntry->getUpdated());
+  echo("<img src='".$videoThumbnails[1]['url']."' height=60 width=80 align=left alt='YouTube Video Thumbnail'><a href='http://www.youtube.com/watch?v=".$videoEntry->getVideoId()."'>".$videoEntry->getVideoTitle()."</a><span class='smallprint'><br />Duration: ".print_r($videoEntry->getVideoDuration())."<br />Updated: ".print_r($videoEntry->getUpdated()));
   echo("</p>")
   
 }
