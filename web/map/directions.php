@@ -8,6 +8,7 @@
  */
 
 require_once "../page_builder/page_header.php";
+require_once "../../config.gen.inc.php";
 
 $dimensions = array(
   "ip" => array(280, 238),
@@ -43,8 +44,8 @@ HTML;
 $directions = array(
   "google" => dirs($google, "Finding ".$inst_name." using Google Maps", "Google")->google($google_extra),
   "car" => dirs($car, "By Car", "By Car"),
-  "air" => dirs($hood, "By Air", "By Air"),
-  "train" => dirs($hood, "By Train", "By Train"),
+  "air" => dirs($air, "By Air", "By Air"),
+  "train" => dirs($train, "By Train", "By Train"),
 );
 
 
