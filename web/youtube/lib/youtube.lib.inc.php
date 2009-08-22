@@ -25,32 +25,13 @@ function printVideoFeed($videoFeed) {
 }
 
 function printVideoEntry($videoEntry) {
-  // the videoEntry object contains many helper functions
-  // that access the underlying mediaGroup object
-  echo 'Video: ' . $videoEntry->getVideoTitle() . "\n";
-  echo 'Video ID: ' . $videoEntry->getVideoId() . "\n";
-  echo 'Updated: ' . $videoEntry->getUpdated() . "\n";
-  echo 'Description: ' . $videoEntry->getVideoDescription() . "\n";
-  echo 'Category: ' . $videoEntry->getVideoCategory() . "\n";
-  echo 'Tags: ' . implode(", ", $videoEntry->getVideoTags()) . "\n";
-  echo 'Watch page: ' . $videoEntry->getVideoWatchPageUrl() . "\n";
-  echo 'Flash Player Url: ' . $videoEntry->getFlashPlayerUrl() . "\n";
-  echo 'Duration: ' . $videoEntry->getVideoDuration() . "\n";
-  echo 'View count: ' . $videoEntry->getVideoViewCount() . "\n";
-  echo 'Rating: ' . $videoEntry->getVideoRatingInfo() . "\n";
-  echo 'Geo Location: ' . $videoEntry->getVideoGeoLocation() . "\n";
-  echo 'Recorded on: ' . $videoEntry->getVideoRecorded() . "\n";
-  
-  // see the paragraph above this function for more information on the 
-  // 'mediaGroup' object. in the following code, we use the mediaGroup
-  // object directly to retrieve its 'Mobile RSTP link' child
+	
   foreach ($videoEntry->mediaGroup->content as $content) {
-    if ($content->type === "video/3gpp") {
-      echo 'Mobile RTSP link: ' . $content->url . "\n";
-    }
+	  if ($content->type === "video/3gpp") {
+	    $mv = $content->url;
+	  }
   }
-  
-  echo "Thumbnails:\n";
+
   $videoThumbnails = $videoEntry->getVideoThumbnails();
 
   foreach($videoThumbnails as $videoThumbnail) {
@@ -58,4 +39,8 @@ function printVideoEntry($videoEntry) {
     echo ' height=' . $videoThumbnail['height'];
     echo ' width=' . $videoThumbnail['width'] . "\n";
   }
+  echo("<p class='focal'>");
+  echo("<img src='".$videoThumbnails[1]['url']."' height=70 width=70 align=left alt='YouTube Video Thumbnail'><a href='http://www.youtube.com/watch=".$videoEntry->getVideoId()."'>".$videoEntry->getVideoTitle()."</a><span class='smallprint'><br />Duration: ".$videoEntry->getVideoDuration()."<br />Updated: ".$videoEntry->getUpdated());
+  echo("</p>")
+  
 }
