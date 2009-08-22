@@ -1,0 +1,10 @@
+<?php
+$page->title($inst_name.' on YouTube')
+     ->header($inst_name.' on YouTube');
+
+$page->content_begin();
+?>
+
+<? printVideoFeed($uploads); ?>
+
+<? $page->content_end(); ?>
