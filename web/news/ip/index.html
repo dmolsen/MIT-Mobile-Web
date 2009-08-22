@@ -14,7 +14,7 @@ $page->content_begin();
 	<ul class="nav">
 		         <? $i = 0; ?>
              <? foreach($items as $title => $item) { ?>
-							<? if ($i < 5) { ?>
+							<? if ($i < 3) { ?>
 		<li>
                         <? if(is_long_text($item)) { ?>
 			<a href="<?=detailURL($title,$key)?>"><h3><?=$title?></h3><span class="smallprint"><?=html_entity_decode(summary($item))?> <span class="more">more</span> <? if ($item['date']) { ?>(<?=short_date($item['date'])?>)<? } ?></span></a>
