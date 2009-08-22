@@ -1,39 +1,39 @@
 <?php
-$page->title($inst_name.' Events Calendar')
-     ->navbar_image('title-calendar')
-     ->breadcrumbs('Events Calendar')
+$page->title($inst_name.' on YouTube')
+     ->navbar_image('title-youtube')
+     ->breadcrumbs($inst_name.' on YouTube')
      ->breadcrumb_home();
 
 $page->content_begin();
 ?>
 	
+	<? printVideoFeed($uploads); ?>
+
 	<div class="nonfocal">
-		<h2><?=$today['weekday']?>, <?=$today['month']?> <?=$today['day_num']?>, <?=$today['year']?></h2>
+		<p>
+		<? 
+		$previous = false;
+		try {
+		  $previousFeed = $uploads->getPreviousFeed();
+		  echo("<a href=./?page=$prev>&lt; Previous Page</a>");
+		  $previous = true;
+		} catch (Zend_Gdata_App_Exception $e) {}
+
+		// See if the feed specifies a next page of results.
+		try {
+		  $nextFeed = $uploads->getNextFeed();
+		  if ($previous == true) {
+		    echo("&nbsp;|&nbsp;");
+		  }
+		  echo("<a href=./?page=$next>Next Page &gt;</a>");
+		} catch (Zend_Gdata_App_Exception $e) {} 
+		?>
+		</p>
 	</div>
 	
-	<ul class="nav">
-		<li><a href="<?=dayURL($today, 'events')?>">Today's events</a></li>
-		<li><a href="category.php?id=academic">Academic calendar</a></li>
-		<li><a href="category.php?id=ae">Arts &amp; Entertainment calendar</a></li>
-		<li><a href="category.php?id=athletics">Athletics calendar</a></li>
-		<li><a href="category.php?id=holidays">University holidays</a></li>
-		<li><a href="<?=categorysURL()?>">Browse events by category</a></li>
-	</ul>
-	
-	<div class="nonfocal">
-		<form method="get" action="search.php">
-			<fieldset class="inputcombo">
-				<input class="forminput" type="text" id="filter" name="filter" placeholder="Search for events" />
-				<input class="combobutton" id="sch_btn" src="../ip/images/search-button.png" type="image" />
-			</fieldset>	
-			<fieldset>
-				<select id="timeframe" name="timeframe">
-                                        <? foreach($search_options as $key => $option) { ?> 
- 					   <option value="<?=$key?>" <? if($option['selected']) { ?>selected="selected"<? } ?> ><?=$option['phrase']?></option>
-                                        <? } ?>
-				</select>
-			</fieldset>	
-		</form>
+	<div class="nonfocal legend">
+	<p><strong>* Important note:</strong> WVU on YouTube is provided as a free service. Extra data charges may apply when using watching YouTube videos on your mobile device depending on your service plan.</p>
 	</div>
+	
 <? $page->content_end(); ?>
 

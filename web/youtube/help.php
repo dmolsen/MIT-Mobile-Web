@@ -10,17 +10,11 @@
 //various copy includes
 require_once "../../config.gen.inc.php";
 
-$header = $inst_name." Events Calendar";
+$header = $inst_name." on YouTube";
 $module = "calendar";
 
 $help = array(
-  'Find out what&apos;s going around campus. You can find events in two ways:',
-
-  '1. <strong>Browse</strong> by any category shown on the Events Calendar homepage',
-
-  '2. <strong>Search</strong> by keyword and timeframe',
-
-  'We hope you find what you\'re looking for.');
+  'The WVU on YouTube mobile site requires a phone that supports RTSP streaming and is on a service carrier which permits streaming videos. YouTube for mobile is a data-intensive application. You should consider getting a data plan before watching videos on YouTube from your mobile phone.');
 
 require "../page_builder/help.php";
 

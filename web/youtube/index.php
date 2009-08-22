@@ -17,10 +17,6 @@ require "lib/youtube.lib.inc.php";
 require_once "../../config.gen.inc.php";
 require_once "data/data.inc.php";
 
-#$today = day_info(time());
-
-#$search_options = SearchOptions::get_options();
-
 if ((int)$_REQUEST['page'] != 0) {
   $prev = $_REQUEST['page'] - 1;
   $next = $_REQUEST['page'] + 1;
@@ -39,7 +35,6 @@ $query->setAuthor('westvirginiau');
 $query->setOrderBy('updated');
 $query->setStartIndex($index);
 $uploads = $yt->getVideoFeed($query);
-#$uploads = $yt->getuserUploads('westvirginiau');
 
 require "$prefix/index.html";
 $page->output();
