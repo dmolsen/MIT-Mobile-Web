@@ -7,6 +7,17 @@
         <title><?=$title?></title>
         <link rel="stylesheet" type="text/css" href="../ip/ip.css" />
         <link rel="apple-touch-icon" href="../ip/images/<?=$ip_bookmark_icon?>" />
+
+        <script type="text/javascript">
+				var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+				document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+				</script>
+				<script type="text/javascript">
+				try {
+				var pageTracker = _gat._getTracker("UA-8296934-34");
+				pageTracker._trackPageview();
+				} catch(err) {}</script>
+				
         <? foreach($stylesheets as $stylesheet) { ?>
               <link rel="stylesheet" type="text/css" href="<?=$stylesheet?>.css" />
         <? } ?>
