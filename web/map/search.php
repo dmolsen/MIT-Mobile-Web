@@ -27,7 +27,7 @@ if($search_terms = $_REQUEST['filter']) {
 
 function map_search($terms) {
   $db = db::$connection;
-  $sql = "SELECT * FROM Buildings WHERE name LIKE '%".$terms."%' OR physical_address LIKE '%".$terms."%' and type != 'Parking Lot' GROUP BY name ORDER BY name ASC";
+  $sql = "SELECT * FROM Buildings WHERE (name LIKE '%".$terms."%' OR physical_address LIKE '%".$terms."%') and (type != 'Parking Lot' OR type != 'Public Parking') GROUP BY name ORDER BY name ASC";
   $stmt = $db->prepare($sql);
   $stmt->execute();
   $result = $stmt->fetchAll();

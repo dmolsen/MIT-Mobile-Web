@@ -220,8 +220,8 @@ if ($_REQUEST['loc']) {
 
 if ($data[0]['parent'] != '') {
 	$stmt_1 = $db->prepare("SELECT * FROM Buildings WHERE id = ".$data[0]['parent']);
-	$stmt->execute();
-	$parent_data = $stmt->fetchAll();
+	$stmt_1->execute();
+	$parent_data = $stmt_1->fetchAll();
 	$parent = true;
 }
 
