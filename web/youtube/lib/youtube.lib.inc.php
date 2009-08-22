@@ -32,6 +32,6 @@ function printVideoEntry($videoEntry) {
 
   echo("<p class='focal'>");
   echo("<img src='".$videoThumbnails[1]['url']."' height=60 width=80 align=left alt='YouTube Video Thumbnail'><a href='http://www.youtube.com/watch?v=".$videoEntry->getVideoId()."'>".$videoEntry->getVideoTitle()."</a><span class='smallprint'><br />Duration: ".print_r($videoEntry->getVideoDuration())."<br />Updated: ".print_r($videoEntry->getUpdated()));
-  echo("</p>")
+  echo("</p>");
   
 }
