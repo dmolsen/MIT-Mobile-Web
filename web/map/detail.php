@@ -209,11 +209,20 @@ $tab = tab();
 $width = pix("x", $phone);
 $height = pix("y", $phone);
 
+$parent = false;
+
 if ($_REQUEST['loc']) {
     $db = db::$connection;
 	$stmt = $db->prepare("SELECT * FROM Buildings WHERE id = ".$_REQUEST['loc']);
 	$stmt->execute();
 	$data = $stmt->fetchAll();
+}
+
+if ($data[0]['parent'] != '') {
+	$stmt_1 = $db->prepare("SELECT * FROM Buildings WHERE id = ".$data[0]['parent']);
+	$stmt->execute();
+	$parent_data = $stmt->fetchAll();
+	$parent = true;
 }
 
 /**

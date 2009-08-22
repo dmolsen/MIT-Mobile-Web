@@ -58,7 +58,7 @@ $break = true;
 		<h2><?=$data[0]['name']?> <img src="images/ip-markers/<?=$marker_type?>.png" height="20" width="17" alt="Marker" />  
 			  <? if ($data[0]['wifi'] == 'Y') { ?><img src="images/ip-markers/wifi.png" height="20" width="17" alt="WiFi" /><? } ?></h2>
 		<p class="address">
-		   <?=$data[0]['physical_address']?>
+		   <? if ($parent == true) { ?>Located inside the <a href="<?=detailURL($parent_data[0]['id'],$parent_data[0]['latitude'],$parent_data[0]['longitude'])?>"><?=$parent_data[0]['name']?></a><? } else { ?><?=$data[0]['physical_address']?> <? } ?>
 		   <? if ($data[0]['hours'] != '') { ?><br />Hours: <?=$data[0]['hours']?><? } ?>
                    <? if ($data[0]['phone'] != '') { ?><br /><a href="tel:1<?=$data[0]['phone']?>"><?=$data[0]['phone']?></a><? $break = false; ?><? } ?>
 		   <? if ($data[0]['website'] != '') { ?><? if ($break == true) { ?><br /><? } else { ?> | <? } ?><a href="http://<?=$data[0]['website']?>">website</a><? } ?>
