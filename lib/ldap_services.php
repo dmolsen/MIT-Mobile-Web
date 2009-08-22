@@ -201,6 +201,7 @@ function id_key($info) {
 }
 
 function make_person($info) {
+
   $person = array(
      "surname"     => lkey($info, "sn"),
      "givenname"   => lkey($info, "givenname"),

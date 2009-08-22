@@ -46,10 +46,10 @@ class RSS {
   private static function getTag($xml_obj, $tag) {
     $list = $xml_obj->getElementsByTagName($tag);
     if($list->length == 0) {
-      throw new Exception("no elements of type $tag found");
+      #throw new Exception("no elements of type $tag found");
     }
     if($list->length > 1) {
-      throw new Exception("elements of type $tag not unique {$list->length} found");
+      #throw new Exception("elements of type $tag not unique {$list->length} found");
     }
     return $list->item(0);
   }
