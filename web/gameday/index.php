@@ -17,8 +17,8 @@ require "../calendar/lib/gcalendar_setup.php";
 require "../calendar/lib/calendar_lib.php";
 
 $links = array(
-	array("teams.php","List of Teams",false),
-	array("../map/?category=athletics","List of Athletic Facilities",false),
+	array("teams.php","Teams",false),
+	array("../map/?category=athletics","Athletic Facilities",false),
 	array("http://mobile.msnsportsnet.com/","MSNsportsNET.com Mobile News",true),
 	#array("http://m.twitter.com/wvusportsbuzz/","WVUSportsBuzz on Twitter",true),
 	#array("http://m.twitter.com/coachstewart","Coach Stewart on Twitter",true),
