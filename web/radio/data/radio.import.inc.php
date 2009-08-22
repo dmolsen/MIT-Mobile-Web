@@ -26,6 +26,12 @@ $shows = array("Alternate Routes",
                "Regular Rotation");
 
 $show_times = array(
+	            array(0,1,array(11,12,24,8,12,22)),
+				array(1,2,array(11,12,24,8,12,22)),
+				array(2,3,array(11,12,24,8,12,22)),
+				array(3,4,array(24,24,24,24,24,24)),
+				array(4,5,array(24,24,24,24,24,24)),
+				array(5,6,array(24,24,24,24,24,24)),
 				array(6,7,array(24,10,10,10,10,10,24)),
 				array(7,8,array(24,10,10,10,10,10,24)),
 				array(8,9,array(20,10,10,10,10,10,24)),
@@ -43,13 +49,7 @@ $show_times = array(
 				array(20,21,array(7,9,16,24,16,19,16)),
 				array(21,22,array(17,9,16,24,16,23,16)),
 				array(22,23,array(17,3,24,24,24,24,16)),
-				array(23,24,array(17,24,24,24,24,24,16)),
-				array(0,1,4,array(11,12,24,8,12,22)),
-				array(1,2,4,array(11,12,24,8,12,22)),
-				array(2,3,4,array(11,12,24,8,12,22)),
-				array(3,4,4,array(24,24,24,24,24,24)),
-				array(4,5,4,array(24,24,24,24,24,24)),
-				array(5,6,4,array(24,24,24,24,24,24))
+				array(23,24,array(17,24,24,24,24,24,16))
 			);
 			
 ?>

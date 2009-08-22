@@ -23,7 +23,7 @@ $stmt_2 = $db->prepare("INSERT INTO RadioShowTimes (start,end,day,show) values (
 foreach($show_times as $show_time) {
 	$start = $show_time[0];
 	$end = $show_time[1];
-        $shows = $show_time[2];
+    $shows = $show_time[2];
 	$i = 0;
 	foreach($shows as $show) {
                 if (db::$use_sqlite) {
