@@ -17,9 +17,16 @@ class Categorys {
   public static $info = array(
     "names"        => array("Building name", "Building Names", "Buildings by Name", "Building"),
     "campus"       => array("Campus", "Building Names", "Buildings by Campus", "Building"),
-    "parking"      => array("Parking lot", "Parking Lots", "Parking Lots", "Parking Lot")
+    "library"      => array("Library name", "Library Names", "Libraries", "Library"),
+    "athletics"    => array("Athletic Facility name", "Athletic Facility Names", "Athletic Facilities", "Athletic Facility"),
+    "res"          => array("Residence Hall name", "Residence Hall Names", "Residence Halls", "Housing"),
+    "dining"       => array("Dining location", "Dining Location Names", "Dining Locations", "Dining"),
+    "computer"     => array("Computer Lab name", "Computer Lab Names", "Computer Labs", "Computer Lab"),
+    "prt"          => array("PRT Station", "PRT Station Names", "PRT Stations", "PRT Station")
+    #"parking"      => array("Parking lot", "Parking Lots", "Parking Lots", "Parking")
   );
 }
+
 $category_info = Categorys::$info;
 
 $index = ($prefix == "ip") ? 0 : 2;

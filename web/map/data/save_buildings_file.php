@@ -9,7 +9,7 @@ print_r($db->errorInfo());
 
 #}
 
-$filename = "buildings2.txt";
+$filename = "buildings.txt";
 $fd = fopen ($filename, "r");
 $contents = fread ($fd,filesize ($filename));
 fclose ($fd); 

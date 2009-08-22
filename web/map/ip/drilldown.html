@@ -36,7 +36,7 @@ $page->content_begin();
                 <? if ($place['type'] == 'Parking Lot') { ?>
                   <? $insert = 'Parking Lot: '; ?>
                 <? } ?>
-                <li><a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>"><?=$insert?><?=$place['name']?></a></li>
+                <li><a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>"><?=$insert?><?=$place['name']?><br /><?=$place['physical_address']?>, Morgantown, WV</a></li>
              <? } ?>
 	</ul>
 	
