@@ -17,13 +17,13 @@ class Categorys {
   public static $info = array(
     "names"        => array("Building name", "Building Names", "Buildings by Name", "Building"),
     "campus"       => array("Campus", "Building Names", "Buildings by Campus", "Building"),
-    "library"      => array("Library name", "Library Names", "Libraries", "Library"),
     "athletics"    => array("Athletic Facility name", "Athletic Facility Names", "Athletic Facilities", "Athletic Facility"),
-    "res"          => array("Residence Hall name", "Residence Hall Names", "Residence Halls", "Housing"),
-    "dining"       => array("Dining location", "Dining Location Names", "Dining Locations", "Dining"),
-    "wifi"         => array("WiFi-enabled location", "WiFi-enabled Locations", "WiFi-enabled Locations", "WiFi-enabled Location"),
     "computer"     => array("Computer Lab name", "Computer Lab Names", "Computer Labs", "Computer Lab"),
-    "prt"          => array("PRT Station", "PRT Station Names", "PRT Stations", "PRT Station")
+	"dining"       => array("Dining location", "Dining Location Names", "Dining Locations", "Dining"),
+	"library"      => array("Library name", "Library Names", "Libraries", "Library"),
+    "prt"          => array("PRT Station", "PRT Station Names", "PRT Stations", "PRT Station"),
+    "res"          => array("Residence Hall name", "Residence Hall Names", "Residence Halls", "Housing"),
+    "wifi"         => array("WiFi-enabled location", "WiFi-enabled Locations", "WiFi-enabled Locations", "WiFi-enabled Location")
     #"parking"      => array("Parking lot", "Parking Lots", "Parking Lots", "Parking")
   );
 }
