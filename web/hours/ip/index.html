@@ -1,21 +1,24 @@
 <?php
-$page->title($inst_name.' Hours &amp; Locations')
+$page->title($inst_name.' Hours')
      ->navbar_image('title-hours')
-     ->breadcrumbs('Hours &amp; Locations')
+     ->breadcrumbs('Hours')
      ->breadcrumb_home();
 
 $page->content_begin();
 ?>
+	
+	<div class="nonfocal">
+		<h3>Browse hours by:</h3>
+	</div>
+	
+	<ul class="nav">
+            <? foreach($categorys as $category => $title) { ?>
+    
+		<li>
+			<a href="<?=categoryURL($category)?>"><?=$title?></a>
+		</li>
 
-<div class="focal">
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed laoreet lacus id augue ornare blandit. Nunc accumsan varius pharetra. Maecenas risus libero, convallis nec tempor ut, tincidunt non nisi.</p>
-</div>
-
-<ul class="secondary">
-	  <li><a href="<?=clURL()?>">Computer Labs (OIT)</a></li>
-</ul>
-
-<? 
-$page->content_end(); 
-$page->help_off();
-?>
+            <? } ?>
+	</ul>
+	
+<? $page->content_end(); ?>
