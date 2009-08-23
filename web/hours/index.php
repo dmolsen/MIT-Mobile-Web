@@ -47,16 +47,16 @@ if(!isset($_REQUEST['category'])) {
       require "$prefix/$category.html";
     } else {
 	  if ($category=="visitor") {
-	    $place = getData("subtype = 'Visitor'");	
+	    $places = getData("subtype = 'Visitor'");	
 	  }
 	  else if ($category=="rec") {
-	    $place = getData("subtype = 'Rec'");	
+	    $places = getData("subtype = 'Rec'");	
 	  }
 	  else if ($category=="admissions") {
-	    $place = getData("subtype = 'Admissions'");	
+	    $places = getData("subtype = 'Admissions'");	
 	  }
 	  else if ($category=="health") {
-	    $place = getData("subtype = 'Health'");	
+	    $places = getData("subtype = 'Health'");	
 	  }
 	  else {
 		$places = getData("type = '".$category_info[$category][3]."'");
