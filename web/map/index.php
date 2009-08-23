@@ -21,6 +21,7 @@ class Categorys {
     "athletics"    => array("Athletic Facility name", "Athletic Facility Names", "Athletic Facilities", "Athletic Facility"),
     "res"          => array("Residence Hall name", "Residence Hall Names", "Residence Halls", "Housing"),
     "dining"       => array("Dining location", "Dining Location Names", "Dining Locations", "Dining"),
+    "wifi"         => array("WiFi-enabled location", "WiFi-enabled Locations", "WiFi-enabled Locations", "WiFi-enabled Location"),
     "computer"     => array("Computer Lab name", "Computer Lab Names", "Computer Labs", "Computer Lab"),
     "prt"          => array("PRT Station", "PRT Station Names", "PRT Stations", "PRT Station")
     #"parking"      => array("Parking lot", "Parking Lots", "Parking Lots", "Parking")
@@ -48,7 +49,12 @@ if(!isset($_REQUEST['category'])) {
     if($category=="names" || $category=="campus") {
       require "$prefix/$category.html";
     } else {
-      $places = getData("type = '".$category_info[$category][3]."'");
+	  if ($category=="wifi") {
+		 $places = getData("wifi = 'Y'");
+	  }
+	  else {
+		$places = getData("type = '".$category_info[$category][3]."'");
+	  }
       require "$prefix/places.html";
     }
   } else {
@@ -66,6 +72,7 @@ if(!isset($_REQUEST['category'])) {
 	    }
 	    $places = getData("type=\"".$category_info[$category][3]."\" and ".$sql_substr);
     }
+    
     else if ($category=="campus") {
 		$places = getData("type = '".$category_info[$category][3]."' and campus = '".$drilldown."'");
 	}
