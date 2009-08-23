@@ -12,7 +12,7 @@ $page->content_begin();
 	
 	<ul class="results">
 		<? foreach($places as $place) { ?>
-         <li><a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>" class="map"><?=$place['name']?><br /><span class="smalltext"><?=$place['hours']?></span></a></li>
+         <li><a href="../map/<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>" class="map"><?=$place['name']?><br /><span class="legend"><?=str_replace('"','',$place['hours'])?></span></a></li>
      <? } ?>
 	</ul>
 	

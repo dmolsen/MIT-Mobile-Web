@@ -8,11 +8,12 @@ $page->content_begin();
 	
 	<p class="nav">
      <? foreach($places as $place) { ?>
-         <a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>"><?=$place['name']?><br /><span class="smalltext"><?=$places['hours']?></span></a><br/>
+         <a href="../map/<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>"><?=$place['name']?></a> <span class="legend"><?=str_replace('"','',$place['hours'])?></span></a><br/>
      <? } ?>
 	</p>
 <?
 $page->content_end();
+$page->help_off();
 $page->nav_link('./', "Hours Home");
 ?>
 
