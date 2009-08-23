@@ -15,10 +15,13 @@ require_once "../map/lib/map.lib.inc.php";
 
 class Categorys {
   public static $info = array(
+	"admissions"   => array("Admissions & Records", "Admissions & Records", "Admissions & Records", "Admissions"),
+	"computer"     => array("Computer Lab name", "Computer Lab Names", "Computer Labs", "Computer Lab"),
+	"dining"       => array("Dining location", "Dining Location Names", "Dining Locations", "Dining"),
+	"health"       => array("Health Services name", "Health Services Names", "Health Services", "Health"),
     "library"      => array("Library name", "Library Names", "Libraries", "Library"),
-    "dining"       => array("Dining location", "Dining Location Names", "Dining Locations", "Dining"),
-    "computer"     => array("Computer Lab name", "Computer Lab Names", "Computer Labs", "Computer Lab"),
-    "prt"          => array("PRT Station", "PRT Station Names", "PRT Stations", "PRT Station")
+    "prt"          => array("PRT Station", "PRT Station Names", "PRT Stations", "PRT Station"),
+    "visitor"      => array("Visitor Resource Center", "Visitor Resource Center", "Visitor Resource Center", "Visitor")
   );
 }
 
@@ -43,7 +46,21 @@ if(!isset($_REQUEST['category'])) {
     if($category=="names" || $category=="campus") {
       require "$prefix/$category.html";
     } else {
-      $places = getData("type = '".$category_info[$category][3]."'");
+	  if ($category=="visitor") {
+	    $place = getData("subtype = 'Visitor'");	
+	  }
+	  else if ($category=="rec") {
+	    $place = getData("subtype = 'Rec'");	
+	  }
+	  else if ($category=="admissions") {
+	    $place = getData("subtype = 'Admissions'");	
+	  }
+	  else if ($category=="health") {
+	    $place = getData("subtype = 'Health'");	
+	  }
+	  else {
+		$places = getData("type = '".$category_info[$category][3]."'");
+	  }
       require "$prefix/places.html";
     }
   } else {
