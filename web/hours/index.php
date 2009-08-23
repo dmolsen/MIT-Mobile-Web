@@ -15,7 +15,7 @@ require_once "../map/lib/map.lib.inc.php";
 
 class Categorys {
   public static $info = array(
-	"admissions"   => array("Admissions & Records", "Admissions & Records", "Admissions & Records", "Admissions"),
+	#"admissions"   => array("Admissions & Records", "Admissions & Records", "Admissions & Records", "Admissions"),
 	"computer"     => array("Computer Lab name", "Computer Lab Names", "Computer Labs", "Computer Lab"),
 	"dining"       => array("Dining location", "Dining Location Names", "Dining Locations", "Dining"),
 	"health"       => array("Health Services name", "Health Services Names", "Health Services", "Health"),
