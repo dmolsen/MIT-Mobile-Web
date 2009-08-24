@@ -70,11 +70,10 @@ if(!isset($_REQUEST['category'])) {
 	    else {
 			$sql_substr = "name LIKE \"".$drilldown."%\"";
 	    }
-	    $places = getData("type=\"".$category_info[$category][3]."\" and ".$sql_substr);
-    }
-    
+	    $places = getData("(type = 'Building' OR type='Housing' OR type='Library' OR type='PRT Station' OR type='Athletic Facility') and ".$sql_substr);
+    }    
     else if ($category=="campus") {
-		$places = getData("type = '".$category_info[$category][3]."' and campus = '".$drilldown."'");
+		$places = getData("(type = 'Building' OR type='Housing' OR type='Library' OR type='PRT Station' OR type='Athletic Facility') and campus = '".$drilldown."'");
 	}
     require "$prefix/drilldown.html";
   }
