@@ -626,6 +626,16 @@ a.map {
 	padding-right: 38px;
 }
 
+a.calendar {  
+	background-image: url(../ip/images/action-calendar.png); 
+	padding-right: 38px;
+}
+
+a.youtube {  
+	background-image: url(../ip/images/action-youtube.png); 
+	padding-right: 38px;
+}
+
 a.search {  
 	background-image: url(../ip/images/action-search.png); 
 	padding-right: 36px;
