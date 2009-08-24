@@ -7,7 +7,7 @@ $page->content_begin();
 	<h2>Schools &amp; Colleges</h2>
 	
 	<div class="focal">
-            <? foreach($others as $item) { ?>
+            <? foreach($schools as $item) { ?>
                 <p><a href="tel:1<?=$item->call_number()?>" class="phone"><?=$item->label()?></a> <span class="smallprint"> (<?=$item->message_text()?><?=$item->number_text()?>)</span></p>
             <? } ?>
 	</div>
