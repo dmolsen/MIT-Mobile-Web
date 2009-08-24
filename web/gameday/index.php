@@ -17,14 +17,14 @@ require "../calendar/lib/gcalendar_setup.php";
 require "../calendar/lib/calendar_lib.php";
 
 $links = array(
-	array("teams.php","Teams",false),
-	array("../map/?category=athletics","Athletic Facilities",false),
-	array("http://mobile.msnsportsnet.com/","MSNsportsNET.com Mobile News",true),
-	#array("http://m.twitter.com/wvusportsbuzz/","WVUSportsBuzz on Twitter",true),
-	#array("http://m.twitter.com/coachstewart","Coach Stewart on Twitter",true),
-	array("https://www.ticketreturn.com/wvu/","Student Tickets",true),
-	array("http://mobile.msnsportsnet.com/page.cfm?section=6581", "Football Gameday FAQ (long)", true),
-	array("http://mobile.msnsportsnet.com/page.cfm?section=6582", "Basketball Gameday FAQ (long)", true)
+	array("teams.php","Teams",false,false),
+	array("../map/?category=athletics","Athletic Facilities",false,true),
+	array("http://mobile.msnsportsnet.com/","MSNsportsNET.com Mobile News",true,false),
+	array("https://www.ticketreturn.com/wvu/","Student Tickets",true,false),
+	array("http://mobile.msnsportsnet.com/page.cfm?section=6581", "Football Gameday FAQ (long)",true,false),
+	array("http://mobile.msnsportsnet.com/page.cfm?section=6582", "Basketball Gameday FAQ (long)",true,false),
+	array("http://m.twitter.com/wvusportsbuzz/","WVUSportsBuzz on Twitter",true,false),
+	array("http://m.twitter.com/coachstewart","Coach Stewart on Twitter",true,false)
 	);
 
 $service = Zend_Gdata_Calendar::AUTH_SERVICE_NAME; // predefined service name for calendar

@@ -14,7 +14,7 @@ $page->content_begin();
 	<ul class="nav">
 						  <? foreach ($eventFeed as $event) { ?>
 							<? $loc = briefLocation($event); ?>
-		<li><a href="../calendar/<?=detailURL($event)?>"><?=html_entity_decode($event->title->text)?><br/><span class="smallprint"><?=timeText($event)?><? if(trim($loc->valueString) != '') { ?><br /><?=$loc->valueString?><? } ?></span></a></li>
+		<li><a href="../calendar/<?=detailURL($event)?>" class="calendar"><?=html_entity_decode($event->title->text)?><br/><span class="smallprint"><?=timeText($event)?><? if(trim($loc->valueString) != '') { ?><br /><?=$loc->valueString?><? } ?></span></a></li>
 	          <? } ?>
 	</div>
 	
@@ -22,6 +22,7 @@ $page->content_begin();
 		<? foreach($links as $item) { ?>
 			   <? $external = ''; ?>
 			   <? if ($item[2] == true) { $external = "class='external'"; } ?>
+			   <? if ($item[3] == true) { $external = "class='map'"; } ?>
          <li><a <?=$external?> href="<?=$item[0]?>"> <?=$item[1]?></a></li>
     <? } ?>
 	</ul>
