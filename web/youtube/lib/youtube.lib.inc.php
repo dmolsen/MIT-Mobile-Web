@@ -38,7 +38,7 @@ function printVideoEntry($videoEntry,$phone) {
 	 echo("<p class='focal' style='height: 62px'>");
   }
   
-  echo("<a href='".$videoEntry->getVideoWatchPageUrl()."'><img src='".$videoThumbnails[1]['url']."' hspace=6 height=60 width=80 align=left alt='YouTube Video Thumbnail'>".$videoEntry->getVideoTitle()."<span class='smallprint'><br />Duration: ".$mins.":".$secs."<br />Updated: ".$updated['month']." ".$updated['mday'].", ".$updated['year']."</a>");
+  echo("<a href='".$videoEntry->getVideoWatchPageUrl()."'><img src='".$videoThumbnails[1]['url']."' hspace=6 height=60 width=80 align=left alt='YouTube Video Thumbnail'>".$videoEntry->getVideoTitle()."<span class='smallprint' style='text-decoration: none'><br />".$mins.":".$secs." | ".substr($updated['month'],0,3)." ".$updated['mday']." ".$updated['year']."</a>");
 
   if ($phone == 'ip') {
     echo("</li>");
