@@ -11,7 +11,7 @@
 require_once "../../config.gen.inc.php";
 
 $header = $inst_name." on YouTube";
-$module = "calendar";
+$module = "youtube";
 
 $help = array(
   'The WVU on YouTube mobile site requires a phone that supports RTSP streaming and is on a service carrier which permits streaming videos. YouTube for mobile is a data-intensive application. You should consider getting a data plan before watching videos on YouTube from your mobile phone.');
