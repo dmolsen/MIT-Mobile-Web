@@ -1,12 +1,12 @@
 <?php
-$page->title($inst_name." Events Calendar: $Type for {$current['day_3Let']} {$current['month']} {$current['day_num']}, {$current['year']}")
+$page->title($inst_name." Events Calendar: Events for {$current['day_3Let']} {$current['month']} {$current['day_num']}, {$current['year']}")
      ->navbar_image('title-calendar')
-     ->breadcrumbs($Type);
+     ->breadcrumbs('Events');
 
 $page->content_begin();
 ?>
 	<div class="nonfocal">
-		<h2><?=$Type?> for <strong><?=$current['day_3Let']?> <?=$current['month']?> <?=$current['day_num']?>, <?=$current['year']?></strong></h2>
+		<h2>Events for <strong><?=$current['day_3Let']?> <?=$current['month']?> <?=$current['day_num']?>, <?=$current['year']?></strong></h2>
 		<p><a href="<?=dayURL($prev, $type)?>">&lt; <?=$prev['day_3Let']?> <?=$prev['month']?> <?=$prev['day_num']?></a> | <a href="<?=dayURL($next, $type)?>"><?=$next['day_3Let']?> <?=$next['month']?> <?=$next['day_num']?> &gt;</a></p>
 	</div>
 	
