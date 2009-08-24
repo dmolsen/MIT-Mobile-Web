@@ -51,7 +51,7 @@ else {
 	
 	# name, link, show for sp & ip?, use external class?
 	$links = array(
-		array("Shows","shows.php",true,false),
+		#array("Shows","shows.php",true,false),
 		array("U92 on iTunes U","http://deimos.apple.com/WebObjects/Core.woa/Browse/wvu.edu.1353247216",false,true),
 		array("U92's full web site","http://u92.wvu.edu/",true,true));
 	
