@@ -61,4 +61,8 @@ function creditsURL() {
   return "./?page=credits";
 }
 
+function homescreenURL() {
+  return "./?page=homescreen";
+}
+
 ?>
