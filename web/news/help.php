@@ -11,7 +11,7 @@
 require_once "../../config.gen.inc.php";
 
 $header = $inst_name." Campus News";
-$module = $inst_name." Campus News";
+$module = "news";
 
 $help = array(
     'Get the latest news items regarding events affecting the '.$inst_name.' community.',
