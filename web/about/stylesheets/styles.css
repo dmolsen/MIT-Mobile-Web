@@ -1,0 +1,40 @@
+@import url(reset.css);
+@import url(960.css);
+@import url(typography.css);
+@import url(commonelements.css);
+
+body { 
+	font-family: arial, verdana, sans-serif;
+	font-size:12px;
+	line-height: 18px;
+}
+
+#header {
+	background-image: url(../images/iphone.jpg);
+	background-position: 600px 40px;
+	background-repeat: no-repeat;
+	height: 504px;
+}
+.tagline {
+	font-size: 24px;
+	line-height: 36px;
+	xfont-weight: bold;
+	margin-bottom: 36px;
+}
+#masthead a:visited {
+	color: #fff;
+}
+#masthead a:link {
+	color: #fff;
+}
+.preview {
+	background-color: #ededed;
+	margin-bottom: 18px;
+	padding: 18px;
+}
+h1 {
+	font-size: 48px;
+	letter-spacing: -2px;
+	margin-top: 36px;
+	margin-bottom: 36px;
+}

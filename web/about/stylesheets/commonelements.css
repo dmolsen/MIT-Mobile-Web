@@ -1,0 +1,211 @@
+#content {
+	
+}
+#masthead {
+	width: 100%;
+	background-color: #003366;
+	height: 36px;
+}
+#index #breadcrumbs {
+	display: none;
+	
+}
+#breadcrumbs {
+	font-size: 10px;
+	color: #ccc;
+	line-height: 18px;
+}
+#breadcrumbs a.current-page {
+	background-color: transparent;
+	color: #ccc;
+}
+#container {
+	xpadding-top: 18px;
+}
+#main {
+	padding-top: 18px;
+}
+#nav ul li {
+	padding-left: 0px;
+	padding-right: 18px;
+	background-image: none;
+}
+.sidebar {
+	padding-top: 18px;
+}
+
+.widget {
+	padding-bottom: 18px;
+}
+img {
+	margin-bottom: 18px;
+}
+#header {
+	xheight: 72px;
+	padding-top: 36px;
+	xpadding-bottom: 18px;
+}
+
+blockquote {
+	border-left-style: solid;
+	border-left-color: #444;
+	border-left-width: 10px;
+	padding-left: 10px;
+}
+#nav ul li {
+	float: left;
+}
+
+
+.photo_1 {
+	width: ;
+	height: ;
+}
+
+.button_1 {
+	width: 240px;
+	height: 80px;
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+.profile {
+	
+}
+#footer {
+	padding-top: 36px;
+	font-size: 10px;
+	line-height: 18px;
+	padding-bottom: 36px;
+}
+#footer #icons ul {
+	list-style-type: none;
+}
+
+ul li {
+	background-image: url(../images/arrow_small.png);
+	background-repeat: no-repeat;
+}
+
+#icons ul li {
+	float: right;
+	height: 25px;
+	width: 25px;
+	margin-left: 1px;
+	text-indent: -9000px;
+	line-height: 25px;
+	padding-left: 0px;
+}
+form {
+	margin-bottom: 18px;
+}
+#icons ul li a {
+	display: block;
+}
+a:hover {
+	text-decoration: underline;
+}
+#trak {
+	background-image: url(../../shared/images/icon_trak.gif);
+}
+#wvualert {
+	background-image: url(../../shared/images/icon_wvualert.gif);
+}
+#give {
+	background-image: url(../../shared/images/icon_give.gif);
+}
+#itunesu {
+	background-image: url(../../shared/images/icon_itunesu.gif);
+}
+#facebook {
+	background-image: url(../../shared/images/icon_facebook.gif);
+}
+#twitter {
+	background-image: url(../../shared/images/icon_twitter.gif);
+}
+#youtube {
+	background-image: url(../../shared/images/icon_youtube.gif);
+}
+#mix {
+	background-image: url(../../shared/images/icon_mix.gif);
+}
+.feature_1 {
+	height: 320px;
+	background-color: #333;
+	margin-bottom: 18px;
+}
+.slideshow {
+	width: 560px;
+	height: 373px;
+	margin-bottom: 5px;
+	margin-left: 0px;
+	margin-right: 0px;
+	float: left;
+}
+#nav {
+	margin-bottom: 18px;
+}
+#masthead {
+	width: 100%;
+	background-color: #003366;
+	height: 36px;
+	font-size: 10px;
+	line-height: 36px;
+	overflow: hidden;
+}
+#masthead ul {
+	float: right;
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
+#masthead ul li {
+	float: left;
+	margin: 0px;
+	padding: 0px;
+	background-image: none;
+	margin-right: 10px;
+	font-size: 10px;
+	line-height: 36px;
+}
+#masthead span {
+	width: 200px;
+	height: 36px;
+	background-image: url(../images/wvu_logo.gif);
+	background-repeat: no-repeat;
+	text-indent: -9000px;
+	float: left;
+}
+#masthead a:visited {
+	color:  #fff;
+}
+
+/* ------------- widgets --------------- */
+
+.news {
+	
+}
+.event_calendar {
+	
+}
+.secondary_navigation {
+	
+}
+.profiles {
+	
+}
+.testimonials {
+	
+}
+.buttons {
+	
+}
+.related_links {
+	
+}
+.archive {
+	
+}
+.authors {
+	
+}
