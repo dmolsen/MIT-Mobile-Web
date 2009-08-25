@@ -67,7 +67,6 @@ foreach($routes as $route_name => $route) {
 				}
 				else if ($stop_minute > 60) {
 					$stop_minute = $stop_minute % 60;
-					$stop_hour_plus = true;
 				}
 			    if ($stop_minute < 10) {
 			        $stop_minute = "0".$stop_minute;
