@@ -59,7 +59,7 @@ $routes['blue_line'] = array(
 							  "Depot Return"           => "55"
 						    ))));
 
-/*$routes['blue_and_gold_connector'] = array(
+$routes['blue_and_gold_connector'] = array(
                        "runs" => array(
                          array(
                            "days"         => array("Mon","Tue","Wed","Thu","Fri"),
@@ -198,6 +198,5 @@ $routes['downtown_pm_mall'] = array(
 						    ))));
 
 # skipped brown line
-*/
 
 ?>
