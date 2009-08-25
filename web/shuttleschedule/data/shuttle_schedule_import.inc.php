@@ -40,6 +40,7 @@ $routes['blue_line'] = array(
                            "hour_start"   => 6, 
                            "loops"        => 10,
                            "length"       => 60, 
+						   "busnum"       => 1,
                            "delays"       => array("6:00"=>30,"7:00"=>60,"13:00"=>60,"17:00"=>10),
                            "stops_skip"   => array("5:48","5:57","6:05"),
                            "stops"        => array(
@@ -62,6 +63,7 @@ $routes['blue_line'] = array(
                            "hour_start"   => 8, 
                            "loops"        => 5,
                            "length"       => 60, 
+						   "busnum"       => 1,
                            "delays"       => array("9:00"=>60,"11:00"=>60,"13:00"=>60,"15:00"=>60),
                            "stops_skip"   => array(),
                            "stops"        => array(
@@ -87,6 +89,7 @@ $routes['blue_and_gold_connector'] = array(
                            "hour_start"   => 6, 
                            "loops"        => 44,
                            "length"       => 20, 
+						   "busnum"       => 1,
                            "delays"       => array("6:00"=>20, "6:20"=>20),
                            "stops_skip"   => array(),
                            "stops"        => array(
@@ -103,6 +106,7 @@ $routes['blue_and_gold_connector'] = array(
 	                           "hour_start"   => 9,
 	                           "loops"        => 27,
 	                           "length"       => 20,
+							   "busnum"       => 1,
 	                           "delays"       => array("9:00"=>20,"9:20"=>20),
 	                           "stops_skip"   => array(),
 	                           "stops"        => array(
@@ -124,8 +128,9 @@ $routes['crown'] = array(
                          array(
                            "days"         => array("Mon","Tue","Wed","Thu","Fri","Sat"),
                            "hour_start"   => 7, 
-                           "loops"        => 21,
-                           "length"       => , 
+                           "loops"        => 1,
+                           "length"       => 70,
+						   "busnum"       => 1, 
                            "delays"       => array(),
                            "stops_skip"   => array(),
                            "stops"        => array(
@@ -146,8 +151,9 @@ $routes['crown'] = array(
 						array(
                            "days"         => array("Mon","Tue","Wed","Thu","Fri","Sat"), 
                            "hour_start"   => 13, 
-                           "loops"        => 21,
-                           "length"       => ,
+                           "loops"        => 1,
+                           "length"       => 70,
+						   "busnum"       => 1,
                            "delays"       => array(),
                            "stops_skip"   => array(),
                            "stops"        => array(
@@ -169,7 +175,8 @@ $routes['crown'] = array(
                            "days"         => array("Mon","Tue","Wed","Thu","Fri","Sat"), 
                            "hour_start"   => 17, 
                            "loops"        => 21,
-                           "length"       => , 
+                           "length"       => 70,
+						   "busnum"       => 1,
                            "delays"       => array(),
                            "stops_skip"   => array(),
                            "stops"        => array(
@@ -191,8 +198,9 @@ $routes['downtown_pm_mall'] = array(
                          array(
                            "days"         => array("Mon","Tue","Wed","Thu","Fri","Sat"), 
                            "hour_start"   => 18, 
-                           "loops"        => 21,
-                           "length"       => ,
+                           "loops"        => 13,
+                           "length"       => 60,
+						   "busnum"       => 1,
                            "delays"       => array(),
                            "stops_skip"   => array(),
                            "stops"        => array(
