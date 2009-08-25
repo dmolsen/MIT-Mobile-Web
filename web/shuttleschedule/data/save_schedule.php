@@ -56,7 +56,7 @@ foreach($routes as $route_name => $route) {
 			
 			foreach($run['stops'] as $stop_name => $stop_minute) {
 				#$stop_minute = makeDD($stop,$loop,$run['length'],$delay);
-				$stop_minute = $stop_minute + $delay + ($loop * $length);
+				$stop_minute = $stop_minute + $delay + ($loop * $run['length']);
                 $stop_hour = $hour + floor(($run['length']*$loop)/60);
 				if ($stop_minute == 60) {
 					$stop_minute = 0;
