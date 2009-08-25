@@ -55,15 +55,16 @@ foreach($routes as $route_name => $route) {
 			$breakfor = false;
 			$stop_hour_plus = false;
 			$prev_stop_minute = 0;
+			$stop = 0;
 			
 			foreach($run['stops'] as $stop_name => $stop_minute) {
-				#$stop_minute = makeDD($stop,$loop,$run['length'],$delay);
 				$stop_minute = $stop_minute + $delay + ($loop * $run['length']);
                 $stop_hour = $hour + floor(($run['length']*$loop)/60);
-                echo("stop h #1: ".$stop_hour);
 				if ($stop_minute == 60) {
 					$stop_minute = 0;
-					$stop_hour_plus = true;
+			        if ($stop > 0) {
+					  $stop_hour_plus = true;
+				    }
 				}
 				else if ($stop_minute > 60) {
 					$stop_minute = $stop_minute % 60;
@@ -103,7 +104,6 @@ foreach($routes as $route_name => $route) {
 				if ($stop_hour > 23) {
                    $stop_hour = $stop_hour - 24;
                 }
-				echo("stop h #2: ".$stop_hour."\n");
 
 				if (db::$use_sqlite) {
 					$stmt->execute(array($day_name, $day_name, $route_name, $stop_name, $stop_hour, $stop_minute, $busnum));
@@ -113,6 +113,7 @@ foreach($routes as $route_name => $route) {
 				    $stmt->execute();
 				}
 				$prev_stop_minute = $stop_minute; 
+				$stop++;
 			}			
 			$loop++;
 	    }
