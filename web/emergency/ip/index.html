@@ -10,6 +10,7 @@ $page->content_begin();
              <?
                 echo implode('<br /><br />', $paragraphs);
              ?>
+             <? if ($date) { echo('<em>Posted: '.$date.'</em>'); } ?>
 	</div>
 	
 	<ul class="secondary">

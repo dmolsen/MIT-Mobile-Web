@@ -9,6 +9,7 @@ $page->content_begin();
              <? 
                 echo implode('<br /><br />', $paragraphs);
              ?>
+             <? if ($date) { echo('<em>Posted: '.$date.'</em>'); } ?>
 	</p>
 	
 	<p class="secondary">

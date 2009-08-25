@@ -120,6 +120,7 @@ if($emergencies === False) {
 	    $paragraphs[] = htmlentities($paragraph);
 	  }
 	}
+        $date = short_date($emergency['date']);
   }
 
   // handle the case that an emergency RSS feed doesn't return data until emergency (like e2campus)
