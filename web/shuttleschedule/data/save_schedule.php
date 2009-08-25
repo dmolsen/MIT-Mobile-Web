@@ -55,7 +55,7 @@ foreach($routes as $route_name => $route) {
 			$delay = 0;
 			
 			foreach($run['stops'] as $stop_name => $stop_minute) {
-				$stop_minute = makeDD($stop,$loop,$run['length'],$delay);
+				#$stop_minute = makeDD($stop,$loop,$run['length'],$delay);
 				$stop_minute = $stop_minute + $delay + ($loop * $length);
                 $stop_hour = $hour + floor(($run['length']*$loop)/60);
 				if ($stop_minute == 60) {
@@ -82,9 +82,14 @@ foreach($routes as $route_name => $route) {
 				    }
 				    else {
                        echo("got here ".$delay." ".$stop_delay_check." ".$stop_hour." ".$stop_minute." ".$loop."\n");
-					   break; # get out of the foreach loop because we want to get to the next set of stops
+					   $breakfor = true;
+					   #break; # get out of the foreach loop because we want to get to the next set of stops
 				    }
-                }           
+                }
+                if ($breakfor == true) {
+	 				$break = false;
+	                break;
+                }
 				if ((int)$stop_minute < (int)$prev_stop_minute) {
 				   if ($stop_hour == $prev_stop_hour) {
 				      $stop_hour = $stop_hour + 1;
