@@ -7,7 +7,7 @@
  * 
  */
 
-require_once "../lib/ShuttleSchedule.php";
+require_once "/apache/htdocs/Mobi-Demo/web/shuttleschedule/lib/ShuttleSchedule.php";
 
 $schedule = new ShuttleSchedule();
 
@@ -47,4 +47,9 @@ $schedule
         st("Brooke Towers Return","btowersr" , "tobrke", '19'))    
      ->addHours("Mon-Sat",hours("6-23"));
 
+$schedule
+     ->route("Downtown PM Mall", "downtown_pm_mall")
+     ->summary("I don't care")
+     ->perHour(1)
+     ->addHours("Mon-Sat",hours("6-23"));
 ?>

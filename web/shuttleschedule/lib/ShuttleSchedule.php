@@ -978,7 +978,7 @@ class Holidays {
   private static $time;
 
   public function init() {
-    require "holiday_data.php";
+    require "/apache/htdocs/Mobi-Demo/lib/old/holiday_data.php";
     self::$holidays = array();
     foreach($holiday_data as $year => $holidays) {
       $year_array = array();

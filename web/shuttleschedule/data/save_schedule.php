@@ -1,6 +1,6 @@
 <?
 
-require_once "../../lib/db.php";
+require_once "../../../lib/db.php";
 require_once "shuttle_schedule_import.inc.php";
 											
 function makeDD($minute,$loop,$length) {
@@ -25,9 +25,9 @@ foreach($routes as $route_name => $route) {
     
     foreach($days as $day_name) {
 		$hour = $run['hour_start'];
-		$hour_end = $run['hour_end'];
+		#$hour_end = $run['hour_end'];
 		$busnum = $run['busnum'];
-		$break = $run['break'];
+		#$break = $run['break'];
 		$delay = 0;
 		$loop = 0;
 
@@ -40,7 +40,7 @@ foreach($routes as $route_name => $route) {
 			$delay = 0;
 			
 			foreach($run['stops'] as $stop_name => $stop) {
-				$stop_minute = makeDD($stop,$run['hour_per'],$k);
+				$stop_minute = makeDD($stop,$loop,$run['length']);
 				#echo($stop_minute); exit;
 				$stop_delay_check = $hour.":".$stop_minute;
 				if (array_key_exists($stop_delay_check, $run['delays'])) {
