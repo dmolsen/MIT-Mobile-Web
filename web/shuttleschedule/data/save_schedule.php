@@ -34,14 +34,14 @@ foreach($routes as $route_name => $route) {
 		$delay = 0;
 		$loop = 0;
 
-            $prev_stop_hour = 0;
-            $prev_stop_minute = 0;
-            $delayed = false;
-            $delay = 0;
-            $stop_hour = $hour;
+        $prev_stop_hour = 0;
+        $prev_stop_minute = 0;
+        $delayed = false;
+        $delay = 0;
+        $stop_hour = $hour;
 
 	    while ($loop < ($run['loops'])) {
-		        /*if ($loop == 0) {
+		   /*if ($loop == 0) {
 			  $stop_hour = $hour;
 		        }
 	                else {
@@ -54,26 +54,37 @@ foreach($routes as $route_name => $route) {
 			$delayed = false;*/
 			$delay = 0;
 			
-			foreach($run['stops'] as $stop_name => $stop) {
+			foreach($run['stops'] as $stop_name => $stop_minute) {
 				$stop_minute = makeDD($stop,$loop,$run['length'],$delay);
+				$stop_minute = $stop_minute + $delay + ($loop * $length);
+                $stop_hour = $hour + floor(($run['length']*$loop)/60);
+				if ($stop_minute == 60) {
+					$stop_minute = 0;
+					$stop_hour = $stop_hour + 1;
+				}
+				else if ($stop_minute > 60) {
+					$stop_minute = $stop_minute % 60;
+					$stop_hour = $stop_hour + 1;
+				}
+			    if ($stop_minute < 10) {
+			        $stop_minute = "0".$stop_minute;
+			    }
 				#echo($stop_minute); exit;
 				$stop_delay_check = $stop_hour.":".$stop_minute;
 				if (array_key_exists($stop_delay_check, $run['delays'])) {
 				    $delay = $run['delays'][$stop_delay_check]; 
 				    if ($delay < ($run['length'])) {
-					$stop_minute = $stop_minute + $delay;
-					if ($stop_minute > 59) {
-						$stop_minute = $stop_minute - 60;
-						$delayed = true;
-					}
-				     }
-				     else {
-					$delayed = false;
-                                        $stop_hour = $hour + (floor(($run['length']*($loop))/60));
-                                        echo("got here ".$delay." ".$stop_delay_check." ".$stop_hour." ".$stop_minute." ".$loop."\n");
-					break; # get out of the foreach loop because we want to get to the next set of stops
-				     }
-                                }
+					   $stop_minute = $stop_minute + $delay;
+					   if ($stop_minute > 59) {
+						   $stop_minute = $stop_minute - 60;
+						   $stop_hour = $stop_hour + 1;
+					   }
+				    }
+				    else {
+                       echo("got here ".$delay." ".$stop_delay_check." ".$stop_hour." ".$stop_minute." ".$loop."\n");
+					   break; # get out of the foreach loop because we want to get to the next set of stops
+				    }
+                }           
 				if ((int)$stop_minute < (int)$prev_stop_minute) {
 				   if ($stop_hour == $prev_stop_hour) {
 				      $stop_hour = $stop_hour + 1;
@@ -83,8 +94,8 @@ foreach($routes as $route_name => $route) {
 				   $stop_hour = $prev_stop_hour;
 				}
 				if ($stop_hour > 23) {
-                                   $stop_hour = $stop_hour - 24;
-                                }
+                   $stop_hour = $stop_hour - 24;
+                }
 				#if ($stop_minute < 10) {
 				#	$stop_minute = "0".$stop_minute;
 				#}
@@ -95,12 +106,8 @@ foreach($routes as $route_name => $route) {
 				else {
 					$stmt->bind_param('ssssiii', $day_name, $day_name, $route_name, $stop_name, $stop_hour, $stop_minute, $busnum);
 				    $stmt->execute();
-				}
-				
-				$prev_stop_hour = $stop_hour;
-				$prev_stop_minute = $stop_minute;
-			}
-			
+				}	
+			}			
 			$loop++;
 	    }
     }
