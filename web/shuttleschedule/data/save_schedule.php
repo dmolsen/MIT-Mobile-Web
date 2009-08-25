@@ -32,7 +32,13 @@ foreach($routes as $route_name => $route) {
 		$loop = 0;
 
 	    while ($loop < ($run['loops'])) {
-			$stop_hour = $hour;
+		    if ($loop == 0) {
+			  $stop_hour = $hour;
+		    }
+	        else {
+			  $stop_hour = $hour + (floor(($run['length']*$loop)/60));
+			}
+			$stop_hour = $mins = floor ($seconds / 60);
 			$k = 0;
 			$prev_stop_hour = 0;
 			$prev_stop_minute = 0;
