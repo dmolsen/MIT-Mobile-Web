@@ -50,11 +50,11 @@ foreach($routes as $route_name => $route) {
 			
 			$k = 0;
 			$prev_stop_hour = 0;
-			$prev_stop_minute = 0;
 			$delayed = false;*/
 			$delay = 0;
 			$breakfor = false;
 			$stop_hour_plus = false;
+			$prev_stop_minute = 0;
 			
 			foreach($run['stops'] as $stop_name => $stop_minute) {
 				#$stop_minute = makeDD($stop,$loop,$run['length'],$delay);
@@ -70,6 +70,10 @@ foreach($routes as $route_name => $route) {
 				}
 			    if ($stop_minute < 10) {
 			        $stop_minute = "0".$stop_minute;
+			    }
+			
+			    if ($stop_minute < $prev_stop_minute) {
+				    $stop_hour_plus = true;
 			    }
 				#echo($stop_minute); exit;
 				$stop_delay_check = $stop_hour.":".$stop_minute;
@@ -93,7 +97,7 @@ foreach($routes as $route_name => $route) {
 	                break;
                 }
 			    if ($stop_hour_plus == true) {
-				   $stop_hour_plus = false;
+				   #$stop_hour_plus = false;
 				   $stop_hour = $stop_hour + 1;
 			    }
 				if ($stop_hour > 23) {
@@ -107,7 +111,8 @@ foreach($routes as $route_name => $route) {
 				else {
 					$stmt->bind_param('ssssiii', $day_name, $day_name, $route_name, $stop_name, $stop_hour, $stop_minute, $busnum);
 				    $stmt->execute();
-				}	
+				}
+				$prev_stop_minute = $stop_minute; 
 			}			
 			$loop++;
 	    }
