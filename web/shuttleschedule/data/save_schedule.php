@@ -89,7 +89,7 @@ foreach($routes as $route_name => $route) {
 				    }
                 }
                 if ($breakfor == true) {
-	 				$break = false;
+	 				$breakfor = false;
 	                break;
                 }
 			    if ($stop_hour_plus == true) {
