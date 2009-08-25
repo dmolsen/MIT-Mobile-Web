@@ -33,12 +33,18 @@ function printVideoEntry($videoEntry,$phone) {
   $updated = getdate(strtotime($videoEntry->getUpdated()->text)); 
 
   if ($phone == 'ip') {
-	 echo("<li>");
+	 echo("<li style='height: 62px;'>");
   } else {
 	 echo("<p class='focal' style='height: 62px'>");
   }
   
-  echo("<a href='".$videoEntry->getVideoWatchPageUrl()."'><img src='".$videoThumbnails[1]['url']."' hspace=6 height=60 width=80 align=left alt='YouTube Video Thumbnail'>".$videoEntry->getVideoTitle()."<span class='smallprint' style='text-decoration: none'><br />".$mins.":".$secs." | ".substr($updated['month'],0,3)." ".$updated['mday']." ".$updated['year']."</a>");
+  echo("<a href='".$videoEntry->getVideoWatchPageUrl()."' class='youtube'><img src='".$videoThumbnails[1]['url']."' hspace=6 height=60 width=80 align=left alt='YouTube Video Thumbnail'>".$videoEntry->getVideoTitle());
+
+  if ($phone == 'ip')
+    echo("<span class='smallprint'><br />".$mins.":".$secs." mins. | ".substr($updated['month'],0,3)." ".$updated['mday']." ".$updated['year']."</a>");
+  else {
+    echo("</a><span class='smallprint' style='text-decoration: none'><br />".$mins.":".$secs." mins. | ".substr($updated['month'],0,3)." ".$updated['mday']." ".$updated['year']);
+  }
 
   if ($phone == 'ip') {
     echo("</li>");
