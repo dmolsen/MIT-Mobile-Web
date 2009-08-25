@@ -37,14 +37,14 @@ $schedule
      ->summary("Runs every day, all year round")
      ->perHour(3)
      ->stops(
-	    st("Brooke Towers Leave" ,"btowersl" , "frbrke", '00'),
+	st("Brooke Towers (Rawley St.)" ,"btowersl" , "frbrke", '00'),
         st("Law School"          ,"law"      , "frbrke", '01'),
         st("Grant Avenue"        ,"grant"    , "frbrke", '02'),
         st("Summit Hall"         ,"summit"   , "frbrke", '04'),
         st("Life Sciences"       ,"lifes"    , "frbrke", '05'),
         st("Beechurst & 6th"     ,"beech6th" , "tobrke", '08'),
-        st("CAC & Engineering"   ,"caccemr"  , "tobrke", '10'),
-        st("Brooke Towers Return","btowersr" , "tobrke", '19'))    
+        st("CAC & Engineering"   ,"caccemr"  , "tobrke", '10'))
+        #st("Brooke Towers Return","btowersr" , "tobrke", '19'))    
      ->addHours("Mon-Sat",hours("6-23"));
 
 $schedule

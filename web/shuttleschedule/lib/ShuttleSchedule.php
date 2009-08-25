@@ -503,8 +503,8 @@ class Route implements Iterator{
 	    "next"   => ($place == $first_stop),
 	    "place"  => $place,
         "day"    => $never ? NULL : $day_real,
-        "hour"   => $never ? NULL : Stop::makeDD($hour_res),
-        "minute" => $never ? NULL : Stop::makeDD($minute_res),
+        "hour"   => $never ? NULL : $hour_res,
+        "minute" => $never ? NULL : $minute_res,
         "never"  => $never 
       );
      
