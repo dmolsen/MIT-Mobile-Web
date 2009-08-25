@@ -8,16 +8,16 @@
  */
 
 
-require "lib/ShuttleSchedule.php";
+require "/apache/htdocs/Mobi-Demo/web/shuttleschedule/lib/ShuttleSchedule.php";
 require "../page_builder/page_header.php";
-require "lib/schedule_lib.php";
+require "/apache/htdocs/Mobi-Demo/web/shuttleschedule/lib/schedule_lib.php";
 require "../../config.gen.inc.php";
-require "data/data.inc.php";
+require "/apache/htdocs/Mobi-Demo/web/shuttleschedule/data/data.inc.php";
 
 $schedule = new ShuttleSchedule();
 
 //include all the shuttle schedule data
-require "lib/".$bus_schedule;
+require "/apache/htdocs/Mobi-Demo/web/shuttleschedule/data/".$bus_schedule;
 
 $route = $schedule->getRoute($_REQUEST['route']);
 

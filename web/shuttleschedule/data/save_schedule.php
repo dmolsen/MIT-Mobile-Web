@@ -3,14 +3,17 @@
 require_once "../../../lib/db.php";
 require_once "shuttle_schedule_import.inc.php";
 											
-function makeDD($minute,$loop,$length) {
-	$minute = $minute + ($loop * $length);
+function makeDD($minute,$loop,$length,$delay) {
+	$minute = $minute + $delay + ($loop * $length);
 	if ($minute == 60) {
 		$minute = 0;
 	}
 	else if ($minute > 60) {
 		$minute = $minute % 60;
 	}
+        if ($minute < 10) {
+          $minute = "0".$minute;
+        }
 	return $minute;
 }
 
@@ -31,44 +34,46 @@ foreach($routes as $route_name => $route) {
 		$delay = 0;
 		$loop = 0;
 
+            $prev_stop_hour = 0;
+            $prev_stop_minute = 0;
+            $delayed = false;
+            $delay = 0;
+            $stop_hour = $hour;
+
 	    while ($loop < ($run['loops'])) {
-		    if ($loop == 0) {
+		        /*if ($loop == 0) {
 			  $stop_hour = $hour;
-		    }
-	        else {
+		        }
+	                else {
 			  $stop_hour = $hour + (floor(($run['length']*$loop)/60));
 			}
-			$stop_hour = $mins = floor ($seconds / 60);
+			
 			$k = 0;
 			$prev_stop_hour = 0;
 			$prev_stop_minute = 0;
-			$delayed = false;
+			$delayed = false;*/
 			$delay = 0;
 			
 			foreach($run['stops'] as $stop_name => $stop) {
-				$stop_minute = makeDD($stop,$loop,$run['length']);
+				$stop_minute = makeDD($stop,$loop,$run['length'],$delay);
 				#echo($stop_minute); exit;
-				$stop_delay_check = $hour.":".$stop_minute;
+				$stop_delay_check = $stop_hour.":".$stop_minute;
 				if (array_key_exists($stop_delay_check, $run['delays'])) {
-					$delayed = true;
-				    $delay = $run['delays'][$stop_delay_check];
-				}
-				#if ($delayed && (($prev_stop_minute + $delay) > ((60/(int)$run['hour_per'])))) {
-				#	$delayed = false;
-				#	break; # get out of the foreach loop because we want to get to the next set of stops
-				#}
-				#else 
-				if ($delay < ($run['length'])) {
+				    $delay = $run['delays'][$stop_delay_check]; 
+				    if ($delay < ($run['length'])) {
 					$stop_minute = $stop_minute + $delay;
 					if ($stop_minute > 59) {
 						$stop_minute = $stop_minute - 60;
 						$delayed = true;
 					}
-				}
-				else {
+				     }
+				     else {
 					$delayed = false;
+                                        $stop_hour = $hour + (floor(($run['length']*($loop))/60));
+                                        echo("got here ".$delay." ".$stop_delay_check." ".$stop_hour." ".$stop_minute." ".$loop."\n");
 					break; # get out of the foreach loop because we want to get to the next set of stops
-				}
+				     }
+                                }
 				if ((int)$stop_minute < (int)$prev_stop_minute) {
 				   if ($stop_hour == $prev_stop_hour) {
 				      $stop_hour = $stop_hour + 1;
@@ -77,10 +82,12 @@ foreach($routes as $route_name => $route) {
 				else if ($stop_hour < $prev_stop_hour) {
 				   $stop_hour = $prev_stop_hour;
 				}
-				
-				if ($stop_minute < 10) {
-					$stop_minute = "0".$stop_minute;
-				}
+				if ($stop_hour > 23) {
+                                   $stop_hour = $stop_hour - 24;
+                                }
+				#if ($stop_minute < 10) {
+				#	$stop_minute = "0".$stop_minute;
+				#}
 
 				if (db::$use_sqlite) {
 					$stmt->execute(array($day_name, $day_name, $route_name, $stop_name, $stop_hour, $stop_minute, $busnum));

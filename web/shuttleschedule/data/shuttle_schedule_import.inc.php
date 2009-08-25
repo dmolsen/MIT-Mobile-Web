@@ -57,32 +57,9 @@ $routes['blue_line'] = array(
 							  "Easton Hill (Inbound)"  => "38",
 							  "DMV (Inbound)"          => "47",
 							  "Depot Return"           => "55"
-						    )),
-						array(
-                           "days"         => array("Mon","Tue","Wed","Thu","Fri","Sat"),
-                           "hour_start"   => 8, 
-                           "loops"        => 5,
-                           "length"       => 60, 
-						   "busnum"       => 1,
-                           "delays"       => array("9:00"=>60,"11:00"=>60,"13:00"=>60,"15:00"=>60),
-                           "stops_skip"   => array(),
-                           "stops"        => array(
-							  "Depot Leave"            => "00",
-							  "Unity Manor"            => "02",
-							  "Richwood & Charles"     => "05",
-							  "DMV (Outbound)"         => "10",
-							  "Airport & Mileground"   => "15",
-							  "Easton Hill (Outbound)" => "20",
-							  "University High School" => "30",
-							  "Canyon Dairy Mart"      => "32",
-							  "Lakeside Canyon"        => "35",
-							  "Crest Point"            => "37",
-							  "Easton Hill (Inbound)"  => "38",
-							  "DMV (Inbound)"          => "47",
-							  "Depot Return"           => "55"
 						    ))));
 
-$routes['blue_and_gold_connector'] = array(
+/*$routes['blue_and_gold_connector'] = array(
                        "runs" => array(
                          array(
                            "days"         => array("Mon","Tue","Wed","Thu","Fri"),
@@ -174,7 +151,7 @@ $routes['crown'] = array(
 						array(
                            "days"         => array("Mon","Tue","Wed","Thu","Fri","Sat"), 
                            "hour_start"   => 17, 
-                           "loops"        => 21,
+                           "loops"        => 1,
                            "length"       => 70,
 						   "busnum"       => 1,
                            "delays"       => array(),
@@ -200,7 +177,7 @@ $routes['downtown_pm_mall'] = array(
                            "hour_start"   => 18, 
                            "loops"        => 13,
                            "length"       => 60,
-						   "busnum"       => 1,
+                           "busnum"       => 1,
                            "delays"       => array(),
                            "stops_skip"   => array(),
                            "stops"        => array(
@@ -221,6 +198,6 @@ $routes['downtown_pm_mall'] = array(
 						    ))));
 
 # skipped brown line
-
+*/
 
 ?>
