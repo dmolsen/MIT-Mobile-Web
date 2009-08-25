@@ -113,8 +113,8 @@ if($emergencies === False) {
   $paragraphs = array('Emergency information is currently not available');
 } else {
   foreach ($emergencies as $title => $emergency) {
-	$text = explode("\n", $emergency[$title]['text']);
-	$paragraphs = array();
+        $text = explode("\n", $emergency['text']);
+        $paragraphs = array();
 	foreach($text as $paragraph) {
 	  if($paragraph) {
 	    $paragraphs[] = htmlentities($paragraph);

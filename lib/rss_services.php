@@ -29,7 +29,6 @@ class RSS {
     $rss_obj->loadXML($rss);
     $rss_root = $rss_obj->documentElement;
     $items = array();
-
     foreach($rss_root->getElementsByTagName('item') as $item) {    
       $title = trim(self::getTag($item, 'title')->nodeValue);
       $items[$title] = array(
