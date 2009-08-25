@@ -93,6 +93,7 @@ foreach($routes as $route_name => $route) {
 	                break;
                 }
 			    if ($stop_hour_plus == true) {
+				   $stop_hour_plus = false;
 				   $stop_hour = $stop_hour + 1;
 			    }
 				if ($stop_hour > 23) {
