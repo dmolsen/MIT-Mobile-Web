@@ -16,6 +16,7 @@ $static_pages = array(
   'requirements', 
   'credits',
   'new',
+  'homescreen'
 );
 
 
@@ -31,6 +32,7 @@ switch($_REQUEST['page']) {
   case "requirements":
   case "new":
   case "credits":
+  case "homescreen":
     require "$prefix/{$_REQUEST['page']}.html";
     $page->cache();
     $page->output();
