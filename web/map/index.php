@@ -17,6 +17,7 @@ class Categorys {
   public static $info = array(
     "names"        => array("Building name", "Building Names", "Buildings by Name", "Building"),
     "campus"       => array("Campus", "Building Names", "Buildings by Campus", "Building"),
+    "codes"        => array("Building code", "Building Codes", "Buildings by Code", "Building"),
     "athletics"    => array("Athletic Facility name", "Athletic Facility Names", "Athletic Facilities", "Athletic Facility"),
     "computer"     => array("Computer Lab name", "Computer Lab Names", "Computer Labs", "Computer Lab"),
 	"dining"       => array("Dining location", "Dining Location Names", "Dining Locations", "Dining"),
@@ -46,7 +47,7 @@ if(!isset($_REQUEST['category'])) {
 
 
   if(!isset($_REQUEST['drilldown'])) {
-    if($category=="names" || $category=="campus") {
+    if($category=="names" || $category=="campus" || $category=="codes") {
       require "$prefix/$category.html";
     } else {
 	  if ($category=="wifi") {
@@ -71,11 +72,20 @@ if(!isset($_REQUEST['category'])) {
 			$sql_substr = "name LIKE \"".$drilldown."%\"";
 	    }
 	    $places = getData("(type = 'Building' OR type='Housing' OR type='Library' OR type='PRT Station' OR type='Athletic Facility') and ".$sql_substr);
+        require "$prefix/drilldown.html";
     }    
     else if ($category=="campus") {
 		$places = getData("(type = 'Building' OR type='Housing' OR type='Library' OR type='PRT Station' OR type='Athletic Facility') and campus = '".$drilldown."'");
+	    require "$prefix/drilldown.html";
 	}
-    require "$prefix/drilldown.html";
+	else if ($category=="codes") {
+		$places = getData();
+		$stmt = $db->prepare("SELECT * FROM Buildings WHERE code LIKE \"".$drilldown."%\" GROUP BY code ORDER BY code ASC");
+        $stmt->execute();
+	    $places = $stmt->fetchAll();
+		require "$prefix/drilldown_codes.html";
+	}
+    
   }
 } 
 
@@ -141,7 +151,7 @@ function subSQLStrBuilder($drilldown) {
 }
 function getData($where=false) {
 	$db = db::$connection;
-        if ($where) {
+    if ($where) {
 		$stmt = $db->prepare("SELECT * FROM Buildings WHERE ".$where." GROUP BY name ORDER BY name ASC");
 	}
 	else {

@@ -20,7 +20,7 @@ $marker_types = array();
 $marker_types['Building'] = 'apartment';
 $marker_types['Parking'] = 'parking';
 $marker_types['Housing'] = 'home';
-$marker_types['Athletic Facility'] = '';
+$marker_types['Athletic Facility'] = 'track';
 $marker_types['Dining'] = 'restaurant';
 $marker_types['Health Sciences Center'] = 'apartment';
 $marker_types['PRT Station'] = 'train';
@@ -32,10 +32,10 @@ $marker_types['Health'] = 'doctor';
 $marker_types['Visitor'] = 'info';
 $marker_types['Children'] = 'playground';
 $marker_types['Student'] = 'clothes';
-$marker_types['Track'] = '';
+$marker_types['Track'] = 'track';
 $marker_types['Tennis'] = 'tennis';
 $marker_types['Football'] = 'rugby';
-$marker_types['Baseball'] = '';
+$marker_types['Baseball'] = 'baseball';
 $marker_types['Soccer'] = 'soccer';
 $marker_types['Basketball'] = 'basketball';
 $marker_types['Newspaper'] = 'text';
@@ -43,6 +43,9 @@ $marker_types['Art'] = 'theater';
 $marker_types['Green'] = 'flowers';
 $marker_types['Hospital'] = 'hospital';
 $marker_types['Admissions'] = 'university';
+$marker_types['Wrestling'] = 'wrestling';
+$marker_types['Gymnastics'] = 'gymnastics';
+$marker_types['Swimming'] = 'pool';
 
 $break = true;
 
@@ -55,9 +58,10 @@ $break = true;
        } else { 
           $marker_type = $marker_types[$data[0]['type']]; 
        } ?>
-		<h2><?=$data[0]['name']?> <img src="images/ip-markers/<?=$marker_type?>.png" height="20" width="17" alt="Marker" />  
+		<h2><?=$data[0]['name']?> <? if ($data[0]['code'] != '') { ?>(<?=$data[0]['code']?>)<? } ?> <img src="images/ip-markers/<?=$marker_type?>.png" height="20" width="17" alt="Marker" />  
 			  <? if ($data[0]['wifi'] == 'Y') { ?><img src="images/ip-markers/wifi.png" height="20" width="17" alt="WiFi" /><? } ?></h2>
 		<p class="address">
+			 On the <?=$data[0]['campus']?> Campus<br />
 		   <? if ($parent == true) { ?>Located inside the <a href="<?=detailURL($parent_data[0]['id'],$parent_data[0]['latitude'],$parent_data[0]['longitude'])?>"><?=$parent_data[0]['name']?></a><? } else { ?><?=$data[0]['physical_address']?> <? } ?>
 		   <? if ($data[0]['hours'] != '') { ?><br />Open <?=str_replace('"','',$data[0]['hours'])?><? } ?>
                    <? if ($data[0]['phone'] != '') { ?><br /><a href="tel:1<?=$data[0]['phone']?>"><?=$data[0]['phone']?></a><? $break = false; ?><? } ?>
