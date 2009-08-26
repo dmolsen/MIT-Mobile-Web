@@ -9,10 +9,10 @@
  */
 
 
-require "../../lib/ldap_services.php";
-require "../page_builder/page_header.php";
-require "../../config.gen.inc.php";
-
+require_once "../../lib/ldap_services.php";
+require_once "../page_builder/page_header.php";
+require_once "../../config.gen.inc.php";
+require_once "../../lib/db.php";
 
 if($search_terms = $_REQUEST["a"]) {
 } else {
@@ -28,13 +28,14 @@ if (isset($_REQUEST["username"])) {
    $person = html_escape_person($person);
    require "$prefix/sms/detail.html";
 } elseif ($search_terms) {
-
+  
+   $db = db::$connection;
    //search mit ldap directory
    if (preg_match("/(1|2|3|4|5)/",$search_terms)) {
         $selected = true;
 	$select = $search_terms - 1;
-    $db = db::$connection;
-	$stmt = $db->prepare("SELECT searchterm, timestamp FROM SMSDirectoryState WHERE uid = ? AND (350 + CAST(timestamp AS INT)) >= CAST(? AS INT) ORDER BY CAST(timestamp AS INT) DESC LIMIT 1");
+        #$db = db::$connection;
+	$stmt = $db->prepare("SELECT searchterm, timestamp FROM SMSDirState WHERE uid = ? AND (350 + CAST(timestamp AS INT)) >= CAST(? AS INT) ORDER BY CAST(timestamp AS INT) DESC LIMIT 1");
 
     if (db::$use_sqlite) {
         $stmt->bindParam(1, $uid, PDO::PARAM_STR, 12);
@@ -71,13 +72,14 @@ if (isset($_REQUEST["username"])) {
 	     require "$prefix/sms/detail.html";
 	   }
 	   else {
-		$db = db::$connection;
-		$stmt_1 = $db->prepare("INSERT INTO SMSDirectoryState (searchterm, timestamp, uid) values ( ?, ?, ?)");
+		#$db = db::$connection;
+                $stmt_1 = $db->prepare("INSERT INTO SMSDirState (searchterm,timestamp,uid) VALUES (?,?,?)");
+		#$stmt = $db->prepare("INSERT INTO SMSDirState (searchterm,timestamp,uid) VALUES (?,?,?)");
 	    if (db::$use_sqlite) {
-               $stmt_1->bindParam(1,$search_terms);
-               $stmt_1->bindParam(2,$rightNow);
-               $stmt_1->bindParam(3,$uid);
-	       $stmt_1->execute();
+               #$stmt_1->bindParam(1,$search_terms);
+               #$stmt_1->bindParam(2,$rightNow);
+               #$stmt_1->bindParam(3,$uid);
+	       $stmt_1->execute(array($search_terms,$rightNow,$uid));
 	    }
 	    else {
            $stmt_1->bind_param('sss', $search_terms, $rightNow, $uid);
