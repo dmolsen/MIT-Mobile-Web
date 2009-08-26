@@ -16,9 +16,7 @@ class PageViews {
   public static $time;
 
   private static $fields = array(
-    'home', 'people', 'map', 'shuttleschedule', 'calendar',
-    'stellar', 'careers', 'emergency', '3down',
-    'links', 'mobile_about',
+    'home', 'people', 'map', 'shuttleschedule', 'calendar', 'emergency', 'links', 'u92', 'athletics', 'youtube', 'news', 'sms', 'mobile_about',
   );
 
   private static $devices = array(
@@ -39,7 +37,7 @@ class PageViews {
       $device = Page::$phoneType;     
     }
 
-    $db->query("LOCK TABLE PageViews WRITE");
+    $db->execute("LOCK TABLE PageViews WRITE");
 
     $today = self::$today;
     $row = self::getDay($today);
@@ -47,13 +45,13 @@ class PageViews {
     if($row === NULL) {
       $content_cnt = 1;
       $device_cnt = 1;
-      $db->query("INSERT INTO PageViews (day) VALUES ('$today')");
+      $db->execute("INSERT INTO PageViews (day) VALUES ('$today')");
     }
     $current_cnt = $row[$content] + 1;
     $device_cnt = $row[$device] + 1;
 
-    $db->query("UPDATE PageViews SET $content={$current_cnt}, $device={$device_cnt} WHERE day='$today'");
-    $db->query("UNLOCK TABLE");
+    $db->execute("UPDATE PageViews SET $content=CAST({$current_cnt} AS INT), $device=CAST({$device_cnt} AS INT) WHERE day='$today'");
+    $db->execute("UNLOCK TABLE");
   }
 
   public static function init() {
@@ -63,7 +61,7 @@ class PageViews {
 
   private static function getDay($day) {
     $db = db::$connection;
-    $result = $db->query("SELECT * FROM PageViews WHERE day='$day'");
+    $result = $db->execute("SELECT * FROM PageViews WHERE day='$day'");
     if($row = $result->fetch()) {
       return $row;
     }
