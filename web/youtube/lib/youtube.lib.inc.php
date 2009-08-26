@@ -33,7 +33,7 @@ function printVideoEntry($videoEntry,$phone) {
   $updated = getdate(strtotime($videoEntry->getUpdated()->text)); 
 
   if ($phone == 'ip') {
-	 echo("<li style='height: 62px;'>");
+	 echo("<li style='xheight: 62px;'>");
   } else {
 	 echo("<p class='focal' style='height: 62px'>");
   }
