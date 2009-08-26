@@ -79,7 +79,7 @@ if(!isset($_REQUEST['category'])) {
 	    require "$prefix/drilldown.html";
 	}
 	else if ($category=="codes") {
-		$places = getData();
+		$db = db::$connection;
 		$stmt = $db->prepare("SELECT * FROM Buildings WHERE code LIKE \"".$drilldown."%\" GROUP BY code ORDER BY code ASC");
         $stmt->execute();
 	    $places = $stmt->fetchAll();
