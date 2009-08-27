@@ -42,7 +42,7 @@ $extra = array(
   i("3042935691", "Extension & Public Service"),
   i("3042935242", "Financial Aid"),
   i("3042934491", "Housing & Residence Life"),
-  i("3042917433", "Mountain Line Bus Service"), 
+  i("3042917433", "Mountain Line Bus Service"),
   i("3042937469", "Mountainlair Box Office"), 
   i("3042932264", "New Student Orientation"),
   i("3042936997", "News & Information Services"),
@@ -120,6 +120,9 @@ if($emergencies === False) {
 	    $paragraphs[] = htmlentities($paragraph);
 	  }
 	}
+        $article_c_timestamp = mktime($emergency['date']['hours'],$emergency['date']['minutes'],$emergency['date']['seconds'],$emergency['date']['mon'],$emergency['date']['mday'],$emergency['date']['year']);
+        $article_f_timestamp = mktime($emergency['date']['hours'],$emergency['date']['minutes'],$emergency['date']['seconds'],$emergency['date']['mon'],$emergency['date']['mday']+2,$emergency['date']['year']);
+        $current_timestamp = time();
         $date = short_date($emergency['date']);
   }
 

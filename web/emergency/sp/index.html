@@ -6,10 +6,12 @@ $page->content_begin();
 ?>
 
 	<p class="focal" id="statusmsg">
-             <? 
-                echo implode('<br /><br />', $paragraphs);
-             ?>
-             <? if ($date) { echo('<em>Posted: '.$date.'</em>'); } ?>
+             <? if ($article_f_timestamp > $current_timestamp) { ?>
+                <? echo implode('<br /><br />', $paragraphs); ?>
+                <? if ($date) { echo('<em>Posted: '.$date.'</em>'); } ?>
+             <? } else { ?>
+               There is currently no emergency on campus.
+             <? } ?>
 	</p>
 	
 	<p class="secondary">
