@@ -72,12 +72,13 @@ foreach($traffic as $device => $count) {
 $urls = array(
   'people' => 'People Directory',
   'map' => 'Campus Map',
-  'shuttleschedule' => 'Shuttle Schedule',
+  'shuttleschedule' => 'Mountain Line',
   'calendar' => 'Events Calendar',
-  'stellar' => 'Stellar',
-  'careers' => 'Student Career Services',
+  'gameday' => 'Athletics',
+  'radio' => 'U92',
   'emergency' => 'Emergency Info',
-  '3down' => '3DOWN',
+  'sms' => 'WVU SMS',
+  'youtube' => 'WVU on YouTube',
   'links' => 'Useful Links',
   'mobile-about' => 'About this Site',
 );
