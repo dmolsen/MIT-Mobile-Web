@@ -8,9 +8,9 @@
  * 
  */
 
-## NOTE THIS IS JUST A ONE-OFF TEST AND IS NOT MEANT FOR PRODUCTION USE ##
-
 require "../page_builder/page_header.php";
+require_once "../../lib/rss_services.php";
+require_once "../../config.gen.inc.php";
 
 if ($_REQUEST['page'] == 'radar') {
 	require "$prefix/radar.html";
