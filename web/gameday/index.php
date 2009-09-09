@@ -19,6 +19,7 @@ require "../calendar/lib/calendar_lib.php";
 $links = array(
 	array("teams.php","Teams",false,false),
 	array("../map/?category=athletics","Athletic Facilities",false,true),
+	array("../youtube/","Video Highlights",false,false),
 	array("http://mobile.msnsportsnet.com/","MSNsportsNET.com Mobile News",true,false),
 	array("https://www.ticketreturn.com/wvu/","Student Tickets",true,false),
 	array("http://mobile.msnsportsnet.com/page.cfm?section=6581", "Football Gameday FAQ (long)",true,false),
