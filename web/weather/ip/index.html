@@ -1,0 +1,46 @@
+<?php
+$page->title($inst_name.' Weather')
+     ->navbar_image('title-weather')
+     ->breadcrumbs('Weather')
+     ->breadcrumb_home();
+
+$page->content_begin();
+?>
+
+	<div class="nonfocal">
+		Weather details affecting the <?=$inst_name?> community.
+	</div>
+	
+	<? $alert = false; ?>
+	<? foreach($alerts as $title => $condition) { ?>
+	  <? if ($title != 'There are no active watches, warnings or advisories') { $alert = true; } ?>
+	<? } ?>
+	
+	<? if ($alert == true) { ?>
+		<ul class="nav" style="background-color: red; color: white;">
+	    <? foreach($alerts as $title => $condition) { ?>
+			  <li>
+	         <div><h3><?=$title?></h3><span class="smallprint"><?=full($condition)?> <? if ($condition['date']) { ?>(<?=short_date($condition['date'])?>)<? } ?></span></div>
+			  </li>
+			<? } ?>
+		</ul>
+	<? } ?>
+	
+	<ul class="nav">
+    <? foreach($conditions as $title => $condition) { ?>
+		  <li>
+         <div><h3>Current Conditions</h3><span class="smallprint"><?=$title?>. <?=full($condition)?> <? if ($condition['date']) { ?>(<?=short_date($condition['date'])?>)<? } ?></span></div>
+		  </li>
+		<? } ?>
+	</ul>
+	
+	<ul class="nav">
+		<li><a href="./?page=radar">Radar Image</a></li>
+	  <li><a href="./?page=forecast">5-day Forecast</a></li>
+  </ul>
+	
+	<ul class="secondary">
+			<li><a href="../emergency">Campus emergency information</a></li>	
+	</ul>
+	
+<? $page->content_end(); ?>
