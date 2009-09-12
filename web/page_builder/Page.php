@@ -134,7 +134,10 @@ class Page {
   private static $is_spider;
 
   public static function classify_phone() {
-    if($_SERVER['HTTP_USER_AGENT']) {      
+    if (preg_match('/(iPhone|iPod)/i',$_SERVER['HTTP_USER_AGENT'])) {
+      $type = 'iphone';
+    }
+    else if ($_SERVER['HTTP_USER_AGENT']) {      
       $type = file_get_contents("http://m.asdb-cluster.wvu.edu/wurfl/api?UserAgent=" . urlencode($_SERVER['HTTP_USER_AGENT']));
     } else {
       $type = "feature_phone";
