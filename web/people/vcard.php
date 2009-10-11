@@ -37,7 +37,7 @@ if (isset($_REQUEST["email"]) && isset($_REQUEST["username"])) {
 			$vc->data['last_name'] = $person["surname"][0];
 
 		    # Contact's company, department, title, profession
-			$vc->data['company'] = "West Virginia University";
+			$vc->data['company'] = $inst_name_full; # from config.gen.inc.php
 			$vc->data['department'] = $person["dept"][0];
 			$vc->data['title'] = $person["title"][0];
 
@@ -71,8 +71,8 @@ if (isset($_REQUEST["email"]) && isset($_REQUEST["username"])) {
 		    #Contact's email addresses
 			$vc->data['email1'] = $person["email"][0];
 
-			$result = send_email($_REQUEST['email'],"vCard from m.wvu.edu",$vc->attach());
-	                $send = true;
+			$result = send_email($_REQUEST['email'],"vCard from ".$inst_name." Directory",$vc->attach());
+	        $send = true;
         }
 	else {
 		$error = true;
@@ -111,7 +111,7 @@ function send_email($to,$subject,$attachment) {
 	$subject = "vCard for ";
         $attachment = chunk_split(base64_encode($attachment));
 	$random_hash = md5(date("r", time())); 
-	$headers = "From: web_services@mail.wvu.edu\r\nReply-To: web_services@mail.wvu.edu"; 
+	$headers = "From: ".$contact_addy."\r\nReply-To: ".$contact_addy; 
 	$headers .= "\nMIME-Version: 1.0";
         $headers .= "\nContent-Type: multipart/mixed; boundary=\"PHP-mixed-".$random_hash."\""; 
         $message = "This is a multi-part message in MIME format.
@@ -121,7 +121,7 @@ function send_email($to,$subject,$attachment) {
 Find attached the vCard you wanted.
 
 --PHP-mixed-".$random_hash."  
-Content-type: text/directory; name=\"wvu_vcard.vcf\"  
+Content-type: text/directory; name=\"vcard.vcf\"  
 Content-Transfer-Encoding: base64 
 Content-Disposition: attachment  
 

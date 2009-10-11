@@ -8,13 +8,15 @@
  * 
  */
 
+/* I may have just cheap copied this from the index and as such it might have a lot of extra code
+   that is not needed. Especially after line #90. Sorry. (dave o. Oct. 11, 2009) */
 
 require_once "../../lib/ldap_services.php";
 require_once "../page_builder/page_header.php";
 require_once "../../config.gen.inc.php";
 require_once "../../lib/db.php";
 
-if($search_terms = $_REQUEST["a"]) {
+if($search_terms = $_REQUEST["a"]) { # 'a' is a request var from TextMarks
 } else {
   $search_terms = "";
 }
@@ -30,29 +32,30 @@ if (isset($_REQUEST["username"])) {
 } elseif ($search_terms) {
   
    $db = db::$connection;
-   //search mit ldap directory
+   
+   # if a number comes back as a search term then a user had the option
+   # to select people from a list. find the person that corresponds to the number
    if (preg_match("/(1|2|3|4|5)/",$search_terms)) {
         $selected = true;
-	$select = $search_terms - 1;
-        #$db = db::$connection;
-	$stmt = $db->prepare("SELECT searchterm, timestamp FROM SMSDirState WHERE uid = ? AND (350 + CAST(timestamp AS INT)) >= CAST(? AS INT) ORDER BY CAST(timestamp AS INT) DESC LIMIT 1");
+		$select = $search_terms - 1;
+	    $stmt = $db->prepare("SELECT searchterm, timestamp FROM SMSDirState WHERE uid = ? AND (350 + CAST(timestamp AS INT)) >= CAST(? AS INT) ORDER BY CAST(timestamp AS INT) DESC LIMIT 1");
 
-    if (db::$use_sqlite) {
-        $stmt->bindParam(1, $uid, PDO::PARAM_STR, 12);
-        $stmt->bindParam(2, $rightNow, PDO::PARAM_STR, 12);
-		$stmt->execute();
-        $stmt->bindColumn(1,$search_terms);
-        $stmt->bindColumn(2,$timestamp);
-	}
-	else {
-		$stmt->bind_param('ss', $uid, $rightNow);
-	    $stmt->bind_result($search_terms);
-	    $stmt->execute();
-   }
-   if (!$stmt->fetch()) {
-      echo("no results returned.");
-      exit;
-   }
+    	if (db::$use_sqlite) {
+	        $stmt->bindParam(1, $uid, PDO::PARAM_STR, 12);
+	        $stmt->bindParam(2, $rightNow, PDO::PARAM_STR, 12);
+			$stmt->execute();
+	        $stmt->bindColumn(1,$search_terms);
+	        $stmt->bindColumn(2,$timestamp);
+		}
+		else {
+			$stmt->bind_param('ss', $uid, $rightNow);
+		    $stmt->bind_result($search_terms);
+		    $stmt->execute();
+	   }
+	   if (!$stmt->fetch()) {
+	        echo("no results returned.");
+	        exit;
+	   }
    }
    $people = mit_search($search_terms);
    $people = html_escape_people($people);
@@ -66,35 +69,26 @@ if (isset($_REQUEST["username"])) {
        $person = $people[0];
        require "$prefix/sms/detail.html";
    } else {
-	
 	   if ($selected == true) {
 		 $person = $people[(int)$select];
 	     require "$prefix/sms/detail.html";
 	   }
 	   else {
-		#$db = db::$connection;
-                $stmt_1 = $db->prepare("INSERT INTO SMSDirState (searchterm,timestamp,uid) VALUES (?,?,?)");
-		#$stmt = $db->prepare("INSERT INTO SMSDirState (searchterm,timestamp,uid) VALUES (?,?,?)");
-	    if (db::$use_sqlite) {
-               #$stmt_1->bindParam(1,$search_terms);
-               #$stmt_1->bindParam(2,$rightNow);
-               #$stmt_1->bindParam(3,$uid);
+         $stmt_1 = $db->prepare("INSERT INTO SMSDirState (searchterm,timestamp,uid) VALUES (?,?,?)");
+	     if (db::$use_sqlite) {
 	       $stmt_1->execute(array($search_terms,$rightNow,$uid));
-	    }
-	    else {
+	     }
+	     else {
            $stmt_1->bind_param('sss', $search_terms, $rightNow, $uid);
 	       $stmt_1->execute();
-	    }
-
-	    require "$prefix/sms/results.html";
-	   } 
+	     }
+	     require "$prefix/sms/results.html";
+	  } 
    }
 } else {
    $page->cache();
    require "$prefix/sms/index.html";
 }
-
-#$page->output();
 
 function detail_url($person) {
     return $_SERVER['SCRIPT_NAME'] . '?username=' . urlencode($person["id"]) . '&filter=' . urlencode($_REQUEST['filter']);

@@ -83,7 +83,7 @@ class vcard {
   	$this->card = "BEGIN:VCARD\r\n";
     $this->card .= "VERSION:3.0\r\n";
     #$this->card .= "CLASS:".$this->class."\r\n";
-    $this->card .= "PRODID:-//vcard from wvu.edu//NONSGML Version 1//EN\r\n";
+    $this->card .= "PRODID:-//vcard from university//NONSGML Version 1//EN\r\n";
     $this->card .= "REV:".$this->revision_date."\r\n";
   	$this->card .= "FN:".$this->data['display_name']."\r\n";
     $this->card .= "N:"
