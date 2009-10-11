@@ -8,7 +8,7 @@ $page->content_begin();
       <p class="nav">
            1. Useful Links Home<br/>
            <? foreach($links as $index => $item) { ?>
-                  <a href="http://<?=$item['link']?>" accesskey="<?=$index+2?>"><?=$index+2?>. <?=$item['name']?></a><br/>
+                  <a href="http://<?=$item['link']?>" accesskey="<?=$index+2?>" onClick="javascript: pageTracker._trackPageview('/outgoing/links/<?=$item['link']?>');"><?=$index+2?>. <?=$item['name']?></a><br/>
            <? } ?>
       </p>
 
