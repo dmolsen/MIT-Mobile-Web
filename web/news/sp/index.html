@@ -32,8 +32,10 @@ $page->content_begin();
 			    <a href="./?news=<?=$key?>">News from <? if ($news_src['need_the'] == true) { ?>the<? } ?> <?=$news_src['title']?></a><br/>
 			  <? } ?>
 		<? } ?>
-                <a href="http://www.thedaonline.com/">News from the Daily Athenaeum</a> (full site)<br />
-                <a href="http://mobile.msnsportsnet.com/">News from MSNsportsNet.com</a>
+		<? foreach ($news_links as $key => $news_link) { ?>
+			<? $outgoing = str_replace('http://','',$news_link['url']); ?>
+			<a href="<?=$news_link['url']?>" onClick="javascript: pageTracker._trackPageview('/outgoing/news/<?=$key?>/<?=$outgoing?>');">News from <? if ($news_link['need_the'] == true) { ?>the<? } ?> <?=$news_link['title']?></a><br />
+		<? } ?>
 	</p>
 <?
 $page->content_end();

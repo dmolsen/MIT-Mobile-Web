@@ -13,7 +13,8 @@ $page->content_begin();
 		               <p><?=$paragraph?></p>
                 <? } ?>
     <? if ($read_more) { ?>
-    <p><a href="<?=$link?>">Read more on the <?=$section?> site...</a></p>
+	  <? $outgoing = str_replace('http://','',$link); ?>
+    <p><a href="<?=$link?>" onClick="javascript: pageTracker._trackPageview('/outgoing/news/<?=$_REQUEST['src']?>/<?=$outgoing?>');">Read more on the <?=$section?> site...</a></p>
 	  <? } ?>
 	 
 		<p class="smallprint"><?=$long_date?></p>

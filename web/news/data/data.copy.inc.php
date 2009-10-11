@@ -23,4 +23,6 @@
 $news_srcs = array();
 $news_srcs["pao"] = array("title" => "PAO Office", "url" => "http://pao.inst.edu/rss/", "need_the" => false, "read_more" => true);
 
+$news_links["og"] = array("title" => "Ext News Src", "url" => "http://athletics.inst.edu/", "need_the" => false);
+
 ?>

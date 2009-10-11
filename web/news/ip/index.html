@@ -37,10 +37,11 @@ $page->content_begin();
 		  <? } else { ?>
 		    <li><a href="./?news=<?=$key?>">News from <? if ($news_src['need_the'] == true) { ?>the<? } ?> <?=$news_src['title']?></a></li>
 		  <? } ?>
-	<? } ?>
-              <li><a class="external" href="http://www.thedaonline.com/">News from the Daily Athenaeum</a></li>
-	      <li><a class="external" href="http://mobile.msnsportsnet.com/">News from MSNsportsNET.com</a></li>
-        </ul>
+	  <? } ?>
+	  <? foreach ($news_links as $key => $news_link) { ?>
+			<li><a class="external" href="<?=$news_link['url']?>" onClick="javascript: pageTracker._trackPageview('/outgoing/news/<?=$key?>/<?=$outgoing?>');">News from <? if ($news_link['need_the'] == true) { ?>the<? } ?> <?=$news_link['title']?></a></li>
+		<? } ?>            
+  </ul>
 	
 	<ul class="secondary">
 			<li><a href="../emergency">Campus emergency information</a></li>	
