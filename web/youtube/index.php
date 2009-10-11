@@ -1,6 +1,6 @@
 <?php
 /**
- * Copyright (c) 2008 Massachusetts Institute of Technology
+ * Copyright (c) 2009 West Virginia University
  * 
  * Licensed under the MIT License
  * Redistributions of files must retain the above copyright notice.
@@ -10,12 +10,14 @@
 
 require "../page_builder/page_header.php";
 
-//defines all the variables related to being today
-require "lib/youtube.lib.inc.php";
-
 //various copy includes
 require_once "../../config.gen.inc.php";
+
+// data include
 require_once "data/data.inc.php";
+
+//defines all the variables related to being today
+require "lib/youtube.lib.inc.php";
 
 if ((int)$_REQUEST['page'] != 0) {
   $prev = $_REQUEST['page'] - 1;
@@ -31,7 +33,7 @@ $yt = new Zend_Gdata_YouTube();
 $yt->setMajorProtocolVersion(2);
 $query = $yt->newVideoQuery();
 $query->setMaxResults(5);
-$query->setAuthor('westvirginiau');
+$query->setAuthor($youtube_user);
 $query->setOrderBy('updated');
 $query->setStartIndex($index);
 $uploads = $yt->getVideoFeed($query);
