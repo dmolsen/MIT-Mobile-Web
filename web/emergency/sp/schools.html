@@ -8,7 +8,7 @@ $page->content_begin();
 	
 	<div class="focal">
             <? foreach($schools as $item) { ?>
-                <p><a href="tel:1<?=$item->call_number()?>" class="phone"><?=$item->label()?></a> <span class="smallprint"> (<?=$item->message_text()?><?=$item->number_text()?>)</span></p>
+                <p><a href="tel:1<?=$item->call_number()?>" class="phone" onClick="javascript: pageTracker._trackPageview('/outgoing/phone/emergency/schools/<?=$item->label()?>');"><?=$item->label()?></a> <span class="smallprint"> (<?=$item->message_text()?><?=$item->number_text()?>)</span></p>
             <? } ?>
 	</div>
 <?

@@ -7,10 +7,14 @@ $page->content_begin();
 	<h2>General Phone Numbers</h2>
 	
 	<div class="focal">
-		        <p><a href="<?=residencesURL()?>">Residence Halls</a></p>
-		        <p><a href="<?=schoolsURL()?>">Schools &amp; Colleges</a></p>
+		<? if ($show_res == true) { ?>
+			<p><a href="<?=residencesURL()?>">Residence Halls</a></p>
+		<? } ?>
+    <? if ($show_schools == true) { ?>
+			<p><a href="<?=schoolsURL()?>">Schools &amp; Colleges</a></p>
+    <? } ?>
             <? foreach($extra as $item) { ?>
-                <p><a href="tel:1<?=$item->call_number()?>" class="phone"><?=$item->label()?></a> <span class="smallprint"> (<?=$item->message_text()?><?=$item->number_text()?>)</span></p>
+                <p><a href="tel:1<?=$item->call_number()?>" class="phone" onClick="javascript: pageTracker._trackPageview('/outgoing/phone/emergency/extra/<?=$item->label()?>');"><?=$item->label()?></a> <span class="smallprint"> (<?=$item->message_text()?><?=$item->number_text()?>)</span></p>
             <? } ?>
 	</div>
 <?

@@ -5,6 +5,7 @@ $page->title($inst_name." Emergency Info")
 $page->content_begin();
 ?>
 
+  <? if ($show_rss == true) { ?>
 	<p class="focal" id="statusmsg">
              <? if ($article_f_timestamp > $current_timestamp) { ?>
                 <? echo implode('<br /><br />', $paragraphs); ?>
@@ -13,13 +14,16 @@ $page->content_begin();
                There is currently no emergency on campus.
              <? } ?>
 	</p>
+	<? } ?>
 	
 	<p class="secondary">
             <? foreach($main as $item) { ?>
 		<a href="tel:1<?=$item->call_number()?>" class="phone"><?=$item->label()?></a> <span class="smallprint"> (<?=$item->message_text()?><?=$item->number_text()?>)</span><br/>
             <? } ?>
 		<a href="<?=contactsURL()?>">More Emergency Contacts</a><br/>
+		<? if ($show_extra == true) { ?>
 		<a href="<?=extraURL()?>">More General Phone Numbers</a><br/>
+		<? } ?>
 	</p>
 
 <? $page->content_end() ?>
