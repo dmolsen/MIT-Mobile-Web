@@ -13,26 +13,17 @@ require_once "../../lib/rss_services.php";
 require_once "../../config.gen.inc.php";
 require_once "data/data.inc.php";
 
-// dynamic pages need to include dynamics scripts
-switch($_REQUEST['news']) {
-
-  // hard coding the cases. i probably should not be using a switch
-  case "wvutoday":
-  case "hsc":
-  case "da":
-  case "oit":
-    $rss_url = $news_srcs[$_REQUEST['news']]['url'];
+if (in_array($_REQUEST['news'], $news_srcs)) {
+	$rss_url = $news_srcs[$_REQUEST['news']]['url'];
     $section = $news_srcs[$_REQUEST['news']]['title'];
     $key = $_REQUEST['news'];
     $shared = true;
-    break;
-
-  default:
-    $rss_url = $news_srcs['wvutoday']['url'];
-    $section = $news_srcs['wvutoday']['title'];
-    $key = 'wvutoday';
+}
+else {
+	$key = key($news_srcs);
+	$rss_url = $news_srcs[$key]['url'];
+    $section = $news_srcs[$key]['title'];
     $shared = false;
- 
 }
 
 $News = new RSS();
