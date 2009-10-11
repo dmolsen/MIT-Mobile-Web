@@ -5,7 +5,7 @@ $page->title($inst_name." Athletics")
 $page->content_begin();
 ?>
 			<div class="focal">
-			   	<a href="tel:13042933267" class="phone">Football Game Day FANLINE</a> <span class="smallprint">(304.293.3267)</span><br/>
+			   	<a href="tel:13042933267" class="phone" onClick="javascript: pageTracker._trackPageview('/outgoing/gameday/fanline/');">Football Game Day FANLINE</a> <span class="smallprint">(304.293.3267)</span><br/>
 		</div>
    <br />
 			<div class="focal">
@@ -17,7 +17,11 @@ $page->content_begin();
 			
       <p class="nav">
            <? foreach($links as $item) { ?>
-              <a href="<?=$item[0]?>"> <?=$item[1]?></a><br/>
+							<? $external = ''; ?>
+							<? if ($item[2] == true) { ?>
+								<? $external = "onClick=\"javascript: pageTracker._trackPageview('/outgoing/gameday/links/".item[1]."');\" "; ?>
+							<? } ?>
+              <a href="<?=$item[0]?>" <?=$external?>> <?=$item[1]?></a><br/>
            <? } ?>
       </p>
 
