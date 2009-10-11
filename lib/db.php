@@ -15,7 +15,7 @@ class db {
   public static $connection   = NULL;
 
   /* SQLite Config */
-  private static $sqlite_path = "/apache/htdocs/MIT-Mobile-Web/db/development.sqlite3"; # file system path to your SQLite database
+  private static $sqlite_path = "/path/to/install/db/development.sqlite3"; # file system path to your SQLite database
 
   /* MySQL Config Info */
   private static $host        = 'localhost';
