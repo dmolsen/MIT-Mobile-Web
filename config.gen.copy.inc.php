@@ -12,12 +12,12 @@
 
 /* Technical Info */
 $install_dir       = "/path/to/install/";         # the directory mobile web has been installed in, trailing slash is required
-$ga_code		   = "UA-8296934-34";			  # Google Analytics Code
+$ga_code		   = "";			  			  # Google Analytics Code
 
 /* Institution & Org Info */
 $inst_name         = "HEU";                       # name of educational institution. highly recommend an acronym.
 $inst_name_full    = "Higher Ed University";      # full name of education institution
-$org_name          = "Higher Ed Tech Office";     # name of organization supporting this instance of mobile web (shows in footer)
+$org_name          = "Higher Ed U Tech Office";   # name of organization supporting this instance of mobile web (shows in footer)
 
 /* Misc. Copy Configuration (where "copy" means text) */
 $contact_addy      = "mobile@mail.inst.edu";      # email address to contact w/ questions

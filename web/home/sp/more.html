@@ -10,7 +10,7 @@
 <body>
 
 <h2 id="header">
-<!--<img src="../<?=$phone?>/images/<?=$non_ip_icon?>" width="<?=$width?>" height="<?=$height?>" />--><?=$inst_name?> Mobile Web
+<?=$inst_name?> Mobile Web
 </h2>
 
 <p class="bb"> </p>
@@ -37,15 +37,17 @@
 	Managed by <?= $org_name ?>
 </p>
 
-<script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-</script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-8296934-34");
-pageTracker._trackPageview();
-} catch(err) {}</script>
+<? if ($ga_code != '') { ?>
+	<script type="text/javascript">
+	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+	try {
+	  var pageTracker = _gat._getTracker("<?=$ga_code?>");
+	  pageTracker._trackPageview();
+	} catch(err) {}</script>
+<? } ?>
 
 </body>
 </html>
