@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+<head>
+  <title>Mobile Web | Down for maintenance</title>	
+  <style type="text/css" media="screen">
+* {
+ margin: 0;
+ padding: 0;
+}
+
+body {
+	color: #333;
+	font: normal 76% Lucida Grande, Helvetica, Verdana, sans-serif;
+}
+
+#content {
+	width: 550px;
+	padding: 0 3em;
+	margin: 0 auto;
+}
+
+#content {
+	padding: 3em;
+}
+
+#header {
+ background: #3A74B6;
+ xpadding: 1em 2.6em 0 2.6em;
+ height: 70px;
+}
+
+h1 {
+ display: none;
+ color: #fff;
+ font: italic 2.5em Georgia,Palatino Linotype,Trebuchet MS,serif;
+}
+
+p {
+	padding: 0.5em;
+	line-height: 1.5em;
+	color: #555;
+}
+
+p.message {
+	margin: 1.5em 0;
+	padding: 1.5em 0.5em;
+	border: solid 1px #ccc;
+	border-width: 1px 0;
+}
+
+sup {
+	color: #999;
+	font-size: 0.75em;
+}
+
+p.message sup {
+	font-size: 0.5em;
+}
+
+p span {
+	background-color: #ffffce;
+}
+
+h2 {
+	font-size: 2.5em;
+}
+	
+  </style>
+</head>
+
+<body>
+  <div id="container">
+  	<div id="header">
+  		<h1>Mobile Web</h1>	
+  	</div>
+
+    <div id="content">
+	    <h2>Scheduled downtime</h2>
+    	<p class="message" style="font-size: 1.5em;">
+	      We're busy refreshing the Mobile Web website.
+	      
+        We're performing an upgrade on the server.  We started at 
+        6:30pm EST on Friday, August 17, 2007 and should be done by 
+        8:30pm (possibly earlier).
+	      
+      </p>
+
+    </div>
+  </div>
+</body>
+</html>
