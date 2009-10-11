@@ -4,17 +4,17 @@
 <head>
 	<meta http-equiv="content-type" content="application/xhtml+xml" />
 	<meta name="viewport" id="viewport" content="width=device-width, user-scalable=yes">		
-	<title>m.wvu.edu</title>
+	<title><?=$mobile_web_addy?></title>
 	<link rel="stylesheet" type="text/css" href="../ip/ip.css" />
- 	<link rel="apple-touch-icon" href="../ip/images/<?=$ip_bookmark_icon?>" />
+ 	<link rel="apple-touch-icon" href="../ip/images/<?=$homescreen_icon?>" />
 	<script type="text/javascript">
 	var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
 	document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
 	</script>
 	<script type="text/javascript">
 	try {
-	var pageTracker = _gat._getTracker("UA-8296934-34");
-	pageTracker._trackPageview();
+	  var pageTracker = _gat._getTracker("<?=$ga_code?>");
+	  pageTracker._trackPageview();
 	} catch(err) {}</script>
 	<style type="text/css">
 		#homegrid {
@@ -74,7 +74,7 @@
 
 <body onload="scrollTo(0,1);">
 
-<h1><!--<img src="ip/images/<?=$ip_home_icon?>" width="56" height="28" alt="" id="<?=$inst_name?> logo" />--><?= $inst_name ?> Mobile Web</h1>
+<h1><?= $inst_name ?> Mobile Web</h1>
 
 <div id="container">
 
@@ -101,7 +101,7 @@
 		<tr>	
 			<td><a href="../mobile-about/"><img src="ip/images/about-wvu.png" width="50" height="50" alt="About" /><br/>About this Site</a></td>
 			<td><a href="http://<?=$main_site_addy?>"><img src="ip/images/wvuedu.png" width="50" height="50" alt="<?=$main_site_addy?>" /><br/>Full <?=$inst_name?> Website</a></td>
-			<td><a href="../mobile-about/?page=homescreen"><img src="ip/images/homescreen.png" width="50" height="50" alt="Bookmark m.wvu.edu" /><br/>Bookmark<br />m.wvu.edu</a></td>
+			<td><a href="../mobile-about/?page=homescreen"><img src="ip/images/homescreen.png" width="50" height="50" alt="Bookmark <?=$mobile_web_addy?>" /><br/>Bookmark<br /><?=$mobile_web_addy?></a></td>
 		</tr>
 	</table>
 			

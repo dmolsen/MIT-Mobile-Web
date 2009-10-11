@@ -12,6 +12,7 @@
 
 /* Technical Info */
 $install_dir       = "/path/to/install/";         # the directory mobile web has been installed in, trailing slash is required
+$ga_code		   = "UA-8296934-34";			  # Google Analytics Code
 
 /* Institution & Org Info */
 $inst_name         = "HEU";                       # name of educational institution. highly recommend an acronym.
@@ -32,8 +33,8 @@ $dir_search_va_num = "304.293.0000";              # number for voice-assisted di
 $dir_search_samp_l = "3042930000";                # long phone number example for directory search
 $dir_search_samp_s = "30000";                     # short phone number example for directory search, leave empty if you don't want to use it
 
-/* Shared Graphics Info */
-$ip_bookmark_icon  = "icon.png";      # bookmark graphic for iPhone. should be in web/ip/images
-$homelink_icon     = "homelink.png";  # homelink breadcrumb graphic for iPhone. should be in web/ip/images
+/* Shared iPhone Graphics Info */
+$homescreen_icon   = "icon.png";      		   	  # bookmark graphic for iPhone homescreen. should be in web/ip/images
+$homelink_icon	   = "homelink.png"; 			  # homelink breadcrumb graphic for iPhone. should be in web/ip/images
 
 ?>
