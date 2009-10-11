@@ -38,7 +38,8 @@ function printVideoEntry($videoEntry,$phone) {
 	 echo("<p class='focal' style='height: 62px'>");
   }
   
-  echo("<a href='".$videoEntry->getVideoWatchPageUrl()."' class='youtube'><img src='".$videoThumbnails[1]['url']."' hspace=6 height=60 width=80 align=left alt='YouTube Video Thumbnail'>".$videoEntry->getVideoTitle());
+  $outgoing = urlencode($videoEntry->getVideoTitle());
+  echo("<a href='".$videoEntry->getVideoWatchPageUrl()."' class='youtube' onClick='javascript: pageTracker._trackPageview(\"/outgoing/youtube/<?=$key?>/<?=$outgoing?>\");'><img src='".$videoThumbnails[1]['url']."' hspace=6 height=60 width=80 align=left alt='YouTube Video Thumbnail'>".$videoEntry->getVideoTitle());
 
   if ($phone == 'ip')
     echo("<span class='smallprint'><br />".$mins.":".$secs." mins. | ".substr($updated['month'],0,3)." ".$updated['mday']." ".$updated['year']."</a>");
