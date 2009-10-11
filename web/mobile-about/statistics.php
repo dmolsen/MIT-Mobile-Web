@@ -75,12 +75,13 @@ $urls = array(
   'shuttleschedule' => 'Mountain Line',
   'calendar' => 'Events Calendar',
   'gameday' => 'Athletics',
-  'radio' => 'U92',
+  'radio' => 'Radio',
   'emergency' => 'Emergency Info',
-  'sms' => 'WVU SMS',
-  'youtube' => 'WVU on YouTube',
+  'sms' => 'SMS',
+  'youtube' => 'YouTube',
   'links' => 'Useful Links',
   'mobile-about' => 'About this Site',
+  'news' => 'Campus News',
 );
 
 $popular_pages = array();
@@ -107,7 +108,7 @@ function compare_content($content1, $content2) {
   return 0;
 }
 usort($popular_pages, 'compare_content');
-$popular_pages = array_slice($popular_pages, 0, 5);
+$popular_pages = array_slice($popular_pages, 0, 10);
 
 $start_time = PageViews::$time - 7 * 24 * 60 * 60;
 $end_time = PageViews::$time - 1 * 24 * 60 * 60;

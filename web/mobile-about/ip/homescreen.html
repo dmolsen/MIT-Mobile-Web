@@ -1,18 +1,18 @@
 <?php
-$page->title('About the '.$inst_name.' Mobile Web: Bookmark m.wvu.edu')
+$page->title('About the '.$inst_name.' Mobile Web: Bookmark '.$mobile_web_addy)
      ->navbar_image('title-about')
-     ->breadcrumbs('Bookmark m.w.wvu');
+     ->breadcrumbs('Bookmark '.$mobile_web_addy);
 
 $page->content_begin();
 ?>
 
 <div class="focal">
 	  <p>
-			To bookmark m.wvu.edu and add it to your iPhone's or iPod Touch's home screen do the following.
+			To bookmark <?=$mobile_web_addy?> and add it to your iPhone's or iPod Touch's home screen do the following.
 		</p>
     <p>
         <strong>Step 1:</strong><br />
-        Click the plus (+) button at the bottom of the main m.wvu.edu home page. It should look like this:<br />
+        Click the plus (+) button at the bottom of the main <?=$mobile_web_addy?> home page. It should look like this:<br />
         <center><img src="../ip/images/homescreen-step1.png"></center>
     </p>
     <p>
@@ -27,7 +27,7 @@ $page->content_begin();
     </p>
     <p>
         <strong>Congratulations!</strong><br />
-        You've just added m.wvu.edu to your iPhone's or iPod Touch's home screen for easy access in the future.
+        You've just added <?=$mobile_web_addy?> to your iPhone's or iPod Touch's home screen for easy access in the future.
     </p>
 </div>
 
