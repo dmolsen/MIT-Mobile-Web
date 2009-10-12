@@ -37,7 +37,7 @@ $items["nav7"]  = array(true,true,$inst_name.' on YouTube','youtube','','youtube
 # iphone only sections
 $items["nav8"]  = array(true,false,'About this Site','mobile-about','','about-wvu.png',false,'');
 $items["nav9"]  = array(true,false,'Full '.$inst_name.' Website','','','wvuedu.png',true,'http://'.$main_site_addy.'/');
-$items["nav10"] = array(true,false,'Bookmark<br /><?=$mobile_web_addy?>','mobile-about','?page=homescreen','homescreen.png',false,'');
+$items["nav10"] = array(true,false,'Bookmark<br />Mobi','mobile-about','?page=homescreen','homescreen.png',false,'');
 
 # hidden sections
 $items["nav11"] = array(false,false,$inst_name.' SMS<br />(BETA)','sms','','sms.png',false,'');
