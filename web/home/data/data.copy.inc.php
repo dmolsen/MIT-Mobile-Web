@@ -32,15 +32,15 @@ $items["nav3"]  = array(true,true,'Campus Map','map','','map.png',false,'');
 $items["nav4"]  = array(true,true,'Campus News','news','','rss.png',false,'');
 $items["nav5"]  = array(true,true,'Links','links','','links.png',false,'');
 $items["nav6"]  = array(true,true,'People Directory','people','','people.png',false,'');
-$items["nav7"]  = array(true,true,'<?=$inst_name?> on YouTube','youtube','','youtube.png',false,'');
+$items["nav7"]  = array(true,true,$inst_name.' on YouTube','youtube','','youtube.png',false,'');
 
 # iphone only sections
 $items["nav8"]  = array(true,false,'About this Site','mobile-about','','about-wvu.png',false,'');
-$items["nav9"]  = array(true,false,'Full <?=$inst_name?> Website','','','wvuedu.png',true,'http://<?=$main_site_addy?>');
+$items["nav9"]  = array(true,false,'Full '.$inst_name.' Website','','','wvuedu.png',true,'http://'.$main_site_addy.'/');
 $items["nav10"] = array(true,false,'Bookmark<br /><?=$mobile_web_addy?>','mobile-about','?page=homescreen','homescreen.png',false,'');
 
 # hidden sections
-$items["nav11"] = array(false,false,'<?=$inst_name?> SMS<br />(BETA)','sms','','sms.png',false,'');
+$items["nav11"] = array(false,false,$inst_name.' SMS<br />(BETA)','sms','','sms.png',false,'');
 $items["nav12"] = array(false,false,'Athletics','gameday','','gameday.png',false,'');
 $items["nav13"] = array(false,false,'Hours','hours','','hours.png',false,'');
 $items["nav14"] = array(false,false,'Campus Radio','radio','','u92.png',false,'');
