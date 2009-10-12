@@ -93,17 +93,18 @@
 					<td><a href="<?=$item[7]?>" onClick="javascript: pageTracker._trackPageview('/outgoing/home/<?=$item[2]?>');"><img src="ip/images/<?=$item[5]?>" width="50" height="50" alt="<?=str_replace('<br />',' ',$item[2])?>" /><br /><?=$item[2]?></a></td>
 				<? } else { ?>
 					<td><a href="../<?=$item[3]?>/<?=$item[4]?>"><img src="ip/images/<?=$item[5]?>" width="50" height="50" alt="<?=str_replace('<br />',' ',$item[2])?>" /><br /><?=$item[2]?></a></td>
-			<? } ?>
-			<? $i++; ?>
-			<? $k++; ?>
-			<? if ($j == $k) { ?>
-				<? while ($i < 4) ?>
-					<td></td>
-					<? $i++; ?>
 				<? } ?>
-			<? } ?>
-			<? if ($i == 4) { ?>
-				</tr>
+				<? $i++; ?>
+				<? $k++; ?>
+				<? if ($j == $k) { ?>
+					<? while ($i < 4) { ?>
+						<td></td>
+						<? $i++; ?>
+					<? } ?>
+				<? } ?>
+				<? if ($i == 4) { ?>
+					</tr>
+				<? } ?>
 			<? } ?>
 		<? } ?>
 	</table>
