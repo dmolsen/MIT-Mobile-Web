@@ -79,34 +79,19 @@
 <h1><?= $inst_name ?> Mobile Web</h1>
 
 <div id="container">
-
-	<table cellpadding="0" cellspacing="0" border="0" id="homegrid">
-		<tr>
-			<td><a href="../emergency/"><img src="ip/images/emergency.png" width="50" height="50" alt="Emergency Info" /><br/>Emergency Info</a></td>
-			<td><a href="../map/"><img src="ip/images/map.png" width="50" height="50" alt="Campus Map" /><br/>Campus Map</a></td>
-			<!--<td><a href="../shuttleschedule/"><img src="ip/images/shuttletrack.png" width="50" height="50" alt="Mountain Line Schedule" /><br/>Mountain<br />Line</a></td>-->
-			<td><a href="../calendar/"><img src="ip/images/calendar.png" width="50" height="50" alt="Events Calendar" /><br/>Events Calendar</a></td>
-			<td><a href="../people/"><img src="ip/images/people.png" width="50" height="50" alt="People Directory" /><br/>People Directory</a></td>
-		</tr>
-		<tr>
-			<td><a href="../news/"><img src="ip/images/rss.png" width="50" height="50" alt="News" /><br/>Campus News</a></td>
-			<td><a href="../sms/"><img src="ip/images/sms.png" width="50" height="50" alt="Shuttle Schedule" /><br/>WVU SMS<br />(BETA)</a></td>
-			<td><a href="../youtube/"><img src="ip/images/youtube.png" width="50" height="50" alt="WVU on YouTube" /><br/>WVU on<br />YouTube</a></td>
-			<td><a href="http://itunes.apple.com/WebObjects/MZStore.woa/wa/viewSoftware?id=325958194&mt=8"><img src="ip/images/iwvu.png" width="50" height="50" alt="<?=$main_site_addy?>" /><br/>iPhone<br />App</a></td>
-		</tr>
-		<tr>
-			<td><a href="../gameday/"><img src="ip/images/gameday.png" width="50" height="50" alt="Athletics" /><br/>Athletics</a></td>
-			<td><a href="../hours/"><img src="ip/images/hours.png" width="50" height="50" alt="Hours" /><br/>Hours</a></td>
-			<td><a href="../links/"><img src="ip/images/links.png" width="50" height="50" alt="Links" /><br/>Links</a></td>
-			<td><a href="../radio/"><img src="ip/images/u92.png" width="50" height="50" alt="U92" /><br/>U92</a></td>
-		</tr>
-		<tr>	
-			<td><a href="../mobile-about/"><img src="ip/images/about-wvu.png" width="50" height="50" alt="About" /><br/>About this Site</a></td>
-			<td><a href="http://<?=$main_site_addy?>"><img src="ip/images/wvuedu.png" width="50" height="50" alt="<?=$main_site_addy?>" /><br/>Full <?=$inst_name?> Website</a></td>
-			<td><a href="../mobile-about/?page=homescreen"><img src="ip/images/homescreen.png" width="50" height="50" alt="Bookmark <?=$mobile_web_addy?>" /><br/>Bookmark<br /><?=$mobile_web_addy?></a></td>
-		</tr>
-	</table>
-			
+  <ul class="ip_home">
+	  <? foreach ($items as $item) { ?>
+			<? if ($item[0] == true) { ?>
+				<li>
+					<? if ($item[6] == true) { ?> 
+						<a href="<?=$item[7]?>" onClick="javascript: pageTracker._trackPageview('/outgoing/home/<?=$item[2]?>');"><img src="ip/images/<?=$item[5]?>" width="50" height="50" alt="<?=str_replace('<br />',' ',$item[2])?>" /><br /><?=$item[2]?></a>
+					<? } else { ?>
+						<a href="../<?=$item[3]?>/<?=$item[4]?>"><img src="ip/images/<?=$item[5]?>" width="50" height="50" alt="<?=str_replace('<br />',' ',$item[2])?>" /><br /><?=$item[2]?></a>
+					<? } ?>
+				</li>
+			<? } ?>
+		<? } ?>
+	</ul>
 </div>
 
 <div id="footer">

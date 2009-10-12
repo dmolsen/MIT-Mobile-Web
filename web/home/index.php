@@ -11,6 +11,7 @@
 require "../page_builder/Page.php";
 require "../page_builder/counter.php";
 require "../../config.gen.inc.php";
+require "data/data.inc.php";
 
 $phone = Page::classify_phone();
 $prefix = Page::$requireTable[$phone];
