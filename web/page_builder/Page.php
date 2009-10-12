@@ -134,7 +134,7 @@ class Page {
   private static $is_spider;
 
   public static function classify_phone() {
-	$user_agent = $_SERVER['HTTP_USER_AGENT']
+	$user_agent = $_SERVER['HTTP_USER_AGENT'];
 	if (eregi('ipod',$user_agent) || eregi('iphone',$user_agent)) {
 		$type = 'iphone';
 	} 
