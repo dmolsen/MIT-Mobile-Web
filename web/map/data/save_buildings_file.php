@@ -3,6 +3,10 @@
 require_once "../../../lib/db.php";
 											
 $db = db::$connection;
+
+$stmtd = $db->prepare("DELETE FROM Buildings");
+$stmtd->execute();
+
 $stmt = $db->prepare("INSERT INTO Buildings (name,latitude,longitude,physical_address,type,subtype,code,parent,wifi,phone,website,hours,campus) values (?,?,?,?,?,?,?,?,?,?,?,?,?)");
 
 $filename = "buildings.txt";
