@@ -13,7 +13,7 @@ require_once "../../lib/rss_services.php";
 require_once "../../config.gen.inc.php";
 require_once "data/data.inc.php";
 
-if (in_array($_REQUEST['news'], $news_srcs)) {
+if (array_key_exists($_REQUEST['news'], $news_srcs)) {
 	$rss_url = $news_srcs[$_REQUEST['news']]['url'];
     $section = $news_srcs[$_REQUEST['news']]['title'];
     $key = $_REQUEST['news'];
