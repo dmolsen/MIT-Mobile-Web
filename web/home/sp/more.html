@@ -22,14 +22,17 @@
 	<? if (count($items) > 9) { ?>
 		<? $more = true; ?>
 	<? } ?>
-	<? foreach ($items as $item) { ?>
-		<? if ($i < 9) { $i++; } ?>
-		<? else if (($item[1] == true) && ($i > 8)) { ?>
-				<? if ($item[6] == true) { ?> 
-					<? $k = $i - 8; ?>
-					<?=$k?>. <a href="<?=$item[7]?>" accesskey="<?=$k?>" onClick="javascript: pageTracker._trackPageview('/outgoing/home/<?=$item[2]?>');"><?=$item[2]?></a>
+	<? foreach ($items as $item) {
+		  if ($i < 9) { 
+			  $i++; 
+			} else if (($item[1] == true) && ($i > 8)) {
+				if ($item[6] == true) { 
+					$k = $i - 8; 
+		?>
+				<a href="<?=$item[7]?>" accesskey="<?=$k?>" onClick="javascript: pageTracker._trackPageview('/outgoing/home/<?=$item[2]?>');">	<?=$k?>: <?=$item[2]?></a>
 				<? } else { ?>
-					<?=$k?>. <a href="../<?=$item[3]?>/<?=$item[4]?>" accesskey="<?=$k?>"><?=$item[2]?></a>
+					<? $k = $i - 8; ?>
+					<a href="../<?=$item[3]?>/<?=$item[4]?>" accesskey="<?=$k?>"><?=$k?>: <?=$item[2]?></a>
 				<? } ?>
 				<br />
 				<? $i++; ?>

@@ -26,9 +26,9 @@
 			<? break; # break out of foreach loop ?>
 		<? } else if ($item[1] == true) { ?>
 				<? if ($item[6] == true) { ?> 
-					<?=$i?>. <a href="<?=$item[7]?>" accesskey="<?=$i?>" onClick="javascript: pageTracker._trackPageview('/outgoing/home/<?=$item[2]?>');"><?=$item[2]?></a>
+					<a href="<?=$item[7]?>" accesskey="<?=$i?>" onClick="javascript: pageTracker._trackPageview('/outgoing/home/<?=$item[2]?>');"><?=$i?>: <?=$item[2]?></a>
 				<? } else { ?>
-					<?=$i?>. <a href="../<?=$item[3]?>/<?=$item[4]?>" accesskey="<?=$i?>"><?=$item[2]?></a>
+					<a href="../<?=$item[3]?>/<?=$item[4]?>" accesskey="<?=$i?>"><?=$i?>: <?=$item[2]?></a>
 				<? } ?>
 				<br />
 				<? $i++; ?>
