@@ -17,8 +17,12 @@
 
 <p class="nav">
   <? $i = 1; ?>
+  <? $j = 0; ?>
 	<? $more = false; ?>
-	<? if (count($items) > 9) { ?>
+	<? foreach ($items as $item) { 
+		    if ($item[1] == true) { $j++; }
+	   } ?>
+	<? if ($j > 9) { ?>
 		<? $more = true; ?>
 	<? } ?>
 	<? foreach ($items as $item) { ?>
