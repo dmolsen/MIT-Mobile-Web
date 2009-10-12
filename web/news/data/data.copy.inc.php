@@ -23,6 +23,15 @@
 $news_srcs = array();
 $news_srcs["pao"] = array("title" => "PAO Office", "url" => "http://pao.inst.edu/rss/", "need_the" => false, "read_more" => true);
 
+/**
+ * A list of the news links you want to show on your site     
+ * Format is as follows:
+ *
+ * $news_links["moblinks-key"] = array("title"     => "Title for site to be linked to in mobi",
+ *									   "url"       => "URL for the site",
+ * 									   "need_the"  => true of false, lame hack for WVU. Puts a 'the' in front of title attribute);
+ */
+$news_links = array();
 $news_links["og"] = array("title" => "Ext News Src", "url" => "http://athletics.inst.edu/", "need_the" => false);
 
 ?>
