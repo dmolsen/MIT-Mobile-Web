@@ -79,19 +79,33 @@
 <h1><?= $inst_name ?> Mobile Web</h1>
 
 <div id="container">
-  <ul class="ip_home">
+  <table cellpadding="0" cellspacing="0" border="0" id="homegrid">
+		<? $i = 0; ?>
+		<? $j = count($items); ?>
 	  <? foreach ($items as $item) { ?>
 			<? if ($item[0] == true) { ?>
-				<li>
+				<? if (($i == 0) || ($i == 4)) { ?>
+					<? $i = 0; ?>
+					<tr>
+				<? } ?>
 					<? if ($item[6] == true) { ?> 
-						<a href="<?=$item[7]?>" onClick="javascript: pageTracker._trackPageview('/outgoing/home/<?=$item[2]?>');"><img src="ip/images/<?=$item[5]?>" width="50" height="50" alt="<?=str_replace('<br />',' ',$item[2])?>" /><br /><?=$item[2]?></a>
+						<td><a href="<?=$item[7]?>" onClick="javascript: pageTracker._trackPageview('/outgoing/home/<?=$item[2]?>');"><img src="ip/images/<?=$item[5]?>" width="50" height="50" alt="<?=str_replace('<br />',' ',$item[2])?>" /><br /><?=$item[2]?></a></td>
 					<? } else { ?>
-						<a href="../<?=$item[3]?>/<?=$item[4]?>"><img src="ip/images/<?=$item[5]?>" width="50" height="50" alt="<?=str_replace('<br />',' ',$item[2])?>" /><br /><?=$item[2]?></a>
+						<td><a href="../<?=$item[3]?>/<?=$item[4]?>"><img src="ip/images/<?=$item[5]?>" width="50" height="50" alt="<?=str_replace('<br />',' ',$item[2])?>" /><br /><?=$item[2]?></a></td>
 					<? } ?>
-				</li>
+				<? $i++; ?>
+				<? if ($j == $i) { ?>
+					<? while ($i < 4) ?>
+						<td></td>
+						<? $i++; ?>
+					<? } ?>
+				<? } ?>
+				<? if ($i == 4) { ?>
+					</tr>
+				<? } ?>
 			<? } ?>
 		<? } ?>
-	</ul>
+	</table>
 </div>
 
 <div id="footer">
