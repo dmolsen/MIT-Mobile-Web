@@ -12,22 +12,7 @@ require_once "../../lib/db.php";
 require_once "../page_builder/page_header.php";
 require_once "../../config.gen.inc.php";
 require_once "lib/map.lib.inc.php";
-
-class Categorys {
-  public static $info = array(
-    "names"        => array("Building name", "Building Names", "Buildings by Name", "Building"),
-    "campus"       => array("Campus", "Building Names", "Buildings by Campus", "Building"),
-    "codes"        => array("Building code", "Building Codes", "Buildings by Code", "Building"),
-    "athletics"    => array("Athletic Facility name", "Athletic Facility Names", "Athletic Facilities", "Athletic Facility"),
-    "computer"     => array("Computer Lab name", "Computer Lab Names", "Computer Labs", "Computer Lab"),
-	"dining"       => array("Dining location", "Dining Location Names", "Dining Locations", "Dining"),
-	"library"      => array("Library name", "Library Names", "Libraries", "Library"),
-    "prt"          => array("PRT Station", "PRT Station Names", "PRT Stations", "PRT Station"),
-    "res"          => array("Residence Hall name", "Residence Hall Names", "Residence Halls", "Housing"),
-    "wifi"         => array("WiFi-enabled location", "WiFi-enabled Locations", "WiFi-enabled Locations", "WiFi-enabled Location")
-    #"parking"      => array("Parking lot", "Parking Lots", "Parking Lots", "Parking")
-  );
-}
+require_once "data/data.inc.php";
 
 $category_info = Categorys::$info;
 

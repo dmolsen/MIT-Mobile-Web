@@ -11,11 +11,13 @@ require_once "../../lib/db.php";
 require_once "../page_builder/page_header.php";
 require_once "../../config.gen.inc.php";
 require_once "lib/map.lib.inc.php";
+require_once "data/data.inc.php";
 
 define('ZOOM', 15);
 define('LAT',  39.634419);
 define('LONG', -79.954054);
 define('MAPTYPE', "roadmap");
+define('APIKEY', $maps_api_key),
 
 switch($phone) {
  case "sp":
@@ -65,7 +67,7 @@ function imageURL($phone) {
 
   $query = array(
     "maptype"      => mapType(),
-    "key"          => "ABQIAAAAgl5MtLeiQwCMBX7FdoPP_BTfAZWzJoh_gYMfdqhKwTyraOPtpRSIZm3YBA6TbcecvlyiMX_gNejDzg", 
+    "key"          => APIKEY, 
     "size"         => pix("x", $phone).'x'.pix("y", $phone),
     "center"       => lat().",".long(),
     "zoom"         => zoom(),
@@ -96,21 +98,7 @@ function tab() {
   return isset($_REQUEST['tab']) ? $_REQUEST['tab'] : "Map";
 }
 
-function marker_type($type) {
-	$markers = array(
-	    "Building" => "midredb",
-	    "Health Sciences Center" => "midredb",
-	    "Dining" => "midpurpled",
-	    "Parking Lot" => "midbluep",
-	    "PRT Station" => "midblackp",
-	    "Bus Stop" => "midgreens",
-	    "Athletic Facility" => "midyellowa",
-	    "Library" => "midgrayl",
-	    "Housing" => "midbrownr",
-	    "Computer Lab" => "midbluec"
-	  );
-	return $markers[$type];	
-}
+# function market_type() now being defined in data/data.inc.php since it's configurable
 
 function marker() {	
   

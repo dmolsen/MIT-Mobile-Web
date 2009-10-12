@@ -16,7 +16,7 @@ $help = array(
   'Find places on the '.$inst_name.' campus in two ways:',
 
   '1. <strong>Search</strong> by building number or name, or for specific facilities by name or keyword<br />' .
-  'Examples: &quot;Mountainlair&quot;, &quot;university&quot;, &quot;soccer&quot;, etc.',
+  'Examples: &quot;university&quot;, &quot;soccer&quot;, etc.',
 
   '2. <strong>Browse</strong> by any of the categories on the Campus Map homepage',
 

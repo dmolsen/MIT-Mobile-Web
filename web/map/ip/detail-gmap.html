@@ -5,51 +5,18 @@ $page->title($inst_name.' Campus Map: Details')
      ->add_stylesheet('styles/map-ip')
      ->breadcrumbs('Map Details')
      ->extra_onload("initialize()");
-     #->extra_onload("loadImage(getMapURL(mapBaseURL),'mapimage');");
 
 $page->content_begin();
 ?>
+
+<!-- the following is supposed to make sure the iphone view clear the addy bar -->
 <script type="text/javascript">
 window.addEventListener('load', function(){
 setTimeout(scrollTo, 0, 0, 1);
 }, false);
 </script>
-<?
-# dirty but iphone specific markers
-$marker_types = array();
-$marker_types['Building'] = 'apartment';
-$marker_types['Parking'] = 'parking';
-$marker_types['Housing'] = 'home';
-$marker_types['Athletic Facility'] = 'track';
-$marker_types['Dining'] = 'restaurant';
-$marker_types['Health Sciences Center'] = 'apartment';
-$marker_types['PRT Station'] = 'train';
-$marker_types['Computer Lab'] = 'computer';
-$marker_types['Alumni Center'] = 'apartment';
-$marker_types['Library'] = 'library';
-$marker_types['Rec'] = 'pool';
-$marker_types['Health'] = 'doctor';
-$marker_types['Visitor'] = 'info';
-$marker_types['Children'] = 'playground';
-$marker_types['Student'] = 'clothes';
-$marker_types['Track'] = 'track';
-$marker_types['Tennis'] = 'tennis';
-$marker_types['Football'] = 'rugby';
-$marker_types['Baseball'] = 'baseball';
-$marker_types['Soccer'] = 'soccer';
-$marker_types['Basketball'] = 'basketball';
-$marker_types['Newspaper'] = 'text';
-$marker_types['Art'] = 'theater';
-$marker_types['Green'] = 'flowers';
-$marker_types['Hospital'] = 'hospital';
-$marker_types['Admissions'] = 'university';
-$marker_types['Wrestling'] = 'wrestling';
-$marker_types['Gymnastics'] = 'gymnastics';
-$marker_types['Swimming'] = 'pool';
 
-$break = true;
-
-?>
+  <? $break = true; ?>
 
 	<a name="scrolldown"></a>		
 	<div class="focal shaded">
@@ -59,12 +26,12 @@ $break = true;
           $marker_type = $marker_types[$data[0]['type']]; 
        } ?>
 		<h2><?=$data[0]['name']?> <? if ($data[0]['code'] != '') { ?>(<?=$data[0]['code']?>)<? } ?> <img src="images/ip-markers/<?=$marker_type?>.png" height="20" width="17" alt="Marker" />  
-			  <? if ($data[0]['wifi'] == 'Y') { ?><img src="images/ip-markers/wifi.png" height="20" width="17" alt="WiFi" /><? } ?></h2>
+			 <? if ($data[0]['wifi'] == 'Y') { ?><img src="images/ip-markers/wifi.png" height="20" width="17" alt="WiFi" /><? } ?></h2>
 		<p class="address">
-			 On the <?=$data[0]['campus']?> Campus<br />
+			 <? if ($data[0]['campus'] != '') { ?>On the <?=$data[0]['campus']?> Campus<br /><? } ?>
 		   <? if ($parent == true) { ?>Located inside the <a href="<?=detailURL($parent_data[0]['id'],$parent_data[0]['latitude'],$parent_data[0]['longitude'])?>"><?=$parent_data[0]['name']?></a><? } else { ?><?=$data[0]['physical_address']?> <? } ?>
 		   <? if ($data[0]['hours'] != '') { ?><br />Open <?=str_replace('"','',$data[0]['hours'])?><? } ?>
-                   <? if ($data[0]['phone'] != '') { ?><br /><a href="tel:1<?=$data[0]['phone']?>"><?=$data[0]['phone']?></a><? $break = false; ?><? } ?>
+       <? if ($data[0]['phone'] != '') { ?><br /><a href="tel:1<?=$data[0]['phone']?>"><?=$data[0]['phone']?></a><? $break = false; ?><? } ?>
 		   <? if ($data[0]['website'] != '') { ?><? if ($break == true) { ?><br /><? } else { ?> | <? } ?><a href="http://<?=$data[0]['website']?>">website</a><? } ?>
 		</p>
 		<ul id="tabs">
@@ -73,7 +40,7 @@ $break = true;
 		
 		<div id="tabbodies">	
 			<div class="tabbody" id="maptab">
-			      <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=ABQIAAAAgl5MtLeiQwCMBX7FdoPP_BTfAZWzJoh_gYMfdqhKwTyraOPtpRSIZm3YBA6TbcecvlyiMX_gNejDzg" type="text/javascript"></script>	
+			  <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=<?=$maps_api_key?>" type="text/javascript"></script>	
         <script type="text/javascript">
 				function initialize() {
 					var map = new GMap2(document.getElementById("map_canvas"));

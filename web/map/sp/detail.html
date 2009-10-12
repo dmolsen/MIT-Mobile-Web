@@ -25,7 +25,7 @@ $page->content_begin();
 		
     <? if($tab == "Map") { ?>
   		<p>
-	                 On the <?=$data[0]['campus']?> Campus<br />
+	                 <? if ($data[0]['campus'] != '') { ?>On the <?=$data[0]['campus']?> Campus<br /><? } ?>
                    <? if ($parent == true) { ?>Located inside the <a href="<?=detailURL($parent_data[0]['id'],$parent_data[0]['latitude'],$parent_data[0]['longitude'])?>"><?=$parent_data[0]['name']?></a><? } else { ?><?=$data[0]['physical_address']?> <? } ?>
                    <? if ($data[0]['hours'] != '') { ?><br />Open <?=str_replace('"','',$data[0]['hours'])?><? } ?>
                    <? if ($data[0]['phone'] != '') { ?><br /><a href="tel:1<?=$data[0]['phone']?>"><?=$data[0]['phone']?></a><? $break = false; ?><? } ?>

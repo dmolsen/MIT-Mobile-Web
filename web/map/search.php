@@ -11,6 +11,7 @@ require_once "../../lib/db.php";
 require_once "../page_builder/page_header.php";
 require_once "../../config.gen.inc.php";
 require_once "lib/map.lib.inc.php";
+require_once "data/data.inc.php";
 
 if($search_terms = $_REQUEST['filter']) {
   $results = map_search($search_terms);

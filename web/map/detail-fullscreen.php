@@ -7,6 +7,8 @@
  * 
  */
 
+/* NOT CURRENTLY BEING USED BY MOBILE WEB. WOULD BE COOL FOR IPHONE. */
+
 require_once "../page_builder/page_header.php";
 
 $selectvalue = $_REQUEST['selectvalues'];

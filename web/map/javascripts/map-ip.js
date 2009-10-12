@@ -79,8 +79,9 @@ function loadImage(imageURL,imageID) {
 
 function getMapURL(strBaseURL, includeSelect) {
 	// Returns a full URL for a map page or map image, using strBaseURL as the base
-	var newURL = strBaseURL+"?"+"maptype="+mapType+"&"+"key="+"ABQIAAAAgl5MtLeiQwCMBX7FdoPP_BTfAZWzJoh_gYMfdqhKwTyraOPtpRSIZm3YBA6TbcecvlyiMX_gNejDzg"+"&"+"size="+mapW+"x"+mapH+"&"+"center="+latitude+","+longitude+"&"+"zoom="+zoom+"&"+"sensor="+"false"+"&"+"markers="+marker;
-        return(newURL);
+	var apiKey = "ABQIAAAAgl5MtLeiQwCMBX7FdoPP_BTfAZWzJoh_gYMfdqhKwTyraOPtpRSIZm3YBA6TbcecvlyiMX_gNejDzg";
+	var newURL = strBaseURL+"?"+"maptype="+mapType+"&"+"key="+apiKey+"&"+"size="+mapW+"x"+mapH+"&"+"center="+latitude+","+longitude+"&"+"zoom="+zoom+"&"+"sensor="+"false"+"&"+"markers="+marker;
+    return(newURL);
 }
 
 
