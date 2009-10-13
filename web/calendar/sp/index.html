@@ -11,11 +11,14 @@ $page->content_begin();
 	<p class="nav">
 		1. Events Calendar Home<br/>
 		<a href="<?=dayURL($today, 'events')?>" accesskey="2">2. Today's events</a><br/>
-		<a href="category.php?id=academic">3. Academic calendar</a><br />
-		<a href="category.php?id=ae">4. Arts &amp; Entertainment calendar</a><br />
-		<a href="category.php?id=athletics">5. Athletics calendar</a><br />
-		<a href="category.php?id=holidays">6. University holidays</a><br />
-		<a href="<?=categorysURL()?>" accesskey="4">7. Browse events by more categories</a>
+		<? $i = 3; ?>
+		<? foreach ($calendars as $calkey => $calvalues) { ?>
+			<? if ($calvalues['main'] == true) { ?>
+				<a href="category.php?id=<?=$calkey?>" accesskey="<?=$i?>"><?=$i?>. <?=$calvalues['title']?><? if ($calvalues['caltxt'] == true) ?> calendar<? } ?></a><br />
+				<? $i++; ?>
+			<? } ?>
+		<? } ?>
+		<a href="<?=categorysURL()?>" accesskey="<?=$i?>"><?=$i?>. Browse events by more categories</a>
 	</p>
 	
 	

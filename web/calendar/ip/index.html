@@ -13,10 +13,11 @@ $page->content_begin();
 	
 	<ul class="nav">
 		<li><a href="<?=dayURL($today, 'events')?>">Today's events</a></li>
-		<li><a href="category.php?id=academic">Academic calendar</a></li>
-		<li><a href="category.php?id=ae">Arts &amp; Entertainment calendar</a></li>
-		<li><a href="category.php?id=athletics">Athletics calendar</a></li>
-		<li><a href="category.php?id=holidays">University holidays</a></li>
+		<? foreach ($calendars as $calkey => $calvalues) { ?>
+			<? if ($calvalues['main'] == true) { ?>
+				<li><a href="category.php?id=<?=$calkey?>"><?=$calvalues['title']?><? if ($calvalues['caltxt'] == true) ?> calendar<? } ?></a></li>
+			<? } ?>
+		<? } ?>
 		<li><a href="<?=categorysURL()?>">Browse events by category</a></li>
 	</ul>
 	
@@ -28,9 +29,9 @@ $page->content_begin();
 			</fieldset>	
 			<fieldset>
 				<select id="timeframe" name="timeframe">
-                                        <? foreach($search_options as $key => $option) { ?> 
+           <? foreach($search_options as $key => $option) { ?> 
  					   <option value="<?=$key?>" <? if($option['selected']) { ?>selected="selected"<? } ?> ><?=$option['phrase']?></option>
-                                        <? } ?>
+           <? } ?>
 				</select>
 			</fieldset>	
 		</form>

@@ -10,12 +10,12 @@
 
 require "../page_builder/page_header.php";
 
-//defines all the variables related to being today
-require "lib/calendar_lib.php";
-
 //various copy includes
 require_once "../../config.gen.inc.php";
 require_once "data/data.inc.php";
+
+//defines all the variables related to being today
+require "lib/calendar_lib.php";
 
 $today = day_info(time());
 

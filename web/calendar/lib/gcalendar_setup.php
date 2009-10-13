@@ -9,7 +9,7 @@
  */
 
 // set-up Zend gData
-$path = '/apache/htdocs/Mobi-Demo/lib/ZendGdata-1.8.4PL1/library';
+$path = $install_path.'lib/ZendGdata-1.8.4PL1/library';
 set_include_path(get_include_path() . PATH_SEPARATOR . $path);
 require_once 'Zend/Loader.php';
 Zend_Loader::loadClass('Zend_Gdata');
