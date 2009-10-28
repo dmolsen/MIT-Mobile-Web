@@ -135,6 +135,7 @@ class Page {
 
   public static function classify_phone() {
 	$user_agent = $_SERVER['HTTP_USER_AGENT'];
+        $accept = $_SERVER['HTTP_ACCEPT']; 
 	if (eregi('ipod',$user_agent) || eregi('iphone',$user_agent)) {
 		$type = 'iphone';
 	} 

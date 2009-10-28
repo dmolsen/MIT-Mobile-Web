@@ -32,6 +32,7 @@ else if ($_REQUEST["nomobi"] == "true") {
 }
 else {
 	$user_agent = $_SERVER["HTTP_USER_AGENT"];
+        $accept = $_SERVER['HTTP_ACCEPT']; 
 	if (eregi("ipod",$user_agent) || eregi("iphone",$user_agent)) {
 		header("Location: ".$redirect);
 	} 
