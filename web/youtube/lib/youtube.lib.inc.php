@@ -30,6 +30,10 @@ function printVideoEntry($videoEntry,$phone) {
   $mins = floor ($seconds / 60);
   $secs = $seconds % 60;
   
+  if ($secs < 10) {
+	$secs = "0".$secs;
+  }
+
   $updated = getdate(strtotime($videoEntry->getUpdated()->text)); 
 
   if ($phone == 'ip') {
