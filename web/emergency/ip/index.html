@@ -7,7 +7,7 @@ $page->title($inst_name." Emergency Info")
 $page->content_begin();
 ?>
   <? if ($show_rss == true) { ?>
-	<div class="focal" id="statusmsg">
+	<div class="info" id="statusmsg">
              <? if ($article_f_timestamp > $current_timestamp) { ?>
                  <? echo implode('<br /><br />', $paragraphs); ?>
                  <? if ($date) { echo('<em>Posted: '.$date.'</em>'); } ?>
@@ -21,9 +21,9 @@ $page->content_begin();
    <? foreach($main as $item) { ?>
 		<li><a href="tel:<?=$item->call_number()?>" class="phone"><?=$item->label()?> <span class="smallprint">(<?=$item->message_text()?><?=$item->number_text()?>)</span></a></li>
    <? } ?>
-		<li><a href="<?=contactsURL()?>">More Emergency Contacts</a></li>
+		<li class="arrow"><a href="/emergency/<?=contactsURL()?>">More Emergency Contacts</a></li>
 		<? if ($show_extra == true) { ?>
-			<li><a href="<?=extraURL()?>">More General Phone Numbers</a></li>
+			<li class="arrow"><a href="/emergency/<?=extraURL()?>">More General Phone Numbers</a></li>
 		<? } ?>
 	</ul>
 

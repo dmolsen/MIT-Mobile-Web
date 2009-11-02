@@ -7,10 +7,10 @@ $page->content_begin();
 ?>
 	<ul class="results">
 						<? if ($show_res == true) { ?>
-							<li><a href="<?=residencesURL()?>">Residence Halls</a></li>
+							<li class="arrow"><a href="<?=residencesURL()?>">Residence Halls</a></li>
 						<? } ?>
 		        <? if ($show_schools == true) { ?>
-							<li><a href="<?=schoolsURL()?>">Schools &amp; Colleges</a></li>
+							<li class="arrow"><a href="<?=schoolsURL()?>">Schools &amp; Colleges</a></li>
 			      <? } ?>
             <? foreach($extra as $item) { ?>
                 <li><a href="tel:<?=$item->call_number()?>" class="phone" onClick="javascript: pageTracker._trackPageview('/outgoing/phone/emergency/extra/<?=$item->label()?>');"><?=$item->label()?> <span class="smallprint">(<?=$item->message_text()?><?=$item->number_text()?>)</span></a></li>
