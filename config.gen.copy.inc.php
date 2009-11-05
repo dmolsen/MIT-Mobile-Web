@@ -11,7 +11,7 @@
 /* Quick Configuration File for Mobile Web */
 
 /* Technical Info */
-$install_dir       = "/path/to/install/";         # the directory mobile web has been installed in, trailing slash is required
+$install_path       = "/path/to/install/";         # the directory mobile web has been installed in, trailing slash is required
 $ga_code		   = "";			  			  # Google Analytics Code, highly highly highly recommended
 
 /* Institution & Org Info */
