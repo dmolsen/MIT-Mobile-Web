@@ -8,8 +8,11 @@
  * 
  */
 
-# the google maps api key for this instance of your site
-$maps_api_key = "";
+# configure some map specific variables
+$latitude	  = 39.634419; 	# default rough latitude for your campus
+$longitude	  = -79.954054; # default rough longitude for your campus
+$maps_api_key = ""; 		# the google maps api key for this instance of your site
+$mobilemap 	  = false; 		# on static maps use mobile version of tiles
 
 /**
  * A list of the categories for your map
