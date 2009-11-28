@@ -1,0 +1,11 @@
+THIS CHANGELOG IS AN ATTEMPT TO DOCUMENT CHANGES TO THIS PROJECT.
+SUPER MINOR REVISION NUMBERS WON'T SHOW UP IN GITHUB BUT IT'LL HELP
+ME ORGANIZE WHEN I MADE A SET OF FIXES
+
+MOBI-v1.0.1 (November 28 2009)
+ - FIX: added global contact add to send_email() of web/people/vcard.php
+ - FIX: removed a superfluous variable from line #111 of web/people/vcard.php
+ - FIX: added the ability to set var to allow mobile-friendly map tiles for static maps
+ - FIX: fixed a syntax error in web/people/detail.php on line #20
+ - FIX: added isset($query) to web/map/sp/index.html to fix unset variable error
+ - FIX: added $city_state to config.gen.copy.inc.php so that the map results show the proper city/state
