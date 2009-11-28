@@ -18,6 +18,7 @@ $ga_code		   = "";			  			  # Google Analytics Code, highly highly highly recomm
 $inst_name         = "HEU";                       # name of educational institution. highly recommend an acronym.
 $inst_name_full    = "Higher Ed University";      # full name of education institution
 $org_name          = "Higher Ed U Tech Office";   # name of organization supporting this instance of mobile web (shows in footer)
+$city_state		   = "Somewhere, WV";			  # city and state (or province, whatever) where your institution is located. shows on map results.
 
 /* Misc. Copy Configuration (where "copy" means text) */
 $contact_addy      = "mobile@mail.inst.edu";      # email address to contact w/ questions
