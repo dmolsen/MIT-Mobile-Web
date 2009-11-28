@@ -108,8 +108,7 @@ function ldap_decode($ldap_str) {
 }
 
 function send_email($to,$subject,$attachment) {
-	$subject = "vCard for ";
-        $attachment = chunk_split(base64_encode($attachment));
+    $attachment = chunk_split(base64_encode($attachment));
 	$random_hash = md5(date("r", time())); 
 	$headers = "From: ".$contact_addy."\r\nReply-To: ".$contact_addy; 
 	$headers .= "\nMIME-Version: 1.0";
