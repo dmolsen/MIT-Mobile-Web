@@ -17,7 +17,7 @@ define('ZOOM', 15);
 define('LAT',  39.634419);
 define('LONG', -79.954054);
 define('MAPTYPE', "roadmap");
-define('APIKEY', $maps_api_key),
+define('APIKEY', $maps_api_key);
 
 switch($phone) {
  case "sp":
