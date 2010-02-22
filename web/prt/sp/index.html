@@ -1,0 +1,37 @@
+<?php
+$page->title('PRT Status')
+     ->header('PRT Status');
+
+$page->content_begin();
+?>
+
+<p class="focal" id="statusmsg">
+			<? if ($holiday == true) { ?>
+				The PRT is closed for the holiday.
+			<? } else if (date("D") == "Sun") { ?>
+				The PRT is closed.
+			<? } else if ((date("D") == "Sat") && ((date("Gi") < 930) || (date("Gi") > 1700))) { ?>
+				The PRT is closed.		
+			<? } else if ((date("Gi") < 630) || (date("Gi") > 2215)) { ?>
+				The PRT is closed.
+			<? } else if ($status == 1) { ?>
+				<font color="#3e871b"><?=$message?></font>
+			<? } else { ?>
+				<font color="#8b381d"><?=$message?><br /><span class="smallprint">Last Updated: <?=date("M. j, Y", $timestamp)?> at <?=date("g:ia", $timestamp)?></span></font></div>
+			<? } ?>
+</p>
+
+<p class="nav">
+	   <a href="tel:13042935011" class="phone" onClick="javascript: pageTracker._trackPageview('/outgoing/prt/maintenance/');">Maintenance</a> <span class="smallprint">(304.293.5011)</span><br/>
+
+<p class="nav">
+    <? foreach($places as $place) { ?>
+        <a href="../map/<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>"><?=$place['name']?></a> <span class="legend"><?=str_replace('"','',$place['hours'])?></span></a><br/>
+    <? } ?>
+</p>
+
+<p class="nonfocal legend">
+	Data provided by the PRT Administration.
+</p>
+		
+<? $page->content_end(); ?>

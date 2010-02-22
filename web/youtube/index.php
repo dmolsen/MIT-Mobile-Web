@@ -38,7 +38,7 @@ $query->setOrderBy('updated');
 $query->setStartIndex($index);
 $uploads = $yt->getVideoFeed($query);
 
-require "$prefix/index.html";
+require "templates/$prefix/index.html";
 $page->output();
 
 ?>

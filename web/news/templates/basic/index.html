@@ -1,0 +1,43 @@
+<?php
+$page->title($inst_name.' Campus News')
+     ->header($inst_name.' Campus News');
+
+$page->content_begin();
+?>
+
+	<p>News items regarding events affecting the <?=$inst_name?> community.</p>
+
+	 <? $i = 0; ?>
+   <? foreach($items as $title => $item) { ?>
+		<? if ($i < 3) { ?>
+			 <p class="focal">
+			<strong><?=$title?></strong><br/>
+	                <? if(is_long_text($item)) { ?>
+			    <span class="smallprint"><?=html_entity_decode(summary($item))?> <a href="<?=detailURL($title,$key)?>">more</a> <? if ($item['date']) { ?>(<?=short_date($item['date'])?>)<? } ?></span>
+	                <? } else { ?>
+			    <span class="smallprint"><?=full($item)?> <? if ($item['date']) { ?>(<?=short_date($item['date'])?>)<? } ?></span>
+	                <? } ?>
+		   </p>
+   <? } ?>
+   <? $i++; ?>
+   <? } ?>
+
+	<p class="nav">
+		<? $i = 0;?>
+		<? foreach ($news_srcs as $key => $news_src) { ?>
+				<? if ($i == 0) { ?>
+			    <a href="./?news=<?=$key?>">More from <? if ($news_src['need_the'] == true) { ?>the<? } ?><?=$news_src['title']?></a><br/>
+			    <? $i = 1; ?>
+			  <? } else { ?>
+			    <a href="./?news=<?=$key?>">News from <? if ($news_src['need_the'] == true) { ?>the<? } ?> <?=$news_src['title']?></a><br/>
+			  <? } ?>
+		<? } ?>
+		<? foreach ($news_links as $key => $news_link) { ?>
+			<? $outgoing = str_replace('http://','',$news_link['url']); ?>
+			<a href="<?=$news_link['url']?>" onClick="javascript: pageTracker._trackPageview('/outgoing/news/<?=$key?>/<?=$outgoing?>');">News from <? if ($news_link['need_the'] == true) { ?>the<? } ?> <?=$news_link['title']?></a><br />
+		<? } ?>
+	</p>
+<?
+$page->content_end();
+$page->help_link("../emergency", "Campus Emergency Information");
+?>

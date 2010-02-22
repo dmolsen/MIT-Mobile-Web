@@ -34,7 +34,7 @@ $query->setSortorder('a');
 $query->setmaxresults('30');
 $eventFeed = $gdataCal->getCalendarEventFeed($query);
 
-require "$prefix/category.html";
+require "templates/$prefix/category.html";
 $page->output();
 
 ?>

@@ -1,0 +1,83 @@
+<?
+
+$marker = marker($data[0]['type']);
+$init_vars =<<<JS
+     var initMarker = '{$marker}';
+     var initLatitude = {$data[0]['latitude']};
+     var initLongitude = {$data[0]['longitude']};
+JS;
+
+$page->title($inst_name.' Campus Map: Details')
+     ->navbar_image('title-map')
+     ->not_scalable()
+     ->add_stylesheet('styles/map-ip')
+     ->add_inline_script($init_vars)
+     ->add_javascript('../ip/uiscripts-ip')
+     ->add_javascript('javascripts/map-ip')
+     ->breadcrumbs('Map Details')
+     ->extra_onload("loadImage(getMapURL(mapBaseURL),'mapimage');");
+
+$page->content_begin();
+?>
+
+	<a name="scrolldown"></a>		
+	<div class="focal shaded">
+
+		<h2><?=$data[0]['name']?> <img src="images/marker-<?=marker_type($data[0]['type'])?>.png" height="24" width="14" alt="Marker" /></h2>
+		<p class="address"><?=$data[0]['physical_address']?></p>
+		<ul id="tabs">
+			<li class="active"><a href="#scrolldown" onclick="showTab('maptab',this); hide('loadingimage')">Map</a></li>
+		</ul>
+		
+		<div id="tabbodies">	
+			<div class="tabbody" id="maptab">
+				<div id="mapscrollers">
+					<div id="nw"><a href="#scrolldown" onclick="scroll('nw'); "><img src="../ip/images/blank.png" width="50" height="50" alt="NW" /></a></div>
+					<div id="n"><a href="#scrolldown" onclick="scroll('n'); "><img src="../ip/images/blank.png" width="50" height="50" alt="N" /></a></div>
+					<div id="ne"><a href="#scrolldown" onclick="scroll('ne'); "><img src="../ip/images/blank.png" width="50" height="50" alt="NE" /></a></div>
+					<div id="e"><a href="#scrolldown" onclick="scroll('e'); "><img src="../ip/images/blank.png" width="50" height="50" alt="E" /></a></div>
+					<div id="se"><a href="#scrolldown" onclick="scroll('se'); "><img src="../ip/images/blank.png" width="50" height="50" alt="SE" /></a></div>
+					<div id="s"><a href="#scrolldown" onclick="scroll('s'); "><img src="../ip/images/blank.png" width="50" height="50" alt="S" /></a></div>
+					<div id="sw"><a href="#scrolldown" onclick="scroll('sw'); "><img src="../ip/images/blank.png" width="50" height="50" alt="SW" /></a></div>
+					<div id="w"><a href="#scrolldown" onclick="scroll('w'); "><img src="../ip/images/blank.png" width="50" height="50" alt="W" /></a></div>
+					<img id="loadingimage" src="../ip/images/loading2.gif" width="40" height="40" alt="Loading" />
+				</div> <!-- id="mapscrollers" -->
+				<img id="mapimage" width="290" height="190" alt="" onload="hide('loadingimage')" /> 
+				<div id="mapzoom">
+					<a href="#" onclick="zoomin(); return false;" id="zoomin"><img src="../ip/images/blank.png" width="40" height="34" alt="Zoom In" /></a>
+					<a href="#" onclick="zoomout(); return false;" id="zoomout"><img src="../ip/images/blank.png" width="40" height="34" alt="Zoom Out" /></a>
+					<a href="#" onclick="recenter(); return false;" id="recenter" class="disabled"><img src="../ip/images/blank.png" width="40" height="34" alt="Recenter" /></a>
+					<a href="detail-fullscreen.php" id="fullscreen"><img src="../ip/images/blank.png" width="40" height="34" alt="Full Screen" /></a>
+				</div>
+			</div> <!-- id="maptab" -->
+
+			<div class="clear"></div>
+		</div>
+
+	</div> <!-- class="focal shaded" -->
+	
+        <? if(cleanStreet($data)) {?>
+	   <ul class="secondary">
+		<li>
+			<a href="http://maps.google.com/maps?q=<?=cleanStreet($data)?>, <?=$data['city']?>" class="external">Google Map <span class="smallprint">(<?=cleanStreet($data)?>)</span></a>
+		</li>
+	  </ul>
+	<? } ?>
+<?
+$page->content_end();
+
+
+$script =<<<JS
+	showTab('maptab');
+
+	var objMap = document.getElementById('mapimage');
+	if(objMap) {
+		mapW = objMap.scrollWidth - 2;
+		mapH = objMap.scrollHeight - 2;
+	}
+
+        checkIfMoved();
+JS;
+
+$page->footer_script($script);
+?>

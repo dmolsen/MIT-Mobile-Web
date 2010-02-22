@@ -21,7 +21,7 @@ $today = day_info(time());
 
 $search_options = SearchOptions::get_options();
 
-require "$prefix/index.html";
+require "templates/$prefix/index.html";
 $page->output();
 
 ?>

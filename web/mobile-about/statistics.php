@@ -127,7 +127,7 @@ if($start_month == $end_month) {
   $days_text = "{$start_month} {$start_day}-{$end_month} {$end_day}, $year"; 
 }
 
-require "$prefix/statistics.html";
+require "templates/$prefix/statistics.html";
 $page->output();
 
 

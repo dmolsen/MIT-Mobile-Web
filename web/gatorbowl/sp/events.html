@@ -1,0 +1,38 @@
+<?php
+$page->title("Gator Bowl Events")
+     ->header("Gator Bowl Events");
+
+$page->content_begin();
+?>
+
+		<? foreach ($events as $day => $info) { ?>
+				<div class="nonfocal">
+					<? if ($day == "12-30-2009") { ?>
+						<br /><h3>December 30, 2009</h3>
+					<? } else if ($day == "12-31-2009") { ?>
+						<br /><h3>December 31, 2009</h3>
+					<? } else if ($day == "01-01-2010") { ?>
+						<br /><h3>January 1, 2010</h3>
+					<? } ?>
+				</div>
+			<div class="focal">
+			<? $i = 0; ?>
+			<? foreach ($info as $date => $event) { ?>
+				<p>
+					<? if ($event[4] != "") { ?>
+						<a href="index.php?page=map&date=<?=$day?>&item=<?=$i?>" class="map"><?=html_entity_decode($event[0])?></a><br/><span class="smallprint"><?=$event[1]?>, <?=$event[2]?><? if ($event[3] != "") { ?><br /><?=$event[3]?><? } ?></span>
+					<? } else { ?>
+						<?=html_entity_decode($event[0])?><br/><span class="smallprint"><?=$event[1]?>, <?=$event[2]?><? if ($event[3] != "") { ?><br /><?=$event[3]?><? } ?></span>
+					<? } ?>
+					</p>
+					<? $i++; ?>
+			<? } ?>
+			</div>
+		<? } ?>
+
+<?
+
+$page->content_end();
+$page->nav_link("./", "Gator Bowl Home");
+
+?>

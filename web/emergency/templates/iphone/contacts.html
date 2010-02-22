@@ -1,0 +1,16 @@
+<? $page_title = "Contacts"; ?>
+<? $help_on = true; ?>
+
+<div id="emergency-contacts">
+	
+	<? include("../templates/iphone/toolbar.html"); ?>
+	
+	<ul class="edgetoedge">
+		<? foreach($others as $item) { ?>
+			<li class="phone"><a href="tel:<?=$item->call_number()?>"><?=$item->label()?> <span class="smallprint">(<?=$item->message_text()?><?=$item->number_text()?>)</span></a></li>
+		<? } ?>
+	</ul>
+
+	<? include("../templates/iphone/info.html"); ?>
+
+</div>

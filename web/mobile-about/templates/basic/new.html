@@ -1,0 +1,18 @@
+<?php
+$page->title('About the '.$inst_name.' Mobile Web: What\'s New')
+     ->header('What\'s New');
+
+$page->content_begin();
+?>
+<div class="focal">
+
+<h2>What's New</h2> 
+ <p><strong>What's New</strong>: This page will be used to alert users about new features and modules for <?=$inst_name?> mobile services. <span class="smallprint">(Aug 24)</span></p>
+</div>
+
+<? 
+$page->content_end(); 
+$page->help_off();
+$page->nav_link('./', 'About this Site');
+
+?>

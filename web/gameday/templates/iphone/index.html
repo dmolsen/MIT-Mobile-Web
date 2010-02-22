@@ -1,0 +1,30 @@
+<? $page_title = "Athletics"; ?>
+<? $help_on = false; ?>
+
+<div id="gameday">
+	
+	<? include("../templates/iphone/toolbar.html"); ?>
+
+  <ul>
+		<li class="phone"><a href="tel:13042933267" onClick="javascript: pageTracker._trackPageview('/outgoing/gameday/fanline/');">Football Game Day FANLINE <span class="smallprint">(304.293.3267)</span></a></li>
+	</ul>
+
+	<ul>
+		<? foreach ($eventFeed as $event) { ?>
+			<? $loc = briefLocation($event); ?>
+			<li class="calendar"><a href="../calendar/<?=detailURL($event)?>"><?=html_entity_decode($event->title->text)?><br/><span class="smallprint"><?=timeText($event)?><? if(trim($loc->valueString) != '') { ?><br /><?=$loc->valueString?><? } ?></span></a></li>
+		<? } ?>
+	</ul>
+	
+	<ul>
+		<? foreach($links as $item) { ?>
+			<? $external = ''; ?>
+			<? if ($item[2] == true) { $external = "class='external'"; } ?>
+			<? if ($item[3] == true) { $external = "class='map'"; } ?>
+		  <li <?=$external?>><a href="<?=$item[0]?>"> <?=$item[1]?></a></li>
+		<? } ?>
+	</ul>
+	
+	<? include("../templates/iphone/info.html"); ?>
+
+</div>

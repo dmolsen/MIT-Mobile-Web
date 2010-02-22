@@ -25,7 +25,7 @@ foreach($category_info as $category => $title) {
 
 if(!isset($_REQUEST['category'])) {
   $page->cache();
-  require "$prefix/index.html";
+  require "templates/$prefix/index.html";
 } else {
   $category = $_REQUEST['category'];
   $title = $category_info[$category][2];
@@ -33,7 +33,7 @@ if(!isset($_REQUEST['category'])) {
 
   if(!isset($_REQUEST['drilldown'])) {
     if($category=="names" || $category=="campus" || $category=="codes") {
-      require "$prefix/$category.html";
+      require "templates/$prefix/$category.html";
     } else {
 	  if ($category=="wifi") {
 		 $places = getData("wifi = 'Y'");
@@ -41,7 +41,7 @@ if(!isset($_REQUEST['category'])) {
 	  else {
 		$places = getData("type = '".$category_info[$category][3]."'");
 	  }
-      require "$prefix/places.html";
+      require "templates/$prefix/places.html";
     }
   } else {
     $titlebar = ucwords($category_info[$category][0]);
@@ -57,18 +57,18 @@ if(!isset($_REQUEST['category'])) {
 			$sql_substr = "name LIKE \"".$drilldown."%\"";
 	    }
 	    $places = getData("(type = 'Building' OR type='Housing' OR type='Library' OR type='PRT Station' OR type='Athletic Facility') and ".$sql_substr);
-        require "$prefix/drilldown.html";
+        require "templates/$prefix/drilldown.html";
     }    
     else if ($category=="campus") {
 		$places = getData("(type = 'Building' OR type='Housing' OR type='Library' OR type='PRT Station' OR type='Athletic Facility') and campus = '".$drilldown."'");
-	    require "$prefix/drilldown.html";
+	    require "templates/$prefix/drilldown.html";
 	}
 	else if ($category=="codes") {
 		$db = db::$connection;
 		$stmt = $db->prepare("SELECT * FROM Buildings WHERE code LIKE \"".$drilldown."%\" GROUP BY code ORDER BY code ASC");
         $stmt->execute();
 	    $places = $stmt->fetchAll();
-		require "$prefix/drilldown_codes.html";
+		require "templates/$prefix/drilldown_codes.html";
 	}
     
   }
@@ -115,11 +115,11 @@ function drillURL($drilldown, $name=NULL) {
 
 function categoryURL($category=NULL) {
   $category = $category ? $category : $_REQUEST['category'];
-  return "?category=$category";
+  return "/map/?category=$category";
 }
 
 function searchURL() {
-  return "search.php";
+  return "/map/search.php";
 }
 
 function subSQLStrBuilder($drilldown) {	

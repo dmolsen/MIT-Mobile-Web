@@ -34,10 +34,10 @@ switch($phone) {
 $page->cache();
 
 if ($_REQUEST['more'] != true) {
-	require "$prefix/index.html";
+	require "templates/$prefix/index.html";
 }
 else {
-	require "$prefix/more.html";
+	require "templates/$prefix/more.html";
 }
 
 

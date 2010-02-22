@@ -1,0 +1,24 @@
+<? $page_title = "Details"; ?>
+<? $help_on = false; ?>
+
+<div id="gameday-detail">
+	
+	<? include("../templates/iphone/toolbar.html"); ?>
+
+	<? if (array_key_exists($_REQUEST['team'],$teams)) { ?>
+	  <h2><?=$teams[$_REQUEST['team']][0]?></h2>
+
+		<ul>
+			<li class="external"><a href="http://mobile.msnsportsnet.com/index.cfm?func=viewSport&sport=<?=$_REQUEST['team']?>" onClick="javascript: pageTracker._trackPageview('/outgoing/gameday/<?=$_REQUEST['team']?>/news/');">News</a></li>
+			<li class="external"><a href="http://mobile.msnsportsnet.com/index.cfm?func=viewSportSection&sport=<?=$_REQUEST['team']?>&show=<?=$teams[$_REQUEST['team']][1]?>" onClick="javascript: pageTracker._trackPageview('/outgoing/gameday/<?=$_REQUEST['team']?>/stats/');">Statistics</a></li>
+			<li class="external"><a href="http://mobile.msnsportsnet.com/index.cfm?func=viewSportSection&sport=<?=$_REQUEST['team']?>&show=<?=$teams[$_REQUEST['team']][2]?>" onClick="javascript: pageTracker._trackPageview('/outgoing/gameday/<?=$_REQUEST['team']?>/schedule/');">Schedule</a></li>
+			<li class="external"><a href="http://mobile.msnsportsnet.com/index.cfm?func=viewSportSection&sport=<?=$_REQUEST['team']?>&show=roster" onClick="javascript: pageTracker._trackPageview('/outgoing/gameday/<?=$_REQUEST['team']?>/roster/');">Team Roster</a></li>
+			<li class="external"><a href="http://mobile.msnsportsnet.com/index.cfm?func=viewSportSection&sport=<?=$_REQUEST['team']?>&show=<?=$teams[$_REQUEST['team']][3]?>" onClick="javascript: pageTracker._trackPageview('/outgoing/gameday/<?=$_REQUEST['team']?>/gamenotes/');">Game notes</a></li>
+		</ul>
+		<? } else { ?>
+			<div class="focal"><p>That team was not found. Sorry.</p></div>
+		<? } ?>
+
+	<? include("../templates/iphone/info.html"); ?>
+
+</div>

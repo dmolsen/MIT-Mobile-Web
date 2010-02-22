@@ -1,0 +1,20 @@
+<?php
+$page->title('U92FM: College Radio at WVU: News detail')
+     ->navbar_image('title-u92')
+     ->breadcrumbs('News detail');
+
+$page->content_begin();
+?>
+		
+	<div class="focal">
+	
+		<h2 class="icon"><?=$title?></h2>
+    
+    <? foreach($paragraphs as $paragraph) { ?>
+       <p><?=$paragraph?></p>
+    <? } ?>
+
+	</div>
+
+<? $page->content_end(); ?>
+<? $page->help_off(); ?>

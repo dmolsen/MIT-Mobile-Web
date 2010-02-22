@@ -1,0 +1,21 @@
+<?php
+$page->title("Gator Bowl Info")
+     ->header("Gator Bowl: WVU vs FSU");
+
+$page->content_begin();
+?>
+
+<p class="nonfocal">As we get closer to the 2010 Konica Minolta Gator Bowl taking place on January 1st, 2010 at 1PM please return to this site as your "on the go" resource for all things WVU at the Gator Bowl. For TV coverage of the game check out CBS Sports.</p>
+
+<p class="nav">
+	   <!--<a href="tel:18009884263" class="phone" onClick="javascript: pageTracker._trackPageview('/outgoing/gatorbowl/tickets/');">Tickets</a> <span class="smallprint">(800.WVU.GAME)</span><br/>-->
+     <? foreach($links as $item) { ?>
+				<? $external = ''; ?>
+				<? if ($item[2] == true) { ?>
+					<? $external = "onClick=\"javascript: pageTracker._trackPageview('/outgoing/gameday/links/".$item[1]."');\" "; ?>
+				<? } ?>
+        <a href="<?=$item[0]?>" <?=$external?>> <?=$item[1]?></a><br/>
+     <? } ?>
+</p>
+
+<? $page->content_end(); ?>

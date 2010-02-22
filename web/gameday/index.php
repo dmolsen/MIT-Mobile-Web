@@ -40,7 +40,7 @@ $query->setSortorder('a');
 $query->setmaxresults('5');
 $eventFeed = $gdataCal->getCalendarEventFeed($query);
 
-require "$prefix/index.html";
+require "templates/$prefix/index.html";
 
 $page->cache();
 $page->output();

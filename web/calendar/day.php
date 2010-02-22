@@ -40,7 +40,7 @@ $query->setStartMax($next['gdate']);
 $query->setmaxresults('30');
 $eventFeed = $gdataCal->getCalendarEventFeed($query);
 
-require "$prefix/day.html";
+require "templates/$prefix/day.html";
 $page->output();
 
 ?>

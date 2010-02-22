@@ -1,0 +1,27 @@
+<?php
+$page->title($inst_name.' News: Detail')
+     ->navbar_image('title-news')
+     ->breadcrumbs('News Detail');
+
+$page->content_begin();
+?>
+		
+	<div class="focal">
+	
+		<h2 class="icon"><?=$title?></h2>
+    
+    <? foreach($paragraphs as $paragraph) { ?>
+       <p><?=$paragraph?></p>
+    <? } ?>
+
+    <? if ($read_more) { ?>
+	     <? $outgoing = str_replace('http://','',$link); ?>
+	     <p><a href="<?=$link?>" onClick="javascript: pageTracker._trackPageview('/outgoing/news/<?=$_REQUEST['src']?>/<?=$outgoing?>');">Read more on the <?=$section?> site...</a></p>
+		<? } ?>
+		
+		<p class="smallprint"><?=$long_date?></p>
+
+	</div>
+
+<? $page->content_end(); ?>
+

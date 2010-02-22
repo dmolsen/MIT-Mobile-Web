@@ -1,0 +1,22 @@
+<? $page_title = "Extra Numbers"; ?>
+<? $help_on = true; ?>
+
+<div id="emergency-extra">
+	
+	<? include("../templates/iphone/toolbar.html"); ?>
+	
+	<ul class="edgetoedge">
+		<? if ($show_res == true) { ?>
+			<li class="arrow"><a href="<?=residencesURL()?>">Residence Halls</a></li>
+		<? } ?>
+		<? if ($show_schools == true) { ?>
+			<li class="arrow"><a href="<?=schoolsURL()?>">Schools &amp; Colleges</a></li>
+		<? } ?>
+		<? foreach($extra as $item) { ?>
+			<li class="phone"><a href="tel:<?=$item->call_number()?>" onClick="javascript: pageTracker._trackPageview('/outgoing/phone/emergency/extra/<?=$item->label()?>');"><?=$item->label()?> <span class="smallprint">(<?=$item->message_text()?><?=$item->number_text()?>)</span></a></li>
+		<? } ?>
+	</ul>
+
+	<? include("../templates/iphone/info.html"); ?>
+
+</div>

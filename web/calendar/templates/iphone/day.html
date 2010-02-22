@@ -1,0 +1,38 @@
+<? $page_title = "Events"; ?>
+<? $help_on = true; ?>
+
+<div id="calendar-day">
+	
+	<? include("../templates/iphone/toolbar.html"); ?>
+
+	<h2>Events for <strong><?=$current['day_3Let']?> <?=$current['month']?> <?=$current['day_num']?>, <?=$current['year']?></strong></h2>
+	
+	<div class="nonfocal">
+		<p>
+			<a href="<?=dayURL($prev, $type)?>">&lt; <?=$prev['day_3Let']?> <?=$prev['month']?> <?=$prev['day_num']?></a> | 
+			<a href="<?=dayURL($next, $type)?>"><?=$next['day_3Let']?> <?=$next['month']?> <?=$next['day_num']?> &gt;</a>
+		</p>
+	</div>
+	
+	<ul class="edgetoedge">
+ 		<? $i = 0; ?>
+		<? foreach($eventFeed as $event) { ?>
+			<? $loc = briefLocation($event); ?>
+			<? $i++; ?>
+			<li><a href="<?=detailURL($event)?>"><?=$event->title->text?><br/><span class="smallprint"><?=timeText($event)?><? if(trim($loc->valueString) != '') { ?>&nbsp;|&nbsp;<?=$loc->valueString?><? } ?></span></a></li>
+		<? } ?>
+		<? if ($i == 0) { ?>
+			<li><a href="<?=dayURL($next,$type)?>">No events for today. Try tomorrow.</a></li>
+		<? } ?>
+	</ul>
+	
+	<div class="nonfocal">
+		<p>
+			<a href="<?=dayURL($prev, $type)?>">&lt; <?=$prev['day_3Let']?> <?=$prev['month']?> <?=$prev['day_num']?></a> | 
+			<a href="<?=dayURL($next, $type)?>"><?=$next['day_3Let']?> <?=$next['month']?> <?=$next['day_num']?> &gt;</a>
+		</p>
+	</div>
+	
+	<? include("../templates/iphone/info.html"); ?>
+
+</div>

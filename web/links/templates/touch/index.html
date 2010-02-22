@@ -1,0 +1,19 @@
+<?php
+$page->title('Useful Links')
+     ->navbar_image('title-links')
+     ->breadcrumbs('Useful Links')
+     ->breadcrumb_home();
+
+$page->content_begin();
+?>
+
+	<p class="nonfocal">These links may launch third-party websites unaffiliated with the <?=$inst_name?> Mobile Web.</p>
+
+	<ul class="nav">
+            <? foreach($links as $item) { ?>
+		<li><a class="external" href="http://<?=$item['link']?>" onClick="javascript: pageTracker._trackPageview('/outgoing/links/<?=$item['link']?>');"><?=$item['name']?></a></li>
+            <? } ?>
+	</ul>
+	
+<? $page->content_end(); ?>
+<? $page->help_off(); ?>

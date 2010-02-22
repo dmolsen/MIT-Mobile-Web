@@ -1,0 +1,48 @@
+<? $page_title = "Calendar"; ?>
+<? $help_on = true; ?>
+<div id="calendar">
+	
+	<!-- notice Alert initializer -->
+	<script src="/jqtouch/extensions/jqt.notice.initialize.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){   				
+			  $('#calendar').bind('pageAnimationEnd', function(event, info){
+					if (info.direction == 'out') {
+						$('div#jqt .notice').hideNotice();
+						$(this).removeClass('active');
+					}
+				})
+	  });
+	</script>
+	
+	<? include("../templates/iphone/toolbar.html"); ?>
+	
+	<h2><?=$today['weekday']?>, <?=$today['month']?> <?=$today['day_num']?>, <?=$today['year']?></h2>
+	
+	<ul class="rounded">
+		<li class="arrow"><a href="<?=dayURL($today, 'events')?>">Today's events</a></li>
+		<? foreach ($calendars as $calkey => $calvalues) { ?>
+			<? if ($calvalues['main'] == true) { ?>
+				<li class="arrow"><a href="/calendar/category.php?id=<?=$calkey?>" class="shownotice"><?=$calvalues['title']?><? if ($calvalues['caltxt'] == true) { ?> calendar<? } ?></a></li>
+			<? } ?>
+		<? } ?>
+		<li class="arrow"><a href="<?=categorysURL()?>">Browse events by category</a></li>
+	</ul>
+	
+	<div class="nonfocal">
+		<? include("search_form.html"); ?>
+	</div>
+	
+	<? include("../templates/iphone/info.html"); ?>
+
+</div>
+
+<div class="notice">
+	<img src="/templates/iphone/images/spinner.gif" /><br />
+	Loading Data
+</div>
+
+
+
+
+

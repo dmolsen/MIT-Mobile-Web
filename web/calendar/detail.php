@@ -117,7 +117,7 @@ function URLize($web_address) {
   }
 }
 
-require "$prefix/detail.html";
+require "templates/$prefix/detail.html";
 $page->output();
 
 ?>

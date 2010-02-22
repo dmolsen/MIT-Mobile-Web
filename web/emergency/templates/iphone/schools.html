@@ -1,0 +1,15 @@
+<? $page_title = "Schools & Colleges"; ?>
+<? $help_on = true; ?>
+
+<div id="emergency-schools">
+	
+	<? include("../templates/iphone/toolbar.html"); ?>
+	<ul class="edgetoedge">
+		<? foreach($schools as $item) { ?>
+			<li class="phone"><a href="tel:<?=$item->call_number()?>" onClick="javascript: pageTracker._trackPageview('/outgoing/phone/emergency/schools/<?=$item->label()?>');"><?=$item->label()?> <span class="smallprint">(<?=$item->message_text()?><?=$item->number_text()?>)</span></a></li>
+		<? } ?>
+	</ul>
+
+	<? include("../templates/iphone/info.html"); ?>
+
+</div>

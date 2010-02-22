@@ -1,0 +1,25 @@
+<? $page_title = "Browse Map"; ?>
+<? $help_on = true; ?>
+
+<div id="map-places">
+	
+	<? include("../templates/iphone/toolbar.html"); ?>
+
+	<h2>Browse <?=$title?></h2>
+	
+	<ul class="edgetoedge">
+		<? foreach($places as $place) { ?>
+			<? $insert = ''; ?>
+			<? if ($place['type'] == 'Parking Lot') { ?>
+				<? $insert = 'Parking Lot: '; ?>
+			<? } ?>
+			<li><a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>"><?=$insert?><?=$place['name']?></a></li>
+		<? } ?>
+	</ul>
+	
+	<? include("browse_category_form.html"); ?>
+
+	<? include("../templates/iphone/info.html"); ?>
+
+</div>
+

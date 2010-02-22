@@ -1,0 +1,58 @@
+<?
+$page->title('Gator Bowl Info: Map')
+     ->header('Gator Bowl Info: Map');
+
+function tabs() {
+  $html = array();
+  foreach(array("Map") as $aTab) {
+    if($url = selfURL($aTab)) {
+      if(tab() == $aTab) {
+        $html[] = '<span class="active">' . $aTab . '</span>';
+      } else {
+        $html[] = "<a href=\"$url\">$aTab</a>";
+      }
+    }
+  }
+  return implode("&nbsp;|&nbsp;", $html);
+}
+
+$resolution = array(
+    "sp" => array("220", "160"),
+    "fp" => array("160", "160")
+  );
+
+$query = array(
+    "maptype"      => "roadmap",
+    "key"          => $maps_api_key, 
+    "size"         => $resolution[$phone][0].'x'.$resolution[$phone][1],
+    "center"       => $data[4].",".$data[5],
+    "zoom"         => 15,
+    "sensor"       => "false",
+    "markers"      => $data[4].",".$data[5].","."midredb"
+  );
+
+$mapurl = "http://maps.google.com/staticmap?".http_build_query($query);
+
+$page->content_begin();
+?>
+
+	<div class="focal">
+
+		<h2><?=$data[0]?></h2>
+		
+    <p>
+	    Time: <?=$data[1]?><br />
+			Location: <?=$data[2]?>
+			<? if ($data[3] != "") { ?><br /><?=$data[3]?><? } ?>
+   </p>
+
+    <p class="image">
+			  <a name="map"> </a>
+			  <img src="<?=$mapurl?>" width="<?=$width?>" height="<?=$height?>" alt="Map" />
+		</p>
+                   
+	</div>
+<?
+$page->content_end();
+$page->nav_link("./", "Campus Map");
+?>

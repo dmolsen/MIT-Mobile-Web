@@ -11,6 +11,11 @@
 define("SERVER", "ldap.wvu.edu");
 define("DN","ou=people,dc=wvu,dc=edu");
 
+## USING LDAP BIND FOR PASSWORD PROTECTED LDAP IS NOT TESTED ##
+define("AUTH",false); # use authentication?
+define("USER","cn=webservices,ou=people,dc=heu,dc=edu");
+define("PASS","password");
+
 ## look at line 205 to edit how your LDAP fields match display keys
 
 function mit_search($search) {
@@ -114,8 +119,11 @@ function standard_query($search) {
 }
 
 function do_query($query, $search_results=array()) {
-    $ds = ldap_connect(SERVER) or ldap_die("cannot connect");
 
+    $ds = ldap_connect(SERVER) or ldap_die("cannot connect");
+    if (AUTH == true) {
+	$ldapbind = ldap_bind($ds, USER, PASS);
+    }
     //turn off php Warnings, during ldap search
     //since it complains about search that go over the limit of 100
     $error_reporting = ini_get('error_reporting');

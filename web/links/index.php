@@ -19,9 +19,11 @@ foreach(Links::$links as $name => $link) {
   );
 }
 
-require "$prefix/index.html";
+require "templates/$prefix/index.html";
 
-$page->cache();
-$page->output();
-    
+if ($prefix != 'iphone') {
+	$page->cache();
+	$page->output();
+}
+
 ?>

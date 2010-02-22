@@ -1,0 +1,25 @@
+<? $page_title = $inst_name." SMS (BETA)"; ?>
+<? $help_on = false; ?>
+
+<div id="sms">
+	
+	<? include("../templates/iphone/toolbar.html"); ?>
+
+	<div class="focal">
+		<p>Get info on <?=$inst_name?> people, shuttles and campus status via text message using the new <?=$inst_name?> SMS Service (currently in BETA).</p>
+	</div>
+
+	<ul>
+		<!--<li><a href="<?=busURL()?>">Shuttle Schedule via SMS</a></li>-->
+		<li><a href="<?=dirURL()?>">WVU People via SMS</a></li>
+		<li><a href="<?=sosURL()?>">Campus Status via SMS</a></li>
+		<li><a class="email" href="mailto:<?=$contact_addy?>">Send us Feedback!</a></li>
+	</ul>
+
+	<div class="nonfocal legend">
+	<p><strong>* Important note:</strong> The <?=$inst_name?> Mobile Web is a free service. Extra data charges may apply when using any website on your mobile device depending on your service plan.</p>
+	</div>
+
+	<? include("../templates/iphone/info.html"); ?>
+
+</div>

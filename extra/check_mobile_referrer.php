@@ -32,10 +32,11 @@ else if ($_REQUEST["nomobi"] == "true") {
 }
 else {
 	$user_agent = $_SERVER["HTTP_USER_AGENT"];
+        $accept = $_SERVER['HTTP_ACCEPT']; 
 	if (eregi("ipod",$user_agent) || eregi("iphone",$user_agent)) {
 		header("Location: ".$redirect);
 	} 
-	else if (eregi("android",$user_agent) || eregi("opera mini",$user_agent) || eregi("blackberry",$user_agent) || preg_match("/(palm os|palm|hiptop|avantgo|plucker|xiino|blazer|elaine|windows ce; ppc;|windows ce; smartphone;|windows ce; iemobile|up.browser|up.link|mmp|symbian|smartphone|midp|wap|vodafone|o2|pocket|kindle|mobile|pda|psp|treo)/i",$user_agent)) {
+	else if (eregi("android",$user_agent) || eregi("opera mini",$user_agent) || eregi("blackberry",$user_agent) || preg_match("/(webOS|palm os|palm|hiptop|avantgo|plucker|xiino|blazer|elaine|windows ce; ppc;|windows ce; smartphone;|windows ce; iemobile|up.browser|up.link|mmp|symbian|smartphone|midp|wap|vodafone|o2|pocket|kindle|mobile|pda|psp|treo)/i",$user_agent)) {
 		header("Location: ".$redirect);
     }
 	else if ((strpos($accept,'text/vnd.wap.wml') > 0) || (strpos($accept,'application/vnd.wap.xhtml+xml') > 0) || isset($_SERVER['HTTP_X_WAP_PROFILE']) || isset($_SERVER['HTTP_PROFILE']) || in_array(strtolower(substr($user_agent,0,4)),array('1207'=>'1207','3gso'=>'3gso','4thp'=>'4thp','501i'=>'501i','502i'=>'502i','503i'=>'503i','504i'=>'504i','505i'=>'505i','506i'=>'506i','6310'=>'6310','6590'=>'6590','770s'=>'770s','802s'=>'802s','a wa'=>'a wa','acer'=>'acer','acs-'=>'acs-','airn'=>'airn','alav'=>'alav','asus'=>'asus','attw'=>'attw','au-m'=>'au-m','aur '=>'aur ','aus '=>'aus ','abac'=>'abac','acoo'=>'acoo','aiko'=>'aiko','alco'=>'alco','alca'=>'alca','amoi'=>'amoi','anex'=>'anex',

@@ -1,0 +1,30 @@
+<? $page_title = "About"; ?>
+<? $help_on = false; ?>
+
+<div id="about-about">
+
+	<? include("../templates/iphone/toolbar.html"); ?>
+	
+	<div class="focal">
+		<p>The <?=$inst_name?> Mobile Web provides essential <?=$inst_name?> information and services anytime, anywhere on your mobile device, with an interface optimized for on-the-go access.</p>
+
+		<p>This site automatically detects the device you're using and delivers an experience optimized for it. You're  using the version optimized for the iPhone and iPod Touch.</p>
+
+		<p>The <?=$inst_name?> Mobile Web is provided by <?=$org_name?>, in cooperation with other departments, as a free service* to the <?=$inst_name?> community.</p>
+	</div>
+
+	<ul>
+		<li class="arrow"><a href="<?=whatsnewURL()?>">What's New</a></li>
+		<li class="arrow"><a href="<?=requirementsURL()?>">System Requirements</a></li>
+		<li class="arrow"><a href="<?=homescreenURL()?>">Bookmark m.wvu.edu</a></li>
+		<li class="arrow"><a href="<?=creditsURL()?>">Credits</a></li>
+		<li class="email"><a href="mailto:<?=$contact_addy?>">Send us Feedback!</a></li>
+	</ul>
+
+	<div class="focal">
+		<strong>* Important note:</strong> The <?=$inst_name?> Mobile Web is a free service. Extra data charges may apply when using any website on your mobile device depending on your service plan.
+	</div>
+
+	<? include("../templates/iphone/info.html"); ?>
+
+</div>

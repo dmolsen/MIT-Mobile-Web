@@ -8,15 +8,19 @@
  */
 
 require "../page_builder/Page.php";
+require "../page_builder/counter.php";
 $phone = Page::classify_phone();
 $page = Page::factory($phone);
 $prefix = $page->requirePrefix();
 
 require_once "../../config.gen.inc.php";
 
-require "../$prefix/help.html";
+require "../templates/$prefix/help.html";
 
-$page->cache();
-$page->output();
+# including this section screws w/ jQTouch
+if ($prefix != 'iphone') {
+	$page->cache();
+	$page->output();
+}
 
 ?>

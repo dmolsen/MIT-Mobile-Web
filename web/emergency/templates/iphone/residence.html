@@ -1,0 +1,16 @@
+<? $page_title = "Residence Halls"; ?>
+<? $help_on = true; ?>
+
+<div id="emergency-residence">
+	
+	<? include("../templates/iphone/toolbar.html"); ?>
+	
+	<ul class="edgetoedge">
+    <? foreach($residence as $item) { ?>
+        <li class="phone"><a href="tel:<?=$item->call_number()?>" onClick="javascript: pageTracker._trackPageview('/outgoing/phone/emergency/residences/<?=$item->label()?>');"><?=$item->label()?> <span class="smallprint">(<?=$item->message_text()?><?=$item->number_text()?>)</span></a></li>
+    <? } ?>
+	</ul>
+
+	<? include("../templates/iphone/info.html"); ?>
+
+</div>

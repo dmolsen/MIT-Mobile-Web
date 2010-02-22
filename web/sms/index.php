@@ -25,13 +25,13 @@ switch($_REQUEST['page']) {
   case "bus":
   case "dir":
   case "sos":
-    require "$prefix/{$_REQUEST['page']}.html";
+    require "templates/$prefix/{$_REQUEST['page']}.html";
     $page->cache();
     $page->output();
     break;
 
   default:
-    require "$phone/index.html";
+    require "templates/$phone/index.html";
     $page->cache();
     $page->output();
 }

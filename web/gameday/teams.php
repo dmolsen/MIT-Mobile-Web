@@ -13,10 +13,10 @@ require_once "../../config.gen.inc.php";
 require_once "data/teams.data.inc.php";
 
 if ($_REQUEST['team']) {
-	require "$prefix/detail.html";
+	require "templates/$prefix/detail.html";
 }
 else {	
-	require "$prefix/list.html";
+	require "templates/$prefix/list.html";
 }
 
 $page->cache();

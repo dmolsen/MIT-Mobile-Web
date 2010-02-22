@@ -1,0 +1,21 @@
+<? $page_title = "Directions"; ?>
+<? $help_on = true; ?>
+
+<div id="map-direction">
+	
+	<? include("../templates/iphone/toolbar.html"); ?>
+	
+	<ul class="focal">
+		<h2><?=$info->header?></h2>
+		<?=$info->html?>
+	</ul>
+
+	<? if($info->google_html) { ?>
+		<ul class="nav">
+			<?=$info->google_html?>
+		</ul>
+	<? } ?>
+	
+	<? include("../templates/iphone/info.html"); ?>
+
+</div>

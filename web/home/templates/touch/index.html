@@ -1,0 +1,117 @@
+<?='<?xml version="1.0" encoding="UTF-8"?>'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN" "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+	<meta http-equiv="content-type" content="application/xhtml+xml" />
+	<meta name="viewport" id="viewport" content="width=device-width, user-scalable=yes">		
+	<title><?=$mobile_web_addy?></title>
+	<link rel="stylesheet" type="text/css" href="../touch/touch.css" />
+ 	<link rel="apple-touch-icon" href="../touch/images/<?=$homescreen_icon?>" />
+  <? if ($ga_code != '') { ?>
+		<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		<script type="text/javascript">
+		try {
+		  var pageTracker = _gat._getTracker("<?=$ga_code?>");
+		  pageTracker._trackPageview();
+		} catch(err) {}</script>
+	<? } ?>
+	<style type="text/css">
+		#homegrid {
+			width: 300px;
+			margin: 0 auto;
+			padding: 0;
+		}
+		#homegrid td {
+			width: 25%;
+			margin: 0;
+			padding: 0;
+			border: 0;
+			font-size: 13px;
+			line-height: 15px;
+			text-align: center;		
+			vertical-align: top;
+		}
+		#homegrid a {
+			color: #333;
+			text-decoration: none;
+			display: block;
+			-webkit-border-radius: 5px;
+			padding: 7px 5px;
+		}
+		.intro {
+			margin-bottom: 0;
+			text-align: center;
+		}
+		.fineprint {
+			font-size: 13px;
+			color: #404649;
+		}
+		.homepage .pagetitle {
+			padding: 9px 5px;
+			text-align: center;
+		}
+		h1 {
+			font-size: 38px;
+			margin: 12px 6px 7px 6px;
+			color: #112;
+			text-align: center;
+		}
+		#logo {
+			padding-right: 12px;
+		}
+		#footer {
+			margin-top: 10px;
+			text-align: center;
+		}
+		#viewfull {
+			text-align: center;
+			margin: 14px 0;
+			font-size: 13px;
+		}
+	</style>
+</head>
+
+<body onload="scrollTo(0,1);">
+
+<h1><?= $inst_name ?> Mobile Web</h1>
+
+<div id="container">
+  <table cellpadding="0" cellspacing="0" border="0" id="homegrid">
+		<? $i = 0; ?>
+		<? $k = 1; ?>
+		<? $j = count($items); ?>
+	  <? foreach ($items as $item) { ?>
+			<? if ($item[0] == true) { ?>
+				<? if (($i == 0) || ($i == 4)) { ?>
+					<? $i = 0; ?>
+					<tr>
+				<? } ?>
+				<? if ($item[6] == true) { ?> 
+					<td><a href="<?=$item[7]?>" onClick="javascript: pageTracker._trackPageview('/outgoing/home/<?=$item[2]?>');"><img src="ip/images/<?=$item[5]?>" width="50" height="50" alt="<?=str_replace('<br />',' ',$item[2])?>" /><br /><?=$item[2]?></a></td>
+				<? } else { ?>
+					<td><a href="../<?=$item[3]?>/<?=$item[4]?>"><img src="ip/images/<?=$item[5]?>" width="50" height="50" alt="<?=str_replace('<br />',' ',$item[2])?>" /><br /><?=$item[2]?></a></td>
+				<? } ?>
+				<? $i++; ?>
+				<? $k++; ?>
+				<? if ($j == $k) { ?>
+					<? while ($i < 4) { ?>
+						<td></td>
+						<? $i++; ?>
+					<? } ?>
+				<? } ?>
+				<? if ($i == 4) { ?>
+					</tr>
+				<? } ?>
+			<? } ?>
+		<? } ?>
+	</table>
+</div>
+
+<div id="footer">
+	Managed by <?= $org_name ?>
+</div>
+</body>
+</html>

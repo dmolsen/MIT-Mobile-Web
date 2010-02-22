@@ -71,7 +71,7 @@ if (isset($_REQUEST["email"]) && isset($_REQUEST["username"])) {
 		    #Contact's email addresses
 			$vc->data['email1'] = $person["email"][0];
 
-			$result = send_email($_REQUEST['email'],"vCard from ".$inst_name." Directory",$vc->attach());
+			$result = send_email($_REQUEST['email'],"vCard from ".$inst_name." Directory",$vc->attach(),$contact_addy);
 	        $send = true;
         }
 	else {
@@ -79,15 +79,15 @@ if (isset($_REQUEST["email"]) && isset($_REQUEST["username"])) {
 		$message = "The username or email address you supplied was not in a valid format.";
     }
     
-	require "$prefix/vcard.html";
+	require "templates/$prefix/vcard.html";
 }
 else if (isset($_REQUEST["username"])) {
-	require "$prefix/vcard.html";
+	require "templates/$prefix/vcard.html";
 }
 else {
    $error = true;
    $message = "You need to supply a valid username to use the vCard feature.";
-   require "$prefix/vcard.html";
+   require "templates/$prefix/vcard.html";
 }
 
 $page->output();
@@ -107,14 +107,13 @@ function ldap_decode($ldap_str) {
   return preg_replace_callback("/0x(\d|[A-F]){4}/", "unicode2utf8", $ldap_str);
 }
 
-function send_email($to,$subject,$attachment) {
-	$subject = "vCard for ";
-        $attachment = chunk_split(base64_encode($attachment));
+function send_email($to,$subject,$attachment,$contact_addy) {
+    $attachment = chunk_split(base64_encode($attachment));
 	$random_hash = md5(date("r", time())); 
 	$headers = "From: ".$contact_addy."\r\nReply-To: ".$contact_addy; 
 	$headers .= "\nMIME-Version: 1.0";
-        $headers .= "\nContent-Type: multipart/mixed; boundary=\"PHP-mixed-".$random_hash."\""; 
-        $message = "This is a multi-part message in MIME format.
+	$headers .= "\nContent-Type: multipart/mixed; boundary=\"PHP-mixed-".$random_hash."\""; 
+	$message = "This is a multi-part message in MIME format.
 
 --PHP-mixed-".$random_hash." 
 

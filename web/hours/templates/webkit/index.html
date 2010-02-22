@@ -1,0 +1,25 @@
+<?php
+$page->title($inst_name.' Hours')
+     ->navbar_image('title-hours')
+     ->breadcrumbs('Hours')
+     ->breadcrumb_home();
+
+$page->content_begin();
+?>
+	
+	<div class="nonfocal">
+		<h3>Browse hours by:</h3>
+	</div>
+	
+	<ul class="nav">
+            <? foreach($categorys as $category => $title) { ?>
+    
+		<li>
+			<a href="<?=categoryURL($category)?>"><?=$title?></a>
+		</li>
+
+            <? } ?>
+	</ul>
+	
+<? $page->content_end(); ?>
+<? $page->help_off(); ?>

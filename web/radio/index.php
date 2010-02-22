@@ -19,7 +19,7 @@ if ($_REQUEST['streams'] == "true") {
 	$streams["3G (128kbps)"] = "http://157.182.129.241:554/u92Live-128k.m3u";
 	$streams["EDGE (32kbps mono)"] = "http://157.182.129.241:554/u92Live-32k-mono.m3u";
 	
-	require "$prefix/streams.html";
+	require "templates/$prefix/streams.html";
 }
 else {
 	$db = db::$connection;
@@ -55,7 +55,7 @@ else {
 		array("U92 on iTunes U","http://deimos.apple.com/WebObjects/Core.woa/Browse/wvu.edu.1353247216",false,true),
 		array("U92's full web site","http://u92.wvu.edu/",true,true));
 	
-	require "$prefix/index.html";
+	require "templates/$prefix/index.html";
 }
 
 $page->cache();

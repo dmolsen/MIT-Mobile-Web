@@ -64,14 +64,14 @@ if (isset($_REQUEST["username"])) {
    
    if($total==0) {
      $failed_search = True;
-     require "$prefix/sms/index.html";
+     require "templates/$prefix/sms/index.html";
    } elseif($total==1) {
        $person = $people[0];
-       require "$prefix/sms/detail.html";
+       require "templates/$prefix/sms/detail.html";
    } else {
 	   if ($selected == true) {
 		 $person = $people[(int)$select];
-	     require "$prefix/sms/detail.html";
+	     require "templates/$prefix/sms/detail.html";
 	   }
 	   else {
          $stmt_1 = $db->prepare("INSERT INTO SMSDirState (searchterm,timestamp,uid) VALUES (?,?,?)");
@@ -82,12 +82,12 @@ if (isset($_REQUEST["username"])) {
            $stmt_1->bind_param('sss', $search_terms, $rightNow, $uid);
 	       $stmt_1->execute();
 	     }
-	     require "$prefix/sms/results.html";
+	     require "templates/$prefix/sms/results.html";
 	  } 
    }
 } else {
    $page->cache();
-   require "$prefix/sms/index.html";
+   require "templates/$prefix/sms/index.html";
 }
 
 function detail_url($person) {

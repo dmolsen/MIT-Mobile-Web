@@ -1,0 +1,51 @@
+<?php
+$page->title('PRT Status')
+     ->navbar_image('title-prt')
+     ->breadcrumbs('PRT Status')
+     ->breadcrumb_home();
+
+$page->content_begin();
+?>
+	
+<div class="focal" id="statusmsg">
+	<div>
+        <? if ($holiday == true) { ?>
+	        <div style="float: left; height: 55px; margin-right: 7px;"><img src="/prt/ip/images/zzz.png" alt="Zzz"></div>
+		<div style="float: right; width: 215px; color: #003366; font-size:.95em">The PRT is closed for the holiday.</div>
+                <div style="height: 0px; clear: both;"></div>
+	<? } else if (date("D") == "Sun") { ?>
+		<div style="float: left; height: 55px; margin-right: 7px;"><img src="/prt/ip/images/zzz.png" alt="Zzz"></div>
+		<div style="color: #003366; font-size: .95em">The PRT is closed.</div>
+	<? } else if ((date("D") == "Sat") && ((date("Gi") < 930) || (date("Gi") > 1700))) { ?>
+		<div style="float: left; height: 55px; margin-right: 7px;"><img src="/prt/ip/images/zzz.png" alt="Zzz"></div>
+		<div style="color: #003366; font-size: .95em">The PRT is closed.</div>		
+	<? } else if ((date("Gi") < 630) || (date("Gi") > 2215)) { ?>
+		<div style="float: left; height: 50px; margin-right: 7px;"><img src="/prt/ip/images/zzz.png" alt="Zzz"></div>
+		<div style="color: #003366; height: 50px; font-size: .95em">The PRT is closed.</div>
+	<? } else if ($status == 1) { ?>
+		<div style="float: left; height: 55px; margin-right: 7px;"><img src="/prt/ip/images/ok.png" alt="Green check"></div>
+		<div style="color: #3e871b; font-size: .95em"><?=$message?></div>
+	<? } else { ?>
+		<div style="float: left; height: 55px; margin-right: 7px;"><img src="/prt/ip/images/error.png" alt="Red X"></div>
+		<div style="float: right; width: 215px; color: #8b381d;"><?=$message?><br /><span class="smallprint">Last Updated: <?=date("M. j, Y", $timestamp)?> at <?=date("g:ia", $timestamp)?></span></div>
+		<div style="height: 0px; clear: both;"></div>
+	<? } ?>
+	</div>
+</div>
+
+<ul class="secondary">
+	<li><a href="tel:13042935011" class="phone" onClick="javascript: pageTracker._trackPageview('/outgoing/prt/maintenance/');">Maintenance <span class="smallprint">(304.293.5011)</span></a></li>
+</ul>
+
+<ul class="secondary">
+		<? foreach($places as $place) { ?>
+         <li><a href="../map/<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>" class="map"><?=$place['name']?> Station<br /><span class="legend"><?=str_replace('"','',$place['hours'])?></span></a></li>
+     <? } ?>
+</ul>
+
+<div class="nonfocal legend">
+	<p>Data provided by the PRT Administration.</p>
+</div>
+
+<? $page->content_end(); ?>
+

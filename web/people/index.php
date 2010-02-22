@@ -33,17 +33,17 @@ if (isset($_REQUEST["username"])) {
 
    if($total==0) {
      $failed_search = True;
-     require "$prefix/index.html";
+     require "templates/$prefix/index.html";
    } elseif($total==1) {
        $person = $people[0];
-       require "$prefix/detail.html";
+       require "templates/$prefix/detail.html";
    } else {
        $content = new ResultsContent("items", "people", $prefix, $phone); 
-       require "$prefix/results.html";
+       require "templates/$prefix/results.html";
    }
 } else {
    $page->cache();
-   require "$prefix/index.html";
+   require "templates/$prefix/index.html";
 }
 
 $page->output();

@@ -30,7 +30,7 @@ foreach($text as $paragraph) {
 
 $long_date = str_replace(' 0:00:00','',date("l, F j, Y G:i:s", $items[$title]['unixtime']));
 
-require "$prefix/detail.html";
+require "templates/$prefix/detail.html";
 $page->output();
     
 ?>

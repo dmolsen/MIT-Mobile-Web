@@ -1,0 +1,32 @@
+<? $page_title = "Search Results"; ?>
+<? $help_on = true; ?>
+
+<div id="map-search">
+	
+	<? include("../templates/iphone/toolbar.html"); ?>
+
+	<div class="nonfocal">
+		<form method="get" action="search.php">
+			<fieldset class="inputcombo">
+				<input class="forminput" type="text" id="filter" name="filter" placeholder="Search the campus map" value="<?=$search_terms?>" />
+				<input class="combobutton" id="sch_btn" src="../webkit/images/search-button.png" type="image" />
+			</fieldset>	
+		</form>
+	
+		<p><?=count($results)?> matches found:</p>
+
+	</div>
+
+	<ul class="edgetoedge">
+		<? foreach($results as $place) { ?>
+			<? $insert = ''; ?>
+			<? if ($place['type'] == 'Parking Lot') { ?>
+				<? $insert = 'Parking Lot: '; ?>
+			<? } ?>
+			<li><a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>"><?=$insert?><?=$place['name']?><br /><span class="legend"><?=$place['physical_address']?>, Morgantown, WV</a></li>
+		<? } ?>
+	</ul>
+
+	<? include("../templates/iphone/info.html"); ?>
+
+</div>

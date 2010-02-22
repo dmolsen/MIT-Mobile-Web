@@ -1,0 +1,29 @@
+<?php
+$page->title('Gator Bowl Info')
+     ->navbar_image('title-gameday')
+     ->breadcrumbs('Gator Bowl Info')
+     ->breadcrumb_home();
+
+$page->content_begin();
+?>
+	
+<div class="focal" id="statusmsg">
+	<center>
+		<img src="/gatorbowl/ip/images/fsu.png" alt="Florida State Seminoles" valign="middle" /> vs.<img src="/gatorbowl/ip/images/wvu.png" alt="West Virginia University Mountaineers" valign="middle" /><br />
+		<span class="smallprint">January 1 | 1:00PM | CBS Sports</span>
+	</center>
+	<br />
+	As we get closer to the 2010 Konica Minolta Gator Bowl return to this site as your "on the go" resource for all things WVU at the Gator Bowl.
+</div>
+
+<ul class="nav">
+	<!--<li><a href="tel:18009884263" class="phone" onClick="javascript: pageTracker._trackPageview('/outgoing/gatorbowl/tickets/');">Tickets <span class="smallprint">(800.WVU.GAME)</span></a></li>-->
+	<? foreach($links as $item) { ?>
+		   <? $external = ''; ?>
+		   <? if ($item[2] == true) { $external = "class='external' onClick=\"javascript: pageTracker._trackPageview('/outgoing/gatorbowl/links/".$item[1]."');\" "; } ?>
+		   <? if ($item[3] == true) { $external = "class='map'"; } ?>
+       <li><a <?=$external?> href="<?=$item[0]?>"> <?=$item[1]?></a></li>
+  <? } ?>
+</ul>
+<? $page->content_end(); ?>
+

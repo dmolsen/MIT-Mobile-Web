@@ -1,0 +1,20 @@
+<? $page_title = "Useful Links"; ?>
+<? $help_on = false; ?>
+
+<div id="links">
+	
+	<? include("../templates/iphone/toolbar.html"); ?>
+
+	<div class="nonfocal">
+		These links may launch third-party websites unaffiliated with the <?=$inst_name?> Mobile Web.
+	</div>
+
+	<ul>
+		<? foreach ($links as $item) { ?>
+			<li class="external"><a href="http://<?=$item['link']?>" onClick="javascript: pageTracker._trackPageview('/outgoing/links/<?=$item['link']?>');"><?=$item['name']?></a></li>
+		<? } ?>
+	</ul>
+	
+	<? include("../templates/iphone/info.html"); ?>
+
+</div>

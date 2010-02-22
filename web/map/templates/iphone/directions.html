@@ -1,0 +1,16 @@
+<? $page_title = "Directions"; ?>
+<? $help_on = true; ?>
+
+<div id="map-directions">
+	
+	<? include("../templates/iphone/toolbar.html"); ?>
+	
+	<ul>
+		<? foreach($directions as $link => $value) { ?>
+			<li><a href="<?=directionsURL($link)?>"><?=$value->link_text?></a></li>
+		<? } ?>
+	</ul>
+	
+	<? include("../templates/iphone/info.html"); ?>
+
+</div>

@@ -7,6 +7,15 @@
  * 
  */
 
+/*if (file_exists('constants.php')) {
+  require_once 'constants.php';
+} else {
+  require_once '../constants.php';
+}
+
+require_once 'webkitPage.php';
+require_once 'touchPage.php';
+require_once 'basicPage.php';*/
 
 class Page {
 
@@ -105,7 +114,7 @@ class Page {
     $prefix = $this->requirePrefix();
     
     ob_start();
-      require "../$prefix/base.html";
+      require "../templates/$prefix/base.html";
     $uncompressed_html = ob_get_clean();
 
     // replace large chunks of spaces with a single space
@@ -123,11 +132,13 @@ class Page {
   }
 
   private static $phoneTable = array(
-    "iphone" => "ip",
-    "smart_phone" => "sp",
-    "feature_phone" => "fp",
-    "computer" => "sp",
-    "spider" => "sp",
+    "iphone" => "iphone",
+    "android" => "basic",
+    "palm" => "basic",
+    "smart_phone" => "basic",
+    "feature_phone" => "basic",
+    "computer" => "basic",
+    "spider" => "basic",
   );
 
   private static $is_computer;
@@ -135,10 +146,17 @@ class Page {
 
   public static function classify_phone() {
 	$user_agent = $_SERVER['HTTP_USER_AGENT'];
+    $accept = $_SERVER['HTTP_ACCEPT']; 
 	if (eregi('ipod',$user_agent) || eregi('iphone',$user_agent)) {
 		$type = 'iphone';
 	} 
-	else if (eregi('android',$user_agent) || eregi('opera mini',$user_agent) || eregi('blackberry',$user_agent) || preg_match('/(palm os|palm|hiptop|avantgo|plucker|xiino|blazer|elaine|windows ce; ppc;|windows ce; smartphone;|windows ce; iemobile|up.browser|up.link|mmp|symbian|smartphone|midp|wap|vodafone|o2|pocket|kindle|mobile|pda|psp|treo)/i',$user_agent)) {
+	else if (eregi('android',$user_agent)) {
+		$type = "android";
+    }
+	else if (preg_match('/WebOS/i',$user_agent)) {
+		$type = "palm";
+	}
+	else if (eregi('opera mini',$user_agent) || eregi('blackberry',$user_agent) || preg_match('/(palm os|palm|hiptop|avantgo|plucker|xiino|blazer|elaine|windows ce; ppc;|windows ce; smartphone;|windows ce; iemobile|up.browser|up.link|mmp|symbian|smartphone|midp|wap|vodafone|o2|pocket|kindle|mobile|pda|psp|treo)/i',$user_agent)) {
 		$type = "smart_phone";
     }
     else if ((strpos($accept,'text/vnd.wap.wml') > 0) || (strpos($accept,'application/vnd.wap.xhtml+xml') > 0) || isset($_SERVER['HTTP_X_WAP_PROFILE']) || isset($_SERVER['HTTP_PROFILE']) || in_array(strtolower(substr($user_agent,0,4)),array('1207'=>'1207','3gso'=>'3gso','4thp'=>'4thp','501i'=>'501i','502i'=>'502i','503i'=>'503i','504i'=>'504i','505i'=>'505i','506i'=>'506i','6310'=>'6310','6590'=>'6590','770s'=>'770s','802s'=>'802s','a wa'=>'a wa','acer'=>'acer','acs-'=>'acs-','airn'=>'airn','alav'=>'alav','asus'=>'asus','attw'=>'attw','au-m'=>'au-m','aur '=>'aur ','aus '=>'aus ','abac'=>'abac','acoo'=>'acoo','aiko'=>'aiko','alco'=>'alco','alca'=>'alca','amoi'=>'amoi','anex'=>'anex',
@@ -175,9 +193,10 @@ class Page {
   }
 
   public static $requireTable = array(
-    "ip" => "ip",
-    "sp" => "sp",
-    "fp" => "sp"
+	"iphone" => "iphone",
+    "webkit" => "webkit",
+    "touch" => "touch",
+    "basic" => "basic"
   );
 
   public function requirePrefix() {
@@ -185,7 +204,7 @@ class Page {
   }
 }
 
-class ipPage extends Page {
+class iphonePage extends Page {
 
   protected $navbar_image;
   protected $breadcrumb_root = False;
@@ -199,7 +218,80 @@ class ipPage extends Page {
   protected $fixed = False;
 
   public function __construct() {
-    $this->phone = "ip";
+    $this->phone = "iphone";
+    $this->varnames= array(
+       "title", "header", "navbar_image", "stylesheets", "javascripts", "breadcrumb_links",
+       "home", "breadcrumbs", "last_breadcrumb", "help_on", "footer", "footer_script",
+       "extra_onload", "onorientationchange", "raw_js", "scalable", "fixed"
+    );
+  }
+
+  public function fixed() {
+    $this->fixed = True;
+    return $this;
+  }
+
+  public function not_scalable() {
+    $this->scalable = "no";
+    return $this;
+  }
+
+  public function navbar_image($navbar_image) {
+    $this->navbar_image = $navbar_image;
+    return $this;
+  }
+
+  public function breadcrumbs() {
+    $this->breadcrumbs = func_get_args();
+    $this->last_breadcrumb = array_pop($this->breadcrumbs);
+    $this->breadcrumb_links = array();
+    return $this;
+  }
+
+  public function breadcrumb_links() {
+    $tmp = func_get_args();
+    for($cnt = 0; $cnt < count($tmp); $cnt++) {
+      $this->breadcrumb_links[$cnt] = $tmp[$cnt];
+    }
+    return $this;
+  }
+
+  public function breadcrumb_home() {
+    $this->home = True;
+    return $this;
+  }
+
+  public function extra_onload($js) {
+    $this->extra_onload .= " $js";
+    return $this;
+  }
+
+  public function onorientationchange($js) {
+    $this->onorientationchange = $js;
+    return $this;
+  }
+
+  public function add_inline_script($js) {
+    $this->raw_js[] = $js;
+    return $this;
+  }
+}
+
+class webkitPage extends Page {
+
+  protected $navbar_image;
+  protected $breadcrumb_root = False;
+  protected $breadcrumbs = array();
+  protected $last_breadcrumb;
+  protected $breadcrumb_links;
+  protected $extra_onload = "scrollTo(0,1);";
+  protected $onorientationchange;
+  protected $raw_js = array();
+  protected $scalable = "yes";
+  protected $fixed = False;
+
+  public function __construct() {
+    $this->phone = "webkit";
     $this->varnames= array(
        "title", "header", "navbar_image", "stylesheets", "javascripts", "breadcrumb_links",
        "home", "breadcrumbs", "last_breadcrumb", "help_on", "footer", "footer_script",
@@ -288,18 +380,18 @@ class notIPhonePage extends Page {
   }
 }
 
-class spPage extends notIPhonePage {
+class basicPage extends notIPhonePage {
   protected $width1 = "48";
   protected $height1 = "19";
 
-  protected $phone = "sp";  
+  protected $phone = "basic";  
 }
 
-class fpPage extends notIPhonePage {
-  protected $width1 = "36";
-  protected $height1 = "16";
+class touchPage extends notIPhonePage {
+  protected $width1 = "48";
+  protected $height1 = "19";
 
-  protected $phone = "fp";
+  protected $phone = "touch";  
 }
 
 ?>

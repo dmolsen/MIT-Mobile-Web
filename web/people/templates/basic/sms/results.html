@@ -1,0 +1,9 @@
+<? if ($total > 5) { ?>Your search returned <?=$total?> results. Please refine your search by txting 'WVUDIR firstinitial lastname' to 41411.<? } else { ?>
+Rply with # of proper result:
+<?$i = 1;?>
+<? foreach($people as $person) { ?>
+ <?=$i?>. <?=$person['surname'][0]?>, <?=$person['givenname'][0]?>
+
+<?$i++;?>
+<? } ?>
+<? } ?>

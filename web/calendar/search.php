@@ -47,7 +47,7 @@ $eventFeed = $gdataCal->getCalendarEventFeed($query);
 #$form = new CalendarForm($prefix, SearchOptions::get_options($timeframe));
 #$content->set_form($form);
 
-require "$prefix/search.html";
+require "templates/$prefix/search.html";
 $page->output();
 
 ?>

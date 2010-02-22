@@ -78,45 +78,26 @@ class SearchOptions {
 
 // URL DEFINITIONS
 function dayURL($day, $type) {
-  return "day.php?time={$day['time']}&type=$type";
+  return "/calendar/day.php?time={$day['time']}&type=$type";
 }
 
 function academicURL($year, $month) {
-  return "academic.php";
-}
-
-function holidaysURL($year=NULL) {
-  if(!$year) {
-    $year = $_REQUEST['year'];
-  }
-  return "holidays.php?year=$year";
-}
-
-function religiousURL($year=NULL) {
-  if(!$year) {
-    $year = $_REQUEST['year'];
-  }
-  return "holidays.php?page=religious&year=$year";
+  return "/calendar/academic.php";
 }
 
 function categorysURL() {
-  return "categorys.php";
+  return "/calendar/categorys.php";
 }
 
 function categoryURL($category) {
   $id = is_array($category) ? $category['catid'] : $category->catid;
-  return "category.php?id=$id";
-}
-
-function subCategorysURL($category) {
-  $id = is_array($category) ? $category['catid'] : $category->catid;
-  return "sub-categorys.php?id=$id";
+  return "/calendar/category.php?id=$id";
 }
 
 function detailURL($event,$calid='all') {
   preg_match("/_(.*)$/i",$event->id->text,$matches);
   $id = $matches[1];
-  return "detail.php?cal={$calid}&id={$id}";
+  return "/calendar/detail.php?cal={$calid}&id={$id}";
 }
 
 function timeText($event) {

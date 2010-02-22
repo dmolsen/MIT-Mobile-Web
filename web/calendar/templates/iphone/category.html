@@ -1,0 +1,33 @@
+<? $title_end = !$is_search ? " for Today" : ""; ?>
+<? $page_title = $calendars[$_REQUEST['id']]['title'] . $title_end; ?>
+<? $help_on = true; ?>
+
+<div id="calendar-category">
+	
+	<? include("../templates/iphone/toolbar.html"); ?>
+	
+	<h2><?=$calendars[$_REQUEST['id']]['title']?></h2>
+
+	<div class="nonfocal"> 
+	  <? $i = 0; ?>
+		<? foreach ($eventFeed as $event) { $i++; } ?>
+		<? if ($i == 1) { ?>
+		  <p><?=$i?> match found:</p>
+		<? } else if ($i < 30) { ?>
+		  <p><?=$i?> matches were found:</p>
+		<? } else { ?>
+			<p>The first 30 matches found:</p>
+		<? } ?>
+	</div>
+
+	<ul class="edgetoedge">
+		<? foreach ($eventFeed as $event) { ?>
+			<? $loc = briefLocation($event); ?>
+			<li><a href="<?=detailURL($event)?>"><?=html_entity_decode($event->title->text)?><br/><span class="smallprint"><?=timeText($event)?><? if(trim($loc->valueString) != '') { ?>&nbsp;|&nbsp;<?=$loc->valueString?><? } ?></span></a></li>
+		<? } ?>
+	</ul>
+	
+	<? include("../templates/iphone/info.html"); ?>
+
+</div>
+

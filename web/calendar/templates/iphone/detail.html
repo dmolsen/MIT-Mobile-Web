@@ -1,0 +1,43 @@
+<? $page_title = "Event Details"; ?>
+<? $help_on = true; ?>
+
+<div id="calendar-detail">
+	
+	<? include("../templates/iphone/toolbar.html"); ?>
+	
+	<div class="focal">
+		<h2><?=$event->title?></h2>
+	
+		<ul class="nav">
+			<li><?=$date_str?><br/><?=$time_of_day?></li>
+
+      <? if (trim(briefLocation($event)->valueString) != '') { ?>
+ 			   <li><!--<a href="<?#=mapURL($event)?>" class="map">--><?=trim(briefLocation($event)->valueString)?><!--</a>--></li>
+      <? } ?>
+
+			<? if (trim($description) != '') { ?>
+			   <li class="description"><?=$description?></li>
+      <? } ?>
+
+      <? if (trim($contact_name) != '') { ?>
+	       <li>Contact name: <?=$contact_name?></li>
+	    <? } ?>
+
+      <? if (trim($contact_phone) != '') { ?>
+ 			   <li>For info call: <a href="<?=phoneURL($contact_phone)?>" class="phone"><?=$contact_phone?></a></li>
+      <? } ?>
+      
+      <? if (trim($contact_email) != '') { ?>
+	       <li>For info email: <a href="mailto:$contact_email?>" class="email"><?=$contact_email?></a></li>
+	    <? } ?>
+	                
+      <? if ((trim($event_link) != '') && (trim($event_link) != 'http://')) { ?>
+		     <li><a href="<?=$event_link?>" class="external" target="_new">Event website</a></li>
+      <? } ?>
+		</ul>
+	
+	</div>
+
+	<? include("../templates/iphone/info.html"); ?>
+
+</div>

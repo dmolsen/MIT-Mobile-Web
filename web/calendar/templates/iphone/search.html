@@ -1,0 +1,33 @@
+<? $page_title = "Search Results" ?>
+<? $help_on = true; ?>
+
+<div id="calendar-search">
+	
+	<? include("../templates/iphone/toolbar.html"); ?>
+
+	<div class="nonfocal">
+		<? $i = 0; ?>
+		<? foreach ($eventFeed as $event) { $i++; } ?>
+		<? if ($i == 1) { ?>
+			<p><?=$i?> match found:</p>
+		<? } else if ($i < 30) { ?>
+			<p><?=$i?> matches were found:</p>
+		<? } else { ?>
+			<p>You may need to refine your search. The first 50 matches found:</p>
+		<? } ?>
+	</div>
+	
+	<ul>
+		<? foreach ($eventFeed as $event) { ?>
+			<? $loc = briefLocation($event); ?>
+			<li><a href="<?=detailURL($event,'all')?>"><?=html_entity_decode($event->title->text)?><br/><span class="smallprint"><?=timeText($event)?><? if(trim($loc->valueString) != '') { ?>&nbsp;|&nbsp;<?=$loc->valueString?><? } ?></span></a></li>
+		<? } ?>
+	</ul>
+	
+	<div class="nonfocal">
+		<? include("search_form.html"); ?>
+	</div>
+
+	<? include("../templates/iphone/info.html"); ?>
+
+</div>

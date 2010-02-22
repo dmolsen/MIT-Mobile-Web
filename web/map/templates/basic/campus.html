@@ -1,0 +1,23 @@
+<?
+$page->title($inst_name." Campus Map: Browse by Campus")
+     ->header($inst_name." Campus Map");
+
+
+$drilldowns = array(
+  "Downtown", "Evansdale", "Health Sciences"
+);
+
+$page->content_begin();
+?>
+	<h2>Buildings by Campus</h2>
+	
+	<p class="nav">
+       <? foreach($drilldowns as $drilldown) { ?>
+             <a href="<?=drillURL($drilldown)?>"><?=$drilldown?></a> &nbsp;
+       <? } ?>
+	</p>
+<?
+$page->content_end();
+$page->nav_link("./","Campus Map Home");
+?>
+

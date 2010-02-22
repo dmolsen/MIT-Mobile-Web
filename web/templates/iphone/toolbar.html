@@ -1,0 +1,9 @@
+<? 
+	# hack using the statistics package to get path
+	$module = PageViews::url2db($content); 
+?>
+<div class="toolbar">
+	<h1><?=$page_title?></h1>
+	<a href="#" class="back">Back</a>
+	<? if ($help_on) { ?><a href="/<?=$module?>/help.php" class="button slideup">Help</a><? } ?>
+</div>

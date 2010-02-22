@@ -1,0 +1,16 @@
+<?php
+$page->title($inst_name.' Hours &amp; Locations: Computer Labs')
+     ->navbar_image('title-u92')
+     ->breadcrumbs('List of shows');
+
+$page->content_begin();
+?>
+
+<ul class="nav">
+<? foreach($shows as $show) { ?>
+     <li><a href="<?=showURL($show['id'])?>"><?=$show['name']?></a></li>
+ <? } ?>
+</ul>
+
+<? $page->content_end(); ?>
+<? $page->help_off(); ?>

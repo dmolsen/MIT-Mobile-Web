@@ -19,7 +19,7 @@ if($search_terms = $_REQUEST['filter']) {
   if(count($results) == 1) {
     header("Location: " . detailURL($results[0]['id'],$results[0]['latitude'],$results[0]['longitude']));
   } else {
-    require "$prefix/search.html";
+    require "templates/$prefix/search.html";
     $page->output();
   }
 } else {

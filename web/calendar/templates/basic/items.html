@@ -1,0 +1,7 @@
+<div class="focal">
+   <? foreach($results as $event) { ?>
+	     <? $loc = briefLocation($event); ?>
+       <p><a href="<?=detailURL($event)?>"><?=$event->title?></a><br/><span class="smallprint"><?=timeText($event)?><? if(trim($loc->valueString) != '') { ?>&nbsp;|&nbsp;<?=$loc->valueString?><? } ?></span></p>
+   <? } ?>
+</div>
+

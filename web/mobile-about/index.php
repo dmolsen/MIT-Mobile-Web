@@ -33,7 +33,7 @@ switch($_REQUEST['page']) {
   case "new":
   case "credits":
   case "homescreen":
-    require "$prefix/{$_REQUEST['page']}.html";
+    require "templates/$prefix/{$_REQUEST['page']}.html";
     $page->cache();
     $page->output();
     break;
@@ -41,30 +41,30 @@ switch($_REQUEST['page']) {
   // phone dependant cases
   case "about":
   default:
-    require "$phone/about.html";
+    require "templates/$phone/about.html";
     $page->cache();
     $page->output();
 }
 
 function requirementsURL() {
-  return "./?page=requirements";
+  return "/mobile-about/?page=requirements";
 }
 
 function whatsnewURL() {
-  return "./?page=new";
+  return "/mobile-about/?page=new";
 }
 
 
 function statisticsURL() {
-  return "./?page=statistics";
+  return "/mobile-about/?page=statistics";
 }
 
 function creditsURL() {
-  return "./?page=credits";
+  return "/mobile-about/?page=credits";
 }
 
 function homescreenURL() {
-  return "./?page=homescreen";
+  return "/mobile-about/?page=homescreen";
 }
 
 ?>

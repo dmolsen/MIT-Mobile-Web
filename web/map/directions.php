@@ -91,9 +91,9 @@ function directionsURL($link) {
 
 if($_REQUEST['page']) {
   $info = $directions[ $_REQUEST['page'] ];
-  require "$prefix/direction.html";
+  require "templates/$prefix/direction.html";
 } else {
-  require "$prefix/directions.html";
+  require "templates/$prefix/directions.html";
 }
 
 $page->output();

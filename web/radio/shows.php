@@ -37,7 +37,7 @@ if ((int)$_REQUEST['id'] != 0) {
 	}
 	$showtimes = $stmt_2->fetchAll();
 	
-	require "$prefix/detail.html";
+	require "templates/$prefix/detail.html";
 }
 else {
 	$db = db::$connection;
@@ -45,7 +45,7 @@ else {
 	$stmt_1->execute();
 	$shows = $stmt_1->fetchAll();
     	
-	require "$prefix/list.html";
+	require "templates/$prefix/list.html";
 }
 
 $page->cache();

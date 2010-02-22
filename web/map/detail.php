@@ -14,10 +14,11 @@ require_once "lib/map.lib.inc.php";
 require_once "data/data.inc.php";
 
 define('ZOOM', 15);
-define('LAT',  39.634419);
-define('LONG', -79.954054);
+define('LAT',  $latitude);
+define('LONG', $longitude);
 define('MAPTYPE', "roadmap");
-define('APIKEY', $maps_api_key),
+define('APIKEY', $maps_api_key);
+define('MOBILEMAP',$mobilemap);
 
 switch($phone) {
  case "sp":
@@ -72,7 +73,8 @@ function imageURL($phone) {
     "center"       => lat().",".long(),
     "zoom"         => zoom(),
     "sensor"       => "false",
-    "markers"      => marker()
+    "markers"      => marker(),
+    "mobile"	   => MOBILEMAP
   );
 
   return mapURL() . '?' . http_build_query($query);
@@ -225,11 +227,11 @@ function cleanStreet($data) {
   return preg_replace('/^access\s+via\s+/i', '', $street);
 } 
 
-if ($prefix == 'ip') {
-	require "$prefix/detail-gmap.html";
+if ($prefix == 'iphone') {
+	require "templates/$prefix/detail-gmap.html";
 }
 else {
-	require "$prefix/detail.html";
+	require "templates/$prefix/detail.html";
 }
 
 

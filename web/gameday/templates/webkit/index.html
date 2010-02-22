@@ -1,0 +1,31 @@
+<?php
+$page->title($inst_name.' Athletics')
+     ->navbar_image('title-gameday')
+     ->breadcrumbs($inst_name.' Athletics')
+     ->breadcrumb_home();
+
+$page->content_begin();
+?>
+
+  <ul class="nav">
+	   	<li><a href="tel:13042933267" class="phone" onClick="javascript: pageTracker._trackPageview('/outgoing/gameday/fanline/');">Football Game Day FANLINE <span class="smallprint">(304.293.3267)</span></a></li>
+	</ul>
+
+	<ul class="nav">
+						  <? foreach ($eventFeed as $event) { ?>
+							<? $loc = briefLocation($event); ?>
+		<li><a href="../calendar/<?=detailURL($event)?>" class="calendar"><?=html_entity_decode($event->title->text)?><br/><span class="smallprint"><?=timeText($event)?><? if(trim($loc->valueString) != '') { ?><br /><?=$loc->valueString?><? } ?></span></a></li>
+	          <? } ?>
+	</div>
+	
+	<ul class="nav">
+		<? foreach($links as $item) { ?>
+			   <? $external = ''; ?>
+			   <? if ($item[2] == true) { $external = "class='external' onClick=\"javascript: pageTracker._trackPageview('/outgoing/gameday/links/".item[1]."');\" "; } ?>
+			   <? if ($item[3] == true) { $external = "class='map'"; } ?>
+         <li><a <?=$external?> href="<?=$item[0]?>"> <?=$item[1]?></a></li>
+    <? } ?>
+	</ul>
+	
+<? $page->content_end(); ?>
+<? $page->help_off(); ?>

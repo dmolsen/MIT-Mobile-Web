@@ -1,0 +1,167 @@
+/* Forms */
+
+form {	
+	margin: 18px 0 12px 0;
+	padding: 0;
+	border: none;
+	position: relative;
+}
+
+fieldset {
+	margin: 6px 0;
+	padding: 0;
+	border: none;
+	position: relative;
+}
+
+input, select {
+	color: #223;
+	font-size: 17px;
+	line-height: 1em;
+}
+
+select {
+	width: 100%;
+	border: 1px solid #6585a9;
+	-webkit-border-radius: 9px;
+}
+
+.forminput {
+	border: 1px solid #758ea6;
+	width: 100%;
+	height: 30px;
+	padding: 4px 6px;
+	-webkit-appearance:textfield;
+	-webkit-border-radius: 5px;
+}
+
+.inputcombo .forminput {
+	width: 250px;
+	height: 22px;
+	padding: 4px 4px 8px 9px;
+	line-height: 24px;
+	border: 1px 0 1px 1px solid #758ea6;
+	-webkit-border-bottom-left-radius: 11px;	
+	-webkit-border-top-left-radius: 11px;	
+	-webkit-border-bottom-right-radius: 0;	
+	-webkit-border-top-right-radius: 0;	
+}
+
+.inputcombo .combobutton {
+	position: absolute;
+	z-index: 10;
+	top: 0;
+	right: 0;
+	width: 38px;
+	height: 36px;
+}
+
+.emphasized {
+	border: 3px solid #5884b0;
+	-webkit-border-radius: 13px;
+	margin: 16px 0;
+}
+
+.emphasized  .forminput {
+	border: none;
+	width: 248px;
+	padding: 6px 4px 8px 9px;
+}
+
+/* universal arrows */
+
+ul li.phone {
+	background-image: url(../../templates/iphone/images/action-phone.png); 
+    background-position: right center;
+    background-repeat: no-repeat;
+}
+
+ul li.email {  
+	background-image: url(../../templates/iphone/images/action-email.png); 
+	background-position: right center;
+    background-repeat: no-repeat;
+	margin-right: 8px;
+}
+
+ul li.map {  
+	background-image: url(../../templates/iphone/images/action-map.png); 
+	background-position: right center;
+    background-repeat: no-repeat;
+	margin-right: 8px;
+}
+
+ul li.calendar {  
+	background-image: url(../../templates/iphone/images/action-calendar.png); 
+	background-position: right center;
+    background-repeat: no-repeat;
+	margin-right: 8px;
+}
+
+ul li.youtube {  
+	background-image: url(../../webkit/images/action-youtube.png); 
+	background-position: right center;
+    background-repeat: no-repeat;
+	margin-right: 8px;
+}
+
+ul li.search {  
+	background-image: url(../../templates/iphone/images/action-search.png); 
+	background-position: right center;
+    background-repeat: no-repeat;
+	margin-right: 8px;
+}
+
+ul li.people {  
+	background-image: url(../../templates/iphone/images/action-people.png); 
+	background-position: right center;
+    background-repeat: no-repeat;
+	margin-right: 8px;
+}
+
+ul li.external {  
+	background-image: url(../../templates/iphone/images/action-external.png); 
+	background-position: right center;
+    background-repeat: no-repeat;
+	margin-right: 8px;
+}
+
+ul li.pdf {  
+	background-image: url(../../templates/iphone/images/action-pdf.png); 
+	background-position: right center;
+    background-repeat: no-repeat;
+	margin-right: 8px;
+}
+
+ul li.noaction {
+	background-image: none;
+	padding-right: 7px;
+}
+
+
+/* Specific content formatting */
+
+div.focal {   
+	background: #fff;
+    border: 1px solid #B4B4B4;
+    padding: 12px;	   
+	margin: 10px;
+	font-weight:normal;
+	line-height: 1.33em;
+	color: #333;
+	-webkit-border-radius: 9px;	
+}
+
+div.focal span.alert {
+	font-weight: bold;
+	color: red;
+}
+
+.nonfocal {
+	margin: 12px;
+}
+
+.nonfocal form {
+	margin-left: -2px;
+	margin-right: -2px;
+}
+

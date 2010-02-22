@@ -1,46 +1,72 @@
 <?php
 $page->title($inst_name.' Weather')
-     ->navbar_image('title-weather')
-     ->breadcrumbs('Weather')
-     ->breadcrumb_home();
-
+->navbar_image('title-weather')
+->breadcrumbs('Weather')
+->breadcrumb_home();
+ 
 $page->content_begin();
 ?>
 
-	<div class="nonfocal">
-		Weather details affecting the <?=$inst_name?> community.
-	</div>
-	
-	<? $alert = false; ?>
-	<? foreach($alerts as $title => $condition) { ?>
-	  <? if ($title != 'There are no active watches, warnings or advisories') { $alert = true; } ?>
-	<? } ?>
-	
-	<? if ($alert == true) { ?>
-		<ul class="nav" style="background-color: red; color: white;">
-	    <? foreach($alerts as $title => $condition) { ?>
-			  <li>
-	         <div><h3><?=$title?></h3><span class="smallprint"><?=full($condition)?> <? if ($condition['date']) { ?>(<?=short_date($condition['date'])?>)<? } ?></span></div>
-			  </li>
-			<? } ?>
+<div class="nonfocal">
+	Weather details affecting the <?php echo  $inst_name ?> community.
+</div>
+
+<?php $alert = false; ?>
+<?php if(  $alerts[0]['title']  != 'There are no active watches, warnings or advisories' ){ $alert = true; } ?>
+
+<?php if ($alert == true) { ?>
+	<div class="focal">
+		<h2 style="color: black;">Weather Alerts</h2>
+		<ul class="nav" style="background-color: white; color: red;">
+			<?php $count = count($alerts); ?>
+			<?php for( $i = 0; $i < $count; $i++ ) { ?>
+				<li><a href="<?php echo alertURL(  getWarning( $alerts[$i]['title'] ) , $i); ?>"><?php echo getWarning( $alerts[$i]['title'] ); ?></a></li>
+			<?php } ?>
 		</ul>
-	<? } ?>
-	
-	<ul class="nav">
-    <? foreach($conditions as $title => $condition) { ?>
-		  <li>
-         <div><h3>Current Conditions</h3><span class="smallprint"><?=$title?>. <?=full($condition)?> <? if ($condition['date']) { ?>(<?=short_date($condition['date'])?>)<? } ?></span></div>
-		  </li>
-		<? } ?>
-	</ul>
-	
-	<ul class="nav">
-		<li><a href="./?page=radar">Radar Image</a></li>
-	  <li><a href="./?page=forecast">5-day Forecast</a></li>
-  </ul>
-	
-	<ul class="secondary">
-			<li><a href="../emergency">Campus emergency information</a></li>	
-	</ul>
-	
+	</div>
+<? } ?>
+
+	<div class="focal">
+		<h3>Current Conditions</h3>
+		<div style="float: left; margin: 2px;">
+			<img src="<?php echo $conditions['icon_url_base'] . $conditions['icon_url_name']; ?>" title='weather icon'  />
+		</div>
+		<div style="float: left; margin: 2px;">
+			<ul style="list-style: none;">
+				<li><h1 style="color: black;"><?php echo $conditions['temp_f']; ?> &deg; F</h1></li>
+				<li><?php echo $conditions['weather']; ?></li>
+			<ul>
+		</div>
+		<div style="clear: both;"></div>
+		<span class="smallprint">
+			<ul style="list-style: none;">		
+				<?php if( isset( $conditions['windchill_f'] ) ){ ?>
+					<li><strong>Wind Chill: </strong><?php echo $conditions['windchill_f']; ?> &deg; F</li>
+				<?php } ?>
+			
+				<?php if( isset( $conditions['heat_index_f'] ) ){ ?>
+					<li><strong>Heat Index: </strong><?php echo $conditions['heat_index_f']; ?> &deg; F</li>
+				<?php } ?>
+				
+				<?php if( isset( $conditions['relative_humidity'] ) ){ ?>
+					<li><strong>Humidity: </strong><?php echo $conditions['relative_humidity']; ?>%</li>
+				<?php } ?>
+				
+				<?php if( isset( $conditions['wind_dr'] ) && isset( $conditions['wind_mph'] ) ){ ?>
+					<li><strong>Wind: </strong><?php echo $conditions['wind_dr']." at ".$conditions['wind_mph']." MPH"; ?></li>
+				<?php }elseif( isset( $conditions['wind_string'] ) ){ ?>
+					<li><strong>Wind: </strong><?php echo $conditions['wind_string']; ?></ul>
+				<?php } ?>
+				
+			</ul>		
+		</span>		
+		<span class="smallprint">
+			<p><em><?php echo $conditions['observation_time']; ?></em></p>
+		</span>
+</div>
+
+<ul class="secondary">
+	<li><a href="../emergency">Campus emergency information</a></li>
+</ul>
+ 
 <? $page->content_end(); ?>

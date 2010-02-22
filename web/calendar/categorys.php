@@ -16,7 +16,7 @@ require_once "data/data.inc.php";
 
 require "lib/calendar_lib.php";
 
-require "$prefix/categorys.html";
+require "templates/$prefix/categorys.html";
 $page->output();
 
 ?>

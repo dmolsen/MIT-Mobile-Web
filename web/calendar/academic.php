@@ -57,7 +57,7 @@ $query->setStartMax(date("Y-m-d",mktime(0,0,0,array_search($month, month_data::$
 $query->setmaxresults('30');
 $eventFeed = $gdataCal->getCalendarEventFeed($query);
 
-require "$prefix/academic.html";
+require "templates/$prefix/academic.html";
 $page->output();
 
 class month_data {

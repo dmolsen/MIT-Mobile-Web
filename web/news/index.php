@@ -30,10 +30,10 @@ $News = new RSS();
 $items = $News->get_feed($rss_url);
 
 if ($shared == true) {
-  require "$prefix/shared.html";
+  require "templates/$prefix/shared.html";
 }
 else {
-  require "$prefix/index.html";
+  require "templates/$prefix/index.html";
 }
 
 function detailURL($title,$src) {

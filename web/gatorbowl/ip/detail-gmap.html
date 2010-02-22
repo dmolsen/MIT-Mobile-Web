@@ -1,0 +1,85 @@
+<?
+$page->title('Gator Bowl Info: Map')
+     ->navbar_image('title-gameday')
+     ->not_scalable()
+     ->add_stylesheet('styles/map-ip')
+     ->breadcrumbs('Map Details')
+     ->extra_onload("initialize()");
+
+$page->content_begin();
+?>
+
+<!-- the following is supposed to make sure the iphone view clear the addy bar -->
+<script type="text/javascript">
+window.addEventListener('load', function(){
+setTimeout(scrollTo, 0, 0, 1);
+}, false);
+</script>
+
+  <? $break = true; ?>
+
+	<a name="scrolldown"></a>		
+	<div class="focal shaded">
+		<h2><?=$data[0]?></h2>
+		<p class="address">
+			 Time: <?=$data[1]?><br />
+			 Location: <?=$data[2]?>
+			 <? if ($data[3] != "") { ?><br /><?=$data[3]?><? } ?>
+		</p>
+		<ul id="tabs">
+			<li class="active"><a href="#scrolldown" onclick="showTab('maptab',this); hide('loadingimage')">Map</a></li>
+		</ul>
+		
+		<div id="tabbodies">	
+			<div class="tabbody" id="maptab">
+			  <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=<?=$maps_api_key?>" type="text/javascript"></script>	
+        <script type="text/javascript">
+				function initialize() {
+					var map = new GMap2(document.getElementById("map_canvas"));
+					map.setUIToDefault();
+					map.setCenter(new GLatLng(<?=$data[4]?>, <?=$data[5]?>), 15);
+				
+					var point = new GLatLng(<?=$data[4]?>, <?=$data[5]?>);
+					
+					var baseIcon = new GIcon(G_DEFAULT_ICON);
+					baseIcon.image = "/map/images/ip_markers/info.png";
+					baseIcon.shadow = "/map/images/ip_markers/shadow.png";
+					baseIcon.iconSize = new GSize(32, 37);
+					baseIcon.shadowSize = new GSize(51, 37);
+					
+					markerOptions = { icon:baseIcon };
+					var marker = new GMarker(point, markerOptions);
+					map.addOverlay(marker);
+				}
+				</script>
+				<div id="map_canvas" style="width: 285px; height: 235px"></div>
+			</div> <!-- id="maptab" -->
+
+			<div class="clear"></div>
+		</div>
+
+	</div> <!-- class="focal shaded" -->
+	
+	  <ul class="secondary">
+		<li>
+		   <a href="http://maps.google.com/maps?sll=<?=$data[4]?>,<?=$data[5]?>" class="external">Launch Google Maps</a>
+		</li>
+	  </ul>
+<?
+$page->content_end();
+
+
+$script =<<<JS
+	showTab('maptab');
+
+	var objMap = document.getElementById('mapimage');
+	if(objMap) {
+		mapW = objMap.scrollWidth - 2;
+		mapH = objMap.scrollHeight - 2;
+	}
+
+        checkIfMoved();
+JS;
+
+#$page->footer_script($script);
+?>
