@@ -1,0 +1,30 @@
+<? $ext = ($calendars[$_REQUEST['id']]['caltxt'] == true) ? 's' : ''; ?>
+<? $page_title = $calendars[$_REQUEST['id']]['title'].$ext; ?>
+<? $help_on = false; ?>
+
+<div id="calendar-category" class="calendar-list">
+	
+	<? include("../templates/webkit/toolbar.html"); ?>
+
+	<div class="nonfocal" style="text-align: center;"> 
+	  <? $i = 0; ?>
+		<? foreach ($eventFeed as $event) { $i++; } ?>
+		<? if ($i == 1) { ?>
+		  <p><?=$i?> match found:</p>
+		<? } else if ($i < 30) { ?>
+		  <p><?=$i?> matches were found:</p>
+		<? } else { ?>
+			<p>The first 30 matches found:</p>
+		<? } ?>
+	</div>
+
+	<ul class="edgetoedge">
+		<? foreach ($eventFeed as $event) { ?>
+			<? include("li_item.html"); ?>
+		<? } ?>
+	</ul>
+	
+	<? include("../templates/webkit/info.html"); ?>
+
+</div>
+

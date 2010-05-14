@@ -1,4 +1,4 @@
-<?php
+<?
 
 /**
  * Copyright (c) 2008 Massachusetts Institute of Technology
@@ -8,33 +8,38 @@
  * 
  */
 
-class db {
-  
-  /* MySQL or SQLite */
-  public static $use_sqlite   = true;  # if using mysql change this to false, addresses naming issue between PDO & MySQL functions
-  public static $connection   = NULL;
-
-  /* SQLite Config */
-  private static $sqlite_path = "/path/to/install/db/development.sqlite3"; # file system path to your SQLite database
-
-  /* MySQL Config Info */
-  private static $host        = 'localhost';
-  private static $username    = 'username';
-  private static $passwd      = 'passwd';
-  private static $db          = 'db';
-
-  public static function init() {
-    if(!self::$connection) {
-      if (self::$use_sqlite) {
-        self::$connection = new PDO('sqlite:'.self::$sqlite_path);
-      }
-	  else {
-		self::$connection = new mysqli(self::$host, self::$username, self::$passwd, self::$db);
-	  }
-    }
-  }
+// hack to make sure config doesn't load twice
+if (!isset($db_use_sqlite)) {
+	require_once('../../config.gen.inc.php');
 }
 
-db::init();
+global $db_use_sqlite,$sqlite_path,$db_host,$db_username,$db_passwd,$db_name;
+
+class db {
+  
+  public static $connection,$use_sqlite;
+  private static $path,$host,$username,$passwd,$db;
+
+  public function __construct(){
+	
+	global $db_use_sqlite,$sqlite_path,$db_host,$db_username,$db_passwd,$db_name;
+	
+	$this->connection = false;
+	$this->use_sqlite = $db_use_sqlite;
+	$this->path = $sqlite_path;
+	$this->host = $db_host;
+	$this->username = $db_username;
+	$this->passwd = $db_passwd;
+	$this->db = $db_name;
+	
+	if(!$this->connection) {
+		if ($this->use_sqlite) {
+			$this->connection = new PDO('sqlite:'.$this->path);
+		} else {
+			$this->connection = new mysqli($this->host, $this->username, $this->passwd, $this->db);	
+		}
+	}
+  }
+}
 
 ?>

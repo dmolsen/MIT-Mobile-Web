@@ -1,0 +1,31 @@
+<?
+$page->title($inst_name." Events Calendar: " . $calendars[$_REQUEST['id']]['title'] . " Search Results")
+     ->header($inst_name." Events Calendar: " . $calendars[$_REQUEST['id']]['title'] );
+
+$page->content_begin();
+
+?>
+
+<? $i = 0; ?>
+<? foreach ($eventFeed as $event) { $i++; } ?>
+<? if ($i == 1) { ?>
+  <p><?=$i?> match found:</p>
+<? } else if ($i < 30) { ?>
+  <p><?=$i?> matches were found:</p>
+<? } else { ?>
+	<p>The first 30 matches found:</p>
+<? } ?>
+
+<div class="focal">
+	 <? foreach ($eventFeed as $event) { ?>
+      <? $loc = briefLocation($event); ?>
+	    <p><a href="<?=detailURL($event,$_REQUEST['id'])?>"><?=html_entity_decode($event->title->text)?></a><br/><span class="smallprint"><?=timeText($event)?><? if(trim($loc->valueString) != '') { ?>&nbsp;|&nbsp;<?=$loc->valueString?><? } ?></span></a></p>
+   <? } ?>
+</div>
+
+<?
+
+$page->content_end();
+$page->nav_link("./", "Events Calendar Home");
+
+?>

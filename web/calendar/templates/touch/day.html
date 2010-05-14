@@ -1,0 +1,29 @@
+<?
+$page->title($inst_name." Events Calendar: Events for {$current['day_3Let']} {$current['month']} {$current['day_num']}, {$current['year']}")
+     ->navbar_image('title-calendar')
+     ->breadcrumbs('Events');
+
+$page->content_begin();
+?>
+	<div class="nonfocal">
+		<h2>Events for <strong><?=$current['day_3Let']?> <?=$current['month']?> <?=$current['day_num']?>, <?=$current['year']?></strong></h2>
+		<p><a href="<?=dayURL($prev, $type)?>">&lt; <?=$prev['day_3Let']?> <?=$prev['month']?> <?=$prev['day_num']?></a> | <a href="<?=dayURL($next, $type)?>"><?=$next['day_3Let']?> <?=$next['month']?> <?=$next['day_num']?> &gt;</a></p>
+	</div>
+	
+	<ul class="results">
+            <? $i = 0; ?>
+            <? foreach($eventFeed as $event) { ?>
+	              <? $loc = briefLocation($event); ?>
+                <? $i++; ?>
+		<li><a href="<?=detailURL($event)?>"><?=$event->title->text?><br/><span class="smallprint"><?=timeText($event)?><? if(trim($loc->valueString) != '') { ?>&nbsp;|&nbsp;<?=$loc->valueString?><? } ?></span></a></li>
+            <? } ?>
+            <? if ($i == 0) { ?>
+                <li><a href="<?=dayURL($next,$type)?>">No events for today. Try tomorrow.</a></li>
+            <? } ?>
+	</ul>
+	
+	<div class="nonfocal">
+		<p>     <a href="<?=dayURL($prev, $type)?>">&lt; <?=$prev['day_3Let']?> <?=$prev['month']?> <?=$prev['day_num']?></a> | <a href="<?=dayURL($next, $type)?>"><?=$next['day_3Let']?> <?=$next['month']?> <?=$next['day_num']?> &gt;</a></p>
+	</div>
+	
+<? $page->content_end(); ?>

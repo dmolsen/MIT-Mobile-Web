@@ -1,0 +1,23 @@
+<? $page_title = $title; ?>
+<? $help_on = false; ?>
+
+<div id="map-places" class="clear-map-detail">
+	
+	<? include("../templates/webkit/toolbar.html"); ?>
+	
+	<ul class="edgetoedge">
+		<? foreach($places as $place) { ?>
+			<? $insert = ''; ?>
+			<? if ($place['type'] == 'Parking Lot') { ?>
+				<? $insert = 'Parking Lot: '; ?>
+			<? } ?>
+			<? include("_li_item.html"); ?>
+		<? } ?>
+	</ul>
+	
+	<? include("browse_category_form.html"); ?>
+
+	<? include("../templates/webkit/info.html"); ?>
+
+</div>
+

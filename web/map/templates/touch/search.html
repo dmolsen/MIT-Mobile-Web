@@ -1,0 +1,31 @@
+<?
+$page->title($inst_name.' Campus Map: Search Results')
+     ->navbar_image('title-map')
+     ->breadcrumbs('Search Results');
+
+$page->content_begin(); 
+?>
+
+<div class="nonfocal">
+	<form method="get" action="search.php">
+		<fieldset class="inputcombo">
+			<input class="forminput" type="text" id="filter" name="filter" placeholder="Search the campus map" value="<?=$search_terms?>" />
+			<input class="combobutton" id="sch_btn" src="/themes/<?=$theme?>/touch/images/search-button.png" type="image" />
+		</fieldset>	
+	</form>
+	
+	<p><?=count($results)?> matches found:</p>
+
+</div>
+
+<ul class="results">
+	<? foreach($results as $place) { ?>
+       <? $insert = ''; ?>
+       <? if ($place['type'] == 'Parking Lot') { ?>
+          <? $insert = 'Parking Lot: '; ?>
+       <? } ?>
+       <li><a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>"><?=$insert?><?=$place['name']?><br /><span class="legend"><?=$place['physical_address']?>, <?=$city_state?></a></li>
+   <? } ?>
+</ul>
+
+<? $page->content_end(); ?>

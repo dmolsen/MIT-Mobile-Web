@@ -1,0 +1,19 @@
+<?
+$page->title($inst_name." Hours: Browse $title")
+     ->header($inst_name." Hours");
+
+$page->content_begin();
+?>
+	<h2><?=$title?></h2>
+	
+	<p class="nav">
+     <? foreach($places as $place) { ?>
+         <a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>"><?=$place['name']?></a> <span class="legend"><?=str_replace('"','',$place['hours'])?></span></a><br/>
+     <? } ?>
+	</p>
+<?
+$page->content_end();
+$page->help_off();
+$page->nav_link('./', "Hours Home");
+?>
+

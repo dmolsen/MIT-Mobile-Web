@@ -1,0 +1,68 @@
+<?
+$page->title($inst_name.' People Directory: Details')
+     ->header($inst_name.' People Directory');
+
+class Item {
+    public $person;
+    private $first = True;
+
+    public function __construct($person) {
+        $this->person = $person;
+    }
+
+    public function normal($label, $field, $href=NULL, $class=NULL) {
+        foreach($this->person[$field] as $value) {
+          if($this->first) {
+            $this->first = False;
+          } else {
+            echo '<br />';
+          }
+          ?>
+            <span class="label"><?=$label?></span>
+	    <span class="value"><?
+                   if($href != NULL) {
+                       echo '<a href="' . $href($value) . '" class="' . $class . '">';
+                   }
+                   echo $value;
+                   if($href != NULL) {
+                       echo "</a>";
+                   }
+                 ?></span>
+          <?
+        }
+    }
+}
+$item = new Item($person);
+
+$page->content_begin();
+?>
+	<p class="nav">
+            <?
+              $item->normal('name', 'fullname');
+              $item->normal('title', 'title');
+              $item->normal('dept', 'dept');              
+              if ($item->person['telephone'][0] != '000-000-0000') { $item->normal('phone', 'telephone', 'phoneHREF', 'phone'); }              
+              $item->normal('fax', 'fax', 'phoneHREF', 'phone');              
+              if ($item->person['affiliation'][0] == 'facstaff') { $item->normal('address', 'address'); }              
+              $item->normal('email', 'email', 'mailHREF', 'email');              
+              $item->normal('office', 'room', 'mapHREF', 'map');
+            ?>
+	</p>
+	
+	
+		<form method="get" action="vcard.php">
+		<strong>Enter email address to get a vCard:</strong><br/>
+		<span class="inputcombo emphasized">
+			<input type="hidden" name="username" value="<?=$person['id']?>">
+			<input class="forminput" type="search" id="filter" name="email" />
+			<input class="combobutton" name="search" id="sch_btn" type="submit" value="Send" />
+		</span>
+		</form>
+	
+
+<? 
+
+$page->content_end(); 
+$page->nav_link("index.php", "People Directory Home");
+
+?>

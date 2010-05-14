@@ -1,0 +1,113 @@
+<? $page_title = "Directory Details"; ?>
+<? $help_on = false; ?>
+<? $button = true; ?>
+
+<? 
+	$user_agent = $_SERVER['HTTP_USER_AGENT'];
+	if (!eregi('android',$user_agent)) {
+		$button_html = '<a href="#" class="button" id="people-favorite-detail"><img src="/themes/'.$theme.'/webkit/images/favorite_unselected.png" id="people-favorite-detail-img" class="icon2" /></a>';
+	}
+?>
+
+<?
+class Item {
+    public $person;
+
+    public function __construct($person) {
+        $this->person = $person;
+    }
+
+    public function display($label, $field, $href=NULL, $class=NULL, $group=false) {
+        $i = 1;
+				foreach($this->person[$field] as $value) {
+          ?>
+            <? if (!$group) { ?> <li class="<?=$class?>"> <? } ?>
+            <? if ($href != NULL) { ?> <a href="<?=$href($value)?>"> <? } ?>
+            <?=$value?>	
+            <? if ($i < count($this->person[$field])) { ?><br /><? } ?>
+						<? if ($href != NULL) { ?> </a> <? } ?>
+            <? if (!$group) { ?> </li> <? } ?>   
+						<? $i++; ?>
+          <?
+        }
+    }
+}             
+$item = new Item($person);
+?>
+
+<div id="people-detail" class="clear-map-detail">
+
+	<script type="text/javascript">
+		// set-up the session storage data for this item to be inserted if necessary
+		sessionStorage.username = "<?=$person['id']?>";
+		sessionStorage.givenName = "<?=$person['givenname'][0]?>";
+		sessionStorage.surname = "<?=$person['surname'][0]?>";
+	</script>
+	
+	<? include("../templates/webkit/toolbar.html"); ?>
+
+	<ul class="result">
+		<li class="wrap">
+			<h3><? $item->display('name', 'givenname', NULL, NULL, true); ?> <? $item->display('name', 'surname', NULL, NULL, true); ?></h3>
+			<? if ($item->person['affiliation'][0] == 'facstaff') { ?>
+				Faculty/Staff
+			<? } else { ?>
+				Student
+			<? } ?>
+		</li>
+
+		<li>
+			<? if (($item->person['title'][0] != '') && ($item->person['title'][0] != 'STUDENT')) { ?>
+				<? $item->display('title', 'title', NULL, NULL, true); ?><br />
+			<? } ?>
+	    <? $item->display('dept', 'dept', NULL, NULL, true); ?>
+	  </li>
+	
+		<? $item->display('email', 'email', "mailHREF", 'email'); ?>   
+		
+		<? if (has_phone($person) && ($item->person['telephone'][0] != '000-000-0000')) { ?>
+		   <? $item->display('phone', 'telephone', "phoneHREF", 'phone', false);  ?>
+		<? } ?>
+   
+		<? $item->display('office', 'room', NULL, 'map'); ?>
+
+		<? if ($item->person['affiliation'][0] == 'facstaff') { ?>
+			<li class="map">
+					<?
+						$address = '';
+						foreach($item->person['address'] as $value) {
+							$address .= $value;
+						}
+						$link = mapHREF($address);
+						if ($link != $address) {
+							echo($link);
+						}
+					?>
+					<? $item->display('address', 'address', NULL, NULL, true); ?><br />
+					<? if ($link != $address) { echo("</a>"); } ?>
+			</li>	
+		<? } ?>
+	</ul>
+	
+	<ul class="individual">
+		<? if ($item->person['email'][0] != '') { ?>
+			<li> <a href="mailto:<?=$item->person['email'][0]?>" data-ga="/email/people/detail/">Email Them</a></li> 
+		<? } ?>
+		<? if (has_phone($person) && ($item->person['telephone'][0] != '000-000-0000')) { ?>
+			<li> <a href="tel:<?=$item->person['telephone'][0]?>" data-ga="/phone/people/detail/">Call Them</a></li> 
+		<? } ?>
+	</ul>
+	<div class="formcontainer">
+		<form method="get" action="/people/vcard.php">
+			<fieldset class="inputcombo">
+				<input type="hidden" name="username" value="<?=$person['id']?>">
+				<input class="forminput" type="text" id="filter" name="email" placeholder="Enter Email Address for vCard" />
+				<a style="margin:0;" href="#" class="submit"><img class="combobutton" id="sch_btn" src="/themes/<?=$theme?>/webkit/images/email-button.png" /></a>
+			</fieldset>	
+		</form>
+	</div>
+	
+	<? include("../templates/webkit/info.html"); ?>
+
+</div>
+

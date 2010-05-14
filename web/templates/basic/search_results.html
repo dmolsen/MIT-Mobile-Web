@@ -1,0 +1,25 @@
+<? if($this->form) { $this->form->out(); } ?> 
+
+<? if ($arrows) { ?>
+	<? if ($start != $end) { ?> 
+		<p><?=$start?>-<?=count($results2)?> of <?=$total?> matches found</p>
+	<? } else { ?>
+		<p>last match of the <?=$total?> found</p>
+	<? } ?>
+<? } else { ?>
+	<p><?=$total?> matches found</p>
+<? } ?>
+
+<? if ($total >=50) { ?>
+	<p>Many entries found, please refine your search</p>
+<? } ?>
+
+
+<? require "../{$this->module}/templates/basic/{$this->template}.html"; ?>
+
+<? if($arrows) { ?>
+	<p class="paging"><?=$arrows?></p>
+<? } if ($this->form && count($results) >= 5) {  ?>
+	<? if (!$arrows) { echo " <br />"; } ?>
+	<? $this->form->out(); ?>
+<? } ?>

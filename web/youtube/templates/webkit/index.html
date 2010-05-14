@@ -1,0 +1,35 @@
+<? $page_title = $inst_name." on YouTube"; ?>
+<? $help_on = false; ?>
+
+<div id="youtube">
+	
+	<? include("../templates/webkit/toolbar.html"); ?>
+	
+	<? printVideoFeed($uploads,$phone); ?>
+
+	<ul class="individual">
+
+			<? 
+				$previous = false;
+				try {
+				  $previousFeed = $uploads->getPreviousFeed();
+				  echo("<li><a href='#' onclick='jQT.goBack();'>&laquo; Previous Page</a></li>");
+				} catch (Zend_Gdata_App_Exception $e) {}
+
+				// See if the feed specifies a next page of results.
+				try {
+				  $nextFeed = $uploads->getNextFeed();
+				  echo("<li><a href='/youtube/?page=$next'>Next Page &raquo;</a></li>");
+				} catch (Zend_Gdata_App_Exception $e) {} 
+			?>
+		</li>
+	</ul>
+	
+	<div class="nonfocal legend">
+		<p><strong>* Important note:</strong> <?=$inst_name?> on YouTube is provided as a free service. Extra data charges may apply when using watching YouTube videos on your mobile device depending on your service plan.</p>
+	</div>
+	
+	<? include("../templates/webkit/info.html"); ?>
+
+</div>
+

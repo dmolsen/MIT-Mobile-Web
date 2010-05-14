@@ -1,0 +1,36 @@
+<?
+$title_end = !$is_search ? " for Today" : "";
+
+$page->title($inst_name." Events Calendar: " . $calendars[$_REQUEST['id']]['title'] . $title_end)
+     ->navbar_image('title-calendar')
+     ->breadcrumbs("Browse", "Listing")
+     ->breadcrumb_links(categorysURL());
+
+$page->content_begin(); 
+?>
+
+<div class="nonfocal">
+   <h2><?=$calendars[$_REQUEST['id']]['title']?></h2>
+   <? $i = 0; ?>
+	<? foreach ($eventFeed as $event) { $i++; } ?>
+	<? if ($i == 1) { ?>
+	  <p><?=$i?> match found:</p>
+	<? } else if ($i < 30) { ?>
+	  <p><?=$i?> matches were found:</p>
+	<? } else { ?>
+		<p>The first 30 matches found:</p>
+	<? } ?>
+</div>
+
+<ul class="results">
+					  <? foreach ($eventFeed as $event) { ?>
+						<? $loc = briefLocation($event); ?>
+	<li><a href="<?=detailURL($event)?>"><?=html_entity_decode($event->title->text)?><br/><span class="smallprint"><?=timeText($event)?><? if(trim($loc->valueString) != '') { ?>&nbsp;|&nbsp;<?=$loc->valueString?><? } ?></span></a></li>
+          <? } ?>
+</div>
+
+<?
+
+$page->content_end(); 
+?>
+

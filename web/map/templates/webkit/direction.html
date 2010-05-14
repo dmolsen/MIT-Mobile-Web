@@ -1,0 +1,20 @@
+<? $page_title = $info->header; ?>
+<? $help_on = false; ?>
+
+<div id="map-direction">
+	
+	<? include("../templates/webkit/toolbar.html"); ?>
+	
+	<div class="focal">
+		<?=$info->html?>
+	</div>
+
+	<? if($info->google_html) { ?>
+		<ul class="rounded">
+			<?=$info->google_html?>
+		</ul>
+	<? } ?>
+	
+	<? include("../templates/webkit/info.html"); ?>
+
+</div>

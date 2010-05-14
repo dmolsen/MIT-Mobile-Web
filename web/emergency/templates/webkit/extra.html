@@ -1,0 +1,27 @@
+<? $page_title = "Extra Numbers"; ?>
+<? $help_on = false; ?>
+
+<div id="emergency-extra">
+	
+	<? include("../templates/webkit/toolbar.html"); ?>
+	
+	<? if (($show_res == true) || ($show_schools == true)) { ?>
+		<ul class="rounded">
+			<? if ($show_res == true) { ?>
+				<li class="arrow"><a href="<?=residencesURL()?>">Residence Halls</a></li>
+			<? } ?>
+			<? if ($show_schools == true) { ?>
+				<li class="arrow"><a href="<?=schoolsURL()?>">Schools &amp; Colleges</a></li>
+			<? } ?>
+		</ul>
+	<? } ?>
+	
+	<ul class="rounded">
+		<? foreach($extra as $item) { ?>
+			<li class="phone"><a href="tel:<?=$item->call_number()?>" data-ga="/phone/emergency/extra/<?=$item->call_number()?>/"><?=$item->label()?></a></li>
+		<? } ?>
+	</ul>
+
+	<? include("../templates/webkit/info.html"); ?>
+
+</div>

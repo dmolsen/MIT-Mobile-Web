@@ -2,6 +2,17 @@ THIS CHANGELOG IS AN ATTEMPT TO DOCUMENT CHANGES TO THIS PROJECT.
 SUPER MINOR REVISION NUMBERS WON'T SHOW UP IN GITHUB BUT IT'LL HELP
 ME ORGANIZE WHEN I MADE A SET OF FIXES
 
+MOBI-v2.0.0 (May 14, 2010)
+ - ADD: theme support
+ - ADD: jQuery & jQTouch support for interactive effects in webkit templates
+ - ADD: basic templates now support mobile-optimized Google Analytics
+ - ADD: "favorites" feature in calendar, people, and map
+ - ADD: using 'min' library to compress JS & CSS on the fly
+ - ADD: support for JSON export of data to help support the iWVU iPhone app codebase
+ - FIX: now supports basic, touch, and webkit templates
+ - FIX: cleaned up base code and reorganized files
+ - FIX: updated the example virtual host config to support compression of files
+
 MOBI-v1.0.1 (November 28 2009)
  - FIX: added global contact add to send_email() of web/people/vcard.php
  - FIX: removed a superfluous variable from line #111 of web/people/vcard.php

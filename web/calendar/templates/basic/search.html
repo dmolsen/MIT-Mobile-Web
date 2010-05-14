@@ -1,0 +1,46 @@
+<?
+$page->title($inst_name." Events Calendar: Search Results")
+     ->header($inst_name.' Events Calendar');
+
+$page->content_begin();
+
+?>
+<form method="get" action="search.php">
+<div class="nonfocal">
+	<p>
+		<strong>Search for events:</strong><br/>
+		<span class="inputcombo">
+			<input class="forminput" type="search" id="filter" name="filter" value="<?=$search_terms?>"/>
+			<input class="combobutton" name="sch_btn" id="sch_btn" type="submit" value="Search" />
+		</span>	
+		<select id="timeframe" name="timeframe">
+                   	<? foreach($search_options as $key => $option) { ?> 
+<option value="<?=$key?>" <? if($key == $timeframe) { ?>selected="selected"<? } ?> ><?=$option['phrase']?></option>
+                   <? } ?>
+		</select>
+	</p>
+	
+	<? $i = 0; ?>
+	<? foreach ($eventFeed as $event) { $i++; } ?>
+	<? if ($i == 1) { ?>
+	  <p><?=$i?> match found:</p>
+	<? } else if ($i < 30) { ?>
+	  <p><?=$i?> matches were found:</p>
+	<? } else { ?>
+		<p>You may need to refine your search. The first 50 matches found:</p>
+	<? } ?>
+</div>
+
+<div class="focal">
+					  <? foreach ($eventFeed as $event) { ?>
+						<? $loc = briefLocation($event); ?>
+	<p><a href="<?=detailURL($event,'all')?>"><?=html_entity_decode($event->title->text)?></a><br/><span class="smallprint"><?=timeText($event)?><? if(trim($loc->valueString) != '') { ?>&nbsp;|&nbsp;<?=$loc->valueString?><? } ?></span></a></p>
+          <? } ?>
+</div>
+</form>
+<?
+
+$page->content_end();
+$page->nav_link("./", "Events Calendar Home");
+
+?>

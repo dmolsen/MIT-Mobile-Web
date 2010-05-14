@@ -1,0 +1,26 @@
+<?
+$page->title($inst_name.' SMS (BETA)')
+     ->navbar_image('title-about')
+     ->breadcrumbs($inst_name.' SMS (BETA)', 'People Directory')
+     ->breadcrumb_home();
+
+$page->content_begin();
+?>
+
+<div class="focal">
+    <p>Search all or part of a name, email address, or phone number. To use this service, text-message "wvudir" to 41411.</p>
+
+    <p><strong>Keyword:</strong><br />wvudir</p>
+
+    <p><strong>Examples:</strong><br />wvudir alexander martin<br />wvudir a martin</p>
+
+</div>
+
+<div class="nonfocal legend">
+<p><strong>* Important note:</strong> The <?=$inst_name?> Mobile Web is a free service. Extra data charges may apply when using any website on your mobile device depending on your service plan.</p>
+</div>
+
+<? 
+$page->content_end(); 
+$page->help_off();
+?>

@@ -1,0 +1,34 @@
+<? $page_title = "Emergency Info"; ?>
+<? $help_on = true; ?>
+
+<div id="emergency">
+	
+	<? include("../templates/webkit/toolbar.html"); ?>
+
+	<? if ($show_rss == true) { ?>
+		<div class="focal">
+	     <? if ($article_f_timestamp > $current_timestamp) { ?>
+	         <span class="alert"><? echo implode('<br /><br />', $paragraphs); ?></span>
+	         <? if ($date) { echo('<em>Posted: '.$date.'</em>'); } ?>
+	     <? } else { ?>
+	       There is currently no emergency on campus.
+	     <? } ?>
+		</div>
+	<? } ?>
+
+	<ul class="rounded">
+		<? foreach($main as $item) { ?>
+			<li class="phone"><a href="tel:<?=$item->call_number()?>" data-ga="/phone/emergency/<?=$item->call_number()?>/"><?=$item->label()?></a></li>
+		<? } ?>
+	</ul>
+	
+	<ul class="rounded">
+		<li class="arrow"><a href="<?=contactsURL()?>" class="slide">More Emergency Contacts</a></li>
+		<? if ($show_extra == true) { ?>
+			<li class="arrow"><a href="<?=extraURL()?>">More General Phone Numbers</a></li>
+		<? } ?>
+	</ul>
+
+	<? include("../templates/webkit/info.html"); ?>
+
+</div>

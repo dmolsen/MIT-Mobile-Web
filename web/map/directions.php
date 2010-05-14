@@ -1,4 +1,4 @@
-<?php
+<?
 /**
  * Copyright (c) 2008 Massachusetts Institute of Technology
  * 
@@ -7,25 +7,27 @@
  * 
  */
 
-require_once "../page_builder/page_header.php";
+// various copy includes
 require_once "../../config.gen.inc.php";
 
+// records stats
+require_once "../page_builder/page_header.php";
+
 $dimensions = array(
-  "ip" => array(280, 238),
-  "sp" => array(220, 220),
-  "fp" => array(160, 160)
+  "iphone" => array(280, 238),
+  "touch" => array(220, 220)
 );
 
 $width = $dimensions[$phone][0];
 $height = $dimensions[$phone][1];
 
 $google =<<<HTML
-<p>To find WVU using Google Maps, use the address "<a href="http://maps.google.com/maps?f=q&q=1+Waterfront+Pl,+Morgantown+WV+26505">1 Waterfront Pl, Morgantown WV 26505</a>" as your reference point for general directions to WVU. This is our Visitor Resource Center.
+<p>To find WVU using Google Maps, use the address "<a href="http://maps.google.com/maps?f=q&q=1+Waterfront+Pl,+Morgantown+WV+26505">1 Waterfront Pl, Morgantown WV 26505</a>" as your reference point for general directions to WVU. This is our Visitors Resource Center.
 </p>
 HTML;
 
 $google_extra =<<<EXTRA
-<li><a href="http://maps.google.com/maps?f=q&q=1+Waterfront+Pl,+Morgantown+WV+26505" class="external">WVU on Google Maps</a></li>
+<li class="arrow"><a href="http://maps.google.com/maps?f=q&q=1+Waterfront+Pl,+Morgantown+WV+26505" class="external">WVU on Google Maps</a></li>
 EXTRA;
 
 $car =<<<HTML
@@ -42,7 +44,7 @@ $train =<<<HTML
 HTML;
 
 $directions = array(
-  "google" => dirs($google, "Finding ".$inst_name." using Google Maps", "Google")->google($google_extra),
+  "google" => dirs($google, "Using Google Maps", "Google")->google($google_extra),
   "car" => dirs($car, "By Car", "By Car"),
   "air" => dirs($air, "By Air", "By Air"),
   "train" => dirs($train, "By Train", "By Train"),
@@ -86,14 +88,14 @@ function dirs($html, $link_text, $breadcrumb) {
 }
 
 function directionsURL($link) {
-  return "directions.php?page=$link";
+  return "/map/directions.php?page=$link";
 }
 
 if($_REQUEST['page']) {
   $info = $directions[ $_REQUEST['page'] ];
-  require "$prefix/direction.html";
+  require "templates/$prefix/direction.html";
 } else {
-  require "$prefix/directions.html";
+  require "templates/$prefix/directions.html";
 }
 
 $page->output();

@@ -1,0 +1,85 @@
+<?
+$page->title($inst_name.' Campus Map: Details')
+     ->navbar_image('title-map')
+     ->not_scalable()
+     ->add_stylesheet('templates/touch/stylesheets/map-ip')
+     ->breadcrumbs('Map Details')
+     ->extra_onload("initialize()");
+
+$page->content_begin();
+?>
+
+  <? $break = true; ?>
+
+	<a name="scrolldown"></a>		
+	<div class="focal shaded">
+    <? if ($data[0]['subtype'] != "") { 
+          $marker_type = $marker_types[$data[0]['subtype']]; 
+       } else { 
+          $marker_type = $marker_types[$data[0]['type']]; 
+       } ?>
+		<h2><?=$data[0]['name']?> <? if ($data[0]['code'] != '') { ?>(<?=$data[0]['code']?>)<? } ?> <img src="/themes/<?=$theme?>/webkit/images/markers/<?=$marker_type?>.png" height="20" width="17" alt="Marker" />  
+			 <? if ($data[0]['wifi'] == 'Y') { ?><img src="images/ip_markers/wifi.png" height="20" width="17" alt="WiFi" /><? } ?></h2>
+		<p class="address">
+			 <? if ($data[0]['campus'] != '') { ?>On the <?=$data[0]['campus']?> Campus<br /><? } ?>
+		   <? if ($parent == true) { ?>Located inside the <a href="<?=detailURL($parent_data[0]['id'],$parent_data[0]['latitude'],$parent_data[0]['longitude'])?>"><?=$parent_data[0]['name']?></a><? } else { ?><?=$data[0]['physical_address']?> <? } ?>
+		   <? if ($data[0]['hours'] != '') { ?><br />Open <?=str_replace('"','',$data[0]['hours'])?><? } ?>
+       <? if ($data[0]['phone'] != '') { ?><br /><a href="tel:1<?=$data[0]['phone']?>"><?=$data[0]['phone']?></a><? $break = false; ?><? } ?>
+		   <? if ($data[0]['website'] != '') { ?><? if ($break == true) { ?><br /><? } else { ?> | <? } ?><a href="http://<?=$data[0]['website']?>">website</a><? } ?>
+		</p>
+		<ul id="tabs">
+			<li class="active"><a href="#scrolldown" onclick="showTab('maptab',this); hide('loadingimage')">Map</a></li>
+		</ul>
+		
+		<div id="tabbodies">	
+			<div class="tabbody" id="maptab">
+			  <script src="http://maps.google.com/maps?file=api&amp;v=2&amp;sensor=true&amp;key=<?=$maps_api_key?>" type="text/javascript"></script>	
+        <script type="text/javascript">
+				function initialize() {
+					var map = new GMap2(document.getElementById("map_canvas"));
+					map.setUIToDefault();
+					map.setCenter(new GLatLng(<?=$data[0]['latitude']?>, <?=$data[0]['longitude']?>), 15);
+				
+					var point = new GLatLng(<?=$data[0]['latitude']?>, <?=$data[0]['longitude']?>);
+					
+					var baseIcon = new GIcon(G_DEFAULT_ICON);
+					baseIcon.image = "/themes/<?=$theme?>/webkit/images/markers/<?=$marker_type?>.png";
+					baseIcon.shadow = "/themes/<?=$theme?>/webkit/images/markers/shadow.png";
+					baseIcon.iconSize = new GSize(32, 37);
+					baseIcon.shadowSize = new GSize(51, 37);
+					
+					markerOptions = { icon:baseIcon };
+					var marker = new GMarker(point, markerOptions);
+					map.addOverlay(marker);
+				}
+				</script>
+				<div id="map_canvas" style="width: 285px; height: 235px"></div>
+			</div> <!-- id="maptab" -->
+
+			<div class="clear"></div>
+		</div>
+
+	</div> <!-- class="focal shaded" -->
+	
+	  <ul class="secondary">
+		<li>
+		   <a href="http://maps.google.com/maps?sll=<?=$data[0]['latitude']?>,<?=$data[0]['longitude']?>" class="external">Launch Google Maps</a>
+		</li>
+	  </ul>
+<?
+$page->content_end();
+
+
+$script =<<<JS
+	showTab('maptab');
+
+	var objMap = document.getElementById('mapimage');
+	if(objMap) {
+		mapW = objMap.scrollWidth - 2;
+		mapH = objMap.scrollHeight - 2;
+	}
+
+  checkIfMoved();
+JS;
+
+?>

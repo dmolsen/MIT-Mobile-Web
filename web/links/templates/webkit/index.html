@@ -1,0 +1,20 @@
+<? $page_title = "Links"; ?>
+<? $help_on = false; ?>
+
+<div id="links">
+	
+	<? include("../templates/webkit/toolbar.html"); ?>
+
+	<div class="focal">
+		These links may launch third-party websites unaffiliated with the <?=$inst_name?> Mobile Web.
+	</div>
+
+	<ul class="rounded">
+		<? foreach ($links as $item) { ?>
+			<li class="external"><a href="http://<?=$item['link']?>" data-ga="/outgoing/links/<?=$item['name']?>" target="_blank"><?=$item['name']?></a></li>
+		<? } ?>
+	</ul>
+	
+	<? include("../templates/webkit/info.html"); ?>
+
+</div>

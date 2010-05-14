@@ -1,4 +1,4 @@
-<?php
+<?
 
 /**
  * Copyright (c) 2009 West Virginia University
@@ -11,14 +11,29 @@
 /* Quick Configuration File for Mobile Web */
 
 /* Technical Info */
-$install_path       = "/path/to/install/";         # the directory mobile web has been installed in, trailing slash is required
-$ga_code		   = "";			  			  # Google Analytics Code, highly highly highly recommended
+$install_path   = "/path/to/install/";        # the directory mobile web has been installed in, trailing slash is required
+$ga_code		= "";			  			  # Google Analytics Code, highly highly highly recommended
+
+/* MySQL or SQLite */
+$db_use_sqlite  = true;  					  # if using mysql change this to false, addresses naming issue between PDO & MySQL functions
+
+/* SQLite Config */
+$sqlite_path 	= $install_path."db/development.sqlite3"; # file system path to your SQLite database
+
+/* MySQL Config Info */
+$db_host        = 'localhost';
+$db_username    = 'username';
+$db_passwd      = 'passwd';
+$db_name        = 'db';
 
 /* Institution & Org Info */
 $inst_name         = "HEU";                       # name of educational institution. highly recommend an acronym.
 $inst_name_full    = "Higher Ed University";      # full name of education institution
 $org_name          = "Higher Ed U Tech Office";   # name of organization supporting this instance of mobile web (shows in footer)
 $city_state		   = "Somewhere, WV";			  # city and state (or province, whatever) where your institution is located. shows on map results.
+
+/* Theme Info */
+$theme 			   = "heu";						  # the name of the theme folder for this install
 
 /* Misc. Copy Configuration (where "copy" means text) */
 $contact_addy      = "mobile@mail.inst.edu";      # email address to contact w/ questions
@@ -35,7 +50,10 @@ $dir_search_samp_l = "3042930000";                # long phone number example fo
 $dir_search_samp_s = "30000";                     # short phone number example for directory search, leave empty if you don't want to use it
 
 /* Shared iPhone Graphics Info */
-$homescreen_icon   = "icon_h.png";      		   	  # bookmark graphic for iPhone homescreen. should be in web/ip/images
+$homescreen_icon   = "icon_h.png";      		  # bookmark graphic for iPhone homescreen. should be in web/ip/images
 $homelink_icon	   = "homelink_h.png"; 			  # homelink breadcrumb graphic for iPhone. should be in web/ip/images
+
+/* Google Maps API Key */
+$maps_api_key = "";
 
 ?>

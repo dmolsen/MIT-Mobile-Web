@@ -1,0 +1,16 @@
+<? $page_title = "All Calendars"; ?>
+<? $help_on = false; ?>
+
+<div id="calendar-calendars">
+	
+	<? include("../templates/webkit/toolbar.html"); ?>
+			
+	<ul class="rounded">
+    <? foreach ($calendars as $key => $calendar) { ?>
+	    <li class="arrow"><a href="/calendar/category.php?id=<?=$key?>"><?=$calendar['title']?><? if ($calendar['caltxt'] == true) { ?> calendar<? } ?></a></li>
+    <? } ?>
+	</ul>
+	
+	<? include("../templates/webkit/info.html"); ?>
+
+</div>

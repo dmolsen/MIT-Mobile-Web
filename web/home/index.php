@@ -1,4 +1,5 @@
-<?php
+<?
+
 /**
  * Copyright (c) 2008 Massachusetts Institute of Technology
  * 
@@ -7,10 +8,12 @@
  * 
  */
 
+/* NOTE THAT THIS FILE ONLY SERVES TOUCH & BASIC DEVICES NOW THOUGH WEBKIT WILL WORK    */
+/* WEBKIT IS NOW HANDLED BY THE ROOT INDEX FILE TO MAKE LIFE WITH MANIFEST-CACHE EASIER */
 
+require "../../config.gen.inc.php";
 require "../page_builder/Page.php";
 require "../page_builder/counter.php";
-require "../../config.gen.inc.php";
 require "data/data.inc.php";
 
 $phone = Page::classify_phone();
@@ -19,25 +22,16 @@ $page = Page::factory($phone);
 
 PageViews::increment('home');
 
-switch($phone) {
-  case "sp":
-    $width = 48;
-    $height = 19;
-    break;
-
-  case "fp":
-    $width = 36;
-    $height = 16;
-    break;
+if ($phone == 'basic') {
+	$width = 48;
+	$height = 19;
 }
-
-$page->cache();
 
 if ($_REQUEST['more'] != true) {
-	require "$prefix/index.html";
+	require "templates/$prefix/index.html";
 }
 else {
-	require "$prefix/more.html";
+	require "templates/$prefix/more.html";
 }
 
 

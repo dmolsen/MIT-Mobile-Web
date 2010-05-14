@@ -1,4 +1,4 @@
-<?php
+<?
 /**
  * Copyright (c) 2008 Massachusetts Institute of Technology
  * 
@@ -7,9 +7,14 @@
  * 
  */
 
+// various copy includes
+require_once "../../config.gen.inc.php";
 
-require "../page_builder/page_header.php";
-require "../../config.gen.inc.php";
+// records stats
+require_once "../page_builder/page_header.php";
+
+// libs
+require_once "lib/textformat.lib.php";
 
 $static_pages = array(
   'about', 
@@ -33,38 +38,15 @@ switch($_REQUEST['page']) {
   case "new":
   case "credits":
   case "homescreen":
-    require "$prefix/{$_REQUEST['page']}.html";
-    $page->cache();
-    $page->output();
+    require "templates/$prefix/{$_REQUEST['page']}.html";
+	$page->output();
     break;
 
   // phone dependant cases
   case "about":
   default:
-    require "$phone/about.html";
-    $page->cache();
-    $page->output();
-}
-
-function requirementsURL() {
-  return "./?page=requirements";
-}
-
-function whatsnewURL() {
-  return "./?page=new";
-}
-
-
-function statisticsURL() {
-  return "./?page=statistics";
-}
-
-function creditsURL() {
-  return "./?page=credits";
-}
-
-function homescreenURL() {
-  return "./?page=homescreen";
+    require "templates/$prefix/about.html";
+	$page->output();
 }
 
 ?>

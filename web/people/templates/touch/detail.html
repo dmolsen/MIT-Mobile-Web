@@ -1,0 +1,70 @@
+<?
+$page->title($inst_name.' People Directory: Details')
+     ->navbar_image('title-people')
+     ->breadcrumbs('Search', 'Details');
+
+class Item {
+    public $person;
+
+    public function __construct($person) {
+        $this->person = $person;
+    }
+
+    public function display($label, $field, $href=NULL, $class=NULL, $group=False) {
+        foreach($this->person[$field] as $value) {
+          ?>
+            <? if(!$group) { ?>  <ul class="nav">    <? } ?>
+              <li>
+                 <? if($href != NULL) {                   
+                     echo '<a href="' . $href($value) . '" class="' . $class . '">';
+                 } ?>
+
+                 <div class="label"><?=$label?></div>
+                 <div class="value"><?=$value?></div>
+
+                 <? if($href != NULL) {                   
+                       echo "</a>";
+                 } ?>
+              </li>
+            <? if (!$group) { ?>  </ul>  <? } ?>   
+          <?
+        }
+    }
+}             
+$item = new Item($person);
+
+$page->content_begin();
+?>
+	<ul class="nav">
+              <?  $item->display('name', 'fullname', NULL, NULL, True); ?>
+              <?  $item->display('title', 'title', NULL, NULL, True); ?>
+              <?  $item->display('dept', 'dept', NULL, NULL, True); ?>
+	</ul>
+	
+        <? if (has_phone($person) && ($item->person['telephone'][0] != '000-000-0000')) { ?>
+           <ul class="nav"> 
+             <?  $item->display('phone', 'telephone', "phoneHREF", 'phone', True);  ?>
+           </ul>
+        <? } ?>
+
+        </ul>
+        <? $item->display('fax', 'fax', 'phoneHREF', 'phone'); ?>
+        <ul class="nav">
+         <? if ($item->person['affiliation'][0] == 'facstaff') { $item->display('address', 'address', NULL, NULL, True); } ?>
+        </ul> 
+        <?
+           $item->display('email', 'email', "mailHREF", 'email');             
+           $item->display('office', 'room', "mapHREF", 'map');
+        ?>
+
+  			<div class="nonfocal">
+					<form method="get" action="vcard.php">
+						<fieldset class="inputcombo emphasized">
+							<input type="hidden" name="username" value="<?=$person['id']?>">
+							<input class="forminput" type="text" id="filter" name="email" placeholder="Enter Email Address for vCard" />
+							<input class="combobutton" id="sch_btn" src="/themes/<?=$theme?>/touch/images/email-button.png" type="image" />
+						</fieldset>	
+					</form>
+				</div>
+<? $page->content_end(); ?>
+

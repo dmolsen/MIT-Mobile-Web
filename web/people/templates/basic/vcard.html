@@ -1,0 +1,33 @@
+<?
+$page->title($inst_name.' People Directory: vCard')
+     ->header($inst_name.' People Directory');
+$page->content_begin();
+?>
+<form method="get" action="<?=$_SERVER['SCRIPT_NAME']?>">
+
+<p class="nav">
+<? if ($error == true) { ?>
+	<strong>Error</strong><br />
+	<?=$message?>
+<? } else if ($send == false) { ?>
+	<strong>Email Address to Send vCard to:</strong><br/>
+	<span class="inputcombo emphasized">
+		<input type="hidden" name="username" value="<?=$_REQUEST['username']?>">
+		<input class="forminput" type="search" id="filter" name="email" />
+		<input class="combobutton" name="search" id="sch_btn" type="submit" value="Send" />
+	</span>	
+<? } else { ?>
+	<? if ($result == "success") { ?>
+	  <strong>Success</strong><br />
+	  The vCard for <?=$person["givenname"][0]?> <?=$person["surname"][0]?> has been sent to <?=$_REQUEST['email']?>.
+	<? } else { ?>
+	  <strong>Failure</strong><br />
+	  For some reason the vCard for <?=$person['first_name'][0]?> <?=$person['last_name'][0]?> was unable to be sent to <?=$_REQUEST['email']?>.
+	<? } ?>
+<? } ?>
+</p>
+</form>
+<? 
+$page->content_end(); 
+$page->nav_link("index.php", "People Directory Home");
+?>

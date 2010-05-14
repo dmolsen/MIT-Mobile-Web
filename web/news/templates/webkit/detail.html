@@ -1,0 +1,28 @@
+<? $page_title = "News Story"; ?>
+<? $help_on = false; ?>
+
+<div id="news-detail">
+
+	<? include("../templates/webkit/toolbar.html"); ?>
+	
+	<div class="focal">
+	
+		<h3><?=$title?></h3>
+		
+		<? foreach($paragraphs as $paragraph) { ?>
+       <p><?=$paragraph?></p>
+    <? } ?>
+
+    <? if ($read_more) { ?>
+	     <? $outgoing = str_replace('http://','',$link); ?>
+	     <p><a href="<?=$link?>" target="_blank" onClick="javascript: pageTracker._trackPageview('/outgoing/news/<?=$_REQUEST['src']?>/<?=$outgoing?>');">Read more on the <?=$section?> site...</a></p>
+		<? } ?>
+		
+		<p class="smallprint">Posted: <?=$long_date?></p>
+
+	</div>
+
+	<? include("../templates/webkit/info.html"); ?>
+
+</div>
+

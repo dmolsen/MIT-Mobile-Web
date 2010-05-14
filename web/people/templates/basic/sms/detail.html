@@ -1,0 +1,32 @@
+<?
+
+class Item {
+    private $person;
+    private $first = True;
+
+    public function __construct($person) {
+        $this->person = $person;
+    }
+
+    public function normal($label, $field, $href=NULL, $class=NULL) {
+        foreach($this->person[$field] as $value) {
+          if($this->first) {
+            $this->first = False;
+          } else {
+            echo '<br />';
+          }
+          echo $value;
+        }
+    }
+}
+$item = new Item($person);
+
+           
+              $item->normal('name', 'fullname');
+              $item->normal('title', 'title');
+              $item->normal('dept', 'dept');                            
+              $item->normal('phone', 'telephone');                          
+              $item->normal('address', 'address');              
+              $item->normal('email', 'email');              
+              $item->normal('office', 'room');
+            ?>

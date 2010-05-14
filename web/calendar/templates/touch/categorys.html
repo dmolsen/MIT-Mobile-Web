@@ -1,0 +1,14 @@
+<?
+$page->title($inst_name." Events Calendar: Browse by Category")
+     ->navbar_image('title-calendar')
+     ->breadcrumbs('Browse By Category');
+
+$page->content_begin();
+?>
+			
+	<ul class="nav">
+            <? foreach ($calendars as $key => $calendar) { ?>
+                <li><a href="category.php?id=<?=$key?>"><?=$calendar['title']?></a></li>
+            <? } ?>
+	</ul>
+<? $page->content_end(); ?>

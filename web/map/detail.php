@@ -7,13 +7,17 @@
  * 
  */
 
-require_once "../../lib/db.php";
-require_once "../page_builder/page_header.php";
+// various copy includes
 require_once "../../config.gen.inc.php";
-require_once "lib/map.lib.inc.php";
 require_once "data/data.inc.php";
 
-define('ZOOM', 15);
+// records stats
+require_once "../page_builder/page_header.php";
+
+// libs
+require_once "lib/map.lib.inc.php";
+
+define('ZOOM', 16);
 define('LAT',  $latitude);
 define('LONG', $longitude);
 define('MAPTYPE', "roadmap");
@@ -53,8 +57,7 @@ function isID($id) {
 function pix($label, $phone) {
   //set the resolution
   $resolution = array(
-    "sp" => array("220", "160"),
-    "fp" => array("160", "160")
+    "basic" => array("220", "160")
   );
   $labels = array("x" => 0, "y" => 1);
   return $resolution[$phone][ $labels[$label] ];
@@ -100,13 +103,14 @@ function tab() {
   return isset($_REQUEST['tab']) ? $_REQUEST['tab'] : "Map";
 }
 
-# function market_type() now being defined in data/data.inc.php since it's configurable
+# function marker_type() now being defined in data/data.inc.php since it's configurable
 
 function marker() {	
   
   if ((int)$_REQUEST['loc'] != 0) {
-    $db = db::$connection;
-	$stmt = $db->prepare("SELECT * FROM Buildings WHERE id = ".$_REQUEST['loc']);
+    
+	$db = new db;
+	$stmt = $db->connection->prepare("SELECT * FROM Buildings WHERE id = ".$_REQUEST['loc']);
 	$stmt->execute();
 	$data = $stmt->fetchAll();
 	
@@ -116,8 +120,9 @@ function marker() {
 	return $lat.",".$long.",".$marker;
   }
   else if ($_REQUEST['all']) {
-	$db = db::$connection;
-	$stmt = $db->prepare("SELECT * FROM Buildings WHERE type = ".$_REQUEST['all']);
+	
+	$db = new db;
+	$stmt = $db->connection->prepare("SELECT * FROM Buildings WHERE type = ".$_REQUEST['all']);
 	$stmt->execute();
 	$results = $stmt->fetchAll();
     $markers = "";
@@ -202,14 +207,16 @@ $height = pix("y", $phone);
 $parent = false;
 
 if ($_REQUEST['loc']) {
-    $db = db::$connection;
-	$stmt = $db->prepare("SELECT * FROM Buildings WHERE id = ".$_REQUEST['loc']);
+    
+	$db = new db;
+	$stmt = $db->connection->prepare("SELECT * FROM Buildings WHERE id = ".$_REQUEST['loc']);
 	$stmt->execute();
 	$data = $stmt->fetchAll();
 }
 
 if ($data[0]['parent'] != '') {
-	$stmt_1 = $db->prepare("SELECT * FROM Buildings WHERE id = ".$data[0]['parent']);
+	$db = new db;
+	$stmt_1 = $db->connection->prepare("SELECT * FROM Buildings WHERE id = ".$data[0]['parent']);
 	$stmt_1->execute();
 	$parent_data = $stmt_1->fetchAll();
 	$parent = true;
@@ -227,13 +234,7 @@ function cleanStreet($data) {
   return preg_replace('/^access\s+via\s+/i', '', $street);
 } 
 
-if ($prefix == 'ip') {
-	require "$prefix/detail-gmap.html";
-}
-else {
-	require "$prefix/detail.html";
-}
-
+require "templates/$prefix/detail.html";
 
 $page->output();
 

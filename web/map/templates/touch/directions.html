@@ -1,0 +1,14 @@
+<?
+$page->title($inst_name.' Campus Map: Directions to '.$inst_name)
+     ->navbar_image('title-map')
+     ->breadcrumbs('Directions to '.$inst_name);
+
+$page->content_begin();
+?>
+	<ul class="nav">
+            <? foreach($directions as $link => $value) { ?>
+		 <li><a href="<?=directionsURL($link)?>"><?=$value->link_text?></a></li>
+            <? } ?>
+	</ul>
+	
+<? $page->content_end(); ?>

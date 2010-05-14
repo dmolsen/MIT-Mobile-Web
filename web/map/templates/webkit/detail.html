@@ -1,0 +1,100 @@
+<div id="map-detail" class="notransform">
+	
+	<script type="text/javascript">
+		// set-up the session storage data for this item to be inserted if necessary
+		sessionStorage.mid = "<?=$_REQUEST['loc']?>";
+		sessionStorage.mname = "<?=$data[0]['name']?>";
+		sessionStorage.mlatitude = "<?=$data[0]['latitude']?>";
+		sessionStorage.mlongitude = "<?=$data[0]['longitude']?>";
+	</script>
+	
+	<div class="toolbar">
+		<h1><span class='thick'>Map</span><span class='thin'>Details</span></h1>
+		<a href="#" class="back">Back</a>
+		<? $user_agent = $_SERVER['HTTP_USER_AGENT']; # for some reason favorites don't work on android ?>
+		<? if (!eregi('android',$user_agent)) { ?>
+			<a href="#" class="button" id="map-favorite-detail"><img src="/themes/<?=$theme?>/webkit/images/favorite_unselected.png" id="map-favorite-detail-img" class="icon2" /></a>
+		<? } ?>
+	</div>
+
+  <? $break = true; ?>
+	<? $marker_type = ($data[0]['subtype'] != "") ? $marker_types[$data[0]['subtype']] : $marker_types[$data[0]['type']]; ?>
+
+	<div id="map-container" class="notransform">
+		<div id="map-info">
+			<div>	
+				<h2>
+					<?=$data[0]['name']?> <? if ($data[0]['code'] != '') { ?>(<?=$data[0]['code']?>)<? } ?>
+					<? if ($data[0]['wifi'] == 'Y') { ?>&nbsp;<img src="/themes/<?=$theme?>/webkit/images/wifi.png" alt="WiFi" /><? } ?>
+				</h2>
+				<p class="address">
+					 <? if ($data[0]['campus'] != '') { ?>On the <?=$data[0]['campus']?> Campus<br /><? } ?>
+				   <? if ($parent == true) { ?>Located inside the <a href="<?=detailURL($parent_data[0]['id'],$parent_data[0]['latitude'],$parent_data[0]['longitude'])?>"><?=$parent_data[0]['name']?></a><? } else { ?><?=$data[0]['physical_address']?> <? } ?>
+				   <? if ($data[0]['hours'] != '') { ?><br />Open <?=str_replace('"','',$data[0]['hours'])?><? } ?>
+			     <? if ($data[0]['phone'] != '') { ?><br /><a href="tel:1<?=$data[0]['phone']?>" data-ga="/outgoing/map/detail/phone/"><?=$data[0]['phone']?></a><? $break = false; ?><? } ?>
+				   <? if ($data[0]['website'] != '') { ?><? if ($break == true) { ?><br /><? } else { ?> | <? } ?><a href="http://<?=$data[0]['website']?>" data-ga="/outgoing/map/detail/website/" target="_blank">Website</a><? $break = false; ?><? } ?>
+					 | <a  href="http://maps.google.com/maps?sll=<?=$data[0]['latitude']?>,<?=$data[0]['longitude']?>" data-ga="/outgoing/map/detail/directions/" target="_blank">Directions</a>
+				</p>
+			</div>
+		</div>
+
+		<div id="map-overflow" style="overflow: hidden; padding: 0; border: 0;" class="notransform">
+				<div id="map_canvas" style="margin-left: -20px; margin-top: -20px;" class="notransform"></div>
+		</div>
+	
+		<script type="text/javascript">
+			function map_initialize() {	
+				
+				// when first loading the window make sure map_canvas & map are set to appropriate
+				// dimensions based on the iphone's orientation when loading the map
+				if ((window.orientation == (-90)) || (window.orientation == (90))) {
+					var width = 520; var height = 285;
+					$('#map_canvas').css("width",width+"px");
+					$('#map_canvas').css("height",height+"px");
+					$('#map-overflow').css("width",(width-40)+"px");
+					$('#map-overflow').css("height",(height-10)+"px");
+				} else {
+					var width = 360; var height = 435;
+					$('#map_canvas').css("width",width+"px");
+					$('#map_canvas').css("height",height+"px");
+					$('#map-overflow').css("width",(width-40)+"px");
+					$('#map-overflow').css("height",(height-10)+"px");
+				}
+				
+				// create the map
+				var latlng = new google.maps.LatLng(<?=$data[0]['latitude']?>,<?=$data[0]['longitude']?>);
+				var myOptions = {
+					zoom: 16,
+					center: latlng,
+					disableDefaultUI: true,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				};
+				
+				map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
+				
+				// load the marker
+				var image = new google.maps.MarkerImage("/themes/<?=$theme?>/webkit/images/markers/<?=$marker_type?>.png",new google.maps.Size(32, 37));
+				var shadowi = new google.maps.MarkerImage("/themes/<?=$theme?>/webkit/images/markers/shadow.png",new google.maps.Size(51, 37));
+			  var myLatLng = new google.maps.LatLng(<?=$data[0]['latitude']?>,<?=$data[0]['longitude']?>);
+			  var beachMarker = new google.maps.Marker({
+			      position: myLatLng,
+			      map: map,
+						shadow: shadowi,
+			      icon: image
+			  });
+				
+				// fixing a bug with setCenter which doesn't seem to do anything on second load
+				if (map_loaded == true) {
+					map.panBy(-180,-247); 
+				} else {
+					map_loaded = true;
+				}
+			
+				return map;
+			}
+		</script>
+	</div>
+</div>
+
+
+

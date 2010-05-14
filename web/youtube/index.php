@@ -1,4 +1,4 @@
-<?php
+<?
 /**
  * Copyright (c) 2009 West Virginia University
  * 
@@ -7,17 +7,15 @@
  * 
  */
 
-
-require "../page_builder/page_header.php";
-
-//various copy includes
+// various copy includes
 require_once "../../config.gen.inc.php";
-
-// data include
 require_once "data/data.inc.php";
 
-//defines all the variables related to being today
-require "lib/youtube.lib.inc.php";
+// records stats
+require_once "../page_builder/page_header.php";
+
+// libs
+require_once "lib/youtube.lib.inc.php";
 
 if ((int)$_REQUEST['page'] != 0) {
   $prev = $_REQUEST['page'] - 1;
@@ -38,7 +36,7 @@ $query->setOrderBy('updated');
 $query->setStartIndex($index);
 $uploads = $yt->getVideoFeed($query);
 
-require "$prefix/index.html";
+require "templates/$prefix/index.html";
 $page->output();
 
 ?>

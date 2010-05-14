@@ -1,0 +1,13 @@
+<form method="get" action="/calendar/search.php">
+	<fieldset class="inputcombo">
+		<input class="forminput" type="text" id="filter" name="filter" placeholder="Search for events" value="<?=$search_terms?>" />
+		<a style="margin:0;" href="#" class="submit"><img class="combobutton" id="sch_btn" src="/themes/<?=$theme?>/webkit/images/search-button.png" /></a>
+	</fieldset>	
+	<fieldset>
+		<select id="timeframe" name="timeframe">
+			<? foreach($search_options as $key => $option) { ?> 
+			<option value="<?=$key?>" <? if($key == $timeframe) { ?>selected="selected"<? } ?> ><?=$option['phrase']?></option>
+			<? } ?>
+		</select>
+	</fieldset>	
+</form>

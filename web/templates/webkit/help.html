@@ -1,0 +1,14 @@
+<? $page_title = "Help"; ?>
+<? $help_on = false; ?>
+
+<div id="help-ex" class="selectable">
+	<? include("toolbar.html"); ?>
+
+	<div class="focal">		
+		<? foreach ($help as $paragraph) { ?>
+			<p><?=$paragraph?></p>
+		<? } ?>
+	</div>
+
+	<? include("info.html"); ?>
+</div>

@@ -1,0 +1,57 @@
+<?
+$page->title($inst_name." Events Calendar: Event Details")
+     ->header($inst_name.' Events Calendar');
+
+$page->content_begin();
+?>
+
+	<div class="focal">
+		<h2><?=html_entity_decode($event->title->text)?></h2>
+		<p>
+			<?=$date_str?>
+			<? if ($time_of_day) { ?><br/>
+			  <?=$time_of_day?>
+			<? } ?>
+		</p>
+		<p>
+       <? if (trim(briefLocation($event)->valueString) != '') { ?>
+						Location: <!--<a href="<?#=mapURL($event)?>" class="map">--><?=trim(briefLocation($event)->valueString)?><!--</a>-->
+       <? } ?>
+		</p>
+		<? if (trim($description) != '') { ?>
+		   <p>
+          <?=$description?>
+		   </p>
+	  <? } ?>
+
+    <? if (trim($contact_name) != '') { ?>
+	      <p>
+		       Contact name: <?=$contact_name?>
+		    </p>
+		<? } ?>
+		
+		<? if (trim($contact_phone) != '') { ?>
+	      <p>
+		       For info call: <a href="<?=phoneURL($contact_phone)?>" class="phone"><?=$contact_phone?></a>
+		    </p>
+		<? } ?>
+		
+		<? if (trim($contact_email) != '') { ?>
+	      <p>
+		       For info email:  <a href="mailto:$contact_email?>" class="email"><?=$contact_email?></a>
+		    </p>
+		<? } ?>
+
+      <? if ((trim($event_link) != '') && (trim($event_link) != 'http://')) { ?>
+		     <p>
+			      Website: <a href="<?=$event_link?>" class="external" target="_new"><?=$event_link?></a>
+		     </p>
+      <? } ?>
+
+	</div>
+<?
+
+$page->content_end();
+$page->nav_link("./", "Events Calendar Home");
+
+?>

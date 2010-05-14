@@ -1,0 +1,26 @@
+<? $page_title = "Search Results"; ?>
+<? $help_on = false; ?>
+
+<div id="map-search" class="clear-map-detail">
+										
+	<? include("../templates/webkit/toolbar.html"); ?>
+	
+	<? $i = 1; ?>
+	<? $a_shown = false; ?>
+	<? $string_sep = 'A'; ?>
+	<ul class="edgetoedge">
+		<? foreach($results as $place) { ?>
+			<? if (($a_shown == false) && (substr($place['name'],0,1) == 'A')) { ?>
+				<? $a_shown = true; ?>
+				<li class="sep"><?=$string_sep?></li>
+			<? } else if (substr($place['name'],0,1) != $string_sep) { ?>
+				<? $string_sep = substr($place['name'],0,1); ?>
+				<li class="sep"><?=$string_sep?></li>
+			<? } ?>
+			<? include("_li_item.html"); ?>
+		<? } ?>
+	</ul>
+
+	<? include("../templates/webkit/info.html"); ?>
+
+</div>

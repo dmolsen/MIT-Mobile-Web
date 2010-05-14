@@ -1,0 +1,73 @@
+<?
+$page->title($inst_name.' Weather')
+     ->header($inst_name.' Weather');
+ 
+$page->content_begin();
+?>
+
+<div class="nonfocal">
+	Weather details affecting the <? echo  $inst_name ?> community.
+</div>
+
+<? $alert = false; ?>
+<? if( trim( $alerts[0]['title'] ) != 'There are no active watches, warnings or advisories' ){ $alert = true; } ?>
+
+<? if ($alert == true) { ?>
+
+<ul class="nav" style="background-color: white; color: red;">
+	<div class="focal">
+		<h2 style="color: black;">Weather Alerts</h2>
+		<ul class="nav" style="background-color: white; color: red;">
+			<? $count = count($alerts); ?>
+			<? for( $i = 0; $i < $count; $i++ ) { ?>
+				<li><a href="<? echo alertURL(  getWarning( $alerts[$i]['title'] ) , $i); ?>"><? echo getWarning( $alerts[$i]['title'] ); ?></a></li>
+			<? } ?>
+		</ul>
+	</div>
+<? } ?>
+
+<div class="focal">
+	<h3>Current Conditions</h3>
+	<div style="float: left; margin: 2px;">
+		<img src="<? echo $conditions['icon_url_base'] . $conditions['icon_url_name']; ?>" title='weather icon'  />
+	</div>
+	<div style="float: left; margin: 2px;">
+		<ul style="list-style: none;">
+			<li><h1 style="color: black;"><? echo $conditions['temp_f']; ?> &deg; F</h1></li>
+			<li><? echo $conditions['weather']; ?></p></li>
+		<ul>
+	</div>
+	<div style="clear: both;"></div>
+	<span class="smallprint">
+		<ul style="list-style: none;">		
+			<? if( isset( $conditions['windchill_f'] ) ){ ?>
+				<li><strong>Wind Chill: </strong><? echo $conditions['windchill_f']; ?> &deg; F</li>
+			<? } ?>
+		
+			<? if( isset( $conditions['heat_index_f'] ) ){ ?>
+				<li><strong>Heat Index: </strong><? echo $conditions['heat_index_f']; ?> &deg; F</li>
+			<? } ?>
+				
+			<? if( isset( $conditions['relative_humidity'] ) ){ ?>
+				<li><strong>Humidity: </strong><? echo $conditions['relative_humidity']; ?>%</li>
+			<? } ?>
+				
+			<? if( isset( $conditions['wind_dr'] ) && isset( $conditions['wind_mph'] ) ){ ?>
+				<li><strong>Wind: </strong><? echo $conditions['wind_dr']." at ".$conditions['wind_mph']." MPH"; ?></li>
+			<? }elseif( isset( $conditions['wind_string'] ) ){ ?>
+				<li><strong>Wind: </strong><? echo $conditions['wind_string']; ?></ul>
+			<? } ?>
+				
+		</ul>		
+	</span>		
+	<span class="smallprint">
+		<p><em><? echo $conditions['observation_time']; ?></em></p>
+	</span>
+</div>
+
+<ul class="secondary">
+	<li><a href="../emergency">Campus emergency information</a></li>
+</ul>
+ 
+ 
+<? $page->content_end(); ?>

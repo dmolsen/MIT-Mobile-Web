@@ -1,0 +1,16 @@
+<? $page_title = "Hours"; ?>
+<? $help_on = false; ?>
+
+<div id="hours">
+	
+	<? include("../templates/webkit/toolbar.html"); ?>
+	
+	<ul class="rounded">
+		<? foreach($categorys as $category => $title) { ?>
+			<li class="arrow"><a href="/hours/<?=categoryURL($category)?>"><?=$title?></a></li>
+		<? } ?>
+	</ul>
+	
+	<? include("../templates/webkit/info.html"); ?>
+
+</div>

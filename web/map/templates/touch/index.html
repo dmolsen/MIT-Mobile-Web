@@ -1,0 +1,37 @@
+<?
+$page->title($inst_name.' Campus Map')
+     ->navbar_image('title-map')
+     ->breadcrumbs('Campus Map')
+     ->breadcrumb_home();
+
+$page->content_begin();
+?>
+	
+	<div class="nonfocal">
+		<form method="get" action="<?=searchURL()?>">
+			<fieldset class="inputcombo emphasized">
+				<input class="forminput" type="text" id="filter" name="filter" placeholder="Search the campus map" <? if($query) { ?> value="<?=$query?>" <? } ?> />
+				<input class="combobutton" id="sch_btn" src="/themes/<?=$theme?>/touch/images/search-button.png" type="image" />
+			</fieldset>	
+		</form>
+	</div>
+	
+	<div class="nonfocal">
+		<h3>Browse map by:</h3>
+	</div>
+	
+	<ul class="nav">
+            <? foreach($categorys as $category => $title) { ?>
+    
+		<li>
+			<a href="<?=categoryURL($category)?>"><?=$title?></a>
+		</li>
+
+            <? } ?>
+	</ul>
+	
+	<ul class="secondary">
+		<li><a href="directions.php">Directions to <?=$inst_name?></a></li>
+	</ul>
+	
+<? $page->content_end(); ?>

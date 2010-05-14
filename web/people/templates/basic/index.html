@@ -1,0 +1,45 @@
+<?
+$page->title($inst_name.' People Directory')
+     ->header($inst_name.' People Directory');
+
+$page->content_begin();
+?>
+	<form method="get" action="<?=$_SERVER['SCRIPT_NAME']?>">
+
+	<p>
+		<strong>Search:</strong><br/>
+		<span class="inputcombo emphasized">
+			<input class="forminput" type="search" id="filter" name="filter" value="<?=$search_terms?>" />
+			<input class="combobutton" name="search" id="sch_btn" type="submit" value="Search" />
+		</span>	
+	</p>
+
+        <? if($failed_search) { ?>
+                <p>No matches found</p>
+        <? } ?>
+
+
+	<p class="legend">
+  	        <strong>Search tips:</strong> You can search by part or all of a person's name, email address or phone number.
+	        (e.g.: 'alexander martin', 'alex', 'almartin', '<?=$dir_search_samp_l?>'<? if ($dir_search_samp_s != '') { ?>, '<?=$dir_search_samp_s?>'<? } ?>)
+	</p>		
+
+	</form>
+
+<? 
+
+$page->content_end(); 
+
+if ($has_dir_search_va) {
+	$cleaned_num = preg_replace('/(\(|\)|\.|\-)/','',$dir_search_va_num);
+	$page->extra_link("tel:1".$cleaned_num, $inst_name." operator: ".$dir_search_va_num, "phone")
+	     ->extra_link("../emergency/", "Emergency Contact Numbers")
+	     ->extra_link("../emergency/?extra=true", "General Contact Numbers");
+}
+else {
+	$page->extra_link("../emergency/", "Emergency Contact Numbers")
+	     ->extra_link("../emergency/?extra=true", "General Contact Numbers");
+}
+
+
+?>

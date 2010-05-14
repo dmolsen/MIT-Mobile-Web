@@ -1,0 +1,55 @@
+<?='<?xml version="1.0" encoding="UTF-8"?>'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML Basic 1.1//EN" "http://www.w3.org/TR/xhtml-basic/xhtml-basic11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+	<head>
+		<meta http-equiv="content-type" content="application/xhtml+xml" />
+		<title><?= $inst_name ?> Mobile Web</title>
+		<link rel="stylesheet" type="text/css" href="/themes/<?=$theme?>/basic/stylesheets/theme.css" />
+	</head>
+
+	<body>
+
+		<h2 id="header"><?=$inst_name?> Mobile Web</h2>
+
+		<p class="bb"> </p>
+
+		<p class="nav">
+			<? $i = 1; ?>
+			<? $j = 0; ?>
+			<? $more = false; ?>
+			<? if (count($bc_items) > 9) { ?>
+				<? $more = true; ?>
+			<? } ?>
+			<? foreach ($bc_items as $item) { ?>
+				<? if (($i == 9) && ($more == true)) { ?>
+					<? break; # break out of foreach loop ?>
+				<? } else { ?>
+					<? if ($item[3] == true) { ?> 
+						<a href="<?=$item[4]?>" accesskey="<?=$i?>"><?=$i?>: <?=$item[0]?></a>
+					<? } else { ?>
+						<a href="../<?=$item[1]?>/<?=$item[2]?>" accesskey="<?=$i?>"><?=$i?>: <?=$item[0]?></a>
+					<? } ?>
+					<br />
+					<? $i++; ?>
+				<? } ?>
+			<? } ?>
+			<? if ($more == true) { ?><a href="./?more=true" accesskey="9">9: More Mobile Content</a><? } ?>
+		</p>
+
+		<p class="nav secondary">
+			<a href="../mobile-about/">About the <?=$inst_name?> Mobile Web</a><br/>
+			<a href="../mobile-about/?page=new">What's New</a><br/>
+			<? if ($has_sms) { ?>
+				<a href="../sms/"><?=$inst_name?> SMS (BETA)</a><br/>
+			<? } ?>
+			<a href="http://<?=$main_site_addy?>">Go to <?=$main_site_addy?></a><br/>
+		</p>
+
+		<p id="footer">
+			Managed by <?= $org_name ?>
+		</p>
+
+		<? include('../templates/basic/google_analytics.html'); ?>
+
+	</body>
+</html>

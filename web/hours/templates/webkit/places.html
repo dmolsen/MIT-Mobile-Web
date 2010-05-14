@@ -1,0 +1,22 @@
+<? $page_title = $title; ?>
+<? $help_on = false; ?>
+
+<div id="hours-places" class="clear-map-detail">
+	
+	<? include("../templates/webkit/toolbar.html"); ?>
+	
+	<ul class="edgetoedge">
+		<? foreach($places as $place) { ?>
+			<li class="map wrap">
+				<a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>" class="map"><?=$place['name']?>
+					<p class="smallprint wrap" style="margin-top: 5px; text-wrap: normal">
+						<?=str_replace('"','',$place['hours'])?>
+					</p>
+				</a>
+			</li>
+		<? } ?>
+	</ul>
+
+	<? include("../templates/webkit/info.html"); ?>
+
+</div>

@@ -1,4 +1,4 @@
-<?php
+<?
 /**
  * Copyright (c) 2008 Massachusetts Institute of Technology
  * 
@@ -8,7 +8,6 @@
  */
 
 $all_data = PageViews::past_days(7);
-
 
 // find the largest number of views in the days
 $max_views = 0;
@@ -48,15 +47,15 @@ foreach($all_data as $day) {
 
 // views by device
 $traffic = array(
-  "iPhone" => 0,
-  "Smartphone" => 0,
-  "Feature Phone" => 0,
+  "Webkit" => 0,
+  "Touch" => 0,
+  "Basic" => 0,
   "Other" => 0,
 );
 foreach($all_data as $day) {
-  $traffic["iPhone"] += $day["ip"];
-  $traffic["Smartphone"] += $day["sp"];
-  $traffic["Feature Phone"] += $day["fp"];
+  $traffic["Webkit"] += $day["webkit"];
+  $traffic["Touch"] += $day["touch"];
+  $traffic["Basic"] += $day["basic"];
   $traffic["Other"] += $day["computer"];
 }
 $total = 0;
@@ -82,6 +81,8 @@ $urls = array(
   'links' => 'Useful Links',
   'mobile-about' => 'About this Site',
   'news' => 'Campus News',
+  'libraries' => 'Libraries',
+  'prt' => 'PRT Status'
 );
 
 $popular_pages = array();
@@ -127,7 +128,9 @@ if($start_month == $end_month) {
   $days_text = "{$start_month} {$start_day}-{$end_month} {$end_day}, $year"; 
 }
 
-require "$prefix/statistics.html";
+$today_total = PageViews::getToday();
+
+require "templates/$prefix/statistics.html";
 $page->output();
 
 

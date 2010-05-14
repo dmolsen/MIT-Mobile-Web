@@ -1,0 +1,7 @@
+<ul class="edgetoedge">
+	<? foreach($results as $event) { ?>
+		<? $loc = briefLocation($event); ?>
+		<li class="arrow"><a href="<?=detailURL($event)?>"><?=$event->title?><br /><br /><span class="smallprint"><? if(trim($loc->valueString) != '') { ?><?=$loc->valueString?><br /><? } ?><?=timeText($event)?></span></a></li>
+	<? } ?>
+</ul>
+

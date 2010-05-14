@@ -1,0 +1,44 @@
+<? 
+	$day_check = day_info(time());
+	$day_name = "this day";
+	if ($time == $day_check['time']) {
+		$page_title = "Today's Events";
+		$today = true;
+	} else {
+		$page_title = "Events";
+		$today = false;
+	}
+	$help_on = false; 
+?>
+
+<div id="calendar-day" class="calendar-list">
+	
+	<? include("../templates/webkit/toolbar.html"); ?>
+	
+	<? if ($error == true) { ?>
+		<div class="focal">Events are unavailable. Check back later.</div>
+	<? } else { ?>
+		<ul class="edgetoedge">
+			<li class="sep" style="text-align: center"><?=$current['weekday']?>, <?=$current['month']?> <?=$current['day_num']?>, <?=$current['year']?></li>
+	 		<? $i = 0; ?>
+			<? foreach($eventFeed as $event) { ?>
+				<? $loc = briefLocation($event); ?>
+				<? $i++; ?>
+				<? include("li_item.html"); ?>
+			<? } ?>
+			<? if ($i == 0) { ?>
+				<li><a href="<?=dayURL($next,$type)?>" style="text">Sorry, no events for <?=$day_name?>.</a></li>
+			<? } ?>
+		</ul>
+	<? } ?>
+	
+	<ul class="individual">
+		<? if ($today == false) { ?>
+			<li> <a href="#" onclick="jQT.goBack();">&laquo; <?=$prev['day_3Let']?>. <?=$prev['month_3Let']?> <?=$prev['day_num']?></a></li> 
+		<? } ?>
+		<li> <a href="<?=dayURL($next, $type)?>"><?=$next['day_3Let']?>. <?=$next['month_3Let']?> <?=$next['day_num']?> &raquo;</a></li>
+	</ul>
+	
+	<? include("../templates/webkit/info.html"); ?>
+
+</div>

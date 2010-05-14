@@ -1,0 +1,16 @@
+<? $page_title = "Contacts"; ?>
+<? $help_on = false; ?>
+
+<div id="emergency-contacts">
+	
+	<? include("../templates/webkit/toolbar.html"); ?>
+	
+	<ul class="rounded">
+		<? foreach($others as $item) { ?>
+			<li class="phone"><a href="tel:<?=$item->call_number()?>" data-ga="/phone/emergency/contacts/<?=$item->call_number()?>/"><?=$item->label()?></a></li>
+		<? } ?>
+	</ul>
+
+	<? include("../templates/webkit/info.html"); ?>
+
+</div>

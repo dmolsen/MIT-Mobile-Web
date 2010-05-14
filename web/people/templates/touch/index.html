@@ -1,0 +1,45 @@
+<?
+$page->title($inst_name.' People Directory')
+     ->navbar_image('title-people')
+     ->breadcrumbs('People Directory')
+     ->breadcrumb_home();
+
+$page->content_begin();
+?>
+	<div class="nonfocal">
+		<form method="get" action="">
+			<fieldset class="inputcombo emphasized">
+				<input class="forminput" type="text" id="filter" name="filter" placeholder="Search" value="<?=$search_terms?>" />
+				<input class="combobutton" id="sch_btn" src="/themes/<?=$theme?>/touch/images/search-button.png" type="image" />
+			</fieldset>	
+
+                <? if($failed_search) { ?>
+                      <p>No matches found</p>
+                <? } ?>
+
+		</form>
+	</div>
+	
+	<div class="legend nonfocal">
+	<strong>Sample searches:</strong><br/> 
+	    Name: 'alexander martin', 'martin'<br/>
+	    Email: 'almartin', 'almartin@<?=$email_ending?>'<br/>
+	    Phone: '<?=$dir_search_samp_l?>'<? if ($dir_search_samp_s != '') { ?>, '<?=$dir_search_samp_s?>'<? } ?>
+	</div>
+	
+	<ul class="secondary">
+		<? if ($has_dir_search_va) { ?>
+			<? $cleaned_num = preg_replace('/(\(|\)|\.|\-)/','',$dir_search_va_num); ?>
+		<li>
+			<a href="tel:1<?=$cleaned_num?>" class="phone">Phone Directory <span class="smallprint">(<?=$dir_search_va_num?>)</span></a>
+		</li>
+		<? } ?>
+		<li>
+			<a href="../emergency/">Emergency Contacts</a>
+		</li>
+		<li>
+			<a href="../emergency/?extra=true">General Contacts</a>
+		</li>
+	</ul>
+	
+<? $page->content_end(); ?>

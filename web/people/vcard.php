@@ -1,4 +1,4 @@
-<?php
+<?
 
 /**
  * Copyright (c) 2009 West Virginia University
@@ -16,8 +16,13 @@
 * Description....: An example of using Troy Wolf's class_vcard.
 */
 
-require "../page_builder/page_header.php";
-require "../../config.gen.inc.php";
+// various copy includes
+require_once "../../config.gen.inc.php";
+
+// records stats
+require_once "../page_builder/page_header.php";
+
+// libs
 require_once('lib/vcard.lib.php');
 require_once('../../lib/ldap_services.php');
 
@@ -79,15 +84,15 @@ if (isset($_REQUEST["email"]) && isset($_REQUEST["username"])) {
 		$message = "The username or email address you supplied was not in a valid format.";
     }
     
-	require "$prefix/vcard.html";
+	require "templates/$prefix/vcard.html";
 }
 else if (isset($_REQUEST["username"])) {
-	require "$prefix/vcard.html";
+	require "templates/$prefix/vcard.html";
 }
 else {
    $error = true;
    $message = "You need to supply a valid username to use the vCard feature.";
-   require "$prefix/vcard.html";
+   require "templates/$prefix/vcard.html";
 }
 
 $page->output();
@@ -104,7 +109,7 @@ function html_escape_person($person) {
 }
 
 function ldap_decode($ldap_str) {
-  return preg_replace_callback("/0x(\d|[A-F]){4}/", "unicode2utf8", $ldap_str);
+  return @preg_replace_callback("/0x(\d|[A-F]){4}/", "unicode2utf8", $ldap_str);
 }
 
 function send_email($to,$subject,$attachment,$contact_addy) {

@@ -17,8 +17,9 @@ function makeDD($minute,$loop,$length,$delay) {
 	return $minute;
 }
 
-$db = db::$connection;
-$stmt = $db->prepare("INSERT INTO Schedule (day_scheduled, day_real, route, place, hour, minute, busnum) values (?, ?, ?, ?, ?, ?, ?)");	
+
+$db = new db;
+$stmt = $db->connection->prepare("INSERT INTO Schedule (day_scheduled, day_real, route, place, hour, minute, busnum) values (?, ?, ?, ?, ?, ?, ?)");	
 								
 foreach($routes as $route_name => $route) {
   $runs = $route['runs'];

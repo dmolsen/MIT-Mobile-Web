@@ -1,0 +1,2 @@
+<? $marker_type = ($place['subtype'] != "") ? $marker_types[$place['subtype']] : $marker_types[$place['type']]; ?>
+<li class="arrow"><a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>"><img src="/themes/<?=$theme?>/webkit/images/markers/<?=$marker_type?>_tn.png" width="20" height="20" style="vertical-align: middle; margin-bottom: 4px;" /> <?=$insert?><?=$place['name']?></a></li>

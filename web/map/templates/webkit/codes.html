@@ -1,0 +1,18 @@
+<? $page_title = "Browse By Codes"; ?>
+<? $help_on = false; ?>
+
+<div id="map-codes" class="clear-map-detail">
+	
+	<? include("../templates/webkit/toolbar.html"); ?>
+	
+	<ul class="edgetoedge">
+		<? foreach(array("1-9","A-C","D-F","G-L","M-Q","R-U","V-Z") as $drilldown) { ?>
+			<li class="arrow"><a href="<?=drillURL($drilldown)?>"><?=$drilldown?></a></li>
+		<? } ?>
+	</ul>
+	
+	<? include("browse_category_form.html"); ?>
+
+	<? include("../templates/webkit/info.html"); ?>
+
+</div>

@@ -1,0 +1,31 @@
+<? 
+$page->title($inst_name.' Campus Map: Search Results')
+     ->header($inst_name.' Campus Map');
+
+$page->content_begin();
+?>
+
+<form method="get" action="">
+<p>
+<span class="inputcombo emphasized">
+<input class="forminput" type="search" id="filter" name="filter" value="<?=$_REQUEST['filter']?>" />
+<input class="combobutton" name="search" id="sch_btn" type="submit" value="Search" />
+</span>
+</p>
+</form>
+
+<p><?=count($results)?> matches found</p>
+<p class="focal results"> 
+        <? foreach($results as $place) { ?>
+            <? $insert = ''; ?>
+            <? if ($place['type'] == 'Parking Lot') { ?>
+               <? $insert = "Parking Lot: "; ?>
+            <? } ?>
+            <a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>"><?=$insert?><?=$place['name']?></a> <span class="legend"><?=$place['physical_address']?>, Morgantown, WV</span><br/>
+        <? } ?> 
+</p>
+
+<?
+$page->content_end();
+$page->nav_link('./', "Campus Map Home");
+?>

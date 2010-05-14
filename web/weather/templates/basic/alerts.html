@@ -1,0 +1,26 @@
+<?
+$page->title($inst_name.' Weather')
+     ->header($inst_name.' Weather');
+ 
+$page->content_begin();
+?>
+
+<div class="nonfocal">
+	Weather Alerts details affecting the <? echo  $inst_name ?> community.
+</div>
+
+<div class="focal">
+	<ul style="list-style: none;">
+		<li><a href="<? echo $alerts[$i]['link']; ?>" title="<? echo $elements['warning']; ?>"><? echo $elements['warning']; ?></a></li>
+		<li>Issued: <? echo $elements['issued']; ?></li>
+		<li>Expiring: <? echo $elements['expiring']; ?></li>
+		<li>Issued by: <a href="<? echo $elements['orgURL']; ?>" title="<? echo $elements['issuedBy']; ?>"><? echo $elements['issuedBy']; ?></a></li>
+		<li><i>Last updated on: <? echo $formatDateTime['date']." at ". $formatDateTime['time']; ?></i></li>
+	<ul>
+</ul>
+
+<ul class="secondary">
+	<li><a href="../emergency">Campus emergency information</a></li>
+</ul>
+ 
+<? $page->content_end(); ?>

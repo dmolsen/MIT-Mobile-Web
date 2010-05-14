@@ -1,4 +1,4 @@
-<?php
+<?
 
 /**
  * Copyright (c) 2008 Massachusetts Institute of Technology
@@ -33,9 +33,12 @@ class RSS {
       $title = trim(self::getTag($item, 'title')->nodeValue);
       $items[$title] = array(
 	    "date"     => getdate(strtotime(self::getTag($item, 'pubDate')->nodeValue)),
-            "unixtime" => strtotime(self::getTag($item, 'pubDate')->nodeValue),
+        "unixtime" => strtotime(self::getTag($item, 'pubDate')->nodeValue),
 	    "text"     => self::cleanText(self::getTag($item, 'description')->nodeValue),
-	    "link"     => self::getTag($item, 'link')->nodeValue
+	    "link"     => self::getTag($item, 'link')->nodeValue,
+		"building" => self::getTag($item, 'building')->nodeValue,
+		"floor"	   => self::getTag($item, 'floor')->nodeValue,
+		"availability" => self::getTag($item, 'availability')->nodeValue
       );
     }
 

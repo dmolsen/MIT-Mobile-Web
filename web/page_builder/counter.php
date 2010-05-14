@@ -1,4 +1,4 @@
-<?php
+<?
 
 /**
  * Copyright (c) 2008 Massachusetts Institute of Technology
@@ -9,19 +9,19 @@
  */
 
 
-require_once "../../lib/db.php";
+require_once $install_path."lib/db.php";
 require_once "Page.php";
 
-class PageViews {
+class PageViews  {
   private static $today;
   public static $time;
 
   private static $fields = array(
-    'home', 'people', 'map', 'shuttleschedule', 'calendar', 'emergency', 'links', 'u92', 'athletics', 'youtube', 'news', 'sms', 'mobile_about',
+    'home', 'people', 'map', 'shuttleschedule', 'calendar', 'emergency', 'links', 'u92', 'athletics', 'youtube', 'news', 'sms', 'mobile_about', 'libraries', 'prt'
   );
 
   private static $devices = array(
-    'ip', 'sp', 'fp', 'computer',
+    'webkit', 'touch', 'basic', 'computer',
   );
 
   public static function increment($content) {
@@ -30,7 +30,9 @@ class PageViews {
       return;
     }
 
-    $db = db::$connection;
+    
+	$db = new db;
+
     $content = self::url2db($content);
     if(Page::is_computer()) {
       $device = 'computer';
@@ -46,13 +48,13 @@ class PageViews {
     if($row === NULL) {
       $content_cnt = 1;
       $device_cnt = 1;
-      $stmt1 = $db->prepare("INSERT INTO PageViews (day) VALUES (?)");
+      $stmt1 = $db->connection->prepare("INSERT INTO PageViews (day) VALUES (?)");
       $stmt1->execute(array($today));
     }
     $current_cnt = $row[$content] + 1;
     $device_cnt = $row[$device] + 1;
 
-    $stmt2 = $db->prepare("UPDATE PageViews SET ".$content."=CAST(? AS INT), ".$device."=CAST(? AS INT) WHERE day=?");
+    $stmt2 = $db->connection->prepare("UPDATE PageViews SET ".$content."=CAST(? AS INT), ".$device."=CAST(? AS INT) WHERE day=?");
     $stmt2->execute(array($current_cnt,$device_cnt,$today));
     #$db->execute("UNLOCK TABLE");
   }
@@ -63,8 +65,8 @@ class PageViews {
   }
 
   private static function getDay($day) {
-    $db = db::$connection;
-    $stmt3 = $db->prepare("SELECT * FROM PageViews WHERE day=?");
+	$db = new db();
+    $stmt3 = $db->connection->prepare("SELECT * FROM PageViews WHERE day=?");
     $stmt3->execute(array($day));
     if($row = $stmt3->fetch()) {
         return $row;
@@ -107,6 +109,25 @@ class PageViews {
     }
     return array_reverse($views);
   }
+
+ public static function getToday() {
+    // views for today
+    $sql_today = date('Y-m-d');
+    $today = self::getDay($sql_today);
+
+    if($today === NULL) {
+      //day has no data so all views are zero
+      $today_total = 0;
+    }
+    else {
+      foreach(self::$devices as $device) {
+        $today_total += $today[$device];
+      }
+    }
+
+    return $today_total;
+  }
+
 
   public static function url2db($name) {
    return str_replace('-', '_', $name);

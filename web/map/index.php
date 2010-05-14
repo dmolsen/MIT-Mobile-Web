@@ -1,4 +1,4 @@
-<?php
+<?
 
 /**
  * Copyright (c) 2008 Massachusetts Institute of Technology
@@ -8,11 +8,15 @@
  * 
  */
 
-require_once "../../lib/db.php";
-require_once "../page_builder/page_header.php";
+// various copy includes
 require_once "../../config.gen.inc.php";
-require_once "lib/map.lib.inc.php";
 require_once "data/data.inc.php";
+
+// records stats
+require_once "../page_builder/page_header.php";
+
+// libs
+require_once "lib/map.lib.inc.php";
 
 $category_info = Categorys::$info;
 
@@ -25,7 +29,7 @@ foreach($category_info as $category => $title) {
 
 if(!isset($_REQUEST['category'])) {
   $page->cache();
-  require "$prefix/index.html";
+  require "templates/$prefix/index.html";
 } else {
   $category = $_REQUEST['category'];
   $title = $category_info[$category][2];
@@ -33,7 +37,7 @@ if(!isset($_REQUEST['category'])) {
 
   if(!isset($_REQUEST['drilldown'])) {
     if($category=="names" || $category=="campus" || $category=="codes") {
-      require "$prefix/$category.html";
+      require "templates/$prefix/$category.html";
     } else {
 	  if ($category=="wifi") {
 		 $places = getData("wifi = 'Y'");
@@ -41,7 +45,7 @@ if(!isset($_REQUEST['category'])) {
 	  else {
 		$places = getData("type = '".$category_info[$category][3]."'");
 	  }
-      require "$prefix/places.html";
+      require "templates/$prefix/places.html";
     }
   } else {
     $titlebar = ucwords($category_info[$category][0]);
@@ -50,25 +54,33 @@ if(!isset($_REQUEST['category'])) {
     if ($category=="names") {
 	    if (stristr($drilldown,"-")) {
 		    $sql_substr = '(';
-			$sql_substr .= subSQLStrBuilder($drilldown);
+			$sql_substr .= subSQLStrBuilder($drilldown,'name');
 			$sql_substr .= ')';
 	    }
 	    else {
 			$sql_substr = "name LIKE \"".$drilldown."%\"";
 	    }
 	    $places = getData("(type = 'Building' OR type='Housing' OR type='Library' OR type='PRT Station' OR type='Athletic Facility') and ".$sql_substr);
-        require "$prefix/drilldown.html";
+        require "templates/$prefix/drilldown.html";
     }    
     else if ($category=="campus") {
 		$places = getData("(type = 'Building' OR type='Housing' OR type='Library' OR type='PRT Station' OR type='Athletic Facility') and campus = '".$drilldown."'");
-	    require "$prefix/drilldown.html";
+	    require "templates/$prefix/drilldown.html";
 	}
 	else if ($category=="codes") {
-		$db = db::$connection;
-		$stmt = $db->prepare("SELECT * FROM Buildings WHERE code LIKE \"".$drilldown."%\" GROUP BY code ORDER BY code ASC");
+		if (stristr($drilldown,"-")) {
+		    $sql_substr = '(';
+			$sql_substr .= subSQLStrBuilder($drilldown,'code');
+			$sql_substr .= ')';
+	    }
+	    else {
+			$sql_substr = "name LIKE \"".$drilldown."%\"";
+	    }
+		$db = new db;
+		$stmt = $db->connection->prepare("SELECT * FROM Buildings WHERE ".$sql_substr." GROUP BY code ORDER BY code ASC");
         $stmt->execute();
 	    $places = $stmt->fetchAll();
-		require "$prefix/drilldown_codes.html";
+		require "templates/$prefix/drilldown_codes.html";
 	}
     
   }
@@ -115,32 +127,33 @@ function drillURL($drilldown, $name=NULL) {
 
 function categoryURL($category=NULL) {
   $category = $category ? $category : $_REQUEST['category'];
-  return "?category=$category";
+  return "/map/?category=$category";
 }
 
 function searchURL() {
-  return "search.php";
+  return "/map/search.php";
 }
 
-function subSQLStrBuilder($drilldown) {	
+function subSQLStrBuilder($drilldown,$type) {	
 	$drilldown_a = explode('-',$drilldown);
 	$alpha_a = array("1","2","3","4","5","6","7","8","9","A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z");
 	$i = array_search($drilldown_a[0], $alpha_a);
 	$max = array_search($drilldown_a[1], $alpha_a);
 	while ($i <= $max) {
-		$sql_str .= "name LIKE \"".$alpha_a[$i]."%\"";
+		$sql_str .= $type." LIKE \"".$alpha_a[$i]."%\"";
 		if ($i < ($max)) { $sql_str .= " OR "; }
 		$i++;
 	}
 	return $sql_str;
 }
 function getData($where=false) {
-	$db = db::$connection;
+	
+	$db = new db;
     if ($where) {
-		$stmt = $db->prepare("SELECT * FROM Buildings WHERE ".$where." GROUP BY name ORDER BY name ASC");
+		$stmt = $db->connection->prepare("SELECT * FROM Buildings WHERE ".$where." GROUP BY name ORDER BY name ASC");
 	}
 	else {
-		$stmt = $db->prepare("SELECT * FROM Buildings GROUP BY name ORDER BY name ASC");
+		$stmt = $db->connection->prepare("SELECT * FROM Buildings GROUP BY name ORDER BY name ASC");
 	}
         $stmt->execute();
 	$result = $stmt->fetchAll();

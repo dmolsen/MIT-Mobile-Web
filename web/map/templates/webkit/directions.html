@@ -1,0 +1,16 @@
+<? $page_title = "Directions"; ?>
+<? $help_on = false; ?>
+
+<div id="map-directions">
+	
+	<? include("../templates/webkit/toolbar.html"); ?>
+	
+	<ul class="rounded">
+		<? foreach($directions as $link => $value) { ?>
+			<li class="arrow"><a href="<?=directionsURL($link)?>"><?=$value->link_text?></a></li>
+		<? } ?>
+	</ul>
+	
+	<? include("../templates/webkit/info.html"); ?>
+
+</div>

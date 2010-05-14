@@ -1,4 +1,4 @@
-<?php
+<?
 /**
  * Copyright (c) 2008 Massachusetts Institute of Technology
  * 
@@ -7,18 +7,19 @@
  * 
  */
 
-
-require "../page_builder/page_header.php";
-
 // various copy includes
 require_once "../../config.gen.inc.php";
 require_once "data/data.inc.php";
 
-// sets up google calendar classes
-require "lib/gcalendar_setup.php";
+// records stats
+require_once "../page_builder/page_header.php";
 
-// defines all the variables related to being today
-require "lib/calendar_lib.php";
+// sets up google calendar classes
+require_once "lib/google_calendar.init.php";
+
+// libs
+require_once "lib/calendar.lib.php";
+require_once "lib/textformat.lib.php";
 
 $id = $_REQUEST['id'];
 
@@ -34,7 +35,7 @@ $query->setSortorder('a');
 $query->setmaxresults('30');
 $eventFeed = $gdataCal->getCalendarEventFeed($query);
 
-require "$prefix/category.html";
+require "templates/$prefix/category.html";
 $page->output();
 
 ?>

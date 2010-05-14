@@ -31,7 +31,7 @@ $calendars = array();
 
 /* required to have an "all" category for search purposes */
 $calendars["all"] 			= 	array("title" => "All Events", 
-									  "user"  => "pcnqpk03212bhbvvq03hc0ouv8k0oj76@import.calendar.google.com"
+									  "user"  => "pcnqpk03212bhbvvq03hc0ouv8k0oj76@import.calendar.google.com",
 									  "main"  => false,
 									  "caltxt"=> false);
 

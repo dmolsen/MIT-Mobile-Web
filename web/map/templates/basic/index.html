@@ -1,0 +1,26 @@
+<?
+$page->title($inst_name.' Campus Map')
+     ->header($inst_name.' Campus Map');
+
+$page->content_begin();
+?>
+	<form method="get" action="<?=searchURL()?>">
+
+	<p>
+		<strong>Search the campus map:</strong><br/>
+		<span class="inputcombo emphasized">
+			<input class="forminput" type="text" id="filter" name="filter" <? if (isset($query)) { ?>value="<?=$query?>"<? } ?>/>
+			<input class="combobutton" name="sch_btn" id="sch_btn" type="submit" value="Search" />
+		</span>	
+	</p>
+
+	<p class="nav">
+             1. Campus Map Home<br/>
+             <? $cnt = 2; foreach($categorys as $category => $title) { ?>
+	        <a href="<?=categoryURL($category)?>" accesskey="<?=$cnt?>"><?=$cnt?>. <?=$title?></a><br/>
+             <? $cnt++; } ?>
+	</p>
+<?
+$page->content_end();
+$page->extra_link("directions.php", "Directions to ".$inst_name);
+?>

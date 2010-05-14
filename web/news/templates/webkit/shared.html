@@ -1,0 +1,24 @@
+<? $page_title = $section." News"; ?>
+<? $help_on = false; ?>
+
+<div id="news-shared-<?=str_replace(" ","",$section)?>">
+
+	<? include("../templates/webkit/toolbar.html"); ?>
+
+	<div class="nonfocal">
+		The latest news items from <? if ($news_srcs[$_REQUEST['news']]['need_the'] == true) { ?>the<? } ?> <?=$section?>.
+	</div>
+	
+	<ul class="rounded">
+    <? foreach($items as $title => $item) { ?>
+	  	<? $short_date = short_date($item['date']); ?>
+    	<? if ($short_date == '00:00am') { $short_date = '12:00am'; } ?>
+			<li class="arrow">
+				<a href="<?=detailURL($title,$key)?>" class="noellipsis"><?=$title?><? if ($item['date']) { ?><p class="smallprint" style="margin-top: 5px;"><em>Posted on: <?=short_date($item['date'])?></em></p><? } ?></a>
+			</li>
+    <? } ?>
+	</ul>
+	
+	<? include("../templates/webkit/info.html"); ?>
+
+</div>

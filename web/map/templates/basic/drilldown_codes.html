@@ -1,0 +1,24 @@
+<?
+$page->title($inst_name." Campus Map: Browse by $titlebar")
+     ->header($inst_name." Campus Map");
+$page->content_begin();
+?>
+
+	<h2><?=$title?>: <?=$drilldown?></h2>
+	
+	<p class="nav">
+		        <? $i = 0; ?>
+            <? foreach($places as $place) { ?>            
+		          <a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>"><?=$place['code']?></a><br/>
+              <?$i++;?>
+            <? } ?>
+            <? if ($i == 0) { ?>There are no items associated with this option.<? } ?>
+	</p>
+	
+	<p class="paging">
+		<a href="<?=categoryURL()?>">&lt; Back</a>
+	</p>
+<?
+$page->content_end();
+$page->nav_link("./", "Campus Map");
+?>

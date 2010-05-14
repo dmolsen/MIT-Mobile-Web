@@ -1,0 +1,18 @@
+<? $page_title = "By Campus"; ?>
+<? $help_on = false; ?>
+
+<div id="map-campus" class="clear-map-detail">
+	
+	<? include("../templates/webkit/toolbar.html"); ?>
+	
+	<ul class="edgetoedge">
+		<? foreach(array("Downtown","Evansdale","Health Sciences") as $drilldown) { ?>
+			<li class="arrow"><a href="<?=drillURL($drilldown)?>"><?=$drilldown?></a></li>
+		<? } ?>
+	</ul>
+	
+	<? include("browse_category_form.html"); ?>
+
+	<? include("../templates/webkit/info.html"); ?>
+
+</div>

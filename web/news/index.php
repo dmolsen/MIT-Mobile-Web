@@ -1,4 +1,4 @@
-<?php
+<?
 
 /**
  * Copyright (c) 2009 West Virginia University
@@ -8,10 +8,16 @@
  * 
  */
 
-require_once "../page_builder/page_header.php";
-require_once "../../lib/rss_services.php";
+// various copy includes
 require_once "../../config.gen.inc.php";
 require_once "data/data.inc.php";
+
+// records stats
+require_once "../page_builder/page_header.php";
+
+// libs
+require_once "../../lib/rss_services.php";
+require_once "lib/textformat.lib.php";
 
 if (array_key_exists($_REQUEST['news'], $news_srcs)) {
 	$rss_url = $news_srcs[$_REQUEST['news']]['url'];
@@ -30,26 +36,10 @@ $News = new RSS();
 $items = $News->get_feed($rss_url);
 
 if ($shared == true) {
-  require "$prefix/shared.html";
+  require "templates/$prefix/shared.html";
 }
 else {
-  require "$prefix/index.html";
-}
-
-function detailURL($title,$src) {
-  return "detail.php?title=$title&src=$src";
-}
-
-function is_long_text($item) {
-  return is_long_string($item['text']);
-}
-
-function summary($item) {
-  return summary_string(str_replace(' [...]','...',(str_replace('Read more ...','',$item['text']))));
-}
-
-function full($item) {
-  return $item['text'];
+  require "templates/$prefix/index.html";
 }
 
 $page->output();

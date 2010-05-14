@@ -1,4 +1,4 @@
-<?php
+<?
 
 /**
  * Copyright (c) 2009 West Virginia University
@@ -8,8 +8,11 @@
  * 
  */
 
-require "../page_builder/page_header.php";
-require "../../config.gen.inc.php";
+// various copy includes
+require_once "../../config.gen.inc.php";
+
+// records stats
+require_once "../page_builder/page_header.php";
 
 $sms_pages = array(
   'bus', 
@@ -25,13 +28,13 @@ switch($_REQUEST['page']) {
   case "bus":
   case "dir":
   case "sos":
-    require "$prefix/{$_REQUEST['page']}.html";
+    require "templates/$prefix/{$_REQUEST['page']}.html";
     $page->cache();
     $page->output();
     break;
 
   default:
-    require "$phone/index.html";
+    require "templates/$phone/index.html";
     $page->cache();
     $page->output();
 }

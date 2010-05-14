@@ -1,0 +1,32 @@
+<? $page_title = "Search Results" ?>
+<? $help_on = false; ?>
+
+<div id="calendar-search" class="calendar-list">
+	
+	<? include("../templates/webkit/toolbar.html"); ?>
+
+	<div class="nonfocal" style="text-align: center;">
+		<? $i = 0; ?>
+		<? foreach ($eventFeed as $event) { $i++; } ?>
+		<? if ($i == 1) { ?>
+			<p><?=$i?> match found:</p>
+		<? } else if ($i < 30) { ?>
+			<p><?=$i?> matches were found:</p>
+		<? } else { ?>
+			<p>You may need to refine your search. The first 50 matches found:</p>
+		<? } ?>
+	</div>
+	
+	<ul class="edgetoedge">
+		<? foreach ($eventFeed as $event) { ?>
+			<? include("li_item.html"); ?>
+		<? } ?>
+	</ul>
+	
+	<div class="nonfocal">
+		<? include("search_form.html"); ?>
+	</div>
+
+	<? include("../templates/webkit/info.html"); ?>
+
+</div>

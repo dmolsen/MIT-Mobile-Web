@@ -1,0 +1,29 @@
+<? 
+	# hack using the statistics package to get path
+	$module = PageViews::url2db($content); 
+	
+	#blow apart the title to format it correctly
+	$i = 1;
+	$page_parts = explode(" ",$page_title);
+	if (count($page_parts) == 1) {
+		$page_title = "<span class='thick'>".$page_parts[0]."</span>";
+	} else {
+		$page_title = "<span class='thick'>".$page_parts[0]."</span>";
+		$page_title .= "<span class='thin'>";
+		while ($i < count($page_parts)) {
+			$page_title .= $page_parts[$i];
+			$i++;
+		}
+		$page_title .= "</span>";
+	}
+?>
+<div class="toolbar">
+	<h1><?=$page_title?></h1>
+	<a href="#" class="back">Back</a>
+	<? if ($help_on) { ?><a href="/<?=$module?>/help.php" class="button slideup">Help</a><? } ?>
+	<? if ($button) { echo($button_html); } ?>
+</div>
+
+<!-- minimum div makes sure footer shows up at the bottom of screen even if content is short -->
+<div class="<? if ($bottom == true) {?>use-bottom-toolbar<? } ?>">
+	<div>

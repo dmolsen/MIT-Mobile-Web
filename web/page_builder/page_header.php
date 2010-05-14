@@ -1,4 +1,4 @@
-<?php
+<?
 /**
  * Copyright (c) 2008 Massachusetts Institute of Technology
  * 
@@ -16,7 +16,6 @@ $phone = Page::classify_phone();
 $page = Page::factory($phone);
 $prefix = $page->requirePrefix();
 
-//find which page is being requested
 preg_match('/\/((\w|\-)+)\/[^\/]*?$/', $_SERVER['REQUEST_URI'], $match);
 $content = $match[1];
 

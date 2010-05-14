@@ -1,0 +1,37 @@
+<?
+$page->title($inst_name.' People Directory: Details')
+     ->navbar_image('title-people')
+     ->breadcrumbs('Search', 'vCard');
+$page->content_begin();
+?>
+
+<? if ($error == true) { ?>
+	<div class="focal">
+	<strong>Error</strong><br />
+	<?=$message?>
+	</div>
+<? } else if ($send == false) { ?>
+	<div class="nonfocal">
+		<form method="get" action="">
+			<fieldset class="inputcombo emphasized">
+				<input type="hidden" name="username" value="<?=$_REQUEST['username']?>">
+				<input class="forminput" type="text" id="filter" name="email" placeholder="Type in Email Address" />
+				<input class="combobutton" id="sch_btn" src="/themes/<?=$theme?>/touch/images/email-button.png" type="image" />
+			</fieldset>	
+		</form>
+	</div>
+<? } else { ?>
+	<? if ($result == "success") { ?>
+		<div class="focal">
+	  <strong>Success</strong><br />
+	  The vCard for <?=$person["givenname"][0]?> <?=$person["surname"][0]?> has been sent to <?=$_REQUEST['email']?>.
+	  </div>
+	<? } else { ?>
+		<div class="focal">
+	  <strong>Failure</strong><br />
+	  For some reason the vCard for <?=$person['first_name'][0]?> <?=$person['last_name'][0]?> was unable to be sent to <?=$_REQUEST['email']?>.
+	  </div>
+	<? } ?>
+<? } ?>
+
+<? $page->content_end(); ?>

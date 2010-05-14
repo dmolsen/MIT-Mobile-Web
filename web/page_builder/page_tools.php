@@ -1,4 +1,4 @@
-<?php
+<?
 /**
  * Copyright (c) 2008 Massachusetts Institute of Technology
  * 
@@ -306,6 +306,7 @@ class ResultsContent {
     //truncate results and determine if a next page is needed
     $start = $_REQUEST["start"] ? (int)$_REQUEST["start"] : 0;
     $pager = new Pager($this->phone, $results, $start);
+	$results2 = $results;
     $results = $pager->items();
 
     $search_terms = $_REQUEST['filter'];
@@ -316,7 +317,7 @@ class ResultsContent {
     $end = $pager->last();
 
 
-    require "../{$this->prefix}/search_results.html";
+    require "../templates/{$this->prefix}/search_results.html";
     return $this->page;
   }
 }
@@ -335,7 +336,7 @@ abstract class Form {
 class StandardForm extends Form {
 
   public function out($total=NULL) {
-    require "../{$this->prefix}/form.html";
+    require "../templates/{$this->prefix}/form.html";
   }
 }
      

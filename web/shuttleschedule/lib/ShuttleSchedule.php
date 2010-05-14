@@ -1,4 +1,4 @@
-<?php
+<?
 /**
  * Copyright (c) 2008 Massachusetts Institute of Technology
  * 
@@ -188,8 +188,9 @@ class Route implements Iterator{
   }
  
   public function populate_db() {
-    $db = db::$connection;
-    $stmt = $db->prepare("INSERT INTO Schedule (day_scheduled, day_real, route, place, hour, minute) values (?, ?, ?, ?, ?, ?)");
+    
+	$db = new db;
+    $stmt = $db->connection->prepare("INSERT INTO Schedule (day_scheduled, day_real, route, place, hour, minute) values (?, ?, ?, ?, ?, ?)");
 
     foreach(day::$days as $day) {
       $this->day = new day($day);
@@ -229,10 +230,11 @@ class Route implements Iterator{
      **********************************************/
 
     $day = new day($day);
-    $db = db::$connection;
-
+    
+	$db = new db;
+	
     // find the first stop after the given time
-    $stmt_1 = $db->prepare(
+    $stmt_1 = $db->connection->prepare(
       "SELECT day_scheduled, place, hour, minute FROM Schedule WHERE day_real = ? AND route = ? AND (60 * hour + minute) >= CAST(? AS INT) ORDER BY (60 * hour + minute) LIMIT 1" );
  
     $day_offset = 0;
@@ -432,7 +434,8 @@ class Route implements Iterator{
   }
 
   public function getCurrentStopsFromDB($day, $hour, $minute) {
-    $db = db::$connection;
+    
+	$db = new db;
 
     $next_stop = $this->getNextStop($day, $hour, $minute);
 
@@ -442,7 +445,7 @@ class Route implements Iterator{
     $day = $next_stop["real_day"];
     $total_minutes = $next_stop["total_minutes"];
 
-    $stmt_2 = $db->prepare(
+    $stmt_2 = $db->connection->prepare(
       "SELECT day_real, hour, minute FROM Schedule WHERE day_scheduled = ? AND day_real = ? AND place = ? AND route = ? AND (60 * hour + minute) >= CAST(? AS INT) ORDER BY (60 * hour + minute) LIMIT 1" );
 
     $stops = array();   

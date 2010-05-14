@@ -1,0 +1,30 @@
+<? $page_title = $drilldown; ?>
+<? $help_on = false; ?>
+
+<div id="map-drilldown-codes" class="clear-map-detail">
+	
+	<? include("../templates/webkit/toolbar.html"); ?>
+	
+	<? $i = 1; ?>
+	<? $a_shown = false; ?>
+	<? $string_sep = 'A'; ?>
+	<ul class="edgetoedge">
+		<? foreach($places as $place) { ?>
+			<? if (($a_shown == false) && (substr($place['code'],0,1) == 'A')) { ?>
+				<? $a_shown = true; $string_sep = 'A'; ?>
+				<li class="sep">A</li>
+			<? } else if (substr($place['code'],0,1) != $string_sep) { ?>
+				<? $string_sep = substr($place['code'],0,1); ?>
+				<li class="sep"><?=$string_sep?></li>
+			<? } ?>
+			<? $marker_type = ($place['subtype'] != "") ? $marker_types[$place['subtype']] : $marker_types[$place['type']]; ?>
+			<li class="arrow"><a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>"><img src="/map/templates/webkit/images/markers/<?=$marker_type?>_tn.png" width="20" height="20" style="vertical-align: middle; margin-bottom: 4px;" /> <?=$insert?><?=$place['code']?></a></li>
+		<? } ?>
+	</ul>
+	
+	<? include("browse_category_form.html"); ?>
+	
+	<? include("../templates/webkit/info.html"); ?>
+
+</div>
+

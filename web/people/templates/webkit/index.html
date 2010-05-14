@@ -1,0 +1,51 @@
+<? $page_title = "Directory"; ?>
+<? $help_on = true; ?>
+
+<div id="people">
+	
+	<? include("../templates/webkit/toolbar.html"); ?>
+	
+	<div class="formcontainer">
+		<form method="get" action="/people/index.php">
+			<fieldset class="inputcombo">
+				<input class="forminput" type="text" id="filter" name="filter" placeholder="Search the directory" <? if ($search_terms) { ?> value="<?=$search_terms?>" <? } ?> />
+				<a style="margin:0;" href="#" class="submit"><img class="combobutton" id="sch_btn" src="/themes/<?=$theme?>/webkit/images/search-button.png" /></a>
+			</fieldset>	
+			
+			<? if ($failed_search) { ?>
+          <p>No matches found</p>
+      <? } ?>
+			
+		</form>
+	</div>
+	
+	<div class="focal">
+		<p class="smallprint">
+			<strong>Sample searches:</strong><br />
+		  By name: 'alexander martin', 'martin'<br/>
+		  By email: 'amartin', 'amartin@<?=$email_ending?>'<br/>
+		  By phone: '<?=$dir_search_samp_l?>'<? if ($dir_search_samp_s != '') { ?>, '<?=$dir_search_samp_s?>'<? } ?>
+		</p>
+	</div>
+	
+	<ul class="rounded">
+		<? $user_agent = $_SERVER['HTTP_USER_AGENT']; ?>
+		<? if (!eregi('android',$user_agent)) { ?>
+			<li class="arrow"><a href="/people/favorites.php">Favorites<span class="pfavscount"></span></a></li>
+		<? } ?>
+		<? if ($has_dir_search_va) { ?>
+			<? $cleaned_num = preg_replace('/(\(|\)|\.|\-)/','',$dir_search_va_num); ?>
+			<li class="phone">
+				<a href="tel:1<?=$cleaned_num?>">Phone Directory</a>
+			</li>
+		<? } ?>
+		<li class="arrow">
+			<a href="../emergency/">Emergency Contacts</a>
+		</li>
+		<li class="arrow">
+			<a href="../emergency/?extra=true">General Contacts</a>
+		</li>
+	</ul>
+	
+	<? include("../templates/webkit/info.html"); ?>
+</div>

@@ -1,0 +1,23 @@
+<?
+$page->title($section.' News')
+     ->header($section.' News');
+
+$page->content_begin();
+?>
+
+	<p>The latest news items from <? if ($news_srcs[$_REQUEST['news']]['need_the'] == true) { ?>the<? } ?> <?=$section?>.</p>
+
+  <? foreach($items as $title => $item) { ?>
+	  <p class="focal">
+		  <strong><?=$title?></strong><br/>
+      <? $short_date = short_date($item['date']); ?>
+      <? if ($short_date == '00:00am') { $short_date = '12:00am'; } ?>
+		  <span class="smallprint"><?=html_entity_decode(summary($item))?> <a href="<?=detailURL($title,$key)?>">more</a> <? if ($item['date']) { ?>(<?=$short_date?>)<? } ?></span>
+	  </p>
+  <? } ?>
+
+<?
+$page->content_end();
+$page->help_off();
+$page->nav_link("./", "Campus News");
+?>

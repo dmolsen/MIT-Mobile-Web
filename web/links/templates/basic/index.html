@@ -1,0 +1,16 @@
+<?
+$page->title($inst_name.' Useful Links')
+     ->header($inst_name.' Useful Links');
+
+$page->content_begin();
+?>
+
+      <p class="nav">
+           1. Useful Links Home<br/>
+           <? foreach($links as $index => $item) { ?>
+                  <a href="http://<?=$item['link']?>" accesskey="<?=$index+2?>" onClick="javascript: pageTracker._trackPageview('/outgoing/links/<?=$item['link']?>');"><?=$index+2?>. <?=$item['name']?></a><br/>
+           <? } ?>
+      </p>
+
+<? $page->content_end(); ?>
+<? $page->help_off(); ?>

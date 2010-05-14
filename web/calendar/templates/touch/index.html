@@ -1,0 +1,40 @@
+<?
+$page->title($inst_name.' Events Calendar')
+     ->navbar_image('title-calendar')
+     ->breadcrumbs('Events Calendar')
+     ->breadcrumb_home();
+
+$page->content_begin();
+?>
+	
+	<div class="nonfocal">
+		<h2><?=$today['weekday']?>, <?=$today['month']?> <?=$today['day_num']?>, <?=$today['year']?></h2>
+	</div>
+	
+	<ul class="nav">
+		<li><a href="<?=dayURL($today, 'events')?>">Today's events</a></li>
+		<? foreach ($calendars as $calkey => $calvalues) { ?>
+			<? if ($calvalues['main'] == true) { ?>
+				<li><a href="category.php?id=<?=$calkey?>"><?=$calvalues['title']?><? if ($calvalues['caltxt'] == true) { ?> calendar<? } ?></a></li>
+			<? } ?>
+		<? } ?>
+		<li><a href="<?=categorysURL()?>">Browse events by category</a></li>
+	</ul>
+	
+	<div class="nonfocal">
+		<form method="get" action="search.php">
+			<fieldset class="inputcombo">
+				<input class="forminput" type="text" id="filter" name="filter" placeholder="Search for events" />
+				<input class="combobutton" id="sch_btn" src="/themes/<?=$theme?>/touch/images/search-button.png" type="image" />
+			</fieldset>	
+			<fieldset>
+				<select id="timeframe" name="timeframe">
+           <? foreach($search_options as $key => $option) { ?> 
+ 					   <option value="<?=$key?>" <? if($option['selected']) { ?>selected="selected"<? } ?> ><?=$option['phrase']?></option>
+           <? } ?>
+				</select>
+			</fieldset>	
+		</form>
+	</div>
+<? $page->content_end(); ?>
+
