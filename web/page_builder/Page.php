@@ -121,10 +121,11 @@ class Page {
   }
 
   private static $phoneTable = array(
-    "iphone" => "webkit",
+    "iphone3" => "webkit",
+	"iphone2" => "touch",
     "android" => "webkit",
-    "palm" => "basic",
-	"opera" => "basic",
+    "palm" => "touch",
+	"opera" => "touch",
     "smart_phone" => "basic",
     "feature_phone" => "basic",
     "computer" => "basic",
@@ -138,7 +139,12 @@ class Page {
 	$user_agent = $_SERVER['HTTP_USER_AGENT'];
     $accept = $_SERVER['HTTP_ACCEPT']; 
 	if (eregi('ipod',$user_agent) || eregi('iphone',$user_agent)) {
-		$type = 'iphone';
+		# check to see if the ipod or iphone OS is 3 or greater for proper webkit support
+		if (eregi('OS\ (3|4)',$user_agent)) {
+			$type = 'iphone3';
+		} else {
+			$type = 'iphone2'; 
+		}
 	} 
 	else if (eregi('ipad',$user_agent)) {
 		$type = 'computer';
