@@ -5,7 +5,7 @@
 	
 	<? include("../templates/webkit/toolbar.html"); ?>
 	
-	<ul class="edgetoedge">
+	<ul class="edgetoedge results">
 		<? foreach(array("Downtown","Evansdale","Health Sciences") as $drilldown) { ?>
 			<li class="arrow"><a href="<?=drillURL($drilldown)?>"><?=$drilldown?></a></li>
 		<? } ?>
