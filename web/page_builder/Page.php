@@ -138,27 +138,27 @@ class Page {
   public static function classify_phone() {
 	$user_agent = $_SERVER['HTTP_USER_AGENT'];
     $accept = $_SERVER['HTTP_ACCEPT']; 
-	if (eregi('ipod',$user_agent) || eregi('iphone',$user_agent)) {
+	if (preg_match('/ipod/i',$user_agent) || preg_match('/iphone/i',$user_agent)) {
 		# check to see if the ipod or iphone OS is 3 or greater for proper webkit support
-		if (eregi('OS\ (3|4)',$user_agent)) {
+		if (preg_match('/OS\ (3|4)/i',$user_agent)) {
 			$type = 'iphone3';
 		} else {
 			$type = 'iphone2'; 
 		}
 	} 
-	else if (eregi('ipad',$user_agent)) {
+	else if (preg_match('/ipad/i',$user_agent)) {
 		$type = 'computer';
 	}
-	else if (eregi('android',$user_agent)) {
+	else if (preg_match('/android/i',$user_agent)) {
 		$type = "android";
     }
-	else if (eregi('WebOS',$user_agent)) {
+	else if (preg_match('/WebOS/i',$user_agent)) {
 		$type = "palm";
 	}
-	else if (eregi('opera mini',$user_agent)) {
+	else if (preg_match('/opera mini/i',$user_agent) || preg_match('/opera mobi/i',$user_agent)) {
 		$type = "opera";
 	}
-	else if (eregi('blackberry',$user_agent) || preg_match('/(palm os|palm|hiptop|avantgo|plucker|xiino|blazer|elaine|windows ce; ppc;|windows ce; smartphone;|windows ce; iemobile|up.browser|up.link|mmp|symbian|smartphone|midp|wap|vodafone|o2|pocket|kindle|mobile|pda|psp|treo)/i',$user_agent)) {
+	else if (preg_match('/blackberry/i',$user_agent) || preg_match('/(palm os|palm|hiptop|avantgo|plucker|xiino|blazer|elaine|windows ce; ppc;|windows ce; smartphone;|windows ce; iemobile|up.browser|up.link|mmp|symbian|smartphone|midp|wap|vodafone|o2|pocket|kindle|mobile|pda|psp|treo)/i',$user_agent)) {
 		$type = "smart_phone";
     }
     else if ((strpos($accept,'text/vnd.wap.wml') > 0) || (strpos($accept,'application/vnd.wap.xhtml+xml') > 0) || isset($_SERVER['HTTP_X_WAP_PROFILE']) || isset($_SERVER['HTTP_PROFILE']) || in_array(strtolower(substr($user_agent,0,4)),array('1207'=>'1207','3gso'=>'3gso','4thp'=>'4thp','501i'=>'501i','502i'=>'502i','503i'=>'503i','504i'=>'504i','505i'=>'505i','506i'=>'506i','6310'=>'6310','6590'=>'6590','770s'=>'770s','802s'=>'802s','a wa'=>'a wa','acer'=>'acer','acs-'=>'acs-','airn'=>'airn','alav'=>'alav','asus'=>'asus','attw'=>'attw','au-m'=>'au-m','aur '=>'aur ','aus '=>'aus ','abac'=>'abac','acoo'=>'acoo','aiko'=>'aiko','alco'=>'alco','alca'=>'alca','amoi'=>'amoi','anex'=>'anex',

@@ -141,7 +141,7 @@ select {
 	padding: 4px 6px;
 	-webkit-appearance:textfield;
 	-webkit-border-radius: 5px;
-	color: #fff;
+	color: #000;
 }
 
 .inputcombo .forminput {

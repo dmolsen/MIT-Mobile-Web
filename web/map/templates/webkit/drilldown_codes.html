@@ -8,7 +8,7 @@
 	<? $i = 1; ?>
 	<? $a_shown = false; ?>
 	<? $string_sep = 'A'; ?>
-	<ul class="edgetoedge">
+	<ul class="edgetoedge results">
 		<? foreach($places as $place) { ?>
 			<? if (($a_shown == false) && (substr($place['code'],0,1) == 'A')) { ?>
 				<? $a_shown = true; $string_sep = 'A'; ?>

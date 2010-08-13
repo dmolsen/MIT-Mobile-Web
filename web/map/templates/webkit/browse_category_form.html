@@ -1,6 +1,17 @@
+<script type="text/javascript">
+	function switchcat(category) {
+		$.get( '/map/index.php?category='+category, function(data) {
+				var title = $('h1',data).html();
+				$('h1',$('.current')).html(title);
+				var results = $('.results',data).html();
+				$('.results').html(results);				
+		});
+	}
+</script>
+
 <div class="nonfocal">
-	<form action="" method="get">
-		<select name="category" onchange="this.parentNode.submit();">
+	<form action="/map/index.php" method="get">
+		<select name="category" onchange="switchcat(this.value);">
 			<option value="" selected="selected">Browse map by:</option>
 			<? foreach($category_info as $category => $info) { ?>
 				<option value="<?=$category?>"><?=$info[0]?></option>
