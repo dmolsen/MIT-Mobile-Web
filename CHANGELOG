@@ -2,6 +2,14 @@ THIS CHANGELOG IS AN ATTEMPT TO DOCUMENT CHANGES TO THIS PROJECT.
 SUPER MINOR REVISION NUMBERS WON'T SHOW UP IN GITHUB BUT IT'LL HELP
 ME ORGANIZE WHEN I MADE A SET OF FIXES
 
+MOBI-v2.0.1 (August 13, 2010)
+ - ADD: proper detection for opera mobile
+ - FIX: device detection upgraded to support PHP 5.3. removed references to eregi()
+ - FIX: input color in the default theme is now black
+ - FIX: $theme var in web/templates/touch/form.html now properly populates
+ - FIX: category dropdown in maps now properly refreshes results by selected category
+ - THX: thanks to robin8 for all the great feedback & diffs for the fixes
+
 MOBI-v2.0.0 (May 14, 2010)
  - ADD: theme support
  - ADD: jQuery & jQTouch support for interactive effects in webkit templates
