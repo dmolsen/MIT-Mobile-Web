@@ -155,7 +155,7 @@ class Page {
 	else if (preg_match('/WebOS/i',$user_agent)) {
 		$type = "palm";
 	}
-	else if (preg_match('/opera mini/i',$user_agent)) {
+	else if (preg_match('/opera mini/i',$user_agent) || preg_match('/opera mobi/i',$user_agent)) {
 		$type = "opera";
 	}
 	else if (preg_match('/blackberry/i',$user_agent) || preg_match('/(palm os|palm|hiptop|avantgo|plucker|xiino|blazer|elaine|windows ce; ppc;|windows ce; smartphone;|windows ce; iemobile|up.browser|up.link|mmp|symbian|smartphone|midp|wap|vodafone|o2|pocket|kindle|mobile|pda|psp|treo)/i',$user_agent)) {
