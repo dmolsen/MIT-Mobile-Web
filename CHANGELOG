@@ -2,6 +2,13 @@ THIS CHANGELOG IS AN ATTEMPT TO DOCUMENT CHANGES TO THIS PROJECT.
 SUPER MINOR REVISION NUMBERS WON'T SHOW UP IN GITHUB BUT IT'LL HELP
 ME ORGANIZE WHEN I MADE A SET OF FIXES
 
+MOBI-v2.0.2 (August 22, 2010)
+ - FIX: the google analytics tracking graphic on the basic templates has been fixed. also addresses an issue where
+        this caused a double-hit to be recorded in the Pageviews table
+ - FIX: default theme homescreen icons have been updated
+ - ADD: default news icon
+ - THX: thanks to kto for the heads up on the icons in the default theme
+
 MOBI-v2.0.1 (August 13, 2010)
  - ADD: proper detection for opera mobile
  - FIX: device detection upgraded to support PHP 5.3. removed references to eregi()
