@@ -24,7 +24,7 @@
  */
 $wk_items   = array();
 $wk_items[] = array('Emergency','emergency','','emergency.png',false,'');
-$wk_items[] = array('Calendar','calendar','','calendar.png',false,'');
+$wk_items[] = array('Calendar','calendar','','events.png',false,'');
 $wk_items[] = array('Map','map','','map.png',false,'');
 $wk_items[] = array('News','news','','rss.png',false,'');
 $wk_items[] = array('Links','links','','links.png',false,'');

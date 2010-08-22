@@ -1,11 +1,10 @@
 <? if ($ga_code != "") { ?>
 	<?
 	  # set-up the google analytics stuff for the basic view, based on code from google
-	  $GA_ACCOUNT = str_replace("UA","MO",$ga_code);
-	  $GA_PIXEL = "/ga.php";
-
-	  function googleAnalyticsGetImageUrl() {
-	    global $GA_ACCOUNT, $GA_PIXEL;
+	  function googleAnalyticsGetImageUrl($ga_code) {
+	    $GA_ACCOUNT = str_replace("UA","MO",$ga_code);
+	    $GA_PIXEL = "/ga.php";
+		
 	    $url = "";
 	    $url .= $GA_PIXEL . "?";
 	    $url .= "utmac=" . $GA_ACCOUNT;
@@ -29,5 +28,5 @@
 	    return $url;
 	  }
 	?>
-	<img src="<?= googleAnalyticsGetImageUrl();?>" alt="Google Analytics tracker" style="visibility: hidden;" />
+	<img src="<?= googleAnalyticsGetImageUrl($ga_code);?>" alt="Google Analytics tracker" style="visibility: hidden;" />
 <? } ?>
