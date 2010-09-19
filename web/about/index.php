@@ -1,3 +1,4 @@
+<? require("../../config.gen.inc.php"); ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -7,31 +8,21 @@
 <link rel="image_src" href="/about/images/facebook_share.jpg" />
 <title>WVU Mobile Web | West Virginia University</title>
 
-<link href="stylesheets/global.css" rel="stylesheet" type="text/css" />
 <link href="stylesheets/styles.css" rel="stylesheet" type="text/css" />
-<link href="stylesheets/print.css" media="print" rel="stylesheet" type="text/css" />
-
-<!--[if gte IE 6]>    
-
-  <link href="stylesheets/ie6.css" media="screen" rel="stylesheet" type="text/css" />
-
-<![endif]-->
-
-<!--[if gte IE 7]>    
-
-  <link href="stylesheets/ie7.css" media="screen" rel="stylesheet" type="text/css" />
-
-<![endif]-->
 
 <script type="text/javascript">
-var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', '<?=$ga_code?>']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
 </script>
-<script type="text/javascript">
-try {
-var pageTracker = _gat._getTracker("UA-8296934-34");
-pageTracker._trackPageview();
-} catch(err) {}</script>
 
 </head>
 
@@ -179,7 +170,7 @@ pageTracker._trackPageview();
 		</div>
 
 		<div id="credits" class="grid_8">
-	&copy; 2009 West Virginia University. <span class="designcredits">Site design by <a href="http://webservices.wvu.edu/">WVU Web Services</a>.</span><br />
+	&copy; <?=date("Y");?> West Virginia University. <span class="designcredits">Site design by <a href="http://webservices.wvu.edu/">WVU Web Services</a>.</span><br />
 		West Virginia University is an Equal Opportunity/Affirmative Action Institution.
 
 		</div>
