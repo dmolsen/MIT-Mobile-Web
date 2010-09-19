@@ -1,4 +1,5 @@
-<?
+<?php
+
 /*
 * Filename.......: class_vcard.php
 * Author.........: Troy Wolf [troy@troywolf.com]

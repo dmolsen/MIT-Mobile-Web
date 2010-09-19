@@ -1,4 +1,5 @@
-<?
+<?php
+
 /**
  * Copyright (c) 2008 Massachusetts Institute of Technology
  * 

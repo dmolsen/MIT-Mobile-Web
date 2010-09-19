@@ -1,4 +1,12 @@
-<?
+<?php
+
+/**
+ * Copyright (c) 2010 West Virginia University
+ * 
+ * Licensed under the MIT License
+ * Redistributions of files must retain the above copyright notice.
+ * 
+ */
 
 function contactsURL() {
   return "/emergency/?contacts=true";

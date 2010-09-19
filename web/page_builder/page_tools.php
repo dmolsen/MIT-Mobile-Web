@@ -1,4 +1,5 @@
-<?
+<?php
+
 /**
  * Copyright (c) 2008 Massachusetts Institute of Technology
  * 
@@ -6,7 +7,6 @@
  * Redistributions of files must retain the above copyright notice.
  * 
  */
-
 
 abstract class DrillDownList {
   

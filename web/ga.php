@@ -1,4 +1,4 @@
-<?
+<?php
 
 /*
  * Copyright 2009 Google Inc. All Rights Reserved.
@@ -173,6 +173,6 @@
     // Finally write the gif data to the response.
     writeGifData();
   }
-?><?
+
   trackPageView();
 ?>

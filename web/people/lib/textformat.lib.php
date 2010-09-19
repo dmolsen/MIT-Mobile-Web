@@ -1,4 +1,4 @@
-<?
+<?php
 
 /**
  * Copyright (c) 2010 West Virginia University

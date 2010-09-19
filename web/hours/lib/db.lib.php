@@ -1,4 +1,4 @@
-<?
+<?php
 
 function getData($where=false) {	
 	$db = new db;

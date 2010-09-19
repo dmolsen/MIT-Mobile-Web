@@ -1,4 +1,4 @@
-<?
+<?php
 
 require_once('../../../config.gen.inc.php');
 require_once('../../../lib/db.php');
