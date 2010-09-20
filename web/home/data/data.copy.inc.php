@@ -30,7 +30,7 @@ $wk_items[] = array('News','news','','rss.png',false,'');
 $wk_items[] = array('Links','links','','links.png',false,'');
 $wk_items[] = array('Directory','people','','directory.png',false,'');
 $wk_items[] = array('YouTube','youtube','','youtube.png',false,'');
-$wk_items[] = array('Full Site','','','hedu.png',true,'http://'.$main_site_addy.'/');
+$wk_items[] = array('Full Site','','','edu.png',true,'http://'.$main_site_addy.'/');
 $wk_items[] = array('Bookmark','mobile-about','?page=homescreen','bookmark.png',false,'');
 $wk_items[] = array('Hours','hours','','hours.png',false,'');
 
