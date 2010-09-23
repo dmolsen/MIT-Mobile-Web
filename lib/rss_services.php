@@ -18,7 +18,7 @@ class RSS {
     error_reporting($error_reporting & ~E_WARNING);
     $rss = file_get_contents($rss_url);
     error_reporting($error_reporting);
-
+	   
     //if the rss feed fails to open return false
     if($rss === FALSE) {
       return FALSE;
@@ -31,14 +31,16 @@ class RSS {
     $items = array();
     foreach($rss_root->getElementsByTagName('item') as $item) {    
       $title = trim(self::getTag($item, 'title')->nodeValue);
-      $items[$title] = array(
+      $title_check = $title; $i=1;
+      while (isset($items[$title_check])) {	
+		$i++; # check to see if the current title of the article is the same as another, if so increment the counter
+		$title_check = $title." [".$i."]"; # add a very awkward number to make this title unique
+      }
+      $items[$title_check] = array(
 	    "date"     => getdate(strtotime(self::getTag($item, 'pubDate')->nodeValue)),
         "unixtime" => strtotime(self::getTag($item, 'pubDate')->nodeValue),
 	    "text"     => self::cleanText(self::getTag($item, 'description')->nodeValue),
-	    "link"     => self::getTag($item, 'link')->nodeValue,
-		"building" => self::getTag($item, 'building')->nodeValue,
-		"floor"	   => self::getTag($item, 'floor')->nodeValue,
-		"availability" => self::getTag($item, 'availability')->nodeValue
+	    "link"     => self::getTag($item, 'link')->nodeValue
       );
     }
 
