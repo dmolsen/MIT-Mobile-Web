@@ -197,6 +197,10 @@ var hist=[];
         // PUBLIC FUNCTIONS
         function goBack(to) {
             // Init the param
+			if (hist.length <= 1) {
+				window.history.go(-2);
+			}
+			
             var numberOfPages = Math.min(parseInt(to || 1, 10), hist.length-1),
                 curPage = hist[0];
 
