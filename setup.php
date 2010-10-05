@@ -1,9 +1,8 @@
 <?php
 
-$version = "2.0.2";
-
 # require the YAML loader
 require("lib/spyc-0.4.5/spyc.php");
+require("config.gen.copy.inc.php");
 
 # functions to DRY out the setup script
 function copy_gen_config($gen_config) {
@@ -30,7 +29,7 @@ function copy_section($dir,$filepath,$name) {
 }
 
 # start the general install
-echo("Starting install of Mobile Web OSP v".$version."...\n");
+echo("Starting install of Mobile Web OSP v".$mosp_version."...\n");
 
 # copy the general config file
 echo("Setting up the general config...\n");
@@ -100,6 +99,9 @@ foreach ($files as $file) {
 				$messages[] = $config["name"].": ".$messages[$i];
 				$i++;
 			}
+			
+			# see if directory is listed in the database, if not add it to the pageviews table
+			
 		}
 	}
 }
