@@ -1,0 +1,9 @@
+--- 
+name: Weather
+maintainer:
+    edu: Southeast Missouri State University
+desc: A weather section that comes with the default install of Mobile Web OSP.
+version: 1.0
+data: false
+messages: 
+    - update the call signs

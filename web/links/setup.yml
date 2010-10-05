@@ -1,0 +1,9 @@
+--- 
+name: Links (Default)
+maintainer:
+    name: Dave Olsen
+    org: University Relations - Web
+    edu: West Virginia University
+desc: The default links section that comes with Mobile Web OSP.
+version: 1.0
+data: true

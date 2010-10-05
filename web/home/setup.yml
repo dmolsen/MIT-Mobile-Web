@@ -1,0 +1,11 @@
+--- 
+name: Home (Default)
+maintainer:
+    name: Dave Olsen
+    org: University Relations - Web
+    edu: West Virginia University
+desc: The default home section that comes with Mobile Web OSP.
+version: 1.0
+data: true
+messages: 
+    - reorganize your sections
