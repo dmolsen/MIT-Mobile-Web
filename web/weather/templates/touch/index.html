@@ -35,7 +35,7 @@ $page->content_begin();
 			<ul style="list-style: none;">
 				<li><h1 style="color: black;"><? echo $conditions['temp_f']; ?> &deg; F</h1></li>
 				<li><? echo $conditions['weather']; ?></li>
-			<ul>
+			</ul>
 		</div>
 		<div style="clear: both;"></div>
 		<span class="smallprint">
@@ -55,7 +55,7 @@ $page->content_begin();
 				<? if( isset( $conditions['wind_dr'] ) && isset( $conditions['wind_mph'] ) ){ ?>
 					<li><strong>Wind: </strong><? echo $conditions['wind_dr']." at ".$conditions['wind_mph']." MPH"; ?></li>
 				<? }elseif( isset( $conditions['wind_string'] ) ){ ?>
-					<li><strong>Wind: </strong><? echo $conditions['wind_string']; ?></ul>
+					<li><strong>Wind: </strong><? echo $conditions['wind_string']; ?></li>
 				<? } ?>
 				
 			</ul>		

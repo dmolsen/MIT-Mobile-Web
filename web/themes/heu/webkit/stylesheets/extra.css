@@ -178,7 +178,7 @@ select {
 }
 
 /* universal arrows */
-#jqt ul li.title {
+#jqt ul li.title, #jqt ul.result li.title {
 	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#1e1f21), to(#272729));
     border-bottom: 1px solid #111113;
     border-top: 1px solid #071728;

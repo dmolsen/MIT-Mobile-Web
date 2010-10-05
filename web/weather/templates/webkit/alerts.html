@@ -1,27 +1,21 @@
-<?
-$page->title($inst_name.' Weather')
-	->navbar_image('title-weather')
-	->breadcrumbs('Weather')
-	->breadcrumb_home();
- 
-$page->content_begin();
-?>
-<div class="nonfocal">
-	Weather Alerts details affecting the <? echo  $inst_name ?> community.
-</div>
+<? $page_title = $inst_name." Weather Alert"; ?>
+<? $help_on = false; ?>
 
-<div class="focal">
-	<ul style="list-style: none;">
-		<li><a href="<? echo $alerts[$i]['link']; ?>" title="<? echo $elements['warning']; ?>"><? echo $elements['warning']; ?></a></li>
-		<li>Issued: <? echo $elements['issued']; ?></li>
-		<li>Expiring: <? echo $elements['expiring']; ?></li>
-		<li>Issued by: <a href="<? echo $elements['orgURL']; ?>" title="<? echo $elements['issuedBy']; ?>"><? echo $elements['issuedBy']; ?></a></li>
-		<li><i>Last updated on: <? echo $formatDateTime['date']." at ". $formatDateTime['time']; ?></i></li>
-	<ul>
-</div>
+<div id="weather-alerts">
+	
+	<? include("../templates/webkit/toolbar.html"); ?>
 
-<ul class="secondary">
-	<li><a href="../emergency">Campus emergency information</a></li>
-</ul>
+	<ul class="result">
+		<li class="title"><?=$elements['warning'];?></li>
+		<li>Issued: <?=$elements['issued'];?></li>
+		<li>Expiring: <?=$elements['expiring'];?></li>
+		<li>Issued by: <a href="<?=$elements['orgURL'];?>" title="<?=$elements['issuedBy'];?>" target="_blank"><?=$elements['issuedBy'];?></a></li>
+		<li><i>Last updated on: <?=$formatDateTime['date']?> at <?=$formatDateTime['time'];?></i></li>
+		<li class="external"><a href="<?=$alerts[$i]['link'];?>" title="<?=$elements['warning'];?>" target="_blank">More on Weather.gov...</a></li>
+	</ul>
+
+	<ul class="rounded">
+		<li class="arrow"><a href="../emergency">Campus emergency information</a></li>
+	</ul>
  
-<? $page->content_end(); ?>
+</div>
