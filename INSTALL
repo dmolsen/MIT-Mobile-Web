@@ -1,0 +1,12 @@
+THESE INSTRUCTIONS NEED A LOT OF LOVE
+
+The quickest way to install Mobile Web OSP is to do the following:
+
+1. Copy the files to the final location on the server
+2. Go to the command line
+3. Type 'php setup.php' and follow the prompts
+4. Set-up the apache config. You can use the example in the distribution.
+5. Restart apache
+6. Access your mobile host
+
+You'll have to finish setting up each section by visiting http://mobilewebosp.pbworks.com/
