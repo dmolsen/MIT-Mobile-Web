@@ -1,32 +1,48 @@
 <? if ($ga_code != "") { ?>
-	<?
-	  # set-up the google analytics stuff for the basic view, based on code from google
-	  function googleAnalyticsGetImageUrl($ga_code) {
-	    $GA_ACCOUNT = str_replace("UA","MO",$ga_code);
-	    $GA_PIXEL = "/ga.php";
+	
+	<? # BECAUSE MANY JS-CAPABLE MOBILE BROWSERS ARE SERVED BASIC I'M NOW PUSHING FULL GA ?>
+	<? # IF A MOBILE BROWSER DOESN'T SUPPORT JS... HOPEFULLY THEY SUPPORT noscript ?>
+	
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+	<script type="text/javascript">
+		try {
+		  var pageTracker = _gat._getTracker("<?=$ga_code?>");
+		  pageTracker._trackPageview();
+		} catch(err) {}
+	</script>
+	<noscript>
+		<?
+			  # set-up the google analytics stuff for the basic view, based on code from google
+			  function googleAnalyticsGetImageUrl($ga_code) {
+			    $GA_ACCOUNT = str_replace("UA","MO",$ga_code);
+			    $GA_PIXEL = "/ga.php";
 		
-	    $url = "";
-	    $url .= $GA_PIXEL . "?";
-	    $url .= "utmac=" . $GA_ACCOUNT;
-	    $url .= "&utmn=" . rand(0, 0x7fffffff);
+			    $url = "";
+			    $url .= $GA_PIXEL . "?";
+			    $url .= "utmac=" . $GA_ACCOUNT;
+			    $url .= "&utmn=" . rand(0, 0x7fffffff);
 
-	    $referer = $_SERVER["HTTP_REFERER"];
-	    $query = $_SERVER["QUERY_STRING"];
-	    $path = $_SERVER["REQUEST_URI"];
+			    $referer = $_SERVER["HTTP_REFERER"];
+			    $query = $_SERVER["QUERY_STRING"];
+			    $path = $_SERVER["REQUEST_URI"];
 
-	    if (empty($referer)) {
-	      $referer = "-";
-	    }
-	    $url .= "&utmr=" . urlencode($referer);
+			    if (empty($referer)) {
+			      $referer = "-";
+			    }
+			    $url .= "&utmr=" . urlencode($referer);
 
-	    if (!empty($path)) {
-	      $url .= "&utmp=" . urlencode($path);
-	    }
+			    if (!empty($path)) {
+			      $url .= "&utmp=" . urlencode($path);
+			    }
 
-	    $url .= "&guid=ON";
+			    $url .= "&guid=ON";
 
-	    return $url;
-	  }
-	?>
-	<img src="<?= googleAnalyticsGetImageUrl($ga_code);?>" alt="Google Analytics tracker" style="visibility: hidden;" />
+			    return $url;
+			  }
+		?>
+		<img src="<?= googleAnalyticsGetImageUrl($ga_code);?>" alt="Google Analytics tracker" style="visibility: hidden;" />
+	</noscript>
 <? } ?>
