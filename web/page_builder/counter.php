@@ -17,7 +17,7 @@ class PageViews  {
   public static $time;
 
   private static $fields = array(
-    'home', 'people', 'map', 'shuttleschedule', 'calendar', 'emergency', 'links', 'u92', 'athletics', 'youtube', 'news', 'sms', 'mobile_about', 'libraries', 'prt'
+    'home', 'people', 'map', 'shuttleschedule', 'calendar', 'emergency', 'links', 'youtube', 'news', 'sms', 'mobile_about', 'libraries', 'weather'
   );
 
   private static $devices = array(
