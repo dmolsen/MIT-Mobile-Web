@@ -56,4 +56,7 @@ $homelink_icon	   = "homelink_h.png"; 			  # homelink breadcrumb graphic for iPh
 /* Google Maps API Key */
 $maps_api_key = "";
 
+/* Mobile Web OSP Version */
+$mosp_version = "2.1.0";
+
 ?>
