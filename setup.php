@@ -13,33 +13,33 @@ function copy_gen_config($gen_config) {
 	fwrite($fp, $data);
 	fclose($fp);
 	system("chmod 664 ".$gen_config);
-	echo("Default configuration in ".$gen_config." copied...\n");
+	echo("\nDefault configuration in ".$gen_config." copied...");
 }
 
 function copy_db($sqlite_db) {
 	system("cp db/development.copy.sqlite3 ".$sqlite_db);
 	system("chmod 664 ".$sqlite_db);
-	echo("Default SQLite database copied...\n");
+	echo("\nDefault SQLite database copied...");
 }
 
 function copy_section($dir,$filepath,$name) {
 	system("cp web/".$dir."/data/data.copy.inc.php ".$filepath);
 	system("chmod 664 ".$filepath);
-	echo($name.": initial data loaded...\n");
+	echo("\n".$name.": initial data loaded...");
 }
 
 # start the general install
-echo("Starting install of Mobile Web OSP v".$mosp_version."...\n");
+echo("Starting install of Mobile Web OSP v".$mosp_version."...");
 
 # copy the general config file
-echo("Setting up the general config...\n");
+echo("\nSetting up the general config...");
 $gen_config = "config.gen.inc.php";
 if (file_exists($gen_config)) {
-	echo($gen_config." already exists. Overwrite it? Y/n \n");
+	echo("\n".$gen_config." already exists. Overwrite it? Y/n ");
 	$handle = fopen("php://stdin","r");
 	$line = fgets($handle);
 	if (strtolower(trim($line)) != "y") {
-		echo("Skipping ".$gen_config."...\n");
+		echo("\nSkipping ".$gen_config."...");
 	} else {
 		copy_gen_config($gen_config);
 	}
@@ -95,6 +95,8 @@ foreach ($files as $file) {
 				}
 			}
 			$messages = $config["messages"]; $i = 0;
+			echo("\n".count($messages));
+			exit;
 			while ($i < count($messages)) {
 				$messages[] = $config["name"].": ".$messages[$i];
 				$i++;
