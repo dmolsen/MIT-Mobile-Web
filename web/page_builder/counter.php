@@ -12,6 +12,8 @@ require_once $install_path."lib/MDB2-2.4.1/MDB2.php";
 require_once $install_path."lib/db.php";
 require_once "Page.php";
 
+ini_set("include_path", $install_path."lib/MDB2-2.4.1/");
+
 class PageViews  {
   private static $today;
   public static $time;
@@ -66,9 +68,8 @@ class PageViews  {
   private static function getDay($day) {
 	$db = new db();
 	$types = array('text');
-    $stmt3 = $db->connection->prepare("SELECT * FROM PageViews WHERE day=?",$types);
-    $stmt3->execute(array($day));
-    if($row = $stmt3->fetch()) {
+    $stmt3 =& $db->connection->query("SELECT * FROM PageViews WHERE day='$day'");
+    if($row = $stmt3->fetchRow()) {
         return $row;
     }
   }

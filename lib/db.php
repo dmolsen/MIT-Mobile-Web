@@ -21,7 +21,7 @@ class db {
 
   public function __construct(){
 	
-	global $db_use_sqlite,$sqlite_path,$db_host,$db_username,$db_passwd,$db_name;
+	global $db_use_sqlite,$sqlite_path,$db_type,$db_host,$db_username,$db_passwd,$db_name;
 	
 	$this->connection = false;
 	
@@ -50,20 +50,7 @@ class db {
 	// and also attempts to connect to the host
 	$this->connection =& MDB2::connect($dsn, $options);
 	if (PEAR::isError($this->connection)) {
-	    die($this->connection->getMessage());
-	}
-	?>
-	When connecting to SQLite using a DSN array, the value of the mode element must be a string:
-
-	<?php
-	
-	
-	if(!$this->connection) {
-		if ($this->use_sqlite) {
-			$this->connection = new PDO('sqlite:'.$this->path);
-		} else {
-			$this->connection = new mysqli($this->host, $this->username, $this->passwd, $this->db);	
-		}
+	    die($this->connection->getMessage().','.$this->connection->getDebugInfo());
 	}
   }
 }

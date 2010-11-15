@@ -13,7 +13,7 @@ function copy_gen_config($gen_config) {
 	fwrite($fp, $data);
 	fclose($fp);
 	system("chmod 664 ".$gen_config);
-	echo("\nDefault configuration in ".$gen_config." copied...");
+	echo("Default configuration in ".$gen_config." copied...");
 }
 
 function copy_db($sqlite_db) {
@@ -48,17 +48,17 @@ if (file_exists($gen_config)) {
 }		
 
 # copy the SQLite database assuming a user wants to use it
-echo("Are you going to use SQLite for the database? Y/n ");
+echo("\nAre you going to use SQLite for the database? Y/n ");
 $handle = fopen("php://stdin","r");
 $line = fgets($handle);
 if (strtolower(trim($line)) == 'y') {
 	$sqlite_db = "db/development.sqlite3";
 	if (file_exists($sqlite_db)) {
-		echo("\n".$sqlite_db." already exists. Overwrite it? Y/n ");
+		echo($sqlite_db." already exists. Overwrite it? Y/n ");
 		$handle = fopen("php://stdin","r");
 		$line = fgets($handle);
 		if (strtolower(trim($line)) != 'y') {
-			echo("\nSkipping ".$sqlite_db."...");
+			echo("Skipping ".$sqlite_db."...");
 		} else {
 			copy_db($sqlite_db);
 		}
@@ -66,7 +66,7 @@ if (strtolower(trim($line)) == 'y') {
 		copy_db($sqlite_db);
 	}
 } else {
-	echo("\nYou will need to manually update config.gen.inc.php to support MySQL...");
+	echo("You will need to manually update config.gen.inc.php to support MySQL...");
 }
 
 # set-up individual sections based on availability of setup.yml files
@@ -94,11 +94,9 @@ foreach ($files as $file) {
 					copy_section($file,$filepath,$config["name"]);
 				}
 			}
-			$messages = $config["messages"]; $i = 0;
-			echo("\n".count($messages));
-			exit;
-			while ($i < count($messages)) {
-				$messages[] = $config["name"].": ".$messages[$i];
+			$config_messages = $config["messages"]; $i = 0;
+			while ($i < count($config_messages)) {
+				$messages[] = $config["name"].": ".$config_messages[$i];
 				$i++;
 			}
 			
