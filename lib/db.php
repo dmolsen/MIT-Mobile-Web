@@ -17,20 +17,46 @@ global $db_use_sqlite,$sqlite_path,$db_host,$db_username,$db_passwd,$db_name;
 
 class db {
   
-  public static $connection,$use_sqlite;
-  private static $path,$host,$username,$passwd,$db;
+  public static $connection;
 
   public function __construct(){
 	
 	global $db_use_sqlite,$sqlite_path,$db_host,$db_username,$db_passwd,$db_name;
 	
 	$this->connection = false;
-	$this->use_sqlite = $db_use_sqlite;
-	$this->path = $sqlite_path;
-	$this->host = $db_host;
-	$this->username = $db_username;
-	$this->passwd = $db_passwd;
-	$this->db = $db_name;
+	
+	if ($db_use_sqlite) {
+		$dsn = array(
+		    'phptype'  => 'sqlite',
+		    'database' => $sqlite_path,
+		    'mode'     => '0644',
+		);
+	} else {
+		$dsn = array(
+		    'phptype'  => $db_type,
+		    'username' => $db_username,
+		    'password' => $db_passwd,
+		    'hostspec' => $db_host,
+		    'database' => $db_name
+		);
+	}
+
+	$options = array(
+	    'debug'       => 2,
+	    'portability' => MDB2_PORTABILITY_ALL,
+	);
+	
+	// uses MDB2::factory() to create the instance
+	// and also attempts to connect to the host
+	$this->connection =& MDB2::connect($dsn, $options);
+	if (PEAR::isError($this->connection)) {
+	    die($this->connection->getMessage());
+	}
+	?>
+	When connecting to SQLite using a DSN array, the value of the mode element must be a string:
+
+	<?php
+	
 	
 	if(!$this->connection) {
 		if ($this->use_sqlite) {
