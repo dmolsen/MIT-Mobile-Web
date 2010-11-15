@@ -6,7 +6,7 @@ require("config.gen.copy.inc.php");
 
 # functions to DRY out the setup script
 function copy_gen_config($gen_config) {
-	$install_path = $_ENV["PWD"];
+	$install_path = system('pwd');
 	$data = file_get_contents("config.gen.copy.inc.php");
 	$data = str_replace("/path/to/install/", $install_path."/", $data);
 	$fp = fopen($gen_config, "w");
@@ -48,17 +48,17 @@ if (file_exists($gen_config)) {
 }		
 
 # copy the SQLite database assuming a user wants to use it
-echo("Are you going to use SQLite for the database? Y/n \n");
+echo("Are you going to use SQLite for the database? Y/n ");
 $handle = fopen("php://stdin","r");
 $line = fgets($handle);
 if (strtolower(trim($line)) == 'y') {
 	$sqlite_db = "db/development.sqlite3";
 	if (file_exists($sqlite_db)) {
-		echo($sqlite_db." already exists. Overwrite it? Y/n \n");
+		echo("\n".$sqlite_db." already exists. Overwrite it? Y/n ");
 		$handle = fopen("php://stdin","r");
 		$line = fgets($handle);
 		if (strtolower(trim($line)) != 'y') {
-			echo("Skipping ".$sqlite_db."...\n");
+			echo("\nSkipping ".$sqlite_db."...");
 		} else {
 			copy_db($sqlite_db);
 		}
@@ -66,13 +66,13 @@ if (strtolower(trim($line)) == 'y') {
 		copy_db($sqlite_db);
 	}
 } else {
-	echo("You will need to manually update config.gen.inc.php to support MySQL...\n");
+	echo("\nYou will need to manually update config.gen.inc.php to support MySQL...");
 }
 
 # set-up individual sections based on availability of setup.yml files
-echo("Setting up individual sections...\n");
+echo("\nSetting up individual sections...");
 $messages = array();
-$base_dir = $_ENV["PWD"]."/web/";
+$base_dir = system('pwd')."/web/";
 $files = scandir($base_dir);
 foreach ($files as $file) {
 	if (is_dir($base_dir.$file)) {
@@ -82,11 +82,11 @@ foreach ($files as $file) {
 			if ($config["data"] == true) {
 				$filepath =  $base_dir.$file."/data/data.inc.php";
 				if (file_exists($filepath)) {
-					echo($config["name"].": data file already exists. Overwrite it? Y/n \n");
+					echo("\n".$config["name"].": data file already exists. Overwrite it? Y/n ");
 					$handle = fopen("php://stdin","r");
 					$line = fgets($handle);
 					if(strtolower(trim($line)) != 'y') {
-						echo($config['name'].": skipping data file...\n");
+						echo("\n".$config['name'].": skipping data file...");
 					} else {
 						copy_section($file,$filepath,$config["name"]);
 					}
@@ -106,11 +106,11 @@ foreach ($files as $file) {
 	}
 }
 
-echo("Some things you should look at after installing Mobile Web OSP: \n");
+echo("\nSome things you should look at after installing Mobile Web OSP: ");
 foreach ($messages as $message) {
-	echo(" - ".$message."\n");
+	echo("\n - ".$message);
 }
 
-echo("Installation complete!\n");
+echo("\nInstallation complete!\n");
 
 ?>
