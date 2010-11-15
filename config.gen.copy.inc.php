@@ -11,20 +11,21 @@
 /* Quick Configuration File for Mobile Web */
 
 /* Technical Info */
-$install_path   = "/path/to/install/";        # the directory mobile web has been installed in, trailing slash is required
-$ga_code		= "";			  			  # Google Analytics Code, highly highly highly recommended
+$install_path      = "/path/to/install/";         # the directory mobile web has been installed in, trailing slash is required
+$ga_code		   = "";			  			  # Google Analytics Code, highly highly highly recommended
 
 /* MySQL or SQLite */
-$db_use_sqlite  = true;  					  # if using mysql change this to false, addresses naming issue between PDO & MySQL functions
+$db_use_sqlite     = true;  					  # if using mysql change this to false, addresses naming issue between PDO & MySQL functions
 
 /* SQLite Config */
-$sqlite_path 	= $install_path."db/development.sqlite3"; # file system path to your SQLite database
+$sqlite_path 	   = $install_path."db/development.sqlite3"; # file system path to your SQLite database
 
 /* MySQL Config Info */
-$db_host        = 'localhost';
-$db_username    = 'username';
-$db_passwd      = 'passwd';
-$db_name        = 'db';
+$db_type           = 'mysqli';					  # can be any database that MDB2 supports (e.g. pgsql)
+$db_host           = 'localhost';				  # host that your database is at
+$db_username       = 'username';				  # username for your database user
+$db_passwd         = 'passwd';					  # password for your database user
+$db_name           = 'db';					  	  # name of your database
 
 /* Institution & Org Info */
 $inst_name         = "HEU";                       # name of educational institution. highly recommend an acronym.
@@ -53,10 +54,7 @@ $dir_search_samp_s = "30000";                     # short phone number example f
 $homescreen_icon   = "icon_h.png";      		  # bookmark graphic for iPhone homescreen. should be in web/ip/images
 $homelink_icon	   = "homelink_h.png"; 			  # homelink breadcrumb graphic for iPhone. should be in web/ip/images
 
-/* Google Maps API Key */
-$maps_api_key = "";
-
 /* Mobile Web OSP Version */
-$mosp_version = "2.1.0";
+$mosp_version 	   = "2.1.0";
 
 ?>
