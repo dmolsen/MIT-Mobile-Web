@@ -8,7 +8,7 @@
  * 
  */
 
-
+require_once $install_path."lib/MDB2-2.4.1/MDB2.php";
 require_once $install_path."lib/db.php";
 require_once "Page.php";
 
@@ -40,23 +40,22 @@ class PageViews  {
       $device = Page::$phoneType;     
     }
 
-    #$db->execute("LOCK TABLE PageViews WRITE");
-
     $today = self::$today;
     $row = self::getDay($today);
 
     if($row === NULL) {
       $content_cnt = 1;
       $device_cnt = 1;
-      $stmt1 = $db->connection->prepare("INSERT INTO PageViews (day) VALUES (?)");
+	  $types = array('text');
+      $stmt1 = $db->connection->prepare("INSERT INTO PageViews (day) VALUES (?)",$types);
       $stmt1->execute(array($today));
     }
     $current_cnt = $row[$content] + 1;
     $device_cnt = $row[$device] + 1;
 
-    $stmt2 = $db->connection->prepare("UPDATE PageViews SET ".$content."=CAST(? AS INT), ".$device."=CAST(? AS INT) WHERE day=?");
+	$types = array('integer','integer','text');
+    $stmt2 = $db->connection->prepare("UPDATE PageViews SET ".$content."=CAST(? AS INT), ".$device."=CAST(? AS INT) WHERE day=?",$types);
     $stmt2->execute(array($current_cnt,$device_cnt,$today));
-    #$db->execute("UNLOCK TABLE");
   }
 
   public static function init() {
@@ -66,14 +65,12 @@ class PageViews  {
 
   private static function getDay($day) {
 	$db = new db();
-    $stmt3 = $db->connection->prepare("SELECT * FROM PageViews WHERE day=?");
+	$types = array('text');
+    $stmt3 = $db->connection->prepare("SELECT * FROM PageViews WHERE day=?",$types);
     $stmt3->execute(array($day));
     if($row = $stmt3->fetch()) {
         return $row;
     }
-    #if($row = $result->fetch()) {
-    #  return $row;
-    #}
   }
 
   public static function past_days($days) {
@@ -87,7 +84,7 @@ class PageViews  {
       $date = date('n/j', $time);
 
       if($day === NULL) {
-	//day has no data so all views are zero
+		//day has no data so all views are zero
         $day = array('day' => $sql_date);
         foreach(self::$fields as $field) {
           $day[$field] = 0;
