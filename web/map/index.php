@@ -77,9 +77,10 @@ if(!isset($_REQUEST['category'])) {
 			$sql_substr = "name LIKE \"".$drilldown."%\"";
 	    }
 		$db = new db;
-		$stmt = $db->connection->prepare("SELECT * FROM Buildings WHERE ".$sql_substr." GROUP BY code ORDER BY code ASC");
-        $stmt->execute();
-	    $places = $stmt->fetchAll();
+		$db->connection->setFetchMode(MDB2_FETCHMODE_ASSOC);
+		$stmt =& $db->connection->prepare("SELECT * FROM Buildings WHERE ".$sql_substr." GROUP BY code ORDER BY code ASC");
+        $result = $stmt->execute();
+	    $places = $result->fetchAll();
 		require "templates/$prefix/drilldown_codes.html";
 	}
     
@@ -149,15 +150,16 @@ function subSQLStrBuilder($drilldown,$type) {
 function getData($where=false) {
 	
 	$db = new db;
+	$db->connection->setFetchMode(MDB2_FETCHMODE_ASSOC);
     if ($where) {
-		$stmt = $db->connection->prepare("SELECT * FROM Buildings WHERE ".$where." GROUP BY name ORDER BY name ASC");
+		$stmt =& $db->connection->prepare("SELECT * FROM Buildings WHERE ".$where." GROUP BY name ORDER BY name ASC");
 	}
 	else {
-		$stmt = $db->connection->prepare("SELECT * FROM Buildings GROUP BY name ORDER BY name ASC");
+		$stmt =& $db->connection->prepare("SELECT * FROM Buildings GROUP BY name ORDER BY name ASC");
 	}
-        $stmt->execute();
-	$result = $stmt->fetchAll();
-	return $result;
+    $result = $stmt->execute();
+	$results = $result->fetchAll();
+	return $results;
 }
 
     

@@ -22,7 +22,6 @@ define('ZOOM', 16);
 define('LAT',  $latitude);
 define('LONG', $longitude);
 define('MAPTYPE', "roadmap");
-define('APIKEY', $maps_api_key);
 define('MOBILEMAP',$mobilemap);
 
 switch($phone) {
@@ -72,7 +71,6 @@ function imageURL($phone) {
 
   $query = array(
     "maptype"      => mapType(),
-    "key"          => APIKEY, 
     "size"         => pix("x", $phone).'x'.pix("y", $phone),
     "center"       => lat().",".long(),
     "zoom"         => zoom(),
@@ -111,9 +109,9 @@ function marker() {
   if ((int)$_REQUEST['loc'] != 0) {
     
 	$db = new db;
-	$stmt = $db->connection->prepare("SELECT * FROM Buildings WHERE id = ".$_REQUEST['loc']);
-	$stmt->execute();
-	$data = $stmt->fetchAll();
+	$stmt =& $db->connection->prepare("SELECT * FROM Buildings WHERE id = ".$_REQUEST['loc']);
+    $result = $stmt->execute();
+	$data = $result->fetchAll();
 	
 	$lat = $data[0]['latitude'];
 	$long = $data[0]['longitude'];
@@ -123,9 +121,9 @@ function marker() {
   else if ($_REQUEST['all']) {
 	
 	$db = new db;
-	$stmt = $db->connection->prepare("SELECT * FROM Buildings WHERE type = ".$_REQUEST['all']);
-	$stmt->execute();
-	$results = $stmt->fetchAll();
+	$stmt =& $db->connection->prepare("SELECT * FROM Buildings WHERE type = ".$_REQUEST['all']);
+	$result = $stmt->execute();
+	$results = $result->fetchAll();
     $markers = "";
     foreach ($results as $result) {
 	 	$lat = $data[0]['latitude'];
@@ -207,19 +205,20 @@ $height = pix("y", $phone);
 
 $parent = false;
 
-if ($_REQUEST['loc']) {
-    
+if ($_REQUEST['loc']) { 
 	$db = new db;
-	$stmt = $db->connection->prepare("SELECT * FROM Buildings WHERE id = ".$_REQUEST['loc']);
-	$stmt->execute();
-	$data = $stmt->fetchAll();
+	$db->connection->setFetchMode(MDB2_FETCHMODE_ASSOC);
+	$stmt =& $db->connection->prepare("SELECT * FROM Buildings WHERE id = ".$_REQUEST['loc']);
+	$result = $stmt->execute();
+	$data = $result->fetchAll();
 }
 
 if ($data[0]['parent'] != '') {
 	$db = new db;
-	$stmt_1 = $db->connection->prepare("SELECT * FROM Buildings WHERE id = ".$data[0]['parent']);
-	$stmt_1->execute();
-	$parent_data = $stmt_1->fetchAll();
+	$db->connection->setFetchMode(MDB2_FETCHMODE_ASSOC);
+	$stmt_1 =& $db->connection->prepare("SELECT * FROM Buildings WHERE id = ".$data[0]['parent']);
+	$result_1 = $stmt_1->execute();
+	$parent_data = $result_1->fetchAll();
 	$parent = true;
 }
 

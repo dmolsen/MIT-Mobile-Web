@@ -33,11 +33,12 @@ if($search_terms = $_REQUEST['filter']) {
 
 function map_search($terms) {
   $db = new db;
+  $db->connection->setFetchMode(MDB2_FETCHMODE_ASSOC);
   $sql = "SELECT * FROM Buildings WHERE (name LIKE '%".$terms."%' OR physical_address LIKE '%".$terms."%' OR code LIKE '%".$terms."%') and (type != 'Parking Lot' AND type != 'Public Parking') GROUP BY name ORDER BY name ASC";
   $stmt = $db->connection->prepare($sql);
-  $stmt->execute();
-  $result = $stmt->fetchAll();
-  return $result;
+  $result = $stmt->execute();
+  $results = $result->fetchAll();
+  return $results;
 }
     
 ?>
