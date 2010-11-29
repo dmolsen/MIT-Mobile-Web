@@ -16,7 +16,7 @@ require "../page_builder/Page.php";
 require "../page_builder/counter.php";
 require "data/data.inc.php";
 
-$phone = Page::classify_phone();
+$phone = Page::classify_device_family();
 $prefix = Page::$requireTable[$phone];
 $page = Page::factory($phone);
 
@@ -34,5 +34,6 @@ else {
 	require "templates/$prefix/more.html";
 }
 
+$page->output();
 
 ?>

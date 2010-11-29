@@ -94,7 +94,7 @@ class Page {
     }
   }
 
-  public function output() {
+  public function output($base = false) {
     require "../../config.gen.inc.php";
 
     foreach($this->varnames as $varname) {
@@ -136,7 +136,8 @@ class Page {
   private static $is_computer;
   private static $is_spider;
 
-  public static function classify_phone() {
+  # returns the general device type based on user agent string matching. can get very specific depending on usage.
+  public static function classify_device_type() {
 	$user_agent = $_SERVER['HTTP_USER_AGENT'];
     $accept = $_SERVER['HTTP_ACCEPT']; 
 	if (preg_match('/ipod/i',$user_agent) || preg_match('/iphone/i',$user_agent)) {
@@ -181,6 +182,13 @@ class Page {
 		$type = "computer";
 	}
 
+    return $type;
+  }
+
+  # this returns the device family for use in choosing the templates to use for the device
+  public static function classify_device_family() {
+	$type = classify_device_type();
+	
 	self::$is_computer = ($type == "computer");
 	self::$is_spider = ($type == "spider");
 	

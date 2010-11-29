@@ -13,7 +13,7 @@ require "page_builder/Page.php";
 require "page_builder/counter.php";
 require "home/data/data.inc.php";
 
-$phone = Page::classify_phone();
+$phone = Page::classify_device_family();
 $prefix = Page::$requireTable[$phone];
 $page = Page::factory($phone);
 

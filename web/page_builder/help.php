@@ -10,7 +10,7 @@
 
 require "../page_builder/Page.php";
 require "../page_builder/counter.php";
-$phone = Page::classify_phone();
+$phone = Page::classify_device_family();
 $page = Page::factory($phone);
 $prefix = $page->requirePrefix();
 
