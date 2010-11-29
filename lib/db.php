@@ -27,9 +27,9 @@ class db {
 	
 	if ($db_use_sqlite) {
 		$dsn = array(
-		    'phptype'  => 'sqlite',
+		    'phptype'  => 'pdoSqlite',
 		    'database' => $sqlite_path,
-		    'mode'     => '0644',
+		    'mode'     => '0777',
 		);
 	} else {
 		$dsn = array(
