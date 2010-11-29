@@ -12,6 +12,7 @@ require_once $install_path."lib/MDB2-2.4.1/MDB2.php";
 require_once $install_path."lib/db.php";
 require_once "Page.php";
 
+# a hack to make sure that PEAR sees the proper path for includes
 ini_set("include_path", $install_path."lib/MDB2-2.4.1/");
 
 class PageViews  {
@@ -56,7 +57,7 @@ class PageViews  {
     $device_cnt = $row[$device] + 1;
 
 	$types = array('integer','integer','text');
-    $stmt2 = $db->connection->prepare("UPDATE PageViews SET ".$content."=CAST(? AS INT), ".$device."=CAST(? AS INT) WHERE day=?",$types);
+    $stmt2 =& $db->connection->prepare("UPDATE PageViews SET ".$content."=?, ".$device."=? WHERE day=?",$types);
     $stmt2->execute(array($current_cnt,$device_cnt,$today));
   }
 
