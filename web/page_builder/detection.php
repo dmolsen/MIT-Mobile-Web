@@ -182,16 +182,16 @@ class Device {
   // returns the type of templates that should be used for this device
   public static function templates() {
 	$type = self::classify();
-    return self::$phoneTable[$type];
+	return self::$phoneTable[$type];
   }
 
   // functions for quickly determining overall device attributes
   public static function is_computer() {
-    return self::$is_computer;
+	return self::$is_computer;
   }
 
   public static function is_spider() {
-    return self::$is_spider;
+	return self::$is_spider;
   }
 
   private static function device_version_check($device,$major,$minor) {
@@ -215,15 +215,15 @@ class Device {
   }
 
   public static function is_iphone($major = nil, $minor = nil) {
-    return self::device_version_check(self::$is_iphone, $major, $minor);
+	return self::device_version_check(self::$is_iphone, $major, $minor);
   }
 
   public static function is_ipod($major = nil, $minor = nil) {
-    return self::device_version_check(self::$is_ipod, $major, $minor);
+	return self::device_version_check(self::$is_ipod, $major, $minor);
   }
 
   public static function is_ios($major = nil, $minor = nil) {
-    return self::device_version_check(self::$is_ios, $major, $minor);
+	return self::device_version_check(self::$is_ios, $major, $minor);
   }
 
 }
