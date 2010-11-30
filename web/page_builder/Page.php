@@ -121,16 +121,58 @@ class Page {
     echo $this->content;
   }
 
+  // matches device to templates
   private static $phoneTable = array(
+	"iphone42" => "webkit",
+	"iphone4" => "webkit",
     "iphone3" => "webkit",
 	"iphone2" => "touch",
-    "android" => "webkit",
+	"ipod42" => "webkit",
+	"ipod4" => "webkit",
+    "ipod3" => "webkit",
+	"ipod2" => "touch",
+	"ipad" => "basic",
+    "android22" => "webkit",
+	"android21"	=> "webkit",
+	"android20" => "webkit",
+	"android" => "touch",
     "palm" => "touch",
-	"opera" => "touch",
+	"opera_mini" => "touch",
+	"opera_mobile" => "touch",
+	"blackberry9800" => "touch",
+	"blackberry" => "basic",
+	"webkit" => "webkit",
     "smart_phone" => "basic",
     "feature_phone" => "basic",
     "computer" => "basic",
-    "spider" => "basic",
+    "spider" => "basic"
+  );
+
+  // provide the nice looking name for a device & OS for stats
+  public static $deviceEnglish = array(
+    "iphone42" => "iPhone 4.2",
+	"iphone4" => "iPhone 4.0",
+    "iphone3" => "iPhone 3",
+	"iphone2" => "iPhone 2",
+	"ipod42" => "iPod 4.2",
+	"ipod4" => "iPod 4",
+    "ipod3" => "iPod 3",
+	"ipod2" => "iPod 2",
+	"ipad" => "iPad",
+    "android22" => "Android 2.2",
+	"android21"	=> "Android 2.1",
+	"android20" => "Android 2.0",
+	"android" => "Android (Generic)",
+    "palm" => "Web OS",
+	"opera_mini" => "Opera Mini",
+	"opera_mobile" => "Opera Mobile",
+	"blackberry9800" => "Blackberry 9800 (aka Torch)",
+	"blackberry" => "BlackBerry (Generic)",
+	"webkit" => "WebKit (Generic)",
+    "smart_phone" => "Smart Phone (Generic)",
+    "feature_phone" => "Feature Phone (Generic)",
+    "computer" => "Computer (Generic)",
+    "spider" => "Spider (Generic)"
   );
 
   private static $is_computer;
@@ -140,27 +182,63 @@ class Page {
   public static function classify_device_type() {
 	$user_agent = $_SERVER['HTTP_USER_AGENT'];
     $accept = $_SERVER['HTTP_ACCEPT']; 
-	if (preg_match('/ipod/i',$user_agent) || preg_match('/iphone/i',$user_agent)) {
-		# check to see if the ipod or iphone OS is 3 or greater for proper webkit support
-		if (preg_match('/OS\ (3|4)/i',$user_agent)) {
+
+	if (preg_match('/ipod/i',$user_agent)) {
+		if (preg_match('/OS\ 4.2/i',$user_agent)) {
+			$type = 'ipod42';
+		} else if (preg_match('/OS\ 4/i',$user_agent)) {
+			$type = 'ipod4';
+		} else if (preg_match('/OS\ 3/i',$user_agent)) {
+			$type = 'ipod3';
+		} else {
+			$type = 'ipod2'; 
+		}
+	} 
+	else if (preg_match('/iphone/i',$user_agent)) {
+		if (preg_match('/OS\ 4.2/i',$user_agent)) {
+			$type = 'iphone42';
+		} else if (preg_match('/OS\ 4/i',$user_agent)) {
+			$type = 'iphone4';
+		} else if (preg_match('/OS\ 3/i',$user_agent)) {
 			$type = 'iphone3';
 		} else {
 			$type = 'iphone2'; 
 		}
 	} 
 	else if (preg_match('/ipad/i',$user_agent)) {
-		$type = 'computer';
+		$type = 'ipad';
 	}
 	else if (preg_match('/android/i',$user_agent)) {
-		$type = "android";
+		if (preg_match('/Android\ 2.2/i',$user_agent)) {
+			$type = 'android22';
+		} else if (preg_match('/Android\ 2.1/i',$user_agent)) {
+			$type = 'android21';
+		} else if (preg_match('/Android\ 2.0/i',$user_agent)) {
+			$type = 'android2'; 
+		} else {
+			$type = "android";
+		}
     }
 	else if (preg_match('/WebOS/i',$user_agent)) {
 		$type = "palm";
 	}
-	else if (preg_match('/opera mini/i',$user_agent) || preg_match('/opera mobi/i',$user_agent)) {
-		$type = "opera";
+	else if (preg_match('/opera mini/i',$user_agent)) {
+		$type = "opera_mini";
+	} 
+	else if (preg_match('/opera mobi/i',$user_agent)) {
+		$type = "opera_mobile";
 	}
-	else if (preg_match('/blackberry/i',$user_agent) || preg_match('/(palm os|palm|hiptop|avantgo|plucker|xiino|blazer|elaine|windows ce; ppc;|windows ce; smartphone;|windows ce; iemobile|up.browser|up.link|mmp|symbian|smartphone|midp|wap|vodafone|o2|pocket|kindle|mobile|pda|psp|treo)/i',$user_agent)) {
+	else if (preg_match('/blackberry/i',$user_agent)) {
+		if (preg_match('/9800/i',$user_agent)) {
+			$type = "blackberry9800";
+		} else {
+			$type = "blackberry";
+		}
+	}
+	else if (preg_match('/webkit/i',$user_agent)) {
+		$type = "webkit"; // catch generic webkit browsers, also future proofs a little
+	}
+	else if (preg_match('/(palm os|palm|hiptop|avantgo|plucker|xiino|blazer|elaine|windows ce; ppc;|windows ce; smartphone;|windows ce; iemobile|up.browser|up.link|mmp|symbian|smartphone|midp|wap|vodafone|o2|pocket|kindle|mobile|pda|psp|treo)/i',$user_agent)) {
 		$type = "smart_phone";
     }
     else if ((strpos($accept,'text/vnd.wap.wml') > 0) || (strpos($accept,'application/vnd.wap.xhtml+xml') > 0) || isset($_SERVER['HTTP_X_WAP_PROFILE']) || isset($_SERVER['HTTP_PROFILE']) || in_array(strtolower(substr($user_agent,0,4)),array('1207'=>'1207','3gso'=>'3gso','4thp'=>'4thp','501i'=>'501i','502i'=>'502i','503i'=>'503i','504i'=>'504i','505i'=>'505i','506i'=>'506i','6310'=>'6310','6590'=>'6590','770s'=>'770s','802s'=>'802s','a wa'=>'a wa','acer'=>'acer','acs-'=>'acs-','airn'=>'airn','alav'=>'alav','asus'=>'asus','attw'=>'attw','au-m'=>'au-m','aur '=>'aur ','aus '=>'aus ','abac'=>'abac','acoo'=>'acoo','aiko'=>'aiko','alco'=>'alco','alca'=>'alca','amoi'=>'amoi','anex'=>'anex',
@@ -187,9 +265,12 @@ class Page {
 
   # this returns the device family for use in choosing the templates to use for the device
   public static function classify_device_family() {
-	$type = classify_device_type();
+	$type = self::classify_device_type();
 	
-	self::$is_computer = ($type == "computer");
+	// classify ipads as computers for the is_computer() checks
+	if (($type == "computer") || ($type == "ipad")) {
+		self::$is_computer = true;
+	}
 	self::$is_spider = ($type == "spider");
 	
     return self::$phoneTable[$type];
