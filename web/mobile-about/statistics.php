@@ -17,6 +17,9 @@ require_once "../page_builder/page_header.php";
 // include YAML loader
 require($install_path."lib/spyc-0.4.5/spyc.php");
 
+// force basic templates & methods for all requests
+$page = Page::factory('basic');
+
 // shared functions
 function f($count) {
   $count_str = (string) $count;
