@@ -14,12 +14,6 @@
 $install_path      = "/path/to/install/";         # the directory mobile web has been installed in, trailing slash is required
 $ga_code		   = "";			  			  # Google Analytics Code, highly highly highly recommended
 
-/* MySQL or SQLite */
-$db_use_sqlite     = true;  					  # if using mysql change this to false, addresses naming issue between PDO & MySQL functions
-
-/* SQLite Config */
-$sqlite_path 	   = $install_path."db/development.sqlite3"; # file system path to your SQLite database
-
 /* MySQL Config Info */
 $db_type           = 'mysqli';					  # can be any database that MDB2 supports (e.g. pgsql)
 $db_host           = 'localhost';				  # host that your database is at
@@ -50,11 +44,21 @@ $dir_search_va_num = "304.293.0000";              # number for voice-assisted di
 $dir_search_samp_l = "3042930000";                # long phone number example for directory search
 $dir_search_samp_s = "30000";                     # short phone number example for directory search, leave empty if you don't want to use it
 
-/* Shared iPhone Graphics Info */
-$homescreen_icon   = "icon_h.png";      		  # bookmark graphic for iPhone homescreen. should be in web/ip/images
-$homelink_icon	   = "homelink_h.png"; 			  # homelink breadcrumb graphic for iPhone. should be in web/ip/images
+/* Shared Graphics for Touch Templates (not WebKit) */
+$homescreen_icon   = "icon_h.png";      		  # bookmark graphic for iPhone homescreen. should be in web/templates/touch/images
+$homelink_icon	   = "homelink_h.png"; 			  # homelink breadcrumb graphic for iPhone. should be in web/templates/touch/images
 
 /* Mobile Web OSP Version */
-$mosp_version 	   = "2.1.0";
+$mosp_version 	   = "2.5.0";
+
+/*******************************/
+/* CURRENTLY DEPRECATED/BROKEN */
+/*******************************/
+
+/* MySQL or SQLite */
+$db_use_sqlite     = false;  					  # if using mysql change this to false
+
+/* SQLite Config */
+$sqlite_path 	   = $install_path."db/development.sqlite3"; # file system path to your SQLite database
 
 ?>
