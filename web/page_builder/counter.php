@@ -19,46 +19,53 @@ class PageViews  {
   private static $today;
   public static $time;
 
-  private static $fields = array(
-    'home', 'people', 'map', 'shuttleschedule', 'calendar', 'emergency', 'links', 'youtube', 'news', 'sms', 'mobile_about', 'libraries', 'weather'
-  );
-
-  private static $devices = array(
-    'webkit', 'touch', 'basic', 'computer',
-  );
-
-  public static function increment($content) {
-    if(Page::is_spider()) {
-      // do not counter spiders as page views
+  public static function increment($section) {
+    
+	// do not counter spiders as page views
+	if (Device::is_spider()) {  
       return;
     }
-
     
+	// set-up the database connection to be used further down
 	$db = new db;
-
-    $content = self::url2db($content);
-    if(Page::is_computer()) {
+	$db->connection->setFetchMode(MDB2_FETCHMODE_ASSOC);
+	
+    $content = self::url2db($section);
+    if(Device::is_computer()) {
       $device = 'computer';
     } else {
-      $device = Page::$phoneType;     
+      $device = Device::classify();   
     }
 
     $today = self::$today;
-    $row = self::getDay($today);
 
-    if($row === NULL) {
-      $content_cnt = 1;
-      $device_cnt = 1;
-	  $types = array('text');
-      $stmt1 = $db->connection->prepare("INSERT INTO PageViews (day) VALUES (?)",$types);
-      $stmt1->execute(array($today));
+	// get and save data related to today and the section the user is in
+    $row_section = self::getDaySection($today,$section);
+    if ($row_section === NULL) {
+	  $types = array('text','text');
+      $stmt =& $db->connection->prepare("INSERT INTO Pageviews_by_Section (day,section) VALUES (?,?)",$types);
+      $stmt->execute(array($today,$section));
     }
-    $current_cnt = $row[$content] + 1;
-    $device_cnt = $row[$device] + 1;
 
-	$types = array('integer','integer','text');
-    $stmt2 =& $db->connection->prepare("UPDATE PageViews SET ".$content."=?, ".$device."=? WHERE day=?",$types);
-    $stmt2->execute(array($current_cnt,$device_cnt,$today));
+    $section_count = $row_section['count'] + 1;
+
+	$types = array('integer','text','text');
+    $stmt =& $db->connection->prepare("UPDATE Pageviews_by_Section SET count = ? WHERE day = ? and section = ?",$types);
+    $stmt->execute(array($section_count,$today,$section));
+
+	// get and save data related to today and the device the user is using
+    $row_device = self::getDayDevice($today,$device);
+    if ($row_device === NULL) {
+	  $types = array('text','text');
+      $stmt =& $db->connection->prepare("INSERT INTO Pageviews_by_Device (day,device) VALUES (?,?)",$types);
+      $stmt->execute(array($today,$device));
+    }
+
+    $device_count = $row_device['count'] + 1;
+
+	$types = array('integer','text','text');
+    $stmt =& $db->connection->prepare("UPDATE Pageviews_by_Device SET count = ? WHERE day = ? and device = ?",$types);
+    $stmt->execute(array($device_count,$today,$device));
   }
 
   public static function init() {
@@ -66,67 +73,25 @@ class PageViews  {
     self::$today = date("Y-m-d", self::$time);
   }
 
-  private static function getDay($day) {
-	$db = new db();
+  private static function getDaySection($day,$section) {
+	$db = new db;
+	$db->connection->setFetchMode(MDB2_FETCHMODE_ASSOC);
 	$types = array('text');
-    $stmt3 =& $db->connection->query("SELECT * FROM PageViews WHERE day='$day'");
-    if($row = $stmt3->fetchRow()) {
+    $stmt =& $db->connection->query("SELECT * FROM Pageviews_by_Section WHERE day='$day' and section = '$section'");
+    if($row = $stmt->fetchRow()) {
         return $row;
     }
   }
 
-  public static function past_days($days) {
-    $time = self::$time;
-    $views = array();
-    for($cnt = 0; $cnt < $days; $cnt++) {
-      $time -= 24 * 60 * 60;
-      $sql_date = date('Y-m-d', $time);
-      $day = self::getDay($sql_date);
-      $name = date('D', $time);
-      $date = date('n/j', $time);
-
-      if($day === NULL) {
-		//day has no data so all views are zero
-        $day = array('day' => $sql_date);
-        foreach(self::$fields as $field) {
-          $day[$field] = 0;
-        }
-        foreach(self::$devices as $device) {
-          $day[$device] = 0;
-        }
-      }
-      $day['name'] = $name;
-      $day['date'] = $date;
-      $day['total'] = 0;
-  
-      //find the total for each day
-      foreach(self::$devices as $device) {
-        $day['total'] += $day[$device];
-      }
-
-      $views[] = $day;
+  private static function getDayDevice($day,$device) {
+	$db = new db;
+	$db->connection->setFetchMode(MDB2_FETCHMODE_ASSOC);
+	$types = array('text');
+    $stmt =& $db->connection->query("SELECT * FROM Pageviews_by_Device WHERE day='$day' and device = '$device'");
+    if($row = $stmt->fetchRow()) {
+        return $row;
     }
-    return array_reverse($views);
   }
-
- public static function getToday() {
-    // views for today
-    $sql_today = date('Y-m-d');
-    $today = self::getDay($sql_today);
-
-    if($today === NULL) {
-      //day has no data so all views are zero
-      $today_total = 0;
-    }
-    else {
-      foreach(self::$devices as $device) {
-        $today_total += $today[$device];
-      }
-    }
-
-    return $today_total;
-  }
-
 
   public static function url2db($name) {
    return str_replace('-', '_', $name);
