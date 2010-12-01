@@ -28,9 +28,16 @@ class Page {
   protected $aquired = False;
 
   public static function factory($phone_type) {
-    $type = $phone_type . "Page";
-    self::$phoneType = $phone_type;
-    return new $type();
+	// any request for the statistics page must be forced to use the basic templates & methods
+	if (preg_match('/statistics/i',$_SERVER['REQUEST_URI'])) {
+		$type = "basicPage";
+	    self::$phoneType = "basic";
+	    return new $type();
+	} else {
+		$type = $phone_type . "Page";
+	    self::$phoneType = $phone_type;
+	    return new $type();
+	}
   }
 
   public function cache() {
