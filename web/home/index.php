@@ -13,11 +13,11 @@
 
 require "../../config.gen.inc.php";
 require "../page_builder/Page.php";
+require "../page_builder/detection.php";
 require "../page_builder/counter.php";
 require "data/data.inc.php";
 
-$phone = Page::classify_device_family();
-$prefix = Page::$requireTable[$phone];
+$phone = $prefix = Device::templates();
 $page = Page::factory($phone);
 
 PageViews::increment('home');

@@ -10,18 +10,18 @@
 
 require "../config.gen.inc.php";
 require "page_builder/Page.php";
+require "page_builder/detection.php";
 require "page_builder/counter.php";
 require "home/data/data.inc.php";
 
-$phone = Page::classify_device_family();
-$prefix = Page::$requireTable[$phone];
+$phone = $prefix = Device::templates();
 $page = Page::factory($phone);
 
 # to support manifest-cache we have to load home at the root for webkit devices
-if ($prefix == 'webkit') {
+if ($phone == 'webkit') {
 	PageViews::increment('home');
 	require "home/templates/$prefix/index.html";
-} else if (Page::is_computer() || Page::is_spider()) {
+} else if (Device::is_computer() || Device::is_spider()) {
 	header("Location: /about/");
 } else {
 	header("Location: /home/");
