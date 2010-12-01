@@ -8,14 +8,13 @@
  * 
  */
 
+require_once "Page.php";
+require_once "detection.php";
+require_once "page_tools.php";
+require_once "counter.php";
 
-require "Page.php";
-require "page_tools.php";
-require "counter.php";
-
-$phone = Page::classify_device_family();
-$page = Page::factory($phone);
-$prefix = $page->requirePrefix();
+$prefix = Device::templates();
+$page = Page::factory($prefix);
 
 preg_match('/\/((\w|\-)+)\/[^\/]*?$/', $_SERVER['REQUEST_URI'], $match);
 $content = $match[1];
@@ -46,7 +45,7 @@ function exception_handler($exception) {
 
   // a text representation of the exception
   ob_start();
-    var_dump($exception);
+  var_dump($exception);
   $text = ob_get_contents();
   ob_end_clean();
 
