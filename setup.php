@@ -76,7 +76,7 @@ $base_dir = system('pwd')."/web/";
 $files = scandir($base_dir);
 foreach ($files as $file) {
 	if (is_dir($base_dir.$file)) {
-		$config_file = $base_dir.$file."/setup.yml";
+		$config_file = $base_dir.$file."/info.yml";
 		if (file_exists($config_file)) {
 			$config = Spyc::YAMLLoad($config_file);
 			if ($config["data"] == true) {

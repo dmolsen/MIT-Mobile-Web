@@ -137,7 +137,7 @@ $all_data = $result->fetchAll();
 
 foreach($all_data as $data) {
   $section = $data["section"];
-  $config_file = $install_path."web/".$section."/setup.yml";
+  $config_file = $install_path."web/".$section."/info.yml";
   if (file_exists($config_file)) {
   	$config = Spyc::YAMLLoad($config_file);
   	$section = $config["name"];
