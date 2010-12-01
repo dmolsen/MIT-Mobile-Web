@@ -17,22 +17,8 @@ require_once "../page_builder/page_header.php";
 // libs
 require_once "lib/textformat.lib.php";
 
-$static_pages = array(
-  'about', 
-  'requirements', 
-  'credits',
-  'new',
-  'homescreen'
-);
-
-
 // dynamic pages need to include dynamics scripts
 switch($_REQUEST['page']) {
-
-  // dynamic cases
-  case "statistics":
-    require "statistics.php";
-    break;
 
   // static cases
   case "requirements":
