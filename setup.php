@@ -6,7 +6,7 @@ require("config.gen.copy.inc.php");
 
 # functions to DRY out the setup script
 function copy_gen_config($gen_config) {
-	$install_path = system('pwd');
+	$install_path = getcwd();
 	$data = file_get_contents("config.gen.copy.inc.php");
 	$data = str_replace("/path/to/install/", $install_path."/", $data);
 	$fp = fopen($gen_config, "w");
@@ -25,7 +25,7 @@ function copy_db($sqlite_db) {
 function copy_section($dir,$filepath,$name) {
 	system("cp web/".$dir."/data/data.copy.inc.php ".$filepath);
 	system("chmod 664 ".$filepath);
-	echo("\n".$name.": initial data loaded...");
+	echo($name.": initial data loaded...");
 }
 
 # start the general install
@@ -39,16 +39,18 @@ if (file_exists($gen_config)) {
 	$handle = fopen("php://stdin","r");
 	$line = fgets($handle);
 	if (strtolower(trim($line)) != "y") {
-		echo("\nSkipping ".$gen_config."...");
+		echo("Skipping ".$gen_config."...");
 	} else {
 		copy_gen_config($gen_config);
 	}
 } else {
+	echo("\n");
 	copy_gen_config($gen_config);
 }		
 
+# COMMENTED OUT BECAUSE SQLite SUPPORT IS BROKEN
 # copy the SQLite database assuming a user wants to use it
-echo("\nAre you going to use SQLite for the database? Y/n ");
+/* echo("\nAre you going to use SQLite for the database? Y/n ");
 $handle = fopen("php://stdin","r");
 $line = fgets($handle);
 if (strtolower(trim($line)) == 'y') {
@@ -67,12 +69,14 @@ if (strtolower(trim($line)) == 'y') {
 	}
 } else {
 	echo("You will need to manually update config.gen.inc.php to support MySQL...");
-}
+} */
+
+echo("\nYou will need to manually update config.gen.inc.php to support MySQL...");
 
 # set-up individual sections based on availability of setup.yml files
 echo("\nSetting up individual sections...");
 $messages = array();
-$base_dir = system('pwd')."/web/";
+$base_dir = getcwd()."/web/";
 $files = scandir($base_dir);
 foreach ($files as $file) {
 	if (is_dir($base_dir.$file)) {
@@ -86,11 +90,12 @@ foreach ($files as $file) {
 					$handle = fopen("php://stdin","r");
 					$line = fgets($handle);
 					if(strtolower(trim($line)) != 'y') {
-						echo("\n".$config['name'].": skipping data file...");
+						echo($config['name'].": skipping data file...");
 					} else {
 						copy_section($file,$filepath,$config["name"]);
 					}
 				} else {
+					echo("\n");
 					copy_section($file,$filepath,$config["name"]);
 				}
 			}
@@ -99,9 +104,6 @@ foreach ($files as $file) {
 				$messages[] = $config["name"].": ".$config_messages[$i];
 				$i++;
 			}
-			
-			# see if directory is listed in the database, if not add it to the pageviews table
-			
 		}
 	}
 }
