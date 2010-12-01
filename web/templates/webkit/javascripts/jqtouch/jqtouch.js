@@ -24,6 +24,7 @@
 */
 
 var hist=[];
+var backHref = ''; // trying to track back links properly
 
 (function($) {
     $.jQTouch = function(options) {
@@ -188,7 +189,7 @@ var hist=[];
                 // Go to the top of the "current" page
                 $(currentPage).addClass('current');
                 location.hash = '#' + $(currentPage).attr('id');
-                addPageToHistory(currentPage);
+                addPageToHistory(currentPage,'','',backHref);
                 scrollTo(0, 0);
                 startHashCheck();
             });
@@ -197,10 +198,6 @@ var hist=[];
         // PUBLIC FUNCTIONS
         function goBack(to) {
             // Init the param
-			if (hist.length <= 1) {
-				window.history.go(-2);
-			}
-			
             var numberOfPages = Math.min(parseInt(to || 1, 10), hist.length-1),
                 curPage = hist[0];
 
@@ -245,7 +242,7 @@ var hist=[];
                 }
             }
             if (animatePages(fromPage, toPage, animation, reverse)) {
-                addPageToHistory(toPage, animation, reverse);
+                addPageToHistory(toPage, animation, reverse, backHref);
                 return publicObj;
             } else {
                 console.error('Could not animate pages.');
@@ -306,6 +303,7 @@ var hist=[];
                 $el.addClass('active');
                 goTo($(hash).data('referrer', $el), animation, $(this).hasClass('reverse'));
             } else {
+				backHref = $el.attr('href');
                 $el.addClass('loading active');
                 showPageByHref($el.attr('href'), {
                     animation: animation,
@@ -318,7 +316,7 @@ var hist=[];
             }
             return false;
         }
-        function addPageToHistory(page, animation, reverse) {
+        function addPageToHistory(page, animation, reverse, backHref) {
             // Grab some info
             var pageId = page.attr('id');
             // Prepend info to page history
@@ -326,7 +324,8 @@ var hist=[];
                 page: page,
                 animation: animation,
                 reverse: reverse || false,
-                id: pageId
+                id: pageId,
+				backHref: backHref
             });
         }
         function animatePages(fromPage, toPage, animation, backwards) {
@@ -447,6 +446,7 @@ var hist=[];
             var settings = $.extend({}, defaults, options);
 
             if (href != '#') {
+				backHref = href;
                 $.ajax({
                     url: href,
                     data: settings.data,
