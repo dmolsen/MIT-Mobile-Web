@@ -14,7 +14,7 @@ $page->content_begin();
 <p class="focal">
     <strong>Page Views by Day:</strong><br/>
     <? foreach($views as $index => $day) { ?>
-        <?=$day['day']?> <?=$day['date']?>: <?=$day['count']?><? if($index+1 < count($views)) { ?><br/><? } ?>
+        <?=$day['day']?>: <?=$day['count']?><? if($index+1 < count($views)) { ?><br/><? } ?>
     <? } ?>
 	 <br />Today: <?=$today_total?>
 </p>
@@ -29,10 +29,12 @@ $page->content_begin();
 
 
 <p class="focal">
-    <strong>Most Popular Content:</strong><br/>
+    <strong>Most Popular Sections:</strong><br/>
 
-    <? foreach($popular_pages as $index => $content) { ?>
-        <?=$index+1?>. <a href="../<?=$content['link']?>/"><?=$content['name']?></a> <span class="smallprint">(<?=f($content['count'])?> page views)</span><br/>
+		<? $i = 1; ?>
+    <? foreach($popular_pages as $page_name => $count) { ?>
+        <?=$i?>. <?=$page_name?> <span class="smallprint">(<?=f($count)?> page views)</span><br/>
+				<? $i++; ?>
     <? } ?>
 </p>
 
@@ -40,5 +42,4 @@ $page->content_begin();
 $page->content_end(); 
 $page->help_off();
 $page->nav_link('./', 'About this Site');
-
 ?>
