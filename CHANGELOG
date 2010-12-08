@@ -2,18 +2,22 @@ THIS CHANGELOG IS AN ATTEMPT TO DOCUMENT CHANGES TO THIS PROJECT.
 SUPER MINOR REVISION NUMBERS WON'T SHOW UP IN GITHUB BUT IT'LL HELP
 ME ORGANIZE WHEN I MADE A SET OF FIXES
 
-MOBI-v2.0.3 (IN PROGRESS)
+MOBI-v2.5.0 (IN PROGRESS)
  - THIS IS SIMPLY AN UPDATE TO KEEP TRACK OF MY PROGRESS
- - FIX: google analytics now works with jqtouch better. NOT COMPLETE STILL HAS A BUG W/ FORMS
+ - FIX: device detection is now it's own class
+ - FIX: internal stats have been tweaked to make it easier to add new sections & more granular reports on devices
+ - FIX: google analytics now works with jqtouch better.
  - FIX: weather section has been updated to work with the 2.x file structure
  - FIX: <?php tags have been added to the beginning of php files per php.ini recommendation
  - FIX: example vhost has been updated to properly restrict access to sensitive files
  - FIX: main about page is now a .php file so the GA code can be easily included
  - FIX: the "full site" icon for the default view is now correct
- - FIX: the rss lib will now allow articles with the same title
+ - FIX: the rss lib will now allow articles with the same title (deprecated with addition of simple-rss)
  - FIX: when no results are returned from the map search a "no results" message is shown
+ - ADD: mysql support has been added via support for MDB2. other databases like postgres and mssql should also be supported
  - ADD: a quick set-up system. refer to the INSTALL file.
- - ADD: setup.yml files for each section to provide basic information
+ - ADD: info.yml files for each section to provide basic information
+ - ADD: rss feeds cached thanks to simple-rss support
  - THX: thanks to robin8 for all the great feedback & diffs for the fixes
 
 MOBI-v2.0.2 (August 22, 2010)
