@@ -13,11 +13,11 @@ function detailURL($title,$src) {
 }
 
 function is_long_text($item) {
-  return is_long_string($item['text']);
+  return is_long_string($item);
 }
 
 function summary($item) {
-  return summary_string(str_replace(' [...]','...',(str_replace('Read more ...','',$item['text']))));
+  return summary_string(str_replace(' [...]','...',(str_replace('Read more ...','',$item))));
 }
 
 function full($item) {
