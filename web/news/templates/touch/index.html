@@ -12,20 +12,24 @@ $page->content_begin();
 	</div>
 	
 	<ul class="nav">
-		         <? $i = 0; ?>
-             <? foreach($items as $title => $item) { ?>
-							<? if ($i < 3) { ?>
-		<li>
-                        <? if(is_long_text($item)) { ?>
-			<a href="<?=detailURL($title,$key)?>"><h3><?=$title?></h3><span class="smallprint"><?=html_entity_decode(summary($item))?> <span class="more">more</span> <? if ($item['date']) { ?>(<?=short_date($item['date'])?>)<? } ?></span></a>
-                        <? } else { ?>
-                           <div><h3><?=$title?></h3><span class="smallprint"><?=full($item)?> <? if ($item['date']) { ?>(<?=short_date($item['date'])?>)<? } ?></span></div>
-                        <? } ?>
-		</li>
-		         <? } ?>
-		         <? $i++; ?>
-             <? } ?>
-	
+		<? $i = 0; ?>
+		<? foreach($items->$aItems as $item) { ?>
+			<?
+				$description = $item->sDescription;
+				$title = $item->sTitle;
+				$date = $item->sDate;
+			?>
+			<? if ($i < 3) { ?>
+				<li>
+					<? if (is_long_text($item)) { ?>
+						<a href="<?=detailURL($title,$key)?>"><h3><?=$title?></h3><span class="smallprint"><?=html_entity_decode(summary($description))?> <span class="more">more</span> <? if ($date) { ?>(<?=short_date($date)?>)<? } ?></span></a>
+					<? } else { ?>
+						<div><h3><?=$title?></h3><span class="smallprint"><?=full($item)?> <? if ($date) { ?>(<?=short_date($date)?>)<? } ?></span></div>
+					<? } ?>
+				</li>
+			<? } ?>
+			<? $i++; ?>
+		<? } ?>
 	</ul>
 	
 	<ul class="nav">

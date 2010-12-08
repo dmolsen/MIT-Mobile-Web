@@ -16,15 +16,22 @@ require_once "data/data.inc.php";
 require_once "../page_builder/page_header.php";
 
 // libs
-require_once "../../lib/rss_services.php";
+require_once "../../lib/simple-rss/simple-rss.inc.php";
 
-$News = new RSS();
-$items = $News->get_feed($news_srcs[$_REQUEST['src']]['url']);
-$title = stripslashes($_REQUEST['title']);
-$text = explode("\n", $items[$title]['text']);
-$link = $items[$title]['link'];
-$read_more = $news_srcs[$_REQUEST['src']]['read_more'];
-$section = $news_srcs[$_REQUEST['src']]['title'];
+$rss_url = $news_srcs[$_REQUEST['src']]['url'];
+$items = new SimpleRss($rss_url, 300);
+
+foreach ($items->aItems as $item) {
+	$description = explode("\n",$item->sDescription);
+	$link = $item->sLink;
+	$title = $item->sTitle;
+	$date = $item->sDate;
+	
+	if (stripslashes($_REQUEST['title']) == $title) {
+		break;
+	}
+}
+
 $paragraphs = array();
 foreach($text as $paragraph) {
   if($paragraph) {
@@ -32,7 +39,8 @@ foreach($text as $paragraph) {
   }
 }
 
-$long_date = str_replace(' 0:00:00','',date("l, F j, Y G:i:s", $items[$title]['unixtime']));
+$read_more = $news_srcs[$_REQUEST['src']]['read_more'];
+$section = $news_srcs[$_REQUEST['src']]['title'];
 
 require "templates/$prefix/detail.html";
 $page->output();

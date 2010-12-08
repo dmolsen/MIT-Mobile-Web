@@ -11,10 +11,14 @@
 	
 	<ul class="rounded">
 		<? $i = 0; ?>
-		<? foreach ($items as $title => $item) { ?>
+		<? foreach ($items->aItems as $item) { ?>
+			<?
+				$title = $item->sTitle;
+				$date = $item->sDate;
+			?>
 			<? if ($i < 3) { ?>
 				<li class="arrow">
-						<a href="<?=detailURL($title,$key)?>" class="noellipsis"><?=$title?><? if ($item['date']) { ?><p class="smallprint" style="margin-top: 5px;"><em>Posted on: <?=short_date($item['date'])?></em></p><? } ?></a>
+						<a href="<?=detailURL($title,$key)?>" class="noellipsis"><?=$title?><? if ($date) { ?><p class="smallprint" style="margin-top: 5px;"><em>Posted on: <?=short_date($date)?></em></p><? } ?></a>
 				</li>
 			<? } ?>
 			<? $i++; ?>

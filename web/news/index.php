@@ -16,7 +16,7 @@ require_once "data/data.inc.php";
 require_once "../page_builder/page_header.php";
 
 // libs
-require_once "../../lib/rss_services.php";
+require_once "../../lib/simple-rss/simple-rss.inc.php";
 require_once "lib/textformat.lib.php";
 
 if (array_key_exists($_REQUEST['news'], $news_srcs)) {
@@ -31,9 +31,8 @@ else {
     $section = $news_srcs[$key]['title'];
     $shared = false;
 }
-
-$News = new RSS();
-$items = $News->get_feed($rss_url);
+   
+$items = new SimpleRss($rss_url, 300);
 
 if ($shared == true) {
   require "templates/$prefix/shared.html";
