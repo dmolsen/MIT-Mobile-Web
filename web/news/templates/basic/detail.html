@@ -15,7 +15,7 @@ $page->content_begin();
 
 	<? if ($read_more) { ?>
 		<? $outgoing = str_replace('http://','',$link); ?>
-		<p><a href="<?=$link?>" onClick="javascript: pageTracker._trackPageview('/outgoing/news/<?=$_REQUEST['src']?>/<?=$outgoing?>');">Read more on the <?=$section?> site...</a></p>
+		<p><a href="<?=$link?>">Read more on the <?=$section?> site...</a></p>
 	<? } ?>
 
 	<p class="smallprint"><?=$date?></p>

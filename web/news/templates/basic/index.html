@@ -39,7 +39,7 @@ $page->content_begin();
 		<? } ?>
 		<? foreach ($news_links as $key => $news_link) { ?>
 			<? $outgoing = str_replace('http://','',$news_link['url']); ?>
-			<a href="<?=$news_link['url']?>" onClick="javascript: pageTracker._trackPageview('/outgoing/news/<?=$key?>/<?=$outgoing?>');">News from <? if ($news_link['need_the'] == true) { ?>the<? } ?> <?=$news_link['title']?></a><br />
+			<a href="<?=$news_link['url']?>">News from <? if ($news_link['need_the'] == true) { ?>the<? } ?> <?=$news_link['title']?></a><br />
 		<? } ?>
 	</p>
 	

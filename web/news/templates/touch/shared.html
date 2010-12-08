@@ -11,12 +11,17 @@ $page->content_begin();
 	</div>
 	
 	<ul class="nav">
-    <? foreach($items as $title => $item) { ?>
-	  <? $short_date = short_date($item['date']); ?>
-    <? if ($short_date == '00:00am') { $short_date = '12:00am'; } ?>
-		<li>
-        <a href="<?=detailURL($title,$key)?>"><h3><?=$title?></h3><span class="smallprint"><?=html_entity_decode(summary($item))?> <span class="more">more</span> <? if ($item['date']) { ?>(<?=short_date($item['date'])?>)<? } ?></span></a>
-	  </li>
+    <? foreach($items->aItems as $item) { ?>
+			<?
+				$description = $item->sDescription;
+				$title = $item->sTitle;
+				$date = $item->sDate;
+			?>
+	  	<? $short_date = short_date($date); ?>
+			<? if ($short_date == '00:00am') { $short_date = '12:00am'; } ?>
+			<li>
+        <a href="<?=detailURL($title,$key)?>"><h3><?=$title?></h3><span class="smallprint"><?=html_entity_decode(summary($description))?> <span class="more">more</span> <? if ($date) { ?>(<?=short_date($date)?>)<? } ?></span></a>
+			</li>
     <? } ?>
 	</ul>
 	
