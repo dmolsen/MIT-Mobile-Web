@@ -8,7 +8,7 @@
 	<? if ($show_rss == true) { ?>
 		<div class="focal">
 	     <? if ($article_f_timestamp > $current_timestamp) { ?>
-	         <span class="alert"><? echo implode('<br /><br />', $paragraphs); ?></span>
+	         <span class="alert"><? echo(implode('<br /><br />', $paragraphs)); ?></span>
 	         <? if ($date) { echo('<em>Posted: '.$date.'</em>'); } ?>
 	     <? } else { ?>
 	       There is currently no emergency on campus.

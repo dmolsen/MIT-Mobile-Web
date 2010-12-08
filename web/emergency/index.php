@@ -9,7 +9,7 @@
  */
 
 // libs - need to require first because data.inc.php uses functions
-require_once "../../lib/rss_services.php";
+require_once "../../lib/simple-rss/simple-rss.inc.php";
 require_once "lib/textformat.lib.php";
 
 // various copy includes
@@ -22,24 +22,26 @@ require_once "../page_builder/page_header.php";
 $emergency_message = "Coming Soon: Emergency Updates"; 
 
 if ($show_rss == true) {
-	$Emergency = new RSS();
-	$emergencies = $Emergency->get_feed($emergency_rss_feed);
+	
+	$emergencies = new SimpleRss($emergency_rss_url, 300);
 
 	if($emergencies === False) {
 	  $paragraphs = array('Emergency information is currently not available');
 	} else {
-	  foreach ($emergencies as $title => $emergency) {
-        $text = explode("\n", $emergency['text']);
+	  foreach ($emergencies->aItems as $item) {
+        $text = explode("\n", $item->sDescription);
         $paragraphs = array();
 		foreach($text as $paragraph) {
 	  		if($paragraph) {
 	    		$paragraphs[] = htmlentities($paragraph);
 	  		}
 		}
+		
+		// going to have to figure out timestamp issues...
         $article_c_timestamp = mktime($emergency['date']['hours'],$emergency['date']['minutes'],$emergency['date']['seconds'],$emergency['date']['mon'],$emergency['date']['mday'],$emergency['date']['year']);
         $article_f_timestamp = mktime($emergency['date']['hours'],$emergency['date']['minutes'],$emergency['date']['seconds'],$emergency['date']['mon'],$emergency['date']['mday']+2,$emergency['date']['year']);
         $current_timestamp = time();
-        $date = short_date($emergency['date']);
+        $date = short_date($date);
 	  }
 
 	  // handle the case that an emergency RSS feed doesn't return data until emergency (like e2campus)

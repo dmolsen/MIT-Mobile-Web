@@ -11,7 +11,7 @@
 # Use RSS to show emergency status for your campus
 # Note: a service like e2campus offers an RSS feed
 $show_rss = false;
-$emergency_rss_feed = "http://emergency.inst.edu/rss/";
+$emergency_rss_url = "http://emergency.inst.edu/rss/";
 
 # The phone numbers to show on the main emergency page
 $main = array(
