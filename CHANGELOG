@@ -14,6 +14,7 @@ MOBI-v2.5.0 (IN PROGRESS)
  - FIX: the "full site" icon for the default view is now correct
  - FIX: the rss lib will now allow articles with the same title (deprecated with addition of simple-rss)
  - FIX: when no results are returned from the map search a "no results" message is shown
+ - FIX: requirements page has been updated to reflect 2010 devices
  - ADD: mysql support has been added via support for MDB2. other databases like postgres and mssql should also be supported
  - ADD: a quick set-up system. refer to the INSTALL file.
  - ADD: info.yml files for each section to provide basic information
