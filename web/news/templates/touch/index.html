@@ -15,16 +15,16 @@ $page->content_begin();
 		<? $i = 0; ?>
 		<? foreach($items->aItems as $item) { ?>
 			<?
-				$description = $item->sDescription;
+				$description = strip_tags($item->sDescription);
 				$title = $item->sTitle;
-				$date = $item->sDate;
+				$date = article_date($item->sDate);
 			?>
 			<? if ($i < 3) { ?>
 				<li>
 					<? if (is_long_text($item)) { ?>
-						<a href="<?=detailURL($title,$key)?>"><h3><?=$title?></h3><span class="smallprint"><?=html_entity_decode(summary($description))?> <span class="more">more</span> <? if ($date) { ?>(<?=short_date($date)?>)<? } ?></span></a>
+						<a href="<?=detailURL($title,$key)?>"><h3><?=$title?></h3><span class="smallprint"><?=html_entity_decode(summary($description))?> <span class="more">more</span> <? if ($date) { ?>(<?=$date?>)<? } ?></span></a>
 					<? } else { ?>
-						<div><h3><?=$title?></h3><span class="smallprint"><?=full($item)?> <? if ($date) { ?>(<?=short_date($date)?>)<? } ?></span></div>
+						<div><h3><?=$title?></h3><span class="smallprint"><?=full($description)?> <? if ($date) { ?>(<?=$date?>)<? } ?></span></div>
 					<? } ?>
 				</li>
 			<? } ?>

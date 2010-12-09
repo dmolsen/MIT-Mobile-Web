@@ -32,7 +32,8 @@ else {
     $shared = false;
 }
    
-$items = new SimpleRss($rss_url, 300);
+$feed = new SimpleRss($rss_url, 300);
+$items = $feed->GetRssObject();
 
 if ($shared == true) {
   require "templates/$prefix/shared.html";

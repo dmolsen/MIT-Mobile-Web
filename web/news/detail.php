@@ -19,13 +19,14 @@ require_once "../page_builder/page_header.php";
 require_once "../../lib/simple-rss/simple-rss.inc.php";
 
 $rss_url = $news_srcs[$_REQUEST['src']]['url'];
-$items = new SimpleRss($rss_url, 300);
+$feed = new SimpleRss($rss_url, 300);
+$items = $feed->GetRssObject();
 
 foreach ($items->aItems as $item) {
-	$description = explode("\n",$item->sDescription);
+	$description = explode("\n",strip_tags($item->sDescription,"<a>"));
 	$link = $item->sLink;
 	$title = $item->sTitle;
-	$date = $item->sDate;
+	$date = date('M. jS @ g:ia',strtotime($item->sDate));
 	
 	if (stripslashes($_REQUEST['title']) == $title) {
 		break;
@@ -33,7 +34,7 @@ foreach ($items->aItems as $item) {
 }
 
 $paragraphs = array();
-foreach($text as $paragraph) {
+foreach($description as $paragraph) {
   if($paragraph) {
     $paragraphs[] = str_replace('Read more ...','',$paragraph);
   }

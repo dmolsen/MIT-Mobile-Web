@@ -13,12 +13,10 @@
     <? foreach($items->aItems as $item) { ?>
 			<?
 				$title = $item->sTitle;
-				$date = $item->sDate;
+				$date = article_date($item->sDate);
 			?>
-	  	<? $short_date = short_date($date); ?>
-    	<? if ($short_date == '00:00am') { $short_date = '12:00am'; } ?>
 			<li class="arrow">
-				<a href="<?=detailURL($title,$key)?>" class="noellipsis"><?=$title?><? if ($date) { ?><p class="smallprint" style="margin-top: 5px;"><em>Posted on: <?=short_date($date)?></em></p><? } ?></a>
+				<a href="<?=detailURL($title,$key)?>" class="noellipsis"><?=$title?><? if ($date) { ?><p class="smallprint" style="margin-top: 5px;"><em>Posted on: <?=$date?></em></p><? } ?></a>
 			</li>
     <? } ?>
 	</ul>

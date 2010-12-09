@@ -10,17 +10,17 @@ $page->content_begin();
 	<? $i = 0; ?>
 	<? foreach ($items->aItems as $item) { ?>
 		<?
-			$description = $item->sDescription;
+			$description = strip_tags($item->sDescription);
 			$title = $item->sTitle;
-			$date = $item->sDate;
+			$date = article_date($item->sDate);
 		?>
 		<? if ($i < 3) { ?>
 			<p class="focal">
 			<strong><?=$title?></strong><br/>
 			<? if(is_long_text($description)) { ?>
- 				<span class="smallprint"><?=html_entity_decode(summary($description))?> <a href="<?=detailURL($title,$key)?>">more</a> <? if ($date) { ?>(<?=short_date($date)?>)<? } ?></span>
+ 				<span class="smallprint"><?=html_entity_decode(summary($description))?> <a href="<?=detailURL($title,$key)?>">more</a> <? if ($date) { ?>(<?=$date?>)<? } ?></span>
  			<? } else { ?>
-				<span class="smallprint"><?=full($item)?> <? if ($date) { ?>(<?=short_date($date)?>)<? } ?></span>
+				<span class="smallprint"><?=full($description)?> <? if ($date) { ?>(<?=$date?>)<? } ?></span>
 			<? } ?>
 			</p>
 		<? } ?>
