@@ -33,7 +33,7 @@
       Last Updated:  7th January 2007                             */
    /***************************************************************/
    
-   define('CACHE_PATH', '/home/tmp/');
+   define('CACHE_PATH', sys_get_temp_dir());
    
    class PhpCache {
       var $sFile;
