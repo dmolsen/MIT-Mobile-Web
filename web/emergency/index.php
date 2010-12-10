@@ -23,7 +23,8 @@ $emergency_message = "Coming Soon: Emergency Updates";
 
 if ($show_rss == true) {
 	
-	$emergencies = new SimpleRss($emergency_rss_url, 300);
+	$feed = new SimpleRss($emergency_rss_url, 300);
+	$emergencies = $feed->GetRssObject();
 
 	if($emergencies === False) {
 	  $paragraphs = array('Emergency information is currently not available');
@@ -38,10 +39,10 @@ if ($show_rss == true) {
 		}
 		
 		// going to have to figure out timestamp issues...
-        $article_c_timestamp = mktime($emergency['date']['hours'],$emergency['date']['minutes'],$emergency['date']['seconds'],$emergency['date']['mon'],$emergency['date']['mday'],$emergency['date']['year']);
-        $article_f_timestamp = mktime($emergency['date']['hours'],$emergency['date']['minutes'],$emergency['date']['seconds'],$emergency['date']['mon'],$emergency['date']['mday']+2,$emergency['date']['year']);
+        $article_c_timestamp = strtotime($item->sDate);
+        $article_f_timestamp = strtotime($item->sDate)+(60*60*48); // adding two days
         $current_timestamp = time();
-        $date = short_date($date);
+        $date = date('M. jS @ g:ia',strtotime($item->sDate));
 	  }
 
 	  // handle the case that an emergency RSS feed doesn't return data until emergency (like e2campus)
