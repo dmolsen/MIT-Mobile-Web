@@ -21,7 +21,7 @@
  */
 
 $news_srcs = array();
-$news_srcs["pao"] = array("title" => "PAO Office", "url" => "http://rss.soccernet.com/c/668/f/8504/index.rss", "need_the" => false, "read_more" => true);
+$news_srcs["pao"] = array("title" => "PAO Office", "url" => "http://feeds.feedburner.com/MobileInHigherEd?format=xml", "need_the" => false, "read_more" => false);
 
 /**
  * A list of the news links you want to show on your site     
@@ -32,6 +32,6 @@ $news_srcs["pao"] = array("title" => "PAO Office", "url" => "http://rss.soccerne
  * 									   "need_the"  => true of false, lame hack for WVU. Puts a 'the' in front of title attribute);
  */
 $news_links = array();
-$news_links["og"] = array("title" => "External News Src", "url" => "http://mobiweb.pbworks.com/", "need_the" => false);
+$news_links["og"] = array("title" => "External News Src", "url" => "http://mobilewebosp.pbworks.com/", "need_the" => false);
 
 ?>
