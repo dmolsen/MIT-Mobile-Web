@@ -8,6 +8,10 @@
  * 
  */
 
+# Use an HTML include to show the emergency status for your campus
+# Note: must be hand edited on server but will show one message across all three templates easily
+$show_include = false;
+
 # Use RSS to show emergency status for your campus
 # Note: a service like e2campus offers an RSS feed
 $show_rss = false;
