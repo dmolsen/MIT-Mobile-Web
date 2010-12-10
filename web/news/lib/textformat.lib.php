@@ -21,7 +21,11 @@ function summary($item) {
 }
 
 function full($item) {
-  return $item['text'];
+  return $item;
+}
+
+function article_date($rss_time) {
+  return date('M. jS @ g:ia',strtotime($rss_time));
 }
 
 ?>
