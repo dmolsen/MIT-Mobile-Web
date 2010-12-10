@@ -17,6 +17,7 @@ require_once "../page_builder/page_header.php";
 
 // libs
 require_once "../../lib/simple-rss/simple-rss.inc.php";
+require_once "lib/textformat.lib.php";
 
 $rss_url = $news_srcs[$_REQUEST['src']]['url'];
 $feed = new SimpleRss($rss_url, 300);
@@ -26,7 +27,7 @@ foreach ($items->aItems as $item) {
 	$description = explode("\n",strip_tags($item->sDescription,"<a>"));
 	$link = $item->sLink;
 	$title = $item->sTitle;
-	$date = date('M. jS @ g:ia',strtotime($item->sDate));
+	$date = article_date($item->sDate);
 	
 	if (stripslashes($_REQUEST['title']) == $title) {
 		break;
