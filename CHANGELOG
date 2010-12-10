@@ -19,7 +19,18 @@ MOBI-v2.5.0 (IN PROGRESS)
  - ADD: a quick set-up system. refer to the INSTALL file.
  - ADD: info.yml files for each section to provide basic information
  - ADD: rss feeds cached thanks to simple-rss support
+ - ADD: an include file in emergency for showing the same emergency message across all three templates
  - THX: thanks to robin8 for all the great feedback & diffs for the fixes
+
+todo:
+ - email iCal event for calendar
+ - adapters for providing different sources of data (calendar & map), adapter identifier goes where though? info.yml? adapter class in page_builder to help grab which one to use?
+ - federated search via a federated.php file in each module that returns necessary results
+ - device detection service/api
+ - dining services section
+ - location services
+ - google search appliance module
+ - the google bubble for adding item to homescreen
 
 MOBI-v2.0.2 (August 22, 2010)
  - FIX: the google analytics tracking graphic on the basic templates has been fixed. also addresses an issue where
