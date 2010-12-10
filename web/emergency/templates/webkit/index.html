@@ -5,7 +5,17 @@
 	
 	<? include("../templates/webkit/toolbar.html"); ?>
 
-	<? if ($show_rss == true) { ?>
+	<? if ($show_include == true) { ?>
+		<div class="focal">
+	    <? 
+				if (file_exists("../include.inc.html")) {
+					include("../include.inc.html");
+				} else {
+					echo("The include file has not been properly set-up for showing emergency information.");
+				}
+			?>
+		</div>
+	<? } else if ($show_rss == true) { ?>
 		<div class="focal">
 	     <? if ($article_f_timestamp > $current_timestamp) { ?>
 	         <span class="alert"><? echo(implode('<br /><br />', $paragraphs)); ?></span>

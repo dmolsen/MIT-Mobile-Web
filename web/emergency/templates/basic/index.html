@@ -5,19 +5,29 @@ $page->title($inst_name." Emergency Info")
 $page->content_begin();
 ?>
 
-  <? if ($show_rss == true) { ?>
-		<p class="focal" id="statusmsg">
-			<? 
-				if ($article_f_timestamp > $current_timestamp) {
-					echo(implode('<br /><br />', $paragraphs));
-					if ($date) { 
-						echo('<em>Posted: '.$date.'</em>'); 
+	<? if ($show_include == true) { ?>
+			<p class="focal" id="statusmsg">
+				<? 
+					if (file_exists("../include.inc.html")) {
+						include("../include.inc.html");
+					} else {
+						echo("The include file has not been properly set-up for showing emergency information.");
 					}
-				} else {
-					echo("There is currently no emergency on campus.");
-				} 
-			?>
-		</p>
+				?>
+			</p>
+	<? } else if ($show_rss == true) { ?>
+			<p class="focal" id="statusmsg">
+				<? 
+					if ($article_f_timestamp > $current_timestamp) {
+						echo(implode('<br /><br />', $paragraphs));
+						if ($date) { 
+							echo('<em>Posted: '.$date.'</em>'); 
+						}
+					} else {
+						echo("There is currently no emergency on campus.");
+					} 
+				?>
+			</p>
 	<? } ?>
 	
 	<p class="secondary">
