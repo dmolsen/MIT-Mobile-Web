@@ -15,8 +15,7 @@
 	</div>
 
 	<ul class="rounded" role="listbox">
-		<? $user_agent = $_SERVER['HTTP_USER_AGENT']; ?>
-		<? if (!eregi('android',$user_agent)) { ?>
+		<? if (Device::is_ios()) { ?>
 			<li class="arrow" role="option"><a href="/map/favorites.php">Favorites<span class="mfavscount"></span></a></li>
 		<? } ?>
 		<? foreach($categorys as $category => $title) { ?>
