@@ -28,21 +28,21 @@
 		</p>
 	</div>
 	
-	<ul class="rounded">
+	<ul class="rounded" role="listbox">
 		<? $user_agent = $_SERVER['HTTP_USER_AGENT']; ?>
 		<? if (!eregi('android',$user_agent)) { ?>
-			<li class="arrow"><a href="/people/favorites.php">Favorites<span class="pfavscount"></span></a></li>
+			<li class="arrow" role="option"><a href="/people/favorites.php">Favorites<span class="pfavscount"></span></a></li>
 		<? } ?>
 		<? if ($has_dir_search_va) { ?>
 			<? $cleaned_num = preg_replace('/(\(|\)|\.|\-)/','',$dir_search_va_num); ?>
-			<li class="phone">
+			<li class="phone" role="option">
 				<a href="tel:1<?=$cleaned_num?>">Phone Directory</a>
 			</li>
 		<? } ?>
-		<li class="arrow">
+		<li class="arrow" role="option">
 			<a href="../emergency/">Emergency Contacts</a>
 		</li>
-		<li class="arrow">
+		<li class="arrow" role="option">
 			<a href="../emergency/?extra=true">General Contacts</a>
 		</li>
 	</ul>

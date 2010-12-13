@@ -1,6 +1,6 @@
-<ul class="edgetoedge">
+<ul class="edgetoedge" role="listbox">
 	<? foreach($results as $person) { ?>
-		<li><a href="<?=detail_url($person)?>"><?=$person['surname'][0]?>, <?=$person['givenname'][0]?></a></li>
+		<li role="option"><a href="<?=detail_url($person)?>"><?=$person['surname'][0]?>, <?=$person['givenname'][0]?></a></li>
 	<? } ?>
 </ul>
 	
