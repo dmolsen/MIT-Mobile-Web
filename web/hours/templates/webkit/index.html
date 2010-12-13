@@ -5,9 +5,9 @@
 	
 	<? include("../templates/webkit/toolbar.html"); ?>
 	
-	<ul class="rounded">
+	<ul class="rounded" role="listbox">
 		<? foreach($categorys as $category => $title) { ?>
-			<li class="arrow"><a href="/hours/<?=categoryURL($category)?>"><?=$title?></a></li>
+			<li class="arrow" role="option"><a href="/hours/<?=categoryURL($category)?>"><?=$title?></a></li>
 		<? } ?>
 	</ul>
 	

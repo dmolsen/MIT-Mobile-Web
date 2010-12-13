@@ -5,9 +5,9 @@
 	
 	<? include("../templates/webkit/toolbar.html"); ?>
 	
-	<ul class="edgetoedge">
+	<ul class="edgetoedge" role="listbox">
 		<? foreach($places as $place) { ?>
-			<li class="map wrap">
+			<li class="map wrap" role="option">
 				<a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>" class="map"><?=$place['name']?>
 					<p class="smallprint wrap" style="margin-top: 5px; text-wrap: normal">
 						<?=str_replace('"','',$place['hours'])?>
