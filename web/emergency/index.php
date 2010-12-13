@@ -23,7 +23,7 @@ $emergency_message = "Coming Soon: Emergency Updates";
 
 if ($show_rss == true) {
 	
-	$feed = new SimpleRss($emergency_rss_url, 300);
+	$feed = new SimpleRss($emergency_rss_url, 60);
 	$emergencies = $feed->GetRssObject();
 
 	if($emergencies === False) {
