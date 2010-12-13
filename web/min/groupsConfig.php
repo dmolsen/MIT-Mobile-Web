@@ -12,6 +12,6 @@
 require("../../config.gen.inc.php");
 
 return array(
-	'js' => array('//templates/webkit/javascripts/jqtouch/jqtouch.js', '//templates/webkit/javascripts/db.init.js', '//templates/webkit/javascripts/ga.init.js', '//calendar/templates/webkit/javascripts/calendar.init.js', '//people/templates/webkit/javascripts/people.init.js', '//map/templates/webkit/javascripts/map.init.js'),
+	'js' => array('//templates/webkit/javascripts/jqtouch/jqtouch.js', '//templates/webkit/javascripts/db.init.js', '//templates/webkit/javascripts/ga.init.js', '//templates/webkit/javascripts/aria.init.js', '//calendar/templates/webkit/javascripts/calendar.init.js', '//people/templates/webkit/javascripts/people.init.js', '//map/templates/webkit/javascripts/map.init.js'),
     'css' => array('//templates/webkit/javascripts/jqtouch/jqtouch.css', '//themes/'.$theme.'/webkit/stylesheets/theme.css', '//themes/'.$theme.'/webkit/stylesheets/extra.css'),
 );
