@@ -14,13 +14,13 @@
 		</form>
 	</div>
 
-	<ul class="rounded">
+	<ul class="rounded" role="listbox">
 		<? $user_agent = $_SERVER['HTTP_USER_AGENT']; ?>
 		<? if (!eregi('android',$user_agent)) { ?>
-			<li class="arrow"><a href="/map/favorites.php">Favorites<span class="mfavscount"></span></a></li>
+			<li class="arrow" role="option"><a href="/map/favorites.php">Favorites<span class="mfavscount"></span></a></li>
 		<? } ?>
 		<? foreach($categorys as $category => $title) { ?>
-			<li class="arrow"><a href="<?=categoryURL($category)?>"><?=$title?></a></li>
+			<li class="arrow" role="option"><a href="<?=categoryURL($category)?>"><?=$title?></a></li>
 		<? } ?>
 	</ul>
 	

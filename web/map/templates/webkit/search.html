@@ -18,10 +18,10 @@
 			<? foreach($results as $place) { ?>
 				<? if (($a_shown == false) && (substr($place['name'],0,1) == 'A')) { ?>
 					<? $a_shown = true; ?>
-					<li class="sep"><?=$string_sep?></li>
+					<li class="sep" role="separator"><?=$string_sep?></li>
 				<? } else if (substr($place['name'],0,1) != $string_sep) { ?>
 					<? $string_sep = substr($place['name'],0,1); ?>
-					<li class="sep"><?=$string_sep?></li>
+					<li class="sep" role="separator"><?=$string_sep?></li>
 				<? } ?>
 				<? include("_li_item.html"); ?>
 			<? } ?>

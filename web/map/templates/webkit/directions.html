@@ -5,9 +5,9 @@
 	
 	<? include("../templates/webkit/toolbar.html"); ?>
 	
-	<ul class="rounded">
+	<ul class="rounded" role="listbox">
 		<? foreach($directions as $link => $value) { ?>
-			<li class="arrow"><a href="<?=directionsURL($link)?>"><?=$value->link_text?></a></li>
+			<li class="arrow" role="option"><a href="<?=directionsURL($link)?>"><?=$value->link_text?></a></li>
 		<? } ?>
 	</ul>
 	

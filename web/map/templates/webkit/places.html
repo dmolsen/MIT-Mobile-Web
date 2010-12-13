@@ -5,7 +5,7 @@
 	
 	<? include("../templates/webkit/toolbar.html"); ?>
 	
-	<ul class="edgetoedge results">
+	<ul class="edgetoedge results" role="listbox">
 		<? foreach($places as $place) { ?>
 			<? $insert = ''; ?>
 			<? if ($place['type'] == 'Parking Lot') { ?>

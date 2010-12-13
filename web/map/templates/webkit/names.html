@@ -5,9 +5,9 @@
 	
 	<? include("../templates/webkit/toolbar.html"); ?>
 		
-	<ul class="edgetoedge results">
+	<ul class="edgetoedge results" role="listbox">
 		<? foreach(array("1-9","A-C","D-F","G-L","M-Q","R-U","V-Z") as $drilldown) { ?>
-			<li class="arrow"><a href="<?=drillURL($drilldown)?>"><?=$drilldown?></a></li>
+			<li class="arrow" role="option"><a href="<?=drillURL($drilldown)?>"><?=$drilldown?></a></li>
 		<? } ?>
 	</ul>
 	
