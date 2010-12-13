@@ -4,19 +4,19 @@
 		
 	<? include("../templates/webkit/toolbar.html"); ?>
 	
-	<ul class="rounded">
-		<li class="title"><?=$today['weekday']?>, <?=$today['month']?> <?=$today['day_num']?>, <?=$today['year']?></li>
-		<li class="arrow"><a href="<?=dayURL($today, 'events')?>">Today's events<span class="todayscount"></span></a></li>
+	<ul class="rounded" role="listbox">
+		<li class="title" role="separator"><?=$today['weekday']?>, <?=$today['month']?> <?=$today['day_num']?>, <?=$today['year']?></li>
+		<li class="arrow" role="option"><a href="<?=dayURL($today, 'events')?>">Today's events<span class="todayscount"></span></a></li>
 		<? $user_agent = $_SERVER['HTTP_USER_AGENT']; ?>
 		<? if (!eregi('android',$user_agent)) { ?>
-			<li class="arrow"><a href="/calendar/favorites.php">Favorites<span class="favscount"></span></a></li>
+			<li class="arrow" role="option"><a href="/calendar/favorites.php">Favorites<span class="favscount"></span></a></li>
 		<? } ?>
 		<? foreach ($calendars as $calkey => $calvalues) { ?>
 			<? if ($calvalues['main'] == true) { ?>
-				<li class="arrow"><a href="/calendar/category.php?id=<?=$calkey?>"><?=$calvalues['title']?><? if ($calvalues['caltxt'] == true) { ?> calendar<? } ?></a></li>
+				<li class="arrow" role="option"><a href="/calendar/category.php?id=<?=$calkey?>"><?=$calvalues['title']?><? if ($calvalues['caltxt'] == true) { ?> calendar<? } ?></a></li>
 			<? } ?>
 		<? } ?>
-		<li class="arrow"><a href="<?=categorysURL()?>">More calendars...</a></li>
+		<li class="arrow" role="option"><a href="<?=categorysURL()?>">More calendars...</a></li>
 	</ul>
 	
 	<div class="formcontainer">

@@ -18,8 +18,8 @@
 	<? if ($error == true) { ?>
 		<div class="focal">Events are unavailable. Check back later.</div>
 	<? } else { ?>
-		<ul class="edgetoedge">
-			<li class="sep" style="text-align: center"><?=$current['weekday']?>, <?=$current['month']?> <?=$current['day_num']?>, <?=$current['year']?></li>
+		<ul class="edgetoedge" role="listbox">
+			<li class="sep" role="separator" style="text-align: center"><?=$current['weekday']?>, <?=$current['month']?> <?=$current['day_num']?>, <?=$current['year']?></li>
 	 		<? $i = 0; ?>
 			<? foreach($eventFeed as $event) { ?>
 				<? $loc = briefLocation($event); ?>
@@ -27,16 +27,16 @@
 				<? include("li_item.html"); ?>
 			<? } ?>
 			<? if ($i == 0) { ?>
-				<li><a href="<?=dayURL($next,$type)?>" style="text">Sorry, no events for <?=$day_name?>.</a></li>
+				<li role="option"><a href="<?=dayURL($next,$type)?>" style="text">Sorry, no events for <?=$day_name?>.</a></li>
 			<? } ?>
 		</ul>
 	<? } ?>
 	
-	<ul class="individual">
+	<ul class="individual" role="navigation">
 		<? if ($today == false) { ?>
-			<li> <a href="#" onclick="jQT.goBack();">&laquo; <?=$prev['day_3Let']?>. <?=$prev['month_3Let']?> <?=$prev['day_num']?></a></li> 
+			<li role="option"> <a href="#" onclick="jQT.goBack();">&laquo; <?=$prev['day_3Let']?>. <?=$prev['month_3Let']?> <?=$prev['day_num']?></a></li> 
 		<? } ?>
-		<li> <a href="<?=dayURL($next, $type)?>"><?=$next['day_3Let']?>. <?=$next['month_3Let']?> <?=$next['day_num']?> &raquo;</a></li>
+		<li role="option"> <a href="<?=dayURL($next, $type)?>"><?=$next['day_3Let']?>. <?=$next['month_3Let']?> <?=$next['day_num']?> &raquo;</a></li>
 	</ul>
 	
 	<? include("../templates/webkit/info.html"); ?>

@@ -5,9 +5,9 @@
 	
 	<? include("../templates/webkit/toolbar.html"); ?>
 			
-	<ul class="rounded">
+	<ul class="rounded" role="listbox">
     <? foreach ($calendars as $key => $calendar) { ?>
-	    <li class="arrow"><a href="/calendar/category.php?id=<?=$key?>"><?=$calendar['title']?><? if ($calendar['caltxt'] == true) { ?> calendar<? } ?></a></li>
+	    <li class="arrow" role="option"><a href="/calendar/category.php?id=<?=$key?>"><?=$calendar['title']?><? if ($calendar['caltxt'] == true) { ?> calendar<? } ?></a></li>
     <? } ?>
 	</ul>
 	

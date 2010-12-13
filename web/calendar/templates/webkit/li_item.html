@@ -1,4 +1,4 @@
-<li class="arrow wrap">
+<li class="arrow wrap" role="option">
 	<a href="<?=detailURL($event)?>" class="noellipsis"><?=$event->title->text?>
 		<p class="smallprint" style="margin-top: 5px;">
 			<? if(trim($loc->valueString) != '') { ?><?=$loc->valueString?><br /><? } ?><?=timeText($event)?>
