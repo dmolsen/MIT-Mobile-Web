@@ -40,7 +40,7 @@
 			<? } ?>
 		<? } ?>
 		<? foreach ($news_links as $key => $news_link) { ?>
-			<li class="external" role="option"><a href="<?=$news_link['url']?>" onClick="javascript: pageTracker._trackPageview('/outgoing/news/<?=$key?>/<?=$outgoing?>');" target="_blank">News from <? if ($news_link['need_the'] == true) { ?>the<? } ?> <?=$news_link['title']?></a></li>
+			<li class="external" role="option"><a href="<?=$news_link['url']?>" target="_blank">News from <? if ($news_link['need_the'] == true) { ?>the<? } ?> <?=$news_link['title']?></a></li>
 		<? } ?>            
   </ul>
 	
