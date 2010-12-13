@@ -9,11 +9,11 @@
 		<p>Get info on <?=$inst_name?> people, shuttles and campus status via text message using the new <?=$inst_name?> SMS Service (currently in BETA).</p>
 	</div>
 
-	<ul>
+	<ul role="listbox">
 		<!--<li><a href="<?=busURL()?>">Shuttle Schedule via SMS</a></li>-->
-		<li><a href="<?=dirURL()?>">WVU People via SMS</a></li>
-		<li><a href="<?=sosURL()?>">Campus Status via SMS</a></li>
-		<li><a class="email" href="mailto:<?=$contact_addy?>">Send us Feedback!</a></li>
+		<li role="option"><a href="<?=dirURL()?>">WVU People via SMS</a></li>
+		<li role="option"><a href="<?=sosURL()?>">Campus Status via SMS</a></li>
+		<li role="option"><a class="email" href="mailto:<?=$contact_addy?>">Send us Feedback!</a></li>
 	</ul>
 
 	<div class="nonfocal legend">
