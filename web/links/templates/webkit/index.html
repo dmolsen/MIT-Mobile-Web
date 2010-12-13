@@ -9,9 +9,9 @@
 		These links may launch third-party websites unaffiliated with the <?=$inst_name?> Mobile Web.
 	</div>
 
-	<ul class="rounded">
+	<ul class="rounded" role="listbox">
 		<? foreach ($links as $item) { ?>
-			<li class="external"><a href="http://<?=$item['link']?>" data-ga="/outgoing/links/<?=$item['name']?>" target="_blank"><?=$item['name']?></a></li>
+			<li class="external" role="option"><a href="http://<?=$item['link']?>" data-ga="/outgoing/links/<?=$item['name']?>" target="_blank"><?=$item['name']?></a></li>
 		<? } ?>
 	</ul>
 	
