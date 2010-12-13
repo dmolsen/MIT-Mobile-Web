@@ -13,12 +13,12 @@
 		<p>The <?=$inst_name?> Mobile Web is provided by <?=$org_name?>, in cooperation with other departments, as a free service* to the <?=$inst_name?> community.</p>
 	</div>
 
-	<ul class="rounded">
-		<li class="arrow"><a href="<?=whatsnewURL()?>">What's New <small class="counter">3</small></a></li>
-		<li class="arrow"><a href="<?=requirementsURL()?>">System Requirements</a></li>
-		<li class="arrow"><a href="<?=homescreenURL()?>">Bookmark m.wvu.edu</a></li>
-		<li class="arrow"><a href="<?=creditsURL()?>">Credits</a></li>
-		<li class="email"><a href="mailto:<?=$contact_addy?>" data-ga="/email/about/">Send us Feedback!</a></li>
+	<ul class="rounded" role="listbox">
+		<li class="arrow" role="option"><a href="<?=whatsnewURL()?>">What's New <small class="counter">3</small></a></li>
+		<li class="arrow" role="option"><a href="<?=requirementsURL()?>">System Requirements</a></li>
+		<li class="arrow" role="option"><a href="<?=homescreenURL()?>">Bookmark m.wvu.edu</a></li>
+		<li class="arrow" role="option"><a href="<?=creditsURL()?>">Credits</a></li>
+		<li class="email" role="option"><a href="mailto:<?=$contact_addy?>" data-ga="/email/about/">Send us Feedback!</a></li>
 	</ul>
 
 	<div class="nonfocal legend">
