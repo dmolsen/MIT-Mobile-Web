@@ -9,7 +9,7 @@
 		The latest news items from <? if ($news_srcs[$_REQUEST['news']]['need_the'] == true) { ?>the<? } ?> <?=$section?>.
 	</div>
 	
-	<ul class="rounded">
+	<ul class="rounded" role="listbox">
 		<? $i = 0; ?>
 		<? foreach ($items->aItems as $item) { ?>
 			<?
@@ -17,7 +17,7 @@
 				$date = article_date($item->sDate);
 			?>
 			<? if ($i < 3) { ?>
-				<li class="arrow">
+				<li class="arrow" role="option">
 						<a href="<?=detailURL($title,$key)?>" class="noellipsis"><?=$title?><? if ($date) { ?><p class="smallprint" style="margin-top: 5px;"><em>Posted on: <?=$date?></em></p><? } ?></a>
 				</li>
 			<? } ?>
@@ -27,20 +27,20 @@
 		<? $i = 0;?>
 		<? foreach ($news_srcs as $key => $news_src) { ?>
 			<? if ($i == 0) { ?>
-				<li class="arrow"><a href="/news/?news=<?=$key?>">More from <? if ($news_src['need_the'] == true) { ?>the<? } ?><?=$news_src['title']?></a></li>
+				<li class="arrow" role="option"><a href="/news/?news=<?=$key?>">More from <? if ($news_src['need_the'] == true) { ?>the<? } ?><?=$news_src['title']?></a></li>
 				<? $i = 1; ?>
 			<? } else if ($i == 1) { ?>
 				</ul>
 
-				<ul class="rounded">
-					<li class="arrow"><a href="/news/?news=<?=$key?>">News from <? if ($news_src['need_the'] == true) { ?>the<? } ?> <?=$news_src['title']?></a></li>
+				<ul class="rounded" role="listbox">
+					<li class="arrow" role="option"><a href="/news/?news=<?=$key?>">News from <? if ($news_src['need_the'] == true) { ?>the<? } ?> <?=$news_src['title']?></a></li>
 					<? $i = 2; ?>
 			<? } else { ?>
-				<li class="arrow"><a href="/news/?news=<?=$key?>">News from <? if ($news_src['need_the'] == true) { ?>the<? } ?> <?=$news_src['title']?></a></li>
+				<li class="arrow" role="option"><a href="/news/?news=<?=$key?>">News from <? if ($news_src['need_the'] == true) { ?>the<? } ?> <?=$news_src['title']?></a></li>
 			<? } ?>
 		<? } ?>
 		<? foreach ($news_links as $key => $news_link) { ?>
-			<li class="external"><a href="<?=$news_link['url']?>" onClick="javascript: pageTracker._trackPageview('/outgoing/news/<?=$key?>/<?=$outgoing?>');" target="_blank">News from <? if ($news_link['need_the'] == true) { ?>the<? } ?> <?=$news_link['title']?></a></li>
+			<li class="external" role="option"><a href="<?=$news_link['url']?>" onClick="javascript: pageTracker._trackPageview('/outgoing/news/<?=$key?>/<?=$outgoing?>');" target="_blank">News from <? if ($news_link['need_the'] == true) { ?>the<? } ?> <?=$news_link['title']?></a></li>
 		<? } ?>            
   </ul>
 	

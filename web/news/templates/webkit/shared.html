@@ -9,13 +9,13 @@
 		The latest news items from <? if ($news_srcs[$_REQUEST['news']]['need_the'] == true) { ?>the<? } ?> <?=$section?>.
 	</div>
 	
-	<ul class="rounded">
+	<ul class="rounded" role="listbox">
     <? foreach($items->aItems as $item) { ?>
 			<?
 				$title = $item->sTitle;
 				$date = article_date($item->sDate);
 			?>
-			<li class="arrow">
+			<li class="arrow" role="option">
 				<a href="<?=detailURL($title,$key)?>" class="noellipsis"><?=$title?><? if ($date) { ?><p class="smallprint" style="margin-top: 5px;"><em>Posted on: <?=$date?></em></p><? } ?></a>
 			</li>
     <? } ?>
