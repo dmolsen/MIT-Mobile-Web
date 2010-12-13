@@ -26,16 +26,16 @@
 		</div>
 	<? } ?>
 
-	<ul class="rounded">
+	<ul class="rounded" role="listbox">
 		<? foreach($main as $item) { ?>
-			<li class="phone"><a href="tel:<?=$item->call_number()?>" data-ga="/phone/emergency/<?=$item->call_number()?>/"><?=$item->label()?></a></li>
+			<li class="phone" role="option"><a href="tel:<?=$item->call_number()?>" data-ga="/phone/emergency/<?=$item->call_number()?>/"><?=$item->label()?></a></li>
 		<? } ?>
 	</ul>
 	
-	<ul class="rounded">
-		<li class="arrow"><a href="<?=contactsURL()?>" class="slide">More Emergency Contacts</a></li>
+	<ul class="rounded" role="listbox">
+		<li class="arrow" role="option"><a href="<?=contactsURL()?>" class="slide">More Emergency Contacts</a></li>
 		<? if ($show_extra == true) { ?>
-			<li class="arrow"><a href="<?=extraURL()?>">More General Phone Numbers</a></li>
+			<li class="arrow" role="option"><a href="<?=extraURL()?>">More General Phone Numbers</a></li>
 		<? } ?>
 	</ul>
 

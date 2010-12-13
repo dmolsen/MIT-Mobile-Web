@@ -5,9 +5,9 @@
 	
 	<? include("../templates/webkit/toolbar.html"); ?>
 	
-	<ul class="rounded">
+	<ul class="rounded" role="listbox">
 		<? foreach($others as $item) { ?>
-			<li class="phone"><a href="tel:<?=$item->call_number()?>" data-ga="/phone/emergency/contacts/<?=$item->call_number()?>/"><?=$item->label()?></a></li>
+			<li class="phone" role="option"><a href="tel:<?=$item->call_number()?>" data-ga="/phone/emergency/contacts/<?=$item->call_number()?>/"><?=$item->label()?></a></li>
 		<? } ?>
 	</ul>
 

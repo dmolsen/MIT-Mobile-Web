@@ -6,19 +6,19 @@
 	<? include("../templates/webkit/toolbar.html"); ?>
 	
 	<? if (($show_res == true) || ($show_schools == true)) { ?>
-		<ul class="rounded">
+		<ul class="rounded" role="listbox">
 			<? if ($show_res == true) { ?>
-				<li class="arrow"><a href="<?=residencesURL()?>">Residence Halls</a></li>
+				<li class="arrow" role="option"><a href="<?=residencesURL()?>">Residence Halls</a></li>
 			<? } ?>
 			<? if ($show_schools == true) { ?>
-				<li class="arrow"><a href="<?=schoolsURL()?>">Schools &amp; Colleges</a></li>
+				<li class="arrow" role="option"><a href="<?=schoolsURL()?>">Schools &amp; Colleges</a></li>
 			<? } ?>
 		</ul>
 	<? } ?>
 	
-	<ul class="rounded">
+	<ul class="rounded" role="listbox">
 		<? foreach($extra as $item) { ?>
-			<li class="phone"><a href="tel:<?=$item->call_number()?>" data-ga="/phone/emergency/extra/<?=$item->call_number()?>/"><?=$item->label()?></a></li>
+			<li class="phone" role="option"><a href="tel:<?=$item->call_number()?>" data-ga="/phone/emergency/extra/<?=$item->call_number()?>/"><?=$item->label()?></a></li>
 		<? } ?>
 	</ul>
 
