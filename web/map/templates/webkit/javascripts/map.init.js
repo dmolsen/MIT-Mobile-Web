@@ -4,7 +4,20 @@
 var map_loaded = false; // hack for google maps v3
 var map_moved = false;
 
-$(function(){   				
+$(function(){ 
+	
+	// set-up the favs_map table if it doesn't exist
+	$(document).ready(function(){
+		db.transaction(
+			function(transaction) {
+				transaction.executeSql(
+					'CREATE TABLE IF NOT EXISTS favs_map '+
+					' (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, map_id NUMERIC NOT NULL, name TEXT NOT NULL, longitude TEXT NOT NULL, latitude TEXT NOT NULL);'
+				);
+			}
+		);
+	});
+	  				
   $('#map-detail').live('pageAnimationStart', function(event, info){	
 	if (info.direction == 'in') {
 		var map = map_initialize(); // map_initialize() is in /map/templates/iphone/detail-gmap.html

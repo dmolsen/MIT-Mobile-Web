@@ -8,6 +8,20 @@ $(function(){
 		if (m < 10) { m = "0" + m; }
 		if (j < 10) { j = "0" + j; }
 		
+		// set-up the favs_calendar table if it doesn't exist
+		$(document).ready(function(){
+			db.transaction(
+				function(transaction) {
+					transaction.executeSql(
+						'CREATE TABLE IF NOT EXISTS favs_calendar ' +
+						' (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, google_id TEXT NOT NULL, date DATE NOT NULL, date_compare INTEGER NOT NULL, title TEXT NOT NULL,' +
+						' time TEXT NULL, location TEXT NULL, description TEXT NULL, contact_name TEXT NULL, contact_phone TEXT NULL, ' +
+						' contact_email TEXT NULL, event_link TEXT NULL);'
+					);
+				}
+			);
+		});
+		
 		// after loading the main calendar view load the number of events for today via ajax & grab the number of favs
 		// out of the local database 				
 		$('#calendar').live('pageAnimationEnd', function(event, info){

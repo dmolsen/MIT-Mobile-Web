@@ -1,5 +1,17 @@
 $(function(){   				
 		
+		// set-up the favs_people table if it doesn't exist
+		$(document).ready(function(){
+			db.transaction(
+				function(transaction) {
+					transaction.executeSql(
+						'CREATE TABLE IF NOT EXISTS favs_people '+
+						' (id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, username TEXT NOT NULL, givenname TEXT NOT NULL, surname TEXT NOT NULL);'
+					);
+				}
+			);
+		});
+		
 		// after loading the main people view load the number of favs out of the local database 				
 		$('#people').live('pageAnimationEnd', function(event, info){
 			if (info.direction == 'out') {
