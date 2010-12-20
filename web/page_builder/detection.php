@@ -90,13 +90,19 @@ class Device {
   );
 
   // returns the general device type based on user agent string matching. can get very specific depending on usage.
-  public static function classify() {
+  public static function classify($ua = nil) {
 	
 	$majorv = 0;
 	$minorv = 0;
 	
-	$user_agent = $_SERVER['HTTP_USER_AGENT'];
-    $accept = $_SERVER['HTTP_ACCEPT']; 
+	if ($ua == nil) {
+		$user_agent = $_SERVER['HTTP_USER_AGENT'];
+	    $accept = $_SERVER['HTTP_ACCEPT'];
+	} else {
+		$user_agent = $ua;
+		$accept = $ua; // i don't think this will cause problems... key word being "think"
+	}
+	
 
 	if (preg_match('/(ipod|iphone)/i',$user_agent,$matches)) {
 		if (preg_match('/OS\ 4.2/i',$user_agent)) {
@@ -167,6 +173,8 @@ class Device {
 	// classify ipads as computers for the is_computer() checks
 	if (($type == "computer") || ($type == "ipad")) {
 		self::$is_computer = true;
+	} else {
+		self::$is_computer = false;
 	}
 	self::$is_spider = ($type == "spider");
 	self::$is_android = (preg_match('/android/',$type));
@@ -180,8 +188,8 @@ class Device {
   }
 
   // returns the type of templates that should be used for this device
-  public static function templates() {
-	$type = self::classify();
+  public static function templates($ua = nil) {
+	$type = self::classify($ua);
 	return self::$phoneTable[$type];
   }
 
