@@ -26,10 +26,11 @@ function categoryURL($category) {
   return "/calendar/category.php?id=$id";
 }
 
-function detailURL($event,$calid='all') {
-  preg_match("/_(.*)$/i",$event->id->text,$matches);
-  $id = $matches[1];
-  return "/calendar/detail.php?cal={$calid}&id={$id}";
+function detailURL($id,$calid='all') {
+  if (($calid == '') || ($calid == NULL)) {
+	$calid = 'all';
+  }
+  return "/calendar/detail.php?cal=".$calid."&id=".$id;
 }
 
 function phoneURL($number) {

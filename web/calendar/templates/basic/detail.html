@@ -6,45 +6,46 @@ $page->content_begin();
 ?>
 
 	<div class="focal">
-		<h2><?=html_entity_decode($event->title->text)?></h2>
+		<h2><?=html_entity_decode($event['title'])?></h2>
 		<p>
-			<?=$date_str?>
-			<? if ($time_of_day) { ?><br/>
-			  <?=$time_of_day?>
+			<?=$event['datefull']?>
+			<? if ($event['timefull']) { ?>
+			  <br/><?=$event['timefull']?>
 			<? } ?>
 		</p>
 		<p>
-       <? if (trim(briefLocation($event)->valueString) != '') { ?>
-						Location: <!--<a href="<?#=mapURL($event)?>" class="map">--><?=trim(briefLocation($event)->valueString)?><!--</a>-->
+       <? if (trim($event['where']) != '') { ?>
+						Location: <?=$event['where']?>
+						<!-- think about adding a hack to the map module for linking events -->
        <? } ?>
 		</p>
-		<? if (trim($description) != '') { ?>
+		<? if (trim($event['description']) != '') { ?>
 		   <p>
-          <?=$description?>
+          <?=$event['description']?>
 		   </p>
 	  <? } ?>
 
-    <? if (trim($contact_name) != '') { ?>
+    <? if (trim($event['contactname']) != '') { ?>
 	      <p>
-		       Contact name: <?=$contact_name?>
+		       Contact name: <?=$event['contactname']?>
 		    </p>
 		<? } ?>
 		
-		<? if (trim($contact_phone) != '') { ?>
+		<? if (trim($event['contactphone']) != '') { ?>
 	      <p>
-		       For info call: <a href="<?=phoneURL($contact_phone)?>" class="phone"><?=$contact_phone?></a>
+		       For info call: <a href="<?=phoneURL($event['contactphone'])?>" class="phone"><?=$contact_phone?></a>
 		    </p>
 		<? } ?>
 		
-		<? if (trim($contact_email) != '') { ?>
+		<? if (trim($event['contactemail']) != '') { ?>
 	      <p>
-		       For info email:  <a href="mailto:$contact_email?>" class="email"><?=$contact_email?></a>
+		       For info email:  <a href="mailto:$event['contactemail']?>" class="email"><?=$contact_email?></a>
 		    </p>
 		<? } ?>
 
-      <? if ((trim($event_link) != '') && (trim($event_link) != 'http://')) { ?>
+      <? if ((trim($event['link']) != '') && (trim($event['link']) != 'http://')) { ?>
 		     <p>
-			      Website: <a href="<?=$event_link?>" class="external" target="_new"><?=$event_link?></a>
+			      Website: <a href="<?=$event['link']?>" class="external" target="_new"><?=$event['link']?></a>
 		     </p>
       <? } ?>
 

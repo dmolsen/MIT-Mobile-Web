@@ -7,5 +7,6 @@ maintainer:
 desc: The default calendar that comes with Mobile Web OSP.
 version: 1.0
 data: true
+adapter: google_calendar
 messages: 
     - set-up Google Calendar credentials

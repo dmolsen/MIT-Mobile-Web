@@ -3,8 +3,7 @@
 <? $button = true; ?>
 
 <? 
-	$user_agent = $_SERVER['HTTP_USER_AGENT'];
-	if (!eregi('android',$user_agent)) {
+	if (Device::is_ios()) {
 		$button_html = '<a href="#" class="button" id="calendar-favorite-detail"><img src="/themes/'.$theme.'/webkit/images/favorite_unselected.png" id="calendar-favorite-detail-img" class="icon2" /></a>'; 
 	}
 ?>
@@ -13,57 +12,58 @@
 	
 	<script type="text/javascript">
 		// set-up the session storage data for this item to be inserted if necessary
-		sessionStorage.etitle = "<?=htmlentities($event->title,ENT_QUOTES)?>";
+		sessionStorage.etitle = "<?=htmlentities($event['title'],ENT_QUOTES)?>";
 		sessionStorage.egid = "<?=$_REQUEST['id']?>";
-		sessionStorage.elocation = "<?=htmlentities(trim(briefLocation($event)->valueString),ENT_QUOTES)?>";
-		sessionStorage.edesc = "<?=htmlentities($description,ENT_QUOTES)?>";
-		sessionStorage.ecname = "<?=htmlentities($contact_name,ENT_QUOTES)?>";
-		sessionStorage.ecphone = "<?=$contact_phone?>";
-		sessionStorage.ecemail = "<?=$contact_email?>";
-		sessionStorage.etime = "<?=$time_of_day?>";
-		sessionStorage.edate = "<?=$date_str_for_storage?>";
-		sessionStorage.edatecompare = "<?=$date_str_for_compare?>";
+		sessionStorage.elocation = "<?=htmlentities(trim($event['where']),ENT_QUOTES)?>";
+		sessionStorage.edesc = "<?=htmlentities($event['description'],ENT_QUOTES)?>";
+		sessionStorage.ecname = "<?=htmlentities($event['contactname'],ENT_QUOTES)?>";
+		sessionStorage.ecphone = "<?=$event['contactphone']?>";
+		sessionStorage.ecemail = "<?=$event['contactemail']?>";
+		sessionStorage.etime = "<?=$event['timefull']?>";
+		sessionStorage.edate = "<?=$event['datestorage']?>";
+		sessionStorage.edatecompare = "<?=$event['datecompare']?>";
 	</script>
 	
 	<? include("../templates/webkit/toolbar.html"); ?>
 	
 	<ul class="result">
 		<li class="wrap">
-			<h4><?=$event->title?></h4>
+			<h4><?=$event['title']?></h4>
 		</li>
 		
 		<li>
-			<?=$date_str?>
-			<? if ($time_of_day != '') { ?><br/><?=$time_of_day?><? } ?>
+			<?=$event['datefull']?>
+			<? if ($event['timefull']) { ?>
+			  <br/><?=$event['timefull']?>
+			<? } ?>
 		</li>
 		
-     <? if (trim(briefLocation($event)->valueString) != '') { ?>
-				<? $where = trim(briefLocation($event)->valueString); ?>
-			  <li class="map"><?=mapURL($where)?></li>
+     <? if (trim($event['where']) != '') { ?>
+			  <li class="map"><?=mapURL(trim($event['where']))?></li>
      <? } ?>
 
-		<? if (trim($description) != '') { ?>
-		   <li><?=$description?></li>
+		<? if (trim($event['description']) != '') { ?>
+		   <li><?=$event['description']?></li>
      <? } ?>
 	
-	<? if ((trim($contact_name) != '') || (trim($contact_phone) != '') || (trim($contact_email) != '') || ((trim($event_link) != '') && (trim($event_link) != 'http://'))) { ?>
+	<? if ((trim($event['contactname']) != '') || (trim($event['contactphone']) != '') || (trim($event['contactemail']) != '') || ((trim($event['link']) != '') && (trim($event['link']) != 'http://'))) { ?>
      <li>
 				<strong>Contact:</strong>
 				<ul class="sublist">
-					<? if (trim($contact_name) != '') { ?>
-       			<li><?=$contact_name?></li>
+					<? if (trim($event['contactname']) != '') { ?>
+       			<li><?=$event['contactname']?></li>
     			<? } ?>
 
-     			<? if (trim($contact_phone) != '') { ?>
-			 			<li class="phone"><a href="<?=phoneURL($contact_phone)?>" data-ga="/phone/calendar/<?=$contact_phone?>/"><?=$contact_phone?></a></li>
+     			<? if (trim($event['contactphone']) != '') { ?>
+			 			<li class="phone"><a href="<?=phoneURL($event['contactphone'])?>"><?=$event['contactphone']?></a></li>
      			<? } ?>
      
-     			<? if (trim($contact_email) != '') { ?>
-       			<li class="email"><a href="mailto:<?=$contact_email?>" data-ga="/email/calendar/<?=$contact_email?>/"><?=$contact_email?></a></li>
+     			<? if (trim($event['contactemail']) != '') { ?>
+       			<li class="email"><a href="mailto:<?=$event['contactemail']?>"><?=$event['contactemail']?></a></li>
     			<? } ?>
                 
-     			<? if ((trim($event_link) != '') && (trim($event_link) != 'http://')) { ?>
-	     			<li class="external"><a href="<?=$event_link?>" data-ga="/outgoing/calendar/<?=$event_link?>/" target="_blank">Event website</a></li>
+     			<? if ((trim($event['link']) != '') && (trim($event['link']) != 'http://')) { ?>
+	     			<li class="external"><a href="<?=$event['link']?>" target="_blank">Event website</a></li>
      			<? } ?>
 			</ul>
 		</li>

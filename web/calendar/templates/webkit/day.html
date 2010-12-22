@@ -15,22 +15,19 @@
 	
 	<? include("../templates/webkit/toolbar.html"); ?>
 	
-	<? if ($error == true) { ?>
-		<div class="focal">Events are unavailable. Check back later.</div>
-	<? } else { ?>
-		<ul class="edgetoedge" role="listbox">
-			<li class="sep" role="separator" style="text-align: center"><?=$current['weekday']?>, <?=$current['month']?> <?=$current['day_num']?>, <?=$current['year']?></li>
-	 		<? $i = 0; ?>
-			<? foreach($eventFeed as $event) { ?>
-				<? $loc = briefLocation($event); ?>
-				<? $i++; ?>
-				<? include("li_item.html"); ?>
-			<? } ?>
-			<? if ($i == 0) { ?>
-				<li role="option"><a href="<?=dayURL($next,$type)?>" style="text">Sorry, no events for <?=$day_name?>.</a></li>
-			<? } ?>
-		</ul>
-	<? } ?>
+	<ul class="edgetoedge" role="listbox">
+		<li class="sep" role="separator" style="text-align: center"><?=$current['weekday']?>, <?=$current['month']?> <?=$current['day_num']?>, <?=$current['year']?></li>
+ 		<? $i = 0; ?>
+		<? 
+			if ($eventFeed == false) {
+				echo("<li><a href='<?=dayURL($next,$type)?>'>Sorry, no results returned.</a></li>");
+			} else {
+		 		foreach ($eventFeed as $event) {
+		    	include("li_item.html");
+	   		}
+	   } 
+		?>
+	</ul>
 	
 	<ul class="individual" role="navigation">
 		<? if ($today == false) { ?>

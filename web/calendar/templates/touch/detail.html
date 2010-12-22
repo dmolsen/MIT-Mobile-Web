@@ -9,30 +9,35 @@ $page->content_begin();
 		<h2><?=$event->title?></h2>
 	
 		<ul class="nav">
-			<li><?=$date_str?><br/><?=$time_of_day?></li>
+			<li>
+				<?=$event['datefull']?>
+				<? if ($event['timefull']) { ?>
+			  	<br/><?=$event['timefull']?>
+				<? } ?>
+			</li>
 
-      <? if (trim(briefLocation($event)->valueString) != '') { ?>
- 			   <li><!--<a href="<?#=mapURL($event)?>" class="map">--><?=trim(briefLocation($event)->valueString)?><!--</a>--></li>
+      <? if (trim($event['where']) != '') { ?>
+ 			   <li><?=trim($event['where'])?></li>
       <? } ?>
 
-			<? if (trim($description) != '') { ?>
-			   <li class="description"><?=$description?></li>
+			<? if (trim($event['description']) != '') { ?>
+			   <li class="description"><?=$event['description']?></li>
       <? } ?>
 
-      <? if (trim($contact_name) != '') { ?>
-	       <li>Contact name: <?=$contact_name?></li>
+      <? if (trim($event['contactname']) != '') { ?>
+	       <li>Contact name: <?=$event['contactname']?></li>
 	    <? } ?>
 
-      <? if (trim($contact_phone) != '') { ?>
- 			   <li>For info call: <a href="<?=phoneURL($contact_phone)?>" class="phone"><?=$contact_phone?></a></li>
+      <? if (trim($event['contactphone']) != '') { ?>
+ 			   <li>For info call: <a href="<?=phoneURL($event['contactphone'])?>" class="phone"><?=$event['contactphone']?></a></li>
       <? } ?>
       
-      <? if (trim($contact_email) != '') { ?>
-	       <li>For info email: <a href="mailto:$contact_email?>" class="email"><?=$contact_email?></a></li>
+      <? if (trim($event['contactemail']) != '') { ?>
+	       <li>For info email: <a href="mailto:$event['contactemail']?>" class="email"><?=$event['contactemail']?></a></li>
 	    <? } ?>
 	                
-      <? if ((trim($event_link) != '') && (trim($event_link) != 'http://')) { ?>
-		     <li><a href="<?=$event_link?>" class="external" target="_new">Event website</a></li>
+      <? if ((trim($event['link']) != '') && (trim($event['link']) != 'http://')) { ?>
+		     <li><a href="<?=$event['link']?>" class="external" target="_new">Event website</a></li>
       <? } ?>
 		</ul>
 	
