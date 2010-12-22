@@ -79,7 +79,7 @@ $(function(){
 									} else {
 										var location = '';
 									}
-									var months = new Array("Jan.","Feb.","Mar.","Apr.","May","Jun.","Jul.","Aug.","Sep.","Nov.","Dec.");
+									var months = new Array("Jan.","Feb.","Mar.","Apr.","May","Jun.","Jul.","Aug.","Sep.","Oct.","Nov.","Dec.");
 									var weekdays = new Array("Sun.","Mon.","Tue.","Wed.","Thu.","Fri.","Sat.");
 									var time = new Date(row.date);
 									time = weekdays[time.getDay()]+", "+months[time.getMonth()]+" "+time.getDate()+", "+time.getFullYear();
