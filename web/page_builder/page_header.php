@@ -10,6 +10,7 @@
 
 require_once "Page.php";
 require_once "detection.php";
+require_once "adapter.php";
 require_once "page_tools.php";
 require_once "counter.php";
 
