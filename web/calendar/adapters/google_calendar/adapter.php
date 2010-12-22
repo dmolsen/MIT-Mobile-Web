@@ -22,8 +22,7 @@ class CalendarAdapter extends ModuleAdapter {
 	private static function setUpConnection() {
 		
 		# credentials for the google calendar
-		$username = "";
-		$password = "";
+		include("credentials.inc.php");
 		
 		# connection method
 		$service = Zend_Gdata_Calendar::AUTH_SERVICE_NAME; // predefined service name for calendar
