@@ -34,6 +34,4 @@ else {
 	require "templates/$prefix/more.html";
 }
 
-$page->output();
-
 ?>
