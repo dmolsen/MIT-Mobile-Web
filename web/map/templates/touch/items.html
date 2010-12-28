@@ -1,7 +1,2 @@
-<ul class="results">
-
-          <? foreach($results as $place) { ?>
-              <li><a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>"><?=$place['name']?></a></li>
-          <? } ?>
-
-</ul>
+<? if (!$key) { $key_check = 'name'; } else { $key_check = $key; } ?>
+<li><a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>"><?=$place[$key_check]?><? if ($showaddress) {?><br /><span class="legend"><?=$place['physical_address']?>, <?=$city_state?> <? } ?></a></li>

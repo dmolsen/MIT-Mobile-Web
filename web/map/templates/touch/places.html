@@ -11,22 +11,20 @@ $page->content_begin();
 	</div>
 	
 	<ul class="results">
-		<? foreach($places as $place) { ?>
-         <? $insert = ''; ?>
-         <? if ($place['type'] == 'Parking Lot') { ?>
-            <? $insert = 'Parking Lot: '; ?>
-         <? } ?>
-         <li><a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>"><?=$insert?><?=$place['name']?></a></li>
-     <? } ?>
+		<? 
+			foreach($places as $place) {
+				include("items.html");
+			} 
+		?>
 	</ul>
 	
 	<div class="nonfocal">
 		<form action="" method="get">
 			<select name="category" onchange="this.parentNode.submit();">
 				<option value="" selected="selected">Browse map by:</option>
-                                <? foreach($category_info as $category => $info) { ?>
-  				    <option value="<?=$category?>"><?=$info[0]?></option>
-                                <? } ?>
+				<? foreach($category_info as $category => $info) { ?>
+					<option value="<?=$category?>"><?=$info[0]?></option>
+				<? } ?>
 			</select>
 		</form>
 	</div>

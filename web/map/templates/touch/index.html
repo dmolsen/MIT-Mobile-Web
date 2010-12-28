@@ -21,13 +21,9 @@ $page->content_begin();
 	</div>
 	
 	<ul class="nav">
-            <? foreach($categorys as $category => $title) { ?>
-    
-		<li>
-			<a href="<?=categoryURL($category)?>"><?=$title?></a>
-		</li>
-
-            <? } ?>
+		<? foreach ($categorys as $category => $title) { ?>
+			<li><a href="<?=categoryURL($category)?>"><?=$title?></a></li>
+		<? } ?>
 	</ul>
 	
 	<ul class="secondary">

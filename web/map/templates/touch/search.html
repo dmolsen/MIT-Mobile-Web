@@ -19,13 +19,12 @@ $page->content_begin();
 </div>
 
 <ul class="results">
-	<? foreach($results as $place) { ?>
-       <? $insert = ''; ?>
-       <? if ($place['type'] == 'Parking Lot') { ?>
-          <? $insert = 'Parking Lot: '; ?>
-       <? } ?>
-       <li><a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>"><?=$insert?><?=$place['name']?><br /><span class="legend"><?=$place['physical_address']?>, <?=$city_state?></a></li>
-   <? } ?>
+	<? 
+		$showaddress = true;
+		foreach ($results as $place) {
+			include("items.html");
+		} 
+	?> 
 </ul>
 
 <? $page->content_end(); ?>

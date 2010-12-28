@@ -6,15 +6,15 @@ $page->title($inst_name.' Campus Map: Directions to '.$inst_name)
 $page->content_begin();
 ?>
 	<ul class="focal">
-            <h2><?=$info->header?></h2>
+		<h2><?=$info->header?></h2>
 
-            <?=$info->html?>
+		<?=$info->html?>
 	</ul>
 
-        <? if($info->google_html) { ?>
-            <ul class="nav">
-	        <?=$info->google_html?>
-	    </ul>
-        <? } ?>
+	<? if($info->google_html) { ?>
+		<ul class="nav">
+			<?=$info->google_html?>
+		</ul>
+	<? } ?>
 	
 <? $page->content_end(); ?>
