@@ -5,21 +5,28 @@
 										
 	<? include("../templates/webkit/toolbar.html"); ?>
 	
-	<? $i = 1; ?>
-	<? $a_shown = false; ?>
-	<? $string_sep = 'A'; ?>
-	<ul class="edgetoedge results" role="listbox">
-		<? foreach($places as $place) { ?>
-			<? if (($a_shown == false) && (substr($place['name'],0,1) == 'A')) { ?>
-				<? $a_shown = true; $string_sep = 'A'; ?>
-				<li class="sep" role="separator">A</li>
-			<? } else if (substr($place['name'],0,1) != $string_sep) { ?>
-				<? $string_sep = substr($place['name'],0,1); ?>
-				<li class="sep" role="separator"><?=$string_sep?></li>
+	<? if (count($places) == 0) { ?>
+		<div class="focal">
+			There were no results returned for the drilldown option <strong><?=$_REQUEST['drilldown']?></strong>. Please use the back button
+			to choose another option.
+		</div>
+	<? } else { ?>
+		<? $i = 1; ?>
+		<? $a_shown = false; ?>
+		<? $string_sep = 'A'; ?>
+		<ul class="edgetoedge results" role="listbox">
+			<? foreach($places as $place) { ?>
+				<? if (($a_shown == false) && (substr($place['name'],0,1) == 'A')) { ?>
+					<? $a_shown = true; $string_sep = 'A'; ?>
+					<li class="sep" role="separator">A</li>
+				<? } else if (substr($place['name'],0,1) != $string_sep) { ?>
+					<? $string_sep = substr($place['name'],0,1); ?>
+					<li class="sep" role="separator"><?=$string_sep?></li>
+				<? } ?>
+				<? include("_li_item.html"); ?>
 			<? } ?>
-			<? include("_li_item.html"); ?>
-		<? } ?>
-	</ul>
+		</ul>
+	<? } ?>
 	
 	<? include("browse_category_form.html"); ?>
 

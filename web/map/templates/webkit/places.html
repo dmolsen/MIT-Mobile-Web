@@ -7,10 +7,6 @@
 	
 	<ul class="edgetoedge results" role="listbox">
 		<? foreach($places as $place) { ?>
-			<? $insert = ''; ?>
-			<? if ($place['type'] == 'Parking Lot') { ?>
-				<? $insert = 'Parking Lot: '; ?>
-			<? } ?>
 			<? include("_li_item.html"); ?>
 		<? } ?>
 	</ul>

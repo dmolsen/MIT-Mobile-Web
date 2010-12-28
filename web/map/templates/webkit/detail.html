@@ -3,9 +3,9 @@
 	<script type="text/javascript">
 		// set-up the session storage data for this item to be inserted if necessary
 		sessionStorage.mid = "<?=$_REQUEST['loc']?>";
-		sessionStorage.mname = "<?=$data[0]['name']?>";
-		sessionStorage.mlatitude = "<?=$data[0]['latitude']?>";
-		sessionStorage.mlongitude = "<?=$data[0]['longitude']?>";
+		sessionStorage.mname = "<?=$place['name']?>";
+		sessionStorage.mlatitude = "<?=$place['latitude']?>";
+		sessionStorage.mlongitude = "<?=$place['longitude']?>";
 	</script>
 	
 	<div class="toolbar">
@@ -18,22 +18,22 @@
 	</div>
 
   <? $break = true; ?>
-	<? $marker_type = ($data[0]['subtype'] != "") ? $marker_types[$data[0]['subtype']] : $marker_types[$data[0]['type']]; ?>
+	<? $marker_type = ($place['subtype'] != "") ? $marker_types[$place['subtype']] : $marker_types[$place['type']]; ?>
 
 	<div id="map-container" class="notransform">
 		<div id="map-info">
 			<div>	
 				<h2>
-					<?=$data[0]['name']?> <? if ($data[0]['code'] != '') { ?>(<?=$data[0]['code']?>)<? } ?>
-					<? if ($data[0]['wifi'] == 'Y') { ?>&nbsp;<img src="/themes/<?=$theme?>/webkit/images/wifi.png" alt="WiFi" /><? } ?>
+					<?=$place['name']?> <? if ($place['code'] != '') { ?>(<?=$place['code']?>)<? } ?>
+					<? if ($place['wifi'] == 'Y') { ?>&nbsp;<img src="/themes/<?=$theme?>/webkit/images/wifi.png" alt="WiFi" /><? } ?>
 				</h2>
 				<p class="address">
-					 <? if ($data[0]['campus'] != '') { ?>On the <?=$data[0]['campus']?> Campus<br /><? } ?>
-				   <? if ($parent == true) { ?>Located inside the <a href="<?=detailURL($parent_data[0]['id'],$parent_data[0]['latitude'],$parent_data[0]['longitude'])?>"><?=$parent_data[0]['name']?></a><? } else { ?><?=$data[0]['physical_address']?> <? } ?>
-				   <? if ($data[0]['hours'] != '') { ?><br />Open <?=str_replace('"','',$data[0]['hours'])?><? } ?>
-			     <? if ($data[0]['phone'] != '') { ?><br /><a href="tel:1<?=$data[0]['phone']?>" data-ga="/outgoing/map/detail/phone/"><?=$data[0]['phone']?></a><? $break = false; ?><? } ?>
-				   <? if ($data[0]['website'] != '') { ?><? if ($break == true) { ?><br /><? } else { ?> | <? } ?><a href="http://<?=$data[0]['website']?>" data-ga="/outgoing/map/detail/website/" target="_blank">Website</a><? $break = false; ?><? } ?>
-					 | <a  href="http://maps.google.com/maps?sll=<?=$data[0]['latitude']?>,<?=$data[0]['longitude']?>" data-ga="/outgoing/map/detail/directions/" target="_blank">Directions</a>
+					 <? if ($place['campus'] != '') { ?>On the <?=$place['campus']?> Campus<br /><? } ?>
+				   <? if ($parent == true) { ?>Located inside the <a href="<?=detailURL($parent_data['id'],$parent_data['latitude'],$parent_data['longitude'])?>"><?=$parent_data['name']?></a><? } else { ?><?=$place['physical_address']?> <? } ?>
+				   <? if ($place['hours'] != '') { ?><br />Open <?=str_replace('"','',$place['hours'])?><? } ?>
+			     <? if ($place['phone'] != '') { ?><br /><a href="tel:1<?=$place['phone']?>" data-ga="/outgoing/map/detail/phone/"><?=$place['phone']?></a><? $break = false; ?><? } ?>
+				   <? if ($place['website'] != '') { ?><? if ($break == true) { ?><br /><? } else { ?> | <? } ?><a href="http://<?=$place['website']?>" data-ga="/outgoing/map/detail/website/" target="_blank">Website</a><? $break = false; ?><? } ?>
+					 | <a  href="http://maps.google.com/maps?sll=<?=$place['latitude']?>,<?=$place['longitude']?>" data-ga="/outgoing/map/detail/directions/" target="_blank">Directions</a>
 				</p>
 			</div>
 		</div>
@@ -62,7 +62,7 @@
 				}
 				
 				// create the map
-				var latlng = new google.maps.LatLng(<?=$data[0]['latitude']?>,<?=$data[0]['longitude']?>);
+				var latlng = new google.maps.LatLng(<?=$place['latitude']?>,<?=$place['longitude']?>);
 				var myOptions = {
 					zoom: 16,
 					center: latlng,
@@ -75,7 +75,7 @@
 				// load the marker
 				var image = new google.maps.MarkerImage("/themes/<?=$theme?>/webkit/images/markers/<?=$marker_type?>.png",new google.maps.Size(32, 37));
 				var shadowi = new google.maps.MarkerImage("/themes/<?=$theme?>/webkit/images/markers/shadow.png",new google.maps.Size(51, 37));
-			  var myLatLng = new google.maps.LatLng(<?=$data[0]['latitude']?>,<?=$data[0]['longitude']?>);
+			  var myLatLng = new google.maps.LatLng(<?=$place['latitude']?>,<?=$place['longitude']?>);
 			  var beachMarker = new google.maps.Marker({
 			      position: myLatLng,
 			      map: map,
@@ -95,6 +95,5 @@
 		</script>
 	</div>
 </div>
-
 
 

@@ -1,12 +1,13 @@
 <? $page_title = "By Campus"; ?>
 <? $help_on = false; ?>
+<? $drilldowns = array("Downtown","Evansdale","Health Sciences"); ?>
 
 <div id="map-campus" class="clear-map-detail">
 	
 	<? include("../templates/webkit/toolbar.html"); ?>
 	
 	<ul class="edgetoedge results" role="listbox">
-		<? foreach(array("Downtown","Evansdale","Health Sciences") as $drilldown) { ?>
+		<? foreach($drilldowns as $drilldown) { ?>
 			<li class="arrow" role="option"><a href="<?=drillURL($drilldown)?>"><?=$drilldown?></a></li>
 		<? } ?>
 	</ul>
