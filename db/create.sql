@@ -1,5 +1,6 @@
-CREATE TABLE `mobilewebosp`.`Buildings1` (
+CREATE TABLE `mobilewebosp`.`Buildings` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
+  `uid` int(11) DEFAULT NULL,
   `code` varchar(255) DEFAULT NULL,
   `parent` int(11) DEFAULT NULL,
   `hours` varchar(255) DEFAULT NULL,
@@ -16,7 +17,7 @@ CREATE TABLE `mobilewebosp`.`Buildings1` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 
-CREATE TABLE `mobilewebosp`.`Pageviews_by_Device1` (
+CREATE TABLE `mobilewebosp`.`Pageviews_by_Device` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `count` int(11) DEFAULT NULL,
   `device` varchar(255) DEFAULT NULL,
@@ -24,7 +25,7 @@ CREATE TABLE `mobilewebosp`.`Pageviews_by_Device1` (
   PRIMARY KEY (`id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
-CREATE TABLE `mobilewebosp`.`Pageviews_by_Section1` (
+CREATE TABLE `mobilewebosp`.`Pageviews_by_Section` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `count` int(11) DEFAULT NULL,
   `section` varchar(255) DEFAULT NULL,
