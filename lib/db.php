@@ -25,6 +25,8 @@ class db {
 	
 	$this->connection = false;
 	
+	// the pdoSqlite function doesn't actually work at this point because it
+	// doesn't support SQLite3 which is what I had originally used
 	if ($db_use_sqlite) {
 		$dsn = array(
 		    'phptype'  => 'pdoSqlite',
