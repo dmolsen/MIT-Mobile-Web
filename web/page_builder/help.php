@@ -8,13 +8,13 @@
  * 
  */
 
-require "../page_builder/Page.php";
-require "../page_builder/counter.php";
-$phone = Device::templates();
-$page = Page::factory($phone);
-$prefix = $page->requirePrefix();
-
+require_once "../page_builder/Page.php";
+require_once "../page_builder/counter.php";
+require_once "../page_builder/detection.php";
 require_once "../../config.gen.inc.php";
+
+$prefix = Device::templates();
+$page = Page::factory($prefix);
 
 require "../templates/$prefix/help.html";
 
