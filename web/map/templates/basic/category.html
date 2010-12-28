@@ -1,26 +1,22 @@
 <?
-$page->title($inst_name." Campus Map: Browse by Building Code")
-     ->header($inst_name." Campus Map");
+	$page->title($inst_name." Campus Map: Browse by Building ".$title)
+	     ->header($inst_name." Campus Map");
 
+	$drilldowns = array("1-9", "A", "B", "C", "D", "E", "F", "G", "H", "I-K", "L", "M", "N-Q", "R", "S", "T-V", "W-Z");
 
-$drilldowns = array(
-  "1-9", "A", "B", "C",
-  "D", "E", "F", "G", "H", "I-K",
-  "L", "M", "N-Q", "R", "S",
-  "T-V", "W-Z"
-);
-
-$page->content_begin();
+	$page->content_begin();
 ?>
-	<h2>Buildings by Code</h2>
+
+<h2>Buildings by <?=$title?></h2>
+
+<p class="nav">
+    <? foreach($drilldowns as $drilldown) { ?>
+        <a href="<?=drillURL($drilldown)?>"><?=$drilldown?></a> &nbsp;
+    <? } ?>
+</p>
 	
-	<p class="nav">
-     <? foreach($drilldowns as $drilldown) { ?>
-         <a href="<?=drillURL($drilldown)?>"><?=$drilldown?></a> &nbsp;
-     <? } ?>
-	</p>
 <?
-$page->content_end();
-$page->nav_link("./","Campus Map Home");
+	$page->content_end();
+	$page->nav_link("./","Campus Map Home");
 ?>
 

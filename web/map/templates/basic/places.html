@@ -7,13 +7,12 @@ $page->content_begin();
 	<h2><?=$title?></h2>
 	
 	<p class="nav">
-     <? foreach($places as $place) { ?>
-         <? $insert = ''; ?>
-         <? if ($place['type'] == 'Parking Lot') { ?>
-            <? $insert = 'Parking Lot: '; ?>
-         <? } ?>
-         <a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>"><?=$insert?><?=$place['name']?></a><br/>
-     <? } ?>
+     <? 
+			$showaddress = false;
+			foreach ($places as $place) {
+	    	include("items.html");
+			}
+		?>
 	</p>
 <?
 $page->content_end();

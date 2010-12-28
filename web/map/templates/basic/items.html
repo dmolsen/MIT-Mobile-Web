@@ -1,5 +1,3 @@
-	<p class="focal results"> 
-          <? foreach($results as $place) { ?>
-              <a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>"><?=$place['name']?></a><br/>
-          <? } ?> 
-	 </p>
+<? if (!$key) { $key_check = 'name'; } else { $key_check = $key; } ?>
+<a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>"><?=$place[$key_check]?></a>
+<? if ($showaddress) { ?><span class="legend"><?=$place['physical_address']?>, <?=$city_state?></span><? } ?><br/>

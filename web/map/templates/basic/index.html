@@ -15,10 +15,10 @@ $page->content_begin();
 	</p>
 
 	<p class="nav">
-             1. Campus Map Home<br/>
-             <? $cnt = 2; foreach($categorys as $category => $title) { ?>
-	        <a href="<?=categoryURL($category)?>" accesskey="<?=$cnt?>"><?=$cnt?>. <?=$title?></a><br/>
-             <? $cnt++; } ?>
+		1. Campus Map Home<br/>
+		<? $cnt = 2; foreach($categorys as $category => $title) { ?>
+			<a href="<?=categoryURL($category)?>" accesskey="<?=$cnt?>"><?=$cnt?>. <?=$title?></a><br/>
+		<? $cnt++; } ?>
 	</p>
 <?
 $page->content_end();

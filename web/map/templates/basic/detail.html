@@ -1,44 +1,44 @@
 <?
-$page->title($inst_name." Campus Map: Details")
-     ->header($inst_name." Campus Map");
+	$page->title($inst_name." Campus Map: Details")
+	     ->header($inst_name." Campus Map");
 
-function tabs() {
-  $html = array();
-  foreach(array("Map") as $aTab) {
-    if($url = selfURL($aTab)) {
-      if(tab() == $aTab) {
-        $html[] = '<span class="active">' . $aTab . '</span>';
-      } else {
-        $html[] = "<a href=\"$url\">$aTab</a>";
-      }
-    }
-  }
-  return implode("&nbsp;|&nbsp;", $html);
-}
+	function tabs() {
+	  $html = array();
+	  foreach(array("Map") as $aTab) {
+	    if($url = selfURL($aTab)) {
+	      if(tab() == $aTab) {
+	        $html[] = '<span class="active">' . $aTab . '</span>';
+	      } else {
+	        $html[] = "<a href=\"$url\">$aTab</a>";
+	      }
+	    }
+	  }
+	  return implode("&nbsp;|&nbsp;", $html);
+	}
 
-$page->content_begin();
+	$page->content_begin();
 ?>
 
 	<div class="focal">
 
-		<h2><?=$data[0]['name']?> <? if ($data[0]['code'] != '') { ?>(<?=$data[0]['code']?>)<? } ?> <img src="/themes/<?=$theme?>/basic/images/markers/marker-<?=marker_type($data[0]['type'])?>.png" height="24" width="14" alt="Marker" /></h2>
+		<h2><?=$place['name']?> <? if ($place['code'] != '') { ?>(<?=$place['code']?>)<? } ?> <img src="/themes/<?=$theme?>/webkit/images/markers/<?=$marker_types[$place['type']]?>_tn.png" height="20" width="20" alt="Marker" /></h2>
 		
     <? if($tab == "Map") { ?>
   		<p>
-				<? if ($data[0]['campus'] != '') { ?>On the <?=$data[0]['campus']?> Campus<br /><? } ?>
-				<? if ($parent == true) { ?>Located inside the <a href="<?=detailURL($parent_data[0]['id'],$parent_data[0]['latitude'],$parent_data[0]['longitude'])?>"><?=$parent_data[0]['name']?></a><? } else { ?><?=$data[0]['physical_address']?> <? } ?>
-				<? if ($data[0]['hours'] != '') { ?><br />Open <?=str_replace('"','',$data[0]['hours'])?><? } ?>
-				<? if ($data[0]['phone'] != '') { ?><br /><a href="tel:1<?=$data[0]['phone']?>"><?=$data[0]['phone']?></a><? $break = false; ?><? } ?>
-				<? if ($data[0]['website'] != '') { ?><? if ($break == true) { ?><br /><? } else { ?> | <? } ?><a href="http://<?=$data[0]['website']?>">website</a><? } ?>
-				<? if ($data[0]['wifi'] != '') { ?><br />Has WiFi<? } ?>
+				<? if ($place['campus'] != '') { ?>On the <?=$place['campus']?> Campus<br /><? } ?>
+				<? if ($parent == true) { ?>Located inside the <a href="<?=detailURL($parent_data['id'],$parent_data['latitude'],$parent_data['longitude'])?>"><?=$parent_data['name']?></a><? } else { ?><?=$place['physical_address']?> <? } ?>
+				<? if ($place['hours'] != '') { ?><br />Open <?=str_replace('"','',$place['hours'])?><? } ?>
+				<? if ($place['phone'] != '') { ?><br /><a href="tel:1<?=$place['phone']?>"><?=$place['phone']?></a><? $break = false; ?><? } ?>
+				<? if ($place['website'] != '') { ?><? if ($break == true) { ?><br /><? } else { ?> | <? } ?><a href="http://<?=$place['website']?>">website</a><? } ?>
+				<? if ($place['wifi'] != '') { ?><br />Has WiFi<? } ?>
 				</p>
     <? } ?>
 
-		<p class="tabs"><?=$tabs_html?> <? if (($data[0]['latitude'] != $_REQUEST['lat']) || ($data[0]['longitude'] != $_REQUEST['long'])) { ?><span class="legend">(<a href="<?=detailURL($data[0]['id'],$data[0]['latitude'],$data[0]['longitude'])?>">reset</a>)</span><? } ?></p>	
+		<p class="tabs"><?=$tabs_html?> <? if (($place['latitude'] != $_REQUEST['lat']) || ($place['longitude'] != $_REQUEST['long'])) { ?><span class="legend">(<a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>">reset</a>)</span><? } ?></p>	
 
     <p class="image">
 			  <a name="map"> </a>
-			  <img src="<?=imageURL($phone)?>" width="<?=$width?>" height="<?=$height?>" alt="Map" />
+			  <img src="<?=imageURL($prefix)?>" width="<?=$width?>" height="<?=$height?>" alt="Map" />
 		</p>
 		<p>
 			  <!-- Note to devs: These links, like the image URL above, will need to be calculated on the server at page compile time and hard-coded into the HTML delivered to the browser -->

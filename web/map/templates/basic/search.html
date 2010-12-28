@@ -14,18 +14,17 @@ $page->content_begin();
 </p>
 </form>
 
-<p><?=count($results)?> matches found</p>
+<p><?=count($results)?> matches found:</p>
 <p class="focal results"> 
-        <? foreach($results as $place) { ?>
-            <? $insert = ''; ?>
-            <? if ($place['type'] == 'Parking Lot') { ?>
-               <? $insert = "Parking Lot: "; ?>
-            <? } ?>
-            <a href="<?=detailURL($place['id'],$place['latitude'],$place['longitude'])?>"><?=$insert?><?=$place['name']?></a> <span class="legend"><?=$place['physical_address']?>, Morgantown, WV</span><br/>
-        <? } ?> 
+	<? 
+		$showaddress = true;
+		foreach($results as $place) {
+    	include("items.html");
+		}
+	?>
 </p>
 
 <?
-$page->content_end();
-$page->nav_link('./', "Campus Map Home");
+	$page->content_end();
+	$page->nav_link('./', "Campus Map Home");
 ?>
