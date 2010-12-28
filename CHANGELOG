@@ -6,7 +6,7 @@ MOBI-v2.5.0 (IN PROGRESS)
  - THIS IS SIMPLY AN UPDATE TO KEEP TRACK OF MY PROGRESS
  - FIX: device detection is now it's own class
  - FIX: internal stats have been tweaked to make it easier to add new sections & more granular reports on devices
- - FIX: google analytics now works with jqtouch better.
+ - FIX: google analytics now works with jqtouch better
  - FIX: weather section has been updated to work with the 2.x file structure
  - FIX: <?php tags have been added to the beginning of php files per php.ini recommendation
  - FIX: example vhost has been updated to properly restrict access to sensitive files
@@ -16,13 +16,20 @@ MOBI-v2.5.0 (IN PROGRESS)
  - FIX: when no results are returned from the map search a "no results" message is shown
  - FIX: requirements page has been updated to reflect 2010 devices
  - FIX: small bug with displaying dates in calendar favorites
+ - FIX: upgraded map basic templates to use Google Static Maps v2 including custom icons based on WebKit template markers
+ - FIX: upgraded map touch templates to use Google Maps v3 so that no API key is required
  - ADD: mysql support has been added via support for MDB2. other databases like postgres and mssql should also be supported
- - ADD: a quick set-up system. refer to the INSTALL file.
+ - ADD: a quick set-up system. refer to the INSTALL file
  - ADD: info.yml files for each section to provide basic information
  - ADD: rss feeds cached thanks to simple-rss support
  - ADD: an include file in emergency for showing the same emergency message across all three templates
  - ADD: better accessibility support for the webkit templates by utilizing ARIA roles & focus() on pageAnimationEnd
  - ADD: device detection api so 3rd party campus services can use mobi as a central mobile classification system
+ - ADD: minifier now automatically discovers javascript to include so it doesn't require configuration
+ - ADD: general adapter class for figuring out if modules support adapters
+ - ADD: calendar adapter class so the calendar module is easier to customize from a data source perspective
+ - ADD: map adapter class so the map module is easier to customize from a data source perspective
+ - ADD: the local map adapter now allows for a unique identifier field for matching up locations to their parent locations more easily
  - THX: thanks to robin8 for all the great feedback & diffs for the fixes
  - THX: thanks to dlmulder for the feedback on the accessibility support
 
