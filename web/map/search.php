@@ -15,30 +15,21 @@ require_once "data/data.inc.php";
 // records stats
 require_once "../page_builder/page_header.php";
 
+// sets up adapter class
+$adapter = ModuleAdapter::find();
+require_once "adapters/".$adapter."/adapter.php";
+
 // libs
 require_once "lib/map.lib.inc.php";
 
-if($search_terms = $_REQUEST['filter']) {
-  $results = map_search($search_terms);
-  $total = count($results);
-  if(count($results) == 1) {
-    header("Location: " . detailURL($results[0]['id'],$results[0]['latitude'],$results[0]['longitude']));
-  } else {
-    require "templates/$prefix/search.html";
-    $page->output();
-  }
+$results = MapAdapter::searchPlaces($_REQUEST['filter']);
+$total = count($results);
+if(count($results) == 1) {
+	$result = $results[0];
+	header("Location: " . detailURL($result['id'],$result['latitude'],$result['longitude']));
 } else {
-  header("Location: ./");
+	require "templates/$prefix/search.html";
+	$page->output();
 }
 
-function map_search($terms) {
-  $db = new db;
-  $db->connection->setFetchMode(MDB2_FETCHMODE_ASSOC);
-  $sql = "SELECT * FROM Buildings WHERE (name LIKE '%".$terms."%' OR physical_address LIKE '%".$terms."%' OR code LIKE '%".$terms."%') and (type != 'Parking Lot' AND type != 'Public Parking') GROUP BY name ORDER BY name ASC";
-  $stmt = $db->connection->prepare($sql);
-  $result = $stmt->execute();
-  $results = $result->fetchAll();
-  return $results;
-}
-    
 ?>

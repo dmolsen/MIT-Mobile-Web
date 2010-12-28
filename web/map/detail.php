@@ -15,6 +15,10 @@ require_once "data/data.inc.php";
 // records stats
 require_once "../page_builder/page_header.php";
 
+// sets up adapter class
+$adapter = ModuleAdapter::find();
+require_once "adapters/".$adapter."/adapter.php";
+
 // libs
 require_once "lib/map.lib.inc.php";
 
@@ -24,54 +28,53 @@ define('LONG', $longitude);
 define('MAPTYPE', "roadmap");
 define('MOBILEMAP',$mobilemap);
 
-switch($phone) {
- case "sp":
-  define('INIT_FACTOR', 3);
-  break;
+// tabs are only "used" on the basic template and not really then either
+$tabs = new Tabs(selfURL(), "tab", array("Map"));
+$tabs_html = $tabs->html();
+$tab = $tabs->active();
 
- case "fp":
-  define('INIT_FACTOR', 2);
-  break;
+$tab = tab();
+$width = pix("x", $prefix);
+$height = pix("y", $prefix);
+
+if ($_REQUEST['loc']) { 
+	$places = MapAdapter::getPlace($_REQUEST['loc']);
+	$place = $places[0];
 }
 
-
-function determine_type() {
-  $types = array(
-    "G"  => "Courtyards",
-    "P"  => "Parking",
-    "L"  => "Landmarks"
-  );
-
-  if(preg_match("/^(P|G|L)\d+/", select_value(), $match)) {
-    return array("type" => $types[ $match[1] ], "field" => "Loc_ID");
-  } else {
-    return array("type" => "Buildings", "field" => "facility");
-  }
+$parent = false;
+if ($place['parent'] != '') {
+	$places = MapAdapter::getParent($place['parent']);
+	$parent_data = $places[0];
+	$parent = true;
 }
 
-function isID($id) {
-  preg_match("/^([A-Z]*)/", $id, $match);
-  return $match[0];
-}
+require "templates/$prefix/detail.html";
 
-function pix($label, $phone) {
+$page->output();
+
+###################################################################################
+### The functions to get place detail to work, primarily for the basic template
+###################################################################################
+
+function pix($label, $prefix) {
   //set the resolution
   $resolution = array(
     "basic" => array("220", "160")
   );
   $labels = array("x" => 0, "y" => 1);
-  return $resolution[$phone][ $labels[$label] ];
+  return $resolution[$prefix][$labels[$label]];
 } 
 
 function mapURL() {
-  return "http://maps.google.com/staticmap";
+  return "http://maps.google.com/maps/api/staticmap";
 }
 
-function imageURL($phone) {
+function imageURL($prefix) {
 
   $query = array(
     "maptype"      => mapType(),
-    "size"         => pix("x", $phone).'x'.pix("y", $phone),
+    "size"         => pix("x", $prefix).'x'.pix("y", $prefix),
     "center"       => lat().",".long(),
     "zoom"         => zoom(),
     "sensor"       => "false",
@@ -79,7 +82,7 @@ function imageURL($phone) {
     "mobile"	   => MOBILEMAP
   );
 
-  return mapURL() . '?' . http_build_query($query);
+  return mapURL() . '?' . urldecode(http_build_query($query));
 }
 
 function maptype() {
@@ -102,24 +105,24 @@ function tab() {
   return isset($_REQUEST['tab']) ? $_REQUEST['tab'] : "Map";
 }
 
-# function marker_type() now being defined in data/data.inc.php since it's configurable
-
 function marker() {	
   
+  global $mobile_web_addy, $theme, $marker_types;
+
   if ((int)$_REQUEST['loc'] != 0) {
     
-	$db = new db;
-	$stmt =& $db->connection->prepare("SELECT * FROM Buildings WHERE id = ".$_REQUEST['loc']);
-    $result = $stmt->execute();
-	$data = $result->fetchAll();
+	$places = MapAdapter::getPlace($_REQUEST['loc']);
+	$place = $places[0];
 	
-	$lat = $data[0]['latitude'];
-	$long = $data[0]['longitude'];
-	$marker = marker_type($data[0]['type']);
-	return $lat.",".$long.",".$marker;
+	$lat = $place['latitude'];
+	$long = $place['longitude'];
+	#$icon = "icon:http://".$mobile_web_addy."/themes/".$theme."/webkit/images/markers/".$marker_types[$place['type']].".png";
+	$icon = "icon:http://".$mobile_web_addy."/map/templates/webkit/images/markers/".$marker_types[$place['type']].".png";
+	return $icon."|".$lat.",".$long;
   }
   else if ($_REQUEST['all']) {
 	
+	// WTF does this do?
 	$db = new db;
 	$stmt =& $db->connection->prepare("SELECT * FROM Buildings WHERE type = ".$_REQUEST['all']);
 	$result = $stmt->execute();
@@ -194,48 +197,5 @@ function moveURL($long, $lat, $zoom, $maptype) {
   );
   return "detail.php?" . http_build_query($params);
 }
-
-$tabs = new Tabs(selfURL(), "tab", array("Map"));
-$tabs_html = $tabs->html();
-$tab = $tabs->active();
-
-$tab = tab();
-$width = pix("x", $phone);
-$height = pix("y", $phone);
-
-$parent = false;
-
-if ($_REQUEST['loc']) { 
-	$db = new db;
-	$db->connection->setFetchMode(MDB2_FETCHMODE_ASSOC);
-	$stmt =& $db->connection->prepare("SELECT * FROM Buildings WHERE id = ".$_REQUEST['loc']);
-	$result = $stmt->execute();
-	$data = $result->fetchAll();
-}
-
-if ($data[0]['parent'] != '') {
-	$db = new db;
-	$db->connection->setFetchMode(MDB2_FETCHMODE_ASSOC);
-	$stmt_1 =& $db->connection->prepare("SELECT * FROM Buildings WHERE id = ".$data[0]['parent']);
-	$result_1 = $stmt_1->execute();
-	$parent_data = $result_1->fetchAll();
-	$parent = true;
-}
-
-/**
- * this function makes the street address
- * more readable by google maps
- */
-function cleanStreet($data) {    
-  // remove things such as '(rear)' at the end of an address
-  $street = preg_replace('/\(.*?\)$/', '', $data['street']);
-
-  //remove 'Access Via' that appears at the begginning of some addresses
-  return preg_replace('/^access\s+via\s+/i', '', $street);
-} 
-
-require "templates/$prefix/detail.html";
-
-$page->output();
 
 ?>
