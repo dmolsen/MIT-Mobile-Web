@@ -1,0 +1,37 @@
+<?
+
+	// a template for web/search/ feature hence why it's totally different than all others
+	
+	$html .= "<div class='nonfocal'><strong>Campus Map Results</strong></div>";
+	$html .= "<p class='focal results'>";
+
+	if ($total == 0) {
+		$html .= "No results returned.";
+	} else {
+		$i = 0;
+		if ($total > 3) {
+			while ($i < 3) {
+				$place = $results[$i];
+				ob_start();
+				include("../map/templates/$prefix/items.html");
+				$html .= ob_get_contents();
+				ob_end_clean();
+				$i++;
+			}
+			$more = $total - 3;
+			$html .= "<a href='/map/search.php?filter=".$filter."'>".$more." more results...</a><br />";
+		} else {
+			while ($i < $total) {
+				$place = $results[$i];
+				ob_start();
+				include("../map/templates/$prefix/items.html");
+				$html .= ob_get_contents();
+				ob_end_clean();
+				$i++;
+			}
+		}
+	}
+
+	$html .= "</p>";
+	
+?>

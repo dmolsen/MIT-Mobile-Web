@@ -1,0 +1,36 @@
+<?
+
+	// a template for web/search/ feature hence why it's totally different than all others
+	
+	$html .= "<li class='sep'>Campus Map Results</li>";
+
+	if ($total == 0) {
+		$html .= "<li class='arrow' role='option'>No results returned.</li>";
+	} else {
+		$i = 0;
+		if ($total > 3) {
+			while ($i < 3) {
+				$place = $results[$i];
+				ob_start();
+				include("../map/templates/$prefix/_li_item.html");
+				$html .= ob_get_contents();
+				ob_end_clean();
+				$i++;
+			}
+			$more = $total - 3;
+			$html .= "<li class='arrow' role='option'><a href='".detailURL($place['id'],$place['latitude'],$place['longitude'])."'>More results...</a></li>";
+		} else {
+			while ($i < $total) {
+				$place = $results[$i];
+				ob_start();
+				include("../map/templates/$prefix/_li_item.html");
+				$html .= ob_get_contents();
+				ob_end_clean();
+				$i++;
+			}
+		}
+	}
+
+	$html .= "</p>";
+	
+?>

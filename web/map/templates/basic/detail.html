@@ -26,7 +26,7 @@
     <? if($tab == "Map") { ?>
   		<p>
 				<? if ($place['campus'] != '') { ?>On the <?=$place['campus']?> Campus<br /><? } ?>
-				<? if ($parent == true) { ?>Located inside the <a href="<?=detailURL($parent_data['id'],$parent_data['latitude'],$parent_data['longitude'])?>"><?=$parent_data['name']?></a><? } else { ?><?=$place['physical_address']?> <? } ?>
+				<? if ($parent == true) { ?>Located inside the <a href="<?=detailURL($parent_data['id'],$parent_data['latitude'],$parent_data['longitude'])?>"><?=$parent_data['name']?></a><br /><?=$place['physical_address']?><? } else { ?><?=$place['physical_address']?> <? } ?>
 				<? if ($place['hours'] != '') { ?><br />Open <?=str_replace('"','',$place['hours'])?><? } ?>
 				<? if ($place['phone'] != '') { ?><br /><a href="tel:1<?=$place['phone']?>"><?=$place['phone']?></a><? $break = false; ?><? } ?>
 				<? if ($place['website'] != '') { ?><? if ($break == true) { ?><br /><? } else { ?> | <? } ?><a href="http://<?=$place['website']?>">website</a><? } ?>
