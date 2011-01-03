@@ -1,0 +1,26 @@
+<?
+$page->title($inst_name.' Search')
+     ->header($inst_name.' Search');
+
+$page->content_begin();
+?>
+
+<form method="get" action="/federated/">
+
+<p>
+	<strong>Search:</strong><br/>
+	<span class="inputcombo emphasized">
+		<input class="forminput" type="text" id="filter" name="filter" <? if (isset($filter)) { ?>value="<?=$filter?>"<? } ?>/>
+		<input class="combobutton" name="sch_btn" id="sch_btn" type="submit" value="Search" />
+	</span>	
+</p>
+
+<? 
+	if (isset($filter)) {
+		echo($html);
+	}
+?>
+
+<?
+	$page->content_end();
+?>

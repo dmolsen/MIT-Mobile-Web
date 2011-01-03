@@ -1,0 +1,24 @@
+<?
+$page->title($inst_name.' Search')
+     ->navbar_image('title-search')
+     ->breadcrumbs('Search');
+
+$page->content_begin(); 
+?>
+
+<div class="nonfocal">
+	<form method="get" action="/federated/">
+		<fieldset class="inputcombo">
+			<input class="forminput" type="text" id="filter" name="filter" placeholder="Search the campus map" <? if (isset($filter)) { ?> value="<?=$filter?>" <? } ?> />
+			<input class="combobutton" id="sch_btn" src="/themes/<?=$theme?>/touch/images/search-button.png" type="image" />
+		</fieldset>	
+	</form>
+</div>
+
+<? 
+	if (isset($filter)) {
+		echo($html);
+	}
+?>
+
+<? $page->content_end(); ?>

@@ -1,0 +1,29 @@
+<? $page_title = $inst_name." Search"; ?>
+<? $help_on = true; ?>
+
+<div id="federated" class="clear-map-detail">
+	
+	<? include("../templates/webkit/toolbar.html"); ?>
+	
+	<div class="formcontainer">
+		<form method="get" action="/federated/">
+			<fieldset class="inputcombo">
+				<input class="forminput" type="text" id="filter" name="filter" placeholder="Search the campus map" <? if (isset($filter)) { ?> value="<?=$filter?>" <? } ?> />
+				<a style="margin:0;" href="#" class="submit"><img class="combobutton" id="sch_btn" src="/themes/<?=$theme?>/webkit/images/search-button.png" /></a>
+			</fieldset>	
+		</form>
+	</div>
+
+	<? if (isset($filter)) { ?>
+		<ul class="edgetoedge" role="listbox">
+			<?=$html?>
+		</ul>
+	<? } else { ?>
+		<div class="focal">
+			You can search across all of the mobile data we present on this site from this one form.
+		</div>
+	<? } ?>
+
+	<? include("../templates/webkit/info.html"); ?>
+
+</div>
