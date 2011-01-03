@@ -13,6 +13,9 @@
 /* Technical Info */
 $install_path      = "/path/to/install/";         # the directory mobile web has been installed in, trailing slash is required
 $ga_code		   = "";			  			  # Google Analytics Code, highly highly highly recommended
+$minifier_support  = false;						  # minifier support for css & js files. only set to true when you go to production mode
+$min_cache_support = true;						  # cache support for the minifier. will only work if $minifier_support is set to true
+$fed_cache_support = true;						  # cache support for the federated search. only caches the modules that support federated search and NOT results
 
 /* MySQL Config Info */
 $db_type           = 'mysqli';					  # can be any database that MDB2 supports (e.g. pgsql)
