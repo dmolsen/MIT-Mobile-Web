@@ -10,35 +10,50 @@
 	<? if ($ga_code != '') { ?>
 		<!-- Google Analytics Initializer -->
 		<script type="text/javascript">
-		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+
+		  var _gaq = _gaq || [];
+		  _gaq.push(['_setAccount', '<?=$ga_code?>']);
+		  _gaq.push(['_trackPageview']);
+
+		  (function() {
+		    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+		    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+		    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		  })();
+
 		</script>
-		<script type="text/javascript">
-		try {
-		  var pageTracker = _gat._getTracker("<?=$ga_code?>");
-		  pageTracker._trackPageview();
-		} catch(err) {}</script>
 	<? } ?>
 	
-	<!-- 
-		minified jQuery, jQTouch, JS and CSS calls for performance/production
-		<script src="/templates/webkit/javascripts/jqtouch/jquery.1.4.min.js" type="text/javascript" charset="utf-8"></script>
+	<? if ($minifier_support) { ?>
+		<!-- minified jQuery, jQTouch, JS and CSS calls for performance/production -->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js" type="text/javascript" charset="utf-8"></script>
 		<script src="/min/?g=js" type="text/javascript" charset="utf-8"></script>
 		<link rel="stylesheet" href="/min/?g=css" type="text/css" media="screen" title="no title" charset="utf-8">
-	-->
-	
-	<!-- non-minified jQTouch, JS and CSS calls for testing	-->
-	<script src="/templates/webkit/javascripts/jqtouch/jquery.1.4.min.js" type="text/javascript" charset="utf-8"></script>
-	<script src="/templates/webkit/javascripts/jqtouch/jqtouch.js" type="text/javascript" charset="utf-8"></script>
-	<script src="/templates/webkit/javascripts/db.init.js" type="text/javascript" charset="utf-8"></script>
-	<script src="/templates/webkit/javascripts/ga.init.js" type="text/javascript" charset="utf-8"></script>
-	<script src="/templates/webkit/javascripts/aria.init.js" type="text/javascript" charset="utf-8"></script>
-	<script src="/calendar/templates/webkit/javascripts/calendar.init.js" type="text/javascript" charset="utf-8"></script>
-	<script src="/people/templates/webkit/javascripts/people.init.js" type="text/javascript" charset="utf-8"></script>
-	<script src="/map/templates/webkit/javascripts/map.init.js" type="text/javascript"></script>
-	<link rel="stylesheet" href="/templates/webkit/javascripts/jqtouch/jqtouch.css" type="text/css" media="screen" title="no title" charset="utf-8">
-	<link rel="stylesheet" href="/themes/<?=$theme?>/webkit/stylesheets/theme.css" type="text/css" media="screen" title="no title" charset="utf-8">
-  <link rel="stylesheet" href="/themes/<?=$theme?>/webkit/stylesheets/extra.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<? } else { ?>
+		<!-- non-minified jQTouch, JS and CSS calls for testing	-->
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/templates/webkit/javascripts/jqtouch/jqtouch.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/templates/webkit/javascripts/db.init.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/templates/webkit/javascripts/ga.init.js" type="text/javascript" charset="utf-8"></script>
+		<script src="/templates/webkit/javascripts/aria.init.js" type="text/javascript" charset="utf-8"></script>
+		<?
+			// dynamically include module specific JS init files. yes, performance hit but the minifier
+			// should be turned on in production for best performance
+			$base_dir = getcwd()."/../";
+			$files = scandir($base_dir);
+			foreach ($files as $file) {
+				if (is_dir($base_dir.$file)) {
+					$js_file = $base_dir.$file."/templates/webkit/javascripts/".$file.".init.js";
+					if (file_exists($js_file)) {
+						echo("<script src=\"/".$file."/templates/webkit/javascripts/".$file.".init.js\" type=\"text/javascript\" charset=\"utf-8\"></script>");
+					}
+				}
+			}
+		?>
+		<link rel="stylesheet" href="/templates/webkit/javascripts/jqtouch/jqtouch.css" type="text/css" media="screen" title="no title" charset="utf-8">
+		<link rel="stylesheet" href="/themes/<?=$theme?>/webkit/stylesheets/theme.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	  <link rel="stylesheet" href="/themes/<?=$theme?>/webkit/stylesheets/extra.css" type="text/css" media="screen" title="no title" charset="utf-8">
+	<? } ?>
 
 	<!-- jQTouch initializer -->
 	<script type="text/javascript">
@@ -94,15 +109,24 @@
 
 <div id="jqt">
 	<div id="home">
-	
 		<div class="toolbar" style="vertical-align: middle;">
 			<img src="/themes/<?=$theme?>/webkit/images/logo.png" border="0" alt="School Logo" style="margin-left: 50px; margin-top: -1px"/>
 			<h1 style="padding-left: 15px;"><span class="thick"><?= $inst_name ?></span><span class="thin">MobileWeb</span></h1>
+		</div>
+		
+		<div class="formcontainer">
+			<form method="get" action="/federated/">
+				<fieldset class="inputcombo">
+					<input class="forminput" type="text" id="filter" name="filter" placeholder="Search <?= $inst_name ?> Mobile" />
+					<a style="margin:0;" href="#" class="submit"><img class="combobutton" id="sch_btn" src="/themes/<?=$theme?>/webkit/images/search-button.png" /></a>
+				</fieldset>	
+			</form>
 		</div>
 
 		<div>
 			<div>
 			  <table cellpadding="0" cellspacing="0" border="0" id="homegrid" role="navigation">
+				  
 					<? 
 						$i = 0; $k = 0; $j = count($wk_items);
 				  	foreach ($wk_items as $item) {
