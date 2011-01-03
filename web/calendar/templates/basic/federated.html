@@ -1,0 +1,37 @@
+<?
+
+	// a template for web/search/ feature hence why it's totally different than all others
+	
+	$html .= "<div class='nonfocal'><strong>Calendar Results</strong></div>";
+	#$html .= "<p class='focal results'>";
+
+	if ($total == 0) {
+		$html .= "No results returned.";
+	} else {
+		$i = 0;
+		if ($total > 3) {
+			while ($i < 3) {
+				$event = $results[$i];
+				ob_start();
+				include("../calendar/templates/$prefix/p_item.html");
+				$html .= ob_get_contents();
+				ob_end_clean();
+				$i++;
+			}
+			$more = $total - 3;
+			$html .= "<a href='/calendar/search.php?&timeframe=3filter=".$filter."'>".$more." more results...</a><br />";
+		} else {
+			while ($i < $total) {
+				$event = $results[$i];
+				ob_start();
+				include("../calendar/templates/$prefix/items.html");
+				$html .= ob_get_contents();
+				ob_end_clean();
+				$i++;
+			}
+		}
+	}
+
+	#$html .= "</p>";
+	
+?>
