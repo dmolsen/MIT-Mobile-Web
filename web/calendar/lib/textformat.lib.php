@@ -21,12 +21,7 @@ function categorysURL() {
   return "/calendar/categorys.php";
 }
 
-function categoryURL($category) {
-  $id = is_array($category) ? $category['catid'] : $category->catid;
-  return "/calendar/category.php?id=$id";
-}
-
-function detailURL($id,$calid='all') {
+function detailCalURL($id,$calid='all') {
   if (($calid == '') || ($calid == NULL)) {
 	$calid = 'all';
   }
