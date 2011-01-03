@@ -1,5 +1,5 @@
 <li class="arrow wrap" role="option">
-	<a href="<?=detailURL($event['id'],$_REQUEST['id'])?>" class="noellipsis"><?=$event['title']?>
+	<a href="<?=detailCalURL($event['id'],$_REQUEST['id'])?>" class="noellipsis"><?=$event['title']?>
 		<p class="smallprint" style="margin-top: 5px;">
 			<? if(trim($event['where']) != '') { ?><?=$event['where']?><br /><? } ?><?=$event['datefull']?><? if ($event['timefull']) { echo($event['timefull']);}?>
 		</p>
