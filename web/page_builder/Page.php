@@ -33,6 +33,11 @@ class Page {
 	return new $type();
   }
 
+  public static function getSection($request_uri) {
+	preg_match('/\/((\w|\-)+)\/[^\/]*?$/', $request_uri, $match);
+	$section = $match[1];
+  }
+
   public function cache() {
     header("Cache-Control: max-age=86400");
     return $this;
