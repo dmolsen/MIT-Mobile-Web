@@ -107,7 +107,7 @@ function tab() {
 
 function marker() {	
   
-  global $mobile_web_addy, $theme, $marker_types;
+  global $mobile_web_addy, $theme;
 
   if ((int)$_REQUEST['loc'] != 0) {
     
@@ -116,8 +116,7 @@ function marker() {
 	
 	$lat = $place['latitude'];
 	$long = $place['longitude'];
-	#$icon = "icon:http://".$mobile_web_addy."/themes/".$theme."/webkit/images/markers/".$marker_types[$place['type']].".png";
-	$icon = "icon:http://".$mobile_web_addy."/map/templates/webkit/images/markers/".$marker_types[$place['type']].".png";
+	$icon = "icon:http://".$mobile_web_addy."/map/templates/webkit/images/markers/".$place['marker'].".png";
 	return $icon."|".$lat.",".$long;
   }
   else if ($_REQUEST['all']) {
