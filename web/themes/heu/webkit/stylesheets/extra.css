@@ -60,6 +60,20 @@
 	-webkit-animation-name: slideinfromleft; 
 }
 
+/* Animation */
+#jqt .flipout.in {
+	-webkit-animation-name: flipinfromright;
+}
+#jqt .flipout.out {
+	-webkit-animation-name: flipouttoright;
+}
+#jqt .flipout.in.reverse {
+	-webkit-animation-name: flipinfromleft;
+}
+#jqt .flipout.out.reverse {
+	-webkit-animation-name: flipouttoleft;
+}
+
 /* Home Toolbar Style */
 #jqt .toolbar > h1 {
 	font-family: "Helvetica Neue", Helvetica;
@@ -430,6 +444,25 @@ li span.yellow { color: #fc0; font-size: 1.4em;}
 	padding: 0 0 3px 8px;
 }
 
+#map-info > .map-panel-title {
+	position: absolute;
+	width: 320px;
+	height: 40px;
+	top: 0px;
+	left: 0px;
+	background-color: rgb(0,0,0); 
+}
+
+#map-info > .map-panel-info {
+	position: absolute;
+	width: 280px;
+	top: 60px;
+	left: 20px;
+	background-color: rgb(0,0,0); 
+	-webkit-border-radius: 8px;
+	overflow: hidden;
+}
+
 #map-info > div > h2 {
 	color: #fc0; 
 	margin: 0; 
@@ -445,6 +478,14 @@ li span.yellow { color: #fc0; font-size: 1.4em;}
 
 #map-info > div > p > a {
 	color: white;
+}
+
+.map-panel-info-toggle {
+	float: right;
+	margin-right: 10px;
+	height: 29 !important;
+	width: 26;
+	background: url(../images/action-external.png) no-repeat 96%, #fff; 
 }
 
 /* YOUTUBE */
