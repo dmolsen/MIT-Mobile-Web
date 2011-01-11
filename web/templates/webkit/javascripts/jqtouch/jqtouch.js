@@ -64,7 +64,7 @@ var backHref = ''; // trying to track back links properly
                 dissolveSelector: '.dissolve',
                 fadeSelector: '.fade',
                 fixedViewport: true,
-                flipSelector: '.flip',
+                flipSelector: '.flip, .home',
                 formSelector: 'form',
                 fullScreen: true,
                 fullScreenClass: 'fullscreen',
@@ -446,6 +446,12 @@ var backHref = ''; // trying to track back links properly
             var settings = $.extend({}, defaults, options);
 
             if (href != '#') {
+				// add an internal link tracker to avoid redirects because of deep link tracker
+				if (/\?/.test(href)) {
+					href = href + "&ir=true";
+				} else {
+					href = href + "?ir=true";
+				}
 				backHref = href;
                 $.ajax({
                     url: href,
