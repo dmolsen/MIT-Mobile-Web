@@ -44,7 +44,7 @@ div#jqt.landscape .toolbar > h1 {
     margin-left: -125px;
     width: 250px;
 }
-#jqt .button, #jqt .back, #jqt .cancel, #jqt .add {
+#jqt .button, #jqt .back, #jqt .fakeback, #jqt .cancel, #jqt .add {
     position: absolute;
     overflow: hidden;
     top: 8px;
@@ -74,7 +74,7 @@ div#jqt.landscape .toolbar > h1 {
     -webkit-border-image: url(../images/blueButton.png) 0 5 0 5;
     border-width: 0 5px;
 }
-#jqt .back {
+#jqt .back, #jqt .fakeback {
     left: 6px;
     right: auto;
     padding: 0;
@@ -82,7 +82,7 @@ div#jqt.landscape .toolbar > h1 {
     border-width: 0 8px 0 14px;
     -webkit-border-image: url(../images/back_button.png) 0 8 0 14;
 }
-#jqt .back.active {
+#jqt .back.active, #jqt .fakeback.active {
     -webkit-border-image: url(../images/back_button_clicked.png) 0 8 0 14;
     color: #aaa;
 }
