@@ -17,10 +17,16 @@ require_once "counter.php";
 $prefix = Device::templates();
 $page = Page::factory($prefix);
 
-preg_match('/\/((\w|\-)+)\/[^\/]*?$/', $_SERVER['REQUEST_URI'], $match);
-$content = $match[1];
+// check to see if this is a deep link, if so redirect
+// must be a webkit classified browser and missing the interal request [ir] var
+// ir var is defined in jqtouch for GETs and as a hidden var in forms
+if (($prefix == 'webkit') && ((!$_REQUEST['ir']) || ($_REQUEST['ir'] == ''))) {
+	header("location:/?redirect=".$_SERVER['REQUEST_URI']);
+}
 
-PageViews::increment($content);
+// record stats for the section in the database
+$section = Page::getSection($_SERVER['REQUEST_URI']);
+PageViews::increment($section);
 
 class DataServerException extends Exception {
 }
