@@ -18,6 +18,7 @@ MOBI-v2.5.0 (IN PROGRESS)
  - FIX: small bug with displaying dates in calendar favorites
  - FIX: upgraded map basic templates to use Google Static Maps v2 including custom icons based on WebKit template markers
  - FIX: upgraded map touch templates to use Google Maps v3 so that no API key is required
+ - FIX: removed need to configure map markers. now requires markers to match name of types & subtypes in database.
  - ADD: mysql support has been added via support for MDB2. other databases like postgres and mssql should also be supported
  - ADD: a quick set-up system. refer to the INSTALL file
  - ADD: info.yml files for each section to provide basic information
