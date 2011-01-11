@@ -20,25 +20,7 @@ $(function(){
 	  				
   $('#map-detail').live('pageAnimationStart', function(event, info){	
 	if (info.direction == 'in') {
-		var map = map_initialize(); // map_initialize() is in /map/templates/iphone/detail-gmap.html
-		$('body').bind('turn', function(event, info){
-			if (info.orientation == "landscape") {
-				var width = 520; var height = 285;
-				$('#map_canvas').css("width",width+"px");
-				$('#map_canvas').css("height",height+"px");
-				$('#map-overflow').css("width",(width-40)+"px");
-				$('#map-overflow').css("height",(height-10)+"px");
-				if (map_moved == false) { map.panBy(-80,40); }
-			} else {
-				var width = 360; var height = 435;
-				$('#map_canvas').css("width",width+"px");
-				$('#map_canvas').css("height",height+"px");
-				$('#map-overflow').css("width",(width-40)+"px");
-				$('#map-overflow').css("height",(height-10)+"px");
-				if (map_moved == false) { map.panBy(80,-40); }
-			}
-		});
-		checkMapFav();
+		loadMap();
 	}
   });
 
@@ -212,4 +194,27 @@ function checkMapFav() {
 			);
 		}
 	);	
+}
+
+// load the map, created a separate function to support deep linking to a map option
+function loadMap() {
+	var map = map_initialize(); // map_initialize() is in /map/templates/iphone/detail-gmap.html
+	$('body').bind('turn', function(event, info){
+		if (info.orientation == "landscape") {
+			var width = 520; var height = 285;
+			$('#map_canvas').css("width",width+"px");
+			$('#map_canvas').css("height",height+"px");
+			$('#map-overflow').css("width",(width-40)+"px");
+			$('#map-overflow').css("height",(height-10)+"px");
+			if (map_moved == false) { map.panBy(-80,40); }
+		} else {
+			var width = 360; var height = 435;
+			$('#map_canvas').css("width",width+"px");
+			$('#map_canvas').css("height",height+"px");
+			$('#map-overflow').css("width",(width-40)+"px");
+			$('#map-overflow').css("height",(height-10)+"px");
+			if (map_moved == false) { map.panBy(80,-40); }
+		}
+	});
+	checkMapFav();
 }
