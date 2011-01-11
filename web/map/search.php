@@ -26,7 +26,7 @@ $results = MapAdapter::searchPlaces($_REQUEST['filter']);
 $total = count($results);
 if(count($results) == 1) {
 	$result = $results[0];
-	header("Location: " . detailURL($result['id'],$result['latitude'],$result['longitude']));
+	header("Location: " . detailURL($result['id'],$result['latitude'],$result['longitude'])."&ir=true");
 } else {
 	require "templates/$prefix/search.html";
 	$page->output();
