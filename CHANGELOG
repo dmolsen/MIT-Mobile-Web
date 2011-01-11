@@ -26,17 +26,27 @@ MOBI-v2.5.0 (IN PROGRESS)
  - ADD: better accessibility support for the webkit templates by utilizing ARIA roles & focus() on pageAnimationEnd
  - ADD: device detection api so 3rd party campus services can use mobi as a central mobile classification system
  - ADD: minifier now automatically discovers javascript to include so it doesn't require configuration
+ - ADD: minifier can cache automatically discovered javascript for performance reasons
  - ADD: general adapter class for figuring out if modules support adapters
  - ADD: calendar adapter class so the calendar module is easier to customize from a data source perspective
  - ADD: map adapter class so the map module is easier to customize from a data source perspective
+ - ADD: general federated search support for displaying search results from multiple modules in one view
+ - ADD: calendar federated search support
+ - ADD: map federated search support
  - ADD: the local map adapter now allows for a unique identifier field for matching up locations to their parent locations more easily
+ - ADD: "deep linking" to content is now supported. currently can only return to 'home' instead of section home for deep, detail links.
  - THX: thanks to robin8 for all the great feedback & diffs for the fixes
  - THX: thanks to dlmulder for the feedback on the accessibility support
 
 todo:
  - email iCal event for calendar
- - adapters for providing different sources of data (calendar & map), adapter identifier goes where though? info.yml? adapter class in page_builder to help grab which one to use?
- - federated search via a federated.php file in each module that returns necessary results
+ - email link to event
+ - just a greater "share" panel or something? like tweet and fb or something? seems ugly
+ - add 'section' link support to deep linking
+ - test the hell out deep linking
+ - need to clean-up webkit view of federated search results
+ - need to add content adapter support to people
+ - need to add federated search support to people
  - dining services section
  - location services
  - google search appliance module
