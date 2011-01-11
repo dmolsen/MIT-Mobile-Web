@@ -10,6 +10,14 @@
 
 <div id="calendar-detail" class="clear-map-detail">
 	
+	<? if ($_REQUEST['dl']) { ?>
+		<script type="text/javascript">
+			$(document).ready(function() {
+			  checkCalendarFav();
+			});
+		</script>
+	<? } ?>
+	
 	<script type="text/javascript">
 		// set-up the session storage data for this item to be inserted if necessary
 		sessionStorage.etitle = "<?=htmlentities($event['title'],ENT_QUOTES)?>";
