@@ -37,6 +37,14 @@ $item = new Item($person);
 
 <div id="people-detail" class="clear-map-detail">
 
+	<? if ($_REQUEST['dl']) { ?>
+		<script type="text/javascript">
+			$(document).ready(function() {
+			  checkPeopleFav();
+			});
+		</script>
+	<? } ?>
+	
 	<script type="text/javascript">
 		// set-up the session storage data for this item to be inserted if necessary
 		sessionStorage.username = "<?=$person['id']?>";
