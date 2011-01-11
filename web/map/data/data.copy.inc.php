@@ -31,14 +31,4 @@ class Categorys {
   );
 }
 
-# Map markers based on the types from the database. The key can be either the type or subtype for the building
-# these images can be found in web/themes/[theme_name]/webkit/images/markers
-# they were pulled from: http://code.google.com/p/google-maps-icons/
-$marker_types = array();
-$marker_types['Building'] 				= 'apartment';
-$marker_types['Dining'] 				= 'restaurant';
-$marker_types['Art'] 					= 'theater';
-
-
-
 ?>
