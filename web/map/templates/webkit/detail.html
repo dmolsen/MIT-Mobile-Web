@@ -1,5 +1,13 @@
 <div id="map-detail" class="notransform">
 	
+	<? if ($_REQUEST['dl']) { ?>
+		<script type="text/javascript">
+			$(document).ready(function() {
+			  loadMap();
+			});
+		</script>
+	<? } ?>
+	
 	<script type="text/javascript">
 		// set-up the session storage data for this item to be inserted if necessary
 		sessionStorage.mid = "<?=$_REQUEST['loc']?>";
@@ -8,9 +16,14 @@
 		sessionStorage.mlongitude = "<?=$place['longitude']?>";
 	</script>
 	
+	<!-- map detail toolbar is defined in the map detail template! -->
 	<div class="toolbar">
 		<h1><span class='thick'>Map</span><span class='thin'>Details</span></h1>
-		<a href="#" class="back">Back</a>
+		<? if ($_REQUEST['dl']) { ?>
+			<a href="/?h=true" class="fakeback flipout">Home</a>
+		<? } else { ?>
+			<a href="#" class="back">Back</a>
+		<? } ?>
 		<? $user_agent = $_SERVER['HTTP_USER_AGENT']; # for some reason favorites don't work on android ?>
 		<? if (!eregi('android',$user_agent)) { ?>
 			<a href="#" class="button" id="map-favorite-detail"><img src="/themes/<?=$theme?>/webkit/images/favorite_unselected.png" id="map-favorite-detail-img" class="icon2" /></a>
@@ -20,20 +33,27 @@
   <? $break = true; ?>
 	<? $marker_type = ($place['subtype'] != "") ? $marker_types[$place['subtype']] : $marker_types[$place['type']]; ?>
 
-	<div id="map-container" class="notransform">
+	<div id="map-container" >
 		<div id="map-info">
-			<div>	
+			<div id="map-panel-title-default" class="map-panel-title">	
 				<h2>
-					<?=$place['name']?> <? if ($place['code'] != '') { ?>(<?=$place['code']?>)<? } ?>
-					<? if ($place['wifi'] == 'Y') { ?>&nbsp;<img src="/themes/<?=$theme?>/webkit/images/wifi.png" alt="WiFi" /><? } ?>
+					<?=$place['name']?> <? if ($place['code'] != '') { ?>(<?=$place['code']?>)<? } ?>							
 				</h2>
+				<div class="map-panel-info-toggle"></div>
+				<? if ($place['campus'] != '') { ?>On the <?=$place['campus']?> Campus<br /><? } ?>
+			</div>
+			<div id="map-panel-info-default" class="map-panel-info">
 				<p class="address">
-					 <? if ($place['campus'] != '') { ?>On the <?=$place['campus']?> Campus<br /><? } ?>
+					 
 				   <? if ($parent == true) { ?>Located inside the <a href="<?=detailURL($parent_data['id'],$parent_data['latitude'],$parent_data['longitude'])?>"><?=$parent_data['name']?></a><? } else { ?><?=$place['physical_address']?> <? } ?>
 				   <? if ($place['hours'] != '') { ?><br />Open <?=str_replace('"','',$place['hours'])?><? } ?>
 			     <? if ($place['phone'] != '') { ?><br /><a href="tel:1<?=$place['phone']?>" data-ga="/outgoing/map/detail/phone/"><?=$place['phone']?></a><? $break = false; ?><? } ?>
 				   <? if ($place['website'] != '') { ?><? if ($break == true) { ?><br /><? } else { ?> | <? } ?><a href="http://<?=$place['website']?>" data-ga="/outgoing/map/detail/website/" target="_blank">Website</a><? $break = false; ?><? } ?>
 					 | <a  href="http://maps.google.com/maps?sll=<?=$place['latitude']?>,<?=$place['longitude']?>" data-ga="/outgoing/map/detail/directions/" target="_blank">Directions</a>
+				</p>
+				
+				<p class="address">
+					<a href="#" onclick="getCurrentLocation(map);">current loc</a> | <a href="#" onclick="getNearbyLocations(map);">nearby</a>
 				</p>
 			</div>
 		</div>
@@ -43,6 +63,7 @@
 		</div>
 	
 		<script type="text/javascript">
+			
 			function map_initialize() {	
 				
 				// when first loading the window make sure map_canvas & map are set to appropriate
@@ -73,14 +94,14 @@
 				map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 				
 				// load the marker
-				var image = new google.maps.MarkerImage("/themes/<?=$theme?>/webkit/images/markers/<?=$marker_type?>.png",new google.maps.Size(32, 37));
-				var shadowi = new google.maps.MarkerImage("/themes/<?=$theme?>/webkit/images/markers/shadow.png",new google.maps.Size(51, 37));
+				var img = new google.maps.MarkerImage("/themes/<?=$theme?>/webkit/images/markers/<?=$marker_type?>.png",new google.maps.Size(32, 37));
+				var imgShadow = new google.maps.MarkerImage("/themes/<?=$theme?>/webkit/images/markers/shadow.png",new google.maps.Size(51, 37));
 			  var myLatLng = new google.maps.LatLng(<?=$place['latitude']?>,<?=$place['longitude']?>);
-			  var beachMarker = new google.maps.Marker({
+			  var placeMarker = new google.maps.Marker({
 			      position: myLatLng,
 			      map: map,
-						shadow: shadowi,
-			      icon: image
+						shadow: imgShadow,
+			      icon: img
 			  });
 				
 				// fixing a bug with setCenter which doesn't seem to do anything on second load
@@ -90,8 +111,112 @@
 					map_loaded = true;
 				}
 			
+				// add event listener so that when a user zooms the map doesn't pan in the process
+				google.maps.event.addListener(map, 'zoom_changed', function() {
+						var center = map.getCenter();
+						map.setCenter(center);
+				});
+				
 				return map;
 			}
+			
+			// when tapping on the current location map icon draw the current location and pan to it
+		  function getCurrentLocation(map) {
+				if (typeof(navigator.geolocation) != 'undefined') {
+					navigator.geolocation.getCurrentPosition(function(position) {
+								var lat = 39.6337941;
+								var lng = -79.95429307;
+				        //var lat = position.coords.latitude;
+				        //var lng = position.coords.longitude;
+				        var position = new google.maps.LatLng(lat, lng);
+				
+								// create new marker
+								var img = new google.maps.MarkerImage("/themes/<?=$theme?>/webkit/images/markers/apartment.png",new google.maps.Size(32, 37));
+			          var imgShadow = new google.maps.MarkerImage("/themes/<?=$theme?>/webkit/images/markers/shadow.png",new google.maps.Size(51, 37));
+								var placeMarker = new google.maps.Marker({
+			                position: position,
+								      map: map,
+											shadow: imgShadow,
+								      icon: img
+			          });
+								
+								map.panTo(position);
+								if (map.getZoom != 16) {
+										map.setZoom(16);
+								}
+				    });
+				}
+				
+				return false;
+		  }
+
+		  // when tapping on the nearest locations icon grab the data from the server and draw it
+			var markers = {};
+		  function getNearbyLocations(map) {
+				var new_markers = {};
+				//if (typeof(navigator.geolocation) != 'undefined') {
+					
+					//navigator.geolocation.getCurrentPosition(function(position) {
+				        var lat = 39.6337941;
+								var lng = -79.95429307;
+				        //var lat = position.coords.latitude;
+				        //var lng = position.coords.longitude;
+									
+								$.getJSON('/map/nearby.php?lat='+lat+'&long='+lng, function(data) {
+
+									i = 0;
+									while (i < data.locations.length) {
+										
+										var location = data.locations[i];
+									
+						        // for speed and to reduce flicker,
+						        // reuse existing markers rather than removing and re-adding
+						        if (location.uid in markers) {
+						            new_markers[location.uid] = markers[location.uid];
+						        } else {
+												var img = new google.maps.MarkerImage("/themes/<?=$theme?>/webkit/images/markers/disability.png",new google.maps.Size(32, 37));
+						            var imgShadow = new google.maps.MarkerImage("/themes/<?=$theme?>/webkit/images/markers/shadow.png",new google.maps.Size(51, 37));
+											  var myLatLng = new google.maps.LatLng(location.latitude,location.longitude);
+												var placeMarker = new google.maps.Marker({
+						                position: myLatLng,
+											      map: map,
+														shadow: imgShadow,
+											      icon: img
+						            }); 
+						
+												google.maps.event.addListener(placeMarker, 'click', function() {
+												    map.setZoom(8);
+												});
+												
+						            new_markers[location.uid] = placeMarker;
+						        }
+										i++;
+									}
+								
+							    // remove old markers
+							    for (var location_id in markers) {
+							        if (!(location_id in new_markers)) {
+							            markers[location_id].setMap(null);
+							            delete markers[location_id];
+							        }
+							    }
+
+							    markers = new_markers;
+								
+									if (data.length == 0) {
+										// some way to show an error message
+									}
+									
+									if (map.getZoom != 17) {
+											map.setZoom(17);
+									}
+									
+								});
+				    //});
+				//}
+				
+				return false;
+		  }
 		</script>
 	</div>
 </div>
