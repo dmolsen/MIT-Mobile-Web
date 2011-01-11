@@ -8,6 +8,7 @@
 	<div class="formcontainer">
 		<form method="get" action="/map/search.php">
 			<fieldset class="inputcombo">
+				<input type="hidden" name="ir" value="true" >
 				<input class="forminput" type="text" id="filter" name="filter" placeholder="Search the campus map" <? if($query) { ?> value="<?=$query?>" <? } ?> />
 				<a style="margin:0;" href="#" class="submit"><img class="combobutton" id="sch_btn" src="/themes/<?=$theme?>/webkit/images/search-button.png" /></a>
 			</fieldset>	
