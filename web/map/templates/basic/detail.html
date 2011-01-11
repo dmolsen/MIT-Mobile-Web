@@ -21,7 +21,7 @@
 
 	<div class="focal">
 
-		<h2><?=$place['name']?> <? if ($place['code'] != '') { ?>(<?=$place['code']?>)<? } ?> <img src="/themes/<?=$theme?>/webkit/images/markers/<?=$marker_types[$place['type']]?>_tn.png" height="20" width="20" alt="Marker" /></h2>
+		<h2><?=$place['name']?> <? if ($place['code'] != '') { ?>(<?=$place['code']?>)<? } ?> <img src="/themes/<?=$theme?>/webkit/images/markers/<?=$place['marker']?>_tn.png" height="20" width="20" alt="Marker" /></h2>
 		
     <? if($tab == "Map") { ?>
   		<p>

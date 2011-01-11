@@ -24,14 +24,12 @@
 		<? } else { ?>
 			<a href="#" class="back">Back</a>
 		<? } ?>
-		<? $user_agent = $_SERVER['HTTP_USER_AGENT']; # for some reason favorites don't work on android ?>
-		<? if (!eregi('android',$user_agent)) { ?>
+		<? if (Device::is_ios()) { ?>
 			<a href="#" class="button" id="map-favorite-detail"><img src="/themes/<?=$theme?>/webkit/images/favorite_unselected.png" id="map-favorite-detail-img" class="icon2" /></a>
 		<? } ?>
 	</div>
 
   <? $break = true; ?>
-	<? $marker_type = ($place['subtype'] != "") ? $marker_types[$place['subtype']] : $marker_types[$place['type']]; ?>
 
 	<div id="map-container" >
 		<div id="map-info">
@@ -55,6 +53,9 @@
 				<p class="address">
 					<a href="#" onclick="getCurrentLocation(map);">current loc</a> | <a href="#" onclick="getNearbyLocations(map);">nearby</a>
 				</p>
+			</div>
+			<div id="map-panel-footer">
+			
 			</div>
 		</div>
 
@@ -94,7 +95,7 @@
 				map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
 				
 				// load the marker
-				var img = new google.maps.MarkerImage("/themes/<?=$theme?>/webkit/images/markers/<?=$marker_type?>.png",new google.maps.Size(32, 37));
+				var img = new google.maps.MarkerImage("/themes/<?=$theme?>/webkit/images/markers/<?=$place['marker']?>.png",new google.maps.Size(32, 37));
 				var imgShadow = new google.maps.MarkerImage("/themes/<?=$theme?>/webkit/images/markers/shadow.png",new google.maps.Size(51, 37));
 			  var myLatLng = new google.maps.LatLng(<?=$place['latitude']?>,<?=$place['longitude']?>);
 			  var placeMarker = new google.maps.Marker({
@@ -131,12 +132,10 @@
 				        var position = new google.maps.LatLng(lat, lng);
 				
 								// create new marker
-								var img = new google.maps.MarkerImage("/themes/<?=$theme?>/webkit/images/markers/apartment.png",new google.maps.Size(32, 37));
-			          var imgShadow = new google.maps.MarkerImage("/themes/<?=$theme?>/webkit/images/markers/shadow.png",new google.maps.Size(51, 37));
-								var placeMarker = new google.maps.Marker({
+								var img = new google.maps.MarkerImage("/themes/<?=$theme?>/webkit/images/markers/person.png",new google.maps.Size(15, 34));
+			          var placeMarker = new google.maps.Marker({
 			                position: position,
 								      map: map,
-											shadow: imgShadow,
 								      icon: img
 			          });
 								
@@ -174,7 +173,7 @@
 						        if (location.uid in markers) {
 						            new_markers[location.uid] = markers[location.uid];
 						        } else {
-												var img = new google.maps.MarkerImage("/themes/<?=$theme?>/webkit/images/markers/disability.png",new google.maps.Size(32, 37));
+												var img = new google.maps.MarkerImage("/themes/<?=$theme?>/webkit/images/markers/<?=$place['marker']?>.png",new google.maps.Size(32, 37));
 						            var imgShadow = new google.maps.MarkerImage("/themes/<?=$theme?>/webkit/images/markers/shadow.png",new google.maps.Size(51, 37));
 											  var myLatLng = new google.maps.LatLng(location.latitude,location.longitude);
 												var placeMarker = new google.maps.Marker({
