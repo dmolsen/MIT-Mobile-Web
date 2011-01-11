@@ -62,25 +62,59 @@ class MapAdapter extends ModuleAdapter {
 		$convertedPlaces = array();
 		foreach ($places as $place) {
 			
+			// set up the marker so it properly pulls from the filesystem. type or subtype should match filename in markers
+			$marker = ($place['subtype'] != '') ? $place['subtype'] : $place['type'];
+			$marker = str_replace(" ","_",strtolower($marker));
+			
 			// this is sort of redundant just because it'll match what we already have in the database
 			$convertedPlaces[] = array('id' => $place['id'],
-									'campus' => $place['campus'],
-									'code' => $place['code'],
-									'hours' => $place['hours'],
-									'latitude' => $place['latitude'],
-									'longitude' => $place['longitude'],
-									'name' => $place['name'],
-									'parent' => $place['parent'],
-									'phone' => $place['phone'],
-									'physical_address' => $place['physical_address'],
-									'subtype' => $place['subtype'],
-									'type' => $place['type'],
-									'uid' => $place['uid'],
-									'website' => $place['website'],
-									'wifi' => $place['wifi']);
+									   'campus' => $place['campus'],
+									   'code' => $place['code'],
+									   'hours' => $place['hours'],
+									   'latitude' => $place['latitude'],
+									   'longitude' => $place['longitude'],
+									   'name' => $place['name'],
+									   'parent' => $place['parent'],
+									   'phone' => $place['phone'],
+									   'physical_address' => $place['physical_address'],
+									   'subtype' => $place['subtype'],
+									   'type' => $place['type'],
+									   'marker' => $marker,
+									   'uid' => $place['uid'],
+									   'website' => $place['website'],
+									   'wifi' => $place['wifi']);
 		}
 		
 		return $convertedPlaces;
+	}
+	
+	// get information for locations within a specific distance of the one requested
+	public static function getNearbyLocations($lat1,$lon1,$max = nil) {
+		
+		if ($max == nil) {
+			$max = 100; # 250 meters distance for the check is the default
+		}
+			
+		$where = self::getSearchableCategories();
+		$sql = "SELECT * FROM Buildings WHERE type = 'Building' OR type = 'Library' GROUP BY name ORDER BY name ASC";
+		$places = self::getPlaces($sql);
+		$convertedPlaces = self::convertPlaces($places);
+		
+		// only converting first because i want easy keys to work with
+		$nearbyPlaces = array();
+		foreach ($convertedPlaces as $place) {
+			$lat2 = $place['latitude'];
+			$lon2 = $place['longitude'];
+			
+			// $distance is in kilometers
+			$distance = (3958*3.1415926*sqrt(($lat2-$lat1)*($lat2-$lat1) + cos($lat2/57.29578)*cos($lat1/57.29578)*($lon2-$lon1)*($lon2-$lon1))/180);
+			
+			if ($max >= ($distance*1000)) {
+				$nearbyPlaces[] = $place;
+			}
+		}
+		
+		return $nearbyPlaces;
 	}
 	
 	// get information for a specific location
