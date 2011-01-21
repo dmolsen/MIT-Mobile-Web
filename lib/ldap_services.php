@@ -63,7 +63,7 @@ function email_query($search) {
   $words = explode(' ', trim($search));
   if(count($words) == 1) {
     $word = $words[0];
-    if(strpos($words, '@') === False) {
+    if(strpos($word, '@') === False) {
       //turns blpatt into blpatt@*
       $word .= '@*';
     }
