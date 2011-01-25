@@ -90,12 +90,12 @@ class Device {
   );
 
   // returns the general device type based on user agent string matching. can get very specific depending on usage.
-  public static function classify($ua = nil) {
+  public static function classify($ua = NULL) {
 	
 	$majorv = 0;
 	$minorv = 0;
 	
-	if ($ua == nil) {
+	if ($ua == NULL) {
 		$user_agent = $_SERVER['HTTP_USER_AGENT'];
 	    $accept = $_SERVER['HTTP_ACCEPT'];
 	} else {
@@ -188,7 +188,7 @@ class Device {
   }
 
   // returns the type of templates that should be used for this device
-  public static function templates($ua = nil) {
+  public static function templates($ua = NULL) {
 	$type = self::classify($ua);
 	return self::$phoneTable[$type];
   }
@@ -203,10 +203,10 @@ class Device {
   }
 
   private static function device_version_check($device,$major,$minor) {
-	if (($device == true) && ($major == nil)) {
+	if (($device == true) && ($major == NULL)) {
 		return true;
-	} else if (($device == true) && ($major != nil)) {
-		if ((self::$major_version >= $major) && ($minor == nil)) {
+	} else if (($device == true) && ($major != NULL)) {
+		if ((self::$major_version >= $major) && ($minor == NULL)) {
 			return true;
 		} else if ((self::$major_version >= $major) && (self::$minor_version >= $minor)) {
 			return true;
@@ -218,19 +218,19 @@ class Device {
 	}
   }
 
-  public static function is_android($major = nil, $minor = nil) {
+  public static function is_android($major = NULL, $minor = NULL) {
 	return self::device_version_check(self::$is_android, $major, $minor);
   }
 
-  public static function is_iphone($major = nil, $minor = nil) {
+  public static function is_iphone($major = NULL, $minor = NULL) {
 	return self::device_version_check(self::$is_iphone, $major, $minor);
   }
 
-  public static function is_ipod($major = nil, $minor = nil) {
+  public static function is_ipod($major = NULL, $minor = NULL) {
 	return self::device_version_check(self::$is_ipod, $major, $minor);
   }
 
-  public static function is_ios($major = nil, $minor = nil) {
+  public static function is_ios($major = NULL, $minor = NULL) {
 	return self::device_version_check(self::$is_ios, $major, $minor);
   }
 

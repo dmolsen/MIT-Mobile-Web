@@ -89,9 +89,9 @@ class MapAdapter extends ModuleAdapter {
 	}
 	
 	// get information for locations within a specific distance of the one requested
-	public static function getNearbyLocations($lat1,$lon1,$max = nil) {
+	public static function getNearbyLocations($lat1,$lon1,$max = NULL) {
 		
-		if ($max == nil) {
+		if ($max == NULL) {
 			$max = 100; # 250 meters distance for the check is the default
 		}
 			
