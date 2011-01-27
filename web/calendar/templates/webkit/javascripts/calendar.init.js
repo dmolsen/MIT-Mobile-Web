@@ -29,7 +29,7 @@ $(function(){
 				$(this).removeClass('active');
 			} else {
 				var time = new Date();
-				var url = "/calendar/day.php?time="+(Math.round(time.getTime()/1000))+"&type=events&countonly=true";
+				var url = "/calendar/day.php?time="+(Math.round(time.getTime()/1000))+"&type=events&countonly=true&ir=true";
 				$.get(url, function(data){
 				   $(".todayscount").html('<small id="todayscount" class="counter">'+data+'</small>');
 				});
