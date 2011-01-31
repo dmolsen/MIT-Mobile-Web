@@ -1,5 +1,5 @@
 <?php
-require_once($install_path . '/lib/functions.php');
+require_once(dirname(dirname(__FILE__)) . '/functions.php');
 
    /***************************************************************/
    /* PhpCache - a class for caching arbitrary data
