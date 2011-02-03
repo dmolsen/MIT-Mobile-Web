@@ -14,26 +14,18 @@
 		<p class="bb"> </p>
 
 		<p class="nav">
-			<? $i = 1; ?>
-			<? $j = 0; ?>
-			<? $more = false; ?>
-			<? if (count($bc_items) > 9) { ?>
-				<? $more = true; ?>
-			<? } ?>
-			<? foreach ($bc_items as $item) { ?>
-				<? if (($i == 9) && ($more == true)) { ?>
-					<? break; # break out of foreach loop ?>
+			<? $items = array_slice($bc_items, 0, 8); ?>
+			<? $accesskey = 1; ?>
+			<? foreach ($items as $item) { ?>
+				<? if ($item[3] == true) { ?>
+					<a href="<?=$item[4]?>" accesskey="<?=$accesskey?>"><?=$accesskey?>: <?=$item[0]?></a>
 				<? } else { ?>
-					<? if ($item[3] == true) { ?> 
-						<a href="<?=$item[4]?>" accesskey="<?=$i?>"><?=$i?>: <?=$item[0]?></a>
-					<? } else { ?>
-						<a href="../<?=$item[1]?>/<?=$item[2]?>" accesskey="<?=$i?>"><?=$i?>: <?=$item[0]?></a>
-					<? } ?>
-					<br />
-					<? $i++; ?>
+					<a href="../<?=$item[1]?>/<?=$item[2]?>" accesskey="<?=$accesskey?>"><?=$accesskey?>: <?=$item[0]?></a>
 				<? } ?>
+				<br />
+				<? $accesskey++; ?>
 			<? } ?>
-			<? if ($more == true) { ?><a href="./?more=true" accesskey="9">9: More Mobile Content</a><? } ?>
+			<? if (count($bc_items) > count($items)) { ?><a href="./?more=true" accesskey="9">9: More Mobile Content</a><? } ?>
 		</p>
 
 		<p class="nav secondary">
