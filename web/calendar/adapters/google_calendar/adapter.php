@@ -46,6 +46,9 @@ class CalendarAdapter extends ModuleAdapter {
 			$date_str = strftime('%A, %B %e, %Y',strtotime($startTime));
 			$date_str_for_storage = strftime('%D',strtotime($startTime));
 			$date_str_for_compare = strftime('%Y%m%d',strtotime($startTime));
+
+			// Reset the time used in templates since not all events specify a start time
+			$time_of_day = '';
 			if (!(strlen($startTime) == 10)) {
 			  $time_of_day = strftime('%l:%M%P',strtotime($startTime));
 			  if ($endTime != '') {
