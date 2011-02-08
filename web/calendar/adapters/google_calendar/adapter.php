@@ -106,6 +106,7 @@ class CalendarAdapter extends ModuleAdapter {
 		$query->setOrderby('starttime');
 		$query->setSortorder('a');
 		$query->setmaxresults('30');
+		$query->setSingleEvents(true);
 		
 		try {
 			$eventFeed = $gdataCal->getCalendarEventFeed($query);
@@ -133,6 +134,7 @@ class CalendarAdapter extends ModuleAdapter {
 		$query->setStartMin($starttime);
 		$query->setStartMax($endtime);
 		$query->setmaxresults('30');
+		$query->setSingleEvents(true);
 		
 		try {
 			$eventFeed = $gdataCal->getCalendarEventFeed($query);
@@ -179,6 +181,7 @@ class CalendarAdapter extends ModuleAdapter {
 		$query->setStartMin($starttime);
 		$query->setStartMax($endtime);
 		$query->setmaxresults('50');
+		$query->setSingleEvents(true);
 		$query->setQuery($search_terms);
 		
 		try {
