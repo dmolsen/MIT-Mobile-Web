@@ -1,7 +1,7 @@
 <li class="arrow wrap" role="option">
 	<a href="<?=detailCalURL($event['id'],$_REQUEST['id'])?>" class="noellipsis"><?=$event['title']?>
 		<p class="smallprint" style="margin-top: 5px;">
-			<? if(trim($event['where']) != '') { ?><?=$event['where']?><br /><? } ?><?=$event['datefull']?><? if ($event['timefull']) { echo($event['timefull']);}?>
+			<? if(trim($event['where']) != '') { ?><?=$event['where']?><br /><? } ?><?=$event['datefull']?><? if ($event['timefull']) { ?><?=$event['timefull']?><? } ?>
 		</p>
 	</a>
 </li>

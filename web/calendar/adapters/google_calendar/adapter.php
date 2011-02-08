@@ -50,9 +50,9 @@ class CalendarAdapter extends ModuleAdapter {
 			// Reset the time used in templates since not all events specify a start time
 			$time_of_day = '';
 			if (!(strlen($startTime) == 10)) {
-			  $time_of_day = strftime('%l:%M%P',strtotime($startTime));
+			  $time_of_day = strftime('%l:%M%P',trim(strtotime($startTime)));
 			  if ($endTime != '') {
-			    $time_of_day .= "-".strftime('%l:%M%P',strtotime($endTime));
+			    $time_of_day .= " - ".strftime('%l:%M%P',trim(strtotime($endTime)));
 			  }
 			}	
 			
