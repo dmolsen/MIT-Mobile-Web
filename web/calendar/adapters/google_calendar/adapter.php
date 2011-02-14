@@ -37,8 +37,8 @@ class CalendarAdapter extends ModuleAdapter {
 		$convertedFeed = array();
 		foreach ($eventFeed as $event) {
 			
-			preg_match("/_(.*)$/i",$event->id->text,$matches);
-		    $id = $matches[1];
+			preg_match("/_(.*)$/i",$event->getId()->getText(),$matches);
+			$id = $matches[1];
 			
 			$when = $event->getWhen();
 			$startTime = $when[0]->startTime;
@@ -56,8 +56,8 @@ class CalendarAdapter extends ModuleAdapter {
 			  }
 			}	
 			
-			$title = $event->title->text;
-			$description = $event->getContent()->text;
+			$title = $event->getTitleValue();
+			$description = $event->getContent()->getText();
 
 			// the following getExtraData is specific to WVU's implementation with Google Calendar
 			list($description,$event_link) = getExtraData($description,'link',true);
@@ -66,7 +66,7 @@ class CalendarAdapter extends ModuleAdapter {
 			list($description,$contact_name) = getExtraData($description,'contact_name',false);
 			
 			$where = $event->getWhere();
-			$where = $where->valueString;
+			$where = $where[0]->getValueString();
 			
 			$convertedFeed[] = array('id' => $id,
 									 'title' => $title,
