@@ -24,8 +24,8 @@ function mapHREF($where) {
   	$db = new db;
 	$sql = "SELECT * FROM Buildings WHERE type != 'Parking Lot' OR type != 'Public Parking' GROUP BY name ORDER BY name ASC";
 	$stmt = $db->connection->prepare($sql);
-	$stmt->execute();
-	$results = $stmt->fetchAll();
+	$result = $stmt->execute();
+	$results = $result->fetchAll();
 	
 	foreach ($results as $result) {
 		if (preg_match('/'.$result['name'].'/i',$where)) {

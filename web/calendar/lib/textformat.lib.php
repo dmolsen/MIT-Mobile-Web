@@ -67,8 +67,8 @@ function mapURL($event) {
 	$db = new db;
 	$sql = "SELECT * FROM Buildings WHERE type != 'Parking Lot' OR type != 'Public Parking' GROUP BY name ORDER BY name ASC";
 	$stmt = $db->connection->prepare($sql);
-	$stmt->execute();
-	$results = $stmt->fetchAll();
+	$result = $stmt->execute();
+	$results = $result->fetchAll();
 	
 	# compare the name of the building in the event against each building in the db, brute force and doesn't always work
 	foreach ($results as $result) {

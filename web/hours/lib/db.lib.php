@@ -7,9 +7,9 @@ function getData($where=false) {
 	} else {
 		$stmt = $db->connection->prepare("SELECT * FROM Buildings GROUP BY name ORDER BY name ASC");
 	}
-	$stmt->execute();
-	$result = $stmt->fetchAll();
-	return $result;
+	$result = $stmt->execute();
+	$results = $result->fetchAll();
+	return $results;
 }
 
 ?>
