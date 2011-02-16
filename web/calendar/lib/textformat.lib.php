@@ -65,6 +65,8 @@ function phoneURL($number) {
 
 function mapURL($event) {
 	$db = new db;
+	$db->connection->setFetchMode(MDB2_FETCHMODE_ASSOC);
+
 	$sql = "SELECT * FROM Buildings WHERE type != 'Parking Lot' OR type != 'Public Parking' GROUP BY name ORDER BY name ASC";
 	$stmt = $db->connection->prepare($sql);
 	$result = $stmt->execute();
