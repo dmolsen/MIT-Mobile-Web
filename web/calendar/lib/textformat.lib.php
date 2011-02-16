@@ -74,7 +74,7 @@ function mapURL($event) {
 	
 	# compare the name of the building in the event against each building in the db, brute force and doesn't always work
 	foreach ($results as $result) {
-		if (preg_match('/'.$result['name'].'/i',$event)) {
+		if (preg_match('/'.preg_quote($result['name'], '/').'/i',$event)) {
 			return "<a href='/map/detail.php?loc=".$result['id']."&lat=".$result['latitude']."&long=".$result['longitude']."&maptype=roadmap'>".$event."</a>";
 		}
 	}

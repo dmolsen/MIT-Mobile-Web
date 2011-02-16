@@ -30,7 +30,7 @@ function mapHREF($where) {
 	$results = $result->fetchAll();
 	
 	foreach ($results as $result) {
-		if (preg_match('/'.$result['name'].'/i',$where)) {
+		if (preg_match('/'.preg_quote($result['name'], '/').'/i',$where)) {
 			return "<a href='/map/detail.php?loc=".$result['id']."&lat=".$result['latitude']."&long=".$result['longitude']."&maptype=roadmap'>";
 		}
 	}
