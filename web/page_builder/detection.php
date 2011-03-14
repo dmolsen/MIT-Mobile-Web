@@ -46,6 +46,7 @@ class Device {
 	"ipod30" => "webkit",
 	"ipod20" => "touch",
 	"ipad" => "basic",
+	"android23" => "webkit",
 	"android22" => "webkit",
 	"android21"	=> "webkit",
 	"android20" => "webkit",
@@ -73,6 +74,7 @@ class Device {
 	"ipod30" => "iPod 3",
 	"ipod20" => "iPod 2",
 	"ipad" => "iPad",
+	"android23" => "Android 2.3",
 	"android22" => "Android 2.2",
 	"android21"	=> "Android 2.1",
 	"android20" => "Android 2.0",
@@ -121,7 +123,10 @@ class Device {
 		$type = 'ipad';
 	}
 	else if (preg_match('/android/i',$user_agent)) {
-		if (preg_match('/android\ 2.2/i',$user_agent)) {
+		if (preg_match('/android\ 2.3/i',$user_agent)) {
+			$majorv = 2;
+			$minorv = 3;
+		} else if (preg_match('/android\ 2.2/i',$user_agent)) {
 			$majorv = 2;
 			$minorv = 2;
 		} else if (preg_match('/android\ 2.1/i',$user_agent)) {
