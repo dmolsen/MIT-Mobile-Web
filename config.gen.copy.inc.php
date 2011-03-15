@@ -20,6 +20,7 @@ $fed_cache_support = true;						  # cache support for the federated search. only
 /* MySQL Config Info */
 $db_type           = 'mysqli';					  # can be any database that MDB2 supports (e.g. pgsql)
 $db_host           = 'localhost';				  # host that your database is at
+$db_port           = 3306;					  # port to connect to (default for MySQL is 3306)
 $db_username       = 'username';				  # username for your database user
 $db_passwd         = 'passwd';					  # password for your database user
 $db_name           = 'db';					  	  # name of your database

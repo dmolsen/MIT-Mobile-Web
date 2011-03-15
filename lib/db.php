@@ -13,7 +13,7 @@ if (!isset($db_use_sqlite)) {
 	require_once('../../config.gen.inc.php');
 }
 
-global $db_use_sqlite,$sqlite_path,$db_host,$db_username,$db_passwd,$db_name;
+global $db_use_sqlite,$sqlite_path,$db_host,$db_port,$db_username,$db_passwd,$db_name;
 
 class db {
   
@@ -21,7 +21,7 @@ class db {
 
   public function __construct(){
 	
-	global $db_use_sqlite,$sqlite_path,$db_type,$db_host,$db_username,$db_passwd,$db_name;
+	global $db_use_sqlite,$sqlite_path,$db_type,$db_host,$db_port,$db_username,$db_passwd,$db_name;
 	
 	$this->connection = false;
 	
@@ -39,6 +39,7 @@ class db {
 		    'username' => $db_username,
 		    'password' => $db_passwd,
 		    'hostspec' => $db_host,
+		    'port'     => $db_port,
 		    'database' => $db_name
 		);
 	}
