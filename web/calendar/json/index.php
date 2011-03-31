@@ -21,7 +21,7 @@ $id = $_REQUEST['id'];
 $maxresults = (int)$_REQUEST['max'];
 
 $service = Zend_Gdata_Calendar::AUTH_SERVICE_NAME; // predefined service name for calendar
-$client = Zend_Gdata_ClientLogin::getHttpClient($username.'@gmail.com',$password,$service);
+$client = Zend_Gdata_ClientLogin::getHttpClient($username,$password,$service);
 $gdataCal = new Zend_Gdata_Calendar($client);
 $query = $gdataCal->newEventQuery();
 $query->setUser($calendars[$id]['user']);
