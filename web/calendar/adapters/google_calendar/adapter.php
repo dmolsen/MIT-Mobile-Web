@@ -37,7 +37,7 @@ class CalendarAdapter extends ModuleAdapter {
 		$convertedFeed = array();
 		foreach ($eventFeed as $event) {
 			
-			preg_match("/_(.*)$/i",$event->getId()->getText(),$matches);
+			preg_match("/full\/(.*)$/i",$event->getId()->getText(),$matches);
 			$id = $matches[1];
 			
 			$when = $event->getWhen();
@@ -157,7 +157,7 @@ class CalendarAdapter extends ModuleAdapter {
 		$gdataCal = self::setUpConnection();
 		
 		try {
-			$url = 'http://www.google.com/calendar/feeds/'.$calid.'/private/full/_'.$_REQUEST['id'];
+			$url = 'http://www.google.com/calendar/feeds/'.$calid.'/private/full/'.$id;
 			$event = $gdataCal->getCalendarEventEntry($url);
 		} catch (Exception $e) {
 		    return false;
