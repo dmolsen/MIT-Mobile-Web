@@ -114,7 +114,7 @@ class CalendarAdapter extends ModuleAdapter {
 		try {
 			$eventFeed = $gdataCal->getCalendarEventFeed($query);
 		} catch (Exception $e) {
-		    return false;
+			return array();
 		}
 		
 		$convertedFeed = self::convertFeed($eventFeed);
@@ -142,7 +142,7 @@ class CalendarAdapter extends ModuleAdapter {
 		try {
 			$eventFeed = $gdataCal->getCalendarEventFeed($query);
 		} catch (Exception $e) {
-		    return false;
+			return array();
 		}
 		
 		$convertedFeed = self::convertFeed($eventFeed);
@@ -160,7 +160,7 @@ class CalendarAdapter extends ModuleAdapter {
 			$url = 'http://www.google.com/calendar/feeds/'.$calid.'/private/full/'.$id;
 			$event = $gdataCal->getCalendarEventEntry($url);
 		} catch (Exception $e) {
-		    return false;
+			return array();
 		}
 		
 		$convertedFeed = self::convertFeed(array($event)); // the extra array() is a hack to allow convertFeed() to work w/out changes
@@ -190,7 +190,7 @@ class CalendarAdapter extends ModuleAdapter {
 		try {
 			$eventFeed = $gdataCal->getCalendarEventFeed($query);
 		} catch (Exception $e) {
-		    return false;
+			return array();
 		}
 		
 		$convertedFeed = self::convertFeed($eventFeed);

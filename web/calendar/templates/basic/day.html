@@ -13,13 +13,13 @@ $page->content_begin();
 	
 	<div class="focal">
 		<? 
-			if ($eventFeed == false) {
+			if (count($eventFeed) == 0) {
 				echo("<p>There were no results returned.</p>");
 			} else {
-		 		foreach ($eventFeed as $event) {
-		    	include("p_item.html");
-	   		}
-	   } 
+				foreach ($eventFeed as $event) {
+					include("p_item.html");
+				}
+			}
 		?>
 	</div>
 	
