@@ -9,8 +9,7 @@
  */
 
 // set-up Zend gData
-$path = $install_path.'lib/ZendGdata-1.8.4PL1/library';
-set_include_path(get_include_path() . PATH_SEPARATOR . $path);
+set_include_path(get_include_path() . PATH_SEPARATOR . $install_path . 'lib/ZendFramework-1.11.5-minimal/library');
 require_once 'Zend/Loader.php';
 Zend_Loader::loadClass('Zend_Gdata');
 Zend_Loader::loadClass('Zend_Gdata_ClientLogin');
