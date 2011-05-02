@@ -45,17 +45,18 @@ class Device {
 	"ipod40" => "webkit",
 	"ipod30" => "webkit",
 	"ipod20" => "touch",
-	"ipad" => "basic",
+	"ipad" => "webkit",
 	"android23" => "webkit",
 	"android22" => "webkit",
 	"android21"	=> "webkit",
 	"android20" => "webkit",
 	"android00" => "touch",
-	"palm" => "touch",
+	"palm" => "webkit",
 	"opera_mini" => "touch",
 	"opera_mobile" => "touch",
-	"blackberry9800" => "touch",
+	"blackberry_webkit" => "webkit",
 	"blackberry" => "basic",
+	"windowsphone7" => "webkit",
 	"webkit" => "webkit",
 	"smart_phone" => "basic",
 	"feature_phone" => "basic",
@@ -82,8 +83,9 @@ class Device {
 	"palm" => "Web OS",
 	"opera_mini" => "Opera Mini",
 	"opera_mobile" => "Opera Mobile",
-	"blackberry9800" => "Blackberry 9800 (aka Torch)",
+	"blackberry_webkit" => "BlackBerry (WebKit)",
 	"blackberry" => "BlackBerry (Generic)",
+	"windowsphone7" => "Windows Phone 7",
 	"webkit" => "WebKit (Generic)",
 	"smart_phone" => "Smart Phone (Generic)",
 	"feature_phone" => "Feature Phone (Generic)",
@@ -147,11 +149,14 @@ class Device {
 		$type = "opera_mobile";
 	}
 	else if (preg_match('/blackberry/i',$user_agent)) {
-		if (preg_match('/9800/i',$user_agent)) {
-			$type = "blackberry9800"; // webkit-based browser
+		if (preg_match('/blackberry.*applewebkit/i',$user_agent)) {
+			$type = "blackberry_webkit"; // webkit-based browser
 		} else {
 			$type = "blackberry";
 		}
+	}
+	else if (preg_match('/IEMobile\/7\.0/i', $user_agent)) {
+		$type = "windowsphone7";
 	}
 	else if (preg_match('/(palm os|palm|hiptop|avantgo|plucker|xiino|blazer|elaine|windows ce; ppc;|windows ce; smartphone;|windows ce; iemobile|up.browser|up.link|mmp|symbian|smartphone|midp|wap|vodafone|o2|pocket|kindle|mobile|pda|psp|treo)/i',$user_agent)) {
 		$type = "smart_phone";
