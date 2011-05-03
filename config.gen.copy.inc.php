@@ -31,6 +31,22 @@ $db_username       = 'username';				  # username for your database user
 $db_passwd         = 'passwd';					  # password for your database user
 $db_name           = 'db';					  	  # name of your database
 
+/*
+ * Cache configuration
+ * http://framework.zend.com/manual/en/zend.cache.html
+ */
+$cache_frontend = 'Core';
+$cache_frontend_options = array(
+	'automatic_serialization' => true,
+	'cache_id_prefix' => 'm_inst_edu_',
+);
+$cache_backend = 'File';
+$cache_backend_options = array(
+	'cache_dir' => sys_get_temp_dir(),
+	'hashed_directory_level' => 1,
+	'file_locking' => true,  // Disable if running on NFS
+);
+
 /* Institution & Org Info */
 $inst_name         = "HEU";                       # name of educational institution. highly recommend an acronym.
 $inst_name_full    = "Higher Ed University";      # full name of education institution

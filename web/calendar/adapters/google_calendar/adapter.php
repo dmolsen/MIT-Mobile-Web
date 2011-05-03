@@ -9,11 +9,12 @@
  */
 
 // set-up Zend gData
-set_include_path(get_include_path() . PATH_SEPARATOR . $install_path . 'lib/ZendFramework-1.11.5-minimal/library');
 require_once 'Zend/Loader.php';
 Zend_Loader::loadClass('Zend_Gdata');
 Zend_Loader::loadClass('Zend_Gdata_ClientLogin');
 Zend_Loader::loadClass('Zend_Gdata_Calendar');
+
+require_once($library_path . DIRECTORY_SEPARATOR . 'cache.php');
 
 class CalendarAdapter extends ModuleAdapter {  
 	
@@ -94,7 +95,47 @@ class CalendarAdapter extends ModuleAdapter {
 							
 		return $google_cal_ids[$key];
 	}
-	
+
+	private static function loadQuery($gdataCal, $query) {
+		$cache = mwosp_get_cache();
+
+		$cacheId = md5($query->getQueryUrl());
+		$convertedFeed = array();
+
+		if (($convertedFeed = $cache->load($cacheId)) === false) {
+			try {
+				$eventFeed = $gdataCal->getCalendarEventFeed($query);
+				$convertedFeed = self::convertFeed($eventFeed);
+				$cache->save($convertedFeed, $cacheId);
+			}
+			catch (Exception $e) {
+				error_log($e);
+			}
+		}
+
+		return $convertedFeed;
+	}
+
+	private static function loadEvent($gdataCal, $url) {
+		$cache = mwosp_get_cache();
+
+		$cacheId = md5($url);
+		$convertedFeed = array();
+
+		if (($convertedFeed = $cache->load($cacheId)) === false) {
+			try {
+				$event = $gdataCal->getCalendarEventEntry($url);
+				$convertedFeed = self::convertFeed(array($event));
+				$cache->save($convertedFeed, $cacheId);
+			}
+                        catch (Exception $e) {
+				error_log($e);
+			}
+		}
+
+		return $convertedFeed;
+	}
+
 	public static function getCategoryEvents($calkey) {
 		
 		$calid = self::getGoogleCalID($calkey);
@@ -109,15 +150,9 @@ class CalendarAdapter extends ModuleAdapter {
 		$query->setSortorder('a');
 		$query->setmaxresults('30');
 		$query->setSingleEvents(true);
-		
-		try {
-			$eventFeed = $gdataCal->getCalendarEventFeed($query);
-		} catch (Exception $e) {
-			return array();
-		}
-		
-		$convertedFeed = self::convertFeed($eventFeed);
-		
+
+		$convertedFeed = self::loadQuery($gdataCal, $query);
+
 		return $convertedFeed;
 	}
 	
@@ -138,14 +173,8 @@ class CalendarAdapter extends ModuleAdapter {
 		$query->setmaxresults('30');
 		$query->setSingleEvents(true);
 		
-		try {
-			$eventFeed = $gdataCal->getCalendarEventFeed($query);
-		} catch (Exception $e) {
-			return array();
-		}
-		
-		$convertedFeed = self::convertFeed($eventFeed);
-		
+		$convertedFeed = self::loadQuery($gdataCal, $query);
+
 		return $convertedFeed;
 	}
 	
@@ -154,15 +183,9 @@ class CalendarAdapter extends ModuleAdapter {
 		$calid = self::getGoogleCalID($calkey);
 		
 		$gdataCal = self::setUpConnection();
-		
-		try {
-			$url = 'http://www.google.com/calendar/feeds/'.$calid.'/private/full/'.$id;
-			$event = $gdataCal->getCalendarEventEntry($url);
-		} catch (Exception $e) {
-			return array();
-		}
-		
-		$convertedFeed = self::convertFeed(array($event)); // the extra array() is a hack to allow convertFeed() to work w/out changes
+		$url = 'http://www.google.com/calendar/feeds/'.$calid.'/private/full/'.$id;
+
+		$convertedFeed = self::loadEvent($gdataCal, $url);
 		
 		return $convertedFeed;
 
@@ -186,14 +209,8 @@ class CalendarAdapter extends ModuleAdapter {
 		$query->setSingleEvents(true);
 		$query->setQuery($search_terms);
 		
-		try {
-			$eventFeed = $gdataCal->getCalendarEventFeed($query);
-		} catch (Exception $e) {
-			return array();
-		}
-		
-		$convertedFeed = self::convertFeed($eventFeed);
-		
+		$convertedFeed = self::loadQuery($gdataCal, $query);
+
 		return $convertedFeed;
 	}
 }
