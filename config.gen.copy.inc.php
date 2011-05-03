@@ -12,6 +12,12 @@
 
 /* Technical Info */
 $install_path      = "/path/to/install/";         # the directory mobile web has been installed in, trailing slash is required
+$library_path      = implode(DIRECTORY_SEPARATOR, array($install_path, 'lib'));
+$zend_library_path = implode(DIRECTORY_SEPARATOR, array($library_path, 'ZendFramework-1.11.5-minimal', 'library'));
+$mdb2_library_path = implode(DIRECTORY_SEPARATOR, array($library_path, 'MDB2-2.4.1'));
+
+set_include_path(implode(PATH_SEPARATOR, array(get_include_path(), $zend_library_path, $mdb2_library_path)));
+
 $ga_code		   = "";			  			  # Google Analytics Code, highly highly highly recommended
 $minifier_support  = false;						  # minifier support for css & js files. only set to true when you go to production mode
 $min_cache_support = true;						  # cache support for the minifier. will only work if $minifier_support is set to true
