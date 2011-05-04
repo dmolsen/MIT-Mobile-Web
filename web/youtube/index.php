@@ -20,6 +20,7 @@ require_once 'Zend/Loader.php';
 Zend_Loader::loadClass('Zend_Gdata_YouTube');
 
 require_once "lib/youtube.lib.inc.php";
+require_once($library_path . DIRECTORY_SEPARATOR . 'cache.php');
 
 if ((int)$_REQUEST['page'] != 0) {
   $prev = $_REQUEST['page'] - 1;
@@ -38,7 +39,19 @@ $query->setMaxResults(5);
 $query->setAuthor($youtube_user);
 $query->setOrderBy('updated');
 $query->setStartIndex($index);
-$uploads = $yt->getVideoFeed($query);
+
+$cache = mwosp_get_cache();
+
+$cache_id = md5($query->getQueryUrl());
+$uploads = array();
+
+// XXX: Workaround for deserialization
+Zend_Loader::loadClass('Zend_Http_Client_Adapter_Socket');
+
+if (($uploads = $cache->load($cache_id)) === false) {
+  $uploads = $yt->getVideoFeed($query);
+  $cache->save($uploads, $cache_id);
+}
 
 require "templates/$prefix/index.html";
 $page->output();
