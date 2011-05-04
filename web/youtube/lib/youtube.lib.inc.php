@@ -8,10 +8,6 @@
  * 
  */
 
-// set-up Zend gData
-require_once 'Zend/Loader.php';
-Zend_Loader::loadClass('Zend_Gdata_YouTube');
-
 function printVideoFeed($videoFeed,$phone) {
   if ($phone == 'webkit') { echo("<ul class='edgetoedge'>"); } else if ($phone == 'touch') { echo("<ul class='results'>"); }
   foreach ($videoFeed as $videoEntry) {

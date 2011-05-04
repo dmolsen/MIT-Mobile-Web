@@ -16,6 +16,9 @@ require_once "data/data.inc.php";
 require_once "../page_builder/page_header.php";
 
 // libs
+require_once 'Zend/Loader.php';
+Zend_Loader::loadClass('Zend_Gdata_YouTube');
+
 require_once "lib/youtube.lib.inc.php";
 
 if ((int)$_REQUEST['page'] != 0) {
