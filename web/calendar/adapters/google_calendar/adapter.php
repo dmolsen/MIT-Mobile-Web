@@ -17,18 +17,23 @@ Zend_Loader::loadClass('Zend_Gdata_Calendar');
 require_once($library_path . DIRECTORY_SEPARATOR . 'cache.php');
 
 class CalendarAdapter extends ModuleAdapter {  
-	
-	// standardized method to set-up connection with Google Cal
-	private static function setUpConnection() {
-		
+
+	// standardized methods to set-up connection with Google Cal
+	private static function getService() {
+		$gdataCal = new Zend_Gdata_Calendar();
+
+		return $gdataCal;
+	}
+
+	private static function setUpConnection($gdataCal) {
 		# credentials for the google calendar
 		include("credentials.inc.php");
 		
 		# connection method
 		$service = Zend_Gdata_Calendar::AUTH_SERVICE_NAME; // predefined service name for calendar
-		$client = Zend_Gdata_ClientLogin::getHttpClient($username,$password,$service);
-		$gdataCal = new Zend_Gdata_Calendar($client);
-		return $gdataCal;
+		$client = Zend_Gdata_ClientLogin::getHttpClient($username, $password, $service);
+
+		$gdataCal->setHttpClient($client);
 	}
 	
 	// match the feed from Google Calendar with the actual key names we use in templates
@@ -104,6 +109,7 @@ class CalendarAdapter extends ModuleAdapter {
 
 		if (($convertedFeed = $cache->load($cacheId)) === false) {
 			try {
+				self::setUpConnection($gdataCal);
 				$eventFeed = $gdataCal->getCalendarEventFeed($query);
 				$convertedFeed = self::convertFeed($eventFeed);
 				$cache->save($convertedFeed, $cacheId);
@@ -124,6 +130,7 @@ class CalendarAdapter extends ModuleAdapter {
 
 		if (($convertedFeed = $cache->load($cacheId)) === false) {
 			try {
+				self::setUpConnection($gdataCal);
 				$event = $gdataCal->getCalendarEventEntry($url);
 				$convertedFeed = self::convertFeed(array($event));
 				$cache->save($convertedFeed, $cacheId);
@@ -140,7 +147,7 @@ class CalendarAdapter extends ModuleAdapter {
 		
 		$calid = self::getGoogleCalID($calkey);
 		
-		$gdataCal = self::setUpConnection();
+		$gdataCal = self::getService();
 		
 		$query = $gdataCal->newEventQuery();
 		$query->setUser($calid);
@@ -160,7 +167,7 @@ class CalendarAdapter extends ModuleAdapter {
 		
 		$calid = self::getGoogleCalID('all');
 		
-		$gdataCal = self::setUpConnection();
+		$gdataCal = self::getService();
 		
 		$query = $gdataCal->newEventQuery();
 		$query->setUser($calid);
@@ -182,7 +189,7 @@ class CalendarAdapter extends ModuleAdapter {
 		
 		$calid = self::getGoogleCalID($calkey);
 		
-		$gdataCal = self::setUpConnection();
+		$gdataCal = self::getService();
 		$url = 'http://www.google.com/calendar/feeds/'.$calid.'/private/full/'.$id;
 
 		$convertedFeed = self::loadEvent($gdataCal, $url);
@@ -195,7 +202,7 @@ class CalendarAdapter extends ModuleAdapter {
 		
 		$calid = self::getGoogleCalID('all');
 		
-		$gdataCal = self::setUpConnection();
+		$gdataCal = self::getService();
 		
 		$query = $gdataCal->newEventQuery();
 		$query->setUser($calid);
