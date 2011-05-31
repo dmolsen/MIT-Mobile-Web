@@ -12,18 +12,18 @@
 			while ($i < 3) {
 				$event = $results[$i];
 				ob_start();
-				include("../calendar/templates/$prefix/_li_item.html");
+				include("../calendar/templates/$prefix/li_item.html");
 				$html .= ob_get_contents();
 				ob_end_clean();
 				$i++;
 			}
 			$more = $total - 3;
-			$html .= "<li class='arrow' role='option'><a href='".detailCalURL($place['id'],$place['latitude'],$place['longitude'])."'>More results...</a></li>";
+			$html .= "<li class='arrow' role='option'><a href='../calendar/search.php?filter=$filter&x=0&y=0&timeframe=3'>More results...</a></li>";
 		} else {
 			while ($i < $total) {
 				$event = $results[$i];
 				ob_start();
-				include("../calendar/templates/$prefix/_li_item.html");
+				include("../calendar/templates/$prefix/li_item.html");
 				$html .= ob_get_contents();
 				ob_end_clean();
 				$i++;
