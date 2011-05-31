@@ -18,7 +18,7 @@
 				$i++;
 			}
 			$more = $total - 3;
-			$html .= "<li class='arrow' role='option'><a href='".detailURL($place['id'],$place['latitude'],$place['longitude'])."'>More results...</a></li>";
+			$html .= "<li class='arrow' role='option'><a href='../map/search.php?filter=$filter&x=0&y=0'>More results...</a></li>";
 		} else {
 			while ($i < $total) {
 				$place = $results[$i];
