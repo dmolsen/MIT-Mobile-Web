@@ -14,7 +14,7 @@ $fd = fopen ($filename, "r");
 $contents = fread ($fd,filesize ($filename));
 fclose ($fd); 
 
-$lines = explode("\r", $contents);
+$lines = explode("\n", $contents);
 echo("Starting import of ".count($lines)." building records...");
 foreach ($lines as $line) {
 	$fields = explode("\t", $line);
