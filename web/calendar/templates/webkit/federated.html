@@ -18,7 +18,9 @@
 				$i++;
 			}
 			$more = $total - 3;
-			$html .= "<li class='arrow' role='option'><a href='../calendar/search.php?filter=$filter&x=0&y=0&timeframe=3'>More results...</a></li>";
+
+			$params = array( 'filter' => $filter, 'timeframe' => 3 );
+			$html .= "<li class='arrow' role='option'><a href='../calendar/search.php?" . http_build_query($params) . ">More results...</a></li>";
 		} else {
 			while ($i < $total) {
 				$event = $results[$i];
