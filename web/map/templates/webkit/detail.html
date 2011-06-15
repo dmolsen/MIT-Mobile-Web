@@ -118,6 +118,11 @@
 						map.setCenter(center);
 				});
 				
+				//add event listener to ensure that all map tiles are properly loaded by redrawing afterwards
+				google.maps.event.addListener(map, 'tilesloaded', function() {
+						google.maps.event.trigger(map, 'resize');
+				});
+				
 				return map;
 			}
 			
