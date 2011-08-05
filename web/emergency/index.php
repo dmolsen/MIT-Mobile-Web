@@ -19,37 +19,23 @@ require_once "data/data.inc.php";
 // records stats
 require_once "../page_builder/page_header.php";
 
-$emergency_message = "Coming Soon: Emergency Updates"; 
+$emergencies = False;
 
 if ($show_rss == true) {
-	
 	$feed = new SimpleRss($emergency_rss_url, 60);
 	$emergencies = $feed->GetRssObject();
+}
 
-	if($emergencies === False) {
-	  $paragraphs = array('Emergency information is currently not available');
-	} else {
-	  foreach ($emergencies->aItems as $item) {
-        $text = explode("\n", $item->sDescription);
-        $paragraphs = array();
-		foreach($text as $paragraph) {
-	  		if($paragraph) {
-	    		$paragraphs[] = htmlentities($paragraph);
-	  		}
-		}
-		
-		// going to have to figure out timestamp issues...
-        $article_c_timestamp = strtotime($item->sDate);
-        $article_f_timestamp = strtotime($item->sDate)+(60*60*48); // adding two days
-        $current_timestamp = time();
-        $date = date('M. jS @ g:ia',strtotime($item->sDate));
-	  }
+// Default to showing emergency items for two days after they are posted
+function display_emergency($item, $window = 172800) {
+	$time = strtotime($item->sDate) + $window;
+	$current_time = time();
 
-	  // handle the case that an emergency RSS feed doesn't return data until emergency (like e2campus)
-	  if ($paragraphs == False) {
-		$paragraphs = array("There is currently no emergency on campus.");
-	  }
-	}
+	return ($time > $current_time);
+}
+
+function format_emergency_date($date, $format = 'M. jS @ g:ia') {
+	return date($format, strtotime($date));
 }
 
 if(isset($_REQUEST['contacts'])) {

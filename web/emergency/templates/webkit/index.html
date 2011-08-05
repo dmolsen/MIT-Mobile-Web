@@ -17,12 +17,21 @@
 		</div>
 	<? } else if ($show_rss == true) { ?>
 		<div class="focal">
-	     <? if ($article_f_timestamp > $current_timestamp) { ?>
-	         <span class="alert"><? echo(implode('<br /><br />', $paragraphs)); ?></span>
-	         <? if ($date) { echo('<em>Posted: '.$date.'</em>'); } ?>
-	     <? } else { ?>
-	       There is currently no emergency on campus.
-	     <? } ?>
+			<? if ($emergencies) { ?>
+				<? $displayed_emergency = false; ?>
+				<? foreach ($emergencies->aItems as $item) { ?>
+					<? if (display_emergency($item)) { ?>
+						<span class="alert"><? echo($item->sDescription); ?></span>
+						<em>Posted: <? echo(htmlspecialchars(format_emergency_date($item->sDate))); ?></em>
+						<? $displayed_emergency = true; ?>
+					<? } ?>
+				<? } ?>
+				<? if (! $displayed_emergency) { ?>
+					There is currently no emergency on campus.
+				<? } ?>
+			<? } else { ?>
+				Emergency information is currently not available.
+			<? } ?>
 		</div>
 	<? } ?>
 
