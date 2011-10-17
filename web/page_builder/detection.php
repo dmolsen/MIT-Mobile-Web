@@ -37,15 +37,19 @@ class Device {
   
   // matches device to templates
   private static $phoneTable = array(
+	"iphone50" => "webkit",
 	"iphone42" => "webkit",
 	"iphone40" => "webkit",
 	"iphone30" => "webkit",
 	"iphone20" => "touch",
+	"ipod50" => "webkit",
 	"ipod42" => "webkit",
 	"ipod40" => "webkit",
 	"ipod30" => "webkit",
 	"ipod20" => "touch",
 	"ipad" => "webkit",
+	"android40" => "webkit",
+	"android30" => "webkit",
 	"android23" => "webkit",
 	"android22" => "webkit",
 	"android21"	=> "webkit",
@@ -66,15 +70,19 @@ class Device {
 
   // provide the nice looking name for a device & OS for stats
   public static $deviceEnglish = array(
+	"iphone50" => "iPhone 5.x",
 	"iphone42" => "iPhone 4.2",
 	"iphone40" => "iPhone 4.0",
 	"iphone30" => "iPhone 3",
 	"iphone20" => "iPhone 2",
+	"ipod50" => "iPod 5.x",
 	"ipod42" => "iPod 4.2",
 	"ipod40" => "iPod 4",
 	"ipod30" => "iPod 3",
 	"ipod20" => "iPod 2",
 	"ipad" => "iPad",
+	"android40" => "Android 4.x",
+	"android30" => "Android 3.x",
 	"android23" => "Android 2.3",
 	"android22" => "Android 2.2",
 	"android21"	=> "Android 2.1",
@@ -109,7 +117,9 @@ class Device {
 	
 
 	if (preg_match('/(ipod|iphone)/i',$user_agent,$matches)) {
-		if (preg_match('/OS\ 4.2/i',$user_agent)) {
+		if (preg_match('/OS\ 5_\d+/i',$user_agent,$version)) {
+			$majorv = 5;
+		} else if (preg_match('/OS\ 4.2/i',$user_agent)) {
 			$majorv = 4;
 			$minorv = 2;
 		} else if (preg_match('/OS\ 4/i',$user_agent)) {
@@ -125,7 +135,11 @@ class Device {
 		$type = 'ipad';
 	}
 	else if (preg_match('/android/i',$user_agent)) {
-		if (preg_match('/android\ 2.3/i',$user_agent)) {
+		if (preg_match('/android 4\.\d+/i',$user_agent)) {
+			$majorv = 4;
+		} else if (preg_match('/android 3\.\d+/i',$user_agent)) {
+			$majorv = 3;
+		} else if (preg_match('/android\ 2.3/i',$user_agent)) {
 			$majorv = 2;
 			$minorv = 3;
 		} else if (preg_match('/android\ 2.2/i',$user_agent)) {
