@@ -19,16 +19,21 @@ $page->content_begin();
 		</div>
 	<? } else if ($show_rss == true) { ?>
 		<div class="focal" id="statusmsg">
-			<? 
-				if ($article_f_timestamp > $current_timestamp) {
-					echo(implode('<br /><br />', $paragraphs));
-					if ($date) { 
-						echo('<em>Posted: '.$date.'</em>'); 
-					}
-				} else {
-					echo("There is currently no emergency on campus.");
-				} 
-			?>
+			<? if ($emergencies) { ?>
+				<? $displayed_emergency = false; ?>
+				<? foreach ($emergencies->aItems as $item) { ?>
+					<? if (display_emergency($item)) { ?>
+						<span class="alert"><? echo($item->sDescription); ?></span>
+						<em>Posted: <? echo(htmlspecialchars(format_emergency_date($item->sDate))); ?></em>
+						<? $displayed_emergency = true; ?>
+					<? } ?>
+				<? } ?>
+				<? if (! $displayed_emergency) { ?>
+					There is currently no emergency on campus.
+				<? } ?>
+			<? } else { ?>
+				Emergency information is currently not available.
+			<? } ?>
 		</div>
 	<? } ?>
 	

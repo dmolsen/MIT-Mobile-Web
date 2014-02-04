@@ -22,13 +22,15 @@ function mailHREF($email) {
 
 function mapHREF($where) {
   	$db = new db;
+	$db->connection->setFetchMode(MDB2_FETCHMODE_ASSOC);
+
 	$sql = "SELECT * FROM Buildings WHERE type != 'Parking Lot' OR type != 'Public Parking' GROUP BY name ORDER BY name ASC";
 	$stmt = $db->connection->prepare($sql);
-	$stmt->execute();
-	$results = $stmt->fetchAll();
+	$result = $stmt->execute();
+	$results = $result->fetchAll();
 	
 	foreach ($results as $result) {
-		if (preg_match('/'.$result['name'].'/i',$where)) {
+		if (preg_match('/'.preg_quote($result['name'], '/').'/i',$where)) {
 			return "<a href='/map/detail.php?loc=".$result['id']."&lat=".$result['latitude']."&long=".$result['longitude']."&maptype=roadmap'>";
 		}
 	}

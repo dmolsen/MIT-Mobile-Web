@@ -18,9 +18,9 @@ require_once "../../lib/spyc-0.4.5/spyc.php";
 class ModuleAdapter {  
 	
 	// returns the adapter for the requesting module or, if $dir is supplied, the adapter for that particular module
-	public static function find($dir = nil) {
+	public static function find($dir = NULL) {
 		$extra = "";
-		if ($dir != nil) {
+		if ($dir != NULL) {
 			$extra = "/../".$dir; // just offering a way to jump to another modules info.yml file
 		}
 		$base_dir = getcwd();

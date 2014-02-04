@@ -9,26 +9,31 @@
  */
 
 // set-up Zend gData
-$path = $install_path.'lib/ZendGdata-1.8.4PL1/library';
-set_include_path(get_include_path() . PATH_SEPARATOR . $path);
 require_once 'Zend/Loader.php';
 Zend_Loader::loadClass('Zend_Gdata');
 Zend_Loader::loadClass('Zend_Gdata_ClientLogin');
 Zend_Loader::loadClass('Zend_Gdata_Calendar');
 
+require_once($library_path . DIRECTORY_SEPARATOR . 'cache.php');
+
 class CalendarAdapter extends ModuleAdapter {  
-	
-	// standardized method to set-up connection with Google Cal
-	private static function setUpConnection() {
-		
+
+	// standardized methods to set-up connection with Google Cal
+	private static function getService() {
+		$gdataCal = new Zend_Gdata_Calendar();
+
+		return $gdataCal;
+	}
+
+	private static function setUpConnection($gdataCal) {
 		# credentials for the google calendar
 		include("credentials.inc.php");
 		
 		# connection method
 		$service = Zend_Gdata_Calendar::AUTH_SERVICE_NAME; // predefined service name for calendar
-		$client = Zend_Gdata_ClientLogin::getHttpClient($username.'@gmail.com',$password,$service);
-		$gdataCal = new Zend_Gdata_Calendar($client);
-		return $gdataCal;
+		$client = Zend_Gdata_ClientLogin::getHttpClient($username, $password, $service);
+
+		$gdataCal->setHttpClient($client);
 	}
 	
 	// match the feed from Google Calendar with the actual key names we use in templates
@@ -37,8 +42,8 @@ class CalendarAdapter extends ModuleAdapter {
 		$convertedFeed = array();
 		foreach ($eventFeed as $event) {
 			
-			preg_match("/_(.*)$/i",$event->id->text,$matches);
-		    $id = $matches[1];
+			preg_match("/full\/(.*)$/i",$event->getId()->getText(),$matches);
+			$id = $matches[1];
 			
 			$when = $event->getWhen();
 			$startTime = $when[0]->startTime;
@@ -46,15 +51,18 @@ class CalendarAdapter extends ModuleAdapter {
 			$date_str = strftime('%A, %B %e, %Y',strtotime($startTime));
 			$date_str_for_storage = strftime('%D',strtotime($startTime));
 			$date_str_for_compare = strftime('%Y%m%d',strtotime($startTime));
+
+			// Reset the time used in templates since not all events specify a start time
+			$time_of_day = '';
 			if (!(strlen($startTime) == 10)) {
-			  $time_of_day = strftime('%l:%M%P',strtotime($startTime));
+			  $time_of_day = strftime('%l:%M%P',trim(strtotime($startTime)));
 			  if ($endTime != '') {
-			    $time_of_day .= "-".strftime('%l:%M%P',strtotime($endTime));
+			    $time_of_day .= " - ".strftime('%l:%M%P',trim(strtotime($endTime)));
 			  }
 			}	
 			
-			$title = $event->title->text;
-			$description = $event->getContent()->text;
+			$title = $event->getTitleValue();
+			$description = $event->getContent()->getText();
 
 			// the following getExtraData is specific to WVU's implementation with Google Calendar
 			list($description,$event_link) = getExtraData($description,'link',true);
@@ -63,7 +71,7 @@ class CalendarAdapter extends ModuleAdapter {
 			list($description,$contact_name) = getExtraData($description,'contact_name',false);
 			
 			$where = $event->getWhere();
-			$where = $where->valueString;
+			$where = $where[0]->getValueString();
 			
 			$convertedFeed[] = array('id' => $id,
 									 'title' => $title,
@@ -92,12 +100,54 @@ class CalendarAdapter extends ModuleAdapter {
 							
 		return $google_cal_ids[$key];
 	}
-	
+
+	private static function loadQuery($gdataCal, $query) {
+		$cache = mwosp_get_cache();
+
+		$cacheId = md5($query->getQueryUrl());
+		$convertedFeed = array();
+
+		if (($convertedFeed = $cache->load($cacheId)) === false) {
+			try {
+				self::setUpConnection($gdataCal);
+				$eventFeed = $gdataCal->getCalendarEventFeed($query);
+				$convertedFeed = self::convertFeed($eventFeed);
+				$cache->save($convertedFeed, $cacheId);
+			}
+			catch (Exception $e) {
+				error_log($e);
+			}
+		}
+
+		return $convertedFeed;
+	}
+
+	private static function loadEvent($gdataCal, $url) {
+		$cache = mwosp_get_cache();
+
+		$cacheId = md5($url);
+		$convertedFeed = array();
+
+		if (($convertedFeed = $cache->load($cacheId)) === false) {
+			try {
+				self::setUpConnection($gdataCal);
+				$event = $gdataCal->getCalendarEventEntry($url);
+				$convertedFeed = self::convertFeed(array($event));
+				$cache->save($convertedFeed, $cacheId);
+			}
+                        catch (Exception $e) {
+				error_log($e);
+			}
+		}
+
+		return $convertedFeed;
+	}
+
 	public static function getCategoryEvents($calkey) {
 		
 		$calid = self::getGoogleCalID($calkey);
 		
-		$gdataCal = self::setUpConnection();
+		$gdataCal = self::getService();
 		
 		$query = $gdataCal->newEventQuery();
 		$query->setUser($calid);
@@ -106,15 +156,10 @@ class CalendarAdapter extends ModuleAdapter {
 		$query->setOrderby('starttime');
 		$query->setSortorder('a');
 		$query->setmaxresults('30');
-		
-		try {
-			$eventFeed = $gdataCal->getCalendarEventFeed($query);
-		} catch (Exception $e) {
-		    return false;
-		}
-		
-		$convertedFeed = self::convertFeed($eventFeed);
-		
+		$query->setSingleEvents(true);
+
+		$convertedFeed = self::loadQuery($gdataCal, $query);
+
 		return $convertedFeed;
 	}
 	
@@ -122,7 +167,7 @@ class CalendarAdapter extends ModuleAdapter {
 		
 		$calid = self::getGoogleCalID('all');
 		
-		$gdataCal = self::setUpConnection();
+		$gdataCal = self::getService();
 		
 		$query = $gdataCal->newEventQuery();
 		$query->setUser($calid);
@@ -133,15 +178,10 @@ class CalendarAdapter extends ModuleAdapter {
 		$query->setStartMin($starttime);
 		$query->setStartMax($endtime);
 		$query->setmaxresults('30');
+		$query->setSingleEvents(true);
 		
-		try {
-			$eventFeed = $gdataCal->getCalendarEventFeed($query);
-		} catch (Exception $e) {
-		    return false;
-		}
-		
-		$convertedFeed = self::convertFeed($eventFeed);
-		
+		$convertedFeed = self::loadQuery($gdataCal, $query);
+
 		return $convertedFeed;
 	}
 	
@@ -149,16 +189,10 @@ class CalendarAdapter extends ModuleAdapter {
 		
 		$calid = self::getGoogleCalID($calkey);
 		
-		$gdataCal = self::setUpConnection();
-		
-		try {
-			$url = 'http://www.google.com/calendar/feeds/'.$calid.'/private/full/_'.$_REQUEST['id'];
-			$event = $gdataCal->getCalendarEventEntry($url);
-		} catch (Exception $e) {
-		    return false;
-		}
-		
-		$convertedFeed = self::convertFeed(array($event)); // the extra array() is a hack to allow convertFeed() to work w/out changes
+		$gdataCal = self::getService();
+		$url = 'http://www.google.com/calendar/feeds/'.$calid.'/private/full/'.$id;
+
+		$convertedFeed = self::loadEvent($gdataCal, $url);
 		
 		return $convertedFeed;
 
@@ -168,7 +202,7 @@ class CalendarAdapter extends ModuleAdapter {
 		
 		$calid = self::getGoogleCalID('all');
 		
-		$gdataCal = self::setUpConnection();
+		$gdataCal = self::getService();
 		
 		$query = $gdataCal->newEventQuery();
 		$query->setUser($calid);
@@ -179,16 +213,11 @@ class CalendarAdapter extends ModuleAdapter {
 		$query->setStartMin($starttime);
 		$query->setStartMax($endtime);
 		$query->setmaxresults('50');
+		$query->setSingleEvents(true);
 		$query->setQuery($search_terms);
 		
-		try {
-			$eventFeed = $gdataCal->getCalendarEventFeed($query);
-		} catch (Exception $e) {
-		    return false;
-		}
-		
-		$convertedFeed = self::convertFeed($eventFeed);
-		
+		$convertedFeed = self::loadQuery($gdataCal, $query);
+
 		return $convertedFeed;
 	}
 }

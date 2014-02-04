@@ -12,6 +12,12 @@
 
 /* Technical Info */
 $install_path      = "/path/to/install/";         # the directory mobile web has been installed in, trailing slash is required
+$library_path      = implode(DIRECTORY_SEPARATOR, array($install_path, 'lib'));
+$zend_library_path = implode(DIRECTORY_SEPARATOR, array($library_path, 'ZendFramework-1.11.5-minimal', 'library'));
+$mdb2_library_path = implode(DIRECTORY_SEPARATOR, array($library_path, 'MDB2-2.4.1'));
+
+set_include_path(implode(PATH_SEPARATOR, array(get_include_path(), $zend_library_path, $mdb2_library_path)));
+
 $ga_code		   = "";			  			  # Google Analytics Code, highly highly highly recommended
 $minifier_support  = false;						  # minifier support for css & js files. only set to true when you go to production mode
 $min_cache_support = true;						  # cache support for the minifier. will only work if $minifier_support is set to true
@@ -20,9 +26,26 @@ $fed_cache_support = true;						  # cache support for the federated search. only
 /* MySQL Config Info */
 $db_type           = 'mysqli';					  # can be any database that MDB2 supports (e.g. pgsql)
 $db_host           = 'localhost';				  # host that your database is at
+$db_port           = 3306;					  # port to connect to (default for MySQL is 3306)
 $db_username       = 'username';				  # username for your database user
 $db_passwd         = 'passwd';					  # password for your database user
 $db_name           = 'db';					  	  # name of your database
+
+/*
+ * Cache configuration
+ * http://framework.zend.com/manual/en/zend.cache.html
+ */
+$cache_frontend = 'Core';
+$cache_frontend_options = array(
+	'automatic_serialization' => true,
+	'cache_id_prefix' => 'm_inst_edu_',
+);
+$cache_backend = 'File';
+$cache_backend_options = array(
+	'cache_dir' => sys_get_temp_dir(),
+	'hashed_directory_level' => 1,
+	'file_locking' => true,  // Disable if running on NFS
+);
 
 /* Institution & Org Info */
 $inst_name         = "HEU";                       # name of educational institution. highly recommend an acronym.

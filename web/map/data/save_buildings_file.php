@@ -1,12 +1,9 @@
 <?php
 
 require_once('../../../config.gen.inc.php');
-require_once $install_path."lib/MDB2-2.4.1/MDB2.php";
+require_once "MDB2.php";
 require_once $install_path."lib/db.php";
 
-# a hack to make sure that PEAR sees the proper path for includes
-ini_set("include_path", $install_path."lib/MDB2-2.4.1/");
-											
 $db = new db;
 
 $stmtd =& $db->connection->prepare("DELETE FROM Buildings");
@@ -17,7 +14,7 @@ $fd = fopen ($filename, "r");
 $contents = fread ($fd,filesize ($filename));
 fclose ($fd); 
 
-$lines = explode("\r", $contents);
+$lines = explode("\n", $contents);
 echo("Starting import of ".count($lines)." building records...");
 foreach ($lines as $line) {
 	$fields = explode("\t", $line);

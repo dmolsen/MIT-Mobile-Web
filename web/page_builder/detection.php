@@ -37,24 +37,30 @@ class Device {
   
   // matches device to templates
   private static $phoneTable = array(
+	"iphone50" => "webkit",
 	"iphone42" => "webkit",
 	"iphone40" => "webkit",
 	"iphone30" => "webkit",
 	"iphone20" => "touch",
+	"ipod50" => "webkit",
 	"ipod42" => "webkit",
 	"ipod40" => "webkit",
 	"ipod30" => "webkit",
 	"ipod20" => "touch",
-	"ipad" => "basic",
+	"ipad" => "webkit",
+	"android40" => "webkit",
+	"android30" => "webkit",
+	"android23" => "webkit",
 	"android22" => "webkit",
 	"android21"	=> "webkit",
 	"android20" => "webkit",
 	"android00" => "touch",
-	"palm" => "touch",
+	"palm" => "webkit",
 	"opera_mini" => "touch",
 	"opera_mobile" => "touch",
-	"blackberry9800" => "touch",
+	"blackberry_webkit" => "webkit",
 	"blackberry" => "basic",
+	"windowsphone7" => "webkit",
 	"webkit" => "webkit",
 	"smart_phone" => "basic",
 	"feature_phone" => "basic",
@@ -64,15 +70,20 @@ class Device {
 
   // provide the nice looking name for a device & OS for stats
   public static $deviceEnglish = array(
+	"iphone50" => "iPhone 5.x",
 	"iphone42" => "iPhone 4.2",
 	"iphone40" => "iPhone 4.0",
 	"iphone30" => "iPhone 3",
 	"iphone20" => "iPhone 2",
+	"ipod50" => "iPod 5.x",
 	"ipod42" => "iPod 4.2",
 	"ipod40" => "iPod 4",
 	"ipod30" => "iPod 3",
 	"ipod20" => "iPod 2",
 	"ipad" => "iPad",
+	"android40" => "Android 4.x",
+	"android30" => "Android 3.x",
+	"android23" => "Android 2.3",
 	"android22" => "Android 2.2",
 	"android21"	=> "Android 2.1",
 	"android20" => "Android 2.0",
@@ -80,8 +91,9 @@ class Device {
 	"palm" => "Web OS",
 	"opera_mini" => "Opera Mini",
 	"opera_mobile" => "Opera Mobile",
-	"blackberry9800" => "Blackberry 9800 (aka Torch)",
+	"blackberry_webkit" => "BlackBerry (WebKit)",
 	"blackberry" => "BlackBerry (Generic)",
+	"windowsphone7" => "Windows Phone 7",
 	"webkit" => "WebKit (Generic)",
 	"smart_phone" => "Smart Phone (Generic)",
 	"feature_phone" => "Feature Phone (Generic)",
@@ -90,12 +102,12 @@ class Device {
   );
 
   // returns the general device type based on user agent string matching. can get very specific depending on usage.
-  public static function classify($ua = nil) {
+  public static function classify($ua = NULL) {
 	
 	$majorv = 0;
 	$minorv = 0;
 	
-	if ($ua == nil) {
+	if ($ua == NULL) {
 		$user_agent = $_SERVER['HTTP_USER_AGENT'];
 	    $accept = $_SERVER['HTTP_ACCEPT'];
 	} else {
@@ -105,7 +117,9 @@ class Device {
 	
 
 	if (preg_match('/(ipod|iphone)/i',$user_agent,$matches)) {
-		if (preg_match('/OS\ 4.2/i',$user_agent)) {
+		if (preg_match('/OS\ 5_\d+/i',$user_agent,$version)) {
+			$majorv = 5;
+		} else if (preg_match('/OS\ 4.2/i',$user_agent)) {
 			$majorv = 4;
 			$minorv = 2;
 		} else if (preg_match('/OS\ 4/i',$user_agent)) {
@@ -121,7 +135,14 @@ class Device {
 		$type = 'ipad';
 	}
 	else if (preg_match('/android/i',$user_agent)) {
-		if (preg_match('/android\ 2.2/i',$user_agent)) {
+		if (preg_match('/android 4\.\d+/i',$user_agent)) {
+			$majorv = 4;
+		} else if (preg_match('/android 3\.\d+/i',$user_agent)) {
+			$majorv = 3;
+		} else if (preg_match('/android\ 2.3/i',$user_agent)) {
+			$majorv = 2;
+			$minorv = 3;
+		} else if (preg_match('/android\ 2.2/i',$user_agent)) {
 			$majorv = 2;
 			$minorv = 2;
 		} else if (preg_match('/android\ 2.1/i',$user_agent)) {
@@ -142,11 +163,14 @@ class Device {
 		$type = "opera_mobile";
 	}
 	else if (preg_match('/blackberry/i',$user_agent)) {
-		if (preg_match('/9800/i',$user_agent)) {
-			$type = "blackberry9800"; // webkit-based browser
+		if (preg_match('/blackberry.*applewebkit/i',$user_agent)) {
+			$type = "blackberry_webkit"; // webkit-based browser
 		} else {
 			$type = "blackberry";
 		}
+	}
+	else if (preg_match('/IEMobile\/7\.0/i', $user_agent)) {
+		$type = "windowsphone7";
 	}
 	else if (preg_match('/(palm os|palm|hiptop|avantgo|plucker|xiino|blazer|elaine|windows ce; ppc;|windows ce; smartphone;|windows ce; iemobile|up.browser|up.link|mmp|symbian|smartphone|midp|wap|vodafone|o2|pocket|kindle|mobile|pda|psp|treo)/i',$user_agent)) {
 		$type = "smart_phone";
@@ -188,7 +212,7 @@ class Device {
   }
 
   // returns the type of templates that should be used for this device
-  public static function templates($ua = nil) {
+  public static function templates($ua = NULL) {
 	$type = self::classify($ua);
 	return self::$phoneTable[$type];
   }
@@ -203,10 +227,10 @@ class Device {
   }
 
   private static function device_version_check($device,$major,$minor) {
-	if (($device == true) && ($major == nil)) {
+	if (($device == true) && ($major == NULL)) {
 		return true;
-	} else if (($device == true) && ($major != nil)) {
-		if ((self::$major_version >= $major) && ($minor == nil)) {
+	} else if (($device == true) && ($major != NULL)) {
+		if ((self::$major_version >= $major) && ($minor == NULL)) {
 			return true;
 		} else if ((self::$major_version >= $major) && (self::$minor_version >= $minor)) {
 			return true;
@@ -218,19 +242,19 @@ class Device {
 	}
   }
 
-  public static function is_android($major = nil, $minor = nil) {
+  public static function is_android($major = NULL, $minor = NULL) {
 	return self::device_version_check(self::$is_android, $major, $minor);
   }
 
-  public static function is_iphone($major = nil, $minor = nil) {
+  public static function is_iphone($major = NULL, $minor = NULL) {
 	return self::device_version_check(self::$is_iphone, $major, $minor);
   }
 
-  public static function is_ipod($major = nil, $minor = nil) {
+  public static function is_ipod($major = NULL, $minor = NULL) {
 	return self::device_version_check(self::$is_ipod, $major, $minor);
   }
 
-  public static function is_ios($major = nil, $minor = nil) {
+  public static function is_ios($major = NULL, $minor = NULL) {
 	return self::device_version_check(self::$is_ios, $major, $minor);
   }
 

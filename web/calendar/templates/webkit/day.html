@@ -17,15 +17,14 @@
 	
 	<ul class="edgetoedge" role="listbox">
 		<li class="sep" role="separator" style="text-align: center"><?=$current['weekday']?>, <?=$current['month']?> <?=$current['day_num']?>, <?=$current['year']?></li>
- 		<? $i = 0; ?>
 		<? 
-			if ($eventFeed == false) {
+			if (count($eventFeed) == 0) {
 				echo("<li><a href='<?=dayURL($next,$type)?>'>Sorry, no results returned.</a></li>");
 			} else {
-		 		foreach ($eventFeed as $event) {
-		    	include("li_item.html");
-	   		}
-	   } 
+				foreach ($eventFeed as $event) {
+					include("li_item.html");
+				}
+			}
 		?>
 	</ul>
 	

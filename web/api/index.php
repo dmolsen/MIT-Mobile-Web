@@ -35,7 +35,10 @@ require_once "../page_builder/detection.php";
 // require the JSON service
 require_once "../../lib/Services_JSON-1.0.2/JSON.php";
 
-$user_agent = urldecode($_REQUEST['ua']);
+$user_agent = $_SERVER['HTTP_USER_AGENT'];
+if (!empty($_REQUEST['ua'])) {
+	$user_agent = urldecode($_REQUEST['ua']);
+}
 
 $device = Device::classify($user_agent);
 $templates = Device::templates($user_agent);
@@ -52,7 +55,7 @@ $json = new Services_JSON();
 
 // if you're going to use JS to grab this data make sure to include a callback, jQuery does it
 // auto-magically if you use json-p functions
-if ($_REQUEST['callback']) {
+if (!empty($_REQUEST['callback'])) {
 	echo($_REQUEST['callback'].'('.$json->encodeUnsafe($device_info).')');
 } else {
 	echo($json->encodeUnsafe($device_info));

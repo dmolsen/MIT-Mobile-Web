@@ -21,7 +21,7 @@ $page->content_begin();
 			?>
 			<? if ($i < 3) { ?>
 				<li>
-					<? if (is_long_text($item)) { ?>
+					<? if (is_long_text($description)) { ?>
 						<a href="<?=detailURL($title,$key)?>"><h3><?=$title?></h3><span class="smallprint"><?=html_entity_decode(summary($description))?> <span class="more">more</span> <? if ($date) { ?>(<?=$date?>)<? } ?></span></a>
 					<? } else { ?>
 						<div><h3><?=$title?></h3><span class="smallprint"><?=full($description)?> <? if ($date) { ?>(<?=$date?>)<? } ?></span></div>

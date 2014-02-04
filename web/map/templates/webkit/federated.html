@@ -18,7 +18,9 @@
 				$i++;
 			}
 			$more = $total - 3;
-			$html .= "<li class='arrow' role='option'><a href='".detailURL($place['id'],$place['latitude'],$place['longitude'])."'>More results...</a></li>";
+
+			$params = array( 'filter' => $filter );
+			$html .= "<li class='arrow' role='option'><a href='../map/search.php?" . http_build_query($params) . "'>More results...</a></li>";
 		} else {
 			while ($i < $total) {
 				$place = $results[$i];

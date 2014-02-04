@@ -633,7 +633,8 @@ a.calendar {
 
 a.youtube {  
 	background-image: url(../images/action-youtube.png); 
-	padding-right: 38px;
+	background-repeat: no-repeat;
+	padding: 0 38px 0 25px;
 }
 
 a.search {  

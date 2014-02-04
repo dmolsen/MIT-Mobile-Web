@@ -8,12 +8,6 @@
  * 
  */
 
-// set-up Zend gData
-$path = $install_path.'lib/ZendGdata-1.8.4PL1/library';
-set_include_path(get_include_path() . PATH_SEPARATOR . $path);
-require_once 'Zend/Loader.php';
-Zend_Loader::loadClass('Zend_Gdata_YouTube');
-
 function printVideoFeed($videoFeed,$phone) {
   if ($phone == 'webkit') { echo("<ul class='edgetoedge'>"); } else if ($phone == 'touch') { echo("<ul class='results'>"); }
   foreach ($videoFeed as $videoEntry) {

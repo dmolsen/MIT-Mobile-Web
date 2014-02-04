@@ -14,22 +14,16 @@
 		<p class="bb"> </p>
 
 		<p class="nav">	
-			<? $i = 1; ?>
-			<? foreach ($items as $item) {
-				if (($item[1] == true) && ($i < 9)) {
-					$i++;
-				}
-				else if (($item[1] == true) && ($i > 8)) {
-					if ($item[6] == true) { 
-						$k = $i - 8; ?>
-						<a href="<?=$item[7]?>" accesskey="<?=$k?>">	<?=$k?>: <?=$item[2]?></a>
-					<? } else { ?>
-						<? $k = $i - 8; ?>
-						<a href="../<?=$item[3]?>/<?=$item[4]?>" accesskey="<?=$k?>"><?=$k?>: <?=$item[2]?></a>
-					<? } ?>
-					<br />
-					<? $i++; ?>
+			<? $items = array_slice($bc_items, 8, count($bc_items) - 8); ?>
+			<? $accesskey = 1; ?>
+			<? foreach ($items as $item) { ?>
+				<? if ($item[3] == true) { ?>
+					<a href="<?=$item[4]?>" accesskey="<?=$accesskey?>">	<?=$accesskey?>: <?=$item[0]?></a>
+				<? } else { ?>
+					<a href="../<?=$item[1]?>/<?=$item[2]?>" accesskey="<?=$accesskey?>"><?=$accesskey?>: <?=$item[0]?></a>
 				<? } ?>
+				<br />
+				<? $accesskey++ ?>
 			<? } ?>
 			<a href="./" accesskey="9">9: Mobile Web Home</a>
 		</p>

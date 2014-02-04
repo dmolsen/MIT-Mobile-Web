@@ -10,17 +10,17 @@ $page->content_begin();
 		<p><a href="<?=dayURL($prev, $type)?>">&lt; <?=$prev['day_3Let']?> <?=$prev['month']?> <?=$prev['day_num']?></a> | <a href="<?=dayURL($next, $type)?>"><?=$next['day_3Let']?> <?=$next['month']?> <?=$next['day_num']?> &gt;</a></p>
 	</div>
 	
-	<ul class="results">
-		<? 
-			if ($eventFeed == false) {
-				echo("<p>There were no results returned.</p>");
-			} else {
+	<?php if (count($eventFeed) == 0) { ?>
+		<p>There were no results returned.</p>
+	<?php } else { ?>
+		<ul class="results">
+			<?
 				foreach ($eventFeed as $event) {
 					include("li_item.html");
 				}
-			} 
-		?>
-	</ul>
+			?>
+		</ul>
+	<?php } ?>
 	
 	<div class="nonfocal">
 		<p>     <a href="<?=dayURL($prev, $type)?>">&lt; <?=$prev['day_3Let']?> <?=$prev['month']?> <?=$prev['day_num']?></a> | <a href="<?=dayURL($next, $type)?>"><?=$next['day_3Let']?> <?=$next['month']?> <?=$next['day_num']?> &gt;</a></p>

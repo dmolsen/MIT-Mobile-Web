@@ -1,4 +1,6 @@
 <?php
+require_once(dirname(dirname(__FILE__)) . '/functions.php');
+
    /***************************************************************/
    /* PhpCache - a class for caching arbitrary data
    
@@ -33,7 +35,7 @@
       Last Updated:  7th January 2007                             */
    /***************************************************************/
    
-   define('CACHE_PATH', sys_get_temp_dir());
+   define('CACHE_PATH', add_trailing_slash(sys_get_temp_dir()));
    
    class PhpCache {
       var $sFile;
